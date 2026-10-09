@@ -1,0 +1,16 @@
+{{/* The footer: the name and one line, centred. On a page long enough to
+     scroll the script moves them to the left and shows a way back to the
+     top at the right. */}}
+{{define "footer"}}
+<footer class="bottom" x-data="foot" x-bind:class="state">
+  <div class="in">
+    <span class="about">
+      <span class="name">{{template "mark"}}<b>chronoskin</b></span>
+      <span>Eras of web design as installable style packs.</span>
+    </span>
+    <a class="to-top" href="#" aria-label="Back to the top" title="Back to the top" x-on:click.prevent="top">
+      {{template "arrow-up"}}
+    </a>
+  </div>
+</footer>
+{{end}}

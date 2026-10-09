@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: flat design dashboard specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#dashboard">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10" opacity=".3"/><path d="M15.5 8.5L21.64 14.64A10 10 0 0 1 14.64 21.64L8.5 15.5Z" opacity=".35"/><rect x="8.5" y="8.5" width="7" height="7"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <p class="ds-nav__group">Mailings</p>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#dashboard"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 17V9 M8 17V3 M13 17v-6 M18 17V6"/></svg><span class="ds-nav__label">Dashboard</span></a></li>
+    <li><a class="ds-nav__link" href="#campaigns"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 4h16v12H2z M2 5l8 6 8-6"/></svg><span class="ds-nav__label">Campaigns</span><span class="ds-badge">23</span></a></li>
+    <li><a class="ds-nav__link" href="#compose"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 16l1-4 9-9 3 3-9 9z M12 5l3 3"/></svg><span class="ds-nav__label">Write</span></a></li>
+  </ul>
+  <p class="ds-nav__group">Help</p>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#guide"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 3h9l3 3v11H4z M7 8h6 M7 11h6 M7 14h4"/></svg><span class="ds-nav__label">Sending guide</span></a></li>
+  </ul>
+  <div class="ds-nav__foot">
+    <details class="ds-menu">
+      <summary class="ds-menu__toggle"><span class="ds-avatar" aria-hidden="true">TO</span><span class="ds-nav__account"><span class="ds-nav__who">Tomas Okafor</span>Harbour Bakery</span></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__item" href="#campaigns">Lists and readers</a></li>
+        <li><a class="ds-menu__item" href="#compose">Sender details</a></li>
+        <li><a class="ds-menu__item" href="#guide">Help</a></li>
+        <li><a class="ds-menu__item" href="#dashboard">Sign out</a></li>
+      </ul>
+    </details>
+  </div>
+  <div class="ds-nav__quota">
+    <div class="ds-progress">
+      <div class="ds-progress__head"><span>Readers on this plan</span><span class="ds-progress__value">2,480 of 5,000</span></div>
+      <progress class="ds-progress__bar" value="2480" max="5000">2,480 of 5,000</progress>
+    </div>
+  </div>
+</header>
+
+<div class="ds-topbar">
+  <input class="ds-topbar__search" type="search" placeholder="Find a campaign or a reader" aria-label="Search">
+  <a class="ds-topbar__link" href="#guide">Help</a>
+  <a class="ds-topbar__link" href="#campaigns">All campaigns</a>
+  <a class="ds-button ds-button--small" href="#compose">New campaign</a>
+</div>
+
+<section class="ds-view ds-view--home" id="dashboard">
+  <div class="ds-content">
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__copy">
+        <h1 class="ds-hero__title">Tuesday's letter was opened by 1,412 readers</h1>
+        <p class="ds-hero__lead">That is 57 in every 100, the best send since chronoskin started counting for you in January.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--inverse" href="#report">Read the report</a>
+          <a class="ds-button ds-button--ghost" href="#compose">Write the next one</a>
+        </div>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <span class="ds-hero__bar"></span>
+        <span class="ds-hero__bar ds-hero__bar--3"></span>
+        <span class="ds-hero__bar ds-hero__bar--2"></span>
+        <span class="ds-hero__bar"></span>
+        <span class="ds-hero__bar ds-hero__bar--4"></span>
+        <span class="ds-hero__bar ds-hero__bar--2"></span>
+        <span class="ds-hero__bar ds-hero__bar--5"></span>
+      </div>
+    </div>
+
+    <ul class="ds-stat" data-component="stats">
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="10" r="4"/><path d="M3 23c1-5 4-7 8-7s7 2 8 7 M19 7a4 4 0 0 1 0 7 M21 17c2 1 3 3 4 6"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">2,480</span><span class="ds-stat__label">Readers</span><span class="ds-stat__delta">64 more than last week</span></span>
+      </li>
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip ds-stat__chip--2"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l11-7 11 7v12H3z M3 11l11 7 11-7"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">57%</span><span class="ds-stat__label">Opened</span><span class="ds-stat__delta">4 points up</span></span>
+      </li>
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip ds-stat__chip--3"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 4l14 9-6 2 4 7-3 2-4-7-5 4z"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">18%</span><span class="ds-stat__label">Clicked</span><span class="ds-stat__delta ds-stat__delta--down">1 point down</span></span>
+      </li>
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip ds-stat__chip--4"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 5h18v18H5z M10 14h8"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">6</span><span class="ds-stat__label">Unsubscribed</span><span class="ds-stat__delta">2 fewer than usual</span></span>
+      </li>
+    </ul>
+
+    <div class="ds-cols ds-cols--level">
+      <section class="ds-panel" data-component="panel">
+        <div class="ds-panel__head">
+          <h2 class="ds-panel__title">Opens and clicks, last seven sends</h2>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#campaigns">Export</a>
+        </div>
+        <div class="ds-panel__body">
+          <div class="ds-chart">
+            <div class="ds-chart__plot" role="img" aria-label="Bar chart of opens and clicks for the last seven sends">
+              <span class="ds-chart__line"></span><span class="ds-chart__line ds-chart__line--2"></span><span class="ds-chart__line ds-chart__line--3"></span><span class="ds-chart__line ds-chart__line--4"></span>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--60"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--20"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--70"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--30"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--50"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--20"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--80"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--30"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--70"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--40"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--80"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--30"></span></div>
+              <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--100"></span><span class="ds-chart__bar ds-chart__bar--alt ds-chart__bar--30"></span></div>
+            </div>
+            <ul class="ds-chart__axis">
+              <li class="ds-chart__tick">27 Jan</li><li class="ds-chart__tick">3 Feb</li><li class="ds-chart__tick">10 Feb</li><li class="ds-chart__tick">17 Feb</li><li class="ds-chart__tick">24 Feb</li><li class="ds-chart__tick">3 Mar</li><li class="ds-chart__tick">10 Mar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-table__foot">
+          <div class="ds-chart__legend"><span class="ds-chart__key">Opened</span><span class="ds-chart__key ds-chart__key--alt">Clicked a link</span></div>
+          <span>Each line is 400 readers</span>
+        </div>
+      </section>
+
+      <section class="ds-panel">
+        <div class="ds-panel__head">
+          <h2 class="ds-panel__title">Latest campaigns</h2>
+          <a class="ds-link ds-link--more" href="#campaigns">All</a>
+        </div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <div class="ds-list__head"><a class="ds-list__title" href="#report">The March bake list</a><span class="ds-badge ds-badge--success">Sent</span></div>
+            <span class="ds-list__meta">10 March 2015 · 2,474 delivered · 57% opened</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__head"><a class="ds-list__title" href="#report">Sourdough class, two places left</a><span class="ds-badge ds-badge--success">Sent</span></div>
+            <span class="ds-list__meta">3 March 2015 · 2,410 delivered · 49% opened</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__head"><a class="ds-list__title" href="#compose">Easter orders open</a><span class="ds-badge ds-badge--warning">Scheduled</span></div>
+            <span class="ds-list__meta">Goes out 17 March 2015 at 7 am</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__head"><a class="ds-list__title" href="#compose">A note about the new oven</a><span class="ds-badge ds-badge--quiet">Draft</span></div>
+            <span class="ds-list__meta">Edited yesterday by Tomas</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell">
+        <div class="ds-grid__thumb" aria-hidden="true"><span class="ds-grid__sheet"><span class="ds-grid__line ds-grid__line--head"></span><span class="ds-grid__line"></span><span class="ds-grid__line"></span><span class="ds-grid__line ds-grid__line--short"></span></span></div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Weekly letter</h3>
+          <p class="ds-grid__text">One column, used 14 times</p>
+          <a class="ds-link ds-link--more" href="#compose">Use it</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__thumb ds-grid__thumb--2" aria-hidden="true"><span class="ds-grid__sheet"><span class="ds-grid__line ds-grid__line--head"></span><span class="ds-grid__line ds-grid__line--short"></span><span class="ds-grid__line"></span><span class="ds-grid__line"></span></span></div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Announcement</h3>
+          <p class="ds-grid__text">Headline and one button, used 5 times</p>
+          <a class="ds-link ds-link--more" href="#compose">Use it</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__thumb ds-grid__thumb--3" aria-hidden="true"><span class="ds-grid__sheet"><span class="ds-grid__line"></span><span class="ds-grid__line ds-grid__line--head"></span><span class="ds-grid__line"></span><span class="ds-grid__line ds-grid__line--short"></span></span></div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Price list</h3>
+          <p class="ds-grid__text">Two columns, used 3 times</p>
+          <a class="ds-link ds-link--more" href="#compose">Use it</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__thumb ds-grid__thumb--4" aria-hidden="true"><span class="ds-grid__sheet"><span class="ds-grid__line ds-grid__line--short"></span><span class="ds-grid__line"></span><span class="ds-grid__line"></span><span class="ds-grid__line ds-grid__line--head"></span></span></div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Plain note</h3>
+          <p class="ds-grid__text">Text only, used once</p>
+          <a class="ds-link ds-link--more" href="#compose">Use it</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="campaigns">
+  <div class="ds-content">
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#dashboard">Dashboard</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#campaigns">Campaigns</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">All</li>
+        </ol>
+        <h1 class="ds-page-header__title">Campaigns</h1>
+        <p class="ds-page-header__text">Every letter you have written, with how it did.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#guide">Sending guide</a>
+        <a class="ds-button" href="#compose">New campaign</a>
+      </div>
+    </header>
+
+    <div class="ds-cols ds-cols--level">
+      <section class="ds-panel">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#campaigns">All</a></li>
+          <li><a class="ds-tabs__tab" href="#campaigns">Sent</a></li>
+          <li><a class="ds-tabs__tab" href="#campaigns">Scheduled</a></li>
+          <li><a class="ds-tabs__tab" href="#campaigns">Drafts</a></li>
+        </ul>
+        <div class="ds-table__wrap">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">Campaign</th>
+                <th scope="col">Sent</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="ds-table__num">Delivered</th>
+                <th scope="col" class="ds-table__num">Opened</th>
+                <th scope="col" class="ds-table__num">Clicked</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a class="ds-link" href="#report">The March bake list</a></th><td>10 March 2015</td><td><span class="ds-badge ds-badge--success">Sent</span></td><td class="ds-table__num">2,474</td><td class="ds-table__num">57%</td><td class="ds-table__num">18%</td></tr>
+              <tr class="is-hover"><th scope="row"><a class="ds-link" href="#report">Sourdough class, two places left</a></th><td>3 March 2015</td><td><span class="ds-badge ds-badge--success">Sent</span></td><td class="ds-table__num">2,410</td><td class="ds-table__num">49%</td><td class="ds-table__num">22%</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#compose">Easter orders open</a></th><td>17 March 2015</td><td><span class="ds-badge ds-badge--warning">Scheduled</span></td><td class="ds-table__num">0</td><td class="ds-table__num">0%</td><td class="ds-table__num">0%</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#report">Closed on the 24th</a></th><td>24 February 2015</td><td><span class="ds-badge ds-badge--danger">Bounced</span></td><td class="ds-table__num">1,902</td><td class="ds-table__num">41%</td><td class="ds-table__num">6%</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#report">February bake list</a></th><td>10 February 2015</td><td><span class="ds-badge ds-badge--success">Sent</span></td><td class="ds-table__num">2,355</td><td class="ds-table__num">52%</td><td class="ds-table__num">17%</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#compose">A note about the new oven</a></th><td>Not sent</td><td><span class="ds-badge ds-badge--quiet">Draft</span></td><td class="ds-table__num">0</td><td class="ds-table__num">0%</td><td class="ds-table__num">0%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-table__foot">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#campaigns">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#campaigns">1</a></li>
+            <li><a class="ds-pagination__link" href="#campaigns">2</a></li>
+            <li><a class="ds-pagination__link" href="#campaigns">3</a></li>
+            <li><a class="ds-pagination__link" href="#campaigns">4</a></li>
+            <li><a class="ds-pagination__link" href="#campaigns">Next</a></li>
+          </ul>
+          <span>Showing 6 of 23 campaigns</span>
+        </div>
+      </section>
+
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Lists</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><span class="ds-sidebar__count">2,480</span>Everyone</li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__count">1,130</span><a class="ds-link" href="#campaigns">Weekly letter</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__count">412</span><a class="ds-link" href="#campaigns">Class news</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__count">96</span><a class="ds-link" href="#campaigns">Wholesale</a></li>
+          </ul>
+        </aside>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">What the labels mean</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-badgerow" data-component="badge">
+              <span class="ds-badge">New</span>
+              <span class="ds-badge ds-badge--alt">Test</span>
+              <span class="ds-badge ds-badge--quiet">Draft</span>
+              <span class="ds-badge ds-badge--success">Sent</span>
+              <span class="ds-badge ds-badge--warning">Scheduled</span>
+              <span class="ds-badge ds-badge--danger">Bounced</span>
+            </div>
+            <ul class="ds-panel__rows ds-panel__rows--after">
+              <li class="ds-panel__row"><span>Sent</span><span>Delivered to its list</span></li>
+              <li class="ds-panel__row"><span>Scheduled</span><span>Waiting for its hour</span></li>
+              <li class="ds-panel__row"><span>Bounced</span><span>One in ten came back</span></li>
+              <li class="ds-panel__row"><span>Test</span><span>Sent to you only</span></li>
+            </ul>
+            <a class="ds-link ds-link--more" href="#guide">More in the sending guide</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="ds-empty" data-component="empty">
+      <svg class="ds-empty__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 12h36v26H6z M6 14l18 13 18-13"/></svg>
+      <h2 class="ds-empty__title">No automatic letters yet</h2>
+      <p class="ds-empty__text">A welcome letter goes out by itself when someone joins a list. You have not written one.</p>
+      <a class="ds-button" href="#compose">Write a welcome letter</a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="report">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#dashboard">Dashboard</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#campaigns">Campaigns</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">The March bake list</li>
+        </ol>
+        <h1 class="ds-page-header__title">The March bake list <span class="ds-badge ds-badge--success">Sent</span></h1>
+        <p class="ds-page-header__text">Sent on Tuesday 10 March 2015 at 7 am to the list Everyone.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#campaigns">Back to campaigns</a>
+      </div>
+    </header>
+
+    <ul class="ds-stat ds-stat--3">
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h22v14H3z M3 8l11 8 11-8"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">2,474</span><span class="ds-stat__label">Delivered</span><span class="ds-stat__delta ds-stat__delta--down">6 bounced</span></span>
+      </li>
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip ds-stat__chip--2"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l11-7 11 7v12H3z M3 11l11 7 11-7"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">1,412</span><span class="ds-stat__label">Opened</span><span class="ds-stat__delta">57 in every 100</span></span>
+      </li>
+      <li class="ds-stat__item">
+        <span class="ds-stat__chip ds-stat__chip--4"><svg class="ds-stat__icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 4l14 9-6 2 4 7-3 2-4-7-5 4z"/></svg></span>
+        <span class="ds-stat__body"><span class="ds-stat__figure">446</span><span class="ds-stat__label">Clicked</span><span class="ds-stat__delta">18 in every 100</span></span>
+      </li>
+    </ul>
+
+    <div class="ds-cols ds-cols--level">
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Links in this letter</h2></div>
+          <div class="ds-table__wrap">
+            <table class="ds-table">
+              <caption class="ds-table__caption">A reader who clicks twice is counted once.</caption>
+              <thead>
+                <tr><th scope="col">Link</th><th scope="col" class="ds-table__num">Clicks</th><th scope="col" class="ds-table__num">Share</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Order the weekend loaf</th><td class="ds-table__num">201</td><td class="ds-table__num">45%</td></tr>
+                <tr><th scope="row">Sourdough class dates</th><td class="ds-table__num">118</td><td class="ds-table__num">26%</td></tr>
+                <tr><th scope="row">Recipe: seeded rye</th><td class="ds-table__num">94</td><td class="ds-table__num">21%</td></tr>
+                <tr><th scope="row">Opening hours</th><td class="ds-table__num">33</td><td class="ds-table__num">8%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot">
+            <div class="ds-buttonrow" data-component="buttons">
+              <a class="ds-button" href="#compose">Send to those who missed it</a>
+              <a class="ds-button is-hover" href="#compose">Copy as new</a>
+              <a class="ds-button ds-button--secondary" href="#report">Export</a>
+              <button class="ds-button" type="button" disabled>Edit</button>
+              <a class="ds-button ds-button--danger" href="#report">Delete report</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Delete this report?</h2>
+              <a class="ds-dialog__close" href="#report" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>The letter stays in your readers' inboxes. Its figures and the list of clicks are removed for good.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#report">Keep it</a>
+              <a class="ds-button ds-button--danger" href="#campaigns">Delete report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Opens by hour</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-chart">
+              <div class="ds-chart__plot" role="img" aria-label="Bar chart of opens in the first six hours">
+                <span class="ds-chart__line"></span><span class="ds-chart__line ds-chart__line--2"></span><span class="ds-chart__line ds-chart__line--3"></span><span class="ds-chart__line ds-chart__line--4"></span>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--100"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--70"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--40"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--30"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--50"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--20"></span></div>
+              </div>
+              <ul class="ds-chart__axis">
+                <li class="ds-chart__tick">7</li><li class="ds-chart__tick">8</li><li class="ds-chart__tick">9</li><li class="ds-chart__tick">10</li><li class="ds-chart__tick">11</li><li class="ds-chart__tick">12</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">About this send</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span>From</span><span>Harbour Bakery</span></li>
+              <li class="ds-panel__row"><span>List</span><span>Everyone</span></li>
+              <li class="ds-panel__row"><span>Template</span><span>Weekly letter</span></li>
+              <li class="ds-panel__row"><span><span class="ds-tooltip" tabindex="0">Unsubscribed<span class="ds-tooltip__tip" role="tooltip">Readers who left the list from the link at the foot of this letter.</span></span></span><span>2</span></li>
+            </ul>
+            <a class="ds-link ds-link--more" href="#guide">How opens are counted</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="compose">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#dashboard">Dashboard</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#campaigns">Campaigns</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">New campaign</li>
+        </ol>
+        <h1 class="ds-page-header__title">Write a campaign</h1>
+        <p class="ds-page-header__text">Say who it is from, pick a list and write the letter.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#campaigns">Discard</a>
+      </div>
+    </header>
+
+    <div class="ds-cols ds-cols--level">
+      <div class="ds-stack">
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Saved as a draft.</span> Nothing is sent until you choose a time.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">This campaign cannot be scheduled yet.</span> Check the highlighted field.</p>
+        </div>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">The letter</h2><span class="ds-badge ds-badge--quiet">Draft</span></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#compose">
+              <label class="ds-form__field"><span class="ds-form__label">Subject</span><input class="ds-form__input" type="text" value="Easter orders open"></label>
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">From name</span><input class="ds-form__input is-focus" type="text" placeholder="Harbour Bakery"></label>
+                <label class="ds-form__field"><span class="ds-form__label">Reply-to address</span><input class="ds-form__input is-error" type="text" value="hello@harbour"><span class="ds-form__error">Enter a complete email address.</span></label>
+              </div>
+              <label class="ds-form__field"><span class="ds-form__label">Send to</span>
+                <select class="ds-form__select"><option>Everyone, 2,480 readers</option><option>Weekly letter, 1,130 readers</option><option>Class news, 412 readers</option></select>
+              </label>
+              <label class="ds-form__field"><span class="ds-form__label">Message</span><textarea class="ds-form__textarea" rows="5" placeholder="Start with the news, then the details"></textarea><span class="ds-form__hint">Plain text. Links are tracked unless you switch that off.</span></label>
+              <div class="ds-switchlist">
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Send at 7 am in each reader's own time zone</span></label>
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Send me a copy when it goes out</span></label>
+              </div>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>Count opens and clicks. <a class="ds-link" href="#guide">What is counted</a></span></label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Schedule for 7 am</button>
+                <a class="ds-button ds-button--secondary" href="#campaigns">Save and close</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Before you send</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span>Subject line</span><span class="ds-badge ds-badge--success">Ready</span></li>
+              <li class="ds-panel__row"><span>Reply-to address</span><span class="ds-badge ds-badge--danger">Fix</span></li>
+              <li class="ds-panel__row"><span>List chosen</span><span class="ds-badge ds-badge--success">Ready</span></li>
+              <li class="ds-panel__row"><span>Test letter</span><span class="ds-badge ds-badge--warning">Not sent</span></li>
+            </ul>
+            <div class="ds-progress">
+              <div class="ds-progress__head"><span>Ready to schedule</span><span class="ds-progress__value">2 of 4</span></div>
+              <progress class="ds-progress__bar ds-progress__bar--warning" value="2" max="4">2 of 4</progress>
+            </div>
+            <a class="ds-button ds-button--secondary ds-button--small" href="#compose">Send me a test</a>
+          </div>
+        </section>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Best time for this list</h2></div>
+          <div class="ds-panel__body">
+            <span class="ds-panel__figure">Tuesday, 7 am</span>
+            <p>Your readers open most letters before work. Sends after noon do half as well.</p>
+            <div class="ds-chart ds-chart--small">
+              <div class="ds-chart__plot" role="img" aria-label="Bar chart of opens by weekday">
+                <span class="ds-chart__line ds-chart__line--2"></span><span class="ds-chart__line ds-chart__line--4"></span>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--60"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--100"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--70"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--50"></span></div>
+                <div class="ds-chart__group"><span class="ds-chart__bar ds-chart__bar--40"></span></div>
+              </div>
+              <ul class="ds-chart__axis">
+                <li class="ds-chart__tick">Mon</li><li class="ds-chart__tick">Tue</li><li class="ds-chart__tick">Wed</li><li class="ds-chart__tick">Thu</li><li class="ds-chart__tick">Fri</li>
+              </ul>
+            </div>
+            <a class="ds-link ds-link--more" href="#report">See last Tuesday's report</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="guide">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#dashboard">Dashboard</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Sending guide</li>
+        </ol>
+        <h1 class="ds-page-header__title">Sending guide</h1>
+        <p class="ds-page-header__text">How chronoskin delivers a letter and what the figures mean.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#compose">Write a campaign</a>
+      </div>
+    </header>
+
+    <div class="ds-cols ds-cols--level">
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>What happens when you press send</h1>
+            <p class="ds-prose__lead">A letter leaves in batches of two hundred, so a large list takes a few minutes.</p>
+            <p>Each reader gets their own copy. chronoskin notes when it is <strong>delivered, opened and clicked</strong>, and nothing else.</p>
+            <h2>What the figures count</h2>
+            <ul>
+              <li>Delivered: the reader's mail server accepted it</li>
+              <li>Opened: the pictures in the letter were loaded</li>
+              <li>Clicked: at least one link was followed</li>
+            </ul>
+            <h3>Adding a reader's name</h3>
+            <p>Write <code>{first_name}</code> anywhere in the subject or the message and it is replaced for each reader.</p>
+          </article>
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">Why is a letter counted as bounced?</summary>
+              <div class="ds-accordion__body"><p>The reader's mail server refused it: the address no longer exists or the mailbox is full. After three bounces the address is set aside.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Can I stop a letter after pressing send?</summary>
+              <div class="ds-accordion__body"><p>For as long as it is scheduled, yes. Once the first batch has left, the rest follows.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">What does a reader see when they unsubscribe?</summary>
+              <div class="ds-accordion__body"><p>One page with one button. They are off the list at once and you see them in the report.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">How many readers can a list have?</summary>
+              <div class="ds-accordion__body"><p>As many as the plan allows. The bar under your name in the rail shows how much of it is used.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <div class="ds-stack">
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">In this guide</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current">Pressing send</li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Lists and readers</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Bounces</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Unsubscribing</a></li>
+          </ul>
+        </aside>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Read next</h2></div>
+          <div class="ds-panel__body">
+            <p class="ds-linkrow" data-component="links">
+              <a class="ds-link" href="#guide">Writing a subject line</a>
+              <a class="ds-link is-visited" href="#guide">Why letters bounce</a>
+              <a class="ds-link is-hover" href="#guide">Importing a list</a>
+              <a class="ds-link is-active" href="#guide">Sending a test</a>
+              <a class="ds-link ds-link--quiet" href="#campaigns">Back to campaigns</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__name">chronoskin</span>
+  <span>© 2015 chronoskin. Letters are sent from servers in Dublin.</span>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#guide">Sending guide</a></li>
+    <li><a class="ds-footer__link" href="#campaigns">Campaigns</a></li>
+    <li><a class="ds-footer__link" href="#dashboard">Status</a></li>
+    <li><a class="ds-footer__link" href="#dashboard">Privacy</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: a weather log. Web brutalism, 2014 to 2019: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__head">
+      <a class="ds-brand" data-component="brand" href="#log"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17"/><line x1="3.5" y1="20.5" x2="20.5" y2="3.5"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+      <p class="ds-nav__tagline">weather, tides and a home-made rain gauge. updated when it rains.</p>
+    </div>
+    <ul class="ds-nav__bar">
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#log">log</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#archive">archive</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#readings">readings</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#about">about</a></li>
+    </ul>
+  </header>
+
+  <!-- View 1, the home page: the log itself. Newest entry in full, earlier ones as a list. -->
+  <section class="ds-view ds-view--home" id="log">
+    <div class="ds-page__columns">
+      <main class="ds-page__main">
+
+        <section class="ds-hero" data-component="hero">
+          <h1 class="ds-hero__title">This is a log of the weather on one marsh.</h1>
+          <p class="ds-hero__lead">One person, four instruments, no pictures. The newest entry is at the top and every reading ever taken is in a table you can download.</p>
+          <div class="ds-hero__actions">
+            <a class="ds-button" href="#readings">Get the readings</a>
+            <a class="ds-link" href="#archive">or read the archive</a>
+          </div>
+        </section>
+
+        <article class="ds-post" data-component="typography">
+          <p class="ds-post__date">2017-03-14 21:42</p>
+          <div class="ds-prose">
+            <h1>The rain gauge finally agrees with the bucket</h1>
+            <p>After three weeks of drift the tipping gauge now reads within two percent of the plain bucket beside it. The fault was a spider, not the electronics, which is the kind of answer <a class="ds-link" href="#about">the calibration notes</a> never prepare you for.</p>
+            <p>Total for the month so far is <strong>61.4 mm</strong>, most of it in two nights. The marsh path was under water on the ninth.</p>
+            <h2>What changed</h2>
+            <p>Nothing clever. The funnel has a mesh over it and the reed switch was moved a little closer to the magnet.</p>
+            <ul>
+              <li>Mesh over the funnel, 2 mm holes.</li>
+              <li>Switch moved 1 mm closer to the magnet.</li>
+              <li>Bucket emptied and compared every morning for a week.</li>
+            </ul>
+            <h3>Reading the log file</h3>
+            <p>Each tip is one line with a timestamp. Run <code>tips --since 2017-03-01</code> to count them, then multiply by 0.2 to get millimetres.</p>
+          </div>
+          <p class="ds-post__meta">filed under <a class="ds-link ds-link--quiet" href="#archive">instruments</a> | <a class="ds-link ds-link--quiet" href="#entry">12 comments</a> | <a class="ds-link ds-link--quiet" href="#entry">permalink</a></p>
+        </article>
+
+        <section class="ds-page__section" data-component="list">
+          <p class="ds-page__label">Earlier entries</p>
+          <ul class="ds-list">
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#entry">A wind vane made from a baking tray</a> <span class="ds-badge ds-badge--alt">new</span>
+              <p class="ds-list__excerpt">It points the right way about as often as the forecast does, and it cost nothing.</p>
+              <p class="ds-list__meta">2017-03-09 | instruments | 4 comments</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#entry">Spring tide over the sea wall</a>
+              <p class="ds-list__excerpt">Highest water since the log began. The gauge post survived; the notebook did not.</p>
+              <p class="ds-list__meta">2017-03-05 | tides | 21 comments</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title is-visited" href="#entry">February in numbers</a>
+              <p class="ds-list__excerpt">Nineteen dry days, one gale, and a thermometer that froze to its bracket.</p>
+              <p class="ds-list__meta">2017-03-01 | summaries | 3 comments</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last" data-component="grid">
+          <p class="ds-page__label">Sections</p>
+          <div class="ds-grid">
+            <div class="ds-grid__cell">
+              <h3 class="ds-grid__title">Instruments</h3>
+              <p class="ds-grid__text">Gauges, vanes and repairs. 84 entries. <a class="ds-link" href="#archive">Browse</a></p>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <h3 class="ds-grid__title">Tides</h3>
+              <p class="ds-grid__text">High water, low water, floods. 51 entries. <a class="ds-link" href="#archive">Browse</a></p>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <h3 class="ds-grid__title">Summaries</h3>
+              <p class="ds-grid__text">One entry for every month. 37 entries. <a class="ds-link" href="#archive">Browse</a></p>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <h3 class="ds-grid__title">Asides</h3>
+              <p class="ds-grid__text">One line each, no comments. 412 entries. <a class="ds-link" href="#archive">Browse</a></p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="ds-sidebar" data-component="sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Search</h2>
+          <form class="ds-sidebar__search" action="#">
+            <input class="ds-form__input" type="text" value="rain gauge" aria-label="Search the log">
+            <button class="ds-button" type="button">Go</button>
+          </form>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Sections</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">Instruments</a> <span class="ds-sidebar__count">(84)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Tides</a> <span class="ds-sidebar__count">(51)</span></li>
+            <li><a class="ds-sidebar__link is-visited" href="#archive">Summaries</a> <span class="ds-sidebar__count">(37)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Asides</a> <span class="ds-sidebar__count">(412)</span></li>
+            <li><a class="ds-sidebar__link is-hover" href="#about">How this is made</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Recently</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#entry">A wind vane made from a baking tray</a></li>
+            <li><a class="ds-sidebar__link" href="#entry">Spring tide over the sea wall</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">February in numbers</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">Fog, four days of it</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">The barometer is wrong again</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">This month</h2>
+          <div class="ds-progress" data-component="progress">
+            <p class="ds-progress__label"><span>Rain against a usual March</span> <span>75%</span></p>
+            <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--75"></div></div>
+          </div>
+          <ul class="ds-sidebar__list">
+            <li>Rain: 61.4 mm</li>
+            <li>Strongest gust: 71 km/h</li>
+            <li>Highest tide: 5.92 m</li>
+            <li><a class="ds-sidebar__link" href="#readings">All readings</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Elsewhere</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#about">Alder Point tide tables</a></li>
+            <li><a class="ds-sidebar__link" href="#about">Brackwater bird counts</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#about">Cold Frame Diary</a></li>
+            <li><a class="ds-sidebar__link" href="#about">Dunlin Road allotments</a></li>
+            <li><a class="ds-sidebar__link" href="#about">Eleven Knots</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">By year</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">2017</a> <span class="ds-sidebar__count">(57)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2016</a> <span class="ds-sidebar__count">(203)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2015</a> <span class="ds-sidebar__count">(188)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2014</a> <span class="ds-sidebar__count">(136)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">How this is made</h2>
+          <p class="ds-sidebar__text">Typed into a text file and copied to a server. No tracking, no fonts to download, nothing that moves. <a class="ds-sidebar__link" href="#about">More</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- View 2, an inner page: the archive of one year. Breadcrumb, page header, figures, tabs over a table. -->
+  <section class="ds-view" id="archive">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#log">log</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li><a class="ds-breadcrumb__link" href="#archive">archive</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li class="ds-breadcrumb__current">2017</li>
+    </ol>
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+
+        <div class="ds-page-header" data-component="page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Archive for 2017</h1>
+            <p class="ds-page-header__text">Every entry written this year, newest month first.</p>
+          </div>
+          <div class="ds-page-header__action"><button class="ds-button" type="button">Download as text</button></div>
+        </div>
+
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__value">57</span> <span class="ds-stat__label">entries</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">483</span> <span class="ds-stat__label">comments</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">212.6</span> <span class="ds-stat__label">mm of rain</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">31,400</span> <span class="ds-stat__label">words</span></li>
+        </ul>
+
+        <section class="ds-page__section" data-component="tabs">
+          <ul class="ds-tabs">
+            <li class="ds-tabs__item"><span class="ds-tabs__tab is-current" aria-current="true">by date</span></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#archive">by section</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#archive">most discussed</a></li>
+          </ul>
+          <div class="ds-tabs__body">
+            <table class="ds-table" data-component="table">
+              <thead>
+                <tr><th>Month</th><th>Longest entry</th><th>Discussion</th><th class="ds-table__num">Comments</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>March 2017</td><td><a class="ds-link" href="#entry">The rain gauge finally agrees with the bucket</a></td><td><span class="ds-badge ds-badge--success">open</span></td><td class="ds-table__num">43</td></tr>
+                <tr class="ds-table__row--alt"><td>February 2017</td><td><a class="ds-link is-visited" href="#entry">The barometer is wrong again</a></td><td><span class="ds-badge ds-badge--success">open</span></td><td class="ds-table__num">118</td></tr>
+                <tr><td>January 2017</td><td><a class="ds-link is-visited" href="#entry">Fog, four days of it</a></td><td><span class="ds-badge ds-badge--warning">closing</span></td><td class="ds-table__num">96</td></tr>
+                <tr class="ds-table__row--alt"><td>December 2016</td><td><a class="ds-link" href="#entry">A year of high water</a></td><td><span class="ds-badge ds-badge--danger">closed</span></td><td class="ds-table__num">72</td></tr>
+                <tr><td>November 2016</td><td><a class="ds-link" href="#entry">The gauge post goes in</a></td><td><span class="ds-badge ds-badge--danger">closed</span></td><td class="ds-table__num">154</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="pagination">
+          <ul class="ds-pagination">
+            <li><a class="ds-pagination__link" href="#archive">&lt; previous</a></li>
+            <li><a class="ds-pagination__link" href="#archive">1</a></li>
+            <li><span class="ds-pagination__link is-current" aria-current="page">2</span></li>
+            <li><a class="ds-pagination__link" href="#archive">3</a></li>
+            <li><a class="ds-pagination__link" href="#archive">4</a></li>
+            <li><a class="ds-pagination__link" href="#archive">next &gt;</a></li>
+          </ul>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last">
+          <p class="ds-page__label">Filed under snow</p>
+          <div class="ds-empty" data-component="empty">
+            <p class="ds-empty__text">Nothing is filed under &ldquo;snow&rdquo; yet. It has not snowed.</p>
+            <a class="ds-button ds-button--secondary" href="#log">Back to the log</a>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">By year</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">2017</a> <span class="ds-sidebar__count">(57)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2016</a> <span class="ds-sidebar__count">(203)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2015</a> <span class="ds-sidebar__count">(188)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">2014</a> <span class="ds-sidebar__count">(136)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">By section</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">Instruments</a> <span class="ds-sidebar__count">(84)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Tides</a> <span class="ds-sidebar__count">(51)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Summaries</a> <span class="ds-sidebar__count">(37)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Asides</a> <span class="ds-sidebar__count">(412)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Snow</a> <span class="ds-sidebar__count">(0)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Most discussed</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#entry">The gauge post goes in</a> <span class="ds-sidebar__count">(154)</span></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">The barometer is wrong again</a> <span class="ds-sidebar__count">(118)</span></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">Fog, four days of it</a> <span class="ds-sidebar__count">(96)</span></li>
+            <li><a class="ds-sidebar__link" href="#entry">A year of high water</a> <span class="ds-sidebar__count">(72)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">About this page</h2>
+          <p class="ds-sidebar__text">Comments close thirty days after an entry is posted. Closed entries stay readable.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- View 3: one entry with its comments, the confirmation it can open, and the comment form. -->
+  <section class="ds-view" id="entry">
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#log">log</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li><a class="ds-breadcrumb__link" href="#archive">instruments</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li class="ds-breadcrumb__current">A wind vane made from a baking tray</li>
+    </ol>
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">A wind vane made from a baking tray</h1>
+            <p class="ds-page-header__text">2017-03-09 18:10, filed under instruments. Comments are <span class="ds-badge ds-badge--success">open</span> until 2017-04-08.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button" href="#archive">All entries</a></div>
+        </div>
+
+        <article class="ds-post">
+          <div class="ds-prose">
+            <p>The shop vane lasted one winter. This one is a baking tray cut along the diagonal, a bicycle spoke and the bearing out of a dead hard disk, and it has now pointed the right way for eleven days running.</p>
+            <p>It turns in less wind than the old one did. That is the bearing, not the tray: the tray is only there because it was flat and already ruined.</p>
+            <blockquote>If it looks home-made, that is because it is. The wind does not mind.</blockquote>
+            <p>Readings from it go into <a class="ds-link" href="#readings">the same table as everything else</a>, eight compass points and no more, because that is as well as anyone can read a tray from a kitchen window.</p>
+          </div>
+        </article>
+
+        <section class="ds-page__section" data-component="notice">
+          <p class="ds-page__label">4 comments</p>
+          <div class="ds-notices">
+            <p class="ds-notice"><span class="ds-notice__title">Received.</span> Your comment is held until someone has read it. That can take a day.</p>
+          </div>
+          <ul class="ds-list">
+            <li class="ds-list__item">
+              <span class="ds-avatar" data-component="avatar">jp</span><a class="ds-list__title" href="#entry">Jonas Pell</a>
+              <p class="ds-list__excerpt">What stops it spinning right round in a gust? Mine did, and then it unscrewed itself.</p>
+              <p class="ds-list__meta">2017-03-09 22:05 | <a class="ds-link ds-link--quiet" href="#entry">reply</a> | <a class="ds-link ds-link--quiet" href="#entry">delete</a></p>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar">iv</span><a class="ds-list__title is-visited" href="#about">Ines Varga</a>
+              <p class="ds-list__excerpt">Nothing stops it. The spoke is bent over at the top, so it can spin as long as it likes.</p>
+              <p class="ds-list__meta">2017-03-10 07:31 | <a class="ds-link ds-link--quiet" href="#entry">reply</a></p>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar">ma</span><a class="ds-list__title" href="#entry">Marit Aas</a>
+              <p class="ds-list__excerpt">A tray is steel. Give it a year by the sea and you will be writing this entry again.</p>
+              <p class="ds-list__meta">2017-03-11 12:48 | <a class="ds-link ds-link--quiet" href="#entry">reply</a></p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="ds-page__section" data-component="dialog">
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" role="dialog" aria-labelledby="dlg-title">
+              <h3 class="ds-dialog__title" id="dlg-title">Delete your comment?</h3>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">The comment you posted at 22:05 will be removed from this entry. This cannot be undone.</p>
+                <div class="ds-dialog__actions">
+                  <button class="ds-button ds-button--danger" type="button">Delete</button>
+                  <a class="ds-button ds-button--secondary" href="#entry">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="ds-page__rule"></div>
+
+        <section class="ds-page__section ds-page__section--last" data-component="form">
+          <form class="ds-form" action="#">
+            <h3 class="ds-form__title">Leave a comment</h3>
+            <p class="ds-notice ds-notice--error ds-form__notice"><span class="ds-notice__title">Not posted.</span> One field below needs another look. Nothing has been sent.</p>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-name">Name</label>
+              <div class="ds-form__field"><input class="ds-form__input" id="f-name" type="text" value="Jonas Pell"></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-mail">E-mail</label>
+              <div class="ds-form__field">
+                <input class="ds-form__input is-invalid" id="f-mail" type="text" value="jonas at example">
+                <p class="ds-form__error">That is not an e-mail address.</p>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-about">About</label>
+              <div class="ds-form__field">
+                <select class="ds-form__input ds-form__input--auto" id="f-about">
+                  <option>This entry</option>
+                  <option>An earlier comment</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-text">Comment</label>
+              <div class="ds-form__field">
+                <textarea class="ds-form__input ds-form__input--wide" id="f-text" rows="5">I have put a split pin through mine. It has stayed on so far.</textarea>
+                <p class="ds-form__hint">Plain text. Line breaks are kept; addresses become links.</p>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label"></span>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Remember my name</label>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Post comment</button>
+              <button class="ds-button ds-button--secondary" type="button">Preview</button>
+              <button class="ds-button ds-button--danger" type="button">Discard</button>
+              <button class="ds-button is-disabled" type="button" disabled>Attach a file</button>
+            </div>
+          </form>
+        </section>
+
+      </div>
+
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">This entry</h2>
+          <ul class="ds-sidebar__list">
+            <li>412 words</li>
+            <li>4 comments, 1 held</li>
+            <li><a class="ds-sidebar__link" href="#entry">Permalink</a></li>
+            <li><a class="ds-sidebar__link" href="#entry">As plain text</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Before and after</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#log">The rain gauge finally agrees with the bucket</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">Spring tide over the sea wall</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Also in instruments</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#entry">The gauge post goes in</a></li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">The barometer is wrong again</a></li>
+            <li><a class="ds-sidebar__link" href="#entry">A thermometer screen from a bird box</a></li>
+            <li><a class="ds-sidebar__link" href="#archive">All 84 entries</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Latest comments</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#entry">Marit Aas</a> on the wind vane: a tray is steel.</li>
+            <li><a class="ds-sidebar__link" href="#entry">Halvard Moe</a> on the spring tide: the wall was built for 5.5 m.</li>
+            <li><a class="ds-sidebar__link" href="#entry">Jonas Pell</a> on the wind vane: what stops it spinning?</li>
+            <li><a class="ds-sidebar__link is-visited" href="#entry">Tove Lindqvist</a> on February in numbers: nineteen dry days is a record.</li>
+            <li><a class="ds-sidebar__link" href="#entry">Dov Peretz</a> on the rain gauge: check the funnel for spiders.</li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Sections</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">Instruments</a> <span class="ds-sidebar__count">(84)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Tides</a> <span class="ds-sidebar__count">(51)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Summaries</a> <span class="ds-sidebar__count">(37)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Asides</a> <span class="ds-sidebar__count">(412)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Comment rules</h2>
+          <p class="ds-sidebar__text">Held until read. Closed after thirty days. You can delete your own for an hour after posting.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- View 4: the readings. A month of daily figures in one table. -->
+  <section class="ds-view" id="readings">
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#log">log</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li><a class="ds-breadcrumb__link" href="#readings">readings</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li class="ds-breadcrumb__current">March 2017</li>
+    </ol>
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Readings, March 2017</h1>
+            <p class="ds-page-header__text">One line a day, taken at 09:00. Nothing is smoothed or corrected.</p>
+          </div>
+          <div class="ds-page-header__action"><button class="ds-button" type="button">Download as text</button></div>
+        </div>
+
+        <ul class="ds-stats">
+          <li class="ds-stat"><span class="ds-stat__value">61.4</span> <span class="ds-stat__label">mm of rain</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">71</span> <span class="ds-stat__label">km/h, strongest gust</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">5.92</span> <span class="ds-stat__label">m, highest tide</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">-2.1</span> <span class="ds-stat__label">&deg;C, coldest night</span></li>
+        </ul>
+
+        <section class="ds-page__section">
+          <ul class="ds-tabs">
+            <li class="ds-tabs__item"><span class="ds-tabs__tab is-current" aria-current="true">all four</span></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#readings">rain</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#readings">wind</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#readings">tide</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#readings">temperature</a></li>
+          </ul>
+          <div class="ds-tabs__body">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Day</th><th>Wind</th><th>State</th><th class="ds-table__num">Rain, mm</th><th class="ds-table__num">High tide, m</th><th class="ds-table__num">Night low, &deg;C</th></tr>
+              </thead>
+              <tbody>
+                <tr class="ds-table__group"><td colspan="6">Week 11</td></tr>
+                <tr><td>Tue 14</td><td>SW, fresh</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">4.2</td><td class="ds-table__num">5.31</td><td class="ds-table__num">6.4</td></tr>
+                <tr class="ds-table__row--alt"><td>Mon 13</td><td>W, strong</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">18.6</td><td class="ds-table__num">5.48</td><td class="ds-table__num">7.0</td></tr>
+                <tr class="ds-table__group"><td colspan="6">Week 10</td></tr>
+                <tr><td>Sun 12</td><td>W, gale</td><td><span class="ds-badge ds-badge--warning">estimated</span></td><td class="ds-table__num">21.0</td><td class="ds-table__num">5.92</td><td class="ds-table__num">5.2</td></tr>
+                <tr class="ds-table__row--alt"><td>Sat 11</td><td>NW, light</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">0.0</td><td class="ds-table__num">5.60</td><td class="ds-table__num">1.8</td></tr>
+                <tr><td>Fri 10</td><td>N, light</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">0.0</td><td class="ds-table__num">5.44</td><td class="ds-table__num">-2.1</td></tr>
+                <tr class="ds-table__row--alt"><td>Thu 9</td><td>not read</td><td><span class="ds-badge ds-badge--danger">missing</span></td><td class="ds-table__num">7.8</td><td class="ds-table__num">5.71</td><td class="ds-table__num">0.3</td></tr>
+                <tr><td>Wed 8</td><td>S, moderate</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">2.4</td><td class="ds-table__num">5.39</td><td class="ds-table__num">4.9</td></tr>
+                <tr class="ds-table__row--alt"><td>Tue 7</td><td>SE, light</td><td><span class="ds-badge ds-badge--success">read</span></td><td class="ds-table__num">0.2</td><td class="ds-table__num">5.12</td><td class="ds-table__num">3.3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last">
+          <ul class="ds-pagination">
+            <li><a class="ds-pagination__link" href="#readings">&lt; February</a></li>
+            <li><span class="ds-pagination__link is-current" aria-current="page">March</span></li>
+            <li><span class="ds-pagination__link is-disabled">April &gt;</span></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Months</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#readings">March 2017</a> <span class="ds-sidebar__count">(14 days)</span></li>
+            <li><a class="ds-sidebar__link is-visited" href="#readings">February 2017</a> <span class="ds-sidebar__count">(28)</span></li>
+            <li><a class="ds-sidebar__link" href="#readings">January 2017</a> <span class="ds-sidebar__count">(31)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Earlier years</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">The instruments</h2>
+          <ul class="ds-sidebar__list">
+            <li>Tipping rain gauge <span class="ds-badge ds-badge--success">working</span></li>
+            <li>Baking tray vane <span class="ds-badge ds-badge--success">working</span></li>
+            <li>Tide post <span class="ds-badge ds-badge--warning">leaning</span></li>
+            <li>Barometer <span class="ds-badge ds-badge--danger">wrong</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Take the numbers</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#readings">This month as text</a></li>
+            <li><a class="ds-sidebar__link" href="#readings">Every reading since 2014</a></li>
+            <li><a class="ds-sidebar__link" href="#about">What you may do with them</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Reading the table</h2>
+          <p class="ds-sidebar__text">An estimated day was worked out from the bucket. A missing one was a day away; the rain is the two-day total.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- View 5: about. Running text, one boxed note, the list of other logs. -->
+  <section class="ds-view" id="about">
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#log">log</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+      <li class="ds-breadcrumb__current">about</li>
+    </ol>
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">About this log</h1>
+            <p class="ds-page-header__text">Who keeps it, how it is made and what you may do with it.</p>
+          </div>
+          <div class="ds-page-header__action"><button class="ds-button" type="button">Write to me</button></div>
+        </div>
+
+        <section class="ds-page__section" data-component="panel">
+          <div class="ds-panel">
+            <h3 class="ds-panel__title">Who writes this</h3>
+            <div class="ds-panel__body ds-prose">
+              <p data-component="badge">Ines Varga keeps the instruments on a marsh she can see from her kitchen and answers mail slowly. <span class="ds-badge">12</span> entries this month, filed under <span class="ds-badge ds-badge--tag">instruments</span> <span class="ds-badge ds-badge--tag">tides</span>. Comments on an entry are <span class="ds-badge ds-badge--success">open</span> for thirty days, <span class="ds-badge ds-badge--warning">closing</span> in the last week and <span class="ds-badge ds-badge--danger">closed</span> after that.</p>
+            </div>
+          </div>
+        </section>
+
+        <article class="ds-page__section ds-prose">
+          <h2>How it is made</h2>
+          <p>Every entry is a text file. A script of forty lines turns the files into pages and copies them to a server that costs less than the batteries in the rain gauge. There is no database, so there is nothing to back up except the files, and they are in <a class="ds-link" href="#archive">the archive</a> for anyone to take.</p>
+          <ol>
+            <li>Write the entry in a text editor.</li>
+            <li>Run <code>make log</code>.</li>
+            <li>Read it once on the real page, then leave it alone.</li>
+          </ol>
+          <h2>What you may do with it</h2>
+          <p>Copy what you like. The <a class="ds-link" href="#readings">readings</a> are facts and belong to nobody; the entries are mine, and you may quote them at any length if you say where they came from.</p>
+        </article>
+        <section class="ds-page__section">
+          <p class="ds-page__label">What it does not do</p>
+          <div class="ds-accordion" data-component="accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__title">Does it count me?</summary>
+              <p class="ds-accordion__body">No. It does not count you, follow you or remember you.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">What is kept when I comment?</summary>
+              <p class="ds-accordion__body">Your name beside the comment, and only if you tick the box. The address is read once and thrown away.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">May I have the readings as a file?</summary>
+              <p class="ds-accordion__body">Yes. Every month is a plain text file, and so is every year since 2014.</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last" data-component="links">
+          <p class="ds-page__label">Elsewhere</p>
+          <ul class="ds-links">
+            <li><a class="ds-link" href="#about">Alder Point tide tables</a></li>
+            <li><a class="ds-link is-visited" href="#about">Brackwater bird counts</a></li>
+            <li><a class="ds-link is-hover" href="#about">Cold Frame Diary</a></li>
+            <li><a class="ds-link is-active" href="#about">Dunlin Road allotments</a></li>
+            <li><a class="ds-link ds-link--quiet" href="#about">Eleven Knots</a></li>
+            <li><a class="ds-link ds-link--strong" href="#about">Send me another</a></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">In numbers</h2>
+          <ul class="ds-sidebar__list">
+            <li>584 entries since 2014</li>
+            <li>1,170 days of readings</li>
+            <li>4 instruments, 1 of them bought</li>
+            <li>0 pictures</li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Ways in</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#log">The newest entry</a></li>
+            <li><a class="ds-sidebar__link" href="#archive">The archive by year</a></li>
+            <li><a class="ds-sidebar__link" href="#readings">This month's readings</a></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Sections</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#archive">Instruments</a> <span class="ds-sidebar__count">(84)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Tides</a> <span class="ds-sidebar__count">(51)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Summaries</a> <span class="ds-sidebar__count">(37)</span></li>
+            <li><a class="ds-sidebar__link" href="#archive">Asides</a> <span class="ds-sidebar__count">(412)</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Mail</h2>
+          <p class="ds-sidebar__text">Corrections are welcome and are added to the entry with your name. Answers take about a week.</p>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">Colophon</h2>
+          <p class="ds-sidebar__text">Set in whatever serif your browser has. One page of markup and one stylesheet, 9 kB together.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <div class="ds-footer__row">
+      <span>chronoskin is written by Ines Varga, 2014 to 2017. Copy what you like.</span>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#log">log</a></li>
+        <li><a class="ds-footer__link" href="#archive">archive</a></li>
+        <li><a class="ds-footer__link" href="#readings">readings</a></li>
+        <li><a class="ds-footer__link" href="#about">about</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* The install bar: four commands behind tabs, one visible at a time, and
+   a download. */
+.install {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 8px 8px 8px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.install h2 {
+  margin: 0;
+  flex: none;
+}
+
+.install .segmented {
+  flex: none;
+  width: 280px;
+  height: 36px;
+}
+
+.install .get {
+  flex: none;
+}
+
+.install .get svg {
+  width: 15px;
+  height: 15px;
+}
+
+.install .pane {
+  display: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.install:has(#t-plugin:checked) .pane.plugin,
+.install:has(#t-curl:checked) .pane.curl,
+.install:has(#t-id:checked) .pane.id,
+.install:has(#t-link:checked) .pane.link {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .install {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  .install h2 {
+    display: none;
+  }
+  .install .segmented {
+    flex: 1 1 100%;
+    width: auto;
+  }
+  .install .pane {
+    flex: 1 1 100%;
+  }
+  .install .get {
+    flex: 1 1 100%;
+  }
+}

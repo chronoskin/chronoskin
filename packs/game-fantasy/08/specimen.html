@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: the tavern card game, specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+  <header class="ds-nav" data-component="nav">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><polygon points="7,3 17,3 21.5,9 12,21.5 2.5,9"/><polyline points="2.5,9 21.5,9"/><polyline points="8.5,9 12,21 15.5,9"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Tavern</a></li>
+      <li class="ds-menu">
+        <a class="ds-nav__link" href="#cards">Cards <span class="ds-menu__caret">&#9662;</span></a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#cards">Card library</a></li>
+          <li><a class="ds-menu__item" href="#card">Card of the day</a></li>
+          <li><a class="ds-menu__item" href="#cards">The Ember Fair</a></li>
+        </ul>
+      </li>
+      <li><a class="ds-nav__link" href="#decks">Decks</a></li>
+      <li><a class="ds-nav__link" href="#build">Build</a></li>
+    </ul>
+    <div class="ds-nav__end">
+      <span class="ds-nav__purse"><span class="ds-coin"></span>1,240 dust</span>
+      <a class="ds-button ds-button--small" href="#build">Play free</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="ds-view ds-view--home" id="home">
+      <div class="ds-wrap">
+        <div class="ds-hero" data-component="hero">
+          <div class="ds-felt">
+            <div class="ds-hero__copy">
+              <span class="ds-tag">New set, 135 cards</span>
+              <h1 class="ds-hero__title">The Ember Fair</h1>
+              <p class="ds-hero__lead">The fair has come to town and set up in the cellar. Pull up a chair, shuffle thirty cards and see whose fire catches first.</p>
+              <div class="ds-hero__actions">
+                <a class="ds-button ds-button--large" href="#build">Play free</a>
+                <a class="ds-button ds-button--large ds-button--secondary" href="#cards">See the cards</a>
+              </div>
+              <p class="ds-hero__note">PC, tablet and phone. A game takes about eight minutes.</p>
+            </div>
+            <div class="ds-fan">
+              <span class="ds-card ds-card--back"></span>
+              <span class="ds-card ds-card--2"><span class="ds-card__cost">5</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M8 22V9H6V3h2v2h2V3h4v2h2V3h2v6h-2v13z"/></svg></span><span class="ds-card__name">Watchfire Tower</span><span class="ds-card__text">Your minions have +1 guard.</span><span class="ds-card__stats"><span></span><span>Place</span><span class="ds-card__stat ds-card__stat--life">6</span></span></span>
+              <span class="ds-card"><span class="ds-card__cost">3</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 6c-1 0-1 12 0 12s1-12 0-12zM11 9C8 4 2 5 3 10c1 3 5 3 8 2zM13 9c3-5 9-4 8 1-1 3-5 3-8 2zM11 13c-3 0-6 2-5 5 2 2 5 0 5-3zM13 13c3 0 6 2 5 5-2 2-5 0-5-3z"/></svg></span><span class="ds-card__name">Lantern Moth</span><span class="ds-card__text">Kindle: draw a card.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">4</span></span></span>
+              <span class="ds-card ds-card--3"><span class="ds-card__cost">2</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 2c1 5 6 6 6 12a6 6 0 0 1-12 0c0-3 2-4 3-6 0 3 1 4 2 4 1-3-1-6 1-10z"/></svg></span><span class="ds-card__name">Stoke the Hearth</span><span class="ds-card__text">Deal 3. Kindle: deal 5.</span><span class="ds-card__stats"><span></span><span>Spell</span><span></span></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="ds-shelf">
+          <div class="ds-stats" data-component="stats">
+            <div class="ds-stat"><span class="ds-stat__value">340</span><span class="ds-stat__label">Cards in play</span></div>
+            <div class="ds-stat"><span class="ds-stat__value">6</span><span class="ds-stat__label">Classes</span></div>
+            <div class="ds-stat"><span class="ds-stat__value">30</span><span class="ds-stat__label">Cards to a deck</span></div>
+            <div class="ds-stat"><span class="ds-stat__value">8 min</span><span class="ds-stat__label">A usual game</span></div>
+          </div>
+        </div>
+        <div class="ds-board">
+          <div class="ds-board__head"><h2 class="ds-board__title">Fresh from the fair</h2><span class="ds-board__sub">Five of the 135 new cards</span><a class="ds-board__more" href="#cards">Open the library</a></div>
+          <div class="ds-carousel" data-component="carousel">
+            <div class="ds-carousel__stage">
+              <div class="ds-carousel__slide">
+                <a class="ds-card ds-card--4" href="#card"><span class="ds-card__cost">1</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M5 4h11v4h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2v4H5zM16 10v4h1.5a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1z"/></svg></span><span class="ds-card__name">Last Round</span><span class="ds-card__text">Give a minion +1 and +1.</span><span class="ds-card__stats"><span></span><span>Spell</span><span></span></span></a>
+                <a class="ds-card ds-card--4" href="#card"><span class="ds-card__cost">2</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M2 6c4 0 7 2 10 6 3-4 6-6 10-6-1 5-4 8-8 9l-2 5-2-5c-4-1-7-4-8-9z"/></svg></span><span class="ds-card__name">Chimney Swift</span><span class="ds-card__text">Flies over guards.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">1</span></span></a>
+                <a class="ds-card" href="#card"><span class="ds-card__cost">3</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 6c-1 0-1 12 0 12s1-12 0-12zM11 9C8 4 2 5 3 10c1 3 5 3 8 2zM13 9c3-5 9-4 8 1-1 3-5 3-8 2zM11 13c-3 0-6 2-5 5 2 2 5 0 5-3zM13 13c3 0 6 2 5 5-2 2-5 0-5-3z"/></svg></span><span class="ds-card__name">Lantern Moth</span><span class="ds-card__text">Kindle: draw a card.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">4</span></span></a>
+                <a class="ds-card ds-card--3" href="#card"><span class="ds-card__cost">4</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M11 2h2v13h4v2h-4v5h-2v-5H7v-2h4z"/></svg></span><span class="ds-card__name">Fairground Duellist</span><span class="ds-card__text">Strikes first.</span><span class="ds-card__stats"><span class="ds-card__stat">4</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">3</span></span></a>
+                <a class="ds-card ds-card--2" href="#card"><span class="ds-card__cost">7</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M3 19L2 8l5 4 5-9 5 9 5-4-1 11z"/></svg></span><span class="ds-card__name">Queen of Embers</span><span class="ds-card__text">Kindle every card in hand.</span><span class="ds-card__stats"><span class="ds-card__stat">6</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">6</span></span></a>
+              </div>
+              <a class="ds-carousel__arrow" href="#home" aria-label="Previous">&#9664;</a>
+              <a class="ds-carousel__arrow ds-carousel__arrow--next" href="#home" aria-label="Next">&#9654;</a>
+            </div>
+            <div class="ds-carousel__foot">
+              <span>New keyword: <span class="ds-tooltip" tabindex="0"><span class="ds-keyword">Kindle</span><span class="ds-tooltip__tip"><span class="ds-tooltip__name">Kindle</span><span class="ds-tooltip__line ds-tooltip__line--muted"><span>Keyword, The Ember Fair</span></span><span class="ds-tooltip__line"><span>Happens if you played a spell this turn.</span></span><span class="ds-tooltip__line ds-tooltip__line--lore"><span>A fire needs something to catch.</span></span></span></span>. Hand 1 of 27.</span>
+              <span class="ds-carousel__dots"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="ds-columns">
+          <div class="ds-board">
+            <div class="ds-board__head"><h2 class="ds-board__title">Heard in the tavern</h2><a class="ds-board__more" href="#decks">All news</a></div>
+            <ul class="ds-list" data-component="list">
+              <li class="ds-list__item"><span class="ds-list__date"><span class="ds-list__month">Oct</span>08</span><span class="ds-list__body"><a class="ds-list__title" href="#cards">The Ember Fair is open</a><p class="ds-list__text">All 135 cards are in the library, and the first three packs are on the house.</p><span class="ds-list__meta">By the innkeeper, 214 replies</span></span><span class="ds-badge">New set</span></li>
+              <li class="ds-list__item"><span class="ds-list__date"><span class="ds-list__month">Oct</span>06</span><span class="ds-list__body"><a class="ds-list__title" href="#decks">Balance notes: five cards cost more</a><p class="ds-list__text">Queen of Embers goes from six to seven, and you get full dust back for each.</p><span class="ds-list__meta">By the card makers, 1,032 replies</span></span><span class="ds-badge ds-badge--warning">Balance</span></li>
+              <li class="ds-list__item"><span class="ds-list__date"><span class="ds-list__month">Oct</span>01</span><span class="ds-list__body"><a class="ds-list__title" href="#decks">Autumn ladder: last week</a><p class="ds-list__text">Reach the copper rank by Sunday for the season's card back.</p><span class="ds-list__meta">By the ladder keepers, 87 replies</span></span><span class="ds-badge ds-badge--quiet">Ladder</span></li>
+              <li class="ds-list__item"><span class="ds-list__date"><span class="ds-list__month">Sep</span>27</span><span class="ds-list__body"><a class="ds-list__title" href="#card">How we drew the Lantern Moth</a><p class="ds-list__text">From a pencil sketch on a beer mat to the finished card.</p><span class="ds-list__meta">By the painters, 59 replies</span></span></li>
+            </ul>
+          </div>
+          <div class="ds-stack">
+            <div class="ds-panel" data-component="panel">
+              <h2 class="ds-panel__title">Deck of the week <span class="ds-badge ds-badge--success">58% wins</span></h2>
+              <div class="ds-panel__body ds-stack ds-stack--tight">
+                <span class="ds-who"><span class="ds-avatar ds-avatar--3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 1-3-1-5 1-9z"/></svg></span><span><span class="ds-who__name">Moth Tempo</span><span class="ds-who__meta">Stoker class, 30 cards, 4,200 dust</span></span></span>
+                <ul class="ds-curve"><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">0</span></li><li class="ds-curve__col"><span>4</span><span class="ds-curve__bar ds-curve__bar--40"></span><span class="ds-curve__cost">1</span></li><li class="ds-curve__col"><span>7</span><span class="ds-curve__bar ds-curve__bar--75"></span><span class="ds-curve__cost">2</span></li><li class="ds-curve__col"><span>8</span><span class="ds-curve__bar ds-curve__bar--100"></span><span class="ds-curve__cost">3</span></li><li class="ds-curve__col"><span>5</span><span class="ds-curve__bar ds-curve__bar--60"></span><span class="ds-curve__cost">4</span></li><li class="ds-curve__col"><span>3</span><span class="ds-curve__bar ds-curve__bar--25"></span><span class="ds-curve__cost">5</span></li><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">6</span></li><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">7+</span></li></ul>
+                <div><div class="ds-progress__label"><strong>Wins on the ladder</strong><span>58%</span></div><span class="ds-progress ds-progress--60 ds-progress--health"><span class="ds-progress__bar"></span></span></div>
+              </div>
+              <div class="ds-panel__foot"><span>Played 18,400 times</span><a class="ds-button ds-button--small ds-button--secondary" href="#decks">See the list</a></div>
+            </div>
+            <div class="ds-sidebar">
+              <h2 class="ds-sidebar__title">Your collection</h2>
+              <div><div class="ds-progress__label"><strong>Cards owned</strong><span>212 of 340</span></div><span class="ds-progress ds-progress--60"><span class="ds-progress__bar"></span></span></div>
+              <div><div class="ds-progress__label"><strong>The Ember Fair</strong><span>31 of 135</span></div><span class="ds-progress ds-progress--25 ds-progress--rep"><span class="ds-progress__bar"></span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-board">
+          <div class="ds-board__head"><h2 class="ds-board__title">Sets in play</h2><span class="ds-board__sub">Four sets make the standard format</span></div>
+          <div class="ds-grid" data-component="grid">
+            <div class="ds-grid__cell"><span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4L3 19h18zM12 4v15M9 19l3-6 3 6"/></svg></span><h3 class="ds-grid__title">The Ember Fair</h3><p class="ds-grid__text">Spells that feed each other, and the Kindle keyword.</p><span class="ds-badge ds-badge--new">New</span></div>
+            <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></span><h3 class="ds-grid__title">Crowns and Cellars</h3><p class="ds-grid__text">Big minions, slow games and a throne worth holding.</p><span class="ds-badge ds-badge--quiet">135 cards</span></div>
+            <div class="ds-grid__cell ds-grid__cell--3"><span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h9v13H5zM14 8l5 1-2 12-8-1"/></svg></span><h3 class="ds-grid__title">The First Deal</h3><p class="ds-grid__text">The core set every player owns from the start.</p><span class="ds-badge ds-badge--warning">Leaves 1 November</span></div>
+            <div class="ds-grid__cell ds-grid__cell--4"><span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9c3-3 6 3 9 0s6 3 9 0M3 15c3-3 6 3 9 0s6 3 9 0"/></svg></span><h3 class="ds-grid__title">Low Tide</h3><p class="ds-grid__text">Cards that come back from the discard pile.</p><span class="ds-badge ds-badge--quiet">70 cards</span></div>
+          </div>
+        </div>
+        <div class="ds-band">
+          <div>
+            <h2 class="ds-band__title">There is a chair free at the table</h2>
+            <p class="ds-band__text">Make an account and the innkeeper deals you a full starter deck and three packs of the fair.</p>
+          </div>
+          <a class="ds-button ds-button--large" href="#build">Deal me in</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="cards">
+      <div class="ds-wrap">
+        <div class="ds-board">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li><a class="ds-breadcrumb__link" href="#cards">Cards</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Card library</li>
+          </ol>
+          <div class="ds-page-header" data-component="page-header">
+            <div>
+              <h1 class="ds-page-header__title">Card library</h1>
+              <p class="ds-page-header__text">Every card of the four sets in play, cheapest first.</p>
+            </div>
+            <div class="ds-page-header__actions"><a class="ds-button" href="#build">Build a deck</a></div>
+          </div>
+          <div class="ds-library">
+            <aside class="ds-stack">
+              <div class="ds-sidebar" data-component="sidebar">
+                <h2 class="ds-sidebar__title">Classes</h2>
+                <ul class="ds-sidebar__list">
+                  <li class="ds-sidebar__item"><span class="ds-avatar ds-avatar--small ds-avatar--3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 1-3-1-5 1-9z"/></svg></span><a class="ds-sidebar__link" href="#cards">Stoker</a><span class="ds-sidebar__meta">48</span></li>
+                  <li class="ds-sidebar__item"><span class="ds-avatar ds-avatar--small ds-avatar--1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg></span><a class="ds-sidebar__link" href="#cards">Warden</a><span class="ds-sidebar__meta">48</span></li>
+                  <li class="ds-sidebar__item"><span class="ds-avatar ds-avatar--small ds-avatar--2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM12 8v8M9.5 10h3.5a1.5 1.5 0 0 1 0 3h-2a1.5 1.5 0 0 0 0 3H15"/></svg></span><a class="ds-sidebar__link" href="#cards">Gambler</a><span class="ds-sidebar__meta">48</span></li>
+                  <li class="ds-sidebar__item"><span class="ds-avatar ds-avatar--small ds-avatar--4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14zM5 19l8-8"/></svg></span><a class="ds-sidebar__link" href="#cards">Herbalist</a><span class="ds-sidebar__meta">48</span></li>
+                </ul>
+              </div>
+              <div class="ds-sidebar">
+                <h2 class="ds-sidebar__title">Show</h2>
+                <label class="ds-switch"><span><span class="ds-switch__label">Only cards I own</span><span class="ds-switch__hint">212 of 340</span></span><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span></label>
+                <label class="ds-switch"><span><span class="ds-switch__label">Standard format</span><span class="ds-switch__hint">The four newest sets</span></span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+                <div><div class="ds-progress__label"><strong>Cards owned</strong><span>212 of 340</span></div><span class="ds-progress ds-progress--60"><span class="ds-progress__bar"></span></span></div>
+              </div>
+            </aside>
+            <div class="ds-stack">
+              <ul class="ds-tabs" data-component="tabs">
+                <li><a class="ds-tabs__tab is-current" href="#cards">All <span class="ds-tabs__count">340</span></a></li>
+                <li><a class="ds-tabs__tab" href="#cards">Minions <span class="ds-tabs__count">198</span></a></li>
+                <li><a class="ds-tabs__tab" href="#cards">Spells <span class="ds-tabs__count">104</span></a></li>
+                <li><a class="ds-tabs__tab" href="#cards">Places <span class="ds-tabs__count">38</span></a></li>
+              </ul>
+              <ul class="ds-gallery">
+                <li class="ds-gallery__item"><a class="ds-card ds-card--4" href="#card"><span class="ds-card__cost">1</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M5 4h11v4h2a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2v4H5zM16 10v4h1.5a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1z"/></svg></span><span class="ds-card__name">Last Round</span><span class="ds-card__text">Give a minion +1 and +1.</span><span class="ds-card__stats"><span></span><span>Spell</span><span></span></span></a><span><span class="ds-item ds-item--uncommon">Last Round</span><span class="ds-gallery__meta">Spell, common</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card ds-card--3" href="#card"><span class="ds-card__cost">2</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 2c1 5 6 6 6 12a6 6 0 0 1-12 0c0-3 2-4 3-6 0 3 1 4 2 4 1-3-1-6 1-10z"/></svg></span><span class="ds-card__name">Stoke the Hearth</span><span class="ds-card__text">Deal 3. Kindle: deal 5.</span><span class="ds-card__stats"><span></span><span>Spell</span><span></span></span></a><span><span class="ds-item ds-item--rare">Stoke the Hearth</span><span class="ds-gallery__meta">Spell, rare</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card ds-card--4" href="#card"><span class="ds-card__cost">2</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M2 6c4 0 7 2 10 6 3-4 6-6 10-6-1 5-4 8-8 9l-2 5-2-5c-4-1-7-4-8-9z"/></svg></span><span class="ds-card__name">Chimney Swift</span><span class="ds-card__text">Flies over guards.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">1</span></span></a><span><span class="ds-item">Chimney Swift</span><span class="ds-gallery__meta">Minion, common</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card" href="#card"><span class="ds-card__cost">3</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 6c-1 0-1 12 0 12s1-12 0-12zM11 9C8 4 2 5 3 10c1 3 5 3 8 2zM13 9c3-5 9-4 8 1-1 3-5 3-8 2zM11 13c-3 0-6 2-5 5 2 2 5 0 5-3zM13 13c3 0 6 2 5 5-2 2-5 0-5-3z"/></svg></span><span class="ds-card__name">Lantern Moth</span><span class="ds-card__text">Kindle: draw a card.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">4</span></span></a><span><span class="ds-item ds-item--rare">Lantern Moth</span><span class="ds-gallery__meta">Minion, rare</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card ds-card--4" href="#card"><span class="ds-card__cost">3</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 2l8 3v7c0 5-4 8-8 10-4-2-8-5-8-10V5z"/></svg></span><span class="ds-card__name">Cellar Door</span><span class="ds-card__text">Guard. Cannot attack.</span><span class="ds-card__stats"><span class="ds-card__stat">0</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">7</span></span></a><span><span class="ds-item ds-item--set">Cellar Door</span><span class="ds-gallery__meta">Minion, Low Tide</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card ds-card--3" href="#card"><span class="ds-card__cost">4</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M11 2h2v13h4v2h-4v5h-2v-5H7v-2h4z"/></svg></span><span class="ds-card__name">Fairground Duellist</span><span class="ds-card__text">Strikes first.</span><span class="ds-card__stats"><span class="ds-card__stat">4</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">3</span></span></a><span><span class="ds-item ds-item--epic">Fairground Duellist</span><span class="ds-gallery__meta">Minion, epic</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card ds-card--2" href="#card"><span class="ds-card__cost">5</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M8 22V9H6V3h2v2h2V3h4v2h2V3h2v6h-2v13z"/></svg></span><span class="ds-card__name">Watchfire Tower</span><span class="ds-card__text">Your minions have +1 guard.</span><span class="ds-card__stats"><span></span><span>Place</span><span class="ds-card__stat ds-card__stat--life">6</span></span></a><span><span class="ds-item ds-item--epic">Watchfire Tower</span><span class="ds-gallery__meta">Place, epic</span></span></li>
+                <li class="ds-gallery__item"><a class="ds-card" href="#card"><span class="ds-card__cost">6</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 1l5 14H7zM2 18c4-3 16-3 20 0-4 3-16 3-20 0z"/></svg></span><span class="ds-card__name">Ringmaster</span><span class="ds-card__text">Summon two 2 and 2 tumblers.</span><span class="ds-card__stats"><span class="ds-card__stat">4</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">5</span></span></a><span><span class="ds-item ds-item--legendary">Ringmaster</span><span class="ds-gallery__meta">Minion, legendary</span></span></li>
+              </ul>
+              <div class="ds-row ds-row--between">
+                <span class="ds-muted">Cards 1 to 8 of 340, by cost</span>
+                <ul class="ds-pagination" data-component="pagination">
+                  <li><span class="ds-pagination__link is-disabled">Prev</span></li>
+                  <li><span class="ds-pagination__link is-current">1</span></li>
+                  <li><a class="ds-pagination__link" href="#cards">2</a></li>
+                  <li><a class="ds-pagination__link" href="#cards">3</a></li>
+                  <li><a class="ds-pagination__link" href="#cards">43</a></li>
+                  <li><a class="ds-pagination__link" href="#cards">Next</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="card">
+      <div class="ds-wrap">
+        <div class="ds-board">
+          <ol class="ds-breadcrumb" data-component="breadcrumb">
+            <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li><a class="ds-breadcrumb__link" href="#cards">Card library</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Lantern Moth</li>
+          </ol>
+          <div class="ds-page-header">
+            <div>
+              <h1 class="ds-page-header__title">Lantern Moth</h1>
+              <p class="ds-page-header__text">A rare Stoker minion from The Ember Fair.</p>
+            </div>
+            <div class="ds-page-header__actions"><a class="ds-button" href="#build">Add to a deck</a><a class="ds-button ds-button--secondary" href="#cards">Back to the library</a></div>
+          </div>
+          <div class="ds-showcase">
+            <div class="ds-stack">
+              <div class="ds-mat">
+                <span class="ds-card ds-card--large"><span class="ds-card__cost">3</span><span class="ds-card__art"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" stroke="none" aria-hidden="true"><path d="M12 6c-1 0-1 12 0 12s1-12 0-12zM11 9C8 4 2 5 3 10c1 3 5 3 8 2zM13 9c3-5 9-4 8 1-1 3-5 3-8 2zM11 13c-3 0-6 2-5 5 2 2 5 0 5-3zM13 13c3 0 6 2 5 5-2 2-5 0-5-3z"/></svg></span><span class="ds-card__name">Lantern Moth</span><span class="ds-card__text">Kindle: draw a card.</span><span class="ds-card__stats"><span class="ds-card__stat">2</span><span>Minion</span><span class="ds-card__stat ds-card__stat--life">4</span></span></span>
+                <p class="ds-mat__note">Painted for The Ember Fair. Card 041 of 135.</p>
+              </div>
+              <div class="ds-tooltip ds-tooltip--card">
+                <span class="ds-tooltip__tip"><span class="ds-tooltip__name">Kindle</span><span class="ds-tooltip__line ds-tooltip__line--muted"><span>Keyword</span><span>The Ember Fair</span></span><span class="ds-tooltip__line"><span>Happens if you played a spell this turn.</span></span><span class="ds-tooltip__line ds-tooltip__line--bonus"><span>On 31 cards of this set.</span></span><span class="ds-tooltip__line ds-tooltip__line--lore"><span>A fire needs something to catch.</span></span></span>
+              </div>
+            </div>
+            <div class="ds-stack">
+              <div class="ds-prose" data-component="typography">
+                <h1>A moth for every hearth</h1>
+                <p class="ds-prose__lead">Three mana, two attack, four health, and a card in hand if a spell came first.</p>
+                <p>Lantern Moth is the card most decks of the fair start from. On its own it is a sturdy body for its cost; after any spell its <span class="ds-tooltip" tabindex="0"><span class="ds-keyword">Kindle</span><span class="ds-tooltip__tip"><span class="ds-tooltip__name">Kindle</span><span class="ds-tooltip__line ds-tooltip__line--muted"><span>Keyword, The Ember Fair</span></span><span class="ds-tooltip__line"><span>Happens if you played a spell this turn.</span></span><span class="ds-tooltip__line ds-tooltip__line--lore"><span>A fire needs something to catch.</span></span></span></span> text pays for itself, and with <span class="ds-tooltip ds-tooltip--end" tabindex="0"><span class="ds-keyword">guard</span><span class="ds-tooltip__tip"><span class="ds-tooltip__name">Guard</span><span class="ds-tooltip__line ds-tooltip__line--muted"><span>Keyword, every set</span></span><span class="ds-tooltip__line"><span>Enemies must attack this minion first.</span></span><span class="ds-tooltip__line ds-tooltip__line--lore"><span>Somebody has to mind the door.</span></span></span></span> beside it the moth usually lives to attack twice.</p>
+                <h2>How to play it</h2>
+                <ul>
+                  <li>Hold it until you can play a one-cost spell in the same turn.</li>
+                  <li>Trade it into small minions; four health survives most of them.</li>
+                  <li>Do not keep it in a slow opening hand against Wardens.</li>
+                </ul>
+                <h3>For deck builders</h3>
+                <p>Its code is <code>EMB-041</code>. Two copies fit any Stoker or Gambler list; <a href="#decks">Moth Tempo</a> is built around it.</p>
+              </div>
+              <div class="ds-sidebar">
+                <h2 class="ds-sidebar__title">Often played with</h2>
+                <ul class="ds-links" data-component="links">
+                  <li><a class="ds-link" href="#card">Stoke the Hearth</a></li>
+                  <li><a class="ds-link is-visited" href="#card">Last Round</a></li>
+                  <li><a class="ds-link is-hover" href="#card">Chimney Swift</a></li>
+                  <li><a class="ds-link is-active" href="#card">Queen of Embers</a></li>
+                </ul>
+                <p class="ds-muted">Normal, visited, hovered and pressed.</p>
+                <div class="ds-badges" data-component="badge">
+                  <span class="ds-badge">Stoker</span>
+                  <span class="ds-badge ds-badge--success">You own 2</span>
+                  <span class="ds-badge ds-badge--warning">Changed on 6 October</span>
+                  <span class="ds-badge ds-badge--danger">Banned in the fair cup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="decks">
+      <div class="ds-wrap">
+        <div class="ds-board">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li><a class="ds-breadcrumb__link" href="#decks">Decks</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Moth Tempo</li>
+          </ol>
+          <div class="ds-page-header">
+            <div>
+              <h1 class="ds-page-header__title">My decks</h1>
+              <p class="ds-page-header__text">Three decks are built. The first one is open below.</p>
+            </div>
+            <div class="ds-page-header__actions"><a class="ds-button" href="#build">New deck</a></div>
+          </div>
+          <div class="ds-notices" data-component="notice">
+            <div class="ds-notice"><p class="ds-notice__title">The First Deal leaves standard on 1 November</p><p class="ds-notice__text">Decks that use it stay playable in the open format.</p></div>
+            <div class="ds-notice ds-notice--error"><p class="ds-notice__title">Two cards in this deck changed</p><p class="ds-notice__text">Queen of Embers now costs seven. Check the curve before your next game.</p></div>
+          </div>
+          <div class="ds-columns">
+            <div class="ds-stack">
+              <div class="ds-panel">
+                <h2 class="ds-panel__title">Moth Tempo <span class="ds-badge">Stoker</span></h2>
+                <div class="ds-panel__body ds-panel__body--flush ds-table__wrap">
+                  <table class="ds-table" data-component="table">
+                    <thead><tr><th class="is-numeric">Cost</th><th>Card</th><th class="is-numeric">Copies</th><th class="is-numeric">Dust</th></tr></thead>
+                    <tbody>
+                      <tr><td class="is-numeric">1</td><td><a class="ds-item ds-item--uncommon" href="#card">Last Round</a><span class="ds-table__sub">Spell</span></td><td class="is-numeric">2</td><td class="is-numeric">80</td></tr>
+                      <tr><td class="is-numeric">2</td><td><a class="ds-item" href="#card">Chimney Swift</a><span class="ds-table__sub">Minion</span></td><td class="is-numeric">2</td><td class="is-numeric">40</td></tr>
+                      <tr><td class="is-numeric">2</td><td><a class="ds-item ds-item--rare" href="#card">Stoke the Hearth</a><span class="ds-table__sub">Spell</span></td><td class="is-numeric">2</td><td class="is-numeric">200</td></tr>
+                      <tr><td class="is-numeric">3</td><td><a class="ds-item ds-item--rare" href="#card">Lantern Moth</a><span class="ds-table__sub">Minion</span></td><td class="is-numeric">2</td><td class="is-numeric">200</td></tr>
+                      <tr><td class="is-numeric">4</td><td><a class="ds-item ds-item--epic" href="#card">Fairground Duellist</a><span class="ds-table__sub">Minion</span></td><td class="is-numeric">2</td><td class="is-numeric">800</td></tr>
+                      <tr><td class="is-numeric">7</td><td><a class="ds-item ds-item--legendary" href="#card">Queen of Embers</a><span class="ds-table__sub">Minion</span></td><td class="is-numeric">1</td><td class="is-numeric">1,600</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="ds-panel__foot"><span>6 of 17 different cards shown</span><span>30 cards, 4,200 dust</span></div>
+              </div>
+              <div class="ds-accordion">
+                <details class="ds-accordion__item" open>
+                  <summary class="ds-accordion__summary">What is a deck code? <span class="ds-accordion__meta">Sharing</span></summary>
+                  <div class="ds-accordion__body"><p>A short line of letters that holds a whole deck. Paste it into the builder and the thirty cards appear.</p></div>
+                </details>
+                <details class="ds-accordion__item">
+                  <summary class="ds-accordion__summary">What happens to cards that leave standard? <span class="ds-accordion__meta">Formats</span></summary>
+                  <div class="ds-accordion__body"><p>You keep them and can play them in the open format.</p></div>
+                </details>
+                <details class="ds-accordion__item">
+                  <summary class="ds-accordion__summary">How do I get dust? <span class="ds-accordion__meta">Crafting</span></summary>
+                  <div class="ds-accordion__body"><p>Break up cards you have more than two of.</p></div>
+                </details>
+              </div>
+            </div>
+            <aside class="ds-stack">
+              <div class="ds-sidebar">
+                <h2 class="ds-sidebar__title">Mana curve</h2>
+                <ul class="ds-curve"><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">0</span></li><li class="ds-curve__col"><span>4</span><span class="ds-curve__bar ds-curve__bar--40"></span><span class="ds-curve__cost">1</span></li><li class="ds-curve__col"><span>7</span><span class="ds-curve__bar ds-curve__bar--75"></span><span class="ds-curve__cost">2</span></li><li class="ds-curve__col"><span>8</span><span class="ds-curve__bar ds-curve__bar--100"></span><span class="ds-curve__cost">3</span></li><li class="ds-curve__col"><span>5</span><span class="ds-curve__bar ds-curve__bar--60"></span><span class="ds-curve__cost">4</span></li><li class="ds-curve__col"><span>3</span><span class="ds-curve__bar ds-curve__bar--25"></span><span class="ds-curve__cost">5</span></li><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">6</span></li><li class="ds-curve__col"><span>1</span><span class="ds-curve__bar"></span><span class="ds-curve__cost">7+</span></li></ul>
+                <div><div class="ds-progress__label"><strong>Wins on the ladder</strong><span>58%</span></div><span class="ds-progress ds-progress--60 ds-progress--health"><span class="ds-progress__bar"></span></span></div>
+                <div><div class="ds-progress__label"><strong>Spells</strong><span>9 of 30</span></div><span class="ds-progress ds-progress--25 ds-progress--xp"><span class="ds-progress__bar"></span></span></div>
+              </div>
+              <div class="ds-empty" data-component="empty">
+                <span class="ds-empty__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h9v13H5zM14 8l5 1-2 12-8-1"/></svg></span>
+                <h2 class="ds-empty__title">Deck slot 4 is empty</h2>
+                <p class="ds-empty__text">You have three decks and room for nine more.</p>
+                <a class="ds-button ds-button--secondary" href="#build">Build a deck</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="build">
+      <div class="ds-wrap">
+        <div class="ds-board">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li><a class="ds-breadcrumb__link" href="#decks">Decks</a></li>
+            <li class="ds-breadcrumb__sep">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Build a deck</li>
+          </ol>
+          <div class="ds-page-header">
+            <div>
+              <h1 class="ds-page-header__title">Build a deck</h1>
+              <p class="ds-page-header__text">Name it, pick a class and paste a code, or choose cards one by one.</p>
+            </div>
+            <div class="ds-page-header__actions"><a class="ds-button ds-button--secondary" href="#cards">Browse cards</a></div>
+          </div>
+          <div class="ds-split ds-split--wide">
+            <form class="ds-form" data-component="form" action="#build">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="b-name">Deck name</label>
+                <div class="ds-form__field"><input class="ds-form__input" id="b-name" type="text" value="Moth Tempo, second try"></div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="b-class">Class</label>
+                <div class="ds-form__field"><select class="ds-form__select" id="b-class"><option>Stoker</option><option>Warden</option><option>Gambler</option><option>Herbalist</option></select></div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="b-code">Deck code</label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input ds-form__input--short is-error" id="b-code" type="text" value="EMB-041-2-0Q7">
+                  <p class="ds-form__error">This code names a card that is not in the standard format.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="b-notes">Notes</label>
+                <div class="ds-form__field">
+                  <textarea class="ds-form__textarea" id="b-notes">Keep the moth for turn four with Last Round.</textarea>
+                  <p class="ds-form__hint">Shown under the deck when you share it.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label">Options</span>
+                <div class="ds-form__field">
+                  <label class="ds-switch"><span><span class="ds-switch__label">Share on my profile</span><span class="ds-switch__hint">Others can copy the code</span></span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+                  <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Standard format only</label>
+                </div>
+              </div>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Save the deck</button>
+                <a class="ds-button ds-button--secondary" href="#decks">Cancel</a>
+                <button class="ds-button is-disabled" type="button" disabled>Play it (needs 30)</button>
+                <span class="ds-form__actions-end"><button class="ds-button ds-button--danger" type="button">Delete deck</button></span>
+              </div>
+            </form>
+            <div class="ds-stack">
+              <div class="ds-dialog__backdrop">
+                <div class="ds-dialog" data-component="dialog">
+                  <h2 class="ds-dialog__title"><span>Delete this deck?</span><a class="ds-dialog__close" href="#build">x</a></h2>
+                  <div class="ds-dialog__body">
+                    <p class="ds-dialog__text">The eighteen cards go back to your collection. The deck code stops working.</p>
+                    <div class="ds-dialog__actions">
+                      <a class="ds-button ds-button--secondary" href="#build">Keep it</a>
+                      <a class="ds-button ds-button--danger" href="#decks">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ds-sidebar">
+                <h2 class="ds-sidebar__title">The draft so far</h2>
+                <div><div class="ds-progress__label"><strong>Cards chosen</strong><span>18 of 30</span></div><span class="ds-progress ds-progress--60"><span class="ds-progress__bar"></span></span></div>
+                <ul class="ds-sidebar__list">
+                  <li class="ds-sidebar__item"><span class="ds-dot ds-dot--success"></span><span class="ds-sidebar__link">Lantern Moth</span><span class="ds-sidebar__meta">2 of 2</span></li>
+                  <li class="ds-sidebar__item"><span class="ds-dot ds-dot--warning"></span><span class="ds-sidebar__link">Stoke the Hearth</span><span class="ds-sidebar__meta">1 of 2</span></li>
+                  <li class="ds-sidebar__item"><span class="ds-dot ds-dot--danger"></span><span class="ds-sidebar__link">Old Cellar Key</span><span class="ds-sidebar__meta">Not standard</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ds-footer" data-component="footer">
+    <div class="ds-footer__inner">
+      <a class="ds-brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><polygon points="7,3 17,3 21.5,9 12,21.5 2.5,9"/><polyline points="2.5,9 21.5,9"/><polyline points="8.5,9 12,21 15.5,9"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#cards">Card library</a></li>
+        <li><a class="ds-footer__link" href="#card">Card of the day</a></li>
+        <li><a class="ds-footer__link" href="#decks">Decks</a></li>
+        <li><a class="ds-footer__link" href="#build">Deck builder</a></li>
+        <li><a class="ds-footer__link" href="#home">News</a></li>
+        <li><a class="ds-footer__link" href="#home">Support</a></li>
+      </ul>
+      <p class="ds-footer__note">chronoskin is a specimen site. Free to play; packs can be earned at the table or bought.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin armory: the character and item database, specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__wrap">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__bar">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><polygon points="7,3 17,3 21.5,9 12,21.5 2.5,9"/><polyline points="2.5,9 21.5,9"/><polyline points="8.5,9 12,21 15.5,9"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <span class="ds-nav__section">The armory</span>
+      <form class="ds-form ds-form--search ds-nav__search">
+        <input class="ds-form__input" type="text" value="" placeholder="Character, item or guild" aria-label="Search the armory">
+        <a class="ds-button ds-button--secondary" href="#items">Find</a>
+      </form>
+      <span class="ds-nav__who"><span class="ds-avatar ds-avatar--small"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg></span> Brannoc of Ashenford</span>
+    </div>
+    <nav class="ds-nav__rail">
+      <ul class="ds-nav__links">
+        <li><a class="ds-nav__link" href="#home"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V8l-1-1V4h3v2h2V4h4v2h2V4h3v3l-1 1v13zM10 21v-5a2 2 0 0 1 4 0v5"/></svg> Armory home</a></li>
+        <li><a class="ds-nav__link" href="#character"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8a7 7 0 0 1 14 0v8h-4v-6h-2v6h-2v-6H9v6z"/></svg> Characters</a></li>
+        <li><a class="ds-nav__link" href="#talents"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg> Talents</a></li>
+        <li class="ds-menu">
+          <a class="ds-nav__link" href="#items"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v9H3zM3 12h18M12 11v3"/></svg> Items <span class="ds-nav__caret">&#9656;</span></a>
+          <ul class="ds-menu__list">
+            <li><a class="ds-menu__item" href="#items">Weapons</a></li>
+            <li><a class="ds-menu__item" href="#items">Armour</a></li>
+            <li><a class="ds-menu__item" href="#items">Trinkets and rings</a></li>
+            <li><a class="ds-menu__item" href="#item">Item of the week</a></li>
+          </ul>
+        </li>
+        <li><a class="ds-nav__link ds-nav__link--elsewhere" href="#character"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16M5 15L4 7l5 4 3-6 3 6 5-4-1 8z"/></svg> Guilds</a></li>
+        <li><a class="ds-nav__link ds-nav__link--elsewhere" href="#home"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-4M6 14l4 4M9 15L19 5V4h-1L8 14"/></svg> Arena ladder</a></li>
+      </ul>
+      <div class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">Recently viewed</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#character">Brannoc</a><span class="ds-sidebar__meta">Level 60 warden, Ashenford</span></li>
+          <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#item">Gatekeeper's Bulwark</a><span class="ds-sidebar__meta">Epic shield, item level 71</span></li>
+          <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#character">Ysolde</a><span class="ds-sidebar__meta">Level 58 arcanist, Highmoor</span></li>
+          <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#items">Search: plate, level 55 and up</a><span class="ds-sidebar__meta">214 items</span></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar">
+        <h2 class="ds-sidebar__title">Rarity key</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item"><span class="ds-badge ds-badge--quiet"><span class="ds-item">Common</span></span> <span class="ds-badge ds-badge--quiet"><span class="ds-item ds-item--uncommon">Uncommon</span></span></li>
+          <li class="ds-sidebar__item"><span class="ds-badge ds-badge--quiet"><span class="ds-item ds-item--rare">Rare</span></span> <span class="ds-badge ds-badge--quiet"><span class="ds-item ds-item--epic">Epic</span></span></li>
+          <li class="ds-sidebar__item"><span class="ds-badge ds-badge--quiet"><span class="ds-item ds-item--legendary">Legendary</span></span> <span class="ds-badge ds-badge--quiet"><span class="ds-item ds-item--set">Set</span></span></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="ds-page__body">
+
+    <section class="ds-view ds-view--home" id="home">
+      <div class="ds-page__inner">
+        <div class="ds-hero ds-frame" data-component="hero">
+          <h1 class="ds-hero__title">Search the armory</h1>
+          <p class="ds-hero__lead">Every character, item and guild of the 24 realms, as the game saw them last night.</p>
+          <form class="ds-hero__search">
+            <input class="ds-form__input" type="text" value="Gatekeeper" aria-label="Name">
+            <select class="ds-form__select" aria-label="Kind"><option>Items</option><option>Characters</option><option>Guilds</option></select>
+            <a class="ds-button" href="#items">Search</a>
+          </form>
+          <p class="ds-hero__note">Try <a class="ds-hero__link" href="#character">Brannoc</a>, <a class="ds-hero__link" href="#item">Gatekeeper's Bulwark</a> or <a class="ds-hero__link" href="#talents">a warden talent build</a>.</p>
+        </div>
+
+        <ul class="ds-stats ds-frame ds-frame--plain" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__value">1,204,518</span><span class="ds-stat__label">Characters</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">18,640</span><span class="ds-stat__label">Items</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">9,312</span><span class="ds-stat__label">Guilds</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">04:10</span><span class="ds-stat__label">Last update</span></li>
+        </ul>
+
+        <ul class="ds-grid" data-component="grid">
+          <li class="ds-grid__cell">
+            <svg class="ds-grid__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8a7 7 0 0 1 14 0v8h-4v-6h-2v6h-2v-6H9v6z"/></svg>
+            <h3 class="ds-grid__title">Characters</h3>
+            <p class="ds-grid__text">Sheets, gear and talents of every hero over level ten.</p>
+            <a class="ds-grid__more" href="#character">Open a sheet</a>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--2">
+            <svg class="ds-grid__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v9H3zM3 12h18M12 11v3"/></svg>
+            <h3 class="ds-grid__title">Items</h3>
+            <p class="ds-grid__text">What it does, who drops it and who wears it.</p>
+            <a class="ds-grid__more" href="#items">Search items</a>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--3">
+            <svg class="ds-grid__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg>
+            <h3 class="ds-grid__title">Talents</h3>
+            <p class="ds-grid__text">Plan a build for any calling before you pay to learn it.</p>
+            <a class="ds-grid__more" href="#talents">Open the planner</a>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--4">
+            <svg class="ds-grid__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-4M6 14l4 4M9 15L19 5V4h-1L8 14"/></svg>
+            <h3 class="ds-grid__title">Arena ladder</h3>
+            <p class="ds-grid__text">Standings of the season, by realm and by team size.</p>
+            <a class="ds-grid__more" href="#home">See the ladder</a>
+          </li>
+        </ul>
+
+        <div class="ds-split ds-split--wide ds-split--even">
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Top of the ladder, season four</h2>
+            <div class="ds-panel__body ds-panel__body--flush">
+              <table class="ds-table" data-component="table">
+                <thead><tr><th class="is-numeric">#</th><th>Character</th><th>Status</th><th class="is-numeric">Rating</th></tr></thead>
+                <tbody>
+                  <tr><td class="is-numeric">1</td><td><span class="ds-table__who"><span class="ds-avatar ds-avatar--small ds-avatar--2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><span><a href="#character">Ysolde</a><span class="ds-table__sub">Arcanist, Highmoor</span></span></span></td><td><span class="ds-badge ds-badge--success">Online</span></td><td class="is-numeric">2,418</td></tr>
+                  <tr><td class="is-numeric">2</td><td><span class="ds-table__who"><span class="ds-avatar ds-avatar--small ds-avatar--1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg></span><span><a href="#character">Brannoc</a><span class="ds-table__sub">Warden, Ashenford</span></span></span></td><td><span class="ds-badge ds-badge--success">Online</span></td><td class="is-numeric">2,391</td></tr>
+                  <tr><td class="is-numeric">3</td><td><span class="ds-table__who"><span class="ds-avatar ds-avatar--small ds-avatar--3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4c8 2 8 14 0 16M6 4v16M4 12h16M16 8l4 4-4 4"/></svg></span><span><a href="#character">Perrin</a><span class="ds-table__sub">Ranger, Stonewatch</span></span></span></td><td><span class="ds-badge ds-badge--warning">In a match</span></td><td class="is-numeric">2,350</td></tr>
+                  <tr><td class="is-numeric">4</td><td><span class="ds-table__who"><span class="ds-avatar ds-avatar--small ds-avatar--4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-9 5-14 14-14 0 9-5 14-14 14zM5 19l8-8"/></svg></span><span><a href="#character">Maelis</a><span class="ds-table__sub">Mender, Saltmarsh</span></span></span></td><td><span class="ds-badge ds-badge--danger">Offline</span></td><td class="is-numeric">2,307</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Newest items</h2>
+            <div class="ds-panel__body ds-panel__body--flush">
+              <ul class="ds-list ds-list--tight" data-component="list">
+                <li class="ds-list__item">
+                  <div class="ds-list__body">
+                    <span class="ds-tooltip ds-tooltip--end" tabindex="0"><a class="ds-item ds-item--epic" href="#item">Gatekeeper's Bulwark</a><span class="ds-tooltip__tip" role="tooltip"><span class="ds-tooltip__name ds-item ds-item--epic">Gatekeeper's Bulwark</span><span class="ds-tooltip__line"><span>Off hand</span><span>Shield</span></span><span class="ds-tooltip__line">2,840 armour</span><span class="ds-tooltip__line ds-tooltip__line--bonus">+31 stamina</span></span></span>
+                    <span class="ds-list__meta">Shield, item level 71</span>
+                  </div>
+                  <span class="ds-badge ds-badge--new">New</span>
+                </li>
+                <li class="ds-list__item"><div class="ds-list__body"><a class="ds-item ds-item--rare" href="#item">Cinderwalker Greaves</a><span class="ds-list__meta">Plate legs, item level 66</span></div></li>
+                <li class="ds-list__item"><div class="ds-list__body"><a class="ds-item ds-item--legendary" href="#item">Ashfall, the Last Ember</a><span class="ds-list__meta">Two-hand sword, item level 80</span></div></li>
+                <li class="ds-list__item"><div class="ds-list__body"><a class="ds-item ds-item--uncommon" href="#item">Warden's Travel Cloak</a><span class="ds-list__meta">Cloak, item level 52</span></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-band">
+          <div><span class="ds-band__title">Is your sheet out of date?</span><p class="ds-band__text">Log out of the game in a town and the armory takes the new sheet at the next realm restart.</p></div>
+          <a class="ds-button is-hover" href="#character">Find your character</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="character">
+      <div class="ds-page__inner">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#home">Armory</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li><a class="ds-breadcrumb__link" href="#character">Ashenford</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li class="ds-breadcrumb__current">Brannoc</li>
+        </ol>
+        <div class="ds-page-header" data-component="page-header">
+          <div>
+            <h1 class="ds-page-header__title">Brannoc</h1>
+            <p class="ds-page-header__text">Level 60 warden of the guild Lanternkeepers, realm Ashenford. <span class="ds-badge ds-badge--success">Online</span></p>
+          </div>
+          <div class="ds-page-header__actions"><a class="ds-button ds-button--secondary" href="#character">Compare</a><a class="ds-button" href="#talents">Talents</a></div>
+        </div>
+        <div>
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#character">Sheet</a></li>
+            <li><a class="ds-tabs__tab" href="#talents">Talents</a></li>
+            <li><a class="ds-tabs__tab" href="#character">Reputation</a></li>
+            <li><a class="ds-tabs__tab" href="#character">Arena</a></li>
+          </ul>
+          <div class="ds-frame">
+            <div class="ds-sheet">
+              <div class="ds-sheet__portrait">
+                <span class="ds-avatar ds-avatar--large ds-avatar--1 ds-sheet__crest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg></span>
+                <div>
+                  <div class="ds-progress__label"><span>Health</span><span>8,420</span></div>
+                  <span class="ds-progress ds-progress--100 ds-progress--health"><span class="ds-progress__bar"></span></span>
+                  <div class="ds-progress__label"><span>Resolve</span><span>60 / 100</span></div>
+                  <span class="ds-progress ds-progress--60"><span class="ds-progress__bar"></span></span>
+                  <div class="ds-progress__label"><span>Experience</span><span>Level 60</span></div>
+                  <span class="ds-progress ds-progress--100 ds-progress--xp"><span class="ds-progress__bar"></span></span>
+                </div>
+              </div>
+              <div>
+                <h2 class="ds-sheet__title">Attributes</h2>
+                <ul class="ds-sheet__rows">
+                  <li class="ds-sheet__row"><span>Strength</span><span class="ds-sheet__value">312</span></li>
+                  <li class="ds-sheet__row"><span>Agility</span><span class="ds-sheet__value">104</span></li>
+                  <li class="ds-sheet__row"><span>Stamina</span><span class="ds-sheet__value">486</span></li>
+                  <li class="ds-sheet__row"><span>Intellect</span><span class="ds-sheet__value">41</span></li>
+                  <li class="ds-sheet__row"><span>Spirit</span><span class="ds-sheet__value">58</span></li>
+                </ul>
+                <h2 class="ds-sheet__title">Defence</h2>
+                <ul class="ds-sheet__rows">
+                  <li class="ds-sheet__row"><span>Armour</span><span class="ds-sheet__value">11,902</span></li>
+                  <li class="ds-sheet__row"><span>Block chance</span><span class="ds-sheet__value">24.6%</span></li>
+                  <li class="ds-sheet__row"><span>Parry chance</span><span class="ds-sheet__value">14.1%</span></li>
+                  <li class="ds-sheet__row"><span>Dodge chance</span><span class="ds-sheet__value">9.8%</span></li>
+                </ul>
+              </div>
+              <div>
+                <h2 class="ds-sheet__title">Equipment</h2>
+                <ul class="ds-sheet__rows">
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Head</span><a class="ds-item ds-item--rare" href="#item">Ashplate Helm</a><span class="ds-sheet__level">66</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Chest</span><a class="ds-item ds-item--set" href="#item">Vigil Breastplate</a><span class="ds-sheet__level">70</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Legs</span><a class="ds-item ds-item--rare" href="#item">Cinderwalker Greaves</a><span class="ds-sheet__level">66</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Cloak</span><a class="ds-item ds-item--uncommon" href="#item">Warden's Travel Cloak</a><span class="ds-sheet__level">52</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Main hand</span><a class="ds-item ds-item--epic" href="#item">Oathbreaker</a><span class="ds-sheet__level">71</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Off hand</span><span class="ds-tooltip ds-tooltip--end" tabindex="0"><a class="ds-item ds-item--epic" href="#item">Gatekeeper's Bulwark</a><span class="ds-tooltip__tip" role="tooltip"><span class="ds-tooltip__name ds-item ds-item--epic">Gatekeeper's Bulwark</span><span class="ds-tooltip__line"><span>Off hand</span><span>Shield</span></span><span class="ds-tooltip__line">2,840 armour, 68 block</span><span class="ds-tooltip__line ds-tooltip__line--bonus">+31 stamina</span></span></span><span class="ds-sheet__level">71</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Ring</span><a class="ds-item" href="#item">Plain Iron Band</a><span class="ds-sheet__level">40</span></li>
+                  <li class="ds-sheet__row ds-sheet__row--item"><span class="ds-sheet__slot">Trinket</span><a class="ds-item ds-item--legendary" href="#item">Ember of the Gate</a><span class="ds-sheet__level">80</span></li>
+                </ul>
+                <p class="ds-muted">Average item level 64. Two pieces of the Vigil set are missing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-split">
+          <div class="ds-panel ds-frame" data-component="panel">
+            <h2 class="ds-panel__title">Reputation</h2>
+            <div class="ds-panel__body">
+              <div class="ds-progress__label"><span>Wardens of the Gate</span><span>Revered, 18,900 / 21,000</span></div>
+              <span class="ds-progress ds-progress--90 ds-progress--rep"><span class="ds-progress__bar"></span></span>
+              <div class="ds-progress__label"><span>River towns</span><span>Honoured, 7,200 / 12,000</span></div>
+              <span class="ds-progress ds-progress--60 ds-progress--rep"><span class="ds-progress__bar"></span></span>
+              <div class="ds-progress__label"><span>Salt traders</span><span>Unfriendly, 300 / 3,000</span></div>
+              <span class="ds-progress ds-progress--10 ds-progress--danger"><span class="ds-progress__bar"></span></span>
+            </div>
+          </div>
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Recent deeds</h2>
+            <div class="ds-panel__body ds-panel__body--flush">
+              <ul class="ds-list ds-list--tight">
+                <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Held the Ember Gate</span><span class="ds-list__meta">Warband of twelve, 6 October</span></div><span class="ds-badge">10</span></li>
+                <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Looted <a class="ds-item ds-item--legendary" href="#item">Ember of the Gate</a></span><span class="ds-list__meta">From the Gate Warden, 6 October</span></div><span class="ds-badge">25</span></li>
+                <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Revered with the Wardens</span><span class="ds-list__meta">2 October</span></div><span class="ds-badge">10</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="talents">
+      <div class="ds-page__inner">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#home">Armory</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li><a class="ds-breadcrumb__link" href="#character">Brannoc</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li class="ds-breadcrumb__current">Talents</li>
+        </ol>
+        <div class="ds-page-header">
+          <div>
+            <h1 class="ds-page-header__title">Warden talents</h1>
+            <p class="ds-page-header__text">Brannoc's build, 31 / 5 / 15. Change it here to plan; nothing is saved to the game.</p>
+          </div>
+          <div class="ds-page-header__actions"><a class="ds-button ds-button--secondary" href="#talents">Copy link</a></div>
+        </div>
+        <div class="ds-trees">
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Bulwark</h2>
+            <div class="ds-panel__body">
+              <div class="ds-progress__label"><span>Points spent</span><span>31</span></div>
+              <span class="ds-progress ds-progress--100"><span class="ds-progress__bar"></span></span>
+              <div class="ds-talents">
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8a7 7 0 0 1 14 0v8h-4v-6h-2v6h-2v-6H9v6z"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V8l-1-1V4h3v2h2V4h4v2h2V4h3v3l-1 1v13zM10 21v-5a2 2 0 0 1 4 0v5"/></svg><span class="ds-talent__rank">3/3</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-tooltip" tabindex="0"><span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-2 1-4 3-5 0 2 1 3 2 3 0-3 0-6 1-9z"/></svg><span class="ds-talent__rank">5/5</span></span><span class="ds-tooltip__tip" role="tooltip"><span class="ds-tooltip__name">Shield Wall</span><span class="ds-tooltip__line ds-tooltip__line--muted">Rank 5 of 5</span><span class="ds-tooltip__line">Halves all harm taken for 10 seconds.</span><span class="ds-tooltip__line ds-tooltip__line--bonus">Requires 10 points in Bulwark</span></span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16M5 15L4 7l5 4 3-6 3 6 5-4-1 8z"/></svg><span class="ds-talent__rank">2/2</span></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20L17 6M13 4c3 0 6 2 7 6-2 0-4 0-6-2z"/></svg><span class="ds-talent__rank">1/3</span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-4M6 14l4 4M9 15L19 5V4h-1L8 14"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg><span class="ds-talent__rank">1/1</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg><span class="ds-talent__rank">0/5</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Fury</h2>
+            <div class="ds-panel__body">
+              <div class="ds-progress__label"><span>Points spent</span><span>5</span></div>
+              <span class="ds-progress ds-progress--10 ds-progress--danger"><span class="ds-progress__bar"></span></span>
+              <div class="ds-talents">
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20L17 6M13 4c3 0 6 2 7 6-2 0-4 0-6-2z"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-2 1-4 3-5 0 2 1 3 2 3 0-3 0-6 1-9z"/></svg><span class="ds-talent__rank">0/5</span></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-4M6 14l4 4M9 15L19 5V4h-1L8 14"/></svg><span class="ds-talent__rank">0/3</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4z"/><circle cx="6" cy="10" r="1.5"/><circle cx="10" cy="6" r="1.5"/><circle cx="14" cy="6" r="1.5"/><circle cx="18" cy="10" r="1.5"/></svg><span class="ds-talent__rank">0/2</span></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg><span class="ds-talent__rank">0/5</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16M5 15L4 7l5 4 3-6 3 6 5-4-1 8z"/></svg><span class="ds-talent__rank">0/3</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8a7 7 0 0 1 14 0v8h-4v-6h-2v6h-2v-6H9v6z"/></svg><span class="ds-talent__rank">0/5</span></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20L17 6M13 4c3 0 6 2 7 6-2 0-4 0-6-2z"/></svg><span class="ds-talent__rank">0/1</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-2 1-4 3-5 0 2 1 3 2 3 0-3 0-6 1-9z"/></svg><span class="ds-talent__rank">0/5</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+              </div>
+            </div>
+          </div>
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Command</h2>
+            <div class="ds-panel__body">
+              <div class="ds-progress__label"><span>Points spent</span><span>15</span></div>
+              <span class="ds-progress ds-progress--40 ds-progress--xp"><span class="ds-progress__bar"></span></span>
+              <div class="ds-talents">
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16M5 15L4 7l5 4 3-6 3 6 5-4-1 8z"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h11a2 2 0 0 1 2 2v1h-4M7 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7M9 9h5M9 13h5"/></svg><span class="ds-talent__rank">3/3</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg><span class="ds-talent__rank">0/2</span></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V8l-1-1V4h3v2h2V4h4v2h2V4h3v3l-1 1v13zM10 21v-5a2 2 0 0 1 4 0v5"/></svg><span class="ds-talent__rank">5/5</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent is-learned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-9 5-14 14-14 0 9-5 14-14 14zM5 19l8-8"/></svg><span class="ds-talent__rank">2/2</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8a7 7 0 0 1 14 0v8h-4v-6h-2v6h-2v-6H9v6z"/></svg><span class="ds-talent__rank">0/5</span></span>
+                <span class="ds-talent is-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg><span class="ds-talent__rank">0/3</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M12 8v8M9 11h6"/></svg><span class="ds-talent__rank">0/1</span></span>
+                <span class="ds-talent ds-talent--gap"></span>
+                <span class="ds-talent ds-talent--gap"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-split ds-split--even">
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+              <h2 class="ds-dialog__title" id="d-title">Clear the planner? <a class="ds-dialog__close" href="#talents" aria-label="Close">x</a></h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">All 51 points return to the pool and the three trees go back to empty.</p>
+                <p class="ds-dialog__text ds-muted">Brannoc's talents in the game are not touched.</p>
+              </div>
+              <div class="ds-dialog__actions">
+                <a class="ds-button ds-button--secondary" href="#talents">Keep the build</a>
+                <button class="ds-button ds-button--danger" type="button">Clear all points</button>
+              </div>
+            </div>
+          </div>
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Reading the trees</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__text">A gilded cell is learned, a green one can take a point now, a grey one is still locked. Rest the pointer on a cell to read it.</p>
+              <div class="ds-progress__label"><span>Points left to spend</span><span>0 of 51</span></div>
+              <span class="ds-progress ds-progress--100 ds-progress--rep"><span class="ds-progress__bar"></span></span>
+              <div class="ds-buttons"><a class="ds-button ds-button--small ds-button--secondary" href="#character">Back to the sheet</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-view" id="items">
+      <div class="ds-page__inner">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#home">Armory</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li><a class="ds-breadcrumb__link" href="#items">Items</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li class="ds-breadcrumb__current">Search</li>
+        </ol>
+        <div class="ds-page-header">
+          <div>
+            <h1 class="ds-page-header__title">Item search</h1>
+            <p class="ds-page-header__text">214 items match "plate, level 55 and up". Sorted by item level.</p>
+          </div>
+          <div class="ds-page-header__actions"><a class="ds-button ds-button--secondary" href="#home">New search</a></div>
+        </div>
+        <div class="ds-split ds-split--wide">
+          <div class="ds-panel ds-frame">
+            <h2 class="ds-panel__title">Narrow the search</h2>
+            <div class="ds-panel__body">
+              <form class="ds-form" data-component="form">
+                <div class="ds-form__row">
+                  <label class="ds-form__label" for="i-name">Name holds</label>
+                  <div class="ds-form__field"><input class="ds-form__input" id="i-name" type="text" value="plate"></div>
+                </div>
+                <div class="ds-form__row">
+                  <label class="ds-form__label" for="i-slot">Slot</label>
+                  <div class="ds-form__field"><select class="ds-form__select" id="i-slot"><option>Any slot</option><option>Head</option><option>Chest</option><option>Off hand</option></select></div>
+                </div>
+                <div class="ds-form__row">
+                  <label class="ds-form__label" for="i-level">Lowest level</label>
+                  <div class="ds-form__field">
+                    <input class="ds-form__input ds-form__input--short is-error" id="i-level" type="text" value="155">
+                    <span class="ds-form__error">Item levels run from 1 to 80.</span>
+                  </div>
+                </div>
+                <div class="ds-form__row">
+                  <label class="ds-form__label" for="i-note">Note</label>
+                  <div class="ds-form__field"><textarea class="ds-form__textarea" id="i-note">Upgrades for Brannoc before the gate.</textarea></div>
+                </div>
+                <div class="ds-form__row">
+                  <span class="ds-form__label">Only</span>
+                  <div class="ds-form__field"><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Items a warden can wear</label></div>
+                </div>
+                <div class="ds-form__actions" data-component="buttons">
+                  <button class="ds-button" type="button">Search</button>
+                  <button class="ds-button ds-button--secondary" type="button">Reset</button>
+                  <button class="ds-button is-disabled" type="button" disabled>Save</button>
+                  <span class="ds-form__actions-end"><button class="ds-button ds-button--danger" type="button">Forget saved</button></span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="ds-stack">
+            <div class="ds-notices" data-component="notice">
+              <div class="ds-notice"><p class="ds-notice__text"><span class="ds-notice__title">Showing 1 to 6 of 214.</span> Items of patch 3.2 were added last night.</p></div>
+              <div class="ds-notice ds-notice--error"><p class="ds-notice__text"><span class="ds-notice__title">One filter was left out.</span> The lowest level is not a level the game has.</p></div>
+            </div>
+            <div class="ds-empty" data-component="empty">
+              <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h11a2 2 0 0 1 2 2v1h-4M7 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7M9 9h5M9 13h5"/></svg>
+              <h3 class="ds-empty__title">No saved searches</h3>
+              <p class="ds-empty__text">Save a search to see new matching items here after every patch.</p>
+              <a class="ds-button ds-button--secondary" href="#items">Save this search</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-frame">
+          <table class="ds-table">
+            <thead><tr><th>Item</th><th>Slot</th><th>Source</th><th>Binds</th><th class="is-numeric">Level</th><th class="is-numeric">Armour</th></tr></thead>
+            <tbody>
+              <tr><td><a class="ds-item ds-item--legendary" href="#item">Gatewarden's Legplates</a></td><td>Legs</td><td>The Gate Warden</td><td><span class="ds-badge ds-badge--warning">On pickup</span></td><td class="is-numeric">80</td><td class="is-numeric">1,480</td></tr>
+              <tr><td><a class="ds-item ds-item--epic" href="#item">Gatekeeper's Bulwark</a></td><td>Off hand</td><td>The Gate Warden</td><td><span class="ds-badge ds-badge--warning">On pickup</span></td><td class="is-numeric">71</td><td class="is-numeric">2,840</td></tr>
+              <tr><td><a class="ds-item ds-item--set" href="#item">Vigil Breastplate</a></td><td>Chest</td><td>Warden quest line</td><td><span class="ds-badge ds-badge--danger">Quest item</span></td><td class="is-numeric">70</td><td class="is-numeric">1,655</td></tr>
+              <tr><td><a class="ds-item ds-item--rare" href="#item">Ashplate Helm</a></td><td>Head</td><td>Cinder Reach, any foe</td><td><span class="ds-badge ds-badge--success">On equip</span></td><td class="is-numeric">66</td><td class="is-numeric">1,102</td></tr>
+              <tr><td><a class="ds-item ds-item--rare" href="#item">Cinderwalker Greaves</a></td><td>Legs</td><td>Smith, 300 skill</td><td><span class="ds-badge ds-badge--success">On equip</span></td><td class="is-numeric">66</td><td class="is-numeric">1,190</td></tr>
+              <tr><td><a class="ds-item ds-item--uncommon" href="#item">Militia Plate Gloves</a></td><td>Hands</td><td>Vendor, Ashenford</td><td><span class="ds-badge ds-badge--quiet">Never</span></td><td class="is-numeric">55</td><td class="is-numeric">640</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><span class="ds-pagination__link is-disabled">Previous</span></li>
+          <li><span class="ds-pagination__link is-current">1</span></li>
+          <li><a class="ds-pagination__link" href="#items">2</a></li>
+          <li><a class="ds-pagination__link" href="#items">3</a></li>
+          <li><a class="ds-pagination__link" href="#items">36</a></li>
+          <li><a class="ds-pagination__link" href="#items">Next</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ds-view" id="item">
+      <div class="ds-page__inner">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#home">Armory</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li><a class="ds-breadcrumb__link" href="#items">Items</a></li>
+          <li class="ds-breadcrumb__sep">&raquo;</li>
+          <li class="ds-breadcrumb__current">Gatekeeper's Bulwark</li>
+        </ol>
+        <div class="ds-page-header">
+          <div>
+            <h1 class="ds-page-header__title">Gatekeeper's Bulwark</h1>
+            <p class="ds-page-header__text">Epic shield, item level 71. Added in patch 3.2. <span class="ds-badge" data-component="badge">Item of the week</span></p>
+          </div>
+          <div class="ds-page-header__actions"><a class="ds-button ds-button--secondary" href="#character">Compare with Brannoc</a></div>
+        </div>
+        <div class="ds-split ds-split--wide">
+          <div class="ds-stack">
+            <div class="ds-panel ds-frame">
+              <div class="ds-panel__body">
+                <div class="ds-prose" data-component="typography">
+                  <h1>The shield of the gate</h1>
+                  <p class="ds-prose__lead">The best shield a warden can carry before the last warband fight, and the first thing most of them ask for.</p>
+                  <p>It drops from the Gate Warden about once in six kills. To show it to your warband, hold shift and click the name, or type <code>/link Gatekeeper's Bulwark</code> in chat.</p>
+                  <h2>Who should take it</h2>
+                  <ul>
+                    <li>Wardens who stand at the front, before anyone else.</li>
+                    <li>Menders, if no warden present can use it.</li>
+                  </ul>
+                  <h3>What it replaces</h3>
+                  <p>Anything under item level 66. Keep the <a href="#items">Ashplate set</a> shield for fights with fire.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ds-accordion">
+              <details class="ds-accordion__item" open>
+                <summary class="ds-accordion__summary">Where does it drop? <span class="ds-accordion__meta">1 source</span></summary>
+                <div class="ds-accordion__body ds-prose"><p>The Gate Warden, last foe of the Ember Gate, for warbands of twelve. Chance: 16 in 100.</p></div>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__summary">Can it be traded? <span class="ds-accordion__meta">No</span></summary>
+                <div class="ds-accordion__body ds-prose"><p>It binds to the character who picks it up.</p></div>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__summary">Who wears it? <span class="ds-accordion__meta">412 characters</span></summary>
+                <div class="ds-accordion__body ds-prose"><p>Mostly wardens over level 58.</p></div>
+              </details>
+            </div>
+          </div>
+          <div class="ds-stack">
+            <div class="ds-tooltip ds-tooltip--card">
+              <div class="ds-tooltip__tip">
+                <span class="ds-tooltip__name ds-item ds-item--epic">Gatekeeper's Bulwark</span>
+                <span class="ds-tooltip__line ds-tooltip__line--muted">Binds when picked up</span>
+                <span class="ds-tooltip__line"><span>Off hand</span><span>Shield</span></span>
+                <span class="ds-tooltip__line">2,840 armour</span>
+                <span class="ds-tooltip__line">68 block</span>
+                <span class="ds-tooltip__line ds-tooltip__line--bonus">+31 stamina</span>
+                <span class="ds-tooltip__line ds-tooltip__line--bonus">+14 strength</span>
+                <span class="ds-tooltip__line ds-tooltip__line--bonus">Equip: raises block chance by 2%.</span>
+                <span class="ds-tooltip__line">Durability 120 / 120</span>
+                <span class="ds-tooltip__line">Requires level 58</span>
+                <span class="ds-tooltip__line ds-tooltip__line--lore">"It was a door once."</span>
+              </div>
+            </div>
+            <div class="ds-panel ds-frame">
+              <h2 class="ds-panel__title">See also</h2>
+              <div class="ds-panel__body">
+                <ul class="ds-links" data-component="links">
+                  <li><a class="ds-link" href="#items">All epic shields</a></li>
+                  <li><a class="ds-link is-visited" href="#character">Brannoc's sheet (seen)</a></li>
+                  <li><a class="ds-link is-hover" href="#talents">Bulwark talents</a></li>
+                  <li><a class="ds-link is-active" href="#items">The Vigil set</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#home">Armory home</a></li>
+      <li><a class="ds-footer__link" href="#character">Characters</a></li>
+      <li><a class="ds-footer__link" href="#items">Items</a></li>
+      <li><a class="ds-footer__link" href="#talents">Talents</a></li>
+      <li><a class="ds-footer__link" href="#items">Report a wrong sheet</a></li>
+    </ul>
+    <p class="ds-footer__note">chronoskin armory. Data as of last night's realm restart.</p>
+  </footer>
+
+</div>
+</body>
+</html>

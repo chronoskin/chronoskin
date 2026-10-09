@@ -1,0 +1,104 @@
+{{/* The documentation: one column of text beside a list of its sections.
+     Data: Totals, EraCode, EraName, Example, ExampleLong, Repo, Base. */}}
+{{define "main"}}
+<main class="page docs" x-data="toc">
+  <nav class="toc" aria-label="On this page">
+    <span class="marker" aria-hidden="true" x-ref="marker"></span>
+    <a href="#start">How to use it</a>
+    <a href="#files">What you get</a>
+    <a href="#parts">Parts of a style</a>
+    <a href="#id">The Style ID</a>
+    <a href="#install">Install</a>
+    <a href="#tools">For tools</a>
+  </nav>
+  <div class="doc">
+    <header>
+      <h1>How chronoskin works</h1>
+      <p class="lead">chronoskin gives a coding agent a look to build in: a small folder of rules, tokens and an example site, drawn from one era of web design. The library has {{.Totals}}.</p>
+    </header>
+
+    <section id="start">
+      <h2>How to use it</h2>
+      <ul class="steps">
+        <li><strong>Pick.</strong> Choose an era on the <a href="/">Eras</a> page, or let it surprise you. Each era is blended from several real sites of its time, so a style reads as its period and not as a copy of one site.</li>
+        <li><strong>Tune.</strong> Step through layouts, colours, type and surfaces, keep what you like and regenerate the rest. Press the heart to save a style in your browser.</li>
+        <li><strong>Install.</strong> Copy one command. Your agent gets a <code>.design/</code> folder and follows it for every screen it builds.</li>
+      </ul>
+    </section>
+
+    <section id="files">
+      <h2>What you get</h2>
+      <p>A style is a folder called <code>.design/</code> with five files. The agent reads them before it writes any interface.</p>
+      <dl class="defs">
+        <div><dt><code>STYLE.md</code></dt><dd>The rules in words, and what the style never does.</dd></div>
+        <div><dt><code>tokens.css</code></dt><dd>Colours, fonts, borders, radii and shadows as CSS custom properties.</dd></div>
+        <div><dt><code>components.css</code></dt><dd>Classes for navigation, buttons, forms, tables and the other parts of a page.</dd></div>
+        <div><dt><code>specimen.html</code></dt><dd>A small example site that uses every component. When in doubt, the agent does what it does.</dd></div>
+        <div><dt><code>style.json</code></dt><dd>The style's ID, era and page width.</dd></div>
+      </dl>
+    </section>
+
+    <section id="parts">
+      <h2>Parts of a style</h2>
+      <p>A style is put together from parts, and an era offers several of each. Any layout can wear any of its era's colours, type and surfaces.</p>
+      <dl class="defs">
+        <div><dt>Layout</dt><dd>The page skeleton and its components, shown as an example site you can click through.</dd></div>
+        <div><dt>Colours</dt><dd>The palette: page, surfaces, text, links, bars, buttons and status colours.</dd></div>
+        <div><dt>Type</dt><dd>Fonts, sizes, weights and how links are marked.</dd></div>
+        <div><dt>Surface</dt><dd>Borders, corners, shadows and fills.</dd></div>
+        <div><dt>Spacing</dt><dd>Compact, normal or roomy: the layout's gaps scaled down or up.</dd></div>
+        <div><dt>Your colours</dt><dd>Any colour of the palette set by hand in the colour editor, if you want your own.</dd></div>
+      </dl>
+      <p>On a style's page the arrows step one part back or forward, <em>Keep</em> holds a part while <em>Regenerate</em> changes the rest, and <em>Any era</em> jumps to another era. Choose several eras or page types and <em>Regenerate</em> picks among them. On a keyboard, <kbd>R</kbd> regenerates, the left and right arrow keys go to the era before and after, and <kbd>A</kbd> is <em>Any era</em>.</p>
+    </section>
+
+    <section id="id">
+      <h2>The Style ID</h2>
+      <p>Every combination has a short ID. The same ID always gives the same files, so an ID is all you need to share or reinstall a style.</p>
+      <div class="anatomy" role="img" aria-label="The parts of a Style ID">
+        <span><b>v1</b><i>library</i></span>
+        <span><b>{{.EraCode}}</b><i>era: {{.EraName}}</i></span>
+        <span><b>1 1 1 1</b><i>layout, colours, type, surface</i></span>
+        <span class="opt"><b>dr</b><i>spacing: dc compact, dr roomy</i></span>
+        <span class="opt"><b>c…</b><i>colours set by hand</i></span>
+      </div>
+      <p>The last two are optional. Each part number is one character, 1 to 9 and then a to z. The long form, <code>{{.ExampleLong}}</code>, names the era in full and works everywhere the short one does.</p>
+    </section>
+
+    <section id="install">
+      <h2>Install</h2>
+      <div class="ways">
+        <div class="way">
+          <h3>Claude Code</h3>
+          <p>Add the plugin once, then apply any style by its ID.</p>
+          <pre><code>/plugin marketplace add {{.Repo}}
+/plugin install chronoskin@chronoskin
+/chronoskin:design-apply {{.Example}}</code></pre>
+          <p>The plugin also brings <code>/chronoskin:design-new</code>, which picks a style for you, and a skill that makes the agent follow <code>.design/</code> whenever it builds interface.</p>
+        </div>
+        <div class="way">
+          <h3>Any other agent</h3>
+          <p>Unpack the folder into your project.</p>
+          <pre><code>curl -s {{.Base}}/s/{{.Example}}.tar.gz | tar xz</code></pre>
+          <p>Then tell the agent to read <code>.design/STYLE.md</code> and <code>.design/specimen.html</code> before it writes any interface, and to use only the pack's tokens and classes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <h2>For tools</h2>
+      <table>
+        <thead><tr><th>Address</th><th>Returns</th></tr></thead>
+        <tbody>
+          <tr><td><code>GET /api/generate</code></td><td>Redirects to a new style. Takes <code>era</code>, <code>mode</code> (<code>mix</code> or <code>pure</code>), <code>from</code> and <code>lock</code> to regenerate, <code>density</code> and one parameter per colour set by hand, such as <code>--color-accent=%232b55e0</code>; with <code>format=json</code> it returns a description instead.</td></tr>
+          <tr><td><code>GET /s/&lt;id&gt;.tar.gz</code></td><td>The <code>.design/</code> folder as an archive.</td></tr>
+          <tr><td><code>GET /s/&lt;id&gt;.json</code></td><td>The five files as JSON.</td></tr>
+          <tr><td><code>GET /s/&lt;id&gt;/specimen.html</code></td><td>The example site on its own.</td></tr>
+          <tr><td><code>POST /mcp</code></td><td>An MCP server with <code>list_eras</code>, <code>generate_style</code>, <code>get_style</code> and <code>lint_css</code>.</td></tr>
+        </tbody>
+      </table>
+      <p><code>lint_css</code> checks a stylesheet against the installed style and lists every colour, font, size, radius and shadow that should have been a token.</p>
+    </section>
+  </div>
+</main>
+{{end}}

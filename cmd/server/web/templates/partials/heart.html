@@ -1,0 +1,20 @@
+{{/* The save toggle of a style. Data: ID, Title, Width. It is hidden until
+     the script runs, because saving needs it. */}}
+{{define "heart"}}
+<button
+  class="heart"
+  type="button"
+  data-id="{{.ID}}"
+  data-title="{{.Title}}"
+  data-width="{{.Width}}"
+  data-goatcounter-click="save"
+  x-cloak
+  x-data="favourite"
+  x-on:click="toggle"
+  x-bind:aria-pressed="pressed"
+  x-bind:aria-label="label"
+  x-bind:title="label"
+>
+  {{template "heart-icon"}}
+</button>
+{{end}}

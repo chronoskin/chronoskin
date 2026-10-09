@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: neubrutalism app specimen, dashboard layout</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="miter" aria-hidden="true"><polygon points="16.9,6.85 20,6.5 21.5,20 8,21.5 7.6,17.65 18,16.5" fill="currentColor" stroke="none"/><polygon points="3,4.5 16.5,3 18,16.5 4.5,18"/><circle cx="10.5" cy="10.7" r="2.5" fill="currentColor" stroke="none"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <nav aria-label="Main">
+    <p class="ds-nav__label">Studio</p>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="5"/><rect x="13" y="12" width="8" height="9"/><rect x="3" y="15" width="8" height="6"/></svg>Overview</a></li>
+      <li><a class="ds-nav__link" href="#episodes"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 5v2M3 11v2M3 17v2"/></svg>Episodes <span class="ds-badge ds-badge--plain ds-nav__count">48</span></a></li>
+      <li><a class="ds-nav__link" href="#board"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="3" width="5" height="18"/><rect x="10" y="3" width="5" height="11"/><rect x="17" y="3" width="4" height="15"/></svg>Board <span class="ds-badge ds-badge--plain ds-nav__count">9</span></a></li>
+      <li><a class="ds-nav__link" href="#settings"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 7h10M17 7h4M3 17h4M11 17h10"/><circle cx="15" cy="7" r="2.4"/><circle cx="9" cy="17" r="2.4"/></svg>Show settings</a></li>
+      <li><a class="ds-nav__link" href="#guide"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M9 10h6M9 14h6"/></svg>Handbook</a></li>
+    </ul>
+  </nav>
+  <div class="ds-nav__card">
+    <p class="ds-nav__card-title">Storage</p>
+    <span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--62"></span></span>
+    <p class="ds-nav__card-text">6.2 of 10 GB of audio used. Old drafts count too.</p>
+    <a class="ds-button ds-button--secondary ds-button--small" href="#settings">Make room</a>
+  </div>
+</header>
+
+<div class="ds-topbar">
+  <input class="ds-form__control ds-topbar__search" type="search" placeholder="Search episodes and guests" aria-label="Search">
+  <p class="ds-topbar__note">Week 14, three recordings booked</p>
+  <a class="ds-button ds-button--small" href="#board">New episode</a>
+  <span class="ds-topbar__user"><span class="ds-avatar">MK</span><span class="ds-topbar__name">Mira K.</span></span>
+</div>
+
+<main class="ds-main">
+<section class="ds-view ds-view--home" id="home">
+<div class="ds-screen">
+  <section class="ds-hero" data-component="hero">
+    <div class="ds-hero__text">
+      <span class="ds-badge ds-badge--plain">Tuesday morning</span>
+      <h1 class="ds-hero__title">Three episodes are waiting for you.</h1>
+      <p class="ds-hero__lead">chronoskin keeps the recordings, the edit notes and the release dates of your show in one place. Two cuts need your ears today.</p>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--large" href="#board">Open the board &rarr;</a>
+        <a class="ds-button ds-button--secondary ds-button--large" href="#episodes">All episodes</a>
+      </div>
+    </div>
+    <div class="ds-player">
+      <div class="ds-row">
+        <span class="ds-badge ds-badge--alt">Latest cut</span>
+        <span class="ds-note">41 min</span>
+      </div>
+      <h2 class="ds-player__title">48. The ferry that never left</h2>
+      <div class="ds-wave" aria-hidden="true">
+        <span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span><span class="ds-wave__bar"></span>
+      </div>
+      <div class="ds-row">
+        <a class="ds-button ds-button--secondary ds-button--small" href="#episodes">Listen to the cut</a>
+        <a class="ds-link" href="#board">Edit notes</a>
+      </div>
+    </div>
+  </section>
+
+  <dl class="ds-stat" data-component="stats">
+    <div class="ds-stat__card ds-stat__card--1">
+      <dt class="ds-stat__label">Plays this week</dt>
+      <dd class="ds-stat__value">48,210</dd>
+      <dd class="ds-stat__note">4,100 more than last week</dd>
+    </div>
+    <div class="ds-stat__card ds-stat__card--2">
+      <dt class="ds-stat__label">Followers</dt>
+      <dd class="ds-stat__value">9,634</dd>
+      <dd class="ds-stat__note">212 new since Monday</dd>
+    </div>
+    <div class="ds-stat__card ds-stat__card--3">
+      <dt class="ds-stat__label">Listened to the end</dt>
+      <dd class="ds-stat__value">71%</dd>
+      <dd class="ds-stat__note">Best: episode 44, 83%</dd>
+    </div>
+    <div class="ds-stat__card ds-stat__card--4">
+      <dt class="ds-stat__label">Episodes in the works</dt>
+      <dd class="ds-stat__value">9</dd>
+      <dd class="ds-stat__note">Two are past their date</dd>
+    </div>
+  </dl>
+
+  <div class="ds-split ds-split--wide">
+    <section class="ds-panel" data-component="panel">
+      <h2 class="ds-panel__title">Plays, last seven days <span class="ds-badge ds-badge--plain">All shows</span></h2>
+      <div class="ds-panel__body">
+        <ul class="ds-chart" aria-label="Plays per day">
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--45"></span>Wed</li>
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--60"></span>Thu</li>
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--100"></span>Fri</li>
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--75"></span>Sat</li>
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--30"></span>Sun</li>
+          <li class="ds-chart__col"><span class="ds-chart__bar ds-chart__bar--60"></span>Mon</li>
+          <li class="ds-chart__col is-current"><span class="ds-chart__bar ds-chart__bar--90"></span>Today</li>
+        </ul>
+      </div>
+    </section>
+    <section class="ds-panel ds-panel--plain">
+      <h2 class="ds-panel__title">Most played this month</h2>
+      <div class="ds-panel__body">
+        <ol class="ds-rank">
+          <li class="ds-rank__item">
+            <div class="ds-rank__head"><a class="ds-link ds-link--quiet" href="#episodes">44. Salt in the tea</a><span class="ds-rank__num">12,480</span></div>
+            <span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--95"></span></span>
+          </li>
+          <li class="ds-rank__item">
+            <div class="ds-rank__head"><a class="ds-link ds-link--quiet" href="#episodes">47. A map with no north</a><span class="ds-rank__num">10,912</span></div>
+            <span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--80"></span></span>
+          </li>
+          <li class="ds-rank__item">
+            <div class="ds-rank__head"><a class="ds-link ds-link--quiet" href="#episodes">45. The night bus choir</a><span class="ds-rank__num">8,077</span></div>
+            <span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--62"></span></span>
+          </li>
+          <li class="ds-rank__item">
+            <div class="ds-rank__head"><a class="ds-link ds-link--quiet" href="#episodes">46. Borrowed umbrellas</a><span class="ds-rank__num">4,530</span></div>
+            <span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--35"></span></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+
+  <div class="ds-split ds-split--wide">
+    <div class="ds-stack">
+      <div class="ds-row">
+        <h2 class="ds-label">Since you were last here</h2>
+        <a class="ds-link" href="#episodes">See every episode</a>
+      </div>
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <span class="ds-avatar ds-avatar--2">JO</span>
+          <div class="ds-list__main">
+            <h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#board">Jonas uploaded the second cut of episode 48</a></h3>
+            <p class="ds-list__text">Six minutes shorter, the intro music is back.</p>
+          </div>
+          <span class="ds-list__meta">20 minutes ago</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-avatar ds-avatar--3">AL</span>
+          <div class="ds-list__main">
+            <h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#board">Alba booked a guest for episode 51</a></h3>
+            <p class="ds-list__text">Recording on Thursday at ten, in the small room.</p>
+          </div>
+          <span class="ds-list__meta">Yesterday</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-avatar">MK</span>
+          <div class="ds-list__main">
+            <h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#episodes">You published episode 47</a></h3>
+            <p class="ds-list__text">It reached 5,000 plays in its first two days.</p>
+          </div>
+          <span class="ds-list__meta">Friday</span>
+        </li>
+      </ul>
+    </div>
+    <div class="ds-empty">
+      <h3 class="ds-empty__title">Nothing goes out this week</h3>
+      <p class="ds-empty__text">Episode 48 has no release date yet. Pick one and it shows up here.</p>
+      <a class="ds-button ds-button--small" href="#board">Set a date</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="ds-view" id="episodes">
+<div class="ds-screen">
+  <ol class="ds-breadcrumb" data-component="breadcrumb" aria-label="Breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Studio</a></li>
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#episodes">Harbour Stories</a></li>
+    <li class="ds-breadcrumb__item is-current" aria-current="page">Episodes</li>
+  </ol>
+  <section class="ds-page-header" data-component="page-header">
+    <div>
+      <h1 class="ds-page-header__title">Episodes</h1>
+      <p class="ds-page-header__lead">Every episode of Harbour Stories, newest first.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#episodes">Export list</a>
+      <a class="ds-button" href="#board">New episode</a>
+    </div>
+  </section>
+  <div class="ds-split">
+    <div class="ds-stack">
+      <ul class="ds-tabs" data-component="tabs" role="tablist">
+        <li><a class="ds-tabs__tab is-current" href="#episodes" role="tab" aria-selected="true">All <span class="ds-badge ds-badge--plain">48</span></a></li>
+        <li><a class="ds-tabs__tab" href="#episodes" role="tab">Published</a></li>
+        <li><a class="ds-tabs__tab" href="#episodes" role="tab">Scheduled</a></li>
+        <li><a class="ds-tabs__tab" href="#board" role="tab">Drafts</a></li>
+      </ul>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th>No.</th><th>Title</th><th>Status</th><th class="ds-table__extra">Released</th><th class="ds-table__num ds-table__extra">Length</th><th class="ds-table__num">Plays</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>49</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#board">The lighthouse keeper's radio</a></td><td><span class="ds-badge ds-badge--plain">Draft</span></td><td class="ds-table__extra">Not set</td><td class="ds-table__num ds-table__extra">0:00</td><td class="ds-table__num">0</td></tr>
+          <tr class="is-current"><td>48</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#board">The ferry that never left</a></td><td><span class="ds-badge ds-badge--warning">In review</span></td><td class="ds-table__extra">Not set</td><td class="ds-table__num ds-table__extra">41:12</td><td class="ds-table__num">0</td></tr>
+          <tr><td>47</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#episodes">A map with no north</a></td><td><span class="ds-badge ds-badge--success">Published</span></td><td class="ds-table__extra">4 April</td><td class="ds-table__num ds-table__extra">38:40</td><td class="ds-table__num">10,912</td></tr>
+          <tr><td>46</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#episodes">Borrowed umbrellas</a></td><td><span class="ds-badge ds-badge--success">Published</span></td><td class="ds-table__extra">28 March</td><td class="ds-table__num ds-table__extra">29:05</td><td class="ds-table__num">4,530</td></tr>
+          <tr><td>45</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#episodes">The night bus choir</a></td><td><span class="ds-badge ds-badge--success">Published</span></td><td class="ds-table__extra">21 March</td><td class="ds-table__num ds-table__extra">44:18</td><td class="ds-table__num">8,077</td></tr>
+          <tr><td>44</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#episodes">Salt in the tea</a></td><td><span class="ds-badge ds-badge--success">Published</span></td><td class="ds-table__extra">14 March</td><td class="ds-table__num ds-table__extra">36:51</td><td class="ds-table__num">12,480</td></tr>
+          <tr><td>43</td><td class="ds-table__title"><a class="ds-link ds-link--quiet" href="#episodes">Two keys, one door</a></td><td><span class="ds-badge ds-badge--danger">Taken down</span></td><td class="ds-table__extra">7 March</td><td class="ds-table__num ds-table__extra">33:27</td><td class="ds-table__num">2,204</td></tr>
+        </tbody>
+      </table>
+      <div class="ds-row">
+        <ul class="ds-pagination" data-component="pagination" aria-label="Pages">
+          <li><a class="ds-pagination__link is-disabled" href="#episodes" aria-disabled="true">&larr; Newer</a></li>
+          <li><a class="ds-pagination__link is-current" href="#episodes" aria-current="page">1</a></li>
+          <li><a class="ds-pagination__link" href="#episodes">2</a></li>
+          <li><a class="ds-pagination__link" href="#episodes">3</a></li>
+          <li><a class="ds-pagination__link" href="#episodes">7</a></li>
+          <li><a class="ds-pagination__link" href="#episodes">Older &rarr;</a></li>
+        </ul>
+        <p class="ds-note">Showing 1 to 7 of 48</p>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <aside class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">Your shows</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#episodes">Harbour Stories</a><span class="ds-badge ds-badge--plain">48</span></li>
+          <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#episodes">The Short Walk</a><span class="ds-badge ds-badge--plain">21</span></li>
+          <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#episodes">Kitchen Table Maths</a><span class="ds-badge ds-badge--plain">6</span></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#settings">Show settings</a></li>
+        </ul>
+      </aside>
+      <section class="ds-panel ds-panel--plain">
+        <h2 class="ds-panel__title">What the labels mean</h2>
+        <div class="ds-panel__body">
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge">Recording</span>
+            <span class="ds-badge ds-badge--alt">New</span>
+            <span class="ds-badge ds-badge--plain">Draft</span>
+            <span class="ds-badge ds-badge--success">Published</span>
+            <span class="ds-badge ds-badge--warning">In review</span>
+            <span class="ds-badge ds-badge--danger">Taken down</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="ds-view" id="board">
+<div class="ds-screen">
+  <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Studio</a></li>
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#episodes">Harbour Stories</a></li>
+    <li class="ds-breadcrumb__item is-current" aria-current="page">Board</li>
+  </ol>
+  <section class="ds-page-header">
+    <div>
+      <h1 class="ds-page-header__title">Production board</h1>
+      <p class="ds-page-header__lead">Nine episodes between an idea and a release date.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#episodes">View as a list</a>
+      <a class="ds-button" href="#board">Add a card</a>
+    </div>
+  </section>
+  <ul class="ds-grid" data-component="grid">
+    <li class="ds-grid__cell ds-grid__cell--1">
+      <div class="ds-grid__head"><h2 class="ds-grid__title">Ideas</h2><span class="ds-badge ds-badge--plain">3</span></div>
+      <div class="ds-grid__body">
+        <article class="ds-card">
+          <h3 class="ds-card__title">52. The clock repair shop</h3>
+          <p class="ds-card__text">Ask about the tower clock that runs backwards.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--alt">New</span><span class="ds-avatar ds-avatar--3">AL</span></div>
+        </article>
+        <article class="ds-card">
+          <h3 class="ds-card__title">53. Letters from the pier</h3>
+          <p class="ds-card__text">Needs a second voice. Maybe the postmaster.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--plain">No date</span><span class="ds-avatar">MK</span></div>
+        </article>
+        <article class="ds-card">
+          <h3 class="ds-card__title">54. Winter swimmers</h3>
+          <p class="ds-card__text">Record outside, bring the wind shield.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--plain">No date</span><span class="ds-avatar ds-avatar--2">JO</span></div>
+        </article>
+      </div>
+    </li>
+    <li class="ds-grid__cell ds-grid__cell--2">
+      <div class="ds-grid__head"><h2 class="ds-grid__title">Recording</h2><span class="ds-badge ds-badge--plain">2</span></div>
+      <div class="ds-grid__body">
+        <article class="ds-card">
+          <h3 class="ds-card__title">51. The bridge painter</h3>
+          <p class="ds-card__text">Guest booked for Thursday at ten.</p>
+          <div class="ds-card__foot"><span class="ds-badge">Recording</span><span class="ds-avatar ds-avatar--3">AL</span></div>
+        </article>
+        <article class="ds-card">
+          <h3 class="ds-card__title">50. Fog signals</h3>
+          <p class="ds-card__text">Second half still to record.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--danger">Late</span><span class="ds-avatar">MK</span></div>
+        </article>
+      </div>
+    </li>
+    <li class="ds-grid__cell ds-grid__cell--3">
+      <div class="ds-grid__head"><h2 class="ds-grid__title">Editing</h2><span class="ds-badge ds-badge--plain">4</span></div>
+      <div class="ds-grid__body">
+        <article class="ds-card">
+          <h3 class="ds-card__title">48. The ferry that never left</h3>
+          <p class="ds-card__text">Second cut is up. Waiting for your ears.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--warning">In review</span><span class="ds-avatar ds-avatar--2">JO</span></div>
+        </article>
+        <article class="ds-card">
+          <h3 class="ds-card__title">49. The lighthouse keeper's radio</h3>
+          <p class="ds-card__text">Rough cut, 58 minutes. Aim for 40.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--plain">Draft</span><span class="ds-avatar ds-avatar--2">JO</span></div>
+        </article>
+        <article class="ds-card">
+          <h3 class="ds-card__title">Trailer for the spring season</h3>
+          <p class="ds-card__text">Ninety seconds, three clips.</p>
+          <div class="ds-card__foot"><span class="ds-badge ds-badge--danger">Late</span><span class="ds-avatar">MK</span></div>
+        </article>
+      </div>
+    </li>
+    <li class="ds-grid__cell ds-grid__cell--4">
+      <div class="ds-grid__head"><h2 class="ds-grid__title">Scheduled</h2><span class="ds-badge ds-badge--plain">0</span></div>
+      <div class="ds-grid__body">
+        <div class="ds-empty" data-component="empty">
+          <h3 class="ds-empty__title">Nothing scheduled</h3>
+          <p class="ds-empty__text">An episode lands here when it has a release date.</p>
+          <a class="ds-button ds-button--small" href="#episodes">Pick an episode</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="ds-notice" role="status">
+    <strong class="ds-notice__title">Two cards are late</strong>
+    <p class="ds-notice__text">Fog signals and the spring trailer are past the dates you set. Move the dates or move the cards.</p>
+  </div>
+</div>
+</section>
+
+<section class="ds-view" id="settings">
+<div class="ds-screen">
+  <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Studio</a></li>
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#episodes">Harbour Stories</a></li>
+    <li class="ds-breadcrumb__item is-current" aria-current="page">Settings</li>
+  </ol>
+  <section class="ds-page-header">
+    <div>
+      <h1 class="ds-page-header__title">Show settings</h1>
+      <p class="ds-page-header__lead">What listeners see and where the feed lives.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#guide">How feeds work</a>
+    </div>
+  </section>
+  <div class="ds-stack" data-component="notice">
+    <div class="ds-notice ds-notice--error" role="alert">
+      <strong class="ds-notice__title">Not saved</strong>
+      <p class="ds-notice__text">The feed address is already taken by another show. Choose a different one below.</p>
+    </div>
+    <div class="ds-notice" role="status">
+      <strong class="ds-notice__title">Good to know</strong>
+      <p class="ds-notice__text">Changes reach the podcast apps within a day of saving.</p>
+    </div>
+  </div>
+  <div class="ds-split">
+    <section class="ds-panel">
+      <h2 class="ds-panel__title">About the show</h2>
+      <div class="ds-panel__body">
+        <form class="ds-form" data-component="form">
+          <div class="ds-form__row">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-name">Show name</label>
+              <input class="ds-form__control" id="f-name" type="text" value="Harbour Stories">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-feed">Feed address</label>
+              <input class="ds-form__control is-invalid" id="f-feed" type="text" value="harbour" aria-invalid="true" aria-describedby="f-feed-err">
+              <p class="ds-form__error" id="f-feed-err">This address is taken. Try harbour-stories.</p>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-lang">Language</label>
+              <select class="ds-form__control" id="f-lang">
+                <option>English</option>
+                <option>Portuguese</option>
+                <option>German</option>
+              </select>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-day">Release day</label>
+              <select class="ds-form__control" id="f-day">
+                <option>Friday</option>
+                <option>Tuesday</option>
+                <option>No fixed day</option>
+              </select>
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-about">Description</label>
+            <textarea class="ds-form__control ds-form__control--area" id="f-about">Short true stories from a small port town, told by the people who were there.</textarea>
+            <p class="ds-form__hint">Shown under the title in every podcast app. Two sentences are plenty.</p>
+          </div>
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Email me when an episode passes 5,000 plays</label>
+<div class="ds-switch-row"><label class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span>Show play counts to guests</span></label><span class="ds-tooltip" data-component="tooltip"><button class="ds-tooltip__trigger" type="button" aria-describedby="tip-1">?</button><span class="ds-tooltip__tip" id="tip-1" role="tooltip">Guests see totals only, never who listened.</span></span></div>
+          <div class="ds-form__foot" data-component="buttons">
+            <button class="ds-button" type="button">Save changes</button>
+            <a class="ds-button ds-button--secondary" href="#episodes">Discard</a>
+            <a class="ds-button ds-button--danger" href="#settings">Delete show</a>
+            <button class="ds-button" type="button" disabled>Publish feed</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="ds-stack">
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">Who can edit</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item">Mira K. <span class="ds-badge">Owner</span></li>
+          <li class="ds-sidebar__item">Jonas O. <span class="ds-badge ds-badge--plain">Editor</span></li>
+          <li class="ds-sidebar__item">Alba L. <span class="ds-badge ds-badge--plain">Producer</span></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#settings">Invite someone</a></li>
+        </ul>
+      </aside>
+      <section class="ds-panel ds-panel--plain">
+        <h2 class="ds-panel__title">Feed</h2>
+        <div class="ds-panel__body">
+          <p>The feed is paused until the address is fixed. Listeners keep the episodes they already have.</p>
+          <a class="ds-link" href="#guide">Moving a feed</a>
+        </div>
+      </section>
+<section class="ds-panel"><h2 class="ds-panel__title">Feed check</h2><div class="ds-panel__body"><div class="ds-progress" data-component="progress"><p class="ds-progress__label"><span>Apps that follow the feed</span><span>3 of 4</span></p><span class="ds-progress__track"><span class="ds-progress__bar ds-progress__bar--70"></span></span></div></div></section>
+    </div>
+  </div>
+  <div class="ds-overlay">
+    <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+      <div class="ds-dialog__bar">
+        <h2 class="ds-dialog__title" id="dlg-title">Delete Harbour Stories?</h2>
+        <a class="ds-dialog__close" href="#settings" aria-label="Close">&times;</a>
+      </div>
+      <div class="ds-dialog__body">
+        <p>All 48 episodes, their notes and the feed go with it. Listeners lose the show within a day. This cannot be undone.</p>
+      </div>
+      <div class="ds-dialog__actions">
+        <a class="ds-button ds-button--secondary" href="#settings">Keep the show</a>
+        <button class="ds-button ds-button--danger" type="button">Delete show</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="ds-view" id="guide">
+<div class="ds-screen">
+  <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Studio</a></li>
+    <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#guide">Handbook</a></li>
+    <li class="ds-breadcrumb__item is-current" aria-current="page">Moving a feed</li>
+  </ol>
+  <section class="ds-page-header">
+    <div>
+      <h1 class="ds-page-header__title">Handbook</h1>
+      <p class="ds-page-header__lead">Short answers for the days when something has to go out.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button" href="#settings">Open show settings</a>
+    </div>
+  </section>
+  <div class="ds-split">
+    <div class="ds-sheet">
+      <article class="ds-prose" data-component="typography">
+        <h1>Moving a feed</h1>
+        <p>A feed is the address podcast apps ask for new episodes. Move it carefully and no listener notices; move it carelessly and they all have to follow again.</p>
+        <h2>Before you change the address</h2>
+        <p>Set the old address to forward for at least a month. In the feed file this is the line <code>new-feed-url</code>, and chronoskin writes it for you.</p>
+        <ul>
+          <li>Keep the episode numbers exactly as they were</li>
+          <li>Publish nothing on the day you move</li>
+          <li>Check one app on a phone, not only the website</li>
+        </ul>
+        <h3>If plays drop afterwards</h3>
+        <p>Give it a week. Apps fetch on their own schedule, and <strong>a quiet weekend is not a broken feed</strong>.</p>
+      </article>
+    </div>
+    <div class="ds-stack">
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">More in the handbook</h2>
+        <ul class="ds-links" data-component="links">
+          <li><a class="ds-link" href="#guide">Recording with a guest</a></li>
+          <li><a class="ds-link is-visited" href="#guide">Loudness, in plain words</a></li>
+          <li><a class="ds-link is-hover" href="#board">Using the board</a></li>
+          <li><a class="ds-link is-active" href="#settings">Show settings</a></li>
+        </ul>
+      </aside>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Still stuck?</h2>
+        <div class="ds-panel__body">
+          <p>Write to the studio desk with the name of your show. A person answers on weekdays.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#settings">Write to the desk</a>
+        </div>
+      </section>
+<div class="ds-accordion" data-component="accordion">
+<details class="ds-accordion__item" open><summary class="ds-accordion__head">Will I lose listeners?</summary><div class="ds-accordion__body"><p>Not if the old address forwards for a month.</p></div></details>
+<details class="ds-accordion__item"><summary class="ds-accordion__head">How long does a move take?</summary><div class="ds-accordion__body"><p>Most apps follow within a day.</p></div></details>
+<details class="ds-accordion__item"><summary class="ds-accordion__head">Can I move back?</summary><div class="ds-accordion__body"><p>Yes, the same way, with the addresses swapped.</p></div></details>
+</div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__brand">chronoskin</p>
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#home">Overview</a></li>
+    <li><a class="ds-footer__link" href="#episodes">Episodes</a></li>
+    <li><a class="ds-footer__link" href="#board">Board</a></li>
+    <li><a class="ds-footer__link" href="#guide">Handbook</a></li>
+  </ul>
+  <p class="ds-footer__legal">Specimen page. All names and figures are placeholders.</p>
+</footer>
+
+</body>
+</html>

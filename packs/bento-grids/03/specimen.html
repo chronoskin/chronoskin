@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin, whole-page bento specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="8" rx="2.5"/><rect x="15.5" y="2.5" width="6" height="8" rx="2.5" opacity=".5"/><rect x="2.5" y="12.5" width="6" height="9" rx="2.5" opacity=".5"/><rect x="10.5" y="12.5" width="11" height="9" rx="2.5"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Overview</a></li>
+      <li class="ds-menu"><a class="ds-nav__link" href="#invoices">Invoices<svg class="ds-menu__caret" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 3 2.5 2.5L6.5 3"/></svg></a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#invoices">All invoices <span class="ds-menu__hint">12</span></a></li>
+          <li><a class="ds-menu__item" href="#invoice">Latest, 0214</a></li>
+          <li><a class="ds-menu__item" href="#guide">Credit notes</a></li>
+          <li class="ds-menu__rule"></li>
+          <li><a class="ds-menu__item" href="#new">New invoice</a></li>
+        </ul>
+      </li>
+      <li><a class="ds-nav__link" href="#invoice">Latest</a></li>
+      <li><a class="ds-nav__link" href="#guide">Guide</a></li>
+      <li class="ds-nav__more"><a class="ds-nav__link ds-nav__link--more" href="#guide">Credit notes</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <a class="ds-button ds-button--small" href="#new">New invoice</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="ds-page__inner">
+    <section class="ds-view ds-view--home" id="home">
+    <div class="ds-grid" data-component="grid">
+      <section class="ds-grid__cell ds-hero" data-component="hero">
+        <div class="ds-hero__top">
+          <a class="ds-badge ds-badge--new" href="#guide"><span class="ds-badge__dot"></span>Recurring invoices are here</a>
+        </div>
+        <h1 class="ds-hero__title">Get paid without <span class="ds-hero__title-accent">chasing anyone</span></h1>
+        <p class="ds-hero__lead">chronoskin writes the invoice, sends it on the day you agreed and reminds the client politely until it is settled.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#new">Send a first invoice</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#invoice">See a sample</a>
+          <p class="ds-hero__note">Three invoices a month are free.</p>
+        </div>
+      </section>
+
+      <article class="ds-grid__cell ds-grid__cell--tall ds-grid__cell--fill-1">
+        <div class="ds-grid__head">
+          <div>
+            <h2 class="ds-grid__title"><a class="ds-grid__link" href="#invoice">Invoice 0214</a></h2>
+            <p class="ds-grid__text">Fennick &amp; Daughters, due 30 June</p>
+          </div>
+          <span class="ds-badge ds-badge--warning">Sent</span>
+        </div>
+        <div class="ds-grid__visual">
+          <ul class="ds-rows">
+            <li class="ds-rows__item">Site survey <span>640.00</span></li>
+            <li class="ds-rows__item">Drawings, two rounds <span>1,180.00</span></li>
+            <li class="ds-rows__item">Travel <span>92.50</span></li>
+            <li class="ds-rows__item">Tax at 20% <span>382.50</span></li>
+          </ul>
+          <p class="ds-stat"><span class="ds-stat__label">Total due</span><span class="ds-stat__value">2,295</span></p>
+        </div>
+      </article>
+
+      <ul class="ds-grid__cell ds-grid__cell--wide ds-stats" data-component="stats">
+        <li class="ds-stat">
+          <span class="ds-stat__label">Paid this quarter</span>
+          <span class="ds-stat__value">18.4<span class="ds-stat__unit">k</span></span>
+          <span class="ds-stat__note ds-stat__note--success">12% up on last quarter</span>
+        </li>
+        <li class="ds-stat">
+          <span class="ds-stat__label">Outstanding</span>
+          <span class="ds-stat__value">3.1<span class="ds-stat__unit">k</span></span>
+          <span class="ds-stat__note ds-stat__note--warning">4 invoices waiting</span>
+        </li>
+        <li class="ds-stat">
+          <span class="ds-stat__label">Days to payment</span>
+          <span class="ds-stat__value">9</span>
+          <span class="ds-stat__note">Median of 46 invoices</span>
+        </li>
+      </ul>
+
+      <article class="ds-grid__cell">
+        <h2 class="ds-grid__title">Reminders</h2>
+        <p class="ds-grid__text">Polite, spaced out, and off the moment <span class="ds-tooltip" tabindex="0">the money lands<span class="ds-tooltip__mark">?</span><span class="ds-tooltip__tip">Seen on the bank feed, which is read once an hour.</span></span>.</p>
+        <div class="ds-grid__visual">
+          <ul class="ds-rows">
+            <li class="ds-rows__item">Three days before <span class="ds-switch is-on"></span></li>
+            <li class="ds-rows__item">A week after <span class="ds-switch"></span></li>
+          </ul>
+          <div class="ds-progress">
+            <span class="ds-progress__label">June collected <span class="ds-progress__value">8 of 12 invoices</span></span>
+            <span class="ds-progress__bar"><span class="ds-progress__fill ds-progress__fill--3"></span></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--mini ds-grid__cell--center">
+        <span class="ds-grid__icon"><svg class="ds-grid__glyph" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="16" height="12" rx="2.5"/><path d="M3 9h16"/></svg></span>
+        <h2 class="ds-grid__title">Card</h2>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--mini ds-grid__cell--center ds-grid__cell--fill-4">
+        <span class="ds-grid__icon"><svg class="ds-grid__glyph" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9 11 4l8 5M5 9v8m4-8v8m4-8v8m4-8v8M3 18h16"/></svg></span>
+        <h2 class="ds-grid__title">Transfer</h2>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--fill-2">
+        <h2 class="ds-grid__title">Before it is sent</h2>
+        <div class="ds-grid__visual">
+          <ul class="ds-checks">
+            <li class="ds-checks__item"><svg class="ds-checks__mark" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3.5 3.5L13 5"/></svg>Client address on file</li>
+            <li class="ds-checks__item"><svg class="ds-checks__mark" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3.5 3.5L13 5"/></svg>Tax rate matches the country</li>
+            <li class="ds-checks__item"><svg class="ds-checks__mark" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3.5 3.5L13 5"/></svg>Number follows the last one</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--glow">
+        <h2 class="ds-grid__title">Income by month</h2>
+        <div class="ds-grid__visual">
+          <div class="ds-chart">
+            <span class="ds-chart__bar ds-chart__bar--2"></span>
+            <span class="ds-chart__bar ds-chart__bar--3"></span>
+            <span class="ds-chart__bar"></span>
+            <span class="ds-chart__bar ds-chart__bar--4"></span>
+            <span class="ds-chart__bar ds-chart__bar--3"></span>
+            <span class="ds-chart__bar ds-chart__bar--5 is-current"></span>
+            <span class="ds-chart__bar ds-chart__bar--4"></span>
+            <span class="ds-chart__bar ds-chart__bar--2"></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--half ds-grid__cell--fill-3">
+        <h2 class="ds-grid__title">A plain file behind every invoice</h2>
+        <p class="ds-grid__text">Export the ledger whenever you like; nothing is locked in.</p>
+        <div class="ds-grid__visual">
+<pre class="ds-code"><span class="ds-code__key">$</span> chronoskin export --year 2025
+  46 invoices, 3 open
+  wrote <span class="ds-code__str">ledger-2025.csv</span></pre>
+        </div>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--half">
+        <h2 class="ds-grid__title">Speaks to your books</h2>
+        <p class="ds-grid__text">Paid invoices land in the tools your accountant already opens.</p>
+        <div class="ds-grid__visual">
+          <div class="ds-chips">
+            <span class="ds-badge">Bank feed</span>
+            <span class="ds-badge">Spreadsheet</span>
+            <span class="ds-badge">Tax return</span>
+            <span class="ds-badge">Calendar</span>
+            <span class="ds-badge ds-badge--accent">Webhook</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="ds-grid__cell ds-grid__cell--full ds-grid__cell--accent ds-grid__cell--row">
+        <div class="ds-grid__copy">
+          <h2 class="ds-grid__title">Send the invoice you have been putting off</h2>
+          <p class="ds-grid__text">It takes four fields. The reminders are on us.</p>
+        </div>
+        <div class="ds-grid__actions">
+          <a class="ds-button ds-button--inverse ds-button--large" href="#new">Send a first invoice</a>
+        </div>
+      </article>
+    </div>
+    </section>
+
+    <section class="ds-view" id="invoices">
+    <div class="ds-grid ds-grid--auto ds-grid--page">
+      <header class="ds-grid__cell ds-grid__cell--full ds-page-header" data-component="page-header">
+        <ol class="ds-breadcrumb" data-component="breadcrumb" aria-label="Breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Ledger</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#invoices">Invoices</a></li>
+          <li class="ds-breadcrumb__item is-current" aria-current="page">June</li>
+        </ol>
+        <div class="ds-page-header__row">
+          <div class="ds-page-header__copy">
+            <h1 class="ds-page-header__title">Invoices</h1>
+            <p class="ds-page-header__text">Everything sent in June, with what is still owed.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#invoices">Export</a>
+            <a class="ds-button" href="#new">New invoice</a>
+          </div>
+        </div>
+        <div class="ds-toolbar">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#invoices" aria-current="true">All</a></li>
+            <li><a class="ds-tabs__tab" href="#invoices">Paid</a></li>
+            <li><a class="ds-tabs__tab" href="#invoices">Sent</a></li>
+            <li><a class="ds-tabs__tab" href="#invoices">Overdue</a></li>
+          </ul>
+          <span class="ds-badge">12 invoices</span>
+        </div>
+      </header>
+
+      <div class="ds-grid__cell ds-grid__cell--wide ds-grid__cell--stack">
+        <div class="ds-table__scroll">
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th>Number</th><th>Client</th><th class="ds-table__extra">Due</th><th>Status</th><th class="ds-table__num">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr class="is-current"><td><a class="ds-table__link" href="#invoice">0214</a></td><td class="ds-table__muted">Fennick &amp; Daughters</td><td class="ds-table__muted ds-table__extra">30 June</td><td><span class="ds-badge ds-badge--warning">Sent</span></td><td class="ds-table__num">2,295.00</td></tr>
+            <tr><td><a class="ds-table__link" href="#invoice">0213</a></td><td class="ds-table__muted">Osei Joinery</td><td class="ds-table__muted ds-table__extra">24 June</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">840.00</td></tr>
+            <tr><td><a class="ds-table__link" href="#invoice">0212</a></td><td class="ds-table__muted">Larkmoor Press</td><td class="ds-table__muted ds-table__extra">18 June</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">1,460.00</td></tr>
+            <tr><td><a class="ds-table__link" href="#invoice">0211</a></td><td class="ds-table__muted">Bram Hollis</td><td class="ds-table__muted ds-table__extra">2 June</td><td><span class="ds-badge ds-badge--danger">Overdue</span></td><td class="ds-table__num">315.50</td></tr>
+            <tr><td><a class="ds-table__link" href="#invoice">0210</a></td><td class="ds-table__muted">Osei Joinery</td><td class="ds-table__muted ds-table__extra">1 June</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">840.00</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <ul class="ds-pagination" data-component="pagination" aria-label="Pages">
+          <li><a class="ds-pagination__link is-disabled" href="#invoices">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#invoices" aria-current="page">1</a></li>
+          <li><a class="ds-pagination__link" href="#invoices">2</a></li>
+          <li><a class="ds-pagination__link" href="#invoices">3</a></li>
+          <li><a class="ds-pagination__link" href="#invoices">Next</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--stack">
+        <h3 class="ds-grid__title">Activity</h3>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <a class="ds-list__title" href="#invoice">Osei Joinery paid 0213</a>
+            <span class="ds-list__meta">Today, 09:12 &middot; bank transfer</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <a class="ds-list__title" href="#invoice">Reminder sent for 0211</a>
+            <span class="ds-list__meta">Yesterday &middot; second reminder</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <a class="ds-list__title" href="#invoice">0214 opened by the client</a>
+            <span class="ds-list__meta">16 June &middot; viewed twice</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--half ds-grid__cell--stack">
+        <h3 class="ds-grid__title">Messages</h3>
+        <div class="ds-notices" data-component="notice">
+          <div class="ds-notice">
+            <strong class="ds-notice__title">Invoice 0214 was opened</strong>
+            <p class="ds-notice__text">The client viewed it twice. The first reminder goes out on 27 June.</p>
+          </div>
+          <div class="ds-notice ds-notice--error">
+            <strong class="ds-notice__title">Invoice 0211 is 14 days overdue</strong>
+            <p class="ds-notice__text">Two reminders were sent and neither was opened.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--half ds-grid__cell--bare">
+        <div class="ds-empty" data-component="empty">
+          <span class="ds-grid__icon"><svg class="ds-grid__glyph" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="16" height="16" rx="3"/><path d="M11 7v8m-4-4h8"/></svg></span>
+          <h3 class="ds-empty__title">No credit notes</h3>
+          <p class="ds-empty__text">A credit note appears here when an invoice is voided.</p>
+          <a class="ds-button ds-button--secondary" href="#guide">Read the guide</a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="ds-view" id="invoice">
+    <div class="ds-grid ds-grid--auto ds-grid--page">
+      <header class="ds-grid__cell ds-grid__cell--full ds-page-header">
+        <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Ledger</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#invoices">Invoices</a></li>
+          <li class="ds-breadcrumb__item is-current" aria-current="page">0214</li>
+        </ol>
+        <div class="ds-page-header__row">
+          <div class="ds-page-header__copy">
+            <h1 class="ds-page-header__title">Invoice 0214</h1>
+            <p class="ds-page-header__text">Survey and drawings for Fennick &amp; Daughters. The first reminder goes out on 27 June.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#invoices">All invoices</a>
+            <a class="ds-button" href="#new">Copy as new</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="ds-grid__cell ds-grid__cell--wide ds-grid__cell--fill-1">
+        <div class="ds-grid__head">
+          <div>
+            <h2 class="ds-grid__title">Fennick &amp; Daughters</h2>
+            <p class="ds-grid__text">Sent 16 June, viewed twice, due 30 June</p>
+          </div>
+          <span class="ds-badge ds-badge--warning">Sent</span>
+        </div>
+        <div class="ds-grid__visual">
+          <ul class="ds-rows">
+            <li class="ds-rows__item">Site survey <span>640.00</span></li>
+            <li class="ds-rows__item">Drawings, two rounds <span>1,180.00</span></li>
+            <li class="ds-rows__item">Travel <span>92.50</span></li>
+            <li class="ds-rows__item">Tax at 20% <span>382.50</span></li>
+          </ul>
+          <p class="ds-stat"><span class="ds-stat__label">Total due</span><span class="ds-stat__value">2,295</span></p>
+        </div>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--stack">
+        <div>
+          <h3 class="ds-grid__title">Actions</h3>
+          <p class="ds-grid__text">A sent invoice is never edited. Void it and a credit note points back to it.</p>
+        </div>
+        <div class="ds-buttons" data-component="buttons">
+          <button class="ds-button" type="button">Remind</button>
+          <button class="ds-button ds-button--secondary" type="button">Preview</button>
+          <button class="ds-button ds-button--danger" type="button">Void</button>
+          <button class="ds-button is-disabled" type="button" disabled>Sent</button>
+        </div>
+        <ul class="ds-rows">
+          <li class="ds-rows__item">Stop reminders for 0214 <button class="ds-button ds-button--secondary ds-button--small" type="button">Stop</button></li>
+          <li class="ds-rows__item">Void 0214 with a credit note <button class="ds-button ds-button--danger ds-button--small" type="button">Void</button></li>
+        </ul>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--wide ds-grid__cell--stack">
+        <h3 class="ds-grid__title">Terms on this invoice</h3>
+        <div class="ds-panels">
+          <section class="ds-panel" data-component="panel">
+            <h4 class="ds-panel__title">Payment terms</h4>
+            <p class="ds-panel__body">Fourteen days unless the client record says otherwise.</p>
+            <span class="ds-panel__meta">Set per client</span>
+          </section>
+          <section class="ds-panel">
+            <h4 class="ds-panel__title">Late fee</h4>
+            <p class="ds-panel__body">Off by default. When on, it is added as its own line after thirty days.</p>
+            <span class="ds-panel__meta">Shown on the invoice</span>
+          </section>
+        </div>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--stack">
+        <h3 class="ds-grid__title">History</h3>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <span class="ds-list__title">Opened by the client</span>
+            <span class="ds-list__meta">16 June &middot; viewed twice</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <span class="ds-list__title">Sent to the billing contact</span>
+            <span class="ds-list__meta">16 June, 08:00 &middot; on schedule</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__mark"></span>
+            <span class="ds-list__title">Drafted from the May invoice</span>
+            <span class="ds-list__meta">12 June &middot; recurring</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </section>
+
+    <section class="ds-view" id="new">
+    <div class="ds-grid ds-grid--auto ds-grid--page">
+      <header class="ds-grid__cell ds-grid__cell--full ds-page-header">
+        <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Ledger</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#invoices">Invoices</a></li>
+          <li class="ds-breadcrumb__item is-current" aria-current="page">New</li>
+        </ol>
+        <div class="ds-page-header__row">
+          <div class="ds-page-header__copy">
+            <h1 class="ds-page-header__title">New invoice</h1>
+            <p class="ds-page-header__text">Four fields. It gets number 0215 and goes out the moment you confirm.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#invoices">Back to invoices</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="ds-grid__cell ds-grid__cell--half ds-grid__cell--stack">
+        <h3 class="ds-grid__title">Details</h3>
+        <form class="ds-form" data-component="form">
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-client">Client</label>
+            <select class="ds-form__control" id="f-client"><option>Fennick &amp; Daughters</option><option>Osei Joinery</option><option>Larkmoor Press</option></select>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-due">Due date</label>
+            <input class="ds-form__control" id="f-due" type="text" value="14 July">
+          </div>
+          <div class="ds-form__field ds-form__field--full">
+            <label class="ds-form__label" for="f-amount">Amount</label>
+            <input class="ds-form__control is-invalid" id="f-amount" type="text" value="about 900" aria-invalid="true">
+            <span class="ds-form__error">Enter the amount as a number, such as 900.00.</span>
+          </div>
+          <div class="ds-form__field ds-form__field--full">
+            <label class="ds-form__label" for="f-lines">What it is for</label>
+            <textarea class="ds-form__control ds-form__control--area" id="f-lines" placeholder="One line per item"></textarea>
+          </div>
+          <div class="ds-form__actions">
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Remind after a week</label>
+            <span class="ds-buttons"><a class="ds-button ds-button--secondary" href="#invoices">Cancel</a><button class="ds-button" type="button">Send invoice</button></span>
+          </div>
+        </form>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--half ds-stage">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+          <div class="ds-dialog__bar">
+            <h3 class="ds-dialog__title" id="d-title">Send invoice 0215?</h3>
+            <button class="ds-dialog__close" type="button" aria-label="Close"><svg class="ds-dialog__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8"/></svg></button>
+          </div>
+          <div class="ds-dialog__body">
+            <p>It goes to the billing contact at Fennick &amp; Daughters. A sent invoice cannot be edited, only credited.</p>
+          </div>
+          <div class="ds-dialog__actions">
+            <a class="ds-button ds-button--secondary" href="#new">Not yet</a>
+            <a class="ds-button" href="#invoice">Send it</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="ds-view" id="guide">
+    <div class="ds-grid ds-grid--auto ds-grid--page">
+      <header class="ds-grid__cell ds-grid__cell--full ds-page-header">
+        <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Ledger</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#guide">Guide</a></li>
+          <li class="ds-breadcrumb__item is-current" aria-current="page">Invoices</li>
+        </ol>
+        <div class="ds-page-header__row">
+          <div class="ds-page-header__copy">
+            <h1 class="ds-page-header__title">How billing works</h1>
+            <p class="ds-page-header__text">The guide to invoices, credit notes and the labels you will meet on every screen.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button" href="#new">New invoice</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="ds-grid__cell ds-grid__cell--wide ds-grid__cell--tall">
+        <article class="ds-prose" data-component="typography">
+          <h1>Invoices</h1>
+          <p>An invoice is a numbered request for payment. Once sent it is <strong>never edited</strong>; a mistake is fixed with a credit note that points back to it.</p>
+          <h2>Numbering</h2>
+          <p>Numbers run in one sequence per year. Set the first with <code>chronoskin number 0001</code> or in <a href="#invoices">ledger settings</a>.</p>
+          <h3>What a client sees</h3>
+          <ul>
+            <li>Your details and theirs, with both tax numbers</li>
+            <li>Each line with its quantity, rate and tax</li>
+            <li>The due date and how to pay</li>
+          </ul>
+          <h2>Credit notes</h2>
+          <p>Voiding an invoice writes a credit note for the same amount and tells the client. Both stay in the <a href="#invoices">ledger</a> with their numbers.</p>
+          <h2>Questions</h2>
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">Can a sent invoice be changed?</summary>
+              <p class="ds-accordion__body">No. Void it, and the credit note and the corrected invoice go out together.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">When does the first reminder go?</summary>
+              <p class="ds-accordion__body">Three days before the due date, unless reminders are off for that client.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Is the tax rate set per client?</summary>
+              <p class="ds-accordion__body">Per client, with one default for everyone else.</p>
+            </details>
+          </div>
+        </article>
+      </div>
+
+      <aside class="ds-grid__cell ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">In this guide</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#guide">Invoices</a></li>
+          <li><a class="ds-sidebar__link" href="#guide">Credit notes</a></li>
+          <li><a class="ds-sidebar__link" href="#guide">Recurring billing <span class="ds-badge ds-badge--count">2</span></a></li>
+          <li><a class="ds-sidebar__link" href="#guide">Tax rates</a></li>
+        </ul>
+      </aside>
+
+      <div class="ds-grid__cell" data-component="badge">
+        <h3 class="ds-grid__title">Labels</h3>
+        <p class="ds-grid__text">Pills mark state, squares count.</p>
+        <div class="ds-grid__actions">
+          <span class="ds-badge">Draft</span>
+          <span class="ds-badge ds-badge--accent">Recurring</span>
+          <span class="ds-badge ds-badge--new"><span class="ds-badge__dot"></span>New</span>
+          <span class="ds-badge ds-badge--count">46</span>
+        </div>
+        <div class="ds-grid__actions">
+          <span class="ds-badge ds-badge--success"><span class="ds-badge__dot"></span>Paid</span>
+          <span class="ds-badge ds-badge--warning"><span class="ds-badge__dot"></span>Sent</span>
+          <span class="ds-badge ds-badge--danger"><span class="ds-badge__dot"></span>Overdue</span>
+        </div>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--stack">
+        <div>
+          <h3 class="ds-grid__title">Read next</h3>
+          <p class="ds-grid__text">A link when new, visited, under the pointer and pressed.</p>
+        </div>
+        <p class="ds-links" data-component="links">
+          <a class="ds-link" href="#guide">Credit notes</a>
+          <a class="ds-link is-visited" href="#guide">Tax rates</a>
+          <a class="ds-link is-hover" href="#invoices">June invoices</a>
+          <a class="ds-link is-active" href="#new">New invoice</a>
+        </p>
+      </div>
+
+      <div class="ds-grid__cell ds-grid__cell--wide ds-grid__cell--fill-3">
+        <h3 class="ds-grid__title">Set the first number from the terminal</h3>
+        <p class="ds-grid__text">The sequence starts again each January unless you say otherwise.</p>
+        <div class="ds-grid__visual">
+<pre class="ds-code"><span class="ds-code__key">$</span> chronoskin number 0001
+  next invoice will be <span class="ds-code__str">0001</span></pre>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div>
+      <span class="ds-footer__brand">chronoskin</span>
+      <p class="ds-footer__text">Invoicing for people who work alone. A placeholder product for this specimen.</p>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Product</h2>
+      <ul class="ds-footer__list">
+        <li><a class="ds-footer__link" href="#invoices">Invoices</a></li>
+        <li><a class="ds-footer__link" href="#invoice">Reminders</a></li>
+        <li><a class="ds-footer__link" href="#home">Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Help</h2>
+      <ul class="ds-footer__list">
+        <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+        <li><a class="ds-footer__link" href="#guide">Tax rates</a></li>
+        <li><a class="ds-footer__link" href="#invoices">Status</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Company</h2>
+      <ul class="ds-footer__list">
+        <li><a class="ds-footer__link" href="#home">About</a></li>
+        <li><a class="ds-footer__link" href="#new">Contact</a></li>
+        <li><a class="ds-footer__link" href="#guide">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="ds-footer__strip">
+      <span>Made for this specimen only.</span>
+      <span>All systems normal</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

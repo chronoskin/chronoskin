@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin Boards: desktop grey chat and message boards, specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-page__window ds-window">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-window__title">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="3" width="16" height="2"/><rect x="6" y="5" width="12" height="2"/><rect x="8" y="7" width="8" height="2"/><rect x="10" y="9" width="4" height="2"/><rect x="11" y="11" width="2" height="2"/><rect x="10" y="13" width="4" height="2"/><rect x="8" y="15" width="8" height="2"/><rect x="6" y="17" width="12" height="2"/><rect x="4" y="19" width="16" height="2"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <span class="ds-window__caption">Boards [connected as marlowe]</span>
+      <span class="ds-window__controls" aria-hidden="true"><span class="ds-window__ctl ds-window__ctl--min"></span><span class="ds-window__ctl ds-window__ctl--max"></span><span class="ds-window__ctl ds-window__ctl--close"></span></span>
+    </div>
+    <ul class="ds-nav__links">
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#home"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2l7 6h-2v6H9v-4H7v4H3V8H1z"/></svg></span>Lobby</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#board"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z M2 6v7h12V6z"/></svg></span>Hardware</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#topic"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span>Topic 4127</a></li>
+      <li class="ds-nav__item ds-tooltip"><a class="ds-nav__link" href="#write"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M11 1l4 4-9 9H2v-4z M3 10.5V13h2.5z"/></svg></span>New message</a><span class="ds-tooltip__text" role="tooltip">Start a new topic</span></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#members"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M5.5 3a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5z M11 4a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M1 14c0-3 2-5 4.5-5S10 11 10 14z M11 9c2.2 0 4 1.8 4 5h-4c0-2-.6-3.6-1.6-4.6.5-.3 1-.4 1.6-.4z"/></svg></span>Members</a></li>
+      <li class="ds-nav__item ds-menu"><details><summary class="ds-nav__link">Help</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#write">Start a topic</a></li><li><a class="ds-menu__item" href="#members">Who is here</a></li></ul></details></li>
+      <li class="ds-nav__state"><span class="ds-nav__lamp"></span>Connected 0:42</li>
+    </ul>
+  </header>
+
+  <div class="ds-page__columns">
+  <div class="ds-page__main">
+
+  <section class="ds-view ds-view--home" id="home">
+    <div class="ds-stack">
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__band"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span></div>
+        <div class="ds-hero__body">
+          <h1 class="ds-hero__title">Welcome to the boards</h1>
+          <p class="ds-hero__lead">Six boards about computers and the people who keep them running, open day and night.</p>
+          <p class="ds-hero__text">Read as a guest, or pick a name and join in. Message of the day: the scanner drivers board has moved into Hardware.</p>
+          <div class="ds-hero__action">
+            <a class="ds-button" href="#members">Pick a name</a>
+            <a class="ds-button ds-button--secondary" href="#board">Read the boards</a>
+          </div>
+        </div>
+      </section>
+
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__item"><span class="ds-stat__value">14</span><span class="ds-stat__label">here now</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">2,318</span><span class="ds-stat__label">members</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">4,127</span><span class="ds-stat__label">topics</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">31,860</span><span class="ds-stat__label">messages</span></li>
+      </ul>
+
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell" href="#board"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M4 4h8v8H4z M6 6v4h4V6z M5 1h1v2H5z M10 1h1v2h-1z M5 13h1v2H5z M10 13h1v2h-1z M1 5h2v1H1z M1 10h2v1H1z M13 5h2v1h-2z M13 10h2v1h-2z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">Hardware and drivers</span><span class="ds-grid__text">Cards, modems, printers and the files they need.</span><span class="ds-grid__meta">1,204 topics, 9 new today</span></span></a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#board"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M8 2.2a5.8 5.8 0 0 1 2 .4L9 5H6L5 3.2A5.8 5.8 0 0 1 8 2.2z M2.3 7l2.2-.6L7 8l-1 3 1.5 2.7A5.8 5.8 0 0 1 2.3 7z M13.7 7.5a5.8 5.8 0 0 1-3 5.5L10 10l1.2-2.5z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">Getting online</span><span class="ds-grid__text">Dial-up settings, browsers and mail programs.</span><span class="ds-grid__meta">986 topics, 4 new today</span></span></a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#board"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M3 1h7l3 3v11H3z M4 2v12h8V5H9V2z M5 7h6v1H5z M5 9h6v1H5z M5 11h4v1H5z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">Home pages</span><span class="ds-grid__text">Writing pages by hand, counters and guest books.</span><span class="ds-grid__meta">742 topics, 6 new today</span></span></a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#board"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M3 5h10a3 3 0 0 1 3 3v2a2 2 0 0 1-3.6 1.2L11.5 10h-7l-.9 1.2A2 2 0 0 1 0 10V8a3 3 0 0 1 3-3z M4 6.5v1H3v1h1v1h1v-1h1v-1H5v-1z M11 7h1v1h-1z M12.5 8.5h1v1h-1z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">Games</span><span class="ds-grid__text">Hints, patches and somebody to play against.</span><span class="ds-grid__meta">655 topics, 11 new today</span></span></a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#board"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 4l7-3 7 3v8l-7 3-7-3z M2.5 4.6L8 7l5.5-2.4L8 2.2z M2 5.7v5.6l5.4 2.3V8z M14 5.7L8.6 8v5.6l5.4-2.3z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">Swap shop</span><span class="ds-grid__text">Parts wanted and parts looking for a home.</span><span class="ds-grid__meta">318 topics, 2 new today</span></span></a>
+        <a class="ds-grid__cell" href="#topic"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M2 3h10v2h2a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-1.4A4 4 0 0 1 8 12H6a4 4 0 0 1-4-4z M12 6v3h1a1 1 0 0 0 1-1V6z M2 13h10v1H2z"/></svg></span></span><span class="ds-grid__body"><span class="ds-grid__title">The coffee room</span><span class="ds-grid__text">Everything that fits nowhere else.</span><span class="ds-grid__meta">222 topics, 3 new today</span></span></a>
+      </div>
+
+      <div class="ds-split">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Latest messages</h2>
+          <div class="ds-panel__body">
+            <ul class="ds-list" data-component="list">
+              <li class="ds-list__item"><span class="ds-list__meta">21:38</span><span class="ds-list__who">okafor</span><span class="ds-list__text"><a class="ds-link" href="#topic">Sound card silent after the update</a></span></li>
+              <li class="ds-list__item"><span class="ds-list__meta">21:31</span><span class="ds-list__who">lindqvist</span><span class="ds-list__text"><a class="ds-link" href="#topic">Which modem string for a noisy line?</a></span></li>
+              <li class="ds-list__item"><span class="ds-list__meta">21:12</span><span class="ds-list__who">tanaka</span><span class="ds-list__text"><a class="ds-link is-visited" href="#topic">Frames or tables for a menu</a></span></li>
+              <li class="ds-list__item"><span class="ds-list__meta">20:57</span><span class="ds-list__who">marlowe</span><span class="ds-list__text"><a class="ds-link" href="#topic">Wanted: 16 MB of memory, 72 pin</a></span></li>
+              <li class="ds-list__item"><span class="ds-list__meta">20:40</span><span class="ds-list__who">abara</span><span class="ds-list__text"><a class="ds-link is-visited" href="#topic">Best keyboard you ever owned</a></span></li>
+            </ul>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">House rules</h2>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">One question to a topic, and say what you have tried.</span></li>
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">No serial numbers and no copied programs.</span></li>
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">Hosts are marked with a star. Their word is final.</span></li>
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 10h2v2H7z M5.4 6a2.6 2.6 0 1 1 4.2 2c-.5.5-.6.7-.6 1.4H7c0-1.2.3-1.7 1-2.3a.8.8 0 1 0-1.3-.6z"/></svg></span><span class="ds-list__text"><a class="ds-link" href="#write">Ask a host</a> when in doubt.</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="board">
+    <div class="ds-stack">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Lobby</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Boards</a></li>
+        <li class="ds-breadcrumb__item is-current">Hardware and drivers</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Hardware and drivers</h1>
+          <p class="ds-page-header__lead">Cards, modems, printers and the files they need. Hosted by okafor and reyes.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#write">New topic</a></div>
+      </header>
+      <div>
+        <ul class="ds-tabs" data-component="tabs">
+          <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" href="#board">All topics</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#board">Unanswered</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#board">My topics</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#board">Kept by the hosts</a></li>
+        </ul>
+        <div class="ds-sheet">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th class="ds-table__head">Topic</th><th class="ds-table__head">Started by</th><th class="ds-table__head ds-table__head--num">Replies</th><th class="ds-table__head">Last message</th></tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7z M6.5 7h3V5a1.5 1.5 0 0 0-3 0z"/></svg></span> <a class="ds-link ds-link--strong" href="#topic">Read first: how to ask about a driver</a></td><td class="ds-table__cell">reyes</td><td class="ds-table__cell ds-table__cell--num">0</td><td class="ds-table__cell">2 Feb, reyes</td></tr>
+              <tr class="ds-table__row is-selected"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link" href="#topic">Sound card silent after the update</a></td><td class="ds-table__cell">okafor</td><td class="ds-table__cell ds-table__cell--num">12</td><td class="ds-table__cell">21:38, okafor</td></tr>
+              <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link" href="#topic">Which modem string for a noisy line?</a> <span class="ds-badge">new</span></td><td class="ds-table__cell">lindqvist</td><td class="ds-table__cell ds-table__cell--num">3</td><td class="ds-table__cell">21:31, abara</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link is-visited" href="#topic">Printer prints one line and stops</a></td><td class="ds-table__cell">tanaka</td><td class="ds-table__cell ds-table__cell--num">7</td><td class="ds-table__cell">19:05, reyes</td></tr>
+              <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link" href="#topic">Second hard disk not found at start</a> <span class="ds-badge ds-badge--success">solved</span></td><td class="ds-table__cell">abara</td><td class="ds-table__cell ds-table__cell--num">21</td><td class="ds-table__cell">18:44, abara</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link is-visited" href="#topic">Monitor hums at 800 by 600</a></td><td class="ds-table__cell">marlowe</td><td class="ds-table__cell ds-table__cell--num">4</td><td class="ds-table__cell">Yesterday, okafor</td></tr>
+              <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 2h14v9H7l-4 3v-3H1z M2 3v7h2v2l2.6-2H14V3z"/></svg></span> <a class="ds-link" href="#topic">Scanner asks for a card I do not have</a> <span class="ds-badge ds-badge--warning">waiting</span></td><td class="ds-table__cell">novak</td><td class="ds-table__cell ds-table__cell--num">1</td><td class="ds-table__cell">Yesterday, novak</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7z M6.5 7h3V5a1.5 1.5 0 0 0-3 0z"/></svg></span> <a class="ds-link is-visited" href="#topic">Where to send the serial cable</a> <span class="ds-badge ds-badge--danger">closed</span></td><td class="ds-table__cell">guest</td><td class="ds-table__cell ds-table__cell--num">2</td><td class="ds-table__cell">11 Mar, reyes</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell ds-table__cell--group" colspan="2">Topics 1 to 8 of 1,204</td><td class="ds-table__cell ds-table__cell--group ds-table__cell--num">50</td><td class="ds-table__cell ds-table__cell--group">replies on this page</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="ds-find">
+        <ul class="ds-pagination" data-component="pagination">
+          <li class="ds-pagination__label">Page</li>
+          <li><a class="ds-pagination__link is-disabled" href="#board">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#board">1</a></li>
+          <li><a class="ds-pagination__link" href="#board">2</a></li>
+          <li><a class="ds-pagination__link" href="#board">3</a></li>
+          <li><a class="ds-pagination__link" href="#board">151</a></li>
+          <li><a class="ds-pagination__link" href="#board">Next</a></li>
+        </ul>
+        <span class="ds-find__fill"></span>
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge">new</span>
+          <span class="ds-badge ds-badge--success">solved</span>
+          <span class="ds-badge ds-badge--warning">waiting</span>
+          <span class="ds-badge ds-badge--danger">closed</span>
+          <span class="ds-badge ds-badge--count">(4 marks)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="topic">
+    <div class="ds-stack">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Lobby</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#board">Hardware and drivers</a></li>
+        <li class="ds-breadcrumb__item is-current">Topic 4127</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Sound card silent after the update</h1>
+          <p class="ds-page-header__lead">12 replies, 3 people in this topic now. <span class="ds-badge">new</span></p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#write">Reply</a></div>
+      </header>
+      <div class="ds-posts">
+        <article class="ds-post">
+          <div class="ds-post__who"><span class="ds-post__name">okafor</span><span class="ds-post__role">Host, 1,402 messages</span></div>
+          <div class="ds-post__body">
+            <p class="ds-post__head"><span>Saturday 14 March 1998, 19:02</span><span>Message 1 of 13</span></p>
+            <div class="ds-prose" data-component="typography">
+              <h1>No sound since the driver update</h1>
+              <p class="ds-prose__lead">The mixer opens, the bars move, and the speakers stay quiet.</p>
+              <p>I put in the new driver disk on Friday. The card is found at start and nothing is marked with a warning, but no program makes a sound. The line <code>SET BLASTER=A220 I5 D1</code> is still in the start file.</p>
+              <h2>What I have tried</h2>
+              <ul>
+                <li>Taking the card out and putting it in the next slot</li>
+                <li>The old driver, from the disk that came in the box</li>
+                <li>Another pair of speakers</li>
+              </ul>
+              <h3>What the machine is</h3>
+              <p>A 166 with 32 MB, <strong>one</strong> sound card and a modem that wants the same interrupt.</p>
+            </div>
+          </div>
+        </article>
+        <article class="ds-post">
+          <div class="ds-post__who"><span class="ds-post__name">reyes</span><span class="ds-post__role">Host, 3,077 messages</span></div>
+          <div class="ds-post__body">
+            <p class="ds-post__head"><span>Saturday 14 March 1998, 19:20</span><span>Message 2 of 13</span></p>
+            <p class="ds-post__text">That last line is your answer. Move the modem to interrupt 3 and the card will speak again.</p>
+            <p class="ds-links ds-post__text" data-component="links">
+              See <a class="ds-link" href="#board">the list of free interrupts</a>,
+              <a class="ds-link is-visited" href="#board">a topic you have read</a>,
+              <a class="ds-link is-hover" href="#board">a link under the pointer</a>,
+              <a class="ds-link is-active" href="#board">a link as you click it</a> and
+              <a class="ds-link ds-link--quiet" href="#members">who the hosts are</a>.
+            </p>
+          </div>
+        </article>
+        <article class="ds-post">
+          <p class="ds-post__event">* lindqvist has come into the topic (21:30)</p>
+          <div class="ds-post__who"><span class="ds-post__name">lindqvist</span><span class="ds-post__role">Member, 58 messages</span></div>
+          <div class="ds-post__body">
+            <p class="ds-post__head"><span>Saturday 14 March 1998, 21:33</span><span>Message 13 of 13</span></p>
+            <p class="ds-post__text">Same card here, same cure. It took ten minutes and one jumper.</p>
+          </div>
+        </article>
+      </div>
+      <div class="ds-find">
+        <label class="ds-form__label" for="say">Say:</label>
+        <span class="ds-find__fill"><input class="ds-form__input ds-form__input--wide" id="say" type="text" value="Thank you both, it sings again."></span>
+        <a class="ds-button" href="#topic">Send</a>
+        <a class="ds-button ds-button--secondary" href="#write">Long reply</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="write">
+    <div class="ds-stack">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Lobby</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#board">Hardware and drivers</a></li>
+        <li class="ds-breadcrumb__item is-current">New message</li>
+      </ol>
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__label">Tip:</span> say which card, which driver and what you have tried. Topics with those three get answered first.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__label">Not sent:</span> the message has no subject. Give it one and send again.</p>
+      </div>
+      <section class="ds-panel">
+        <h1 class="ds-panel__title">New message to Hardware and drivers</h1>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form" action="#write">
+            <label class="ds-form__label" for="w-name">Your name:</label>
+            <div class="ds-form__field"><input class="ds-form__input" id="w-name" type="text" value="marlowe"></div>
+            <label class="ds-form__label" for="w-board">Board:</label>
+            <div class="ds-form__field">
+              <select class="ds-form__select" id="w-board"><option>Hardware and drivers</option><option>Getting online</option><option>Home pages</option></select>
+            </div>
+            <label class="ds-form__label" for="w-subject">Subject:</label>
+            <div class="ds-form__field">
+              <input class="ds-form__input ds-form__input--wide" id="w-subject" type="text" value="">
+              <span class="ds-form__error">A message needs a subject of at least four letters.</span>
+            </div>
+            <label class="ds-form__label" for="w-text">Message:</label>
+            <div class="ds-form__field">
+              <textarea class="ds-form__textarea" id="w-text" rows="5">The monitor hums when the screen is set to 800 by 600 and is quiet at 640 by 480.</textarea>
+              <span class="ds-form__hint">Plain text. Lines are wrapped at 72 letters.</span>
+            </div>
+            <span class="ds-form__label">Options:</span>
+            <div class="ds-form__field">
+              <label class="ds-form__option"><input class="ds-form__check" type="checkbox" checked>Send replies to my mailbox</label>
+              <label class="ds-form__option"><input class="ds-form__check" type="checkbox">Add my signature</label>
+            </div>
+            <div class="ds-form__actions ds-buttons" data-component="buttons">
+              <button class="ds-button ds-button--danger" type="button">Discard</button>
+              <span class="ds-find__fill"></span>
+              <button class="ds-button ds-button--secondary" type="button" disabled>Attach a file</button>
+              <a class="ds-button ds-button--secondary" href="#topic">Preview</a>
+              <a class="ds-button" href="#board">Send message</a>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="ds-split">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+          <h2 class="ds-dialog__title" id="dlg-title">Discard message<span class="ds-window__controls" aria-hidden="true"><span class="ds-window__ctl ds-window__ctl--close"></span></span></h2>
+          <div class="ds-dialog__content">
+            <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l7 13H1z M7 6h2v4H7z M7 11h2v2H7z"/></svg></span>
+            <p class="ds-dialog__body">Throw away this message? What you have written will be lost.</p>
+          </div>
+          <div class="ds-dialog__actions">
+            <a class="ds-button" href="#write">Keep writing</a>
+            <a class="ds-button ds-button--danger" href="#board">Discard</a>
+          </div>
+        </div>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Before you send</h2>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">Look for the question first: <a class="ds-link" href="#board">search this board</a>.</span></li>
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">One topic, one question.</span></li>
+              <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 4h2v2H7z M7 7h2v5H7z"/></svg></span><span class="ds-list__text">Come back and say what cured it.</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="members">
+    <div class="ds-stack">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Lobby</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">People</a></li>
+        <li class="ds-breadcrumb__item is-current">Members</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Members</h1>
+          <p class="ds-page-header__lead">2,318 names, 14 of them here now. Yours is marlowe.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#write">Write to a host</a></div>
+      </header>
+      <div class="ds-split">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Your card</h2>
+          <div class="ds-panel__body">
+            <dl class="ds-props">
+              <dt class="ds-props__label">Name</dt><dd class="ds-props__value"><strong>marlowe</strong></dd>
+              <dt class="ds-props__label">Member since</dt><dd class="ds-props__value">9 November 1997</dd>
+              <dt class="ds-props__label">Messages</dt><dd class="ds-props__value">212</dd>
+              <dt class="ds-props__label">Standing</dt><dd class="ds-props__value"><span class="ds-badge ds-badge--success">in good standing</span></dd>
+              <dt class="ds-props__label">Time online</dt><dd class="ds-props__value"><span class="ds-progress"><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block ds-progress__block--empty"></span><span class="ds-progress__block ds-progress__block--empty"></span><span class="ds-progress__block ds-progress__block--empty"></span></span> 12 of 20 hours</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Private messages</h2>
+          <div class="ds-empty" data-component="empty">
+            <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M1 3h14v10H1z M2.6 4L8 8.4 13.4 4z M2 5v7h12V5L8 9.8z"/></svg></span>
+            <h3 class="ds-empty__title">No private messages</h3>
+            <p class="ds-empty__text">Nobody has written to you since your last visit.</p>
+            <a class="ds-button ds-button--secondary" href="#write">Write one</a>
+          </div>
+        </section>
+      </div>
+      <table class="ds-table">
+        <thead>
+          <tr><th class="ds-table__head">Name</th><th class="ds-table__head">Member since</th><th class="ds-table__head ds-table__head--num">Messages</th><th class="ds-table__head">Now</th></tr>
+        </thead>
+        <tbody>
+          <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg></span> <a class="ds-link ds-link--strong" href="#members">reyes</a></td><td class="ds-table__cell">March 1996</td><td class="ds-table__cell ds-table__cell--num">3,077</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">here</span></td></tr>
+          <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg></span> <a class="ds-link ds-link--strong" href="#members">okafor</a></td><td class="ds-table__cell">June 1996</td><td class="ds-table__cell ds-table__cell--num">1,402</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">here</span></td></tr>
+          <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span> <a class="ds-link" href="#members">abara</a></td><td class="ds-table__cell">January 1997</td><td class="ds-table__cell ds-table__cell--num">640</td><td class="ds-table__cell"><span class="ds-badge ds-badge--warning">away</span></td></tr>
+          <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span> <a class="ds-link" href="#members">marlowe</a></td><td class="ds-table__cell">November 1997</td><td class="ds-table__cell ds-table__cell--num">212</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">here</span></td></tr>
+          <tr class="ds-table__row"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span> <a class="ds-link" href="#members">lindqvist</a></td><td class="ds-table__cell">February 1998</td><td class="ds-table__cell ds-table__cell--num">58</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">here</span></td></tr>
+          <tr class="ds-table__row ds-table__row--alt"><td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span> <a class="ds-link is-visited" href="#members">novak</a></td><td class="ds-table__cell">March 1998</td><td class="ds-table__cell ds-table__cell--num">3</td><td class="ds-table__cell"><span class="ds-badge ds-badge--danger">barred</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="ds-page__rail">
+    <h2 class="ds-panel__title">Who is here (14)</h2>
+    <ul class="ds-nicks">
+      <li class="ds-nicks__group">Hosts</li>
+      <li class="ds-nicks__item ds-nicks__item--host"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg></span>reyes</li>
+      <li class="ds-nicks__item ds-nicks__item--host"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg></span>okafor</li>
+      <li class="ds-nicks__group">Members</li>
+      <li class="ds-nicks__item is-selected"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>marlowe</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>lindqvist</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>tanaka</li>
+      <li class="ds-nicks__item ds-nicks__item--away"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>abara (away)</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>petrov</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>hale</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>imani</li>
+      <li class="ds-nicks__item ds-nicks__item--away"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>costa (away)</li>
+      <li class="ds-nicks__group">Guests</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>guest 0417</li>
+      <li class="ds-nicks__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6z M3 14c0-3 2-5 5-5s5 2 5 5z"/></svg></span>guest 0420</li>
+    </ul>
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__title">Shortcuts</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-link" href="#write">Start a topic</a></li>
+        <li><a class="ds-link" href="#board">Topics without a reply</a></li>
+        <li><a class="ds-link is-visited" href="#members">Your card</a></li>
+        <li><a class="ds-link" href="#home">Message of the day</a></li>
+      </ul>
+    </aside>
+  </div>
+  </div>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-status">
+      <li class="ds-status__cell ds-status__cell--wide">chronoskin Boards, 1998. <a class="ds-link ds-link--quiet" href="#home">Lobby</a>, <a class="ds-link ds-link--quiet" href="#board">boards</a>, <a class="ds-link ds-link--quiet" href="#members">members</a> and <a class="ds-link ds-link--quiet" href="#home">house rules</a>.</li>
+      <li class="ds-status__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M5.5 3a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5z M11 4a2 2 0 1 0 0 4a2 2 0 0 0 0-4z M1 14c0-3 2-5 4.5-5S10 11 10 14z M11 9c2.2 0 4 1.8 4 5h-4c0-2-.6-3.6-1.6-4.6.5-.3 1-.4 1.6-.4z"/></svg></span> 14 here</li>
+      <li class="ds-status__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M5 7V5a3 3 0 0 1 6 0v2h1v7H4V7z M6.5 7h3V5a1.5 1.5 0 0 0-3 0z"/></svg></span> marlowe</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>

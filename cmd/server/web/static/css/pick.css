@@ -1,0 +1,152 @@
+/* A card that chooses its era on the home page. The whole card is the label
+   of a checkbox, with "Open" as a link on top. "Any era" is the same card
+   as a reset button, shown as chosen while no era is. */
+.cards.picks {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.pick {
+  position: relative;
+  transition: border-color 0.12s;
+}
+
+.pick:hover {
+  border-color: var(--muted);
+}
+
+.pick > label, .pick > button {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pick input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.pick:has(input:checked), .cards:not(:has(input:checked)) .pick.any {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.pick:has(input:focus-visible), .pick > button:focus-visible {
+  outline: var(--ring);
+  outline-offset: 2px;
+}
+
+/* Room at the foot for "Open" and the tick. */
+.card.pick .body {
+  position: relative;
+  padding-bottom: 54px;
+}
+
+.pick .name, .pick .meta {
+  display: block;
+}
+
+.pick .text {
+  color: var(--muted);
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pick .btn.open {
+  position: absolute;
+  z-index: 1;
+  left: 14px;
+  bottom: 14px;
+  height: 30px;
+}
+
+.pick .tick {
+  position: absolute;
+  right: 14px;
+  bottom: 19px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--panel);
+  color: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pick:hover .tick {
+  border-color: var(--muted);
+}
+
+.pick:has(input:checked) .tick, .cards:not(:has(input:checked)) .pick.any .tick {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* "Any era": a wall of small pictures fills the card and fades into the
+   panel at its foot, where the name lies. */
+.pick.any > button {
+  position: relative;
+  min-height: 320px;
+}
+
+.pick.any .name {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pick.any .tick {
+  bottom: 14px;
+}
+
+.pick .wall {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.pick .wall > span {
+  min-height: 0;
+  overflow: hidden;
+  background: var(--sunken);
+}
+
+.pick .wall img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.pick .wall::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 35%, transparent) 0, color-mix(in srgb, var(--panel) 55%, transparent) 55%, var(--panel) 92%);
+}

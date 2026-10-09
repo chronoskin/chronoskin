@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: bulletin board forum specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<svg class="ds-sprite" width="0" height="0" aria-hidden="true"><symbol id="i-person" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="3" fill="currentColor"/><path d="M2 15c0-3.5 2.7-5.5 6-5.5s6 2 6 5.5z" fill="currentColor"/></symbol>
+  <symbol id="i-board" viewBox="0 0 16 16">
+    <path d="M1 2h14v9H8l-3 3v-3H1z" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-locked" viewBox="0 0 16 16">
+    <path d="M1.5 2.5h13v8H8l-2.5 2.5v-2.5h-4z" fill="none" stroke="currentColor"/>
+    <path d="M6 5h4v3H6z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__head">
+      <div class="ds-nav__brand">
+        <a class="ds-brand" data-component="brand" href="#">
+          <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4C7.5 19.8 4.2 16.4 4.2 11.5V5.6Z"/><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4Z" fill="currentColor"/></svg></span>
+          <span class="ds-brand__name">chronoskin</span>
+        </a>
+        <span class="ds-nav__tagline">Repairs, restorations and bench talk since 2002</span>
+      </div>
+      <ul class="ds-nav__tools">
+        <li><a class="ds-link" href="#board">Topics since your last visit</a></li>
+        <li><a class="ds-link" href="#panel">Your topics</a></li>
+        <li><a class="ds-link" href="#board">Unanswered topics</a></li>
+      </ul>
+    </div>
+    <ul class="ds-nav__menu">
+      <li><a class="ds-nav__link" href="#index">Board index</a></li>
+      <li><a class="ds-nav__link" href="#board">Topics</a></li>
+      <li><a class="ds-nav__link" href="#topic">Latest thread</a></li>
+      <li><a class="ds-nav__link" href="#post">Post reply</a></li>
+      <li><a class="ds-nav__link" href="#panel">Control panel</a></li>
+      <li><a class="ds-nav__link" href="#rules">Rules</a></li>
+    </ul>
+    <ul class="ds-nav__sub">
+      <li><a class="ds-nav__sublink" href="#panel">Your profile</a></li>
+      <li><a class="ds-nav__sublink" href="#panel">Private messages</a></li>
+      <li><a class="ds-nav__sublink" href="#panel">Subscriptions</a></li>
+      <li><a class="ds-nav__sublink" href="#board">New posts</a></li>
+      <li><a class="ds-nav__sublink" href="#rules">Posting guide</a></li>
+      <li><a class="ds-nav__sublink" href="#rules">Help</a></li>
+      <li><a class="ds-nav__sublink" href="#index">Log out</a></li>
+    </ul>
+  </header>
+
+  <div class="ds-page__body">
+
+    <section class="ds-view ds-view--home" id="index">
+    <div class="ds-view__body">
+
+          <section class="ds-hero" data-component="hero">
+            <div>
+              <h1 class="ds-hero__title">Welcome to the chronoskin boards.</h1>
+              <p class="ds-hero__lead">If this is your first visit, read the <a class="ds-link ds-link--quiet ds-link--strong" href="#rules">help pages</a> first. You need an account before you can post; reading is open to everyone. Pick a board below to start.</p>
+              <p class="ds-hero__action"><a class="ds-button" href="#rules">Read the board rules</a></p>
+            </div>
+            <div class="ds-hero__aside">
+              <span class="ds-block">Members: 4,812, Topics: 21,340, Posts: 187,455</span>
+              <span class="ds-block">The time now is 09:41 PM.</span>
+              <span class="ds-block">You last visited: 14 Mar 2005, 07:02 PM.</span>
+            </div>
+          </section>
+
+          <p class="ds-notice" data-component="notice">The boards will be read-only on Sunday from 02:00 to 04:00 while the server is moved. <a class="ds-link ds-link--strong" href="#topic">Read the announcement</a>.</p>
+
+          <div class="ds-layout">
+
+            <aside class="ds-sidebar" data-component="sidebar">
+              <div class="ds-sidebar__block"><h2 class="ds-sidebar__title">Your quota</h2><div class="ds-progress"><span class="ds-progress__label">Private messages: 68 of 100</span><progress class="ds-progress__bar" value="68" max="100">68%</progress></div><details class="ds-accordion"><summary class="ds-accordion__head">Forum jump</summary><div class="ds-accordion__body"><ul class="ds-accordion__list"><li><a class="ds-link" href="#index">Board index</a></li><li><a class="ds-link" href="#board">Topic listing</a></li><li><a class="ds-link" href="#rules">Help and rules</a></li></ul></div></details><details class="ds-accordion"><summary class="ds-accordion__head">FAQ: posting</summary><div class="ds-accordion__body">Keep one topic to one subject and search before you ask.</div></details></div>
+        <div class="ds-sidebar__block">
+                <h2 class="ds-sidebar__title">Boards</h2>
+                <ul class="ds-sidebar__list">
+                  <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#board">The workbench</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Radios and receivers</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Test equipment</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Clocks and movements</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#board">Materials</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Cabinets and finishes</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Parts and sources</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#board">The back room</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Introductions</a></li>
+                  <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#board">Off the bench</a></li>
+                </ul>
+              </div>
+              <div class="ds-sidebar__block">
+                <h2 class="ds-sidebar__title">Recent guides</h2>
+                <ul class="ds-sidebar__list">
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#rules">Re-capping a valve receiver, step by step</a> <span class="ds-block">By hollis_w</span></li>
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#rules">Reading a faded schematic</a> <span class="ds-block">By m.teague</span></li>
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#rules">Matching old cabinet lacquer</a> <span class="ds-block">By pendle</span></li>
+                </ul>
+                <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#rules">View all guides</a></p>
+              </div>
+              <div class="ds-sidebar__block">
+                <h2 class="ds-sidebar__title">Busiest this week</h2>
+                <ul class="ds-sidebar__list">
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">m.teague</a> <span class="ds-block">41 posts in 12 topics</span></li>
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">quietfuse</a> <span class="ds-block">28 posts in 6 topics</span></li>
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">anselm</a> <span class="ds-block">19 posts in 9 topics</span></li>
+                  <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">ruth_a</a> <span class="ds-block">15 posts in 4 topics</span></li>
+                </ul>
+                <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#panel">Members list</a></p>
+              </div>
+            </aside>
+
+            <div class="ds-layout__main">
+
+              <table class="ds-table" data-component="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th class="ds-table__head--left" scope="col">Board</th>
+                    <th scope="col">Topics</th>
+                    <th scope="col">Posts</th>
+                    <th scope="col">Last post</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="ds-table__group"><td colspan="5">The workbench</td></tr>
+                  <tr>
+                    <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="New posts"><use href="#i-board"/></svg></td>
+                    <td><a class="ds-table__title" href="#board">Radios and receivers</a>
+                      <span class="ds-table__desc">Fault finding, alignment and restoration of domestic sets.</span>
+                      <span class="ds-table__meta">Moderators: <a class="ds-link ds-link--quiet" href="#panel">hollis_w</a>, <a class="ds-link ds-link--quiet" href="#panel">m.teague</a></span></td>
+                    <td class="ds-table__num">5,208</td>
+                    <td class="ds-table__num">48,917</td>
+                    <td class="ds-table__last">Today, 09:12 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">quietfuse</a></span></td>
+                  </tr>
+                  <tr>
+                    <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="New posts"><use href="#i-board"/></svg></td>
+                    <td><a class="ds-table__title" href="#board">Test equipment</a>
+                      <span class="ds-table__desc">Meters, scopes, signal generators and bench supplies. Please give the model number in the topic title.</span>
+                      <span class="ds-table__meta">Moderator: <a class="ds-link ds-link--quiet" href="#panel">m.teague</a></span></td>
+                    <td class="ds-table__num">2,744</td>
+                    <td class="ds-table__num">19,630</td>
+                    <td class="ds-table__last">Today, 08:47 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">anselm</a></span></td>
+                  </tr>
+                  <tr>
+                    <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                    <td><a class="ds-table__title" href="#board">Clocks and movements</a>
+                      <span class="ds-table__desc">Mechanical and synchronous clocks, timers and chart drives.</span>
+                      <span class="ds-table__meta">Moderator: <a class="ds-link ds-link--quiet" href="#panel">pendle</a></span></td>
+                    <td class="ds-table__num">913</td>
+                    <td class="ds-table__num">7,052</td>
+                    <td class="ds-table__last">13 Mar 2005, 11:20 AM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">ruth_a</a></span></td>
+                  </tr>
+                  <tr class="ds-table__group"><td colspan="5">The back room</td></tr>
+                  <tr>
+                    <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                    <td><a class="ds-table__title" href="#board">Introductions</a>
+                      <span class="ds-table__desc">New here? Say hello and tell us what is on your bench.</span></td>
+                    <td class="ds-table__num">1,387</td>
+                    <td class="ds-table__num">9,441</td>
+                    <td class="ds-table__last">12 Mar 2005, 06:35 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">dovecote</a></span></td>
+                  </tr>
+                  <tr>
+                    <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Board is locked"><use href="#i-locked"/></svg></td>
+                    <td><a class="ds-table__title" href="#board">Archive 2002 to 2003</a>
+                      <span class="ds-table__desc">Read-only topics from the old board.</span></td>
+                    <td class="ds-table__num">6,119</td>
+                    <td class="ds-table__num">52,870</td>
+                    <td class="ds-table__last">30 Dec 2003, 10:02 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">hollis_w</a></span></td>
+                  </tr>
+                  <tr class="ds-table__foot"><td colspan="5"></td></tr>
+                </tbody>
+              </table>
+
+              <div class="ds-infobar">
+                <span><a class="ds-link ds-link--quiet" href="#index">Mark all boards read</a> &middot; <a class="ds-link ds-link--quiet" href="#rules">The moderating team</a></span>
+                <ul class="ds-legend">
+                  <li class="ds-legend__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-board"/></svg><span class="ds-legend__label">New posts</span></li>
+                  <li class="ds-legend__item is-read"><svg class="ds-icon" aria-hidden="true"><use href="#i-board"/></svg><span class="ds-legend__label">No new posts</span></li>
+                  <li class="ds-legend__item is-read"><svg class="ds-icon" aria-hidden="true"><use href="#i-locked"/></svg><span class="ds-legend__label">Locked board</span></li>
+                </ul>
+                <span class="ds-infobar__side">All times are GMT.</span>
+              </div>
+
+              <ul class="ds-list" data-component="list">
+                <li class="ds-list__head">Active topics</li>
+                <li class="ds-list__date">Today</li>
+                <li class="ds-list__item">
+                  <div><a class="ds-list__title" href="#topic">Bench supply hums at low load</a> <span class="ds-badge" data-component="badge">New</span>
+                    <span class="ds-list__meta">Started by <a class="ds-link" href="#panel">quietfuse</a> in <a class="ds-link" href="#board">Test equipment</a></span></div>
+                  <div class="ds-list__aside"><a class="ds-link" href="#topic">31 replies</a> <span class="ds-block">1,204 views</span></div>
+                </li>
+                <li class="ds-list__item is-alt">
+                  <div><a class="ds-list__title" href="#topic">Which lacquer for a walnut cabinet?</a> <span class="ds-badge ds-badge--quiet">Sticky</span>
+                    <span class="ds-list__meta">Started by <a class="ds-link" href="#panel">pendle</a> in <a class="ds-link" href="#board">Cabinets and finishes</a></span></div>
+                  <div class="ds-list__aside"><a class="ds-link" href="#topic">62 replies</a> <span class="ds-block">3,870 views</span></div>
+                </li>
+                <li class="ds-list__date">13 March 2005</li>
+                <li class="ds-list__item">
+                  <div><a class="ds-list__title" href="#topic">Dial cord keeps slipping after restringing</a>
+                    <span class="ds-list__meta">Started by <a class="ds-link" href="#panel">ruth_a</a> in <a class="ds-link" href="#board">Radios and receivers</a></span></div>
+                  <div class="ds-list__aside"><a class="ds-link" href="#topic">14 replies</a> <span class="ds-block">498 views</span></div>
+                </li>
+                <li class="ds-list__item is-alt">
+                  <div><a class="ds-list__title" href="#topic">Source for cloth-covered mains flex</a>
+                    <span class="ds-list__meta">Started by <a class="ds-link" href="#panel">dovecote</a> in <a class="ds-link" href="#board">Parts and sources</a></span></div>
+                  <div class="ds-list__aside"><a class="ds-link" href="#topic">9 replies</a> <span class="ds-block">311 views</span></div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="ds-stat" data-component="stats">
+            <h2 class="ds-stat__title">Board statistics</h2>
+            <div class="ds-stat__item"><span class="ds-stat__value">4,812</span><span class="ds-stat__label">Members</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">21,340</span><span class="ds-stat__label">Topics</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">187,455</span><span class="ds-stat__label">Posts</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">58</span><span class="ds-stat__label">Online now</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">412</span><span class="ds-stat__label">Most ever online</span></div>
+          </div>
+
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title ds-panel__title--bar">Who is online</h2>
+            <p class="ds-panel__sub">Currently active: 58 (21 members and 37 guests)</p>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line">Most users ever online was 412, on 02 Nov 2004 at 08:31 PM.</p>
+              <p class="ds-panel__line"><a class="ds-link" href="#panel">anselm</a>, <a class="ds-link" href="#panel">dovecote</a>, <a class="ds-link ds-link--strong" href="#panel">hollis_w</a>, <a class="ds-link" href="#panel">ivo_k</a>, <a class="ds-link ds-link--strong" href="#panel">m.teague</a>, <a class="ds-link" href="#panel">pendle</a>, <a class="ds-link" href="#panel">quietfuse</a>, <a class="ds-link" href="#panel">ruth_a</a>, <a class="ds-link" href="#panel">saltmarsh</a>, <a class="ds-link" href="#panel">tobias_k</a></p>
+            </div>
+            <div class="ds-panel__body ds-panel__body--alt">
+              <p class="ds-panel__line">Our members have made 187,455 posts in 21,340 topics. <span class="ds-new">Welcome to our newest member,</span> <a class="ds-link ds-link--strong" href="#panel">saltmarsh</a>.</p>
+            </div>
+          </section>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="board">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#index">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#index">The workbench</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li class="ds-breadcrumb__current">Test equipment</li>
+      </ol>
+
+      <div class="ds-page-header" data-component="page-header">
+        <div>
+          <h1 class="ds-page-header__title">Test equipment</h1>
+          <p class="ds-page-header__desc">Meters, scopes, signal generators and bench supplies. Moderator: <a class="ds-link ds-link--quiet" href="#panel">m.teague</a></p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">New topic</a></div>
+      </div>
+
+          <div class="ds-grid" data-component="grid">
+            <h2 class="ds-grid__title">Sub-boards of Test equipment</h2>
+            <div class="ds-grid__cell">
+              <a class="ds-grid__name" href="#board">Meters and bridges</a>
+              <span class="ds-grid__meta">412 topics, 3,906 posts</span>
+              <span class="ds-grid__meta">Last post today, 07:55 PM</span>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <a class="ds-grid__name" href="#board">Oscilloscopes</a>
+              <span class="ds-grid__meta">688 topics, 5,120 posts</span>
+              <span class="ds-grid__meta">Last post today, 06:10 PM</span>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <a class="ds-grid__name" href="#board">Signal generators</a>
+              <span class="ds-grid__meta">203 topics, 1,477 posts</span>
+              <span class="ds-grid__meta">Last post 12 Mar 2005</span>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <a class="ds-grid__name" href="#board">Bench supplies</a>
+              <span class="ds-grid__meta">1,950 topics, 8,233 posts</span>
+              <span class="ds-grid__meta">Last post 11 Mar 2005</span>
+            </div>
+          </div>
+
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#board" aria-current="true">All topics</a></li>
+            <li><a class="ds-tabs__tab" href="#board">Unanswered</a></li>
+            <li><a class="ds-tabs__tab" href="#board">Solved</a></li>
+            <li><a class="ds-tabs__tab" href="#board">Your subscriptions</a></li>
+          </ul>
+
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th class="ds-table__head--left" scope="col">Topic</th>
+                <th scope="col">Replies</th>
+                <th scope="col">Views</th>
+                <th scope="col">Last post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="New posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Bench supply hums at low load</a> <span class="ds-badge">New</span>
+                  <span class="ds-table__meta">Started by <a class="ds-link ds-link--quiet" href="#panel">quietfuse</a></span></td>
+                <td class="ds-table__num">31</td>
+                <td class="ds-table__num">1,204</td>
+                <td class="ds-table__last">Today, 08:47 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">anselm</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Calibrating a moving-coil meter without a standard</a> <span class="ds-badge ds-badge--success">Solved</span>
+                  <span class="ds-table__meta">Started by <a class="ds-link ds-link--quiet" href="#panel">ivo_k</a></span></td>
+                <td class="ds-table__num">18</td>
+                <td class="ds-table__num">942</td>
+                <td class="ds-table__last">Today, 05:30 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">m.teague</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Signal generator drifts for the first hour</a> <span class="ds-badge ds-badge--warning">Awaiting parts</span>
+                  <span class="ds-table__meta">Started by <a class="ds-link ds-link--quiet" href="#panel">tobias_k</a></span></td>
+                <td class="ds-table__num">7</td>
+                <td class="ds-table__num">265</td>
+                <td class="ds-table__last">13 Mar 2005, 09:14 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">tobias_k</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Topic is locked"><use href="#i-locked"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Mains isolation: read before you ask</a> <span class="ds-badge ds-badge--danger">Locked</span>
+                  <span class="ds-table__meta">Started by <a class="ds-link ds-link--quiet" href="#panel">m.teague</a></span></td>
+                <td class="ds-table__num">0</td>
+                <td class="ds-table__num">6,318</td>
+                <td class="ds-table__last">02 Jan 2005, 10:00 AM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">m.teague</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Replacement probes for an old valve voltmeter</a>
+                  <span class="ds-table__meta">Started by <a class="ds-link ds-link--quiet" href="#panel">saltmarsh</a></span></td>
+                <td class="ds-table__num">4</td>
+                <td class="ds-table__num">187</td>
+                <td class="ds-table__last">11 Mar 2005, 02:41 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">dovecote</a></span></td>
+              </tr>
+              <tr class="ds-table__foot"><td colspan="5"></td></tr>
+            </tbody>
+          </table>
+
+      <div class="ds-infobar">
+        <span><a class="ds-link ds-link--quiet" href="#board">Mark this board read</a> &middot; <a class="ds-link ds-link--quiet" href="#panel">Subscribe to this board</a></span>
+        <ul class="ds-legend">
+          <li class="ds-legend__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-board"/></svg><span class="ds-legend__label">New posts</span></li>
+          <li class="ds-legend__item is-read"><svg class="ds-icon" aria-hidden="true"><use href="#i-board"/></svg><span class="ds-legend__label">No new posts</span></li>
+          <li class="ds-legend__item is-read"><svg class="ds-icon" aria-hidden="true"><use href="#i-locked"/></svg><span class="ds-legend__label">Locked topic</span></li>
+        </ul>
+        <span class="ds-infobar__side">137 topics in this board.</span>
+      </div>
+
+          <ul class="ds-pagination" data-component="pagination">
+            <li class="ds-pagination__label">Page 2 of 14</li>
+            <li><a class="ds-pagination__link" href="#board">&laquo; Previous</a></li>
+            <li><a class="ds-pagination__link" href="#board">1</a></li>
+            <li><a class="ds-pagination__link is-current" href="#board" aria-current="page">2</a></li>
+            <li><a class="ds-pagination__link" href="#board">3</a></li>
+            <li><a class="ds-pagination__link" href="#board">4</a></li>
+            <li><a class="ds-pagination__link" href="#board">Next &raquo;</a></li>
+          </ul>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="topic">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#index">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#board">Test equipment</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li class="ds-breadcrumb__current">Bench supply hums at low load</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Bench supply hums at low load</h1>
+          <p class="ds-page-header__desc">Started by <a class="ds-link ds-link--quiet" href="#panel">quietfuse</a> on 14 Mar 2005. 31 replies, 1,204 views. <span class="ds-badge">New</span></p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">Post reply</a></div>
+      </div>
+
+      <article class="ds-post">
+        <div class="ds-post__head"><span>14 Mar 2005, 06:02 PM</span><span>Post 1 of 32</span></div>
+        <div class="ds-post__author">
+          <span class="ds-avatar"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+          <a class="ds-post__name" href="#panel">quietfuse</a>
+          <span class="ds-block">Regular</span>
+          <span class="ds-post__meta">Posts: 412</span>
+          <span class="ds-post__meta">Joined: Aug 2003</span>
+        </div>
+        <div class="ds-post__body">
+          <p class="ds-post__text">I have a twin 0 to 30 V bench supply from the early seventies on the bench. Above about half an amp it is quiet. Below that the transformer hums loudly enough to hear across the room, and there is 40 mV of ripple on the output.</p>
+          <p class="ds-post__text">Rectifier diodes test fine. The reservoir capacitor is original and reads <code class="ds-post__code">3,900 uF</code> against a marked 4,700. Is that enough to explain it, or should I be looking at the regulator?</p>
+          <p class="ds-post__sig">One fault at a time.</p>
+        </div>
+        <div class="ds-post__foot">
+          <span><a class="ds-link ds-link--quiet" href="#panel">Profile</a> &middot; <a class="ds-link ds-link--quiet" href="#panel">Send a private message</a></span>
+          <span><a class="ds-link ds-link--quiet" href="#post">Quote</a> &middot; <a class="ds-link ds-link--quiet" href="#post">Edit</a> &middot; <a class="ds-link ds-link--quiet" href="#topic">Delete</a> &middot; <a class="ds-link ds-link--quiet" href="#rules">Report</a></span>
+        </div>
+      </article>
+
+      <article class="ds-post">
+        <div class="ds-post__head"><span>14 Mar 2005, 06:40 PM</span><span>Post 2 of 32</span></div>
+        <div class="ds-post__author">
+          <span class="ds-avatar"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+          <a class="ds-post__name" href="#panel">m.teague</a>
+          <span class="ds-block">Moderator</span>
+          <span class="ds-post__meta">Posts: 6,105</span>
+          <span class="ds-post__meta">Joined: Feb 2002</span>
+        </div>
+        <div class="ds-post__body">
+          <blockquote class="ds-post__quote"><span class="ds-post__cite">quietfuse wrote:</span> The reservoir capacitor is original and reads 3,900 uF against a marked 4,700.</blockquote>
+          <p class="ds-post__text">Capacitance is only half of it. Measure the series resistance as well; a thirty year old electrolytic can read nearly full value and still be useless. I would replace it before touching anything else.</p>
+          <p class="ds-post__text">Hum that gets worse at light load usually points at the regulator hunting, not the transformer. Check the small compensation capacitor across the error amplifier while you are in there.</p>
+          <p class="ds-post__sig">Put the model number in the title, please.</p>
+        </div>
+        <div class="ds-post__foot">
+          <span><a class="ds-link ds-link--quiet" href="#panel">Profile</a> &middot; <a class="ds-link ds-link--quiet" href="#panel">Send a private message</a></span>
+          <span><a class="ds-link ds-link--quiet" href="#post">Quote</a> &middot; <a class="ds-link ds-link--quiet" href="#post">Edit</a> &middot; <a class="ds-link ds-link--quiet" href="#topic">Delete</a> &middot; <a class="ds-link ds-link--quiet" href="#rules">Report</a></span>
+        </div>
+      </article>
+
+      <article class="ds-post">
+        <div class="ds-post__head"><span>Today, 08:47 PM</span><span>Post 32 of 32</span></div>
+        <div class="ds-post__author">
+          <span class="ds-avatar"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+          <a class="ds-post__name" href="#panel">anselm</a>
+          <span class="ds-block">Member</span>
+          <span class="ds-post__meta">Posts: 88</span>
+          <span class="ds-post__meta">Joined: Jan 2005</span>
+        </div>
+        <div class="ds-post__body">
+          <p class="ds-post__text">Same supply here, same fault. On mine it was the minimum load resistor across the output, which had gone open. Without it the series pass transistor cannot regulate down at low current and the loop sings at mains frequency.</p>
+          <p class="ds-post__text">It is a 2 W wirewound part under the rear terminal strip. <span class="ds-new">Discharge the reservoir before you reach in.</span></p>
+        </div>
+        <div class="ds-post__foot">
+          <span><a class="ds-link ds-link--quiet" href="#panel">Profile</a> &middot; <a class="ds-link ds-link--quiet" href="#panel">Send a private message</a></span>
+          <span><a class="ds-link ds-link--quiet" href="#post">Quote</a> &middot; <a class="ds-link ds-link--quiet" href="#post">Edit</a> &middot; <a class="ds-link ds-link--quiet" href="#topic">Delete</a> &middot; <a class="ds-link ds-link--quiet" href="#rules">Report</a></span>
+        </div>
+      </article>
+
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+              <h2 class="ds-dialog__title" id="d-title">Confirm</h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">Are you sure you want to delete post 32 by anselm? This cannot be undone.</p>
+                <div class="ds-dialog__actions">
+                  <a class="ds-button ds-button--danger" href="#board">Yes, delete it</a>
+                  <a class="ds-button ds-button--secondary" href="#topic">No</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <div class="ds-toolbar">
+        <div class="ds-buttons" data-component="buttons">
+          <a class="ds-button" href="#post">Post reply</a>
+          <a class="ds-button ds-button--secondary" href="#panel">Subscribe</a>
+          <button class="ds-button" type="button" disabled>Lock topic</button>
+          <a class="ds-button ds-button--danger" href="#board">Delete topic</a>
+        </div>
+        <ul class="ds-pagination">
+          <li class="ds-pagination__label">Page 3 of 3</li>
+          <li><a class="ds-pagination__link" href="#topic">&laquo; Previous</a></li>
+          <li><a class="ds-pagination__link" href="#topic">1</a></li>
+          <li><a class="ds-pagination__link" href="#topic">2</a></li>
+          <li><a class="ds-pagination__link is-current" href="#topic" aria-current="page">3</a></li>
+        </ul>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="post">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#index">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#board">Test equipment</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#topic">Bench supply hums at low load</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li class="ds-breadcrumb__current">Post a reply</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Post a reply</h1>
+          <p class="ds-page-header__desc">In the topic <a class="ds-link ds-link--quiet" href="#topic">Bench supply hums at low load</a>. Posting as <a class="ds-link ds-link--quiet" href="#panel">quietfuse</a>.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#rules">Posting guide</a></div>
+      </div>
+
+          <div class="ds-notice ds-notice--error" role="alert">
+            <span class="ds-notice__title">Your reply was not posted.</span> You must wait 30 seconds between posts. Go back and try again in a moment.
+          </div>
+
+          <form class="ds-form" data-component="form" action="#">
+            <h2 class="ds-form__title">Post a reply</h2>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-subject">Subject</label>
+              <div class="ds-form__field"><input class="ds-form__input" id="f-subject" type="text" value="Re: Bench supply hums at low load"></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-mail">Notify address <span class="ds-form__hint">Used only for reply notices</span></label>
+              <div class="ds-form__field">
+                <input class="ds-form__input is-invalid" id="f-mail" type="text" value="quietfuse@" aria-invalid="true">
+                <span class="ds-form__error">This is not a complete e-mail address.</span>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-icon">Topic icon</label>
+              <div class="ds-form__field">
+                <select class="ds-form__input ds-form__input--auto" id="f-icon">
+                  <option>No icon</option>
+                  <option>Question</option>
+                  <option>Solved</option>
+                </select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-body">Message <span class="ds-form__hint">Board code is on, images are off</span></label>
+              <div class="ds-form__field"><textarea class="ds-form__input ds-form__input--wide" id="f-body" rows="5">Swapped the reservoir capacitor and the hum is gone above half load, but it is still there below it.</textarea></div>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label">Options</span>
+              <div class="ds-form__field">
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Notify me when a reply is posted</label>
+              </div>
+            </div>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="submit">Submit reply</button>
+              <button class="ds-button ds-button--secondary" type="button">Preview</button>
+              <a class="ds-link ds-link--quiet" href="#topic">Cancel</a>
+            </div>
+          </form>
+
+      <ul class="ds-list">
+        <li class="ds-list__head">Topic review, newest first</li>
+        <li class="ds-list__item">
+          <div><a class="ds-list__title" href="#topic">anselm</a>
+            <span class="ds-list__meta">On mine it was the minimum load resistor across the output, which had gone open.</span></div>
+          <div class="ds-list__aside">Today, 08:47 PM <span class="ds-block">Post 32</span></div>
+        </li>
+        <li class="ds-list__item is-alt">
+          <div><a class="ds-list__title" href="#topic">tobias_k</a>
+            <span class="ds-list__meta">Worth checking the mains earth bond to the chassis too; mine was loose under the paint.</span></div>
+          <div class="ds-list__aside">Today, 07:15 PM <span class="ds-block">Post 31</span></div>
+        </li>
+        <li class="ds-list__item">
+          <div><a class="ds-list__title" href="#topic">m.teague</a>
+            <span class="ds-list__meta">Hum that gets worse at light load usually points at the regulator hunting, not the transformer.</span></div>
+          <div class="ds-list__aside">14 Mar 2005, 06:40 PM <span class="ds-block">Post 2</span></div>
+        </li>
+      </ul>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="panel">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#index">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li class="ds-breadcrumb__current">Control panel</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Control panel</h1>
+          <p class="ds-page-header__desc">Signed in as quietfuse. Member since August 2003. Last visit: 14 Mar 2005, 07:02 PM.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">New private message</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Your account</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#panel">Profile</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Edit your details</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Signature</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Password and e-mail</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#panel">Board options</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Time zone and dates</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Reply notices</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#panel">Private messages</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Inbox</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#panel">Sent items</a></li>
+            </ul>
+            <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#index">Log out</a></p>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Your buddy list</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">anselm</a> <span class="ds-block">Online now</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">m.teague</a> <span class="ds-block">Online now</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">pendle</a> <span class="ds-block">Last seen 13 Mar 2005</span></li>
+            </ul>
+            <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#panel">Edit the list</a></p>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <div class="ds-stat">
+            <h2 class="ds-stat__title">Your activity</h2>
+            <div class="ds-stat__item"><span class="ds-stat__value">412</span><span class="ds-stat__label">Posts</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">37</span><span class="ds-stat__label">Topics started</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">3</span><span class="ds-stat__label">Subscriptions</span></div>
+            <div class="ds-stat__item"><span class="ds-stat__value">0</span><span class="ds-stat__label">Unread messages</span></div>
+          </div>
+
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th class="ds-table__head--left" scope="col">Subscribed topic</th>
+                <th scope="col">Replies</th>
+                <th scope="col">Last post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="New posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Bench supply hums at low load</a> <span class="ds-badge">New</span>
+                  <span class="ds-table__meta">In <a class="ds-link ds-link--quiet" href="#board">Test equipment</a></span></td>
+                <td class="ds-table__num">31</td>
+                <td class="ds-table__last">Today, 08:47 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">anselm</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Which lacquer for a walnut cabinet?</a> <span class="ds-badge ds-badge--quiet">Sticky</span>
+                  <span class="ds-table__meta">In <a class="ds-link ds-link--quiet" href="#board">Cabinets and finishes</a></span></td>
+                <td class="ds-table__num">62</td>
+                <td class="ds-table__last">13 Mar 2005, 04:18 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">pendle</a></span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="No new posts"><use href="#i-board"/></svg></td>
+                <td><a class="ds-table__title" href="#topic">Calibrating a moving-coil meter without a standard</a> <span class="ds-badge ds-badge--success">Solved</span>
+                  <span class="ds-table__meta">In <a class="ds-link ds-link--quiet" href="#board">Test equipment</a></span></td>
+                <td class="ds-table__num">18</td>
+                <td class="ds-table__last">Today, 05:30 PM <span class="ds-block">by <a class="ds-link ds-link--quiet ds-link--strong" href="#panel">m.teague</a></span></td>
+              </tr>
+              <tr class="ds-table__foot"><td colspan="4"></td></tr>
+            </tbody>
+          </table>
+
+          <div class="ds-empty" data-component="empty">
+            <h2 class="ds-empty__title">Private messages: inbox</h2>
+            <div class="ds-empty__body">
+              <p class="ds-empty__text">Your inbox is empty. Messages from other members will be listed here.</p>
+              <a class="ds-button" href="#post">Write a message</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="rules">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#index">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#rules">Help</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&raquo;</li>
+        <li class="ds-breadcrumb__current">Board rules</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Help and rules</h1>
+          <p class="ds-page-header__desc">How the boards work and what the moderating team expects. Last revised 02 Jan 2005.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">Contact the team</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Help contents</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#rules">Board rules</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#rules">Before you post</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#rules">Signatures</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#rules">Moderation</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--head"><a class="ds-link" href="#rules">Using the boards</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#rules">Board code</a></li>
+              <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link" href="#rules">Subscriptions</a></li>
+            </ul>
+            <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#index">Back to the boards</a></p>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">The moderating team</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">hollis_w</a> <span class="ds-block">Radios and receivers</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">m.teague</a> <span class="ds-block">Test equipment</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#panel">pendle</a> <span class="ds-block">Clocks, cabinets and finishes</span></li>
+            </ul>
+            <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#post">Send the team a message</a></p>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <article class="ds-prose" data-component="typography">
+            <h1>Board rules and posting guide</h1>
+            <p>Everyone who posts here agrees to the rules below. They are short. <strong>Read them once</strong> and you will rarely need a moderator.</p>
+            <h2>Before you post</h2>
+            <p>Search first; most common faults have a long topic already. Put the make and model in the title, and say what you have measured so far. A good first post saves three replies asking for the basics.</p>
+            <ul>
+              <li>One topic per fault, in one board only.</li>
+              <li>Attach schematics as links, not as inline scans.</li>
+              <li>Mains work: say whether the set is isolated before you ask for measurements.</li>
+              <li>Wrap part numbers in <code>[code]</code> tags so they stay readable.</li>
+            </ul>
+            <hr>
+            <h3>Signatures</h3>
+            <p>Signatures are limited to three lines of text and no images. Set yours in the <a class="ds-link" href="#panel">control panel</a>.</p>
+            <h3>Moderation</h3>
+            <p>Moderators may edit a title to add a model number, move a topic to the right board, or lock one that has run its course. Disagree by private message, not in the topic.</p>
+          </article>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">See also</h2>
+            <div class="ds-panel__body" data-component="links">
+              <p class="ds-panel__line"><a class="ds-link" href="#rules">Board code reference</a> &middot; <a class="ds-link is-visited" href="#rules">Mains isolation: read before you ask</a> &middot; <a class="ds-link is-hover" href="#panel">Setting your signature</a> &middot; <a class="ds-link is-active" href="#rules">The moderating team</a> &middot; <a class="ds-link ds-link--quiet" href="#board">Test equipment board</a></p>
+              <p class="ds-panel__line">Still stuck? <a class="ds-link" href="#post">Ask in the boards</a> and a moderator will answer.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+  </div>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-footer__row">
+      <li><a class="ds-footer__link" href="#index">Board index</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">-</li>
+      <li><a class="ds-footer__link" href="#board">Topics</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">-</li>
+      <li><a class="ds-footer__link" href="#panel">Control panel</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">-</li>
+      <li><a class="ds-footer__link" href="#rules">Rules</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">-</li>
+      <li><a class="ds-footer__link" href="#post">Contact the team</a></li>
+    </ul>
+  </footer>
+
+  <p class="ds-page__legal">chronoskin. Placeholder content for a style specimen. All times are GMT.</p>
+
+</div>
+
+</body>
+</html>

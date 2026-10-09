@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: SaaS gradient developer portal specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="13.6" cy="10" r="7.6" opacity=".45"/><circle cx="9.2" cy="15" r="5.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <span class="ds-nav__tag">Developers</span>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Overview</a></li>
+      <li><a class="ds-nav__link" href="#reference">API reference</a></li>
+      <li><a class="ds-nav__link" href="#keys">API keys</a></li>
+      <li><a class="ds-nav__link" href="#changelog">Changelog</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <label class="ds-search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="5"/><path d="M13 13l4 4"/></svg><input class="ds-search__input" type="search" placeholder="Search the docs" aria-label="Search the docs"></label>
+      <details class="ds-menu" data-component="menu">
+        <summary class="ds-menu__button">Libraries</summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#reference">Node</a></li>
+          <li><a class="ds-menu__link" href="#reference">Python</a></li>
+          <li><a class="ds-menu__link" href="#reference">Ruby</a></li>
+          <li><a class="ds-menu__link" href="#reference">PHP</a></li>
+          <li><a class="ds-menu__link" href="#changelog">All 14 libraries</a></li>
+        </ul>
+      </details>
+      <a class="ds-button ds-button--bar ds-button--small" href="#keys">Dashboard</a>
+    </div>
+    <details class="ds-menu ds-nav__menu">
+      <summary class="ds-menu__button">Menu</summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__link" href="#home">Overview</a></li>
+        <li><a class="ds-menu__link" href="#reference">API reference</a></li>
+        <li><a class="ds-menu__link" href="#keys">API keys</a></li>
+        <li><a class="ds-menu__link" href="#changelog">Changelog</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-wrap ds-hero__inner">
+      <div class="ds-hero__copy">
+        <p class="ds-hero__kicker"><span class="ds-badge ds-badge--alt">v3</span> Rates for 31 carriers in one call</p>
+        <h1 class="ds-hero__title">Ship a parcel with one request</h1>
+        <p class="ds-hero__lead">The chronoskin API buys the label, books the collection and tells you where the parcel is. Seven lines of code, any carrier.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--inverse" href="#keys">Get your API keys</a>
+          <a class="ds-button ds-button--ghost" href="#reference">Read the reference</a>
+        </div>
+        <p class="ds-hero__note">npm install chronoskin</p>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <div class="ds-code ds-code--deep">
+          <div class="ds-code__bar"><span class="ds-code__dot"></span><span class="ds-code__dot"></span><span class="ds-code__dot"></span><span class="ds-code__name">Create a shipment</span><span>curl</span></div>
+          <pre class="ds-code__body"><span class="ds-code__b">curl</span> api.chronoskin.test/v3/shipments \
+  -u <span class="ds-code__s">sk_test_a1b2c3d4:</span> \
+  -d <span class="ds-code__s">"to[name]"="Harbour Bakery"</span> \
+  -d <span class="ds-code__s">"to[postcode]"="EH6 6QQ"</span> \
+  -d weight=<span class="ds-code__s">1200</span> \
+  -d service=<span class="ds-code__s">next_day</span>
+<span class="ds-code__c"># weight is in grams</span>
+
+
+</pre>
+        </div>
+        <div class="ds-reply">
+          <p class="ds-reply__head">Reply <span class="ds-badge ds-badge--success">201 Created</span></p>
+          <div class="ds-reply__row"><span>id</span><span class="ds-reply__value">shp_8Kd20a</span></div>
+          <div class="ds-reply__row"><span>carrier</span><span class="ds-reply__value">northline</span></div>
+          <div class="ds-reply__row"><span>label</span><span class="ds-reply__value">label_8Kd20a.pdf</span></div>
+          <div class="ds-reply__row"><span>cost</span><span class="ds-reply__value">4.85</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main ds-main--home">
+    <div class="ds-wrap">
+      <div class="ds-panel ds-quick">
+        <div class="ds-quick__lead">
+          <h2 class="ds-panel__title">Quickstart</h2>
+          <p class="ds-quick__note">About ten minutes, in test mode. Nothing is collected and nothing is charged.</p>
+          <span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--33"></span></span>
+          <p class="ds-quick__note">1 of 3 steps done</p>
+        </div>
+        <ol class="ds-steps">
+          <li class="ds-steps__item is-done"><span class="ds-steps__num">1</span><h3 class="ds-steps__title">Get a test key</h3><p class="ds-steps__text">Every account starts with one. It begins with <span class="ds-path">sk_test_</span>.</p><a class="ds-link ds-link--more" href="#keys">Your keys</a></li>
+          <li class="ds-steps__item"><span class="ds-steps__num">2</span><h3 class="ds-steps__title">Create a shipment</h3><p class="ds-steps__text">Send an address and a weight; get back a label and a price.</p><a class="ds-link ds-link--more" href="#reference">The request</a></li>
+          <li class="ds-steps__item"><span class="ds-steps__num">3</span><h3 class="ds-steps__title">Listen for tracking</h3><p class="ds-steps__text">Add a webhook and we call you each time the parcel is scanned.</p><a class="ds-link ds-link--more" href="#keys">Webhooks</a></li>
+        </ol>
+      </div>
+
+      <div class="ds-block">
+        <div class="ds-stat" data-component="stats">
+          <div class="ds-stat__item"><p class="ds-stat__figure">99.99%</p><p class="ds-stat__label">of requests answered over the last 90 days</p></div>
+          <div class="ds-stat__item"><p class="ds-stat__figure">180 ms</p><p class="ds-stat__label">median time to a label</p></div>
+          <div class="ds-stat__item"><p class="ds-stat__figure">31</p><p class="ds-stat__label">carriers behind one address format</p></div>
+          <div class="ds-stat__item"><p class="ds-stat__figure">14</p><p class="ds-stat__label">libraries, kept in step with the API</p></div>
+        </div>
+      </div>
+
+      <div class="ds-block">
+        <div class="ds-block__head">
+          <h2 class="ds-block__title">What the API does</h2>
+          <p class="ds-block__text">Six resources. Each has its own page in the reference.</p>
+        </div>
+        <div class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6l7-3 7 3v8l-7 3-7-3z M3 6l7 3 7-3 M10 9v8"/></svg></span><h3 class="ds-grid__title">Shipments</h3></div>
+            <p class="ds-grid__text">Create, change and cancel a parcel on its way from you to a customer.</p>
+            <a class="ds-path" href="#reference">POST /v3/shipments</a>
+          </div>
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile ds-tile--2"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3h7l7 7-7 7-7-7z"/><circle cx="7" cy="7" r="1"/></svg></span><h3 class="ds-grid__title">Labels</h3></div>
+            <p class="ds-grid__text">A label as PDF or ZPL, in the size your printer takes.</p>
+            <a class="ds-path" href="#reference">GET /v3/labels/:id</a>
+          </div>
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile ds-tile--3"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 17s5-5 5-9a5 5 0 0 0-10 0c0 4 5 9 5 9z"/><circle cx="10" cy="8" r="1.5"/></svg></span><h3 class="ds-grid__title">Tracking</h3></div>
+            <p class="ds-grid__text">Every scan as an event, in the same words for every carrier.</p>
+            <a class="ds-path" href="#reference">GET /v3/trackers/:id</a>
+          </div>
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile ds-tile--4"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6v8 M8 8h3a1.5 1.5 0 0 1 0 3H8"/></svg></span><h3 class="ds-grid__title">Rates</h3></div>
+            <p class="ds-grid__text">Prices for a parcel from all carriers, before you buy anything.</p>
+            <a class="ds-path" href="#reference">POST /v3/rates</a>
+          </div>
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile ds-tile--3"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l7-6 7 6v8H3z M8 17v-5h4v5"/></svg></span><h3 class="ds-grid__title">Addresses</h3></div>
+            <p class="ds-grid__text">Check and tidy an address, so a parcel is not sent to nowhere.</p>
+            <a class="ds-path" href="#reference">POST /v3/addresses</a>
+          </div>
+          <div class="ds-grid__cell">
+            <div class="ds-grid__head"><span class="ds-tile ds-tile--2"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 2L4 11h5l-1 7 7-9h-5z"/></svg></span><h3 class="ds-grid__title">Webhooks</h3></div>
+            <p class="ds-grid__text">We call your server when something changes, and retry for three days.</p>
+            <a class="ds-path" href="#keys">POST /v3/webhooks</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-block ds-cols ds-cols--level">
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Recent changes</h2><a class="ds-link ds-link--more" href="#changelog">Changelog</a></div>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item">
+                <div class="ds-list__head"><a class="ds-list__title" href="#changelog">Rates return the delivery day</a><span class="ds-badge">2019-04-02</span></div>
+                <p class="ds-list__meta">Added to every rate, in the receiver's time zone</p>
+              </li>
+              <li class="ds-list__item">
+                <div class="ds-list__head"><a class="ds-list__title" href="#changelog">Weights must be whole grams</a><span class="ds-badge ds-badge--warning">Breaking</span></div>
+                <p class="ds-list__meta">Fractions are refused from version 2019-03-11</p>
+              </li>
+              <li class="ds-list__item">
+                <div class="ds-list__head"><a class="ds-list__title" href="#changelog">A library for Go</a><span class="ds-badge ds-badge--alt">New</span></div>
+                <p class="ds-list__meta">The fourteenth, written with two customers</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">API status</h2><span class="ds-badge ds-badge--success">All good</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-rows">
+              <li class="ds-rows__item"><span class="ds-rows__name">Shipments and labels</span><span class="ds-badge ds-badge--success">Up</span></li>
+              <li class="ds-rows__item"><span class="ds-rows__name">Tracking</span><span class="ds-badge ds-badge--success">Up</span></li>
+              <li class="ds-rows__item"><span class="ds-rows__name">Webhooks <span class="ds-tooltip ds-tooltip--mark" tabindex="0">?<span class="ds-tooltip__text">Deliveries are about two minutes behind while one carrier catches up.</span></span></span><span class="ds-badge ds-badge--warning">Slow</span></li>
+              <li class="ds-rows__item"><span class="ds-rows__name">Test mode</span><span class="ds-badge ds-badge--success">Up</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-block">
+        <div class="ds-cta">
+          <div>
+            <h2 class="ds-cta__title">Stuck on a request?</h2>
+            <p class="ds-cta__text">Send us its id. An engineer answers within a working day.</p>
+          </div>
+          <div class="ds-buttonrow">
+            <a class="ds-button ds-button--inverse" href="#keys">Open the dashboard</a>
+            <a class="ds-button ds-button--ghost" href="#changelog">See what changed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="reference">
+  <div class="ds-page-header" data-component="page-header">
+    <div class="ds-wrap ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">Developers</a></li>
+          <li><a class="ds-breadcrumb__item" href="#reference">API reference</a></li>
+          <li class="ds-breadcrumb__current">Shipments</li>
+        </ol>
+        <h1 class="ds-page-header__title">Shipments</h1>
+        <p class="ds-page-header__text">A shipment is one parcel on its way from you to one address.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--inverse" href="#keys">Get your API keys</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap ds-docs">
+      <div class="ds-stack">
+        <nav class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Shipments</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__item" href="#reference">The shipment object</a></li>
+            <li><a class="ds-sidebar__item is-current" href="#reference">Create a shipment</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">Retrieve a shipment</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">Cancel a shipment</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">List shipments <span class="ds-sidebar__count">paged</span></a></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Other resources</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__item" href="#reference">Labels</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">Tracking</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">Rates</a></li>
+            <li><a class="ds-sidebar__item" href="#reference">Addresses</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-endpoint"><span class="ds-badge ds-badge--success">POST</span><span class="ds-endpoint__path">/v3/shipments</span><span class="ds-tooltip ds-tooltip--end" tabindex="0" data-component="tooltip"><span class="ds-badge ds-badge--quiet">Idempotent</span><span class="ds-tooltip__text">Send the same Idempotency-Key twice and the second call returns the first shipment.</span></span></div>
+        <article class="ds-prose" data-component="typography">
+          <h1>Create a shipment</h1>
+          <p class="ds-prose__lead">Buys a label from the cheapest carrier that can meet the service you ask for, and returns the shipment with its label and price.</p>
+          <h2>Before you call</h2>
+          <p>Use a test key while you build. A test shipment gets a real-looking label marked <strong>SAMPLE</strong> and is never collected.</p>
+          <h3>Units</h3>
+          <ul>
+            <li>Weights are whole grams: <code>weight=1200</code> is 1.2 kg.</li>
+            <li>Sizes are whole millimetres, longest side first.</li>
+            <li>Money is in the smallest unit of your account's currency.</li>
+          </ul>
+        </article>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Parameters</h2><span class="ds-badge ds-badge--quiet">form encoded</span></div>
+          <div class="ds-table__wrap">
+            <table class="ds-table" data-component="table">
+              <thead>
+                <tr><th>Parameter</th><th>Type</th><th>Needed</th><th class="ds-table__num">Longest</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="ds-key">to[name]</span></td><td>string</td><td><span class="ds-badge ds-badge--danger">Required</span></td><td class="ds-table__num">60</td></tr>
+                <tr><td><span class="ds-key">to[postcode]</span></td><td>string</td><td><span class="ds-badge ds-badge--danger">Required</span></td><td class="ds-table__num">12</td></tr>
+                <tr><td><span class="ds-key">weight</span></td><td>integer, grams</td><td><span class="ds-badge ds-badge--danger">Required</span></td><td class="ds-table__num">30,000</td></tr>
+                <tr><td><span class="ds-key">service</span></td><td>one of three</td><td><span class="ds-badge ds-badge--quiet">Optional</span></td><td class="ds-table__num">16</td></tr>
+                <tr><td><span class="ds-key">reference</span></td><td>string</td><td><span class="ds-badge ds-badge--quiet">Optional</span></td><td class="ds-table__num">40</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Test mode is free.</span> Labels made with a test key cost nothing and cannot be posted.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Fractions of a gram are refused.</span> Since 2019-03-11 the call fails with <span class="ds-key">weight_not_whole</span>.</p>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Errors</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-accordion" data-component="accordion">
+              <details class="ds-accordion__item" open>
+                <summary class="ds-accordion__title">400 address_not_found</summary>
+                <div class="ds-accordion__body"><p>No carrier knows the postcode. Check it with the Addresses resource first; the reply suggests the nearest match.</p></div>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__title">402 balance_too_low</summary>
+                <div class="ds-accordion__body"><p>The account cannot pay for the label. Top up, or switch on automatic top-ups in the dashboard.</p></div>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__title">429 too_many_requests</summary>
+                <div class="ds-accordion__body"><p>More than 100 calls in a second. Wait for the time given in the Retry-After header.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#reference">Previous</a></li>
+          <li><a class="ds-pagination__link" href="#reference">1</a></li>
+          <li><a class="ds-pagination__link is-current" href="#reference">2</a></li>
+          <li><a class="ds-pagination__link" href="#reference">3</a></li>
+          <li><a class="ds-pagination__link" href="#reference">4</a></li>
+          <li><a class="ds-pagination__link" href="#reference">Next</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-docs__code">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#reference">curl</a></li>
+          <li><a class="ds-tabs__tab" href="#reference">Node</a></li>
+          <li><a class="ds-tabs__tab" href="#reference">Python</a></li>
+          <li><a class="ds-tabs__tab" href="#reference">Ruby</a></li>
+        </ul>
+        <div class="ds-code">
+          <div class="ds-code__bar"><span class="ds-code__name">Request</span><a class="ds-code__copy" href="#reference">Copy</a></div>
+          <pre class="ds-code__body"><span class="ds-code__b">curl</span> api.chronoskin.test/v3/shipments \
+  -u <span class="ds-code__s">sk_test_a1b2c3d4:</span> \
+  -d <span class="ds-code__s">"to[name]"="Harbour Bakery"</span> \
+  -d <span class="ds-code__s">"to[postcode]"="EH6 6QQ"</span> \
+  -d weight=<span class="ds-code__s">1200</span> \
+  -d service=<span class="ds-code__s">next_day</span></pre>
+        </div>
+        <div class="ds-code">
+          <div class="ds-code__bar"><span class="ds-code__name">Reply</span><span>201</span></div>
+          <pre class="ds-code__body">{
+  <span class="ds-code__b">"id"</span>: <span class="ds-code__s">"shp_8Kd20a"</span>,
+  <span class="ds-code__b">"status"</span>: <span class="ds-code__s">"label_ready"</span>,
+  <span class="ds-code__b">"carrier"</span>: <span class="ds-code__s">"northline"</span>,
+  <span class="ds-code__b">"service"</span>: <span class="ds-code__s">"next_day"</span>,
+  <span class="ds-code__b">"weight"</span>: 1200,
+  <span class="ds-code__b">"cost"</span>: 485,
+  <span class="ds-code__b">"label"</span>: <span class="ds-code__s">"label_8Kd20a.pdf"</span>,
+  <span class="ds-code__b">"tracker"</span>: <span class="ds-code__s">"trk_51Lm9x"</span>
+}</pre>
+        </div>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Read next</h2>
+          <ul class="ds-linkrow" data-component="links">
+            <li><a class="ds-link" href="#reference">Retrieve a shipment</a></li>
+            <li><a class="ds-link is-visited" href="#keys">Test and live keys</a></li>
+            <li><a class="ds-link is-hover" href="#changelog">Version 2019-04-02</a></li>
+            <li><a class="ds-link is-active" href="#reference">Idempotent requests</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="keys">
+  <div class="ds-page-header">
+    <div class="ds-wrap ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">Developers</a></li>
+          <li><a class="ds-breadcrumb__item" href="#keys">Dashboard</a></li>
+          <li class="ds-breadcrumb__current">API keys</li>
+        </ol>
+        <h1 class="ds-page-header__title">API keys</h1>
+        <p class="ds-page-header__text">A key says who is calling. Keep live keys on your server and nowhere else.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--ghost" href="#reference">How keys work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap ds-cols">
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <div class="ds-panel__head">
+            <h2 class="ds-panel__title">Your keys</h2>
+            <div class="ds-panel__tools">
+              <label class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span>Test mode</span></label>
+            </div>
+          </div>
+          <div class="ds-table__wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Name</th><th>Key</th><th>Made by</th><th class="ds-table__num">Calls today</th><th>State</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a class="ds-table__title" href="#keys">Warehouse server</a></td><td><span class="ds-key">sk_test_...c3d4</span></td><td><span class="ds-who"><span class="ds-avatar" data-component="avatar">IL</span> Ingrid</span></td><td class="ds-table__num">4,212</td><td><span class="ds-badge ds-badge--success">In use</span></td></tr>
+                <tr class="is-hover"><td><a class="ds-table__title" href="#keys">Returns desk</a></td><td><span class="ds-key">sk_test_...9f0a</span></td><td><span class="ds-who"><span class="ds-avatar ds-avatar--2">TO</span> Tomas</span></td><td class="ds-table__num">318</td><td><span class="ds-badge ds-badge--success">In use</span></td></tr>
+                <tr><td><a class="ds-table__title" href="#keys">Old shop plugin</a></td><td><span class="ds-key">sk_test_...77be</span></td><td><span class="ds-who"><span class="ds-avatar ds-avatar--4">MP</span> Maya</span></td><td class="ds-table__num">0</td><td><span class="ds-badge ds-badge--warning">Quiet 60 days</span></td></tr>
+                <tr><td><a class="ds-table__title" href="#keys">Laptop, Tomas</a></td><td><span class="ds-key">sk_test_...01aa</span></td><td><span class="ds-who"><span class="ds-avatar ds-avatar--2">TO</span> Tomas</span></td><td class="ds-table__num">0</td><td><span class="ds-badge ds-badge--danger">Revoked</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot"><span>4 test keys, 2 live keys</span><a class="ds-link" href="#reference">Rolling a key without downtime</a></div>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Make a new key</h2></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#keys">
+              <div class="ds-form__row">
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="k-name">Name</label>
+                  <input class="ds-form__input" id="k-name" type="text" value="Label printer, dock 2">
+                  <span class="ds-form__hint">Only you see it. Say where the key lives.</span>
+                </div>
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="k-scope">May do</label>
+                  <select class="ds-form__select" id="k-scope"><option>Everything</option><option>Read only</option><option>Labels only</option></select>
+                </div>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="k-ip">Allowed address</label>
+                <input class="ds-form__input is-error" id="k-ip" type="text" value="203.0.113">
+                <span class="ds-form__error">An address has four numbers, such as 203.0.113.24.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="k-note">Note for your team (optional)</label>
+                <textarea class="ds-form__textarea" id="k-note" placeholder="Who to ask before revoking this key"></textarea>
+              </div>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Tell me by email when this key is first used</label>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="submit">Make the key</button>
+                <a class="ds-button ds-button--secondary" href="#keys">Cancel</a>
+                <button class="ds-button ds-button--danger" type="button">Revoke all test keys</button>
+                <button class="ds-button is-disabled" type="button" disabled>Make a live key</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-panel" data-component="panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">This month</h2><span class="ds-badge ds-badge--quiet">Growth plan</span></div>
+          <div class="ds-panel__body">
+            <div class="ds-meter"><div class="ds-meter__row"><span class="ds-meter__name">Labels</span><span>6,200 of 10,000</span></div><span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--62"></span></span></div>
+            <div class="ds-meter"><div class="ds-meter__row"><span class="ds-meter__name">Address checks</span><span>18,000 of 20,000</span></div><span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--90"></span></span></div>
+            <div class="ds-meter"><div class="ds-meter__row"><span class="ds-meter__name">Tracked parcels</span><span>5,400 of 5,000</span></div><span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--over"></span></span></div>
+          </div>
+        </div>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="k-dialog">
+            <div class="ds-dialog__head"><h2 class="ds-dialog__title" id="k-dialog">Revoke this key?</h2><a class="ds-dialog__close" href="#keys" aria-label="Close"></a></div>
+            <div class="ds-dialog__body"><p>Calls made with <span class="ds-key">sk_test_...77be</span> will fail from the next second. This cannot be undone.</p></div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary ds-button--small" href="#keys">Keep it</a>
+              <a class="ds-button ds-button--danger ds-button--small" href="#keys">Revoke</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-empty" data-component="empty">
+          <span class="ds-empty__icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 2L4 11h5l-1 7 7-9h-5z"/></svg></span>
+          <h2 class="ds-empty__title">No webhooks yet</h2>
+          <p class="ds-empty__text">Give us an address on your server and we call it when a parcel moves.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#reference">Add a webhook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="changelog">
+  <div class="ds-page-header">
+    <div class="ds-wrap ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">Developers</a></li>
+          <li><a class="ds-breadcrumb__item" href="#reference">API reference</a></li>
+          <li class="ds-breadcrumb__current">Changelog</li>
+        </ol>
+        <h1 class="ds-page-header__title">Changelog</h1>
+        <p class="ds-page-header__text">Every change to the API, newest first. Your account stays on its version until you move it.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--inverse" href="#keys">Change my version</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap ds-cols ds-cols--side">
+      <div class="ds-stack">
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Versions</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__item is-current" href="#changelog">2019 <span class="ds-sidebar__count">7</span></a></li>
+            <li><a class="ds-sidebar__item" href="#changelog">2018 <span class="ds-sidebar__count">19</span></a></li>
+            <li><a class="ds-sidebar__item" href="#changelog">2017 <span class="ds-sidebar__count">12</span></a></li>
+          </ul>
+        </nav>
+        <div class="ds-panel">
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">What the labels on a change mean.</p>
+            <div class="ds-badgerow" data-component="badge">
+              <span class="ds-badge">Dated</span>
+              <span class="ds-badge ds-badge--alt">New</span>
+              <span class="ds-badge ds-badge--quiet">Library</span>
+              <span class="ds-badge ds-badge--success">Fixed</span>
+              <span class="ds-badge ds-badge--warning">Breaking</span>
+              <span class="ds-badge ds-badge--danger">Removed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Changes in 2019</h2><span class="ds-who"><span class="ds-avatar ds-avatar--4">MP</span> You are on 2019-03-11</span></div>
+        <div class="ds-panel__body">
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item">
+              <div class="ds-list__head"><a class="ds-list__title" href="#reference">Rates return the delivery day</a><span class="ds-badge">2019-04-02</span></div>
+              <p class="ds-list__text">Each rate now carries <span class="ds-key">delivery_day</span>, worked out in the receiver's time zone. Nothing is taken away.</p>
+              <p class="ds-list__meta">Rates, all libraries from 3.4</p>
+            </li>
+            <li class="ds-list__item">
+              <div class="ds-list__head"><a class="ds-list__title" href="#reference">Weights must be whole grams</a><span class="ds-badge ds-badge--warning">Breaking</span></div>
+              <p class="ds-list__text">A weight with a fraction used to be rounded down, which made labels too cheap. It is now refused.</p>
+              <p class="ds-list__meta">Shipments and rates, version 2019-03-11</p>
+            </li>
+            <li class="ds-list__item">
+              <div class="ds-list__head"><a class="ds-list__title" href="#reference">A library for Go</a><span class="ds-badge ds-badge--alt">New</span></div>
+              <p class="ds-list__text">The fourteenth library. It covers every resource and retries idempotent calls by itself.</p>
+              <p class="ds-list__meta">Libraries, February</p>
+            </li>
+            <li class="ds-list__item">
+              <div class="ds-list__head"><a class="ds-list__title" href="#reference">Labels in XML are gone</a><span class="ds-badge ds-badge--danger">Removed</span></div>
+              <p class="ds-list__text">Announced a year ago and used by eleven accounts, all of which have moved to PDF or ZPL.</p>
+              <p class="ds-list__meta">Labels, version 2019-01-15</p>
+            </li>
+          </ul>
+        </div>
+        <div class="ds-table__foot">
+          <span>Changes 1 to 4 of 7</span>
+          <ul class="ds-pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#changelog">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#changelog">1</a></li>
+            <li><a class="ds-pagination__link" href="#changelog">2</a></li>
+            <li><a class="ds-pagination__link" href="#changelog">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-wrap ds-footer__row">
+    <a class="ds-brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="13.6" cy="10" r="7.6" opacity=".45"/><circle cx="9.2" cy="15" r="5.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#reference">API reference</a></li>
+      <li><a class="ds-footer__link" href="#keys">API keys</a></li>
+      <li><a class="ds-footer__link" href="#changelog">Changelog</a></li>
+      <li><a class="ds-footer__link" href="#home">Status</a></li>
+    </ul>
+    <p class="ds-footer__legal">chronoskin, 2019. The API for parcels.</p>
+  </div>
+</footer>
+
+</body>
+</html>

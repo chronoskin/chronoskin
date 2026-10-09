@@ -1,0 +1,121 @@
+/* @part palette */
+:root {
+  --color-page: rgb(255 226 209);
+  --color-canvas: rgb(255 240 230);
+  --color-surface: rgb(255 255 255 / 0.42);
+  --color-surface-alt: rgb(255 255 255 / 0.58);
+  --color-surface-strong: rgb(255 255 255 / 0.82);
+  --color-bar: rgb(255 244 236 / 0.66);
+  --color-bar-text: rgb(66 24 44);
+  --color-bar-alt: rgb(255 244 236 / 0.48);
+  --color-bar-alt-text: rgb(96 44 62);
+  --color-inverse: rgb(74 26 52);
+  --color-inverse-text: rgb(255 236 222);
+  --color-text: rgb(66 24 44);
+  --color-text-muted: rgb(66 24 44 / 0.7);
+  --color-heading: rgb(52 16 36);
+  --color-heading-alt: rgb(146 46 72);
+  --color-link: rgb(190 40 84);
+  --color-link-quiet: rgb(66 24 44);
+  --color-link-visited: rgb(130 60 120);
+  --color-link-hover: rgb(120 20 56);
+  --color-link-active: rgb(224 76 52);
+  --color-border: rgb(255 255 255 / 0.7);
+  --color-border-strong: rgb(255 255 255 / 0.92);
+  --color-border-muted: rgb(66 24 44 / 0.12);
+  --color-accent: rgb(224 76 52);
+  --color-accent-text: rgb(255 248 240);
+  --color-accent-alt: rgb(250 196 92);
+  --color-fill-1: rgb(255 170 128);
+  --color-fill-2: rgb(255 138 150);
+  --color-fill-3: rgb(252 208 116);
+  --color-fill-4: rgb(214 160 232);
+  --color-button: rgb(74 26 52);
+  --color-button-text: rgb(255 240 230);
+  --color-button-hover-text: rgb(255 255 255);
+  --color-button-secondary: rgb(255 255 255 / 0.5);
+  --color-button-secondary-text: rgb(66 24 44);
+  --color-input: rgb(255 255 255 / 0.72);
+  --color-input-text: rgb(52 16 36);
+  --color-input-border: rgb(66 24 44 / 0.22);
+  --color-disabled: rgb(240 220 212);
+  --color-disabled-text: rgb(150 124 128);
+  --color-danger: rgb(206 44 56);
+  --color-danger-surface: rgb(255 214 208 / 0.75);
+  --color-success: rgb(22 140 96);
+  --color-warning: rgb(204 122 0);
+  --color-notice: rgb(74 26 52 / 0.84);
+  --color-notice-text: rgb(255 236 222);
+  --color-focus: rgb(190 40 84);
+  --color-shadow: rgb(150 60 70 / 0.26);
+  --color-overlay: rgb(66 24 44 / 0.42);
+}
+
+/* @part type */
+:root {
+  --font-body: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-heading: "Space Grotesk", Sora, "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-ui: "Space Grotesk", Sora, "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --text-base: 16px;
+  --text-small: 13px;
+  --text-ui: 15px;
+  --text-large: 21px;
+  --text-display: 62px;
+  --text-h1: 38px;
+  --text-h2: 26px;
+  --text-h3: 19px;
+  --line-body: 1.6;
+  --line-heading: 1.15;
+  --line-display: 1;
+  --weight-body: 400;
+  --weight-bold: 600;
+  --weight-heading: 700;
+  --weight-display: 700;
+  --weight-ui: 500;
+  --heading-transform: none;
+  --heading-tracking: -0.02em;
+  --display-tracking: -0.045em;
+  --figure-shift: 0em;
+  --ui-transform: none;
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-decoration-quiet: none;
+}
+
+/* @part surface */
+:root {
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  --border-style: solid;
+  --radius-control: 8px;
+  --radius-panel: 20px;
+  --radius-pill: 100px;
+  --radius-page: 28px;
+  --shadow-panel: 0 24px 48px -22px var(--color-shadow), 0 2px 6px 0 color-mix(in srgb, var(--color-shadow) 50%, transparent);
+  --shadow-control: 0 2px 0 0 color-mix(in srgb, var(--color-shadow) 60%, transparent);
+  --shadow-control-hover: 0 10px 22px -8px var(--color-shadow);
+  --shadow-control-pressed: inset 0 2px 4px 0 var(--color-shadow);
+  --shadow-dialog: 0 44px 88px -30px var(--color-shadow), 0 4px 12px 0 color-mix(in srgb, var(--color-shadow) 50%, transparent);
+  --shadow-text: none;
+  --fill-page:
+    radial-gradient(circle 520px at 88% 120px, var(--color-fill-3), transparent 70%),
+    radial-gradient(circle 620px at 6% 380px, var(--color-fill-2), transparent 70%),
+    radial-gradient(circle 480px at 60% 760px, var(--color-fill-4), transparent 70%),
+    radial-gradient(circle 600px at 96% 1300px, var(--color-fill-1), transparent 70%),
+    radial-gradient(circle 560px at 10% 1800px, var(--color-fill-3), transparent 70%),
+    radial-gradient(circle 620px at 70% 2500px, var(--color-fill-2), transparent 70%),
+    linear-gradient(200deg, var(--color-fill-1) 0, var(--color-page) 38%, var(--color-canvas) 100%);
+  --fill-bar: linear-gradient(180deg, var(--color-surface-strong), var(--color-bar));
+  --fill-bar-alt: var(--color-bar-alt);
+  --fill-inverse: linear-gradient(120deg, var(--color-inverse), color-mix(in srgb, var(--color-inverse), var(--color-accent) 38%));
+  --fill-accent: linear-gradient(120deg, var(--color-accent), color-mix(in srgb, var(--color-accent), var(--color-accent-alt) 45%));
+  --fill-panel: linear-gradient(180deg, var(--color-surface-alt), var(--color-surface));
+  --fill-button: var(--color-button);
+  --fill-button-hover: color-mix(in srgb, var(--color-button), white 16%);
+  --fill-button-secondary: linear-gradient(180deg, var(--color-surface-strong), var(--color-button-secondary));
+  --fill-input: var(--color-input);
+  --focus-ring: 2px solid var(--color-focus);
+  --transition: background-color 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+  --backdrop-blur: 28px;
+}

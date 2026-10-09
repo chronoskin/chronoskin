@@ -1,0 +1,29 @@
+/* Keyboard keys in text, and the line of shortcuts on the style page. */
+kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  font: 11px/1 var(--mono);
+  vertical-align: middle;
+}
+
+kbd svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+.hint.keys {
+  margin-top: 14px;
+}
+
+@media (pointer: coarse) {
+  .hint.keys {
+    display: none;
+  }
+}

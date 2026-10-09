@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: home control</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <div>
+      <a class="ds-brand" data-component="brand" href="#">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+    </div>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#home">Home</a></li>
+      <li><a class="ds-nav__link" href="#devices">Devices</a></li>
+      <li><a class="ds-nav__link" href="#schedules">Schedules</a></li>
+      <li><a class="ds-nav__link" href="#scenes">Scenes</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <span class="ds-tooltip ds-tooltip--below ds-tooltip--end"><a class="ds-key" href="#devices" aria-label="Alerts"><svg class="ds-key__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 11V7a4 4 0 0 1 8 0v4l1.5 1.5h-11z"/><path d="M6.5 14h3"/></svg></a><span class="ds-tooltip__tip" role="tooltip">One device is offline</span></span>
+      <a class="ds-key" href="#new" aria-label="New schedule"><svg class="ds-key__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></a>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu"><span class="ds-avatar"><span class="ds-avatar__pic">JN</span></span><svg class="ds-menu__caret" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#devices">Devices</a></li>
+          <li><a class="ds-menu__link" href="#schedules">Schedules</a></li>
+          <li><a class="ds-menu__link" href="#scenes">Scenes</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#home">Sign out</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="home">
+  <div class="ds-page__body">
+
+  <section class="ds-hero" data-component="hero">
+    <span class="ds-badge ds-badge--success">All 14 devices online</span>
+    <h1 class="ds-hero__title">The living room is at 21 degrees</h1>
+    <p class="ds-hero__lead">Heating holds until eleven tonight, then the house drops to its night setting of 17 degrees.</p>
+    <div class="ds-hero__actions">
+      <a class="ds-button ds-button--large" href="#scenes">Start evening scene</a>
+      <a class="ds-button ds-button--secondary ds-button--large" href="#schedules">Edit schedule</a>
+    </div>
+  </section>
+
+
+  <section class="ds-console" aria-label="Living room controls">
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__heading">Rooms</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#home">Living room <span class="ds-badge" data-component="badge">5</span></a></li>
+        <li><a class="ds-sidebar__link" href="#devices">Kitchen <span class="ds-badge ds-badge--quiet">3</span></a></li>
+        <li><a class="ds-sidebar__link" href="#devices">Bedroom <span class="ds-badge ds-badge--quiet">2</span></a></li>
+        <li><a class="ds-sidebar__link" href="#devices">Study <span class="ds-badge ds-badge--quiet">2</span></a></li>
+        <li><a class="ds-sidebar__link" href="#devices">Hallway <span class="ds-badge ds-badge--quiet">2</span></a></li>
+      </ul>
+      <h2 class="ds-sidebar__heading">Scenes</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#scenes">Morning</a></li>
+        <li><a class="ds-sidebar__link" href="#scenes">Evening</a></li>
+        <li><a class="ds-sidebar__link" href="#scenes">Away</a></li>
+      </ul>
+    </aside>
+
+    <div class="ds-console__centre">
+      <div class="ds-dial">
+        <div class="ds-dial__ring">
+          <div class="ds-dial__face">
+            <span class="ds-dial__figure">21.5</span>
+            <span class="ds-dial__caption">heating to 22</span>
+          </div>
+        </div>
+      </div>
+      <div class="ds-console__keys">
+        <button class="ds-key ds-key--large" type="button" aria-label="Cooler"><svg class="ds-key__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+        <span class="ds-console__readout">Target 22.0</span>
+        <button class="ds-key ds-key--large" type="button" aria-label="Warmer"><svg class="ds-key__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button>
+      </div>
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab is-current" href="#home" aria-current="true">Heat</a></li>
+        <li><a class="ds-tabs__tab" href="#home">Cool</a></li>
+        <li><a class="ds-tabs__tab" href="#home">Auto</a></li>
+        <li><a class="ds-tabs__tab" href="#home">Off</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-console__side">
+      <h2 class="ds-console__title">Living room <span class="ds-badge ds-badge--quiet">5 on</span></h2>
+      <div class="ds-form">
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="c-light">Ceiling light <span>70%</span></label>
+          <input class="ds-form__range" id="c-light" type="range" min="0" max="100" value="70">
+        </div>
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="c-warm">Warmth <span>2700 K</span></label>
+          <input class="ds-form__range" id="c-warm" type="range" min="0" max="100" value="35">
+        </div>
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="c-fan">Fan speed <span>Low</span></label>
+          <input class="ds-form__range" id="c-fan" type="range" min="0" max="100" value="20">
+        </div>
+        <label class="ds-form__check">
+          <input class="ds-switch" type="checkbox" checked>
+          Night setback
+        </label>
+        <label class="ds-form__check">
+          <input class="ds-switch" type="checkbox">
+          Open window pause
+        </label>
+        <label class="ds-form__check">
+          <input class="ds-switch" type="checkbox" checked>
+          Child lock
+        </label>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="ds-grid" data-component="grid">
+    <a class="ds-grid__cell ds-grid__cell--1 is-on" href="#devices">
+      <span class="ds-grid__top"><span class="ds-grid__chip"></span><span class="ds-grid__state">On</span></span>
+      <span class="ds-grid__label">Lights</span>
+      <span class="ds-grid__meta">4 of 9 lamps, 70%</span>
+    </a>
+    <a class="ds-grid__cell ds-grid__cell--2" href="#devices">
+      <span class="ds-grid__top"><span class="ds-grid__chip"></span><span class="ds-grid__state">Off</span></span>
+      <span class="ds-grid__label">Blinds</span>
+      <span class="ds-grid__meta">Open since 07:10</span>
+    </a>
+    <a class="ds-grid__cell ds-grid__cell--3 is-on" href="#devices">
+      <span class="ds-grid__top"><span class="ds-grid__chip"></span><span class="ds-grid__state">On</span></span>
+      <span class="ds-grid__label">Front door</span>
+      <span class="ds-grid__meta">Locked at 18:42</span>
+    </a>
+    <a class="ds-grid__cell ds-grid__cell--4" href="#devices">
+      <span class="ds-grid__top"><span class="ds-grid__chip"></span><span class="ds-grid__state">Off</span></span>
+      <span class="ds-grid__label">Speakers</span>
+      <span class="ds-grid__meta">Kitchen and study</span>
+    </a>
+  </section>
+
+
+  <div class="ds-page__row">
+
+    <div class="ds-page__stack">
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <span class="ds-list__well"><span class="ds-list__dot"></span></span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#schedules">Heating reached 21.5 degrees</a>
+            <span class="ds-list__meta">Living room, after 38 minutes</span>
+          </div>
+          <span class="ds-list__time">19:04</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__well"><span class="ds-list__dot"></span></span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#devices">Front door locked</a>
+            <span class="ds-list__meta">By Nell Varga, from the hallway panel</span>
+          </div>
+          <span class="ds-list__time">18:42</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__well"><span class="ds-list__dot ds-list__dot--off"></span></span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#devices">Study sensor stopped reporting</a>
+            <span class="ds-list__meta">Battery was at 4% this morning</span>
+          </div>
+          <span class="ds-list__time">16:20</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__well"><span class="ds-list__dot ds-list__dot--new"></span></span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#devices">New lamp found in the bedroom</a>
+            <span class="ds-list__meta">Waiting to be added to a room</span>
+          </div>
+          <span class="ds-list__time">15:55</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="ds-page__stack">
+      <div class="ds-notice__stack" data-component="notice">
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">Cheaper power after 22:00.</span> The water heater waits until then unless you start it by hand.</div>
+        </div>
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">The study sensor is offline.</span> Heating in the study runs on its schedule alone.</div>
+        </div>
+      </div>
+
+      <section class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">Tonight <span class="ds-badge ds-badge--quiet">3 steps</span></h2>
+        <div class="ds-panel__body">
+          <div class="ds-progress__legend"><span>Heating to 22 degrees</span> <span>21.5</span></div>
+          <div class="ds-progress ds-progress--90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Heating towards its target"><span class="ds-progress__bar"></span></div>
+          At 23:00 the lights fade over ten minutes, the blinds close and the heating drops to 17 degrees until 06:30.
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="devices">
+  <div class="ds-page__section">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Devices</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Devices</h1>
+        <p class="ds-page-header__lead">Fourteen devices in five rooms. One has stopped reporting.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#schedules">Schedules</a>
+        <a class="ds-button" href="#devices">Add a device</a>
+      </div>
+    </header>
+
+    <div class="ds-page__row">
+
+      <div class="ds-page__stack">
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th scope="col">Device</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="ds-table__opt">Room</th>
+              <th scope="col" class="ds-table__num">Watts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Heating</a></td>
+              <td><span class="ds-badge ds-badge--success">On</span></td>
+              <td class="ds-table__meta ds-table__opt">Living room</td>
+              <td class="ds-table__num">1 240</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Ceiling light</a></td>
+              <td><span class="ds-badge ds-badge--success">On</span></td>
+              <td class="ds-table__meta ds-table__opt">Living room</td>
+              <td class="ds-table__num">42</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Floor lamp</a></td>
+              <td><span class="ds-badge ds-badge--quiet">Off</span></td>
+              <td class="ds-table__meta ds-table__opt">Living room</td>
+              <td class="ds-table__num">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Front door lock</a></td>
+              <td><span class="ds-badge ds-badge--success">Locked</span></td>
+              <td class="ds-table__meta ds-table__opt">Hallway</td>
+              <td class="ds-table__num">2</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Blinds</a></td>
+              <td><span class="ds-badge ds-badge--quiet">Open</span></td>
+              <td class="ds-table__meta ds-table__opt">Kitchen</td>
+              <td class="ds-table__num">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Water heater</a></td>
+              <td><span class="ds-badge ds-badge--warning">Waiting</span></td>
+              <td class="ds-table__meta ds-table__opt">Kitchen</td>
+              <td class="ds-table__num">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Climate sensor</a></td>
+              <td><span class="ds-badge ds-badge--danger">Offline</span></td>
+              <td class="ds-table__meta ds-table__opt">Study</td>
+              <td class="ds-table__num">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Speakers</a></td>
+              <td><span class="ds-badge ds-badge--quiet">Off</span></td>
+              <td class="ds-table__meta ds-table__opt">Study</td>
+              <td class="ds-table__num">3</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Bedside lamp</a></td>
+              <td><span class="ds-badge ds-badge--quiet">Not placed</span></td>
+              <td class="ds-table__meta ds-table__opt">Bedroom</td>
+              <td class="ds-table__num">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#home">Panel</a></td>
+              <td><span class="ds-badge ds-badge--success">On</span></td>
+              <td class="ds-table__meta ds-table__opt">Hallway</td>
+              <td class="ds-table__num">4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ds-page__stack">
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Unlock the front door?</h2>
+            <div class="ds-dialog__body">The door stays unlocked for two minutes and then locks itself again.</div>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--secondary" type="button">Keep locked</button>
+              <button class="ds-button ds-button--danger" type="button">Unlock</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 11 12 5l7 6v8H5z"/><path d="M10 19v-5h4v5"/></svg>
+          <h2 class="ds-empty__title">Nothing in the garage yet</h2>
+          <p class="ds-empty__text">Add a device to the garage and its controls appear here.</p>
+          <a class="ds-button" href="#devices">Add a device</a>
+        </section>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="schedules">
+  <div class="ds-page__section">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Living room</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Schedules</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Schedules</h1>
+        <p class="ds-page-header__lead">Six schedules run in the living room, listed by the time they start.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#scenes">Scenes</a>
+        <a class="ds-button" href="#new">New schedule</a>
+      </div>
+    </header>
+
+    <dl class="ds-stat" data-component="stats">
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">Running now</dt>
+        <dd class="ds-stat__value">2 <span class="ds-stat__meta">of 6 schedules</span></dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">Used today</dt>
+        <dd class="ds-stat__value">6.4 kWh <span class="ds-stat__meta">1.1 under Tuesday</span></dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">Heating time</dt>
+        <dd class="ds-stat__value">3 h 20 <span class="ds-stat__meta">since midnight</span></dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">Next change</dt>
+        <dd class="ds-stat__value">23:00 <span class="ds-stat__meta">night setting</span></dd>
+      </div>
+    </dl>
+
+
+    <ul class="ds-tabs ds-tabs--start" data-component="tabs">
+      <li><a class="ds-tabs__tab is-current" href="#schedules" aria-current="true">All</a></li>
+      <li><a class="ds-tabs__tab" href="#schedules">Heating</a></li>
+      <li><a class="ds-tabs__tab" href="#schedules">Lights</a></li>
+      <li><a class="ds-tabs__tab" href="#schedules">Blinds</a></li>
+      <li><a class="ds-tabs__tab" href="#schedules">Paused</a></li>
+    </ul>
+
+
+    <table class="ds-table" data-component="table">
+      <thead>
+        <tr>
+          <th scope="col">Schedule</th>
+          <th scope="col">Status</th>
+          <th scope="col" class="ds-table__opt">Days</th>
+          <th scope="col" class="ds-table__opt">Device</th>
+          <th scope="col" class="ds-table__num">Starts</th>
+          <th scope="col" class="ds-table__num ds-table__opt">Runs this month</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#new">Wake the house</a></td>
+          <td><span class="ds-badge ds-badge--success">Done today</span></td>
+          <td class="ds-table__meta ds-table__opt">Monday to Friday</td>
+          <td class="ds-table__meta ds-table__opt">Heating, blinds</td>
+          <td class="ds-table__num">06:30</td>
+          <td class="ds-table__num ds-table__opt">12</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#new">Daytime saving</a></td>
+          <td><span class="ds-badge ds-badge--success">Done today</span></td>
+          <td class="ds-table__meta ds-table__opt">Monday to Friday</td>
+          <td class="ds-table__meta ds-table__opt">Heating</td>
+          <td class="ds-table__num">08:45</td>
+          <td class="ds-table__num ds-table__opt">12</td>
+        </tr>
+        <tr class="is-hover">
+          <td><a class="ds-link ds-link--quiet" href="#new">Evening warm-up</a></td>
+          <td><span class="ds-badge ds-badge--success">Running</span></td>
+          <td class="ds-table__meta ds-table__opt">Every day</td>
+          <td class="ds-table__meta ds-table__opt">Heating, lamps</td>
+          <td class="ds-table__num">17:30</td>
+          <td class="ds-table__num ds-table__opt">16</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#new">Night setting</a></td>
+          <td><span class="ds-badge ds-badge--warning">Starts soon</span></td>
+          <td class="ds-table__meta ds-table__opt">Every day</td>
+          <td class="ds-table__meta ds-table__opt">Heating, lamps, blinds</td>
+          <td class="ds-table__num">23:00</td>
+          <td class="ds-table__num ds-table__opt">15</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#new">Weekend lie-in</a></td>
+          <td><span class="ds-badge ds-badge--danger">Failed</span></td>
+          <td class="ds-table__meta ds-table__opt">Saturday, Sunday</td>
+          <td class="ds-table__meta ds-table__opt">Blinds</td>
+          <td class="ds-table__num">09:00</td>
+          <td class="ds-table__num ds-table__opt">4</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#new">Sunday reading light</a></td>
+          <td><span class="ds-badge ds-badge--quiet">Draft</span></td>
+          <td class="ds-table__meta ds-table__opt">Sunday</td>
+          <td class="ds-table__meta ds-table__opt">Floor lamp</td>
+          <td class="ds-table__num">16:00</td>
+          <td class="ds-table__num ds-table__opt">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <nav aria-label="Pages">
+      <ul class="ds-pagination ds-pagination--centre" data-component="pagination">
+        <li><a class="ds-pagination__link" href="#schedules">Previous</a></li>
+        <li><a class="ds-pagination__link" href="#schedules">1</a></li>
+        <li><a class="ds-pagination__link is-current" href="#schedules" aria-current="page">2</a></li>
+        <li><a class="ds-pagination__link" href="#schedules">3</a></li>
+        <li><a class="ds-pagination__link" href="#schedules">Next</a></li>
+      </ul>
+    </nav>
+
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="new">
+  <div class="ds-page__section">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#schedules">Schedules</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">New schedule</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">New schedule</h1>
+        <p class="ds-page-header__lead">One device, one value, at a time you choose. It runs from the next day it matches.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#schedules">Back to schedules</a>
+      </div>
+    </header>
+
+    <section class="ds-panel">
+      <h2 class="ds-panel__title">Sunday reading light <span class="ds-badge ds-badge--quiet">Draft</span></h2>
+      <div class="ds-panel__body">
+        <form class="ds-form" data-component="form">
+          <div class="ds-form__grid">
+            <div class="ds-form__column">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-name">Name</label>
+                <input class="ds-form__input" id="f-name" type="text" value="Sunday reading light">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-device">Device</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-device">
+                    <option>Floor lamp, living room</option>
+                    <option>Ceiling light, living room</option>
+                    <option>Heating, living room</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-start">Starts at</label>
+                <input class="ds-form__input is-error" id="f-start" type="text" value="25:00" aria-invalid="true" aria-describedby="f-start-error">
+                <span class="ds-form__error" id="f-start-error">Enter a time between 00:00 and 23:59.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-level">Brightness <span>60%</span></label>
+                <input class="ds-form__range" id="f-level" type="range" min="0" max="100" value="60">
+              </div>
+            </div>
+            <div class="ds-form__column">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-note">Note</label>
+                <textarea class="ds-form__textarea" id="f-note" placeholder="What this schedule is for"></textarea>
+                <span class="ds-form__hint">Shown next to the schedule on the wall panel.</span>
+              </div>
+              <label class="ds-form__check">
+                <input class="ds-form__checkbox" type="checkbox" checked>
+                Repeat every Sunday
+              </label>
+              <label class="ds-form__check">
+                <input class="ds-switch" type="checkbox" checked>
+                Skip when nobody is home
+              </label>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Save</button>
+                <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+                <button class="ds-button ds-button--danger" type="button">Delete</button>
+                <button class="ds-button" type="button" disabled>Run now</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+    <div class="ds-page__row">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Runs next</h2>
+        <div class="ds-panel__body">
+          Sunday at 16:00, if somebody is home. The floor lamp goes to 60% and stays there until the night setting at 23:00.
+        </div>
+      </section>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Also on Sunday <span class="ds-badge ds-badge--quiet">3</span></h2>
+        <div class="ds-panel__body">
+          Weekend lie-in at 09:00, evening warm-up at 17:30 and the night setting at 23:00. None of them uses the floor lamp.
+        </div>
+      </section>
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="scenes">
+  <div class="ds-page__section">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Scenes</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Scenes</h1>
+        <p class="ds-page-header__lead">Three scenes are set up: morning, evening and away.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#new">New schedule</a>
+      </div>
+    </header>
+
+    <div class="ds-page__row">
+
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+        <article class="ds-prose" data-component="typography">
+          <h1>How scenes work</h1>
+          <p class="ds-prose__lead">A scene is a list of settings that are applied together, in order.</p>
+          <p>Each step names one device and one value, such as <code>blinds: closed</code>. A scene can hold up to <strong>twelve steps</strong> and runs from a key, a schedule or a sensor.</p>
+          <h2>When a step fails</h2>
+          <p>The scene carries on with the next step and reports the device that did not answer.</p>
+          <h3>What is tried again</h3>
+          <ul>
+            <li>Lamps and plugs, twice within a minute.</li>
+            <li>Blinds, once after thirty seconds.</li>
+            <li>Locks are never tried again without you.</li>
+          </ul>
+          <h2>Running a scene from a schedule</h2>
+          <p>A schedule can start a scene in place of a single device. Open <a class="ds-link" href="#schedules">Schedules</a>, choose a time and pick the scene as its device.</p>
+          <p class="ds-link__sample" data-component="links">
+            <a class="ds-link" href="#schedules">All schedules</a>
+            <a class="ds-link is-visited" href="#home">Living room</a>
+            <a class="ds-link is-hover" href="#new">New schedule</a>
+            <a class="ds-link is-active" href="#devices">Devices</a>
+            <a class="ds-link ds-link--quiet" href="#scenes">Scene limits</a>
+          </p>
+        </article>
+        </div>
+      </section>
+
+      <div class="ds-page__stack">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Evening scene <span class="ds-badge ds-badge--quiet">4 steps</span></h2>
+          <div class="ds-panel__body">
+            <pre class="ds-prose__code">ceiling light: 40%
+floor lamp:    on
+blinds:        closed
+heating:       21.5</pre>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Away</h2>
+          <div class="ds-panel__body">
+            Everything off, heating at 15 degrees and the front door locked. It starts when the last phone leaves the flat.
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Morning</h2>
+          <div class="ds-panel__body">
+            Blinds open, the kitchen lamps come on at 50% and the heating goes to 20 degrees. It runs with the schedule that wakes the house.
+          </div>
+        </section>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Can two scenes run at once? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">No. Starting a scene ends the one before it, and its devices keep the values they had.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What if I change a lamp by hand? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">The scene leaves that lamp alone until it is started again.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Who can edit a scene? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">Everybody who lives in the flat. Guests can start scenes and cannot change them.</div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span class="ds-footer__brand">chronoskin</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#devices">Devices</a></li>
+      <li><a class="ds-footer__link" href="#scenes">Help</a></li>
+      <li><a class="ds-footer__link" href="#schedules">Schedules</a></li>
+      <li><a class="ds-footer__link" href="#home">Status</a></li>
+    </ul>
+    <span>Home control for the flat at 12 Orchard Row. Panel software 4.2.</span>
+  </div>
+</footer>
+
+</body>
+</html>

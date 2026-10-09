@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: tonal notes app specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#notes">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g opacity=".42"><circle cx="7.6" cy="7.6" r="5.1"/><circle cx="16.4" cy="7.6" r="5.1"/><circle cx="7.6" cy="16.4" r="5.1"/><circle cx="16.4" cy="16.4" r="5.1"/></g><circle cx="12" cy="12" r="3.6"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <a class="ds-button ds-button--fab" href="#note" aria-label="New note"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg></a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#notes"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M9 12h6 M9 16h6"/></svg></span>Notes</a></li>
+      <li><a class="ds-nav__link" href="#notebooks"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M9 4v12"/></svg></span>Notebooks</a></li>
+      <li><a class="ds-nav__link" href="#archive"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg></span>Archive</a></li>
+      <li><a class="ds-nav__link" href="#settings"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6 M12 3v3 M12 18v3 M3 12h3 M18 12h3 M5.6 5.6l2.1 2.1 M16.3 16.3l2.1 2.1 M5.6 18.4l2.1-2.1 M16.3 7.7l2.1-2.1"/></svg></span>Settings</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="notes">
+  <div class="ds-main">
+    <div class="ds-topbar">
+      <a class="ds-search" href="#archive"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14 M16 16l4 4"/></svg><span class="ds-search__text">Search your notes</span></a>
+      <span class="ds-tooltip"><a class="ds-button ds-button--icon" href="#settings" aria-label="Reminders"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z M10 21h4"/></svg></a><span class="ds-tooltip__text" role="tooltip">One reminder at noon</span></span>
+      <a class="ds-avatar" href="#settings">IV</a>
+    </div>
+
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__copy">
+        <p class="ds-hero__kicker">Tuesday, 14 notes in four notebooks</p>
+        <h1 class="ds-hero__title">Good morning, Ines</h1>
+        <p class="ds-hero__lead">Three notes changed since yesterday, and one reminder is due at noon.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#note"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>New note</a>
+          <a class="ds-button ds-button--outlined" href="#notebooks">Open notebooks</a>
+        </div>
+      </div>
+      <div class="ds-shapes" aria-hidden="true">
+        <span class="ds-shape ds-shape--1"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg></span>
+        <span class="ds-shape ds-shape--2"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l2.5 5.2 5.5.8-4 4 1 5.6-5-2.8-5 2.8 1-5.6-4-4 5.5-.8z"/></svg></span>
+        <span class="ds-shape ds-shape--3"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+        <span class="ds-shape ds-shape--4"></span>
+      </div>
+    </div>
+
+    <div class="ds-stats" data-component="stats">
+      <div class="ds-stat"><p class="ds-stat__value">14</p><p class="ds-stat__label">Notes this month</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">5</p><p class="ds-stat__label">Shared with you</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">2</p><p class="ds-stat__label">Reminders today</p></div>
+    </div>
+
+    <div class="ds-filter">
+      <ul class="ds-chips">
+        <li><a class="ds-chip is-current" href="#notes"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>All notes</a></li>
+        <li><a class="ds-chip" href="#notes">Pinned</a></li>
+        <li><a class="ds-chip" href="#notes">Shared</a></li>
+        <li><a class="ds-chip" href="#notes">With reminders</a></li>
+      </ul>
+      <a class="ds-link ds-link--more" href="#archive">Show archived <svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <div class="ds-panes">
+      <ul class="ds-list ds-list--cards" data-component="list">
+        <li class="ds-list__item is-current"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M9 12h6 M9 16h6"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Allotment plan for spring</a><p class="ds-list__text">Beds two and three get the beans this year</p></div><span class="ds-list__meta">09:12</span></li>
+        <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--3"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l2.5 5.2 5.5.8-4 4 1 5.6-5-2.8-5 2.8 1-5.6-4-4 5.5-.8z"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Reading list</a><p class="ds-list__text">Six titles, two finished, one abandoned</p></div><span class="ds-list__meta">Mon</span></li>
+        <li class="ds-list__item"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M4 20a8 8 0 0 1 16 0"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Choir rota, shared by Tomas</a><p class="ds-list__text">You are down for the second Thursday</p></div><span class="ds-list__meta">Mon</span></li>
+        <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--1"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z M10 21h4"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Boiler service</a><p class="ds-list__text">Reminder at noon: ring to confirm the visit</p></div><span class="ds-list__meta">Sun</span></li>
+        <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--4"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z M9 12h6 M9 16h6"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Soup, the one with barley</a><p class="ds-list__text">Sweat the leeks slowly, do not brown them</p></div><span class="ds-list__meta">2 May</span></li>
+      </ul>
+
+      <article class="ds-panel ds-detail" data-component="panel">
+        <div class="ds-detail__bar">
+          <span class="ds-badge">Garden</span>
+          <span class="ds-detail__tools">
+            <a class="ds-button ds-button--icon" href="#note" aria-label="Share"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4 M8 8l4-4 4 4 M5 13v6h14v-6"/></svg></a>
+            <a class="ds-button ds-button--icon" href="#archive" aria-label="Archive"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg></a>
+            <a class="ds-button ds-button--icon" href="#note" aria-label="Delete"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13"/></svg></a>
+          </span>
+        </div>
+        <h2 class="ds-panel__title ds-detail__title">Allotment plan for spring</h2>
+        <div class="ds-panel__body">
+          <p>Beds two and three get the beans this year, so the brassicas move to the far end by the water butt. The shed roof wants felting before any of it.</p>
+          <p>Order seed potatoes by the end of the week. Ask Tomas about the spare cold frame.</p>
+        </div>
+        <div class="ds-progress-group"><div><p class="ds-progress__label"><strong>Checklist</strong><span>2 of 3 done</span></p><div class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3"><span class="ds-progress__bar"></span><span class="ds-progress__rest"></span></div></div></div>
+        <ul class="ds-todo">
+          <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Measure bed three</label></li>
+          <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Turn the compost</label></li>
+          <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> Felt the shed roof</label></li>
+        </ul>
+        <div class="ds-panel__actions">
+          <a class="ds-button ds-button--secondary" href="#note"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg>Open and edit</a>
+          <a class="ds-button ds-button--text" href="#note">Add a reminder</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-section__head"><h2 class="ds-section__title">Notebooks</h2><a class="ds-link ds-link--more" href="#notebooks">Manage <svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></div>
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell" href="#notebooks"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M9 4v12"/></svg><span><h3 class="ds-grid__title">Garden</h3><p class="ds-grid__text">6 notes, edited today</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#notebooks"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M9 4v12"/></svg><span><h3 class="ds-grid__title">Kitchen</h3><p class="ds-grid__text">4 notes, edited in May</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#notebooks"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M4 20a8 8 0 0 1 16 0"/></svg><span><h3 class="ds-grid__title">Choir</h3><p class="ds-grid__text">3 notes, shared with five</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#notebooks"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg><span><h3 class="ds-grid__title">New notebook</h3><p class="ds-grid__text">Group notes by subject</p></span></a>
+      </div>
+    </div>
+
+    <div class="ds-snackbar"><span>Seed order moved to the archive</span><a class="ds-snackbar__action" href="#archive">Undo</a></div>
+  </div>
+</section>
+
+<section class="ds-view" id="note">
+  <div class="ds-main">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#notes">Notes</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#notebooks">Garden</a></li>
+      <li class="ds-breadcrumb__item is-current">Allotment plan for spring</li>
+    </ol>
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Allotment plan for spring</h1>
+        <p class="ds-page-header__text">In Garden, edited today at 09:12, shared with Tomas Reyl</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#notes"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4 M8 8l4-4 4 4 M5 13v6h14v-6"/></svg>Share</a>
+        <a class="ds-button" href="#notes"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Done</a>
+      </div>
+    </div>
+    <div class="ds-columns">
+      <article class="ds-prose" data-component="typography">
+        <h1>Where everything goes</h1>
+        <p class="ds-prose__lead">A rotation for the four beds, written in March and corrected after the frost.</p>
+        <p>Beds two and three get the beans this year, so the brassicas move to the far end by the water butt. The plan is in the shared sheet <code>beds-2026</code>, and Tomas keeps the <a href="#notes">seed order</a> up to date.</p>
+        <h2>Before planting</h2>
+        <p>The shed roof wants felting before any of it. <strong>Do not</strong> dig bed four while it is still wet.</p>
+        <ul>
+          <li>Measure bed three and mark the path</li>
+          <li>Turn the compost and cover it again</li>
+          <li>Order seed potatoes by the end of the week</li>
+        </ul>
+        <h3>Things to ask</h3>
+        <p>Whether the spare cold frame is still going, and who has the key to the tap.</p>
+      </article>
+      <div class="ds-stack">
+        <div class="ds-accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__summary"><span>Shared with<span class="ds-accordion__hint">Tomas Reyl can edit</span></span></summary><div class="ds-accordion__body"><p>Anyone you add sees changes within a minute.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>History<span class="ds-accordion__hint">Six versions since March</span></span></summary><div class="ds-accordion__body"><p>Older versions are kept for a year.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>Reminders<span class="ds-accordion__hint">None on this note</span></span></summary><div class="ds-accordion__body"><p>A reminder shows up on every device you use.</p></div></details></div>
+        <div class="ds-panel ds-panel--outlined">
+          <h2 class="ds-panel__title">Linked notes</h2>
+          <ul class="ds-links" data-component="links">
+            <li><a class="ds-link" href="#notes">Seed order</a></li>
+            <li><a class="ds-link is-visited" href="#notes">Last year's plan</a></li>
+            <li><a class="ds-link is-hover" href="#notes">Frost dates</a></li>
+            <li><a class="ds-link is-active" href="#notes">Tool list</a></li>
+          </ul>
+          <ul class="ds-chips">
+            <li><span class="ds-chip"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z M7.5 8v.5"/></svg>Garden</span></li>
+            <li><span class="ds-chip">Spring</span></li>
+          </ul>
+        </div>
+        <div class="ds-overlay">
+          <div class="ds-dialog" data-component="dialog" role="dialog" aria-label="Delete this note?">
+            <span class="ds-dialog__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13"/></svg></span>
+            <h2 class="ds-dialog__title">Delete this note?</h2>
+            <p class="ds-dialog__body">It will stay in the archive for 30 days. Tomas will lose access at once.</p>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--text" href="#note">Keep it</a>
+              <a class="ds-button ds-button--text ds-button--danger" href="#archive">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="notebooks">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Notebooks</h1>
+        <p class="ds-page-header__text">Four notebooks hold 14 notes. Shared ones sync for everyone in them.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <details class="ds-menu ds-menu--end-wide"><summary class="ds-menu__button"><span class="ds-menu__label">Newest first</span><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul class="ds-menu__list"><li><a class="ds-menu__item is-current" href="#notebooks">Newest first</a></li><li><a class="ds-menu__item" href="#notebooks">By name</a></li><li><a class="ds-menu__item" href="#notebooks">Most notes</a></li></ul></details>
+        <a class="ds-button" href="#settings"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>New notebook</a>
+      </div>
+    </div>
+    <ul class="ds-tabs" data-component="tabs">
+      <li><a class="ds-tabs__tab is-current" href="#notebooks"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z M9 4v12"/></svg>Mine</a></li>
+      <li><a class="ds-tabs__tab" href="#notebooks"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M4 20a8 8 0 0 1 16 0"/></svg>Shared with me</a></li>
+      <li><a class="ds-tabs__tab" href="#archive"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg>Archived</a></li>
+    </ul>
+    <div class="ds-badges" data-component="badge">
+      <span class="ds-badge">4 notebooks</span>
+      <span class="ds-badge ds-badge--new">New</span>
+      <span class="ds-badge ds-badge--success">Synced</span>
+      <span class="ds-badge ds-badge--warning">Syncing</span>
+      <span class="ds-badge ds-badge--danger">Offline</span>
+    </div>
+    <div class="ds-section ds-section--tight">
+      <div class="ds-table-wrap">
+        <table class="ds-table" data-component="table">
+          <thead><tr><th>Notebook</th><th class="ds-table__extra">Shared with</th><th>Status</th><th class="ds-table__extra">Last edit</th><th class="ds-table__num">Notes</th></tr></thead>
+          <tbody>
+            <tr class="is-current"><td><a href="#notes">Garden</a></td><td class="ds-table__extra">Tomas Reyl</td><td><span class="ds-badge ds-badge--success">Synced</span></td><td class="ds-table__extra">Today, 09:12</td><td class="ds-table__num">6</td></tr>
+            <tr><td><a href="#notes">Kitchen</a></td><td class="ds-table__extra">Only you</td><td><span class="ds-badge ds-badge--success">Synced</span></td><td class="ds-table__extra">2 May</td><td class="ds-table__num">4</td></tr>
+            <tr><td><a href="#notes">Choir</a></td><td class="ds-table__extra">Five people</td><td><span class="ds-badge ds-badge--warning">Syncing</span></td><td class="ds-table__extra">Monday</td><td class="ds-table__num">3</td></tr>
+            <tr><td><a href="#notes">House</a></td><td class="ds-table__extra">Only you</td><td><span class="ds-badge ds-badge--danger">Offline</span></td><td class="ds-table__extra">Sunday</td><td class="ds-table__num">1</td></tr>
+            <tr><td><a href="#notes">Travel</a></td><td class="ds-table__extra">Mirela Voss</td><td><span class="ds-badge ds-badge--success">Synced</span></td><td class="ds-table__extra">19 April</td><td class="ds-table__num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link is-disabled" href="#notebooks" aria-label="Previous"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></a></li>
+        <li><a class="ds-pagination__link is-current" href="#notebooks">1</a></li>
+        <li><a class="ds-pagination__link" href="#notebooks">2</a></li>
+        <li><a class="ds-pagination__link" href="#notebooks">3</a></li>
+        <li><a class="ds-pagination__link" href="#notebooks" aria-label="Next"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="archive">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Archive</h1>
+        <p class="ds-page-header__text">Archived notes are kept out of the way and out of search.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outlined" href="#notes">Back to notes</a>
+      </div>
+    </div>
+    <div class="ds-columns">
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-empty__mark"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg></span>
+        <h2 class="ds-empty__title">Nothing archived yet</h2>
+        <p class="ds-empty__text">Swipe a note aside, or use the archive button, and it will wait here until you need it again.</p>
+        <a class="ds-button ds-button--secondary" href="#notes">Go to notes</a>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-panel ds-panel--tonal">
+          <h2 class="ds-panel__title">Deleted in the last 30 days</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Seed order</a><p class="ds-list__text">Deleted today, 26 days left</p></div><a class="ds-button ds-button--text" href="#notes">Restore</a></li>
+            <li class="ds-list__item"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#note">Packing list</a><p class="ds-list__text">Deleted 19 April, 4 days left</p></div><a class="ds-button ds-button--text" href="#notes">Restore</a></li>
+          </ul>
+        </div>
+        <div class="ds-notice"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Archived is not deleted</strong>Archived notes keep their reminders and stay shared.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Settings</h1>
+        <p class="ds-page-header__text">Your account, how notes sync and how the app looks.</p>
+      </div>
+    </div>
+    <div class="ds-layout">
+      <nav class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">Sections</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M4 20a8 8 0 0 1 16 0"/></svg>Account</a></li>
+          <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1 0-8a6 6 0 0 1 11.5 1.5A3.5 3.5 0 0 1 18 18z"/></svg>Sync</a></li>
+          <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-2 1-2h2a4 4 0 0 0 4-4c0-5-4-9-9-9z M8 11v.5 M12 8v.5 M16 11v.5"/></svg>Appearance</a></li>
+          <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z M10 21h4"/></svg>Reminders</a></li>
+          <li><a class="ds-sidebar__link" href="#archive"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg>Archive</a></li>
+        </ul>
+      </nav>
+      <div class="ds-stack">
+        <div class="ds-notices" data-component="notice">
+          <div class="ds-notice"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Sync is on</strong>Changes reach your other devices within a minute.</p></div>
+          <div class="ds-notice ds-notice--error"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z M12 10v4 M12 17v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">One field needs attention</strong>The recovery address is not a complete address.</p></div>
+        </div>
+        <form class="ds-form ds-panel ds-panel--outlined" data-component="form" action="#settings">
+          <h2 class="ds-panel__title">Account</h2>
+          <div class="ds-form__row">
+            <label class="ds-form__field"><span class="ds-form__label">Display name</span><input class="ds-form__control" type="text" value="Ines Varga"></label>
+            <label class="ds-form__field is-invalid"><span class="ds-form__label">Recovery address</span><input class="ds-form__control" type="text" value="ines.varga@"><span class="ds-form__error">Enter the whole address, with its domain.</span></label>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__field"><span class="ds-form__label">Colour source</span><span class="ds-form__select"><select class="ds-form__control"><option>From the wallpaper</option><option>Violet</option><option>Moss</option></select></span></label>
+            <label class="ds-form__field"><span class="ds-form__label">Default notebook</span><span class="ds-form__select"><select class="ds-form__control"><option>Garden</option><option>Kitchen</option></select></span><span class="ds-form__hint">New notes start here.</span></label>
+          </div>
+          <label class="ds-form__field"><span class="ds-form__label">Signature on shared notes</span><textarea class="ds-form__control ds-form__control--area">Ines, plot 14</textarea></label>
+          <div>
+            <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Sync over mobile data<small>Uses about 2 MB a month</small></span><input class="ds-switch" type="checkbox" checked></label>
+            <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Dark theme after sunset<small>Follows the device clock</small></span><input class="ds-switch" type="checkbox"></label>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Send me a summary of shared changes each week</label>
+          </div>
+          <div class="ds-form__actions" data-component="buttons">
+            <button class="ds-button" type="button">Save changes</button>
+            <button class="ds-button ds-button--secondary" type="button">Export notes</button>
+            <button class="ds-button ds-button--danger" type="button">Delete account</button>
+            <button class="ds-button is-disabled" type="button" disabled>Restore</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__legal">chronoskin notes, synced a minute ago</p>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#settings">Help</a></li>
+    <li><a class="ds-footer__link" href="#settings">Privacy</a></li>
+    <li><a class="ds-footer__link" href="#settings">Keyboard shortcuts</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

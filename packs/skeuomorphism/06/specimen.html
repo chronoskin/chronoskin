@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>chronoskin, skeuomorphism lending ledger specimen</title>
+<meta name="viewport" content="width=1280">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true"><path d="M3 12L9 3.5H21V20.5H9Z" stroke-width="2"/><circle cx="9" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M12.5 7H17.6V17H12.5" stroke-width="1.3" stroke-dasharray="2 1.5" stroke-linecap="butt"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__items">
+      <li><a class="ds-nav__item" href="#desk"><svg class="ds-nav__glyph" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 10l8-7 8 7v9h-5v-6H8v6H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Desk</a></li>
+      <li><a class="ds-nav__item" href="#loans"><svg class="ds-nav__glyph" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 3h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2zM4 17a2 2 0 0 1 2-2h12M8 7h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Loans</a></li>
+      <li><a class="ds-nav__item" href="#settings"><svg class="ds-nav__glyph" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 7.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zM11 2v3M11 17v3M2 11h3M17 11h3M4.6 4.6l2.1 2.1M15.3 15.3l2.1 2.1M4.6 17.4l2.1-2.1M15.3 6.7l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Settings</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <input class="ds-form__input ds-nav__search is-focus" type="text" value="hedge" aria-label="Find a thing or a person">
+      <a class="ds-button ds-button--secondary ds-button--small" href="#loans">Find</a>
+      <a class="ds-nav__user" href="#settings">Marta&rsquo;s ledger</a>
+    </div>
+  </div>
+</header>
+
+<main class="ds-page__desk">
+
+<section class="ds-view ds-view--home" id="desk">
+  <div class="ds-book">
+    <div class="ds-book__spread">
+      <div class="ds-book__page">
+        <div class="ds-hero" data-component="hero">
+          <p class="ds-hero__kicker">Tuesday, 14 May</p>
+          <h1 class="ds-hero__title">Three things are due back this week.</h1>
+          <p class="ds-hero__lead">Fourteen of your things are out with nine neighbours. One is a fortnight late.</p>
+          <div class="ds-hero__actions">
+            <a class="ds-button ds-button--large" href="#loans">See what is out</a>
+            <a class="ds-button ds-button--secondary ds-button--large is-hover" href="#loan">Open the late one</a>
+          </div>
+        </div>
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat is-first"><span class="ds-stat__value">14</span><span class="ds-stat__label">Out now</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">3</span><span class="ds-stat__label">Due this week</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">1</span><span class="ds-stat__label">Overdue</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">212</span><span class="ds-stat__label">Came back</span></li>
+        </ul>
+        <h2 class="ds-book__title">Due back soonest</h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 19l8-8M14 3a4 4 0 0 0 5 5l-3 3-5-5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loan">Hedge trimmer</a><span class="ds-list__meta">With Anselm since 12 April &middot; was due 30 April</span></div>
+            <span class="ds-badge ds-badge--danger">Overdue</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 3h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2zM4 17a2 2 0 0 1 2-2h12M8 7h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title is-hover" href="#loans">A year of preserves</a><span class="ds-list__meta">With Odile since 2 May &middot; due Thursday</span></div>
+            <span class="ds-badge ds-badge--warning">Due soon</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 9h14v7a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3zM2 9h18M9 5h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loans">Jam pan, the large one</a><span class="ds-list__meta">With Margit since 6 May &middot; due Friday</span></div>
+            <span class="ds-badge ds-badge--warning">Due soon</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 10 4 19 4c0 9-5 15-14 15zM4 18l8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loans">Bulb planter</a><span class="ds-list__meta">With Tobias since 9 May &middot; due Sunday</span></div>
+            <span class="ds-badge">New</span>
+          </li>
+        </ul>
+        <div class="ds-book__foot">
+          <a class="ds-link" href="#loans">All fourteen loans</a>
+          <span>4 of 14</span>
+        </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">1</p>
+      </div>
+      <div class="ds-book__page ds-book__page--right">
+        <h2 class="ds-book__title is-first">The shelves</h2>
+        <ul class="ds-grid" data-component="grid">
+          <li class="ds-grid__cell">
+            <div class="ds-grid__label"><a class="ds-grid__title" href="#loans">Books</a><span class="ds-grid__text">Cookery, gardens, maps</span></div>
+            <span class="ds-grid__count">38</span><span class="ds-grid__note">6 out with neighbours</span>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--2">
+            <div class="ds-grid__label"><a class="ds-grid__title" href="#loans">Tools</a><span class="ds-grid__text">Shed and workbench</span></div>
+            <span class="ds-grid__count">24</span><span class="ds-grid__note">4 out, 1 overdue</span>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--3">
+            <div class="ds-grid__label"><a class="ds-grid__title is-hover" href="#loans">Kitchen</a><span class="ds-grid__text">Pans, moulds, the mill</span></div>
+            <span class="ds-grid__count">17</span><span class="ds-grid__note">3 out with neighbours</span>
+          </li>
+          <li class="ds-grid__cell ds-grid__cell--4">
+            <div class="ds-grid__label"><a class="ds-grid__title" href="#returned">Garden</a><span class="ds-grid__text">Planters, nets, canes</span></div>
+            <span class="ds-grid__count">11</span><span class="ds-grid__note">1 out with a neighbour</span>
+          </li>
+        </ul>
+        <div class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Who has what</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#loan">Anselm, at the mill</a><span class="ds-sidebar__meta">3 things, 1 late</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#loans">Odile, next door</a><span class="ds-sidebar__meta">2 things</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#loans">Margit, at the forge</a><span class="ds-sidebar__meta">2 things</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#loans">Tobias, by the church</a><span class="ds-sidebar__meta">1 thing</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#returned">Five others</a><span class="ds-sidebar__meta">6 things</span></li>
+          </ul>
+        </div>
+        <p class="ds-notice ds-book__block"><span class="ds-notice__title">Reminders go out on Mondays.</span> Change the day in <a class="ds-link" href="#settings">settings</a>.</p>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">2</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="loans">
+  <div class="ds-book ds-book--tabbed">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#loans">Out now</a></li>
+        <li><a class="ds-tabs__tab" href="#returned">Returned</a></li>
+        <li><a class="ds-tabs__tab" href="#loan">Open entry</a></li>
+      </ul>
+    <div class="ds-book__spread">
+      <div class="ds-book__page">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-link ds-link--quiet" href="#desk">Desk</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Loans</li>
+          </ol>
+          <header class="ds-page-header" data-component="page-header">
+            <div class="ds-page-header__copy">
+              <h1 class="ds-page-header__title">Out now</h1>
+              <p class="ds-page-header__text">Fourteen things, the latest lent first.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <details class="ds-menu" data-component="menu"><summary class="ds-menu__button">More</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#settings">Settings</a></li><li><a class="ds-menu__item" href="#settings">Preferences</a></li><li><a class="ds-menu__item" href="#desk">Back to the start</a></li></ul></details>
+              <a class="ds-button ds-button--secondary" href="#loans">Print</a>
+              <a class="ds-button" href="#settings">Remind all</a>
+            </div>
+          </header>
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th class="ds-table__head">Thing</th><th class="ds-table__head">With</th><th class="ds-table__head">State</th><th class="ds-table__head is-numeric">Days out</th></tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__row is-first"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">Bulb planter</a></td><td class="ds-table__cell">Tobias</td><td class="ds-table__cell"><span class="ds-badge">New</span></td><td class="ds-table__cell is-numeric">5</td></tr>
+              <tr class="ds-table__row is-alt"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">Jam pan, the large one</a></td><td class="ds-table__cell">Margit</td><td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Due soon</span></td><td class="ds-table__cell is-numeric">8</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">A year of preserves</a></td><td class="ds-table__cell">Odile</td><td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Due soon</span></td><td class="ds-table__cell is-numeric">12</td></tr>
+              <tr class="ds-table__row is-alt"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">Apple press</a></td><td class="ds-table__cell">Odile</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">In hand</span></td><td class="ds-table__cell is-numeric">19</td></tr>
+              <tr class="ds-table__row"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">Maps of the north coast</a></td><td class="ds-table__cell">Margit</td><td class="ds-table__cell"><span class="ds-badge ds-badge--success">In hand</span></td><td class="ds-table__cell is-numeric">23</td></tr>
+              <tr class="ds-table__row is-current"><td class="ds-table__cell ds-table__cell--name"><a class="ds-table__link" href="#loan">Hedge trimmer</a></td><td class="ds-table__cell">Anselm</td><td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Overdue</span></td><td class="ds-table__cell is-numeric">32</td></tr>
+            </tbody>
+          </table>
+          <div class="ds-book__foot">
+            <ul class="ds-pagination" data-component="pagination">
+              <li><a class="ds-pagination__link ds-pagination__link--prev is-disabled" href="#loans" aria-label="Previous page"></a></li>
+              <li><a class="ds-pagination__link is-current" href="#loans">1</a></li>
+              <li><a class="ds-pagination__link is-hover" href="#loans">2</a></li>
+              <li><a class="ds-pagination__link" href="#loans">3</a></li>
+              <li><a class="ds-pagination__link ds-pagination__link--next" href="#loans" aria-label="Next page"></a></li>
+            </ul>
+            <span>1 to 6 of 14</span>
+          </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">3</p>
+      </div>
+      <div class="ds-book__page ds-book__page--right">
+        <h2 class="ds-book__title is-first">The marked line</h2>
+        <div class="ds-panel" data-component="panel">
+          <h3 class="ds-panel__title">Hedge trimmer</h3>
+          <div class="ds-panel__body">
+            <dl class="ds-panel__facts">
+              <div class="ds-panel__fact"><dt class="ds-panel__term">With</dt><dd class="ds-panel__value">Anselm, at the mill</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">Lent on</dt><dd class="ds-panel__value">12 April</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">Was due</dt><dd class="ds-panel__value">30 April</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">Reminders sent</dt><dd class="ds-panel__value">2</dd></div>
+            </dl>
+            <div class="ds-buttons">
+              <a class="ds-button" href="#returned">Mark as returned</a>
+              <a class="ds-button ds-button--secondary" href="#loan">Open the entry</a>
+            </div>
+          </div>
+        </div>
+        <h2 class="ds-book__title">What the labels mean</h2>
+        <ul class="ds-list">
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">In hand</span><span class="ds-list__meta">Out, and not due for a week or more</span></div><span class="ds-badge ds-badge--success">In hand</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Due soon</span><span class="ds-list__meta">Due back within seven days</span></div><span class="ds-badge ds-badge--warning">Due soon</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Overdue</span><span class="ds-list__meta">Past its day; a reminder goes each Monday</span></div><span class="ds-badge ds-badge--danger">Overdue</span></li>
+        </ul>
+        <div class="ds-book__foot">
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge">14</span>
+            <span class="ds-badge ds-badge--new">Lent today</span>
+            <span class="ds-badge ds-badge--success">In hand</span>
+            <span class="ds-badge ds-badge--warning">Due soon</span>
+            <span class="ds-badge ds-badge--danger">Overdue</span>
+          </div>
+        </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">4</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="returned">
+  <div class="ds-book ds-book--tabbed">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab" href="#loans">Out now</a></li>
+        <li><a class="ds-tabs__tab is-current" href="#returned">Returned</a></li>
+        <li><a class="ds-tabs__tab" href="#loan">Open entry</a></li>
+      </ul>
+    <div class="ds-book__spread">
+      <div class="ds-book__page">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-link ds-link--quiet" href="#desk">Desk</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li><a class="ds-link ds-link--quiet" href="#loans">Loans</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Returned</li>
+          </ol>
+          <header class="ds-page-header">
+            <div class="ds-page-header__copy">
+              <h1 class="ds-page-header__title">Returned in May</h1>
+              <p class="ds-page-header__text">What has come back since the first of the month.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button ds-button--secondary" href="#loans">See what is out</a>
+            </div>
+          </header>
+          <div class="ds-empty" data-component="empty">
+            <svg class="ds-empty__icon" viewBox="0 0 44 44" aria-hidden="true"><path d="M6 14l16-8 16 8v18l-16 8-16-8zM6 14l16 8 16-8M22 22v18" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+            <h3 class="ds-empty__title">Nothing has come back yet</h3>
+            <p class="ds-empty__text">Three things are due this week. When one comes home, mark it and it is written here.</p>
+            <a class="ds-button ds-button--secondary" href="#loans">Mark something as returned</a>
+          </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">5</p>
+      </div>
+      <div class="ds-book__page ds-book__page--right">
+        <h2 class="ds-book__title is-first">Came back in April</h2>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 9h14v7a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3zM2 9h18M9 5h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loan">Bread tins, a pair</a><span class="ds-list__meta">Odile &middot; out 9 days &middot; back 27 April</span></div>
+            <span class="ds-badge ds-badge--success">Returned</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 3h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2zM4 17a2 2 0 0 1 2-2h12M8 7h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loan">The orchard year</a><span class="ds-list__meta">Tobias &middot; out 30 days &middot; back 21 April</span></div>
+            <span class="ds-badge ds-badge--success">Returned</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 19l8-8M14 3a4 4 0 0 0 5 5l-3 3-5-5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loan">Spirit level</a><span class="ds-list__meta">Margit &middot; out 4 days &middot; back 11 April</span></div>
+            <span class="ds-badge ds-badge--success">Returned</span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 18C4 9 10 4 19 4c0 9-5 15-14 15zM4 18l8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ds-list__body"><a class="ds-list__title" href="#loan">Fruit netting</a><span class="ds-list__meta">Anselm &middot; out 41 days &middot; back 3 April</span></div>
+            <span class="ds-badge ds-badge--count">Late</span>
+          </li>
+        </ul>
+        <div class="ds-book__foot">
+          <a class="ds-link" href="#returned">Earlier months</a>
+          <span>4 of 212 since the first page</span>
+        </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">6</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="loan">
+  <div class="ds-book ds-book--tabbed">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab" href="#loans">Out now</a></li>
+        <li><a class="ds-tabs__tab" href="#returned">Returned</a></li>
+        <li><a class="ds-tabs__tab is-current" href="#loan">Open entry</a></li>
+      </ul>
+    <div class="ds-book__spread">
+      <div class="ds-book__page">
+          <ol class="ds-breadcrumb" data-component="breadcrumb">
+            <li><a class="ds-link ds-link--quiet" href="#desk">Desk</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li><a class="ds-link ds-link--quiet" href="#loans">Loans</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Hedge trimmer</li>
+          </ol>
+          <header class="ds-page-header">
+            <div class="ds-page-header__copy">
+              <h1 class="ds-page-header__title">Hedge trimmer</h1>
+              <p class="ds-page-header__text">With Anselm since 12 April. Fourteen days late.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button" href="#returned">Mark as returned</a>
+            </div>
+          </header>
+          <div class="ds-prose" data-component="typography">
+            <h1>The entry</h1>
+            <p>Lent over the wall on a Saturday, <strong>with the long lead and the blade guard</strong>. Anselm meant to do the mill hedge the same week; the rain had other plans. The <a href="#loans">other things he has</a> are not late.</p>
+            <h2>What went with it</h2>
+            <ul>
+              <li>The long lead, on its reel</li>
+              <li>The blade guard</li>
+              <li>A pair of gauntlets, which are his to keep</li>
+            </ul>
+            <h3>How to tell it is yours</h3>
+            <p>The number scratched under the handle is <code>HT-2204</code>, and the lead has a blue plug.</p>
+          </div>
+          <div class="ds-book__foot">
+            <p class="ds-links" data-component="links">
+              <a class="ds-link" href="#loans">All loans</a>
+              <a class="ds-link is-visited" href="#returned">Returned</a>
+              <a class="ds-link is-hover" href="#desk">Who has what</a>
+              <a class="ds-link is-active" href="#settings">Reminder day</a>
+              <a class="ds-link ds-link--quiet" href="#loans">Print this entry</a>
+            </p>
+          </div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">7</p>
+      </div>
+      <div class="ds-book__page ds-book__page--right">
+        <h2 class="ds-book__title is-first">The facts</h2>
+        <div class="ds-panel">
+          <h3 class="ds-panel__title">Tools, shelf two</h3>
+          <div class="ds-panel__body">
+            <dl class="ds-panel__facts">
+              <div class="ds-panel__fact"><dt class="ds-panel__term">With</dt><dd class="ds-panel__value">Anselm, at the mill</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">Lent on</dt><dd class="ds-panel__value">12 April</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">Was due<span class="ds-tooltip" data-component="tooltip"><button class="ds-tooltip__trigger" type="button" aria-describedby="tip-due">?</button><span class="ds-tooltip__bubble" id="tip-due" role="tooltip">A thing is due a fortnight after it is lent.</span></span></dt><dd class="ds-panel__value">30 April</dd></div>
+              <div class="ds-panel__fact"><dt class="ds-panel__term">State</dt><dd class="ds-panel__value"><span class="ds-badge ds-badge--danger">Overdue</span></dd></div>
+            </dl>
+            <progress class="ds-progress" data-component="progress" value="66" max="100">66%</progress><p class="ds-progress__label">Second of three reminders sent</p>
+            <div class="ds-buttons">
+              <a class="ds-button ds-button--secondary" href="#settings">Remind him today</a>
+              <a class="ds-button ds-button--secondary" href="#loans">Give a week more</a>
+            </div>
+          </div>
+        </div>
+        <h2 class="ds-book__title">What has happened</h2>
+        <ul class="ds-list">
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Second reminder sent</span><span class="ds-list__meta">Monday 13 May, by letter</span></div><span class="ds-badge ds-badge--count">2</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">First reminder sent</span><span class="ds-list__meta">Monday 6 May, by letter</span></div><span class="ds-badge ds-badge--count">1</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Due date passed</span><span class="ds-list__meta">Tuesday 30 April</span></div><span class="ds-badge ds-badge--danger">Overdue</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><span class="ds-list__title">Lent to Anselm</span><span class="ds-list__meta">Saturday 12 April, for eighteen days</span></div><span class="ds-badge ds-badge--new">Lent</span></li>
+        </ul>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">8</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <div class="ds-book">
+    <div class="ds-book__spread">
+      <div class="ds-book__page">
+          <ol class="ds-breadcrumb">
+            <li><a class="ds-link ds-link--quiet" href="#desk">Desk</a></li>
+            <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+            <li class="ds-breadcrumb__current">Settings</li>
+          </ol>
+          <header class="ds-page-header">
+            <div class="ds-page-header__copy">
+              <h1 class="ds-page-header__title">Settings</h1>
+              <p class="ds-page-header__text">How the ledger is kept and when it writes to people.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button ds-button--secondary" href="#desk">Back to the desk</a>
+            </div>
+          </header>
+          <div class="ds-notices" data-component="notice">
+            <p class="ds-notice"><span class="ds-notice__title">Reminders are on.</span> One letter each Monday for anything past its day.</p>
+            <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not saved.</span> Check the address below and try again.</p>
+          </div>
+          <form class="ds-form ds-book__block" data-component="form" action="#settings">
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="f-name">Ledger name</label>
+                <input class="ds-form__input" id="f-name" type="text" value="Marta&rsquo;s ledger">
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="f-day">Reminder day</label>
+                <select class="ds-form__select" id="f-day"><option>Every Monday</option><option>Every Friday</option><option>The first of the month</option></select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-mail">Reminders are signed from</label>
+              <input class="ds-form__input is-error" id="f-mail" type="text" value="marta@example">
+              <p class="ds-form__error">This address is missing its ending.</p>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-note">What a reminder says</label>
+              <textarea class="ds-form__textarea" id="f-note" placeholder="A line to go above the list of things"></textarea>
+              <p class="ds-form__hint">Kept short. The list of things is added under it.</p>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Send me a copy of every reminder</label>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label">Reminders</span>
+              <ul class="ds-switches" data-component="switch"><li class="ds-switches__row"><span class="ds-switches__name">Send reminders</span><label class="ds-switch"><input type="checkbox" aria-label="Send reminders" checked><span class="ds-switch__track"></span></label></li><li class="ds-switches__row"><span class="ds-switches__name">By post as well</span><label class="ds-switch"><input type="checkbox" aria-label="By post as well"><span class="ds-switch__track"></span></label></li></ul>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Save</button>
+              <a class="ds-button ds-button--secondary" href="#desk">Cancel</a>
+              <button class="ds-button is-disabled" type="button" disabled>Undo</button>
+              <button class="ds-button ds-button--danger ds-form__actions-end" type="button">Empty the ledger</button>
+            </div>
+          </form>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">9</p>
+      </div>
+      <div class="ds-book__page ds-book__page--right">
+        <h2 class="ds-book__title is-first">Empty the ledger</h2>
+        <div class="ds-prose">
+          <p>The key on the facing page strikes out every entry, in hand or returned. It asks once first.</p>
+        </div>
+        <div class="ds-dialog__backdrop ds-book__block">
+          <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+            <h3 class="ds-dialog__title" id="d-title">Empty the ledger</h3>
+            <div class="ds-dialog__body">
+              <p class="ds-dialog__heading">Strike out all 226 entries?</p>
+              <p class="ds-dialog__text">Fourteen things are still out. Their lines go too, and nobody is reminded again.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#settings">Keep the ledger</a>
+              <a class="ds-button ds-button--danger" href="#desk">Empty it</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Lately changed</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#settings">Reminder day moved to Monday</a><span class="ds-sidebar__meta">6 May</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#settings">A copy of every reminder</a><span class="ds-sidebar__meta">2 May</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#desk">Garden shelf added</a><span class="ds-sidebar__meta">18 April</span></li>
+          </ul>
+        </div>
+        <h2 class="ds-book__title">Questions</h2>
+        <div class="ds-accordion" data-component="accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__head">Does it work offline?</summary><p class="ds-accordion__body">Yes. Everything is kept on your own machine.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__head">Can I move to another computer?</summary><p class="ds-accordion__body">Copy the library folder across and open it there.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__head">How do I get help?</summary><p class="ds-accordion__body">Write to us from the support page; we answer in a day.</p></details></div>
+          <div class="ds-book__rest" aria-hidden="true"></div>
+          <p class="ds-book__folio">10</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__links">
+    <li><a class="ds-link ds-link--quiet" href="#desk">Desk</a></li>
+    <li><a class="ds-link ds-link--quiet" href="#loans">Loans</a></li>
+    <li><a class="ds-link ds-link--quiet" href="#returned">Returned</a></li>
+    <li><a class="ds-link ds-link--quiet" href="#settings">Settings</a></li>
+  </ul>
+  <p class="ds-footer__note">chronoskin keeps count of what you lend. All names and figures on this page are examples.</p>
+</footer>
+
+</body>
+</html>

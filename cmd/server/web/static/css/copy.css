@@ -1,0 +1,57 @@
+/* A command on one line with a note and a Copy button. */
+.line {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.line .note code {
+  padding: 0;
+  font-size: 12px;
+}
+
+.line > code {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  font: 13px/1.4 var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+
+.line .note {
+  flex: none;
+  align-self: center;
+  padding: 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.line button {
+  flex: none;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: var(--sunken);
+  color: var(--ink);
+  padding: 0 16px;
+  font: 600 12px var(--sans);
+  cursor: pointer;
+}
+
+.line button:hover {
+  background: var(--line);
+}
+
+@media (max-width: 1100px) {
+  .line .note {
+    display: none;
+  }
+}

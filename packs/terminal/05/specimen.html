@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin monitor: twelve hosts on one screen. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-screen">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#overview"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#overview"><span class="ds-nav__num">0</span>overview</a></li>
+    <li><a class="ds-nav__link" href="#hosts"><span class="ds-nav__num">1</span>hosts</a></li>
+    <li><a class="ds-nav__link" href="#alerts"><span class="ds-nav__num">2</span>alerts</a></li>
+    <li><a class="ds-nav__link" href="#settings"><span class="ds-nav__num">3</span>settings</a></li>
+  </ul>
+  <p class="ds-nav__status">refresh 5 s | 14:02:07</p>
+</header>
+
+<main class="ds-main">
+
+<!-- View 1, the overview: the state of the fleet, its meters, four figures, the busiest hosts, groups and the log. -->
+<section class="ds-view ds-view--home" id="overview">
+  <div class="ds-deck">
+    <div class="ds-tiles ds-tiles--top">
+      <section class="ds-tile ds-hero" data-component="hero">
+        <h2 class="ds-tile__title">fleet <span class="ds-tile__aside">12 hosts, 3 groups</span></h2>
+        <div class="ds-tile__body">
+          <h1 class="ds-hero__title">11 of 12 hosts answer; db-03 is out of disk.</h1>
+          <p class="ds-hero__lead">One alert is firing and one is acknowledged. Everything else has been quiet for six days.</p>
+          <div class="ds-buttons">
+            <a class="ds-button" href="#alerts">open the alert</a>
+            <a class="ds-button ds-button--secondary" href="#hosts">all hosts</a>
+          </div>
+        </div>
+      </section>
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">fleet average <span class="ds-tile__aside">last 5 min</span></h2>
+        <dl class="ds-gauges">
+          <dt>cpu</dt><dd><span class="ds-meter"><span class="ds-meter__on">||||||||||||||</span>..........................................</span></dd><dd class="ds-gauges__num">24.1%</dd>
+          <dt>mem</dt><dd><span class="ds-meter"><span class="ds-meter__on">|||||||||||||||||||||||||||||||</span>.........................</span></dd><dd class="ds-gauges__num">55.8%</dd>
+          <dt>swp</dt><dd><span class="ds-meter"><span class="ds-meter__on">||</span>......................................................</span></dd><dd class="ds-gauges__num">3.0%</dd>
+          <dt>dsk</dt><dd><span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">||||||||||||||||||||||||||||||||||||||||||</span>..............</span></dd><dd class="ds-gauges__num">74.6%</dd>
+          <dt>net</dt><dd><span class="ds-meter"><span class="ds-meter__on">||||||||||</span>..............................................</span></dd><dd class="ds-gauges__num">182 Mb/s</dd>
+          <dt>err</dt><dd><span class="ds-meter"><span class="ds-meter__on ds-meter__on--danger">|</span>.......................................................</span></dd><dd class="ds-gauges__num">0.4%</dd>
+        </dl>
+      </section>
+    </div>
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__label">load, 1 min</span><span class="ds-stat__value">0.42</span><span class="ds-stat__note">0.38 an hour ago</span></li>
+      <li class="ds-stat"><span class="ds-stat__label">requests</span><span class="ds-stat__value">1,284/s</span><span class="ds-stat__note">peak today 2,910/s</span></li>
+      <li class="ds-stat"><span class="ds-stat__label"><span class="ds-tooltip" tabindex="0">slowest 5%<span class="ds-tooltip__tip" role="tooltip">The slowest twentieth of requests in the last five minutes.</span></span></span><span class="ds-stat__value">212 ms</span><span class="ds-stat__note">limit 400 ms</span></li>
+      <li class="ds-stat"><span class="ds-stat__label">uptime, 30 d</span><span class="ds-stat__value">99.94%</span><span class="ds-stat__note">26 min down</span></li>
+    </ul>
+    <div class="ds-tiles ds-tiles--work">
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">busiest hosts <span class="ds-tile__aside">sorted by cpu</span></h2>
+        <div class="ds-tile__body ds-tile__body--flush">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th>host</th><th>state</th><th class="ds-table__num">cpu%</th><th class="ds-table__extra">cpu</th><th class="ds-table__num">mem%</th><th class="ds-table__num">load</th><th class="ds-table__num ds-table__extra">up</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-selected"><td class="ds-table__code">web-02</td><td>ok</td><td class="ds-table__num">71.3</td><td class="ds-table__extra ds-table__bar">||||||||||||||......</td><td class="ds-table__num">48.0</td><td class="ds-table__num">2.14</td><td class="ds-table__num ds-table__extra">41 d</td></tr>
+              <tr><td class="ds-table__code"><a class="ds-table__title" href="#hosts">web-01</a></td><td><span class="ds-badge ds-badge--success">ok</span></td><td class="ds-table__num">64.9</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on">|||||||||||||</span>.......</span></td><td class="ds-table__num">51.2</td><td class="ds-table__num">1.87</td><td class="ds-table__num ds-table__extra">41 d</td></tr>
+              <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#hosts">db-01</a></td><td><span class="ds-badge ds-badge--success">ok</span></td><td class="ds-table__num">38.2</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on">||||||||</span>............</span></td><td class="ds-table__num">82.5</td><td class="ds-table__num">1.02</td><td class="ds-table__num ds-table__extra">112 d</td></tr>
+              <tr><td class="ds-table__code"><a class="ds-table__title" href="#hosts">queue-01</a></td><td><span class="ds-badge ds-badge--warning">slow</span></td><td class="ds-table__num">31.0</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">||||||</span>..............</span></td><td class="ds-table__num">67.4</td><td class="ds-table__num">0.96</td><td class="ds-table__num ds-table__extra">9 d</td></tr>
+              <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#hosts">db-02</a></td><td><span class="ds-badge ds-badge--success">ok</span></td><td class="ds-table__num">22.7</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on">|||||</span>...............</span></td><td class="ds-table__num">79.1</td><td class="ds-table__num">0.61</td><td class="ds-table__num ds-table__extra">112 d</td></tr>
+              <tr><td class="ds-table__code"><a class="ds-table__title" href="#hosts">cache-01</a></td><td><span class="ds-badge ds-badge--success">ok</span></td><td class="ds-table__num">12.4</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on">||</span>..................</span></td><td class="ds-table__num">90.3</td><td class="ds-table__num">0.30</td><td class="ds-table__num ds-table__extra">63 d</td></tr>
+              <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#hosts">mail-01</a></td><td><span class="ds-badge ds-badge--success">ok</span></td><td class="ds-table__num">4.8</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter"><span class="ds-meter__on">|</span>...................</span></td><td class="ds-table__num">33.6</td><td class="ds-table__num">0.08</td><td class="ds-table__num ds-table__extra">201 d</td></tr>
+              <tr><td class="ds-table__code"><a class="ds-table__title" href="#alerts">db-03</a></td><td><span class="ds-badge ds-badge--danger">down</span></td><td class="ds-table__num">0.0</td><td class="ds-table__extra ds-table__bar"><span class="ds-meter">....................</span></td><td class="ds-table__num">0.0</td><td class="ds-table__num">0.00</td><td class="ds-table__num ds-table__extra">0 d</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-tile__foot">
+          <span>8 of 12 hosts</span>
+          <a class="ds-link ds-link--bracket" href="#hosts">all hosts</a>
+        </div>
+      </section>
+      <div class="ds-tiles__col">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">groups</h2>
+            <ul class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link is-current" href="#overview">all hosts</a><span class="ds-sidebar__count">12</span></li>
+              <li><a class="ds-sidebar__link" href="#hosts">web</a><span class="ds-sidebar__count">4</span></li>
+              <li><a class="ds-sidebar__link" href="#hosts">data</a><span class="ds-sidebar__count">5</span></li>
+              <li><a class="ds-sidebar__link" href="#hosts">mail and queue</a><span class="ds-sidebar__count">3</span></li>
+            </ul>
+          </div>
+        </aside>
+        <div class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">log</h2>
+          <div class="ds-panel__body">
+            <ul class="ds-log">
+              <li><span class="ds-log__time">14:01</span> <span>db-03 does not answer</span></li>
+              <li><span class="ds-log__time">13:58</span> <span>db-03 disk at 100%</span></li>
+              <li><span class="ds-log__time">13:40</span> <span>queue-01 slow, 9 s behind</span></li>
+              <li><span class="ds-log__time">11:15</span> <span>web-02 restarted by deploy</span></li>
+              <li><span class="ds-log__time">09:00</span> <span>daily report sent</span></li>
+            </ul>
+            <p class="ds-progress"><span class="ds-progress__label">db-03 disk</span><span class="ds-progress__bar"><span class="ds-progress__on ds-progress__on--danger">##########</span></span><span class="ds-progress__value">100%</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 2, the hosts: every host as a tile, by state. -->
+<section class="ds-view" id="hosts">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#overview">fleet</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#hosts">hosts</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">all groups</li>
+  </ol>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">hosts</h1>
+      <p class="ds-page-header__text">Twelve hosts in three groups, asked every five seconds.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#settings">add a host</a></div>
+  </header>
+  <ul class="ds-tabs" data-component="tabs">
+    <li><span class="ds-tabs__tab is-current">all 12</span></li>
+    <li><a class="ds-tabs__tab" href="#hosts">ok 10</a></li>
+    <li><a class="ds-tabs__tab" href="#hosts">slow 1</a></li>
+    <li><a class="ds-tabs__tab" href="#hosts">down 1</a></li>
+    <li><a class="ds-tabs__tab" href="#hosts">paused 0</a></li>
+  </ul>
+  <div class="ds-deck">
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">web</p><h3 class="ds-grid__title">web-01</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">||||||||||</span>......</span> 64.9%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on">||||||||</span>........</span> 51.2%</p></div>
+      <div class="ds-grid__cell"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">web</p><h3 class="ds-grid__title">web-02</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">|||||||||||</span>.....</span> 71.3%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on">|||||||</span>.........</span> 48.0%</p></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">data</p><h3 class="ds-grid__title">db-01</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">||||||</span>..........</span> 38.2%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">|||||||||||||</span>...</span> 82.5%</p></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">data</p><h3 class="ds-grid__title">db-02</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">||||</span>............</span> 22.7%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on">||||||||||||</span>....</span> 79.1%</p></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__state ds-badge ds-badge--danger">down</span><p class="ds-grid__label">data</p><h3 class="ds-grid__title">db-03</h3><p class="ds-grid__text">cpu <span class="ds-meter">................</span> no answer</p><p class="ds-grid__text">dsk <span class="ds-meter"><span class="ds-meter__on ds-meter__on--danger">||||||||||||||||</span></span> 100%</p></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">data</p><h3 class="ds-grid__title">cache-01</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">||</span>..............</span> 12.4%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">||||||||||||||</span>..</span> 90.3%</p></div>
+      <div class="ds-grid__cell ds-grid__cell--3"><span class="ds-grid__state ds-badge ds-badge--warning">slow</span><p class="ds-grid__label">mail and queue</p><h3 class="ds-grid__title">queue-01</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">|||||</span>...........</span> 31.0%</p><p class="ds-grid__text">lag <span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">|||||||</span>.........</span> 9 s</p></div>
+      <div class="ds-grid__cell ds-grid__cell--4"><span class="ds-grid__state ds-badge ds-badge--success">ok</span><p class="ds-grid__label">mail and queue</p><h3 class="ds-grid__title">mail-01</h3><p class="ds-grid__text">cpu <span class="ds-meter"><span class="ds-meter__on">|</span>...............</span> 4.8%</p><p class="ds-grid__text">mem <span class="ds-meter"><span class="ds-meter__on">||||||</span>..........</span> 33.6%</p></div>
+    </div>
+    <div class="ds-tiles">
+      <div class="ds-tile">
+        <div class="ds-tile__foot ds-tile__foot--bare">
+          <span>hosts 1 to 8 of 12</span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><span class="ds-pagination__link is-disabled">&lt; prev</span></li>
+            <li><span class="ds-pagination__link is-current">1</span></li>
+            <li><a class="ds-pagination__link" href="#hosts">2</a></li>
+            <li><a class="ds-pagination__link" href="#hosts">next &gt;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ds-tiles ds-tiles--even">
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">paused <span class="ds-tile__aside">0 hosts</span></h2>
+        <div class="ds-empty" data-component="empty">
+          <p class="ds-empty__text">No host is paused. A paused host is still asked, but raises no alert.</p>
+          <a class="ds-button ds-button--secondary" href="#settings">pause a host</a>
+        </div>
+      </section>
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">legend</h2>
+        <div class="ds-tile__body">
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge ds-badge--success">ok</span>
+            <span class="ds-badge ds-badge--warning">slow</span>
+            <span class="ds-badge ds-badge--danger">down</span>
+            <span class="ds-badge ds-badge--tag">data</span>
+            <span class="ds-badge">2</span>
+          </div>
+          <dl class="ds-keys">
+            <dt>ok</dt><dd>answered the last three questions in time.</dd>
+            <dt>slow</dt><dd>answered, but over a limit you set.</dd>
+            <dt>down</dt><dd>no answer for 15 seconds.</dd>
+            <dt>#group</dt><dd>the group a host belongs to; a count is its open alerts.</dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- View 3, the alerts: what is firing, and the runbook of the alert under the cursor. -->
+<section class="ds-view" id="alerts">
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">alerts</h1>
+      <p class="ds-page-header__text">One firing, one acknowledged, none silenced.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#settings">change limits</a></div>
+  </header>
+  <div class="ds-notices" data-component="notice">
+    <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Firing:</span> db-03 has not answered since 14:01. Its last report showed the disk at 100%.</p>
+    <p class="ds-notice"><span class="ds-notice__title">Acknowledged:</span> queue-01 is 9 seconds behind. <code>ops</code> took it at 13:44.</p>
+  </div>
+  <div class="ds-deck">
+    <div class="ds-tiles ds-tiles--even">
+      <div class="ds-tiles__col">
+        <section class="ds-tile">
+          <h2 class="ds-tile__title">today <span class="ds-tile__aside">4 alerts</span></h2>
+          <div class="ds-tile__body">
+            <ul class="ds-list" data-component="list">
+              <li class="ds-list__item">
+                <span class="ds-list__date">14:01</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title" href="#alerts">db-03 does not answer</a>
+                  <p class="ds-list__excerpt">No answer to five questions in a row.</p>
+                  <p class="ds-list__meta"><span class="ds-badge ds-badge--danger">firing</span> for 1 min, group data</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__date">13:58</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title" href="#alerts">db-03 disk nearly full</a>
+                  <p class="ds-list__excerpt">/var at 100%, limit 90%.</p>
+                  <p class="ds-list__meta"><span class="ds-badge ds-badge--danger">firing</span> for 4 min, group data</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__date">13:40</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title is-visited" href="#alerts">queue-01 is behind</a>
+                  <p class="ds-list__excerpt">Oldest job waits 9 s, limit 5 s.</p>
+                  <p class="ds-list__meta"><span class="ds-badge ds-badge--warning">acknowledged</span> by ops at 13:44</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__date">11:15</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title is-visited" href="#alerts">web-02 restarted</a>
+                  <p class="ds-list__excerpt">Back after 40 s; a deploy was running.</p>
+                  <p class="ds-list__meta"><span class="ds-badge ds-badge--success">closed</span> at 11:16 by itself</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">runbook <span class="ds-tile__aside">disk nearly full</span></h2>
+        <div class="ds-tile__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>Disk nearly full</h1>
+            <p>A data host that runs out of disk stops writing and then stops answering. <strong>Free space first</strong>, find the cause after.</p>
+            <h2>Free space</h2>
+            <ul>
+              <li>Remove rotated logs older than a week in <code>/var/log</code>.</li>
+              <li>Drop the oldest local dump; a copy is on the backup host.</li>
+            </ul>
+            <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__title">If the disk fills again</summary>
+            <div class="ds-accordion__body">
+            <p>Lower the days of logs kept, then ask whether the dump can move.</p>
+            </div>
+            </details>
+            <details class="ds-accordion__item">
+            <summary class="ds-accordion__title">Who to tell</summary>
+            <div class="ds-accordion__body">
+            <p>Whoever acknowledged the alert; the name is on its line.</p>
+            </div>
+            </details>
+            </div>
+            <h3>Check it worked</h3>
+            <p>Run <code>df -h /var</code>. The alert closes by itself under 90%.</p>
+          </article>
+          <ul class="ds-links" data-component="links">
+            <li><a class="ds-link" href="#alerts">full runbook</a></li>
+            <li><a class="ds-link is-visited" href="#alerts">last time, 12 March</a></li>
+            <li><a class="ds-link is-hover" href="#hosts">db-03</a></li>
+            <li><a class="ds-link is-active" href="#settings">its limits</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- View 4, the settings of one host: its limits, the buttons, the question before removing it. -->
+<section class="ds-view" id="settings">
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">settings: db-03</h1>
+      <p class="ds-page-header__text">How often the host is asked, and when it raises an alert.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#hosts">back to hosts</a></div>
+  </header>
+  <div class="ds-deck">
+    <div class="ds-tiles ds-tiles--work">
+      <section class="ds-tile">
+        <h2 class="ds-tile__title">host</h2>
+        <div class="ds-tile__body">
+          <form class="ds-form" data-component="form" action="#settings">
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-name">name:</label>
+              <div class="ds-form__field">
+                <input class="ds-form__input" id="f-name" type="text" value="db-03">
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-addr">address:</label>
+              <div class="ds-form__field">
+                <input class="ds-form__input is-invalid" id="f-addr" type="text" value="10.0.4.300">
+                <p class="ds-form__error">error: 300 is not a part of an address.</p>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-every">ask every:</label>
+              <div class="ds-form__field">
+                <select class="ds-form__input ds-form__input--auto" id="f-every"><option>5 seconds</option><option>30 seconds</option><option>1 minute</option></select>
+                <p class="ds-form__hint">Down means no answer to three questions in a row.</p>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-note">note:</label>
+              <div class="ds-form__field">
+                <textarea class="ds-form__input" id="f-note" rows="3">Replica of db-01. Dumps to /var/dump every night.</textarea>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label">alerts:</span>
+              <div class="ds-form__field">
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> raise an alert when the disk passes 90%</label>
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> pause this host</label>
+                <label class="ds-switch"><span class="ds-switch__label">send the daily report</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+              </div>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">save</button>
+              <button class="ds-button ds-button--secondary is-hover" type="button">ask now</button>
+              <button class="ds-button ds-button--danger" type="button">remove host</button>
+              <button class="ds-button" type="button" disabled>restore</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="ds-tiles__col">
+        <section class="ds-tile">
+          <h2 class="ds-tile__title">confirm</h2>
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-1">
+              <h2 class="ds-dialog__title" id="dlg-1">remove db-03?</h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">Its 112 days of figures are deleted with it. Pausing keeps them.</p>
+                <div class="ds-dialog__actions">
+                  <button class="ds-button ds-button--danger" type="button">remove</button>
+                  <button class="ds-button ds-button--secondary" type="button">cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="ds-panel">
+          <h2 class="ds-panel__title">what is kept</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">One line per answer for a day, one per minute for a month, one per hour after that.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__session">chronoskin monitor</span>
+  <ul class="ds-footer__keys">
+    <li class="ds-key"><span class="ds-key__cap">0</span> <a class="ds-footer__link" href="#overview">overview</a></li>
+    <li class="ds-key"><span class="ds-key__cap">1</span> <a class="ds-footer__link" href="#hosts">hosts</a></li>
+    <li class="ds-key"><span class="ds-key__cap">2</span> <a class="ds-footer__link" href="#alerts">alerts</a></li>
+    <li class="ds-key"><span class="ds-key__cap">3</span> <a class="ds-footer__link" href="#settings">settings</a></li>
+  </ul>
+  <p class="ds-footer__text">chronoskin 2.4 on ops-01 | 7 Oct 2026</p>
+</footer>
+
+</div>
+</body>
+</html>

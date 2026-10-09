@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: dark developer tools landing specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Product</a></li>
+      <li><a class="ds-nav__link" href="#pricing">Pricing</a></li>
+      <li><a class="ds-nav__link" href="#changelog">Changelog</a></li>
+      <li><a class="ds-nav__link" href="#start">Start</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <details class="ds-menu"><summary class="ds-menu__button">Docs</summary><ul class="ds-menu__list"><li class="ds-menu__title">Product</li><li><a class="ds-menu__item ds-menu__item--view" href="#home">Overview</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#pricing">Pricing</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#changelog">Changelog</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#start">Get started</a></li><li class="ds-menu__title ds-menu__title--rule">Developers</li><li><a class="ds-menu__item" href="#start">Quickstart</a></li><li><a class="ds-menu__item" href="#start">Command line</a></li><li><a class="ds-menu__item" href="#changelog">Release notes</a></li><li><a class="ds-menu__item" href="#start">Log in</a></li></ul></details>
+      <a class="ds-button ds-button--secondary ds-button--small" href="#start">Log in</a>
+      <a class="ds-button ds-button--small" href="#start">Sign up</a>
+    </div>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-wrap">
+      <a class="ds-hero__pill" href="#changelog"><span class="ds-badge">New</span> Instant rollbacks are out of beta <span aria-hidden="true">&rarr;</span></a>
+      <h1 class="ds-hero__title">Ship every branch the moment it is pushed</h1>
+      <p class="ds-hero__lead">chronoskin builds each commit, gives it its own address and puts it in front of your team in under a minute. Production is one more push.</p>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--large" href="#start">Start deploying</a>
+        <a class="ds-button ds-button--secondary ds-button--large is-hover" href="#pricing">See pricing</a>
+      </div>
+      <code class="ds-hero__cmd"><b>$</b> npx chronoskin deploy --prod</code>
+
+      <div class="ds-frame" aria-label="A drawing of the deployments screen">
+        <div class="ds-frame__bar">
+          <span class="ds-frame__lights" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="ds-frame__path">harbour-api / deployments</span>
+          <span class="ds-badge ds-badge--success"><span class="ds-dot ds-dot--success"></span> Production healthy</span>
+        </div>
+        <div class="ds-frame__body">
+          <ul class="ds-frame__rows">
+            <li class="ds-frame__row is-current"><span class="ds-dot ds-dot--warning"></span><span class="ds-frame__name">fix/retry-on-timeout</span><span class="ds-mono">a41f9c2</span><span class="ds-mono">now</span></li>
+            <li class="ds-frame__row"><span class="ds-dot ds-dot--success"></span><span class="ds-frame__name">main</span><span class="ds-mono">7be02d1</span><span class="ds-mono">4m</span></li>
+            <li class="ds-frame__row"><span class="ds-dot ds-dot--success"></span><span class="ds-frame__name">feat/usage-export</span><span class="ds-mono">c93a771</span><span class="ds-mono">26m</span></li>
+            <li class="ds-frame__row"><span class="ds-dot ds-dot--danger"></span><span class="ds-frame__name">chore/bump-runtime</span><span class="ds-mono">19d4e0b</span><span class="ds-mono">1h</span></li>
+            <li class="ds-frame__row"><span class="ds-dot ds-dot--success"></span><span class="ds-frame__name">docs/webhooks</span><span class="ds-mono">52f8a36</span><span class="ds-mono">3h</span></li>
+            <li class="ds-frame__row"><span class="ds-dot"></span><span class="ds-frame__name">spike/edge-cache</span><span class="ds-mono">e07b115</span><span class="ds-mono">1d</span></li>
+          </ul>
+<pre class="ds-frame__log"><span class="ds-code__c">12:04:31</span>  Cloning harbour-api at a41f9c2
+<span class="ds-code__c">12:04:33</span>  Restored build cache (212 MB)
+<span class="ds-code__c">12:04:41</span>  <span class="ds-code__k">build</span>   compiled 148 modules in 7.6 s
+<span class="ds-code__c">12:04:44</span>  <span class="ds-code__k">test</span>    312 passed, 0 failed
+<span class="ds-code__c">12:04:52</span>  <span class="ds-code__k">deploy</span>  fra1, iad1, syd1
+<span class="ds-code__c">12:04:58</span>  <span class="ds-code__s">ready</span>   fix-retry-on-timeout.chronoskin.app</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-logos">
+    <div class="ds-wrap">
+      <ul class="ds-logos__row" aria-label="Teams that deploy with chronoskin">
+        <li class="ds-logos__name">Northwind</li>
+        <li class="ds-logos__name ds-logos__name--mono">tidal/io</li>
+        <li class="ds-logos__name ds-logos__name--light">Larkspur</li>
+        <li class="ds-logos__name ds-logos__name--italic">quanta</li>
+        <li class="ds-logos__name ds-logos__name--mono">OBERON</li>
+        <li class="ds-logos__name">Fieldnote</li>
+        <li class="ds-logos__name ds-logos__name--light">hello.kiln</li>
+      </ul>
+      <span class="ds-eyebrow">Trusted by 4,200 teams that ship every day</span>
+    </div>
+  </div>
+
+  <div class="ds-wrap">
+    <ul class="ds-stat" data-component="stats">
+      <li class="ds-stat__item"><span class="ds-stat__figure">38 s</span><span class="ds-stat__label">median build, cold cache</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">19</span><span class="ds-stat__label">regions, one command</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">99.99%</span><span class="ds-stat__label">uptime over 12 months</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">1.4 M</span><span class="ds-stat__label">deployments last month</span></li>
+    </ul>
+  </div>
+
+  <div class="ds-band ds-band--flush">
+    <div class="ds-wrap">
+      <div class="ds-section__head">
+        <span class="ds-eyebrow ds-eyebrow--accent">Fig. 01 / the pipeline</span>
+        <h2 class="ds-section__title"><strong>One pipeline from push to production.</strong> Previews, checks, regions and rollbacks are the same few lines of configuration.</h2>
+      </div>
+      <div class="ds-grid" data-component="grid">
+        <div class="ds-grid__cell ds-grid__cell--wide">
+          <div class="ds-grid__art" aria-hidden="true"><svg viewBox="0 0 360 120" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 90h340"/><path d="M70 90c30 0 30-50 60-50h90c30 0 30 50 60 50" stroke-dasharray="4 4"/><circle cx="40" cy="90" r="5" fill="currentColor"/><circle cx="130" cy="40" r="5"/><circle cx="175" cy="40" r="5"/><circle cx="220" cy="40" r="5" fill="currentColor"/><circle cx="310" cy="90" r="5" fill="currentColor"/><circle cx="175" cy="90" r="5"/><path d="M118 18h114v10H118z" opacity="0.5"/></svg></div>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title">A preview for every branch</h3>
+            <p class="ds-grid__text">Each push gets its own address with its own environment. Reviewers open a link, not a terminal.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell">
+          <div class="ds-grid__art ds-grid__art--2" aria-hidden="true"><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="80" cy="60" r="46"/><ellipse cx="80" cy="60" rx="20" ry="46"/><path d="M34 60h92 M42 36h76 M42 84h76"/><circle cx="62" cy="36" r="4" fill="currentColor"/><circle cx="110" cy="60" r="4" fill="currentColor"/><circle cx="74" cy="84" r="4" fill="currentColor"/></svg></div>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title">Nineteen regions</h3>
+            <p class="ds-grid__text">Name the regions in one line. Traffic goes to the nearest healthy one.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell">
+          <div class="ds-grid__art ds-grid__art--3" aria-hidden="true"><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 30h120v60H20z"/><path d="M34 48l10 8 16-16" stroke-width="2"/><path d="M72 48h54 M34 72h40 M84 72h42" opacity="0.6"/></svg></div>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title">Checks that block</h3>
+            <p class="ds-grid__text">Tests, type checks and your own scripts run before anything is promoted.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell">
+          <div class="ds-grid__art ds-grid__art--4" aria-hidden="true"><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 100V20 M16 100h132"/><path d="M28 100V70h14v30 M52 100V52h14v48 M76 100V62h14v38 M100 100V34h14v66 M124 100V44h14v56"/></svg></div>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title">Logs and timings</h3>
+            <p class="ds-grid__text">Every request, build step and cold start, kept for thirty days and searchable.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell">
+          <div class="ds-grid__art" aria-hidden="true"><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 60h112"/><circle cx="40" cy="60" r="6"/><circle cx="80" cy="60" r="6" fill="currentColor"/><circle cx="120" cy="60" r="6"/><path d="M120 44c-10-18-34-18-40 2" stroke-dasharray="4 4"/><path d="M76 38l4 9 9-5"/></svg></div>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title">Rollback in one step</h3>
+            <p class="ds-grid__text">Any earlier deployment is still there. Point production back at it in a second.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-band">
+    <div class="ds-wrap">
+      <div class="ds-cols">
+        <div>
+          <div class="ds-colhead"><h2 class="ds-colhead__title">Configured in one file</h2><a class="ds-link ds-link--more" href="#start">Read the guide</a></div>
+          <section class="ds-panel" data-component="panel">
+            <div class="ds-panel__head">
+              <h3 class="ds-panel__title">chronoskin.json</h3>
+              <span class="ds-badge ds-badge--outline ds-badge--mono">v3</span>
+            </div>
+            <div class="ds-code">
+<pre class="ds-code__body">{
+  <span class="ds-code__k">"build"</span>:   <span class="ds-code__s">"npm run build"</span>,
+  <span class="ds-code__k">"output"</span>:  <span class="ds-code__s">"dist"</span>,
+  <span class="ds-code__k">"regions"</span>: [<span class="ds-code__s">"fra1"</span>, <span class="ds-code__s">"iad1"</span>, <span class="ds-code__s">"syd1"</span>],
+  <span class="ds-code__k">"checks"</span>:  [<span class="ds-code__s">"npm test"</span>, <span class="ds-code__s">"npm run types"</span>],
+  <span class="ds-code__k">"preview"</span>: { <span class="ds-code__k">"branches"</span>: <span class="ds-code__s">"*"</span>, <span class="ds-code__k">"expires"</span>: <span class="ds-code__s">"14d"</span> },
+  <span class="ds-code__k">"rollback"</span>: { <span class="ds-code__k">"onErrorRate"</span>: <span class="ds-code__n">0.02</span> }
+}</pre>
+            </div>
+          </section>
+        </div>
+        <div>
+          <div class="ds-colhead"><h2 class="ds-colhead__title">Latest changes</h2><a class="ds-link ds-link--more" href="#changelog">Changelog</a></div>
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item">
+              <span class="ds-list__meta">12 Mar 2025</span>
+              <div><a class="ds-list__title" href="#changelog">Instant rollbacks</a> <span class="ds-badge ds-badge--new">New</span><p class="ds-list__text">Promote any earlier deployment without a rebuild.</p></div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__meta">27 Feb 2025</span>
+              <div><a class="ds-list__title" href="#changelog">Build cache is shared across branches</a><p class="ds-list__text">Cold builds are 40% faster on average.</p></div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__meta">11 Feb 2025</span>
+              <div><a class="ds-list__title" href="#changelog">Two new regions: Osaka and Cape Town</a><p class="ds-list__text">Add <span class="ds-kbd">kix1</span> or <span class="ds-kbd">cpt1</span> to your regions.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-band">
+    <div class="ds-wrap">
+      <div class="ds-section__head">
+        <span class="ds-eyebrow ds-eyebrow--accent">Fig. 02 / the teams</span>
+        <h2 class="ds-section__title"><strong>What teams say after a month.</strong> Three of the 4,200 that ship every day.</h2>
+      </div>
+      <div class="ds-carousel" data-component="carousel">
+        <ul class="ds-carousel__track">
+          <li class="ds-carousel__slide"><p class="ds-carousel__quote">We stopped keeping a release calendar. A branch is pushed, the preview is there, and production is one more push.</p><div class="ds-carousel__person"><span class="ds-avatar" aria-hidden="true">IH</span><span><span class="ds-carousel__name">Ingrid Halvorsen</span><span class="ds-carousel__role">Head of platform, parcel carrier</span></span></div></li>
+          <li class="ds-carousel__slide"><p class="ds-carousel__quote">The rollback took one second on the day we needed it. Nobody had to remember how it works.</p><div class="ds-carousel__person"><span class="ds-avatar" aria-hidden="true">KO</span><span><span class="ds-carousel__name">Kofi Osei</span><span class="ds-carousel__role">Staff engineer, regional bank</span></span></div></li>
+          <li class="ds-carousel__slide"><p class="ds-carousel__quote">Reviewers open a link instead of a terminal. Our review time fell by half in the first month.</p><div class="ds-carousel__person"><span class="ds-avatar" aria-hidden="true">MK</span><span><span class="ds-carousel__name">Mira Kessler</span><span class="ds-carousel__role">Engineering lead, course platform</span></span></div></li>
+        </ul>
+        <div class="ds-carousel__nav"><span class="ds-carousel__dots"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></span><span>01 / 03</span><span class="ds-carousel__arrow is-disabled" aria-hidden="true"></span><span class="ds-carousel__arrow" aria-hidden="true"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-wrap">
+    <div class="ds-cta">
+      <div>
+        <h2 class="ds-cta__title">Your next push could already be live.</h2>
+        <p class="ds-cta__text">Free for personal projects. No card, no sales call.</p>
+      </div>
+      <a class="ds-button ds-button--inverse ds-button--large" href="#start">Start deploying</a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="pricing">
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb" data-component="breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#pricing">Pricing</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">Plans</li>
+          </ol>
+          <h1 class="ds-page-header__title">Pay for what you deploy</h1>
+          <p class="ds-page-header__text">Every plan has previews, rollbacks and all regions. You pay for seats and build minutes, nothing else.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#start">Talk to us</a>
+          <a class="ds-button" href="#start">Start free</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-stack">
+      <div class="ds-toolbar">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#pricing">Yearly</a></li>
+          <li><a class="ds-tabs__tab" href="#pricing">Monthly</a></li>
+          <li><a class="ds-tabs__tab" href="#pricing">Open source</a></li>
+        </ul>
+        <span class="ds-toolbar__note">Prices in US dollars, two months free when billed yearly.</span>
+      </div>
+
+      <div class="ds-plans">
+        <div class="ds-plan">
+          <h2 class="ds-plan__name">Hobby</h2>
+          <div><span class="ds-plan__price">$0</span><span class="ds-plan__per">forever, one seat</span></div>
+          <p class="ds-plan__text">For side projects and trying things out.</p>
+          <a class="ds-button ds-button--secondary" href="#start">Start free</a>
+          <ul class="ds-plan__items">
+            <li class="ds-plan__item">400 build minutes a month</li>
+            <li class="ds-plan__item">Previews for every branch</li>
+            <li class="ds-plan__item">3 regions</li>
+            <li class="ds-plan__item">Logs kept for 1 day</li>
+          </ul>
+        </div>
+        <div class="ds-plan ds-plan--featured">
+          <h2 class="ds-plan__name">Team <span class="ds-badge">Most teams</span></h2>
+          <div><span class="ds-plan__price">$20</span><span class="ds-plan__per">per seat, per month</span></div>
+          <p class="ds-plan__text">For teams that ship to production every day.</p>
+          <a class="ds-button" href="#start">Start a 14 day trial</a>
+          <ul class="ds-plan__items">
+            <li class="ds-plan__item">6,000 build minutes a month</li>
+            <li class="ds-plan__item">All 19 regions</li>
+            <li class="ds-plan__item">Instant rollbacks and blocking checks</li>
+            <li class="ds-plan__item">Logs kept for 30 days</li>
+          </ul>
+        </div>
+        <div class="ds-plan">
+          <h2 class="ds-plan__name">Scale</h2>
+          <div><span class="ds-plan__price">Custom</span><span class="ds-plan__per">from 50 seats</span></div>
+          <p class="ds-plan__text">For companies with compliance and uptime terms.</p>
+          <a class="ds-button ds-button--secondary" href="#start">Talk to us</a>
+          <ul class="ds-plan__items">
+            <li class="ds-plan__item">Unmetered build minutes</li>
+            <li class="ds-plan__item">Single sign-on and audit log</li>
+            <li class="ds-plan__item">99.99% uptime agreement</li>
+            <li class="ds-plan__item">A named engineer on call</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ds-cols ds-cols--wide">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">What each plan includes <span class="ds-tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">Limits are per workspace and reset on the first of the month.</span></span></h2><span class="ds-mono">per month</span></div>
+          <div class="ds-table__wrap">
+            <table class="ds-table" data-component="table">
+              <thead>
+                <tr><th scope="col">Limit</th><th scope="col" class="ds-table__num">Hobby</th><th scope="col" class="ds-table__num">Team</th><th scope="col" class="ds-table__num">Scale</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Build minutes</th><td class="ds-table__num">400</td><td class="ds-table__num">6,000</td><td class="ds-table__num">unmetered</td></tr>
+                <tr class="is-hover"><th scope="row">Concurrent builds</th><td class="ds-table__num">1</td><td class="ds-table__num">12</td><td class="ds-table__num">64</td></tr>
+                <tr><th scope="row">Bandwidth, GB</th><td class="ds-table__num">100</td><td class="ds-table__num">1,000</td><td class="ds-table__num">10,000</td></tr>
+                <tr><th scope="row">Regions</th><td class="ds-table__num">3</td><td class="ds-table__num">19</td><td class="ds-table__num">19</td></tr>
+                <tr><th scope="row">Log retention, days</th><td class="ds-table__num">1</td><td class="ds-table__num">30</td><td class="ds-table__num">365</td></tr>
+                <tr><th scope="row">Preview lifetime, days</th><td class="ds-table__num">7</td><td class="ds-table__num">14</td><td class="ds-table__num">90</td></tr>
+                <tr><th scope="row">Team seats</th><td class="ds-table__num">1</td><td class="ds-table__num">50</td><td class="ds-table__num">unmetered</td></tr>
+                <tr><th scope="row">Extra build minute</th><td class="ds-table__num">none</td><td class="ds-table__num">$0.004</td><td class="ds-table__num">$0.002</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot"><span>Usage resets on the first of the month.</span><a class="ds-link ds-link--more" href="#changelog">Limits changed in February</a></div>
+        </section>
+
+        <div class="ds-stack">
+          <section class="ds-panel">
+            <div class="ds-panel__head"><h2 class="ds-panel__title">Your plan</h2><span class="ds-badge ds-badge--success">Team, 8 seats</span></div>
+            <div class="ds-panel__body">
+              <p>Renews on 1 April 2025 for $1,600 a year. You have used 2,140 of 6,000 build minutes.</p>
+              <div class="ds-progress"><div class="ds-progress__head"><span>Build minutes, March</span><span class="ds-progress__value">2,140 / 6,000</span></div><progress class="ds-progress__bar" value="36" max="100">36%</progress></div>
+              <div class="ds-buttonrow" data-component="buttons">
+                <a class="ds-button" href="#pricing">Add seats</a>
+                <a class="ds-button ds-button--secondary" href="#pricing">Invoices</a>
+                <button class="ds-button" type="button" disabled>Upgrade</button>
+                <a class="ds-button ds-button--danger" href="#pricing">Cancel plan</a>
+              </div>
+            </div>
+          </section>
+          <div class="ds-dialog" data-component="dialog">
+            <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+              <div class="ds-dialog__head">
+                <h2 class="ds-dialog__title" id="dialog-title">Cancel the Team plan?</h2>
+                <a class="ds-dialog__close" href="#pricing" aria-label="Close"></a>
+              </div>
+              <div class="ds-dialog__body">
+                <p>Your projects move to Hobby on 1 April. Deployments in 16 regions will be stopped.</p>
+              </div>
+              <div class="ds-dialog__actions">
+                <a class="ds-button ds-button--secondary" href="#pricing">Keep the plan</a>
+                <a class="ds-button ds-button--danger" href="#pricing">Cancel plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="changelog">
+  <header class="ds-page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#changelog">Changelog</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">2025</li>
+          </ol>
+          <h1 class="ds-page-header__title">Changelog</h1>
+          <p class="ds-page-header__text">What shipped, in the order it shipped. New entries most weeks.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#start">Subscribe by e-mail</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-cols ds-cols--side">
+      <div class="ds-stack">
+        <article class="ds-entry">
+          <div class="ds-entry__meta"><span class="ds-mono">12 Mar 2025</span><span class="ds-badge ds-badge--new">New</span></div>
+          <div class="ds-prose" data-component="typography">
+            <h1>Instant rollbacks</h1>
+            <p class="ds-prose__lead">Production can now point at any earlier deployment without a rebuild.</p>
+            <p>Every deployment is kept as built. A rollback only moves the production address, so it takes <strong>about one second</strong> in every region.</p>
+            <h2>What changed</h2>
+            <ul>
+              <li>A rollback button on every deployment that was once in production</li>
+              <li>Automatic rollback when the error rate passes a limit you set</li>
+              <li>The audit log records who rolled back, and from where</li>
+            </ul>
+            <h3>From the command line</h3>
+            <p>Run <code>chronoskin rollback</code> to go back one step, or pass a deployment id to pick one.</p>
+          </div>
+        </article>
+        <article class="ds-entry">
+          <div class="ds-entry__meta"><span class="ds-mono">27 Feb 2025</span><span class="ds-badge ds-badge--success">Faster</span></div>
+          <div class="ds-prose">
+            <h2>Build cache is shared across branches</h2>
+            <p>A new branch starts from the cache of the branch it was cut from. Cold builds are 40% faster on average.</p>
+            <div class="ds-code">
+              <div class="ds-code__head"><span class="ds-code__name">terminal</span><span>before / after</span></div>
+<pre class="ds-code__body"><span class="ds-code__c"># feat/usage-export, first build</span>
+<span class="ds-code__k">build</span>  1m 04s   <span class="ds-code__c">cache miss</span>
+<span class="ds-code__k">build</span>     38s   <span class="ds-code__s">cache from main</span></pre>
+            </div>
+            <p>Nothing to switch on. To opt a branch out, set <code>cache: false</code>.</p>
+          </div>
+        </article>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#changelog">Newer</a></li>
+          <li><a class="ds-pagination__link is-current" href="#changelog">1</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">2</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">3</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">4</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">Older</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Releases</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current">Instant rollbacks <span class="ds-mono">12 Mar</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changelog">Shared build cache</a> <span class="ds-mono">27 Feb</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changelog">Osaka and Cape Town</a> <span class="ds-mono">11 Feb</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changelog">Blocking checks</a> <span class="ds-mono">29 Jan</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changelog">Log search</a> <span class="ds-mono">14 Jan</span></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Labels</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-badgerow" data-component="badge">
+              <span class="ds-badge">Release</span>
+              <span class="ds-badge ds-badge--new">New</span>
+              <span class="ds-badge ds-badge--quiet">Docs</span>
+              <span class="ds-badge ds-badge--success">Faster</span>
+              <span class="ds-badge ds-badge--warning">Deprecated</span>
+              <span class="ds-badge ds-badge--danger">Breaking</span>
+            </div>
+          </div>
+        </section>
+        <div class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4l11 5v7c0 6-4.5 10-11 12C9.5 26 5 22 5 16V9z"/><path d="M11 16l4 4 6-7"/></svg>
+          <h2 class="ds-empty__title">No breaking changes in 2025</h2>
+          <p class="ds-empty__text">Nothing you deployed last year needs editing to run today.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#changelog">See 2024</a>
+        </div>
+        <p class="ds-linkrow" data-component="links">
+          <a class="ds-link" href="#changelog">RSS feed</a>
+          <a class="ds-link is-visited" href="#changelog">Roadmap</a>
+          <a class="ds-link is-hover" href="#changelog">Status page</a>
+          <a class="ds-link is-active" href="#changelog">Release notes</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="start">
+  <header class="ds-page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">chronoskin</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">Start</li>
+          </ol>
+          <h1 class="ds-page-header__title">Create your workspace</h1>
+          <p class="ds-page-header__text">Two minutes from here to your first deployment. Free while you try it.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#pricing">Compare plans</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-cols">
+      <div class="ds-stack">
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">You were invited by Imre Solvang.</span> Joining adds you to the Northwind workspace.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">That workspace address is taken.</span> Choose another one below.</p>
+        </div>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Workspace</h2><span class="ds-mono">step 1 of 2</span></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#start">
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">Your name</span><input class="ds-form__input" type="text" value="Ada Okonkwo"></label>
+                <label class="ds-form__field"><span class="ds-form__label">Work e-mail</span><input class="ds-form__input is-focus" type="email" placeholder="you@company.dev"></label>
+              </div>
+              <label class="ds-form__field"><span class="ds-form__label">Workspace address</span><input class="ds-form__input ds-form__input--mono is-error" type="text" value="northwind.chronoskin.app"><span class="ds-form__error">This address already belongs to another workspace.</span></label>
+              <label class="ds-form__field"><span class="ds-form__label">Where is your code?</span>
+                <select class="ds-form__select"><option>A Git host, connect in the next step</option><option>On this computer, deploy from the terminal</option><option>Nowhere yet, start from a template</option></select>
+              </label>
+              <label class="ds-form__field"><span class="ds-form__label">What are you deploying?</span><textarea class="ds-form__textarea" rows="3" placeholder="An API, a site, workers. A sentence is enough."></textarea><span class="ds-form__hint">Only used to pick sensible defaults for your first project.</span></label>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Send me the changelog, about twice a month</span></label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Create workspace</button>
+                <a class="ds-button ds-button--secondary" href="#home">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">What happens next</h2></div>
+          <div class="ds-panel__body">
+            <ol class="ds-steps">
+              <li class="ds-steps__item"><span><span class="ds-steps__title">Connect a repository</span>Pick the branches that get previews.</span></li>
+              <li class="ds-steps__item"><span><span class="ds-steps__title">Push a commit</span>The first build takes about a minute.</span></li>
+              <li class="ds-steps__item"><span><span class="ds-steps__title">Open the preview</span>Share its address with your team.</span></li>
+              <li class="ds-steps__item"><span><span class="ds-steps__title">Promote to production</span>One command, or merge to main.</span></li>
+            </ol>
+          </div>
+        </section>
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">Prefer the terminal?</span><span class="ds-kbd">zsh</span></div>
+<pre class="ds-code__body"><span class="ds-code__c"># install, sign in, deploy the folder you are in</span>
+<span class="ds-code__k">$</span> npm install --global chronoskin
+<span class="ds-code__k">$</span> chronoskin login
+<span class="ds-code__k">$</span> chronoskin deploy
+<span class="ds-code__s">ready</span>  first-project.chronoskin.app</pre>
+        </div>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">On the free plan</h2><a class="ds-link ds-link--more" href="#pricing">All limits</a></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-panel__key">Build minutes</span><span class="ds-mono">400 / month</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Regions</span><span class="ds-mono">3</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Previews</span><span class="ds-mono">every branch</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__body"><div class="ds-accordion" data-component="accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__summary">Do I need a card to start?</summary><p class="ds-accordion__body">No. The free plan asks for a card only when you move to a paid one.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__summary">What happens at 400 build minutes?</summary><p class="ds-accordion__body">Builds wait until the first of the month, or you move to Team and they continue at once.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__summary">Can I keep my own domain?</summary><p class="ds-accordion__body">Yes, on every plan. Point the record at us and the certificate is issued in a minute.</p></details></div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div class="ds-footer__brand">
+      <a class="ds-brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <p class="ds-footer__about">Deployments for teams that would rather be writing code.</p>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Product</h2>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#home">Overview</a></li>
+        <li><a class="ds-footer__link" href="#pricing">Pricing</a></li>
+        <li><a class="ds-footer__link" href="#changelog">Changelog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Developers</h2>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#start">Quickstart</a></li>
+        <li><a class="ds-footer__link" href="#start">Command line</a></li>
+        <li><a class="ds-footer__link" href="#changelog">Release notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="ds-footer__title">Company</h2>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#home">About</a></li>
+        <li><a class="ds-footer__link" href="#home">Security</a></li>
+        <li><a class="ds-footer__link" href="#home">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ds-footer__line">
+    <span>&copy; 2025 chronoskin</span>
+    <span>Built and served from 19 regions</span>
+    <span class="ds-footer__status"><span class="ds-dot ds-dot--success"></span> All systems normal</span>
+  </div>
+</footer>
+
+</body>
+</html>

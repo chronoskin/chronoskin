@@ -1,0 +1,108 @@
+/* The saved page: cards drawn live from each style's specimen, the question
+   asked before one is removed, and the box shown when there are none. */
+.saved {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.saved .card {
+  position: relative;
+}
+
+.saved .card:hover {
+  border-color: var(--muted);
+}
+
+.saved .card.is-asking {
+  border-color: var(--ink);
+}
+
+.saved .thumb {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--sunken);
+  border-bottom: 1px solid var(--line);
+}
+
+.saved .thumb iframe {
+  flex: none;
+  border: 0;
+  background: none;
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+.saved .cover {
+  display: grid;
+  gap: 3px;
+  padding: 12px 14px 14px;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The link covers the whole card, picture included. */
+.saved .cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.saved .cover .name {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.saved .cover .id {
+  font: 12px var(--mono);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved .heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* Takes the place of the card's name, above the link that covers the card. */
+.saved .confirm {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 8px;
+  min-height: 62px;
+  padding: 0 12px;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.saved .confirm .btn {
+  height: 36px;
+}
+
+.empty {
+  padding: 48px 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty p {
+  margin: 0 0 14px;
+}

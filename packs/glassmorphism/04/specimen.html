@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: every account on one desk</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-page__inner">
+
+  <div class="ds-page__window">
+
+    <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__inner">
+      <ul class="ds-nav__list">
+        <li><a class="ds-nav__link" href="#home"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9.5 10 3l7 6.5V17h-4.5v-4.5h-5V17H3z"/></svg>Home</a></li>
+        <li><a class="ds-nav__link" href="#transfers"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h12l-3-3M16 13H4l3 3"/></svg>Transfers</a></li>
+        <li><a class="ds-nav__link" href="#guide"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 16V9M8.5 16V4M13 16v-5M17 16V7"/></svg>Guide</a></li>
+      </ul>
+      <div class="ds-menu ds-menu--side" data-component="menu">
+<a class="ds-avatar ds-nav__foot ds-menu__trigger" data-component="avatar" href="#home" aria-label="Account of Runa Meli">RM</a>
+<ul class="ds-menu__list">
+<li><a class="ds-menu__link" href="#home">Runa Meli</a></li>
+<li><a class="ds-menu__link" href="#transfers">My approvals</a></li>
+<li><a class="ds-menu__link" href="#guide">Help</a></li>
+</ul>
+</div>
+    </div>
+    </header>
+
+    <div class="ds-page__body">
+
+      <div class="ds-page__toolbar">
+        <a class="ds-brand" data-component="brand" href="#home">
+          <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="13" height="13" rx="4" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="12.5" height="12.5" rx="4" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8"/></svg></span>
+          <span class="ds-brand__name">chronoskin</span>
+        </a>
+        <div class="ds-page__search">
+          <svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 4 4"/></svg>
+          <span class="ds-page__search-text">Search accounts and transfers</span>
+          <span class="ds-page__key">/</span>
+        </div>
+        <div class="ds-page__tools">
+          <span class="ds-badge" data-component="badge">3 to approve</span>
+          <a class="ds-button ds-button--secondary" href="#transfers">Export</a>
+          <a class="ds-button" href="#transfer">New transfer</a>
+        </div>
+      </div>
+
+      <section class="ds-view ds-view--home" id="home">
+
+        <section class="ds-hero" data-component="hero">
+          <div class="ds-hero__text">
+            <h1 class="ds-hero__title">Every account on one desk</h1>
+            <p class="ds-hero__lead">Balances, payment runs and approvals for the whole co-op, checked against the bank each morning.</p>
+            <div class="ds-hero__actions">
+              <a class="ds-button ds-button--large" href="#transfers">See the payment run</a>
+              <a class="ds-button ds-button--secondary ds-button--large" href="#guide">How a run works</a>
+            </div>
+          </div>
+          <div class="ds-hero__gauge" aria-hidden="true">
+            <svg class="ds-hero__ring" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="10"><circle cx="60" cy="60" r="52"/></svg>
+            <svg class="ds-hero__ring ds-hero__ring--value" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"><circle cx="60" cy="60" r="52" stroke-dasharray="222 327"/></svg>
+            <svg class="ds-hero__ring ds-hero__ring--alt" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><circle cx="60" cy="60" r="41" stroke-dasharray="98 258"/></svg>
+            <div class="ds-hero__readout">
+              <span class="ds-hero__figure">68%</span>
+              <span class="ds-hero__caption">of this year's budget</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="ds-page__panes">
+
+          <main class="ds-page__main">
+
+            <div class="ds-page__pane">
+              <div class="ds-notice__stack" data-component="notice">
+                <div class="ds-notice" role="status">
+                  <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+                  <div><span class="ds-notice__title">Bank holiday on Monday.</span> Transfers approved after 15:00 on Friday leave on Tuesday morning.</div>
+                </div>
+                <div class="ds-notice ds-notice--error" role="alert">
+                  <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+                  <div><span class="ds-notice__title">One transfer was returned.</span> The payment to Harrow Roofing came back with a closed account. Check the details and send it again.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ds-page__pane">
+              <h2 class="ds-page__pane-title">Balances <a class="ds-link" href="#transfers">All transfers</a></h2>
+              <section class="ds-grid" data-component="grid">
+                <div class="ds-grid__cell ds-grid__cell--1">
+                  <span class="ds-grid__label">Operating account</span>
+                  <svg class="ds-grid__spark" viewBox="0 0 200 72" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 52 20 46 40 50 60 34 80 40 100 22 120 30 140 18 160 26 180 10 200 16"/></svg>
+                  <span class="ds-grid__value">48,210.00</span>
+                  <span class="ds-grid__meta">Up 3,120.40 since the first of the month</span>
+                </div>
+                <div class="ds-grid__cell ds-grid__cell--2">
+                  <span class="ds-grid__label">Reserve</span>
+                  <span class="ds-grid__value">120,000.00</span>
+                  <span class="ds-grid__meta">Untouched since March</span>
+                </div>
+                <div class="ds-grid__cell ds-grid__cell--3">
+                  <span class="ds-grid__label">Due this week</span>
+                  <span class="ds-grid__value">6,430.50</span>
+                  <span class="ds-grid__meta">Seven payments, three to approve</span>
+                </div>
+                <div class="ds-grid__cell ds-grid__cell--4">
+                  <span class="ds-grid__label">Repairs fund</span>
+                  <span class="ds-grid__value">17,905.20</span>
+                  <span class="ds-grid__meta">Enough for the roof work planned in autumn, with 2,400.00 to spare</span>
+<span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--85"></span></span>
+                </div>
+              </section>
+            </div>
+
+            <div class="ds-page__pane">
+              <h2 class="ds-page__pane-title">Recent activity</h2>
+              <ul class="ds-list" data-component="list">
+                <li class="ds-list__item">
+                  <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg></span>
+                  <div class="ds-list__body">
+                    <a class="ds-list__title" href="#transfers">Lift maintenance, second quarter</a>
+                    <span class="ds-list__meta"><span class="ds-list__dot"></span> Sent today, 08:15 · approved by Runa Meli</span>
+                  </div>
+                  <span class="ds-list__value">1,840.00</span>
+                </li>
+                <li class="ds-list__item">
+                  <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 4v12M5 11l5 5 5-5"/></svg></span>
+                  <div class="ds-list__body">
+                    <a class="ds-list__title" href="#transfers">Service charges, flats 1 to 24 <span class="ds-badge ds-badge--alt">New</span></a>
+                    <span class="ds-list__meta"><span class="ds-list__dot"></span> Received yesterday · 24 payments matched</span>
+                  </div>
+                  <span class="ds-list__value">9,600.00</span>
+                </li>
+                <li class="ds-list__item">
+                  <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg></span>
+                  <div class="ds-list__body">
+                    <a class="ds-list__title" href="#transfer">Harrow Roofing, gutter repair</a>
+                    <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Returned on Tuesday · account closed</span>
+                  </div>
+                  <span class="ds-list__value">620.00</span>
+                </li>
+                <li class="ds-list__item">
+                  <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h12l-3-3M16 13H4l3 3"/></svg></span>
+                  <div class="ds-list__body">
+                    <a class="ds-list__title" href="#transfers">Monthly move to the repairs fund</a>
+                    <span class="ds-list__meta"><span class="ds-list__dot"></span> Standing order · 3 days ago</span>
+                  </div>
+                  <span class="ds-list__value">1,500.00</span>
+                </li>
+              </ul>
+            </div>
+
+          </main>
+
+          <div class="ds-page__aside">
+
+            <aside class="ds-page__pane ds-sidebar" data-component="sidebar">
+              <h2 class="ds-sidebar__heading">Accounts</h2>
+              <ul class="ds-sidebar__list">
+                <li><a class="ds-sidebar__link is-current" href="#transfers">Operating <span class="ds-badge">7</span></a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Reserve <span class="ds-badge ds-badge--glass">0</span></a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Repairs fund <span class="ds-badge ds-badge--glass">2</span></a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Garden club <span class="ds-badge ds-badge--alt">New</span></a></li>
+              </ul>
+            </aside>
+
+            <div class="ds-page__pane">
+              <h2 class="ds-sidebar__heading">Saved views</h2>
+              <ul class="ds-sidebar__list">
+                <li><a class="ds-sidebar__link" href="#transfer">Waiting for approval</a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Returned by the bank</a></li>
+                <li><a class="ds-sidebar__link" href="#guide">Standing orders</a></li>
+              </ul>
+            </div>
+
+            <div class="ds-page__pane">
+              <section class="ds-panel" data-component="panel">
+                <h2 class="ds-panel__title">Next run <span class="ds-badge ds-badge--warning">Friday</span></h2>
+                <div class="ds-panel__body">
+                  Seven payments worth 6,430.50 are queued. Three still need a second approval before the cut-off at 15:00.
+                </div>
+              </section>
+            </div>
+
+            <div class="ds-page__pane">
+              <h2 class="ds-sidebar__heading">Payees on hold</h2>
+              <section class="ds-empty" data-component="empty">
+                <svg class="ds-empty__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="12" width="32" height="26" rx="4"/><path d="M8 28h10l2 4h8l2-4h10"/></svg>
+                <h2 class="ds-empty__title">No payees on hold</h2>
+                <p class="ds-empty__text">Nobody is paused right now. Put a payee on hold to keep them out of the next run.</p>
+                <a class="ds-button ds-button--secondary" href="#transfers">Hold a payee</a>
+              </section>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="ds-view" id="transfers">
+
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Alder Court</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Operating account</a></li>
+          <li class="ds-breadcrumb__item" aria-current="page">Transfers</li>
+        </ol>
+
+        <header class="ds-page-header" data-component="page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Transfers</h1>
+            <p class="ds-page-header__lead">Everything that left or is about to leave the operating account this month.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#guide">How a run works</a>
+            <a class="ds-button" href="#transfer">New transfer</a>
+          </div>
+        </header>
+
+        <dl class="ds-stat" data-component="stats">
+          <div class="ds-stat__item">
+            <dt class="ds-stat__label">Sent this month</dt>
+            <dd class="ds-stat__value">31,480.00 <span class="ds-stat__meta">41 transfers</span></dd>
+            <span class="ds-stat__bar ds-stat__bar--high"></span>
+          </div>
+          <div class="ds-stat__item">
+            <dt class="ds-stat__label">Queued</dt>
+            <dd class="ds-stat__value">6,430.50 <span class="ds-stat__meta">7 for Friday</span></dd>
+            <span class="ds-stat__bar"></span>
+          </div>
+          <div class="ds-stat__item">
+            <dt class="ds-stat__label">Waiting for approval</dt>
+            <dd class="ds-stat__value">3 <span class="ds-stat__meta">oldest 2 days</span></dd>
+            <span class="ds-stat__bar ds-stat__bar--low"></span>
+          </div>
+          <div class="ds-stat__item">
+            <dt class="ds-stat__label">Returned</dt>
+            <dd class="ds-stat__value">1 <span class="ds-stat__meta">since Tuesday</span></dd>
+            <span class="ds-stat__bar ds-stat__bar--low"></span>
+          </div>
+        </dl>
+
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#transfers" aria-current="true">All <span class="ds-badge ds-badge--glass">41</span></a></li>
+          <li><a class="ds-tabs__tab" href="#transfers">Queued</a></li>
+          <li><a class="ds-tabs__tab" href="#transfer">Needs approval</a></li>
+          <li><a class="ds-tabs__tab" href="#transfers">Returned</a></li>
+        </ul>
+
+        <div class="ds-page__pane ds-page__pane--flush">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">Payee</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="ds-table__opt">Requested by</th>
+                <th scope="col" class="ds-table__opt">Date</th>
+                <th scope="col" class="ds-table__num">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Northgate Lifts</a></td>
+                <td><span class="ds-badge ds-badge--success">Sent</span></td>
+                <td class="ds-table__meta ds-table__opt">Runa Meli</td>
+                <td class="ds-table__meta ds-table__opt">Today, 08:15</td>
+                <td class="ds-table__num">1,840.00</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Wren and Dale Cleaning</a></td>
+                <td><span class="ds-badge ds-badge--success">Sent</span></td>
+                <td class="ds-table__meta ds-table__opt">Otis Brandt</td>
+                <td class="ds-table__meta ds-table__opt">Yesterday</td>
+                <td class="ds-table__num">412.50</td>
+              </tr>
+              <tr class="is-hover">
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Fenwater Insurance</a></td>
+                <td><span class="ds-badge ds-badge--warning">Needs approval</span></td>
+                <td class="ds-table__meta ds-table__opt">Otis Brandt</td>
+                <td class="ds-table__meta ds-table__opt">Queued for Friday</td>
+                <td class="ds-table__num">3,208.00</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Harrow Roofing</a></td>
+                <td><span class="ds-badge ds-badge--danger">Returned</span></td>
+                <td class="ds-table__meta ds-table__opt">Lena Okafor</td>
+                <td class="ds-table__meta ds-table__opt">Tuesday</td>
+                <td class="ds-table__num">620.00</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Repairs fund</a></td>
+                <td><span class="ds-badge ds-badge--success">Sent</span></td>
+                <td class="ds-table__meta ds-table__opt">Standing order</td>
+                <td class="ds-table__meta ds-table__opt">3 days ago</td>
+                <td class="ds-table__num">1,500.00</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Alder Court garden club</a></td>
+                <td><span class="ds-badge ds-badge--warning">Needs approval</span></td>
+                <td class="ds-table__meta ds-table__opt">Lena Okafor</td>
+                <td class="ds-table__meta ds-table__opt">Queued for Friday</td>
+                <td class="ds-table__num">260.00</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#transfer">Calder Water</a></td>
+                <td><span class="ds-badge ds-badge--success">Sent</span></td>
+                <td class="ds-table__meta ds-table__opt">Standing order</td>
+                <td class="ds-table__meta ds-table__opt">5 days ago</td>
+                <td class="ds-table__num">938.40</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ds-page__status">
+            <span>Showing 8 to 14 of 41 transfers</span>
+            <nav aria-label="Pages">
+              <ul class="ds-pagination" data-component="pagination">
+                <li><a class="ds-pagination__link" href="#transfers">Previous</a></li>
+                <li><a class="ds-pagination__link" href="#transfers">1</a></li>
+                <li><a class="ds-pagination__link is-current" href="#transfers" aria-current="page">2</a></li>
+                <li><a class="ds-pagination__link" href="#transfers">3</a></li>
+                <li><a class="ds-pagination__link" href="#transfers">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="ds-view" id="transfer">
+
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Alder Court</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#transfers">Transfers</a></li>
+          <li class="ds-breadcrumb__item" aria-current="page">Fenwater Insurance</li>
+        </ol>
+
+        <header class="ds-page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Fenwater Insurance <span class="ds-badge ds-badge--warning">Needs approval</span></h1>
+            <p class="ds-page-header__lead">Building insurance, second quarter. Queued for the run on Friday.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#transfers">Back to transfers</a>
+          </div>
+        </header>
+
+        <div class="ds-page__panes">
+
+          <div class="ds-page__main ds-page__pane">
+            <h2 class="ds-page__pane-title">Schedule a transfer</h2>
+            <form class="ds-form" data-component="form">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-payee">Payee</label>
+                <input class="ds-form__input" id="f-payee" type="text" value="Fenwater Insurance">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-account">From account</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-account">
+                    <option>Operating account</option>
+                    <option>Repairs fund</option>
+                    <option>Reserve</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-ref">Reference <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">The payee sees this on their statement.</span></span></label>
+                <input class="ds-form__input is-error" id="f-ref" type="text" value="POL 2291/" aria-invalid="true" aria-describedby="f-ref-error">
+                <span class="ds-form__error" id="f-ref-error">Enter the full policy reference.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-amount">Amount <span>3,208.00</span></label>
+                <input class="ds-form__range" id="f-amount" type="range" min="0" max="100" value="64">
+                <span class="ds-form__hint">The limit for one transfer from this account is 5,000.00.</span>
+              </div>
+              <div class="ds-form__field ds-form__field--wide">
+                <label class="ds-form__label" for="f-note">Note for the approver</label>
+                <textarea class="ds-form__textarea" id="f-note" placeholder="Why is this payment needed?"></textarea>
+              </div>
+              <label class="ds-form__check">
+                <input class="ds-form__checkbox" type="checkbox" checked>
+                Repeat on the first Friday of every quarter
+              </label>
+<div class="ds-switch__group">
+<label class="ds-switch" data-component="switch">
+<span class="ds-switch__text">Tell the payee<span class="ds-switch__hint">An email when the run leaves</span></span>
+<input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+</label>
+<label class="ds-switch">
+<span class="ds-switch__text">Ask for a second approval<span class="ds-switch__hint">Even below 2,500.00</span></span>
+<input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span>
+</label>
+</div>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Add to the run</button>
+                <a class="ds-button ds-button--secondary" href="#transfers">Save as draft</a>
+                <button class="ds-button ds-button--danger" type="button">Delete</button>
+                <button class="ds-button" type="button" disabled>Send now</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="ds-page__aside">
+            <div class="ds-page__pane">
+              <h2 class="ds-sidebar__heading">This payee</h2>
+              <ul class="ds-sidebar__list">
+                <li><a class="ds-sidebar__link" href="#transfers">Paid so far this year <span class="ds-badge ds-badge--glass">9,624.00</span></a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Last payment <span class="ds-badge ds-badge--glass">4 April</span></a></li>
+                <li><a class="ds-sidebar__link" href="#transfers">Details checked <span class="ds-badge ds-badge--success">Yes</span></a></li>
+              </ul>
+            </div>
+            <div class="ds-page__pane">
+              <section class="ds-panel">
+                <h2 class="ds-panel__title">Second approval</h2>
+                <div class="ds-panel__body">
+                  Anything above 2,500.00 waits for a second treasurer. Lena Okafor is next on the list this week.
+                </div>
+              </section>
+            </div>
+          </div>
+
+        </div>
+
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Delete this transfer?</h2>
+            <div class="ds-dialog__body">It is taken out of Friday's run. The payee and the reference stay in the history, so it can be scheduled again.</div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#transfer">Keep it</a>
+              <a class="ds-button ds-button--danger" href="#transfers">Delete</a>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <section class="ds-view" id="guide">
+
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Alder Court</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#guide">Help</a></li>
+          <li class="ds-breadcrumb__item" aria-current="page">Payment runs</li>
+        </ol>
+
+        <header class="ds-page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Guide</h1>
+            <p class="ds-page-header__lead">What a payment run is, who approves it and what holds it back.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button" href="#transfers">See this week's run</a>
+          </div>
+        </header>
+
+        <div class="ds-page__panes">
+
+          <div class="ds-page__main ds-page__pane">
+            <article class="ds-prose" data-component="typography">
+              <h1>How a payment run works</h1>
+              <p class="ds-prose__lead">Payments are gathered through the week and leave together, once two people have looked at them.</p>
+            <div class="ds-prose__cols">
+            <div class="ds-prose__col">
+              <p>A run is a list of transfers with one date. Anyone on the desk can add to it; only a <strong>treasurer</strong> can approve it. Each transfer keeps the field <code>requested_by</code>, so a question always has someone to go to.</p>
+              <h2>Approvals</h2>
+              <p>A run needs two approvals before the cut-off at 15:00. After that it is locked and sent to the bank as one file.</p>
+              </div>
+            <div class="ds-prose__col">
+            <h3>What stops a run</h3>
+              <ul>
+                <li>A transfer larger than the limit of the account.</li>
+                <li>A payee whose details changed in the last seven days.</li>
+                <li>A balance that would fall below the agreed floor.</li>
+              </ul>
+              <pre class="ds-prose__code">run:      friday
+    cutoff:   15:00
+    approve:  2 of 3
+    floor:    5,000.00</pre>
+              <p class="ds-link__sample" data-component="links">
+                <a class="ds-link" href="#transfers">Normal link</a>
+                <a class="ds-link is-visited" href="#transfers">Visited link</a>
+                <a class="ds-link is-hover" href="#transfers">Hovered link</a>
+                <a class="ds-link is-active" href="#transfers">Active link</a>
+                <a class="ds-link ds-link--quiet" href="#transfers">Quiet link</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="ds-page__aside">
+            <div class="ds-page__pane">
+              <h2 class="ds-sidebar__heading">In this guide</h2>
+              <ul class="ds-sidebar__list">
+                <li><a class="ds-sidebar__link is-current" href="#guide">How a payment run works</a></li>
+                <li><a class="ds-sidebar__link" href="#guide">Adding a payee</a></li>
+                <li><a class="ds-sidebar__link" href="#guide">Standing orders</a></li>
+                <li><a class="ds-sidebar__link" href="#guide">When the bank returns a transfer</a></li>
+              </ul>
+            </div>
+<div class="ds-page__pane">
+<div class="ds-accordion" data-component="accordion">
+<details class="ds-accordion__item" open>
+<summary class="ds-accordion__summary">Who may approve?</summary>
+<p class="ds-accordion__body">Any treasurer who did not add the transfer.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">What if the cut-off passes?</summary>
+<p class="ds-accordion__body">The run is locked at 15:00 and anything unapproved moves to the next one.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">Can a sent transfer be recalled?</summary>
+<p class="ds-accordion__body">No. Ask the payee to return it and record it as received.</p>
+</details>
+</div>
+</div>
+            <div class="ds-page__pane">
+              <section class="ds-panel">
+                <h2 class="ds-panel__title">This week <span class="ds-badge ds-badge--warning">Friday</span></h2>
+                <div class="ds-panel__body">
+                  Seven payments are queued and three still wait for a second approval. <a class="ds-link" href="#transfers">Open the run</a>
+                </div>
+              </section>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <footer class="ds-footer" data-component="footer">
+        <span>chronoskin · Alder Court housing co-op · synced 09:42</span>
+        <ul class="ds-footer__links">
+          <li><a class="ds-footer__link" href="#transfers">Transfers</a></li>
+          <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+          <li><a class="ds-footer__link" href="#home">Home</a></li>
+        </ul>
+      </footer>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* The sticky options bar: on the home page a select, the year range and
+   Generate; on the saved page a filter and a count. */
+.toolbar {
+  position: sticky;
+  top: calc(var(--top) + 10px);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 28px;
+  border: 1px solid transparent;
+}
+
+/* A square slab of the page colour, 12px larger than the bar all round: it
+   covers the gap under the header and a chosen card's outline at the sides,
+   so what scrolls by never touches the bar. */
+.toolbar::before {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  z-index: -2;
+  background: var(--bg);
+}
+
+/* The bar's face, on a layer of its own so that it lies over the slab. */
+.toolbar::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 14px 24px rgb(0 0 0 / 0.1);
+}
+
+.toolbar .cselect {
+  flex: none;
+  width: 320px;
+}
+
+.toolbar .cselect > summary {
+  height: 42px;
+}
+
+.toolbar .go {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.toolbar .go .btn {
+  min-width: 180px;
+  height: 42px;
+}
+
+.toolbar .count {
+  color: var(--muted);
+  font: 12px var(--mono);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  /* As wide as the longest count ("29 eras"), so the slider beside it
+     keeps its length when the number loses a digit. */
+  min-width: 7ch;
+  text-align: right;
+}
+
+.toolbar > .count {
+  margin-left: auto;
+  padding: 0 8px;
+}
+
+@media (max-width: 720px) {
+  .toolbar {
+    position: relative;
+    top: auto;
+    padding: 12px;
+  }
+  .toolbar::before {
+    display: none;
+  }
+  .toolbar .cselect {
+    flex: 1 1 100%;
+    width: auto;
+  }
+  .toolbar .go {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+  .toolbar .go .btn {
+    flex: 1;
+    min-width: 0;
+  }
+  /* The saved page, whose count is the bar's own child: the count above,
+     the select across the full width. */
+  .toolbar:has(.cselect):has(> .count) {
+    display: grid;
+    gap: 10px;
+    padding: 12px 14px 14px;
+  }
+  .toolbar:has(.cselect):has(> .count) .count {
+    grid-row: 1;
+    justify-self: end;
+    margin: 0;
+    padding: 0;
+    line-height: 16px;
+  }
+}

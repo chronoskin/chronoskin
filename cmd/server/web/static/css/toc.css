@@ -1,0 +1,45 @@
+/* The list of sections beside a document, with a marker that slides to
+   the section being read. */
+.toc {
+  position: sticky;
+  top: calc(var(--top) + 28px);
+  display: grid;
+  gap: 2px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+
+.toc a {
+  padding: 6px 10px;
+  border-radius: var(--radius-control);
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.toc a:hover, .toc a[aria-current] {
+  color: var(--ink);
+}
+
+.toc .marker {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: var(--ink);
+  transition: transform 0.2s ease, height 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc .marker, .toc a {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .toc {
+    display: none;
+  }
+}

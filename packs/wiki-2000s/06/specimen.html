@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: travel guide wiki specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<svg class="ds-sprite" width="0" height="0" aria-hidden="true">
+  <symbol id="i-info" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7v4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="4.7" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-in" viewBox="0 0 16 16"><path d="M2 11h12M3 11l1.5-5h7L13 11M5 13.5h.01M11 13.5h.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-see" viewBox="0 0 16 16"><path d="M1.5 8S4 3.5 8 3.5 14.5 8 14.5 8 12 12.5 8 12.5 1.5 8 1.5 8z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="2" fill="currentColor"/></symbol>
+  <symbol id="i-do" viewBox="0 0 16 16"><path d="M4 14.5V2M4 2.5h8l-2 3 2 3H4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eat" viewBox="0 0 16 16"><path d="M4 1.5v13M2 1.5v4a2 2 0 0 0 4 0v-4M11.5 14.5v-13c-2 1-2.5 4-2.5 7h2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-sleep" viewBox="0 0 16 16"><path d="M1.5 3v10M1.5 10.5h13V13M14.5 10.5V8a2 2 0 0 0-2-2H7v4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="4.3" cy="7.5" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-next" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10.8 5.2L9 9 5.2 10.8 7 7z" fill="currentColor"/></symbol>
+  <symbol id="i-scene" viewBox="0 0 230 120"><circle cx="176" cy="34" r="16" fill="currentColor"/><path d="M0 84l38-34 30 22 34-40 46 44 30-18 52 30v32H0z" fill="currentColor" opacity="0.55"/><path d="M0 100c20-6 40-6 58 0s38 6 58 0 38-6 58 0 38 6 56 0v20H0z" fill="currentColor" opacity="0.3"/><path d="M96 96V70l16 18zM94 98h22l-4 6H98z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__top">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 4.5 6.5 4 3 4.5V19c3.5-.5 7 0 9 2c2-2 5.5-2.5 9-2V4.5c-3.5-.5-7 0-9 2z"/><line x1="12" y1="6.5" x2="12" y2="21"/></svg></span>
+        <span class="ds-brand__text">
+          <span class="ds-brand__name">chronoskin</span>
+          <span class="ds-brand__tag">the travel guide that travellers write</span>
+        </span>
+      </a>
+      <div class="ds-nav__side">
+        <form class="ds-nav__search" action="#destination">
+          <input class="ds-form__input ds-nav__field" type="text" aria-label="Find a place" value="Port Varen">
+          <button class="ds-button" type="submit">Go</button>
+        </form>
+        <ul class="ds-nav__personal">
+          <li><a class="ds-nav__personal-link" href="#add">Signed in as Ilse</a></li>
+          <li><a class="ds-nav__personal-link" href="#region">My trips</a></li>
+          <li><a class="ds-nav__personal-link" href="#home">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="ds-nav__menu">
+      <li><a class="ds-nav__link" href="#home">Welcome</a></li>
+      <li><a class="ds-nav__link" href="#destination"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg>Destination guide</a></li>
+      <li><a class="ds-nav__link" href="#region"><svg class="ds-icon" aria-hidden="true"><use href="#i-next"/></svg>Regions</a></li>
+      <li><a class="ds-nav__link" href="#add"><svg class="ds-icon" aria-hidden="true"><use href="#i-do"/></svg>Add a listing</a></li>
+    </ul>
+  </header>
+
+  <div class="ds-page__sheet">
+
+    <!-- ============ home ============ -->
+    <section class="ds-view ds-view--home" id="home">
+      <div class="ds-view__body">
+        <section class="ds-hero" data-component="hero">
+          <div>
+            <h1 class="ds-hero__title">Guides to everywhere, written by the people who went</h1>
+            <p class="ds-hero__lead">chronoskin is an open travel guide. Read how to get in, what to see and where to sleep, then fix what has changed since.</p>
+            <p class="ds-hero__action">
+              <a class="ds-button" href="#destination">Read this month's guide</a>
+              <a class="ds-button ds-button--secondary" href="#add">Add a place you know</a>
+            </p>
+          </div>
+          <span class="ds-hero__scene"><svg viewBox="0 0 230 120" aria-hidden="true"><use href="#i-scene"/></svg></span>
+        </section>
+
+        <dl class="ds-stat" data-component="stats">
+          <div class="ds-stat__item"><dd class="ds-stat__value">9,640</dd><dt class="ds-stat__label">destination guides</dt></div>
+          <div class="ds-stat__item"><dd class="ds-stat__value">58,300</dd><dt class="ds-stat__label">listings</dt></div>
+          <div class="ds-stat__item"><dd class="ds-stat__value">41</dd><dt class="ds-stat__label">phrasebooks</dt></div>
+          <div class="ds-stat__item"><dd class="ds-stat__value">3,120</dd><dt class="ds-stat__label">travellers writing</dt></div>
+        </dl>
+
+          <div class="ds-extras"><label class="ds-meter">Guides at usable status <progress class="ds-progress" value="72" max="100">72%</progress> 72%</label></div>
+        <div class="ds-trio">
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Destination of the month</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line"><a class="ds-link ds-link--strong" href="#destination">Port Varen</a> is a harbour town of slate roofs and fish smokers at the mouth of a tidal river. Come for the lighthouse walk and the Thursday market; stay for the ferry to the outer islands.</p>
+              <p class="ds-panel__more"><a class="ds-link" href="#destination">Read the guide</a></p>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Off the beaten path</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line"><a class="ds-link ds-link--strong" href="#destination">The Hollow Dunes</a> lie two hours on foot from the last bus stop. There is no shop and no shade, and on a clear evening no better view on the coast.</p>
+              <p class="ds-panel__more"><a class="ds-link" href="#region">More quiet places</a></p>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Notes from the road</h2>
+            <div class="ds-panel__body">
+              <ul class="ds-list" data-component="list">
+                <li class="ds-list__item"><a class="ds-link" href="#destination">Island ferry</a> runs a winter timetable from 1 October. <span class="ds-list__meta">Port Varen &middot; noted 3 days ago</span></li>
+                <li class="ds-list__item"><a class="ds-link" href="#region">Coast road</a> is closed at the north bridge. <span class="ds-list__meta">Saltmarsh Coast &middot; noted last week</span></li>
+                <li class="ds-list__item"><a class="ds-link ds-link--new" href="#add">Kestrel Point hostel</a> has reopened. <span class="ds-list__meta">no guide yet &middot; <span class="ds-badge" data-component="badge">new</span></span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <h2 class="ds-section">Where do you want to go?</h2>
+        <ul class="ds-grid" data-component="grid">
+          <li class="ds-grid__cell"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-next"/></svg></span><span><a class="ds-grid__name" href="#region">Saltmarsh Coast</a><span class="ds-grid__meta">14 towns, 3 islands, one long beach</span></span></li>
+          <li class="ds-grid__cell ds-grid__cell--2"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg></span><span><a class="ds-grid__name" href="#region">The Amber Plain</a><span class="ds-grid__meta">Wheat country, windmills and river towns</span></span></li>
+          <li class="ds-grid__cell ds-grid__cell--3"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-do"/></svg></span><span><a class="ds-grid__name" href="#region">Greywater Hills</a><span class="ds-grid__meta">Walking routes, huts and cold lakes</span></span></li>
+          <li class="ds-grid__cell ds-grid__cell--4"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-eat"/></svg></span><span><a class="ds-grid__name" href="#region">The Old Capital</a><span class="ds-grid__meta">Markets, tram lines and late kitchens</span></span></li>
+          <li class="ds-grid__cell ds-grid__cell--3"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-sleep"/></svg></span><span><a class="ds-grid__name" href="#region">Outer Islands</a><span class="ds-grid__meta">Ferries, guesthouses and seabirds</span></span></li>
+          <li class="ds-grid__cell"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-info"/></svg></span><span><a class="ds-grid__name" href="#region">Travel topics</a><span class="ds-grid__meta">Phrasebooks, rail passes, packing lists</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ destination ============ -->
+    <section class="ds-view" id="destination">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Northern Shores</a></li>
+        <li>:</li>
+        <li><a class="ds-breadcrumb__link" href="#region">Saltmarsh Coast</a></li>
+        <li>:</li>
+        <li class="ds-breadcrumb__current">Port Varen</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div>
+          <h1 class="ds-page-header__title">Port Varen</h1>
+          <p class="ds-page-header__desc">A harbour town at the mouth of the Varen, the gateway to the outer islands.</p>
+          <div class="ds-extras"><span class="ds-tooltip"><a class="ds-link" href="#destination" aria-describedby="t6">Quay time</a><span class="ds-tooltip__tip" id="t6" role="tooltip">Check ferry times at the quay. The last boat may leave early.</span></span> <details class="ds-menu"><summary class="ds-menu__summary">Language</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#destination">English</a></li><li><a class="ds-menu__item" href="#destination">Cymraeg</a></li><li><a class="ds-menu__item" href="#destination">Norsk</a></li></ul></details></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button" href="#add">Add a listing</a></p>
+      </header>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#destination">Guide</a></li>
+        <li><a class="ds-tabs__tab" href="#destination">Discussion</a></li>
+        <li><a class="ds-tabs__tab" href="#add">Edit</a></li>
+        <li><a class="ds-tabs__tab" href="#region">History</a></li>
+        <li><a class="ds-tabs__tab" href="#destination">Print version</a></li>
+      </ul>
+      <div class="ds-layout">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">In this guide</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-info"/></svg><a class="ds-link" href="#destination">Understand</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-in"/></svg><a class="ds-link" href="#destination">Get in</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg><a class="ds-link" href="#destination">See</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-do"/></svg><a class="ds-link" href="#destination">Do</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-eat"/></svg><a class="ds-link" href="#destination">Eat</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-sleep"/></svg><a class="ds-link" href="#destination">Sleep</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-next"/></svg><a class="ds-link" href="#destination">Go next</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Quick facts</h2>
+            <dl class="ds-facts">
+              <div class="ds-facts__row"><dt class="ds-facts__term">Region</dt><dd class="ds-facts__value">Saltmarsh Coast</dd></div>
+              <div class="ds-facts__row"><dt class="ds-facts__term">People</dt><dd class="ds-facts__value">18,400</dd></div>
+              <div class="ds-facts__row"><dt class="ds-facts__term">Best months</dt><dd class="ds-facts__value">May to September</dd></div>
+              <div class="ds-facts__row"><dt class="ds-facts__term">Nearest rail</dt><dd class="ds-facts__value">Varen Quay</dd></div>
+              <div class="ds-facts__row"><dt class="ds-facts__term">Market day</dt><dd class="ds-facts__value">Thursday</dd></div>
+              <div class="ds-facts__row"><dt class="ds-facts__term">Guide status</dt><dd class="ds-facts__value"><span class="ds-badge ds-badge--success">usable</span></dd></div>
+            </dl>
+          </div>
+        </aside>
+        <div class="ds-prose" data-component="typography">
+          <p class="ds-notice"><span class="ds-notice__title">Ferry timetable changes on 1 October.</span> The last boat to the islands then leaves at 15:40. <a class="ds-notice__link" href="#add">Update the times</a> if you have a newer sheet.</p>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-info"/></svg>Understand<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <p>Port Varen grew up around its fish quay and still lands a catch every morning. The old town is a tangle of lanes behind the harbour wall; everything a visitor wants is within <strong>fifteen minutes on foot</strong> of the clock tower. Timetables use the 24-hour clock, written like <code>15:40</code>.</p>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-in"/></svg>Get in<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <h3>By train</h3>
+          <p>Trains from the Old Capital take about two hours and arrive at Varen Quay, right on the harbour. Buy a return; it costs little more than a single.</p>
+          <ul>
+            <li>Six trains a day, four on Sundays.</li>
+            <li>Bicycles travel free outside the morning rush.</li>
+          </ul>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg>See<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <ul class="ds-listing">
+            <li class="ds-listing__item"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg></span><span><span class="ds-listing__name">Varen Light</span>, end of the north mole. The white lighthouse; 96 steps to the gallery. <span class="ds-listing__meta">Open 10:00 to 17:00, closed Mondays &middot; allow an hour</span></span><span class="ds-listing__price">3.00</span></li>
+            <li class="ds-listing__item"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg></span><span><span class="ds-listing__name">Smokehouse Row</span>, Quay Lane. Nine working fish smokers in tarred sheds, best before noon. <span class="ds-listing__meta">Always open &middot; the lane is cobbled and steep</span></span><span class="ds-listing__price">free</span></li>
+          </ul>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-eat"/></svg>Eat<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <h3>Budget</h3>
+          <ul class="ds-listing">
+            <li class="ds-listing__item"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-eat"/></svg></span><span><span class="ds-listing__name">The Net Loft</span>, 4 Quay Lane. Smoked fish rolls and soup at a long shared table. <span class="ds-listing__meta">11:30 to 20:00 daily &middot; cash only</span></span><span class="ds-listing__price">4 to 7</span></li>
+          </ul>
+          <h3>Splurge</h3>
+          <div class="ds-empty" data-component="empty">
+            <p class="ds-empty__title">No splurge listings yet</p>
+            <p class="ds-empty__text">Nobody has written up a fine restaurant in Port Varen. If you ate well here, tell the next traveller.</p>
+            <a class="ds-button ds-button--secondary" href="#add">Add a listing</a>
+          </div>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-sleep"/></svg>Sleep<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <ul class="ds-listing">
+            <li class="ds-listing__item"><span class="ds-pin"><svg class="ds-icon" aria-hidden="true"><use href="#i-sleep"/></svg></span><span><span class="ds-listing__name">Harbour Master's House</span>, 1 Mole Street. Eight plain rooms over the old customs office; ask for one at the front. <span class="ds-listing__meta">Check-in from 14:00 &middot; breakfast included &middot; <span class="ds-badge ds-badge--warning">prices from 2007</span></span></span><span class="ds-listing__price">38 to 55</span></li>
+          </ul>
+          <h2><svg class="ds-icon" aria-hidden="true"><use href="#i-next"/></svg>Go next<span class="ds-edit">[<a class="ds-link" href="#add">edit</a>]</span></h2>
+          <ul data-component="links">
+            <li><a class="ds-link" href="#region">Outer Islands</a> (a guide)</li>
+            <li><a class="ds-link is-visited" href="#region">Saltmarsh Coast</a> (a guide you have read)</li>
+            <li><a class="ds-link is-hover" href="#destination">The Hollow Dunes</a> (under the pointer)</li>
+            <li><a class="ds-link is-active" href="#destination">Greywater Hills</a> (while pressed)</li>
+            <li><a class="ds-link ds-link--new" href="#add">Kestrel Point</a> (a guide nobody has written)</li>
+            <li><a class="ds-link ds-link--quiet" href="#destination">Harbour office tide tables</a> (an outside link)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ region ============ -->
+    <section class="ds-view" id="region">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Northern Shores</a></li>
+        <li>:</li>
+        <li class="ds-breadcrumb__current">Saltmarsh Coast</li>
+      </ol>
+      <header class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Saltmarsh Coast</h1>
+          <p class="ds-page-header__desc">Eighty kilometres of low shore, tidal creeks and harbour towns. 17 places have a guide.</p>
+          <div class="ds-extras"><details class="ds-accordion"><summary class="ds-accordion__summary">How guide status works [show]</summary><div class="ds-accordion__body"><p>Usable means a traveller can plan from it. Outline means it needs more listings.</p></div></details></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#add">Start a guide</a></p>
+      </header>
+      <div class="ds-layout ds-layout--aside">
+        <div class="ds-layout__col">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th scope="col">Place</th><th scope="col">Kind</th><th scope="col">Known for</th><th scope="col">Listings</th><th scope="col">Guide</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a class="ds-link ds-link--strong" href="#destination">Port Varen</a></td><td>town</td><td>lighthouse, fish smokers, island ferry</td><td class="ds-table__num">46</td><td><span class="ds-badge ds-badge--success">usable</span></td></tr>
+              <tr class="ds-table__row--alt"><td><a class="ds-link ds-link--strong" href="#destination">Marrow Sands</a></td><td>village</td><td>the long beach, kite flying</td><td class="ds-table__num">12</td><td><span class="ds-badge ds-badge--success">usable</span></td></tr>
+              <tr><td><a class="ds-link ds-link--strong" href="#destination">The Hollow Dunes</a></td><td>park</td><td>dune walks, evening views</td><td class="ds-table__num">5</td><td><span class="ds-badge ds-badge--warning">outline</span></td></tr>
+              <tr class="ds-table__row--alt"><td><a class="ds-link ds-link--strong" href="#destination">Saltby</a></td><td>town</td><td>salt pans, the Friday auction</td><td class="ds-table__num">21</td><td><span class="ds-badge ds-badge--warning">outline</span></td></tr>
+              <tr><td><a class="ds-link ds-link--strong ds-link--new" href="#add">Kestrel Point</a></td><td>headland</td><td>seabird cliffs, a reopened hostel</td><td class="ds-table__num">0</td><td><span class="ds-badge ds-badge--danger">missing</span></td></tr>
+              <tr class="ds-table__row--alt"><td><a class="ds-link ds-link--strong" href="#destination">Eelmouth</a></td><td>village</td><td>creek boats, smoked eel</td><td class="ds-table__num">8</td><td><span class="ds-badge ds-badge--success">usable</span></td></tr>
+            </tbody>
+          </table>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#region">previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#region">1</a></li>
+            <li><a class="ds-pagination__link" href="#region">2</a></li>
+            <li><a class="ds-pagination__link" href="#region">3</a></li>
+            <li><a class="ds-pagination__link" href="#region">next</a></li>
+            <li class="ds-pagination__label">places 1 to 6 of 17</li>
+          </ul>
+        </div>
+        <div class="ds-layout__col">
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">A week on the coast</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line">Two days in <a class="ds-link" href="#destination">Port Varen</a>, the ferry out and back, then south by bus through Saltby to the long beach.</p>
+              <p class="ds-panel__more"><a class="ds-link" href="#region">See the itinerary</a></p>
+            </div>
+          </section>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Getting around</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-in"/></svg><a class="ds-link" href="#region">Coast bus, line 40</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-next"/></svg><a class="ds-link" href="#region">Island ferries</a></li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-do"/></svg><a class="ds-link" href="#region">The shore path on foot</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ add a listing ============ -->
+    <section class="ds-view" id="add">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#region">Saltmarsh Coast</a></li>
+        <li>:</li>
+        <li><a class="ds-breadcrumb__link" href="#destination">Port Varen</a></li>
+        <li>:</li>
+        <li class="ds-breadcrumb__current">Add a listing</li>
+      </ol>
+      <header class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Add a listing to Port Varen</h1>
+          <p class="ds-page-header__desc">One place to see, eat or sleep, written so that a stranger can find it and knows what it costs.</p>
+          <div class="ds-extras"><label class="ds-meter">Listing complete <progress class="ds-progress" value="45" max="100">45%</progress> 45%</label></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#destination">Back to the guide</a></p>
+      </header>
+      <div class="ds-layout ds-layout--aside">
+        <div class="ds-layout__col">
+          <div class="ds-layout__col" data-component="notice">
+            <p class="ds-notice"><span class="ds-notice__title">Write what you saw yourself.</span> Listings copied from a brochure or another guide are removed. <a class="ds-notice__link" href="#home">Read why</a>.</p>
+            <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The listing was not saved.</span> Give an address or say how to find the place.</p>
+          </div>
+          <form class="ds-form" data-component="form" action="#destination">
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="a-name">Name of the place</label>
+                <span class="ds-form__field"><input class="ds-form__input ds-form__input--wide" id="a-name" type="text" value="The Tide Table"></span>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="a-kind">Section</label>
+                <span class="ds-form__field"><select class="ds-form__input ds-form__input--auto" id="a-kind"><option>Eat: splurge</option><option>Eat: budget</option><option>See</option><option>Sleep</option></select></span>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="a-where">Address or directions</label>
+              <span class="ds-form__field"><input class="ds-form__input ds-form__input--wide is-invalid" id="a-where" type="text" value=""><span class="ds-form__error">Please say where the place is.</span></span>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="a-text">What a traveller should know</label>
+              <span class="ds-form__field"><textarea class="ds-form__input ds-form__input--text" id="a-text">The day's catch, grilled, in the old chart room above the harbour office. Book for Friday and Saturday.</textarea><span class="ds-form__hint">Two or three plain sentences. Prices in local money, as a range.</span></span>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__field"><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> I was there myself in the last twelve months</label></span>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="submit">Save listing</button>
+              <a class="ds-button ds-button--secondary" href="#add">Preview</a>
+              <button class="ds-button is-disabled" type="button" disabled>Add a photo</button>
+              <span class="ds-form__spacer"></span>
+              <a class="ds-button ds-button--danger" href="#add">Discard</a>
+            </div>
+          </form>
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+              <h2 class="ds-dialog__title" id="dlg-title">Discard this listing?</h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">What you have written about The Tide Table will be lost. Nothing has been added to the guide yet.</p>
+                <div class="ds-dialog__actions">
+                  <a class="ds-button ds-button--secondary" href="#add">Keep writing</a>
+                  <a class="ds-button ds-button--danger" href="#destination">Discard listing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ds-layout__col">
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">How a listing reads</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line">Name, then where it is, then what it is like, then hours and price.</p>
+              <p class="ds-panel__line">Be fair and be brief: "plain rooms, good breakfast" helps more than praise.</p>
+              <p class="ds-panel__more"><a class="ds-link" href="#home">Listing style guide</a></p>
+            </div>
+          </section>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Sections of a guide</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-see"/></svg>See: sights and views</li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-do"/></svg>Do: walks, boats, events</li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-eat"/></svg>Eat: by budget</li>
+              <li class="ds-sidebar__item"><svg class="ds-icon" aria-hidden="true"><use href="#i-sleep"/></svg>Sleep: by budget</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="ds-footer" data-component="footer">
+    <div>
+      <p class="ds-footer__title">chronoskin</p>
+      <p class="ds-footer__text">An open travel guide. Text may be copied and changed under an open licence. Prices and times change: check before you set out.</p>
+    </div>
+    <div>
+      <p class="ds-footer__title">The guide</p>
+      <ul class="ds-footer__row">
+        <li><a class="ds-footer__link" href="#region">All regions</a></li>
+        <li><a class="ds-footer__link" href="#home">Phrasebooks</a></li>
+        <li><a class="ds-footer__link" href="#home">Recent changes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ds-footer__title">Taking part</p>
+      <ul class="ds-footer__row">
+        <li><a class="ds-footer__link" href="#add">Add a listing</a></li>
+        <li><a class="ds-footer__link" href="#home">Travellers' pub</a></li>
+        <li><a class="ds-footer__link" href="#home">About and licence</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

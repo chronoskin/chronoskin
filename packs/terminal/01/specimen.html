@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: time tracking from the command line. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-wrap">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#home">home</a></li>
+    <li><a class="ds-nav__link" href="#docs">docs</a></li>
+    <li><a class="ds-nav__link" href="#changelog">changelog</a></li>
+    <li><a class="ds-nav__link" href="#download">download</a></li>
+    <li class="ds-nav__version">v3.2.0</li>
+  </ul>
+</header>
+
+<!-- View 1, the home page: the claim, a typed session, figures, commands, uses, news. -->
+<section class="ds-view ds-view--home" id="home">
+  <section class="ds-hero" data-component="hero">
+    <div class="ds-hero__text">
+      <h1 class="ds-hero__title">Track your hours without leaving the prompt.</h1>
+      <p class="ds-hero__lead">chronoskin is a time tracker that lives in your shell. Start a task, stop it, and print the week as text you can read, pipe or paste into an invoice.</p>
+      <p class="ds-hero__install"><span><span class="ds-prompt__sign">$</span> brew install chronoskin</span> <a class="ds-link ds-link--bracket" href="#download">copy</a></p>
+      <div class="ds-buttons">
+        <a class="ds-button" href="#download">download 3.2.0</a>
+        <a class="ds-button ds-button--secondary is-hover" href="#docs">read the docs</a>
+      </div>
+      <p class="ds-hero__note">One binary of 3.1 MB for Linux, macOS and Windows. No account, no daemon, no network.</p>
+    </div>
+    <div class="ds-term">
+      <p class="ds-term__title">~/work: chronoskin, 60x17</p>
+<pre class="ds-term__screen"><span class="ds-term__in"><span class="ds-prompt__sign">$</span> chronoskin start "write the parser" -t compiler</span>
+started 09:12  write the parser  <span class="ds-term__dim">#compiler</span>
+<span class="ds-term__in"><span class="ds-prompt__sign">$</span> chronoskin status</span>
+<span class="ds-term__ok">running</span>  write the parser             00:47:13
+<span class="ds-term__in"><span class="ds-prompt__sign">$</span> chronoskin report --week</span>
+<span class="ds-term__head"> day    hours   tracked of 8 h                  </span>
+ mon      6.5   <span class="ds-meter"><span class="ds-meter__on">████████████████</span>░░░░</span>
+ tue      7.2   <span class="ds-meter"><span class="ds-meter__on">██████████████████</span>░░</span>
+ wed      4.1   <span class="ds-meter"><span class="ds-meter__on">██████████</span>░░░░░░░░░░</span>
+ thu      0.8   <span class="ds-meter"><span class="ds-meter__on ds-meter__on--warning">██</span>░░░░░░░░░░░░░░░░░░</span>
+<span class="ds-term__dim"> ------------------------------------------</span>
+ total   18.6 h in 3 projects, 11 tasks
+<span class="ds-term__warn">note: thursday is still running</span>
+<span class="ds-term__in"><span class="ds-prompt__sign">$</span> <span class="ds-cursor">&nbsp;</span></span></pre>
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__value">12 ms</span><span class="ds-stat__label"><span class="ds-tooltip" tabindex="0">to start, cold<span class="ds-tooltip__tip" role="tooltip">Measured on a first run, with nothing cached.</span></span></span></li>
+      <li class="ds-stat"><span class="ds-stat__value">3.1 MB</span><span class="ds-stat__label">one static binary</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">0</span><span class="ds-stat__label">libraries it needs</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">41</span><span class="ds-stat__label">releases since 2019</span></li>
+    </ul>
+  </section>
+
+  <section class="ds-section">
+    <h2 class="ds-section__title">commands</h2>
+    <table class="ds-table ds-table--framed" data-component="table">
+      <thead>
+        <tr><th>command</th><th>what it does</th><th class="ds-table__extra">since</th><th class="ds-table__num">runs in</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="ds-table__code">start</td><td>Begins a task, and stops the one that was running.</td><td class="ds-table__extra ds-table__date">1.0</td><td class="ds-table__num">4 ms</td></tr>
+        <tr class="is-alt"><td class="ds-table__code">stop</td><td>Ends the running task and writes one line to the log.</td><td class="ds-table__extra ds-table__date">1.0</td><td class="ds-table__num">4 ms</td></tr>
+        <tr><td class="ds-table__code">status</td><td>Prints what is running and for how long. Made for a prompt.</td><td class="ds-table__extra ds-table__date">1.2</td><td class="ds-table__num">3 ms</td></tr>
+        <tr class="is-alt"><td class="ds-table__code">report</td><td>A day, a week or a month as aligned columns, CSV or JSON.</td><td class="ds-table__extra ds-table__date">2.0</td><td class="ds-table__num">12 ms</td></tr>
+        <tr><td class="ds-table__code">edit</td><td>Opens the log in your editor. It is a text file; fix it by hand.</td><td class="ds-table__extra ds-table__date">2.4</td><td class="ds-table__num">6 ms</td></tr>
+      </tbody>
+    </table>
+    <p class="ds-note">Every command takes <span class="ds-key"><span class="ds-key__cap">-h</span> help</span> and exits with 0 when it did what you asked. <a class="ds-link" href="#docs">The full reference</a> has all fourteen.</p>
+  </section>
+
+  <section class="ds-section">
+    <h2 class="ds-section__title">where it fits</h2>
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell">
+        <p class="ds-grid__label">01 prompt</p>
+        <h3 class="ds-grid__title">In your shell</h3>
+        <p class="ds-grid__text">A status segment for bash, zsh and fish shows the running task beside your path.</p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--2">
+        <p class="ds-grid__label">02 editor</p>
+        <h3 class="ds-grid__title">In your editor</h3>
+        <p class="ds-grid__text">The log is plain text, one line a task. Any editor can open, sort and repair it.</p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--3">
+        <p class="ds-grid__label">03 pipe</p>
+        <h3 class="ds-grid__title">In a pipeline</h3>
+        <p class="ds-grid__text">Reports come as CSV or JSON on standard output, ready for the next program.</p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--4">
+        <p class="ds-grid__label">04 sync</p>
+        <h3 class="ds-grid__title">In your repository</h3>
+        <p class="ds-grid__text">Keep the log beside the code. It merges like any other text file.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <div class="ds-cols">
+      <div class="ds-main">
+        <h2 class="ds-section__title">news</h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__date">2026-03-02</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#changelog">3.2.0: reports by tag</a> <span class="ds-badge">new</span>
+              <p class="ds-list__excerpt">Group a report by tag instead of by project, and total across both.</p>
+              <p class="ds-list__meta">release | 6 changes | 3.1 MB</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">2026-01-19</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#docs">The prompt segment is now documented</a>
+              <p class="ds-list__excerpt">Three lines of configuration for each of the three shells.</p>
+              <p class="ds-list__meta">docs | 1 new page</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">2025-11-30</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#download">Builds for ARM on Windows</a>
+              <p class="ds-list__excerpt">The last platform people asked for. Checksums are on the download page.</p>
+              <p class="ds-list__meta">download | 1 new file</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">the log file</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Everything chronoskin knows is in one file you can read.</p>
+<pre class="ds-code">03-02 09:12 10:41 write the parser
+03-02 10:55 12:30 review notes
+03-02 13:20 -     fix the lexer</pre>
+          <p class="ds-panel__text">A dash means the task is still running. <a class="ds-link" href="#docs">The format</a> fits on one page.</p>
+          <p class="ds-progress"><span class="ds-progress__label">this week</span><span class="ds-progress__bar"><span class="ds-progress__on">######</span>....</span><span class="ds-progress__value">18.6 of 30 h</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- View 2, a page of the manual: contents at the left, the text, tabs for each system. -->
+<section class="ds-view" id="docs">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#docs">docs</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">getting-started</li>
+  </ol>
+  <div class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Getting started</h1>
+      <p class="ds-page-header__text">Install it, track one task, print one report. Five minutes.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#download">get the binary</a></div>
+  </div>
+  <div class="ds-cols ds-cols--side">
+    <aside class="ds-sidebar" data-component="sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">manual</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#docs">Getting started</a></li>
+          <li><a class="ds-sidebar__link" href="#docs">The log file</a></li>
+          <li><a class="ds-sidebar__link" href="#docs">Reports</a></li>
+          <li><a class="ds-sidebar__link" href="#docs">Tags and projects</a></li>
+          <li><a class="ds-sidebar__link is-hover" href="#docs">Prompt segment</a></li>
+          <li><a class="ds-sidebar__link" href="#docs">Configuration</a></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">reference</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#docs">Commands</a><span class="ds-sidebar__count">14</span></li>
+          <li><a class="ds-sidebar__link" href="#docs">Exit codes</a><span class="ds-sidebar__count">5</span></li>
+          <li><a class="ds-sidebar__link" href="#changelog">Changelog</a><span class="ds-sidebar__count">41</span></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">keys</h2>
+        <p class="ds-sidebar__text"><span class="ds-key"><span class="ds-key__cap">j</span> next page</span> <span class="ds-key"><span class="ds-key__cap">k</span> previous</span> <span class="ds-key"><span class="ds-key__cap">/</span> search</span></p>
+      </div>
+    </aside>
+    <div class="ds-main">
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">note:</span> this page describes 3.2. Run <code>chronoskin --version</code> to see what you have.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">error:</span> versions before 2.0 cannot read a log written by 3.x. Upgrade before you share a file.</p>
+      </div>
+      <div class="ds-prose" data-component="typography">
+        <h1>Your first tracked hour</h1>
+        <p>chronoskin keeps one text file, the <strong>log</strong>, and three commands do nearly all the work: <code>start</code>, <code>stop</code> and <code>report</code>. Nothing runs in the background; the clock is the difference between two times in the file.</p>
+        <h2>Install</h2>
+        <p>Pick your system. Each line puts one binary on your path and nothing else.</p>
+      </div>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><span class="ds-tabs__tab is-current">macos</span></li>
+        <li><a class="ds-tabs__tab" href="#docs">linux</a></li>
+        <li><a class="ds-tabs__tab" href="#docs">windows</a></li>
+        <li><a class="ds-tabs__tab" href="#docs">from source</a></li>
+      </ul>
+      <div class="ds-tabs__body">
+<pre class="ds-code">$ brew install chronoskin
+$ chronoskin --version
+chronoskin 3.2.0</pre>
+      </div>
+      <div class="ds-prose">
+        <h2>Track a task</h2>
+        <p>Say what you are doing. Starting a task stops the one before it, so you never have two clocks.</p>
+        <ul>
+          <li><code>chronoskin start "name"</code> begins a task now.</li>
+          <li><code>chronoskin start -a 09:00 "name"</code> begins it in the past.</li>
+          <li><code>chronoskin stop</code> ends it and prints how long it ran.</li>
+        </ul>
+        <h3>Tags</h3>
+        <p>A word after <code>-t</code> is a tag. A task may carry several; a report can group by any of them.</p>
+      </div>
+      <h2 class="ds-section__title">see also</h2>
+      <ul class="ds-links" data-component="links">
+        <li><a class="ds-link" href="#docs">the log file</a></li>
+        <li><a class="ds-link is-visited" href="#docs">reports (visited)</a></li>
+        <li><a class="ds-link is-hover" href="#docs">tags (hover)</a></li>
+        <li><a class="ds-link is-active" href="#docs">configuration (active)</a></li>
+        <li><a class="ds-link ds-link--quiet" href="#changelog">changelog</a></li>
+      </ul>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><span class="ds-pagination__link is-disabled">&lt; prev</span></li>
+        <li><span class="ds-pagination__link is-current">1</span></li>
+        <li><a class="ds-pagination__link" href="#docs">2</a></li>
+        <li><a class="ds-pagination__link" href="#docs">3</a></li>
+        <li><a class="ds-pagination__link" href="#docs">4</a></li>
+        <li><a class="ds-pagination__link" href="#docs">next &gt;</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- View 3, the changelog: releases newest first, what is not yet released. -->
+<section class="ds-view" id="changelog">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">changelog</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Changelog</h1>
+      <p class="ds-page-header__text">41 releases, newest first. Dates are the day the tag was pushed.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#download">download 3.2.0</a></div>
+  </div>
+  <div class="ds-cols">
+    <div class="ds-main">
+      <ul class="ds-tabs">
+        <li><span class="ds-tabs__tab is-current">all</span></li>
+        <li><a class="ds-tabs__tab" href="#changelog">3.x</a></li>
+        <li><a class="ds-tabs__tab" href="#changelog">2.x</a></li>
+        <li><a class="ds-tabs__tab" href="#changelog">1.x</a></li>
+      </ul>
+      <div class="ds-tabs__body">
+        <table class="ds-table">
+          <thead>
+            <tr><th>version</th><th class="ds-table__extra">date</th><th>change</th><th>kind</th><th class="ds-table__num">lines</th></tr>
+          </thead>
+          <tbody>
+            <tr class="ds-table__group"><td colspan="5">3.2.0, 2 March 2026</td></tr>
+            <tr><td class="ds-table__code">3.2.0</td><td class="ds-table__extra ds-table__date">03-02</td><td>report --by tag groups a report by tag.</td><td><span class="ds-badge ds-badge--success">added</span></td><td class="ds-table__num">+412</td></tr>
+            <tr class="is-alt"><td class="ds-table__code">3.2.0</td><td class="ds-table__extra ds-table__date">03-02</td><td>A week that crosses a clock change no longer loses an hour.</td><td><span class="ds-badge ds-badge--warning">fixed</span></td><td class="ds-table__num">+38</td></tr>
+            <tr><td class="ds-table__code">3.2.0</td><td class="ds-table__extra ds-table__date">03-02</td><td>The --utc flag is gone. Set the zone in the config file.</td><td><span class="ds-badge ds-badge--danger">removed</span></td><td class="ds-table__num">-120</td></tr>
+            <tr class="ds-table__group"><td colspan="5">3.1.2, 11 January 2026</td></tr>
+            <tr><td class="ds-table__code">3.1.2</td><td class="ds-table__extra ds-table__date">01-11</td><td>status prints nothing, not an error, when no task runs.</td><td><span class="ds-badge ds-badge--warning">fixed</span></td><td class="ds-table__num">+9</td></tr>
+            <tr class="is-alt"><td class="ds-table__code">3.1.2</td><td class="ds-table__extra ds-table__date">01-11</td><td>Shell completions for fish.</td><td><span class="ds-badge ds-badge--success">added</span></td><td class="ds-table__num">+164</td></tr>
+            <tr class="ds-table__group"><td colspan="5">3.1.0, 30 November 2025</td></tr>
+            <tr><td class="ds-table__code">3.1.0</td><td class="ds-table__extra ds-table__date">11-30</td><td>Builds for ARM on Windows.</td><td><span class="ds-badge ds-badge--success">added</span></td><td class="ds-table__num">+21</td></tr>
+          </tbody>
+        </table>
+        <ul class="ds-pagination">
+          <li><span class="ds-pagination__link is-disabled">&lt; newer</span></li>
+          <li><span class="ds-pagination__link is-current">1</span></li>
+          <li><a class="ds-pagination__link" href="#changelog">2</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">3</a></li>
+          <li><a class="ds-pagination__link" href="#changelog">older &gt;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">legend</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text ds-badges" data-component="badge"><span class="ds-badge">41</span> <span class="ds-badge ds-badge--success">added</span> <span class="ds-badge ds-badge--warning">fixed</span> <span class="ds-badge ds-badge--danger">removed</span> <span class="ds-badge ds-badge--tag">breaking</span></p>
+          <p class="ds-panel__text">A count stands on the accent colour. A kind is a word in brackets. A tag marks a release you should read before upgrading.</p>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">unreleased</h2>
+        <div class="ds-panel__body">
+          <div class="ds-empty" data-component="empty">
+            <p class="ds-empty__text">Nothing has been merged since 3.2.0.</p>
+            <a class="ds-button ds-button--secondary" href="#download">propose a change</a>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">upgrade</h2>
+        <div class="ds-panel__body">
+<pre class="ds-code">$ chronoskin self-update
+3.1.2 -&gt; 3.2.0  <span class="ds-meter"><span class="ds-meter__on">████████████</span></span> ok</pre>
+          <p class="ds-panel__text">The old binary is kept beside the new one until the next update.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 4, download: the files, how to check one, the release mail. -->
+<section class="ds-view" id="download">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">download</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Download 3.2.0</h1>
+      <p class="ds-page-header__text">Six files and their checksums. Each archive holds one binary and the manual.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#changelog">what changed</a></div>
+  </div>
+  <table class="ds-table ds-table--framed">
+    <thead>
+      <tr><th>file</th><th>system</th><th class="ds-table__extra">sha256, first 16</th><th class="ds-table__num">size</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ds-table__code">chronoskin-<wbr>3.2.0-<wbr>linux-<wbr>x64<wbr>.tar.gz</td><td>Linux, x86-64</td><td class="ds-table__extra ds-table__date">9f2c41d07ab3e5c8</td><td class="ds-table__num">3.1 MB</td><td><a class="ds-link ds-link--bracket" href="#download">get</a></td></tr>
+      <tr class="is-alt"><td class="ds-table__code">chronoskin-<wbr>3.2.0-<wbr>linux-<wbr>arm64<wbr>.tar.gz</td><td>Linux, ARM</td><td class="ds-table__extra ds-table__date">27d0be6614f9a0c2</td><td class="ds-table__num">2.9 MB</td><td><a class="ds-link ds-link--bracket" href="#download">get</a></td></tr>
+      <tr><td class="ds-table__code">chronoskin-<wbr>3.2.0-<wbr>macos<wbr>.tar.gz</td><td>macOS, universal</td><td class="ds-table__extra ds-table__date">c48e19a2f07d3b55</td><td class="ds-table__num">5.8 MB</td><td><a class="ds-link ds-link--bracket" href="#download">get</a></td></tr>
+      <tr class="is-alt"><td class="ds-table__code">chronoskin-<wbr>3.2.0-<wbr>windows-<wbr>x64<wbr>.zip</td><td>Windows, x86-64</td><td class="ds-table__extra ds-table__date">510af3e7d92c6b18</td><td class="ds-table__num">3.4 MB</td><td><a class="ds-link ds-link--bracket" href="#download">get</a></td></tr>
+      <tr><td class="ds-table__code">chronoskin-<wbr>3.2.0<wbr>.tar.gz</td><td>source</td><td class="ds-table__extra ds-table__date">e6b7204c1d8f93aa</td><td class="ds-table__num">412 KB</td><td><a class="ds-link ds-link--bracket" href="#download">get</a></td></tr>
+    </tbody>
+  </table>
+  <p class="ds-note">Check a file with <code>sha256sum -c chronoskin-3.2.0.sha256</code> before you run it.</p>
+
+  <div class="ds-cols ds-section">
+    <div class="ds-main">
+      <h2 class="ds-section__title">release mail</h2>
+      <form class="ds-form" data-component="form" action="#download">
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-mail">address:</label>
+          <div class="ds-form__field">
+            <input class="ds-form__input is-invalid" id="f-mail" type="text" value="dev@example">
+            <p class="ds-form__error">error: that address has no domain ending.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-name">name:</label>
+          <div class="ds-form__field">
+            <input class="ds-form__input" id="f-name" type="text" value="A. Reader">
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-kind">send me:</label>
+          <div class="ds-form__field">
+            <select class="ds-form__input ds-form__input--auto" id="f-kind"><option>every release</option><option>major releases only</option><option>security fixes only</option></select>
+            <p class="ds-form__hint">About eight mails a year. Plain text, no tracking.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-note">note:</label>
+          <div class="ds-form__field">
+            <textarea class="ds-form__input" id="f-note" rows="3">I package chronoskin for a distribution.</textarea>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <span class="ds-form__label">format:</span>
+          <div class="ds-form__field">
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> include the checksums in the mail</label>
+            <label class="ds-switch"><span class="ds-switch__label">security fixes only</span><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span></label>
+          </div>
+        </div>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="button">subscribe</button>
+          <button class="ds-button ds-button--secondary" type="button">preview a mail</button>
+          <button class="ds-button ds-button--danger" type="button">unsubscribe</button>
+          <button class="ds-button" type="button" disabled>resend</button>
+        </div>
+      </form>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-1">
+          <h2 class="ds-dialog__title" id="dlg-1">unsubscribe?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">dev@example.org will get no more release mail. Security fixes are announced on this page too.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">unsubscribe</button>
+              <button class="ds-button ds-button--secondary" type="button">keep it</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">build it yourself</h2>
+        <div class="ds-panel__body">
+<pre class="ds-code">$ tar xf chronoskin-3.2.0.tar.gz
+$ cd chronoskin-3.2.0 &amp;&amp; make
+$ ./chronoskin --version</pre>
+          <p class="ds-panel__text">A C compiler and make are all it takes. <a class="ds-link" href="#docs">Build notes</a></p>
+          <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+          <summary class="ds-accordion__title">Which file do I need?</summary>
+          <div class="ds-accordion__body">
+          <p>The one named after your system. If in doubt, take the source.</p>
+          </div>
+          </details>
+          <details class="ds-accordion__item">
+          <summary class="ds-accordion__title">Are the files signed?</summary>
+          <div class="ds-accordion__body">
+          <p>Each release carries one checksum file, signed with the release key.</p>
+          </div>
+          </details>
+          <details class="ds-accordion__item">
+          <summary class="ds-accordion__title">Does it update itself?</summary>
+          <div class="ds-accordion__body">
+          <p>Only when you run <code>chronoskin self-update</code>.</p>
+          </div>
+          </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__keys">
+    <li class="ds-key"><span class="ds-key__cap">g</span> <a class="ds-footer__link" href="#home">home</a></li>
+    <li class="ds-key"><span class="ds-key__cap">d</span> <a class="ds-footer__link" href="#docs">docs</a></li>
+    <li class="ds-key"><span class="ds-key__cap">c</span> <a class="ds-footer__link" href="#changelog">changelog</a></li>
+    <li class="ds-key"><span class="ds-key__cap">i</span> <a class="ds-footer__link" href="#download">install</a></li>
+  </ul>
+  <p class="ds-footer__text">chronoskin 3.2.0 | free software | no cookies, no scripts</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: modern product order tracking specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9h9v9a9 9 0 0 1-18 0z"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8" r="3"/><path d="M10 18c4-4 6-7 6-10a6 6 0 0 0-12 0c0 3 2 6 6 10z"/></svg> Track</a></li>
+      <li><a class="ds-nav__link" href="#orders"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l7-3 7 3v8l-7 3-7-3z"/><path d="M3 6l7 3 7-3M10 9v8"/></svg> Orders</a></li>
+      <li><a class="ds-nav__link" href="#delivery"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg> Delivery</a></li>
+      <li><a class="ds-nav__link" href="#help"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M8 8a2 2 0 1 1 3 1.7c-.7.4-1 .8-1 1.6M10 14v.2"/></svg> Help</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <div class="ds-menu ds-menu--end" data-component="menu">
+        <span class="ds-nav__link ds-menu__toggle" tabindex="0">Your orders</span>
+        <div class="ds-menu__panel">
+          <a class="ds-menu__order" href="#home">
+            <span class="ds-badge ds-badge--alt">On its way</span>
+            <strong>City bike, sage</strong>
+            <span>CS-20418, arriving Thursday</span>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--70"></span></span>
+          </a>
+          <a class="ds-menu__order" href="#orders">
+            <span class="ds-badge ds-badge--success">Delivered</span>
+            <strong>Helmet and lock</strong>
+            <span>CS-20377, delivered 2 May</span>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--100"></span></span>
+          </a>
+          <div class="ds-menu__foot"><a class="ds-link ds-link--more" href="#orders">All orders</a><a class="ds-link ds-link--quiet" href="#help">Returns</a></div>
+        </div>
+      </div>
+      <a class="ds-nav__me" href="#delivery"><span class="ds-avatar" data-component="avatar">MO</span><span>Mara</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-wrap">
+    <div class="ds-hero" data-component="hero">
+      <div>
+        <p class="ds-hero__kicker"><span>Order CS-20418</span><span class="ds-badge">On its way</span></p>
+        <h1 class="ds-hero__title">Arriving Thursday, <em>14:20 to 15:00.</em></h1>
+        <p class="ds-hero__lead">Your city bike left the workshop this morning, built, tested and charged to 80%.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button" href="#delivery">Change delivery</a>
+          <a class="ds-button ds-button--secondary" href="#help">What happens on the day</a>
+        </div>
+      </div>
+      <div class="ds-rider">
+        <div class="ds-person"><span class="ds-avatar ds-avatar--large ds-avatar--2">IV</span><span><span class="ds-person__name">Ivo brings it</span><span class="ds-person__meta">Rider and mechanic</span></span></div>
+        <p class="ds-rider__text">He fits the saddle and pedals with you. Plan for a <span class="ds-tooltip" tabindex="0" data-component="tooltip">20 minute handover<span class="ds-tooltip__tip" role="tooltip">Saddle height, brakes, the lock and pairing the app.</span></span>.</p>
+      </div>
+    </div>
+
+    <div class="ds-track">
+      <p class="ds-progress__label"><strong>Stage 4 of 5</strong><span>3 stops before yours</span></p>
+      <span class="ds-progress ds-progress--large" data-component="progress"><span class="ds-progress__bar ds-progress__bar--70"></span></span>
+      <ol class="ds-track__steps">
+        <li class="ds-track__step is-done">Ordered<small>Mon 12 May</small></li>
+        <li class="ds-track__step is-done">Built<small>Tue 20 May</small></li>
+        <li class="ds-track__step is-done">Tested<small>Wed 21 May</small></li>
+        <li class="ds-track__step is-current">On its way<small>Today, 9:10</small></li>
+        <li class="ds-track__step">Delivered<small>Thu, 14:20</small></li>
+      </ol>
+    </div>
+
+    <div class="ds-board">
+      <div class="ds-board__side">
+        <div class="ds-panel ds-summary" data-component="panel">
+          <div class="ds-summary__art"><svg viewBox="0 0 220 130" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="44" cy="90" r="32"/><circle cx="176" cy="90" r="32"/><path d="M44 90l34-48h62l-34 48z"/><path d="M140 42l36 48"/><path d="M78 42l-6-16M60 26h26"/><path d="M140 42l6-22h16"/><circle cx="106" cy="90" r="7"/><path d="M88 50l44 0" stroke-width="11"/></svg></div>
+          <div class="ds-panel__head"><h2 class="ds-panel__title">City bike, sage</h2><span class="ds-badge ds-badge--quiet">Size M</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-lines">
+              <li class="ds-lines__row"><span>City bike<small>Belt drive, 120 km battery</small></span><span class="ds-lines__sum">2,390.00</span></li>
+              <li class="ds-lines__row"><span>Front carrier<small>Fitted at the workshop</small></span><span class="ds-lines__sum">89.00</span></li>
+              <li class="ds-lines__row"><span>Delivery and handover<small>By bike courier</small></span><span class="ds-lines__sum">0.00</span></li>
+              <li class="ds-lines__row ds-lines__row--total"><span>Paid</span><span class="ds-lines__sum">2,479.00</span></li>
+            </ul>
+          </div>
+          <div class="ds-table__foot"><span>Mara Okafor, 14 Linden Row</span><a class="ds-link" href="#delivery">Change</a></div>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-map">
+          <svg class="ds-map__roads" viewBox="0 0 800 340" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="10" aria-hidden="true"><path d="M-10 250L820 130M-10 90L820 20M120 -10L220 350M420 -10L380 350M640 -10L720 350M-10 180L300 340M520 350L820 240"/></svg>
+          <svg class="ds-map__route" viewBox="0 0 800 340" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 300L150 218L390 185L398 110L690 70"/><path d="M398 110L690 70" stroke-dasharray="2 12"/></svg>
+          <span class="ds-map__pin ds-map__pin--rider">Ivo, 4.2 km away</span>
+          <span class="ds-map__pin ds-map__pin--home">14 Linden Row</span>
+          <p class="ds-map__note"><strong>3 stops away</strong>Updated a minute ago</p>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">What has happened</h2><a class="ds-link ds-link--more" href="#orders">Order details</a></div>
+          <div class="ds-panel__body">
+            <ul class="ds-list ds-list--timeline" data-component="list">
+              <li class="ds-list__item is-current"><span class="ds-list__title">Out for delivery</span><p class="ds-list__meta">Today, 9:10. Loaded at the east workshop</p></li>
+              <li class="ds-list__item is-done"><span class="ds-list__title">Test ride passed</span><p class="ds-list__meta">Wednesday, 16:42. 6 km, brakes and motor checked</p></li>
+              <li class="ds-list__item is-done"><span class="ds-list__title">Built by Rin</span><p class="ds-list__meta">Tuesday, 11:05. Frame 4F2A, size M</p></li>
+              <li class="ds-list__item is-done"><span class="ds-list__title">Order placed</span><p class="ds-list__meta">Monday 12 May, 20:31. Paid by card</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-band ds-tone--accent">
+    <div class="ds-wrap">
+      <p class="ds-band__head">Your bike, in numbers</p>
+      <div class="ds-stat" data-component="stats">
+        <div class="ds-stat__item ds-reveal"><p class="ds-stat__figure">120 km</p><p class="ds-stat__label">On one charge, in the middle assist level.</p></div>
+        <div class="ds-stat__item ds-reveal ds-reveal--2"><p class="ds-stat__figure">19 kg</p><p class="ds-stat__label">With the battery in, light enough for the stairs.</p></div>
+        <div class="ds-stat__item ds-reveal ds-reveal--3"><p class="ds-stat__figure">3.5 h</p><p class="ds-stat__label">From empty to full at any socket.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-section ds-section--tight">
+    <div class="ds-wrap">
+      <div class="ds-section__head ds-section__head--left">
+        <p class="ds-section__kicker">Before Thursday</p>
+        <h2 class="ds-section__title">Four things to get ready.</h2>
+      </div>
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell is-done ds-reveal" href="#help"><span class="ds-grid__num">01 &middot; done</span><h3 class="ds-grid__title">Get the app</h3><p class="ds-grid__text">It unlocks the bike and shows the charge.</p></a>
+        <a class="ds-grid__cell ds-reveal" href="#help"><span class="ds-grid__num">02 &middot; 2 min</span><h3 class="ds-grid__title">Clear a parking spot</h3><p class="ds-grid__text">Two metres by sixty centimetres, near a socket.</p></a>
+        <a class="ds-grid__cell ds-reveal ds-reveal--2" href="#help"><span class="ds-grid__num">03 &middot; 5 min</span><h3 class="ds-grid__title">Insure it</h3><p class="ds-grid__text">Theft cover starts the minute it is handed over.</p></a>
+        <a class="ds-grid__cell ds-reveal ds-reveal--3" href="#delivery"><span class="ds-grid__num">04 &middot; 1 min</span><h3 class="ds-grid__title">Check the address</h3><p class="ds-grid__text">You can change it until 20:00 on Wednesday.</p></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-section ds-section--tight ds-tone--alt">
+    <div class="ds-wrap">
+      <div class="ds-cols ds-cols--even">
+        <div>
+          <div class="ds-section__head ds-section__head--left">
+            <p class="ds-section__kicker">Delivery questions</p>
+            <h2 class="ds-section__title">Good to know.</h2>
+          </div>
+          <div class="ds-accordion" data-component="accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">What if I am not at home?</summary>
+              <div class="ds-accordion__body"><p>Ivo waits ten minutes and calls you. After that the bike goes back to the workshop and you choose a new slot, free of charge.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Can someone else take the bike?</summary>
+              <div class="ds-accordion__body"><p>Yes, anyone over 18 whom you name under Delivery.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Does it arrive in a box?</summary>
+              <div class="ds-accordion__body"><p>No. It is ridden or carried to you, ready to use.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">How do I send it back?</summary>
+              <div class="ds-accordion__body"><p>Within 30 days we collect it at your door.</p></div>
+            </details>
+          </div>
+        </div>
+        <div class="ds-carousel" data-component="carousel">
+          <ul class="ds-carousel__track">
+            <li class="ds-carousel__slide"><div class="ds-tip"><span class="ds-badge">Tip 1 of 3</span><h3 class="ds-tip__title">Your first ride is on us.</h3><p class="ds-tip__text">Ivo rides the first kilometre with you and sets the assist to how you pedal.</p><div class="ds-buttonrow"><a class="ds-button" href="#help">How the handover goes</a></div></div></li>
+            <li class="ds-carousel__slide"><div class="ds-tip"><span class="ds-badge">Tip 2 of 3</span><h3 class="ds-tip__title">Charge it indoors.</h3><p class="ds-tip__text">The battery lifts out with the key and likes room temperature.</p></div></li>
+            <li class="ds-carousel__slide"><div class="ds-tip"><span class="ds-badge">Tip 3 of 3</span><h3 class="ds-tip__title">Lock the frame, not the wheel.</h3><p class="ds-tip__text">The chain goes through the rear triangle and something fixed.</p></div></li>
+          </ul>
+          <div class="ds-carousel__bar">
+            <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+<p class="ds-carousel__hint">Swipe for more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="orders">
+  <div class="ds-wrap">
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__main">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">chronoskin</a></li>
+          <li class="ds-breadcrumb__current">Orders</li>
+        </ol>
+        <h1 class="ds-page-header__title">Your orders</h1>
+        <p class="ds-page-header__text">Everything you have bought from us, newest first.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#help">Download invoices</a>
+      </div>
+    </div>
+    <div class="ds-tabsrow">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#orders">All</a></li>
+        <li><a class="ds-tabs__tab" href="#orders">On the way</a></li>
+        <li><a class="ds-tabs__tab" href="#orders">Delivered</a></li>
+        <li><a class="ds-tabs__tab" href="#orders">Returns</a></li>
+      </ul>
+      <div class="ds-badgerow" data-component="badge">
+        <span class="ds-badge">6 orders</span>
+        <span class="ds-badge ds-badge--success">Delivered</span>
+        <span class="ds-badge ds-badge--warning">On its way</span>
+        <span class="ds-badge ds-badge--danger">Cancelled</span>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel">
+        <div class="ds-table__wrap">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th>Order</th><th>Items</th><th>Placed</th><th>Status</th><th class="ds-table__num">Total</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-hover"><td><a class="ds-table__title" href="#home">CS-20418</a></td><td>City bike, front carrier</td><td>12 May 2025</td><td><span class="ds-badge ds-badge--warning">On its way</span></td><td class="ds-table__num">2,479.00</td></tr>
+              <tr><td><a class="ds-table__title" href="#orders">CS-20377</a></td><td>Helmet, folding lock</td><td>28 April 2025</td><td><span class="ds-badge ds-badge--success">Delivered</span></td><td class="ds-table__num">148.00</td></tr>
+              <tr><td><a class="ds-table__title" href="#orders">CS-19902</a></td><td>Rain cover</td><td>3 March 2025</td><td><span class="ds-badge ds-badge--danger">Cancelled</span></td><td class="ds-table__num">39.00</td></tr>
+              <tr><td><a class="ds-table__title" href="#orders">CS-18240</a></td><td>Second charger</td><td>19 November 2024</td><td><span class="ds-badge ds-badge--success">Delivered</span></td><td class="ds-table__num">79.00</td></tr>
+              <tr><td><a class="ds-table__title" href="#orders">CS-17015</a></td><td>Child seat, mount</td><td>2 September 2024</td><td><span class="ds-badge ds-badge--success">Delivered</span></td><td class="ds-table__num">164.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-table__foot">
+          <span>Orders 1 to 5 of 6</span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#orders">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#orders">1</a></li>
+            <li><a class="ds-pagination__link" href="#orders">2</a></li>
+            <li><a class="ds-pagination__link" href="#orders">Next</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-cols ds-cols--even ds-cols--fill">
+        <div class="ds-empty" data-component="empty">
+          <span class="ds-empty__icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6l7-3 7 3v8l-7 3-7-3z"/><path d="M3 6l7 3 7-3M10 9v8"/></svg></span>
+          <h2 class="ds-empty__title">No returns</h2>
+          <p class="ds-empty__text">Anything you send back within 30 days shows here with its refund.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#help">How returns work</a>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Service plan</h2><span class="ds-badge ds-badge--alt">Year 1</span></div>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">Three check-ups are included with the bike. The first is due after 500 km.</p>
+            <p class="ds-progress__label"><strong>0 of 3 used</strong><span>First check-up at 500 km</span></p>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--20"></span></span>
+            <div class="ds-plan__row"><span class="ds-person__meta">Valid until May 2027</span><a class="ds-button ds-button--small" href="#delivery">Book a check-up</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="delivery">
+  <div class="ds-wrap">
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">chronoskin</a></li>
+          <li><a class="ds-breadcrumb__item" href="#home">Order CS-20418</a></li>
+          <li class="ds-breadcrumb__current">Delivery</li>
+        </ol>
+        <h1 class="ds-page-header__title">Change delivery</h1>
+        <p class="ds-page-header__text">Free until 20:00 on Wednesday. After that the bike is already on the road.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#home">Back to tracking</a>
+      </div>
+    </div>
+    <div class="ds-cols">
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Where and when</h2></div>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form" action="#delivery">
+            <div class="ds-noticerow" data-component="notice">
+              <p class="ds-notice"><span class="ds-notice__title">Thursday still has four slots.</span> Friday is full.</p>
+              <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not saved.</span> We do not deliver to that postcode yet.</p>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="d-street">Street and number</label>
+              <input class="ds-form__input" id="d-street" type="text" value="14 Linden Row">
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="d-code">Postcode</label>
+                <input class="ds-form__input is-error" id="d-code" type="text" value="90 210">
+                <span class="ds-form__error">Outside the delivery area.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="d-slot">Slot on Thursday</label>
+                <select class="ds-form__select" id="d-slot"><option>14:20 to 15:00</option><option>16:00 to 16:40</option><option>18:10 to 18:50</option></select>
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="d-note">Note for the rider</label>
+              <textarea class="ds-form__textarea" id="d-note" placeholder="Gate code, which bell to ring"></textarea>
+              <span class="ds-form__hint">Ivo reads this on the way to you.</span>
+            </div>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Someone else may take the bike for me</label>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="submit">Save changes</button>
+              <a class="ds-button ds-button--secondary" href="#home">Keep as it is</a>
+              <button class="ds-button ds-button--danger" type="button">Cancel order</button>
+              <button class="ds-button is-disabled" type="button" disabled>Pick Friday</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-dialog">
+            <div class="ds-dialog__head"><h2 class="ds-dialog__title" id="d-dialog">Cancel this order?</h2><a class="ds-dialog__close" href="#delivery" aria-label="Close">&times;</a></div>
+            <div class="ds-dialog__body"><p>The bike goes back to the workshop and 2,479.00 returns to your card within five days.</p></div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--danger ds-button--small" href="#orders">Cancel order</a>
+              <a class="ds-button ds-button--secondary ds-button--small" href="#delivery">Keep my bike</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Tell me when</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><label class="ds-list__row"><span class="ds-list__grow"><span class="ds-list__title">The rider sets off</span><span class="ds-person__meta">A message in the app</span></span><input class="ds-switch" type="checkbox" checked data-component="switch"></label></li>
+              <li class="ds-list__item"><label class="ds-list__row"><span class="ds-list__grow"><span class="ds-list__title">Ten minutes away</span><span class="ds-person__meta">A text message</span></span><input class="ds-switch" type="checkbox" checked></label></li>
+              <li class="ds-list__item"><label class="ds-list__row"><span class="ds-list__grow"><span class="ds-list__title">The slot changes</span><span class="ds-person__meta">A phone call</span></span><input class="ds-switch" type="checkbox"></label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="help">
+  <div class="ds-wrap">
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#home">chronoskin</a></li>
+          <li><a class="ds-breadcrumb__item" href="#help">Help</a></li>
+          <li class="ds-breadcrumb__current">Delivery day</li>
+        </ol>
+        <h1 class="ds-page-header__title">On the day</h1>
+        <p class="ds-page-header__text">What the rider does, what you sign and what to check before he leaves.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#delivery">Change delivery</a>
+      </div>
+    </div>
+    <div class="ds-cols ds-cols--side">
+      <div class="ds-stack">
+        <nav class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Help with an order</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__item is-current" href="#help">Delivery day <span class="ds-sidebar__count">6</span></a></li>
+            <li><a class="ds-sidebar__item" href="#help">Changing a slot <span class="ds-sidebar__count">4</span></a></li>
+            <li><a class="ds-sidebar__item" href="#help">Returns <span class="ds-sidebar__count">5</span></a></li>
+            <li><a class="ds-sidebar__item" href="#help">Invoices <span class="ds-sidebar__count">3</span></a></li>
+            <li><a class="ds-sidebar__item" href="#help">Service plan <span class="ds-sidebar__count">7</span></a></li>
+          </ul>
+        </nav>
+        <div class="ds-rider">
+          <div class="ds-person"><span class="ds-avatar ds-avatar--large ds-avatar--3">NK</span><span><span class="ds-person__name">Noor answers</span><span class="ds-person__meta">Usually within 5 minutes</span></span></div>
+          <p class="ds-rider__text">Questions about order CS-20418 go straight to the workshop that built it.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#help">Message the workshop</a>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <div class="ds-panel__body">
+            <article class="ds-prose" data-component="typography">
+              <h1>What happens at the handover</h1>
+              <p class="ds-prose__lead">The rider arrives on your bike or with it. Nothing comes in a box and nothing needs tools.</p>
+              <h2>Twenty minutes, three things</h2>
+              <p>He sets the saddle to your height, shows you the three assist levels and pairs the bike with the app. The code he asks for is the six characters shown as <code>CS-HAND</code> on the tracking screen; <strong>do not share it earlier</strong>.</p>
+              <ul>
+                <li>Check the frame number against the order.</li>
+                <li>Try both brakes and the lights.</li>
+                <li>Take both keys for the battery lock.</li>
+              </ul>
+              <h3>If something is not right</h3>
+              <p>Say so before you sign. The rider notes it and the workshop calls you the same day.</p>
+            </article>
+          </div>
+          <div class="ds-table__foot">
+            <span>Read next</span>
+            <ul class="ds-linkrow" data-component="links">
+              <li><a class="ds-link" href="#help">Charging the first time</a></li>
+              <li><a class="ds-link is-visited" href="#help">Theft cover</a></li>
+              <li><a class="ds-link is-hover" href="#help">Fitting a child seat</a></li>
+              <li><a class="ds-link is-active" href="#help">Sending it back</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Do I need to be there myself?</summary>
+            <div class="ds-accordion__body"><p>You, or an adult you have named under Delivery. The rider checks a photo ID.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What if it rains?</summary>
+            <div class="ds-accordion__body"><p>The bike comes anyway. The first ride can wait for a dry day.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Is the battery charged?</summary>
+            <div class="ds-accordion__body"><p>To 80%, enough for about 95 km.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-wrap">
+    <div class="ds-footer__cols">
+      <div>
+        <a class="ds-brand" href="#home">
+          <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9h9v9a9 9 0 0 1-18 0z"/></svg></span>
+          <span class="ds-brand__name">chronoskin</span>
+        </a>
+        <p class="ds-footer__about">Electric bikes, built to order and brought to your door.</p>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">This order</h2>
+        <ul class="ds-footer__list">
+          <li><a class="ds-footer__link" href="#home">Track</a></li>
+          <li><a class="ds-footer__link" href="#delivery">Change delivery</a></li>
+          <li><a class="ds-footer__link" href="#delivery">Cancel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Account</h2>
+        <ul class="ds-footer__list">
+          <li><a class="ds-footer__link" href="#orders">Orders</a></li>
+          <li><a class="ds-footer__link" href="#orders">Invoices</a></li>
+          <li><a class="ds-footer__link" href="#orders">Service plan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Help</h2>
+        <ul class="ds-footer__list">
+          <li><a class="ds-footer__link" href="#help">Delivery day</a></li>
+          <li><a class="ds-footer__link" href="#help">Returns</a></li>
+          <li><a class="ds-footer__link" href="#help">Message the workshop</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Company</h2>
+        <ul class="ds-footer__list">
+          <li><a class="ds-footer__link" href="#home">Workshops</a></li>
+          <li><a class="ds-footer__link" href="#home">Riders</a></li>
+          <li><a class="ds-footer__link" href="#home">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ds-footer__legal"><span>chronoskin, 2025. Every bike can be returned within 30 days.</span><span>Privacy &middot; Terms &middot; Cookies</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

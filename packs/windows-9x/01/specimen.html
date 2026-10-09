@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin Software Library: desktop grey file manager, specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-page__window ds-window">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-window__title">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="3" width="16" height="2"/><rect x="6" y="5" width="12" height="2"/><rect x="8" y="7" width="8" height="2"/><rect x="10" y="9" width="4" height="2"/><rect x="11" y="11" width="2" height="2"/><rect x="10" y="13" width="4" height="2"/><rect x="8" y="15" width="8" height="2"/><rect x="6" y="17" width="12" height="2"/><rect x="4" y="19" width="16" height="2"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <span class="ds-window__caption">Software Library</span>
+      <span class="ds-window__controls" aria-hidden="true">
+        <span class="ds-window__ctl ds-window__ctl--min"></span>
+        <span class="ds-window__ctl ds-window__ctl--max"></span>
+        <span class="ds-window__ctl ds-window__ctl--close"></span>
+      </span>
+    </div>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home"><span class="ds-nav__key">C</span>atalogue</a></li>
+      <li><a class="ds-nav__link" href="#program"><span class="ds-nav__key">P</span>rogram</a></li>
+      <li><a class="ds-nav__link" href="#search"><span class="ds-nav__key">S</span>earch</a></li>
+      <li><a class="ds-nav__link" href="#submit">S<span class="ds-nav__key">u</span>bmit</a></li>
+      <li class="ds-menu"><details><summary class="ds-nav__link"><span class="ds-nav__key">V</span>iew</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#home">Catalogue</a></li><li><a class="ds-menu__item" href="#search">Find Results</a></li><li><a class="ds-menu__item" href="#submit">Submission</a></li></ul></details></li>
+      <li class="ds-menu"><details><summary class="ds-nav__link"><span class="ds-nav__key">H</span>elp</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#program">About this Program</a></li><li><a class="ds-menu__item" href="#submit">Submit a Program</a></li></ul></details></li>
+    </ul>
+    <div class="ds-toolbar">
+      <a class="ds-toolbar__button ds-tooltip" href="#home"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M8 3L3 8l5 5v-3h5V6H8z"/></svg></span>Back<span class="ds-tooltip__text" role="tooltip">Back to the catalogue</span></a>
+      <span class="ds-toolbar__button is-disabled"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M8 3l5 5-5 5v-3H3V6h5z"/></svg></span>Forward</span>
+      <a class="ds-toolbar__button" href="#home"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M8 3l5 5h-3v5H6V8H3z"/></svg></span>Up</a>
+      <span class="ds-toolbar__sep"></span>
+      <a class="ds-toolbar__button" href="#search"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M6 1a5 5 0 1 0 0 10a5 5 0 0 0 0-10z M6 3a3 3 0 1 1 0 6a3 3 0 0 1 0-6z M9.6 8.2l5 5-1.4 1.4-5-5z"/></svg></span>Find</a>
+      <a class="ds-toolbar__button" href="#program"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h10l2 2v10H2z M4 3v4h7V3z M9 4h1v2H9z M4 9v4h8V9z M5 10h6v1H5z"/></svg></span>Download</a>
+      <a class="ds-toolbar__button" href="#submit"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h14v10H1z M2.6 4L8 8.4 13.4 4z M2 5v7h12V5L8 9.8z"/></svg></span>Submit</a>
+      <span class="ds-toolbar__sep"></span>
+      <a class="ds-toolbar__button is-pressed" href="#home"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span>Large Icons</a>
+      <a class="ds-toolbar__button" href="#search"><span class="ds-icon ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h12v12H2z M3 3v10h10V3z M4 5h2v2H4z M7 5h5v1H7z M4 9h2v2H4z M7 9h5v1H7z"/></svg></span>Details</a>
+    </div>
+  </header>
+
+  <section class="ds-view ds-view--home" id="home">
+    <div class="ds-page__body">
+
+      <section class="ds-hero" data-component="hero">
+        <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h12v9H2z M3 3v7h10V3z M5 12h6v1h2v1H3v-1h2z"/></svg></span>
+        <div class="ds-hero__text">
+          <h1 class="ds-hero__title">Software Library</h1>
+          <p class="ds-hero__lead">2,418 shareware and freeware programs, every one tested by hand.</p>
+        </div>
+        <form class="ds-hero__action" action="#search">
+          <label for="h-find">Find a program by name:</label>
+          <span class="ds-hero__row">
+            <input class="ds-form__input ds-hero__field" id="h-find" type="text" value="text editor">
+            <a class="ds-button" href="#search">Find Now</a>
+          </span>
+        </form>
+      </section>
+
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__item"><span class="ds-stat__value">2,418</span> <span class="ds-stat__label">programs in the library</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">36</span> <span class="ds-stat__label">added this week</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">1.2 GB</span> <span class="ds-stat__label">on four mirror servers</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__value">412,060</span> <span class="ds-stat__label">downloads last month</span></li>
+      </ul>
+
+      <div class="ds-page__columns">
+
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">All Folders</h2>
+          <div class="ds-sidebar__body">
+            <ul class="ds-tree">
+              <li class="ds-tree__item"><a class="ds-tree__link is-current" href="#home"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h6v2H4l-2 5V5H1z M4 8h11l-2 6H1z"/></svg></span>Catalogue</a>
+                <ul class="ds-tree__list">
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Business</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Desktop</a>
+                    <ul class="ds-tree__list">
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Icons</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Screen Savers</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Wallpaper</a></li>
+                    </ul>
+                  </li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Education</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Games</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Graphics</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Internet</a>
+                    <ul class="ds-tree__list">
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>File Transfer</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Mail</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Page Editors</a></li>
+                    </ul>
+                  </li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Programming</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Sound</a></li>
+                  <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Utilities</a>
+                    <ul class="ds-tree__list">
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Compression</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Disk Tools</a></li>
+                      <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h5l1 2h8v9H1z"/></svg></span>Text Editors</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="ds-tree__item"><a class="ds-tree__link" href="#search"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M6 1a5 5 0 1 0 0 10a5 5 0 0 0 0-10z M6 3a3 3 0 1 1 0 6a3 3 0 0 1 0-6z M9.6 8.2l5 5-1.4 1.4-5-5z"/></svg></span>Find Results</a></li>
+              <li class="ds-tree__item"><a class="ds-tree__link" href="#submit"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h14v10H1z M2.6 4L8 8.4 13.4 4z M2 5v7h12V5L8 9.8z"/></svg></span>Submissions</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="ds-page__main">
+
+          <section class="ds-pane">
+            <h2 class="ds-pane__title">Contents of 'Catalogue'</h2>
+            <div class="ds-grid" data-component="grid">
+              <a class="ds-grid__cell" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 1h7l3 3v11H3z M4 2v12h8V5H9V2z M5 7h6v1H5z M5 9h6v1H5z M5 11h4v1H5z"/></svg></span></span><span class="ds-grid__title">Business</span><span class="ds-grid__text">214 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--2" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h12v9H2z M3 3v7h10V3z M5 12h6v1h2v1H3v-1h2z"/></svg></span></span><span class="ds-grid__title">Desktop</span><span class="ds-grid__text">388 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--3" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h5l1 1 1-1h5v11H9l-1 1-1-1H2z M3 3v9h4V3z M9 3v9h4V3z"/></svg></span></span><span class="ds-grid__title">Education</span><span class="ds-grid__text">157 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--4" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1l2 5h5l-4 3.2 1.6 5.3L8 11.4 3.4 14.5 5 9.2 1 6h5z"/></svg></span></span><span class="ds-grid__title">Games</span><span class="ds-grid__text">502 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--3" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span></span><span class="ds-grid__title">Graphics</span><span class="ds-grid__text">196 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--4" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M8 2.2a5.8 5.8 0 0 1 2 .4L9 5H6L5 3.2A5.8 5.8 0 0 1 8 2.2z M2.3 7l2.2-.6L7 8l-1 3 1.5 2.7A5.8 5.8 0 0 1 2.3 7z M13.7 7.5a5.8 5.8 0 0 1-3 5.5L10 10l1.2-2.5z"/></svg></span></span><span class="ds-grid__title">Internet</span><span class="ds-grid__text">341 programs</span></a>
+              <a class="ds-grid__cell" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h12v12H2z M3 3v10h10V3z M4 5h2v2H4z M7 5h5v1H7z M4 9h2v2H4z M7 9h5v1H7z"/></svg></span></span><span class="ds-grid__title">Programming</span><span class="ds-grid__text">173 programs</span></a>
+              <a class="ds-grid__cell ds-grid__cell--2" href="#search"><span class="ds-grid__icon"><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 2h3v5h4V2h3v6l-3 2v5H6v-5L3 8z"/></svg></span></span><span class="ds-grid__title">Utilities</span><span class="ds-grid__text">447 programs</span></a>
+            </div>
+          </section>
+
+          <fieldset class="ds-panel" data-component="panel">
+            <legend class="ds-panel__title">New this week</legend>
+            <div class="ds-panel__body">
+              <ul class="ds-list" data-component="list">
+                <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span><span class="ds-list__text"><a class="ds-link" href="#program">Tidepool Text 2.1</a> A fast plain text editor with tabs and a word count.</span> <span class="ds-list__meta">412 KB, 14 Mar</span></li>
+                <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span><span class="ds-list__text"><a class="ds-link" href="#program">Lantern Transfer 1.4</a> Sends whole folders to your page host and resumes after a dropped line.</span> <span class="ds-list__meta">688 KB, 13 Mar</span></li>
+                <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span><span class="ds-list__text"><a class="ds-link is-visited" href="#program">Mothlight Saver</a> Twelve slow screen savers that are kind to old monitors.</span> <span class="ds-list__meta">1,204 KB, 12 Mar</span></li>
+                <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span><span class="ds-list__text"><a class="ds-link" href="#program">Tallybook 3.0</a> Household accounts with cheque printing.</span> <span class="ds-badge">New</span> <span class="ds-list__meta">950 KB, 11 Mar</span></li>
+              </ul>
+            </div>
+          </fieldset>
+
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th class="ds-table__head" scope="col">Most downloaded</th>
+                <th class="ds-table__head" scope="col">Folder</th>
+                <th class="ds-table__head ds-table__head--num" scope="col">Size</th>
+                <th class="ds-table__head ds-table__head--num" scope="col">Downloads</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Harbour Zip 4.2</a></td>
+                <td class="ds-table__cell">Compression</td>
+                <td class="ds-table__cell ds-table__cell--num">306 KB</td>
+                <td class="ds-table__cell ds-table__cell--num">48,112</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Kestrel Mail 1.6</a></td>
+                <td class="ds-table__cell">Mail</td>
+                <td class="ds-table__cell ds-table__cell--num">1,480 KB</td>
+                <td class="ds-table__cell ds-table__cell--num">31,570</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Pebble Paint 2.0</a></td>
+                <td class="ds-table__cell">Graphics</td>
+                <td class="ds-table__cell ds-table__cell--num">774 KB</td>
+                <td class="ds-table__cell ds-table__cell--num">27,904</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Tidepool Text 2.1</a></td>
+                <td class="ds-table__cell">Text Editors</td>
+                <td class="ds-table__cell ds-table__cell--num">412 KB</td>
+                <td class="ds-table__cell ds-table__cell--num">19,266</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Lantern Transfer 1.4</a></td>
+                <td class="ds-table__cell">File Transfer</td>
+                <td class="ds-table__cell ds-table__cell--num">688 KB</td>
+                <td class="ds-table__cell ds-table__cell--num">16,031</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="program">
+    <div class="ds-page__body">
+      <div class="ds-address">
+        <span class="ds-address__label">Address</span>
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Catalogue</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#search">Utilities</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#search">Text Editors</a></li>
+          <li class="ds-breadcrumb__item is-current">Tidepool Text 2.1</li>
+        </ol>
+      </div>
+      <div class="ds-page__inner">
+
+        <header class="ds-page-header" data-component="page-header">
+          <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span>
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Tidepool Text 2.1</h1>
+            <p class="ds-page-header__lead">A fast plain text editor with tabs, a word count and no surprises.</p>
+          </div>
+          <div class="ds-page-header__action">
+            <a class="ds-button" href="#program">Download Now</a>
+          </div>
+        </header>
+
+        <div>
+          <ul class="ds-tabs" data-component="tabs">
+            <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" href="#program">General</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#program">Versions</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#program">Read Me</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#program">Reviews (14)</a></li>
+          </ul>
+          <div class="ds-sheet">
+            <div class="ds-split">
+              <div class="ds-stack">
+                <dl class="ds-props">
+                  <dt class="ds-props__label">Type:</dt>
+                  <dd class="ds-props__value">Application, 32-bit</dd>
+                  <dt class="ds-props__label">Location:</dt>
+                  <dd class="ds-props__value"><a class="ds-link" href="#search">Catalogue\Utilities\Text Editors</a></dd>
+                  <dt class="ds-props__label">Size:</dt>
+                  <dd class="ds-props__value">412 KB (421,888 bytes)</dd>
+                  <dt class="ds-props__label">Added:</dt>
+                  <dd class="ds-props__value">Saturday, 14 March 1998</dd>
+                  <dt class="ds-props__label">Author:</dt>
+                  <dd class="ds-props__value"><a class="ds-link ds-link--quiet" href="#search">Marit Oakes</a></dd>
+                  <dt class="ds-props__label">Rating:</dt>
+                  <dd class="ds-props__value"><span class="ds-progress"><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block"></span><span class="ds-progress__block ds-progress__block--empty"></span><span class="ds-progress__block ds-progress__block--empty"></span></span> 8 of 10</dd>
+                  <dt class="ds-props__label">Status:</dt>
+                  <dd class="ds-props__value"><span class="ds-badges" data-component="badge"><span class="ds-badge">Shareware</span> <span class="ds-badge ds-badge--success">Virus checked</span> <span class="ds-badge ds-badge--warning">30 day trial</span> <span class="ds-badge ds-badge--danger">Old version withdrawn</span></span></dd>
+                </dl>
+                <fieldset class="ds-group">
+                  <legend class="ds-group__title">You will need</legend>
+                  <ul class="ds-list">
+                    <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h12v9H2z M3 3v7h10V3z M5 12h6v1h2v1H3v-1h2z"/></svg></span><span class="ds-list__text">A 486 processor or better, 8 MB of memory</span></li>
+                    <li class="ds-list__item"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h10l2 2v10H2z M4 3v4h7V3z M9 4h1v2H9z M4 9v4h8V9z M5 10h6v1H5z"/></svg></span><span class="ds-list__text">1 MB of free disk space</span></li>
+                  </ul>
+                </fieldset>
+              </div>
+              <div class="ds-stack">
+                <table class="ds-table" data-component="table">
+                  <caption class="ds-table__caption">4 object(s). The selected file is the one the Download button fetches.</caption>
+                  <thead>
+                    <tr>
+                      <th class="ds-table__head" scope="col">File</th>
+                      <th class="ds-table__head" scope="col">Version</th>
+                      <th class="ds-table__head ds-table__head--num" scope="col">Size</th>
+                      <th class="ds-table__head" scope="col">Modified</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="ds-table__row is-selected">
+                      <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h10l2 2v10H2z M4 3v4h7V3z M9 4h1v2H9z M4 9v4h8V9z M5 10h6v1H5z"/></svg></span> tide21.exe</td>
+                      <td class="ds-table__cell">2.1</td>
+                      <td class="ds-table__cell ds-table__cell--num">412 KB</td>
+                      <td class="ds-table__cell">14/03/98</td>
+                    </tr>
+                    <tr class="ds-table__row">
+                      <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h10l2 2v10H2z M4 3v4h7V3z M9 4h1v2H9z M4 9v4h8V9z M5 10h6v1H5z"/></svg></span> <a class="ds-link" href="#program">tide20.exe</a></td>
+                      <td class="ds-table__cell">2.0</td>
+                      <td class="ds-table__cell ds-table__cell--num">398 KB</td>
+                      <td class="ds-table__cell">02/11/97</td>
+                    </tr>
+                    <tr class="ds-table__row">
+                      <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 2h10l2 2v10H2z M4 3v4h7V3z M9 4h1v2H9z M4 9v4h8V9z M5 10h6v1H5z"/></svg></span> <a class="ds-link is-visited" href="#program">tide16.zip</a></td>
+                      <td class="ds-table__cell">1.6, 16-bit</td>
+                      <td class="ds-table__cell ds-table__cell--num">287 KB</td>
+                      <td class="ds-table__cell">19/05/97</td>
+                    </tr>
+                    <tr class="ds-table__row">
+                      <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M3 1h7l3 3v11H3z M4 2v12h8V5H9V2z M5 7h6v1H5z M5 9h6v1H5z M5 11h4v1H5z"/></svg></span> <a class="ds-link" href="#program">readme.txt</a></td>
+                      <td class="ds-table__cell">2.1</td>
+                      <td class="ds-table__cell ds-table__cell--num">6 KB</td>
+                      <td class="ds-table__cell">14/03/98</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <section class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+                  <h2 class="ds-dialog__title" id="d-title">File Download <span class="ds-window__ctl ds-window__ctl--close" aria-hidden="true"></span></h2>
+                  <div class="ds-dialog__content">
+                    <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M7 10h2v2H7z M5.4 6a2.6 2.6 0 1 1 4.2 2c-.5.5-.6.7-.6 1.4H7c0-1.2.3-1.7 1-2.3a.8.8 0 1 0-1.3-.6z"/></svg></span>
+                    <p class="ds-dialog__body">Save <strong>tide21.exe</strong> (412 KB) to your disk? At 28.8 kbps this takes about 2 minutes.</p>
+                  </div>
+                  <div class="ds-dialog__actions">
+                    <a class="ds-button" href="#program">Save</a>
+                    <a class="ds-button ds-button--secondary" href="#program">Cancel</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <article class="ds-well ds-prose" data-component="typography">
+          <h1>Read me</h1>
+          <p class="ds-prose__lead">Tidepool Text opens any plain file, however large, in under a second.</p>
+          <p>Thank you for trying <strong>Tidepool Text</strong>. This is the complete program, not a cut-down copy: you may use it for 30 days, and after that it asks you once a day to register.</p>
+          <h2>Installing</h2>
+          <p>Run <code>tide21.exe</code> and choose a folder. To start the editor with a file already open, type <code>tide notes.txt</code> at the command line.</p>
+          <ul>
+            <li>Nothing is written outside the folder you choose.</li>
+            <li>To remove the program, delete that folder.</li>
+          </ul>
+          <h3>Where to read more</h3>
+          <p class="ds-links" data-component="links">
+            <a class="ds-link" href="#program">The author's page</a>,
+            <a class="ds-link is-visited" href="#program">a review you have read</a>,
+            <a class="ds-link is-hover" href="#program">a link under the pointer</a>,
+            <a class="ds-link is-active" href="#program">a link as you click it</a> and
+            <a class="ds-link ds-link--quiet" href="#search">other programs in Text Editors</a>.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="search">
+    <div class="ds-page__body">
+      <div class="ds-address">
+        <span class="ds-address__label">Address</span>
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Catalogue</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#search">Find Results</a></li>
+          <li class="ds-breadcrumb__item is-current">text editor</li>
+        </ol>
+      </div>
+      <div class="ds-page__inner">
+
+        <header class="ds-page-header">
+          <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M6 1a5 5 0 1 0 0 10a5 5 0 0 0 0-10z M6 3a3 3 0 1 1 0 6a3 3 0 0 1 0-6z M9.6 8.2l5 5-1.4 1.4-5-5z"/></svg></span>
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Find: Programs named 'text editor'</h1>
+            <p class="ds-page-header__lead">23 programs found in 3 folders.</p>
+          </div>
+          <div class="ds-page-header__action">
+            <a class="ds-button ds-button--secondary" href="#home">New Search</a>
+          </div>
+        </header>
+
+        <fieldset class="ds-group">
+          <legend class="ds-group__title">Look for</legend>
+          <form class="ds-find" action="#search">
+            <label for="s-name">Named:</label>
+            <input class="ds-form__input" id="s-name" type="text" value="text editor">
+            <label for="s-in">Look in:</label>
+            <select class="ds-form__select" id="s-in">
+              <option>Catalogue (all folders)</option>
+              <option>Utilities</option>
+              <option>Internet</option>
+            </select>
+            <label class="ds-form__option"><input class="ds-form__check" type="checkbox" checked>Freeware only</label>
+            <span class="ds-find__fill"></span>
+            <a class="ds-button" href="#search">Find Now</a>
+          </form>
+        </fieldset>
+
+        <p class="ds-notice"><span class="ds-notice__label">Tip:</span> put a phrase in quotation marks to find those words together, as in "text editor".</p>
+
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th class="ds-table__head" scope="col">Name</th>
+              <th class="ds-table__head" scope="col">In Folder</th>
+              <th class="ds-table__head" scope="col">Licence</th>
+              <th class="ds-table__head ds-table__head--num" scope="col">Size</th>
+              <th class="ds-table__head ds-table__head--num" scope="col">Downloads</th>
+              <th class="ds-table__head" scope="col">Modified</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ds-table__row is-selected">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Tidepool Text 2.1</a></td>
+              <td class="ds-table__cell">Utilities\Text Editors</td>
+              <td class="ds-table__cell">Shareware</td>
+              <td class="ds-table__cell ds-table__cell--num">412 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">19,266</td>
+              <td class="ds-table__cell">14/03/98</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Quillnote 1.2</a></td>
+              <td class="ds-table__cell">Utilities\Text Editors</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Freeware</span></td>
+              <td class="ds-table__cell ds-table__cell--num">198 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">11,402</td>
+              <td class="ds-table__cell">30/01/98</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link is-visited" href="#program">Margin Notes 3.0</a></td>
+              <td class="ds-table__cell">Business</td>
+              <td class="ds-table__cell">Shareware</td>
+              <td class="ds-table__cell ds-table__cell--num">1,036 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">8,750</td>
+              <td class="ds-table__cell">08/12/97</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Page Smith 2.4</a></td>
+              <td class="ds-table__cell">Internet\Page Editors</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Trial</span></td>
+              <td class="ds-table__cell ds-table__cell--num">2,210 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">7,318</td>
+              <td class="ds-table__cell">21/02/98</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Hexwright 1.0</a></td>
+              <td class="ds-table__cell">Programming</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Freeware</span></td>
+              <td class="ds-table__cell ds-table__cell--num">144 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">3,905</td>
+              <td class="ds-table__cell">17/09/97</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 2h14v12H1z M2 5v8h12V5z M3 6h5v3H3z M9 6h4v1H9z M9 8h4v1H9z M3 10h10v2H3z"/></svg></span> <a class="ds-link" href="#program">Old Scribe 0.9</a></td>
+              <td class="ds-table__cell">Utilities\Text Editors</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Withdrawn</span></td>
+              <td class="ds-table__cell ds-table__cell--num">96 KB</td>
+              <td class="ds-table__cell ds-table__cell--num">512</td>
+              <td class="ds-table__cell">03/04/96</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ol class="ds-pagination" data-component="pagination">
+          <li class="ds-pagination__label">Page 2 of 4:</li>
+          <li><a class="ds-pagination__link" href="#search">&lt; Previous</a></li>
+          <li><a class="ds-pagination__link" href="#search">1</a></li>
+          <li><a class="ds-pagination__link is-current" href="#search">2</a></li>
+          <li><a class="ds-pagination__link" href="#search">3</a></li>
+          <li><a class="ds-pagination__link" href="#search">4</a></li>
+          <li><a class="ds-pagination__link" href="#search">Next &gt;</a></li>
+        </ol>
+
+        <section class="ds-pane">
+          <h2 class="ds-pane__title">Matches in 'Submissions' (waiting to be tested)</h2>
+          <div class="ds-empty" data-component="empty">
+            <h3 class="ds-empty__title">There are no items to show in this view.</h3>
+            <p class="ds-empty__text">No program waiting to be tested matches 'text editor'. If you have written one, send it in.</p>
+            <a class="ds-button ds-button--secondary" href="#submit">Submit a Program...</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="submit">
+    <div class="ds-page__body">
+      <div class="ds-address">
+        <span class="ds-address__label">Address</span>
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Catalogue</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link" href="#submit">Submissions</a></li>
+          <li class="ds-breadcrumb__item is-current">Submit a Program Wizard</li>
+        </ol>
+      </div>
+      <div class="ds-page__inner">
+
+        <header class="ds-page-header">
+          <span class="ds-icon ds-icon--large"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M1 3h14v10H1z M2.6 4L8 8.4 13.4 4z M2 5v7h12V5L8 9.8z"/></svg></span>
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Submit a Program Wizard</h1>
+            <p class="ds-page-header__lead">Step 2 of 4: tell us about the program. A tester writes back within ten days.</p>
+          </div>
+          <div class="ds-page-header__action">
+            <a class="ds-button ds-button--secondary" href="#home">Close</a>
+          </div>
+        </header>
+
+        <div class="ds-wizard">
+          <ol class="ds-wizard__band">
+            <li><span class="ds-icon ds-icon--large ds-icon--plain"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 4h12v10H2z M3 5v8h10V5z M6 4h4v4H6z M1 2h14v2H1z"/></svg></span></li>
+            <li class="ds-wizard__step">1. About you</li>
+            <li class="ds-wizard__step is-current">2. The program</li>
+            <li class="ds-wizard__step">3. Send the file</li>
+            <li class="ds-wizard__step">4. Finish</li>
+          </ol>
+          <div class="ds-wizard__main">
+            <div class="ds-notices" data-component="notice">
+              <p class="ds-notice"><span class="ds-notice__label">Note:</span> files larger than 1.4 MB should be split so that each part fits on one floppy disk.</p>
+              <p class="ds-notice ds-notice--error"><span class="ds-notice__label">Cannot continue.</span> The file name is longer than 8 characters. Shorten it and choose Next again.</p>
+            </div>
+            <form class="ds-form" data-component="form" action="#submit">
+              <label class="ds-form__label" for="f-name">Program name:</label>
+              <div class="ds-form__field">
+                <input class="ds-form__input" id="f-name" type="text" value="Tidepool Text">
+                <span class="ds-form__hint">as it should appear in the catalogue</span>
+              </div>
+              <label class="ds-form__label" for="f-file">File name:</label>
+              <div class="ds-form__field">
+                <input class="ds-form__input" id="f-file" type="text" value="tidepool21.exe">
+                <span class="ds-form__error">Use at most 8 characters before the dot, for example tide21.exe.</span>
+              </div>
+              <label class="ds-form__label" for="f-folder">Folder:</label>
+              <div class="ds-form__field">
+                <select class="ds-form__select" id="f-folder">
+                  <option>Utilities\Text Editors</option>
+                  <option>Internet\Page Editors</option>
+                  <option>Programming</option>
+                </select>
+              </div>
+              <span class="ds-form__label">Licence:</span>
+              <div class="ds-form__field">
+                <label class="ds-form__option"><input class="ds-form__check" type="checkbox" checked>Shareware</label>
+                <label class="ds-form__option"><input class="ds-form__check" type="checkbox">Source code included</label>
+              </div>
+              <label class="ds-form__label" for="f-desc">Description:</label>
+              <div class="ds-form__field">
+                <textarea class="ds-form__textarea" id="f-desc" rows="4">A fast plain text editor with tabs and a word count.</textarea>
+              </div>
+            </form>
+            <hr class="ds-rule">
+            <div class="ds-buttons" data-component="buttons">
+              <button class="ds-button ds-button--danger" type="button">Discard Draft</button>
+              <span class="ds-find__fill"></span>
+              <a class="ds-button ds-button--secondary" href="#submit">&lt; Back</a>
+              <a class="ds-button" href="#submit">Next &gt;</a>
+              <button class="ds-button" type="button" disabled>Finish</button>
+              <a class="ds-button ds-button--secondary" href="#home">Cancel</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-status">
+      <li class="ds-status__cell ds-status__cell--wide">chronoskin Software Library, 1998. <a class="ds-link ds-link--quiet" href="#submit">Submit a program</a>, <a class="ds-link ds-link--quiet" href="#search">find a program</a> or read <a class="ds-link ds-link--quiet" href="#program">how programs are tested</a>.</li>
+      <li class="ds-status__cell">2,418 object(s)</li>
+      <li class="ds-status__cell">1.2 GB</li>
+      <li class="ds-status__cell"><span class="ds-icon"><svg viewBox="0 0 16 16" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1z M8 2.2a5.8 5.8 0 0 1 2 .4L9 5H6L5 3.2A5.8 5.8 0 0 1 8 2.2z M2.3 7l2.2-.6L7 8l-1 3 1.5 2.7A5.8 5.8 0 0 1 2.3 7z M13.7 7.5a5.8 5.8 0 0 1-3 5.5L10 10l1.2-2.5z"/></svg></span> Mirror: north</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>

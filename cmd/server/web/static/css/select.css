@@ -1,0 +1,322 @@
+/* Custom select: a disclosure holding radio buttons or checkboxes. It
+   opens and selects without script, and never grows with what is chosen. */
+.cselect {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.cselect > summary {
+  list-style: none;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--panel);
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+}
+
+.cselect > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cselect > summary:hover {
+  border-color: var(--muted);
+}
+
+.cselect > summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform 0.12s;
+  flex: none;
+}
+
+.cselect[open] > summary {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.cselect[open] > summary::after {
+  transform: rotate(225deg);
+  margin-top: 3px;
+}
+
+.cselect > summary .values {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* With several chosen the chips scroll sideways instead of being cut. */
+.cselect.multi > summary .values {
+  overflow-x: auto;
+  text-overflow: clip;
+  padding: 6px 0;
+}
+
+.cselect > summary .value {
+  display: none;
+}
+
+.cselect.multi > summary .value {
+  margin-right: 5px;
+  padding: 3px 8px;
+  border-radius: var(--radius-small);
+  background: var(--sunken);
+  font-size: 13px;
+}
+
+.cselect > summary .none {
+  display: none;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.cselect.multi:not(:has(.menu input:checked)) > summary .none {
+  display: inline;
+}
+
+.cselect > summary .n {
+  flex: none;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-small);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 600 11px/20px var(--mono);
+  text-align: center;
+}
+
+.cselect > summary .clear {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.cselect > summary .clear:hover {
+  background: var(--sunken);
+  color: var(--ink);
+}
+
+.cselect > summary .clear svg {
+  width: 12px;
+  height: 12px;
+}
+
+.cselect .menu .clear-all {
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: none;
+  color: var(--muted);
+  font: 600 12px var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.cselect .menu .clear-all:hover:not(:disabled) {
+  background: var(--sunken);
+  color: var(--ink);
+}
+
+.cselect .menu .clear-all:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cselect .menu {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  /* Without script; with it, select.js fits the list to the window. */
+  max-height: calc(100dvh - 96px);
+  overflow-y: auto;
+  padding: 0 5px 5px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.18);
+}
+
+.cselect .menu .tools {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  padding-top: 5px;
+  background: var(--panel);
+}
+
+.cselect .menu .filter {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 4px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+  color: var(--ink);
+  font: 13px var(--sans);
+}
+
+.cselect .menu .filter:focus {
+  outline: var(--ring);
+  outline-offset: 0;
+}
+
+.cselect .menu label[hidden], .cselect .menu label.absent {
+  display: none;
+}
+
+.cselect .menu label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px 8px 30px;
+  border-radius: var(--radius-small);
+  cursor: pointer;
+}
+
+.cselect .menu label:hover, .cselect .menu label:has(input:focus-visible) {
+  background: var(--sunken);
+}
+
+.cselect .menu input[type="radio"], .cselect .menu input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.cselect .menu label:has(input:checked) {
+  font-weight: 600;
+}
+
+.cselect .menu label:has(input:checked)::before {
+  content: "✓";
+  position: absolute;
+  left: 10px;
+  color: var(--accent);
+}
+
+.cselect .menu small {
+  margin-left: auto;
+  color: var(--muted);
+  font: 11px var(--mono);
+}
+
+/* The summary shows the nth value for the nth checked option, so it is
+   right before any script runs. Up to 80 options; the first child of
+   .values is the hidden label, hence the offset by one. */
+.cselect:has(.menu label:nth-of-type(1) input:checked) > summary .value:nth-of-type(2),
+.cselect:has(.menu label:nth-of-type(2) input:checked) > summary .value:nth-of-type(3),
+.cselect:has(.menu label:nth-of-type(3) input:checked) > summary .value:nth-of-type(4),
+.cselect:has(.menu label:nth-of-type(4) input:checked) > summary .value:nth-of-type(5),
+.cselect:has(.menu label:nth-of-type(5) input:checked) > summary .value:nth-of-type(6),
+.cselect:has(.menu label:nth-of-type(6) input:checked) > summary .value:nth-of-type(7),
+.cselect:has(.menu label:nth-of-type(7) input:checked) > summary .value:nth-of-type(8),
+.cselect:has(.menu label:nth-of-type(8) input:checked) > summary .value:nth-of-type(9),
+.cselect:has(.menu label:nth-of-type(9) input:checked) > summary .value:nth-of-type(10),
+.cselect:has(.menu label:nth-of-type(10) input:checked) > summary .value:nth-of-type(11),
+.cselect:has(.menu label:nth-of-type(11) input:checked) > summary .value:nth-of-type(12),
+.cselect:has(.menu label:nth-of-type(12) input:checked) > summary .value:nth-of-type(13),
+.cselect:has(.menu label:nth-of-type(13) input:checked) > summary .value:nth-of-type(14),
+.cselect:has(.menu label:nth-of-type(14) input:checked) > summary .value:nth-of-type(15),
+.cselect:has(.menu label:nth-of-type(15) input:checked) > summary .value:nth-of-type(16),
+.cselect:has(.menu label:nth-of-type(16) input:checked) > summary .value:nth-of-type(17),
+.cselect:has(.menu label:nth-of-type(17) input:checked) > summary .value:nth-of-type(18),
+.cselect:has(.menu label:nth-of-type(18) input:checked) > summary .value:nth-of-type(19),
+.cselect:has(.menu label:nth-of-type(19) input:checked) > summary .value:nth-of-type(20),
+.cselect:has(.menu label:nth-of-type(20) input:checked) > summary .value:nth-of-type(21),
+.cselect:has(.menu label:nth-of-type(21) input:checked) > summary .value:nth-of-type(22),
+.cselect:has(.menu label:nth-of-type(22) input:checked) > summary .value:nth-of-type(23),
+.cselect:has(.menu label:nth-of-type(23) input:checked) > summary .value:nth-of-type(24),
+.cselect:has(.menu label:nth-of-type(24) input:checked) > summary .value:nth-of-type(25),
+.cselect:has(.menu label:nth-of-type(25) input:checked) > summary .value:nth-of-type(26),
+.cselect:has(.menu label:nth-of-type(26) input:checked) > summary .value:nth-of-type(27),
+.cselect:has(.menu label:nth-of-type(27) input:checked) > summary .value:nth-of-type(28),
+.cselect:has(.menu label:nth-of-type(28) input:checked) > summary .value:nth-of-type(29),
+.cselect:has(.menu label:nth-of-type(29) input:checked) > summary .value:nth-of-type(30),
+.cselect:has(.menu label:nth-of-type(30) input:checked) > summary .value:nth-of-type(31),
+.cselect:has(.menu label:nth-of-type(31) input:checked) > summary .value:nth-of-type(32),
+.cselect:has(.menu label:nth-of-type(32) input:checked) > summary .value:nth-of-type(33),
+.cselect:has(.menu label:nth-of-type(33) input:checked) > summary .value:nth-of-type(34),
+.cselect:has(.menu label:nth-of-type(34) input:checked) > summary .value:nth-of-type(35),
+.cselect:has(.menu label:nth-of-type(35) input:checked) > summary .value:nth-of-type(36),
+.cselect:has(.menu label:nth-of-type(36) input:checked) > summary .value:nth-of-type(37),
+.cselect:has(.menu label:nth-of-type(37) input:checked) > summary .value:nth-of-type(38),
+.cselect:has(.menu label:nth-of-type(38) input:checked) > summary .value:nth-of-type(39),
+.cselect:has(.menu label:nth-of-type(39) input:checked) > summary .value:nth-of-type(40),
+.cselect:has(.menu label:nth-of-type(40) input:checked) > summary .value:nth-of-type(41),
+.cselect:has(.menu label:nth-of-type(41) input:checked) > summary .value:nth-of-type(42),
+.cselect:has(.menu label:nth-of-type(42) input:checked) > summary .value:nth-of-type(43),
+.cselect:has(.menu label:nth-of-type(43) input:checked) > summary .value:nth-of-type(44),
+.cselect:has(.menu label:nth-of-type(44) input:checked) > summary .value:nth-of-type(45),
+.cselect:has(.menu label:nth-of-type(45) input:checked) > summary .value:nth-of-type(46),
+.cselect:has(.menu label:nth-of-type(46) input:checked) > summary .value:nth-of-type(47),
+.cselect:has(.menu label:nth-of-type(47) input:checked) > summary .value:nth-of-type(48),
+.cselect:has(.menu label:nth-of-type(48) input:checked) > summary .value:nth-of-type(49),
+.cselect:has(.menu label:nth-of-type(49) input:checked) > summary .value:nth-of-type(50),
+.cselect:has(.menu label:nth-of-type(50) input:checked) > summary .value:nth-of-type(51),
+.cselect:has(.menu label:nth-of-type(51) input:checked) > summary .value:nth-of-type(52),
+.cselect:has(.menu label:nth-of-type(52) input:checked) > summary .value:nth-of-type(53),
+.cselect:has(.menu label:nth-of-type(53) input:checked) > summary .value:nth-of-type(54),
+.cselect:has(.menu label:nth-of-type(54) input:checked) > summary .value:nth-of-type(55),
+.cselect:has(.menu label:nth-of-type(55) input:checked) > summary .value:nth-of-type(56),
+.cselect:has(.menu label:nth-of-type(56) input:checked) > summary .value:nth-of-type(57),
+.cselect:has(.menu label:nth-of-type(57) input:checked) > summary .value:nth-of-type(58),
+.cselect:has(.menu label:nth-of-type(58) input:checked) > summary .value:nth-of-type(59),
+.cselect:has(.menu label:nth-of-type(59) input:checked) > summary .value:nth-of-type(60),
+.cselect:has(.menu label:nth-of-type(60) input:checked) > summary .value:nth-of-type(61),
+.cselect:has(.menu label:nth-of-type(61) input:checked) > summary .value:nth-of-type(62),
+.cselect:has(.menu label:nth-of-type(62) input:checked) > summary .value:nth-of-type(63),
+.cselect:has(.menu label:nth-of-type(63) input:checked) > summary .value:nth-of-type(64),
+.cselect:has(.menu label:nth-of-type(64) input:checked) > summary .value:nth-of-type(65),
+.cselect:has(.menu label:nth-of-type(65) input:checked) > summary .value:nth-of-type(66),
+.cselect:has(.menu label:nth-of-type(66) input:checked) > summary .value:nth-of-type(67),
+.cselect:has(.menu label:nth-of-type(67) input:checked) > summary .value:nth-of-type(68),
+.cselect:has(.menu label:nth-of-type(68) input:checked) > summary .value:nth-of-type(69),
+.cselect:has(.menu label:nth-of-type(69) input:checked) > summary .value:nth-of-type(70),
+.cselect:has(.menu label:nth-of-type(70) input:checked) > summary .value:nth-of-type(71),
+.cselect:has(.menu label:nth-of-type(71) input:checked) > summary .value:nth-of-type(72),
+.cselect:has(.menu label:nth-of-type(72) input:checked) > summary .value:nth-of-type(73),
+.cselect:has(.menu label:nth-of-type(73) input:checked) > summary .value:nth-of-type(74),
+.cselect:has(.menu label:nth-of-type(74) input:checked) > summary .value:nth-of-type(75),
+.cselect:has(.menu label:nth-of-type(75) input:checked) > summary .value:nth-of-type(76),
+.cselect:has(.menu label:nth-of-type(76) input:checked) > summary .value:nth-of-type(77),
+.cselect:has(.menu label:nth-of-type(77) input:checked) > summary .value:nth-of-type(78),
+.cselect:has(.menu label:nth-of-type(78) input:checked) > summary .value:nth-of-type(79),
+.cselect:has(.menu label:nth-of-type(79) input:checked) > summary .value:nth-of-type(80),
+.cselect:has(.menu label:nth-of-type(80) input:checked) > summary .value:nth-of-type(81) {
+  display: inline;
+}

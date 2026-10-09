@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>chronoskin: Frutiger Aero developer guide specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__wrap">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__head">
+    <a class="ds-brand" data-component="brand" href="#home"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2.5a9.5 9.5 0 1 0 0 19a9.5 9.5 0 1 0 0-19zM12 4.6a5.6 3 0 1 0 0 6a5.6 3 0 1 0 0-6z"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  </div>
+  <form class="ds-nav__search" action="#">
+    <input class="ds-nav__input" type="text" placeholder="Search the guide" aria-label="Search the guide">
+  </form>
+  <ul class="ds-nav__links">
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#home"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8l6-5 6 5M4 7v6h8V7"/></svg>Overview</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#guide"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2.5h8a2 2 0 0 1 2 2v9H5a2 2 0 0 1-2-2zM6 6h4M6 9h4"/></svg>Guides</a>
+      <ul class="ds-nav__sub">
+        <li><a class="ds-nav__sublink" href="#guide">Your first gadget</a></li>
+        <li><a class="ds-nav__sublink" href="#guide">Settings and storage</a></li>
+        <li><a class="ds-nav__sublink" href="#guide">Drawing on glass</a></li>
+        <li><a class="ds-nav__sublink" href="#guide">Packing it up</a></li>
+      </ul>
+    </li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#reference"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 4L2 8l3.5 4M10.5 4L14 8l-3.5 4"/></svg>Reference</a>
+      <ul class="ds-nav__sub">
+        <li><a class="ds-nav__sublink" href="#reference">Objects</a></li>
+        <li><a class="ds-nav__sublink" href="#reference">Events</a></li>
+        <li><a class="ds-nav__sublink" href="#reference">Settings file</a></li>
+      </ul>
+    </li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#submit"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 11V3M4.5 6L8 2.5 11.5 6M3 13h10"/></svg>Submit a gadget</a>
+      <ul class="ds-nav__sub">
+        <li><a class="ds-nav__sublink" href="#submit">Send a gadget</a></li>
+        <li><a class="ds-nav__sublink" href="#submit">Gallery rules</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p class="ds-nav__label">Samples in the kit</p>
+  <ul class="ds-nav__sub ds-nav__sub--plain">
+    <li><a class="ds-nav__sublink" href="#guide">Hello clock</a></li>
+    <li><a class="ds-nav__sublink" href="#guide">Five day weather</a></li>
+    <li><a class="ds-nav__sublink" href="#guide">Sticky note</a></li>
+    <li><a class="ds-nav__sublink" href="#guide">Picture frame</a></li>
+    <li><a class="ds-nav__sublink" href="#guide">Feed reader</a></li>
+  </ul>
+  <div class="ds-nav__foot">
+    <p class="ds-nav__note"><span class="ds-nav__version">Kit 2.1</span>Released 18 March, 6 MB, for every edition of chronoskin Desktop.</p>
+    <a class="ds-button ds-button--block" href="#guide">Download the kit</a>
+  </div>
+</header>
+
+<div class="ds-page__content">
+<div class="ds-page__sheet">
+
+  <section class="ds-view ds-view--home" id="home">
+
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__main">
+        <h1 class="ds-hero__title">Build a desktop gadget in an afternoon</h1>
+        <p class="ds-hero__lead">A gadget is one small page and a settings file. The chronoskin Gadget Kit gives you the glass, the clock and the storage; you bring the idea.</p>
+        <p class="ds-hero__action">
+          <a class="ds-button ds-button--large" href="#guide">Start the first guide <svg class="ds-button__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4"/></svg></a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#reference">Browse the reference</a>
+        </p>
+        <p class="ds-hero__note">Free to use. You need a text editor and twenty minutes.</p>
+      </div>
+      <div class="ds-hero__window">
+        <p class="ds-hero__window-bar"><span>hello.gadget</span><span class="ds-badge">12 lines</span></p>
+<pre class="ds-hero__code"><span class="ds-hero__code-note">// a clock that says hello</span>
+<span class="ds-hero__code-key">gadget</span>.title = "Hello";
+<span class="ds-hero__code-key">gadget</span>.size(130, 130);
+
+<span class="ds-hero__code-key">clock</span>.every("minute", function () {
+  face.text = clock.time("HH:mm");
+  face.glow = clock.isNight();
+});
+
+<span class="ds-hero__code-key">gadget</span>.show();</pre>
+      </div>
+    </div>
+
+    <div class="ds-page__body">
+
+      <ul class="ds-stats" data-component="stats">
+        <li class="ds-stat"><span class="ds-stat__number">3,840</span><span class="ds-stat__label">gadgets in the gallery</span></li>
+        <li class="ds-stat"><span class="ds-stat__number">46</span><span class="ds-stat__label">guides and samples</span></li>
+        <li class="ds-stat"><span class="ds-stat__number">212</span><span class="ds-stat__label">members in the reference</span></li>
+        <li class="ds-stat"><span class="ds-stat__number">2 days</span><span class="ds-stat__label">to review a submission</span></li>
+      </ul>
+
+      <h2 class="ds-section__title">Start here</h2>
+      <div class="ds-grid" data-component="grid">
+        <div class="ds-grid__cell ds-grid__cell--1">
+          <span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#guide">Your first gadget</a></h3>
+            <p class="ds-grid__text">From an empty folder to a clock on the desktop.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-grid__icon ds-grid__icon--bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16M9 5v4M15 10v4M7 15v4"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#guide">Settings and storage</a></h3>
+            <p class="ds-grid__text">Remember what the owner chose, between restarts.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--3">
+          <span class="ds-grid__icon ds-grid__icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M4 10h16"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#guide">Drawing on glass</a></h3>
+            <p class="ds-grid__text">Blur, glow and reflection without a single picture.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--4">
+          <span class="ds-grid__icon ds-grid__icon--alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#reference">Clock and weather</a></h3>
+            <p class="ds-grid__text">The two feeds every gadget may read for free.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-grid__icon ds-grid__icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6L3 12l5 6M16 6l5 6-5 6"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#reference">Objects and events</a></h3>
+            <p class="ds-grid__text">Every member, with the version it arrived in.</p>
+          </div>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--1">
+          <span class="ds-grid__icon ds-grid__icon--bar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V5M7.5 9.5L12 5l4.5 4.5M5 19h14"/></svg></span>
+          <div class="ds-grid__body">
+            <h3 class="ds-grid__title"><a class="ds-link ds-link--title" href="#submit">Into the gallery</a></h3>
+            <p class="ds-grid__text">Pack it, send it, and what the reviewers look for.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-section">
+        <div class="ds-page__columns">
+          <main class="ds-page__main">
+            <h2 class="ds-section__title">Recently updated</h2>
+            <ul class="ds-list" data-component="list">
+              <li class="ds-list__item">
+                <span class="ds-list__mark" aria-hidden="true"></span>
+                <div class="ds-list__body">
+                  <h3 class="ds-list__title"><a class="ds-link ds-link--title" href="#guide">Your first gadget, rewritten for kit 2.1</a> <span class="ds-badge ds-badge--new">New</span></h3>
+                  <p class="ds-list__text">Shorter by a third, and the sample now starts with a double click.</p>
+                  <p class="ds-list__meta">Guide, updated 18 March, 9 minutes to read</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__mark" aria-hidden="true"></span>
+                <div class="ds-list__body">
+                  <h3 class="ds-list__title"><a class="ds-link ds-link--title" href="#reference">The storage object gains a size limit</a></h3>
+                  <p class="ds-list__text">Each gadget may now keep 2 MB; older gadgets are not affected.</p>
+                  <p class="ds-list__meta">Reference, updated 11 March, 3 minutes to read</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__mark" aria-hidden="true"></span>
+                <div class="ds-list__body">
+                  <h3 class="ds-list__title"><a class="ds-link ds-link--title is-visited" href="#guide">Drawing a reflection under a picture</a></h3>
+                  <p class="ds-list__text">Four lines that flip, fade and blur whatever stands above them.</p>
+                  <p class="ds-list__meta">Guide, updated 2 March, 6 minutes to read</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__mark" aria-hidden="true"></span>
+                <div class="ds-list__body">
+                  <h3 class="ds-list__title"><a class="ds-link ds-link--title" href="#submit">What the gallery reviewers check</a></h3>
+                  <p class="ds-list__text">A plain list of the seven reasons a gadget is sent back.</p>
+                  <p class="ds-list__meta">Gallery, updated 24 February, 4 minutes to read</p>
+                </div>
+              </li>
+            </ul>
+          </main>
+          <aside class="ds-page__aside">
+<div class="ds-panel">
+<h2 class="ds-panel__title">Kit download</h2>
+<div class="ds-panel__body">
+<div class="ds-progress__row"><span class="ds-progress__label">Gadget kit</span><progress class="ds-progress" value="84" max="100">84%</progress><span class="ds-progress__value">84%</span></div>
+<p class="ds-progress__note">1.4 MB, nearly there.</p>
+</div>
+</div>
+
+            <div class="ds-panel" data-component="panel">
+              <h2 class="ds-panel__title">What is in the kit</h2>
+              <div class="ds-panel__body">
+                <ul class="ds-panel__facts">
+                  <li class="ds-panel__fact"><span class="ds-panel__fact-name">Version</span><span>2.1</span></li>
+                  <li class="ds-panel__fact"><span class="ds-panel__fact-name">Samples</span><span>14 gadgets</span></li>
+                  <li class="ds-panel__fact"><span class="ds-panel__fact-name">Preview tool</span><span>Included</span></li>
+                  <li class="ds-panel__fact"><span class="ds-panel__fact-name">Size</span><span>6 MB</span></li>
+                </ul>
+                <p class="ds-panel__actions"><a class="ds-button ds-button--secondary" href="#guide">Release notes</a></p>
+              </div>
+            </div>
+            <div class="ds-sidebar is-last" data-component="sidebar">
+              <h2 class="ds-sidebar__title">Most read in the reference</h2>
+              <ul class="ds-sidebar__list">
+                <li class="ds-sidebar__item is-current"><a class="ds-link ds-link--quiet" href="#reference">gadget</a><span class="ds-sidebar__count">31 members</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#reference">clock</a><span class="ds-sidebar__count">12</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#reference">storage</a><span class="ds-sidebar__count">9</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#reference">weather</a><span class="ds-sidebar__count">17</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="guide">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-link ds-link--quiet" href="#home">Overview</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li><a class="ds-link ds-link--quiet" href="#guide">Guides</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li class="ds-breadcrumb__current">Your first gadget</li>
+      </ol>
+      <div class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__main">
+          <p class="ds-page-header__title">Guides: getting started</p>
+          <p class="ds-page-header__text">Part 1 of 4. Written for kit 2.1, nine minutes to read.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#guide">Download the sample</a>
+        </div>
+      </div>
+      <div class="ds-page__columns">
+        <main class="ds-page__main">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#guide">Guide</a></li>
+            <li><a class="ds-tabs__tab" href="#guide">Sample code</a></li>
+            <li><a class="ds-tabs__tab" href="#guide">Questions (12)</a></li>
+          </ul>
+          <div class="ds-prose" data-component="typography">
+            <h1>Your first gadget</h1>
+            <p>A gadget is a folder with two files in it: a page that draws the gadget and a settings file that tells the desktop its name and size. This guide builds a small clock and puts it on the desktop. Nothing has to be installed except the kit.</p>
+            <h2>Make the folder</h2>
+            <p>Create a folder called <code>hello.gadget</code> anywhere you like. The ending matters: the desktop treats every folder that ends in <code>.gadget</code> as one gadget.</p>
+            <ul>
+              <li><code>gadget.page</code> holds what the gadget shows.</li>
+              <li><code>gadget.settings</code> holds its name, its size and what it may read.</li>
+              <li>Anything else in the folder, such as sounds, is packed along with it.</li>
+            </ul>
+            <h2>Say hello</h2>
+            <p>Open <code>gadget.page</code> in a text editor and type the lines below. The <strong>clock</strong> object calls your function once a minute, so the gadget never has to ask for the time itself.</p>
+<pre class="ds-code">gadget.title = "Hello";
+gadget.size(130, 130);
+
+clock.every("minute", function () {
+  face.text = clock.time("HH:mm");
+});
+
+gadget.show();</pre>
+            <h3>Try it</h3>
+            <p>Double click the folder. The preview tool opens the gadget on a sheet of glass and reloads it every time you save. When the clock looks right, read on in <a href="#guide">Settings and storage</a>.</p>
+          </div>
+        </main>
+        <aside class="ds-page__aside">
+          <div class="ds-sidebar">
+            <h2 class="ds-sidebar__title">On this page</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link ds-link--quiet" href="#guide">Make the folder</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">Say hello</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">Try it</a></li>
+            </ul>
+          </div>
+          <div class="ds-panel">
+            <h2 class="ds-panel__title">In this series</h2>
+            <div class="ds-panel__body">
+              <ul class="ds-panel__facts">
+                <li class="ds-panel__fact"><span>1. Your first gadget</span><span class="ds-badge">Here</span></li>
+                <li class="ds-panel__fact"><a class="ds-link" href="#guide">2. Settings and storage</a></li>
+                <li class="ds-panel__fact"><a class="ds-link" href="#guide">3. Drawing on glass</a></li>
+                <li class="ds-panel__fact"><a class="ds-link" href="#guide">4. Packing it up</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ds-panel is-last">
+            <h2 class="ds-panel__title">See also</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__text">How a link looks at rest, once followed, under the pointer and while pressed.</p>
+              <p class="ds-links" data-component="links">
+                <a class="ds-link" href="#reference">The clock object</a>
+                <a class="ds-link is-visited" href="#reference">The gadget object</a>
+                <a class="ds-link is-hover" href="#submit">Submitting</a>
+                <a class="ds-link is-active" href="#home">Overview</a>
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="reference">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-link ds-link--quiet" href="#home">Overview</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li><a class="ds-link ds-link--quiet" href="#reference">Reference</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li class="ds-breadcrumb__current">Objects</li>
+      </ol>
+      <div class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Reference</h1>
+          <p class="ds-page-header__text">Every object a gadget may use, with the kit version it arrived in.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#reference">Printable version</a>
+          <a class="ds-button" href="#guide">Download the kit</a>
+        </div>
+      </div>
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab is-current" href="#reference">Objects</a></li>
+        <li><a class="ds-tabs__tab" href="#reference">Events</a></li>
+        <li><a class="ds-tabs__tab" href="#reference">Settings file</a></li>
+        <li><a class="ds-tabs__tab" href="#reference">Removed</a></li>
+      </ul>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr>
+            <th class="ds-table__head" scope="col">Object</th>
+            <th class="ds-table__head" scope="col">What it is for</th>
+            <th class="ds-table__head is-numeric" scope="col">Members</th>
+            <th class="ds-table__head is-numeric" scope="col">Since</th>
+            <th class="ds-table__head" scope="col">State</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ds-table__row">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code" href="#reference">gadget</a></td>
+            <td class="ds-table__cell">The gadget itself: title, size, showing and hiding.<span class="ds-table__note">Every gadget uses it.</span></td>
+            <td class="ds-table__cell is-numeric">31</td>
+            <td class="ds-table__cell is-numeric">1.0</td>
+            <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+          </tr>
+          <tr class="ds-table__row is-alt">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code" href="#reference">clock</a></td>
+            <td class="ds-table__cell">The time, the date and calls at a steady interval.</td>
+            <td class="ds-table__cell is-numeric">12</td>
+            <td class="ds-table__cell is-numeric">1.0</td>
+            <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+          </tr>
+          <tr class="ds-table__row">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code" href="#reference">storage</a></td>
+            <td class="ds-table__cell">Small values kept between restarts.<span class="ds-table__note">Limited to 2 MB from kit 2.1.</span></td>
+            <td class="ds-table__cell is-numeric">9</td>
+            <td class="ds-table__cell is-numeric">1.2</td>
+            <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Changed</span></td>
+          </tr>
+          <tr class="ds-table__row is-alt">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code" href="#reference">weather</a></td>
+            <td class="ds-table__cell">Today and four days ahead for the owner's town.</td>
+            <td class="ds-table__cell is-numeric">17</td>
+            <td class="ds-table__cell is-numeric">2.0</td>
+            <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+          </tr>
+          <tr class="ds-table__row">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code" href="#reference">glass</a></td>
+            <td class="ds-table__cell">Blur, glow and reflection for any part of the page.</td>
+            <td class="ds-table__cell is-numeric">8</td>
+            <td class="ds-table__cell is-numeric">2.1</td>
+            <td class="ds-table__cell"><span class="ds-badge">New in 2.1</span></td>
+          </tr>
+          <tr class="ds-table__row is-alt">
+            <td class="ds-table__cell"><a class="ds-link ds-link--code is-visited" href="#reference">ticker</a></td>
+            <td class="ds-table__cell">Scrolling text along the lower edge.<span class="ds-table__note">Use the clock and a text field instead.</span></td>
+            <td class="ds-table__cell is-numeric">5</td>
+            <td class="ds-table__cell is-numeric">1.0</td>
+            <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Removed</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="ds-table__foot">
+        <p class="ds-badges" data-component="badge">
+          <span class="ds-badge">New in 2.1</span>
+          <span class="ds-badge ds-badge--success">Stable</span>
+          <span class="ds-badge ds-badge--warning">Changed</span>
+          <span class="ds-badge ds-badge--danger">Removed</span>
+          <span class="ds-badge ds-badge--count">6 of 23 objects</span>
+        </p>
+        <ul class="ds-pagination" data-component="pagination">
+          <li class="ds-pagination__item"><span class="ds-pagination__link is-disabled">Previous</span></li>
+          <li class="ds-pagination__item"><a class="ds-pagination__link is-current" href="#reference">1</a></li>
+          <li class="ds-pagination__item"><a class="ds-pagination__link" href="#reference">2</a></li>
+          <li class="ds-pagination__item"><a class="ds-pagination__link" href="#reference">3</a></li>
+          <li class="ds-pagination__item"><a class="ds-pagination__link" href="#reference">4</a></li>
+          <li class="ds-pagination__item"><a class="ds-pagination__link" href="#reference">Next</a></li>
+        </ul>
+      </div>
+      <div class="ds-section">
+        <div class="ds-page__columns">
+          <main class="ds-page__main">
+            <h2 class="ds-section__title">Reading an entry <span class="ds-tooltip"><span class="ds-tooltip__trigger" tabindex="0">?</span><span class="ds-tooltip__text" role="tooltip">Entries are listed in alphabetical order.</span></span></h2>
+            <div class="ds-prose">
+              <p>Each object has a page of its own that lists its members in the order you are likely to need them. <strong>Since</strong> is the first kit version that had the object; a gadget that names a newer object will not start on an older desktop, so set <code>needs</code> in the settings file to match.</p>
+            </div>
+<div class="ds-section">
+<h2 class="ds-section__title">Common questions</h2>
+<div class="ds-accordion">
+<details class="ds-accordion__item" open><summary class="ds-accordion__head">Which file draws the gadget?</summary><div class="ds-accordion__body"><p>The page file named in the settings file.</p></div></details>
+<details class="ds-accordion__item"><summary class="ds-accordion__head">Can a gadget run in the background?</summary><div class="ds-accordion__body"><p>No. It runs only while it is on the desktop.</p></div></details>
+</div>
+</div>
+          </main>
+          <aside class="ds-page__aside">
+            <div class="ds-empty" data-component="empty">
+              <span class="ds-empty__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-4-5 4z"/></svg></span>
+              <h2 class="ds-empty__title">No bookmarks yet</h2>
+              <p class="ds-empty__text">Mark an object and it stays here for next time.</p>
+              <a class="ds-button ds-button--secondary" href="#reference">Bookmark this page</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="submit">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-link ds-link--quiet" href="#home">Overview</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li><a class="ds-link ds-link--quiet" href="#submit">Gallery</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+        <li class="ds-breadcrumb__current">Submit a gadget</li>
+      </ol>
+      <div class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Submit a gadget</h1>
+          <p class="ds-page-header__text">Send a packed gadget to the gallery. A reviewer answers within two working days.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#guide">How to pack a gadget</a>
+        </div>
+      </div>
+      <div class="ds-page__columns">
+        <main class="ds-page__main">
+          <div data-component="notice">
+            <div class="ds-notice">
+              <span class="ds-notice__sign" aria-hidden="true">i</span>
+              <p class="ds-notice__text"><span class="ds-notice__title">Your draft is saved.</span> You can close this page and come back to it within thirty days.</p>
+            </div>
+            <div class="ds-notice ds-notice--error">
+              <span class="ds-notice__sign" aria-hidden="true">!</span>
+              <p class="ds-notice__text"><span class="ds-notice__title">One field needs another look.</span> The version number below is not one the gallery can read.</p>
+            </div>
+          </div>
+          <form class="ds-form" data-component="form" action="#">
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-name">Name of the gadget</label>
+                <input class="ds-form__input" id="s-name" type="text" value="Hello clock">
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-version">Version</label>
+                <input class="ds-form__input is-error" id="s-version" type="text" value="one point two">
+                <p class="ds-form__error">Write the version as numbers, for example 1.2.</p>
+              </div>
+            </div>
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-shelf">Shelf in the gallery</label>
+                <select class="ds-form__select" id="s-shelf">
+                  <option>Clocks and calendars</option>
+                  <option>Weather</option>
+                  <option>News and feeds</option>
+                  <option>Games</option>
+                </select>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-needs">Needs kit</label>
+                <input class="ds-form__input is-disabled" id="s-needs" type="text" value="2.1 (read from the file)" disabled>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="s-about">What it does</label>
+              <textarea class="ds-form__textarea" id="s-about">A round clock that greets you by the time of day and glows after dark.</textarea>
+              <p class="ds-form__hint">Two or three sentences. This is the text people see in the gallery.</p>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> I wrote this gadget, or I may share it on behalf of the people who did.</label>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Send for review</button>
+              <button class="ds-button ds-button--secondary" type="button">Save the draft</button>
+              <button class="ds-button is-disabled" type="button" disabled>Preview</button>
+              <a class="ds-button ds-button--danger" href="#submit">Discard the draft</a>
+            </div>
+          </form>
+        </main>
+        <aside class="ds-page__aside">
+          <div class="ds-panel">
+            <h2 class="ds-panel__title">Before you send</h2>
+            <div class="ds-panel__body">
+              <ul class="ds-panel__facts">
+                <li class="ds-panel__fact"><span>Starts without errors</span><span class="ds-badge ds-badge--success">Yes</span></li>
+                <li class="ds-panel__fact"><span>Under 2 MB packed</span><span class="ds-badge ds-badge--success">Yes</span></li>
+                <li class="ds-panel__fact"><span>Has a picture</span><span class="ds-badge ds-badge--warning">Missing</span></li>
+              </ul>
+              <p class="ds-panel__text is-last">The preview tool runs these checks each time you pack.</p>
+            </div>
+          </div>
+          <div class="ds-sidebar is-last">
+            <h2 class="ds-sidebar__title">Gallery rules</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">What the reviewers check</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">Names and pictures</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">Sending an update</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="s-dialog-title">
+          <h2 class="ds-dialog__title" id="s-dialog-title">Discard the draft? <a class="ds-dialog__close" href="#submit" aria-label="Close"></a></h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">The packed gadget and everything you typed on this page will be removed from the gallery. The folder on your computer is not touched.</p>
+          </div>
+          <div class="ds-dialog__actions">
+            <a class="ds-button ds-button--secondary" href="#submit">Keep the draft</a>
+            <a class="ds-button ds-button--danger" href="#home">Discard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#home">Overview</a></li>
+    <li><a class="ds-footer__link" href="#guide">Guides</a></li>
+    <li><a class="ds-footer__link" href="#reference">Reference</a></li>
+    <li><a class="ds-footer__link" href="#submit">Submit a gadget</a></li>
+  </ul>
+  <p class="ds-footer__legal">chronoskin Gadget Kit 2.1. Samples may be copied into your own gadgets.</p>
+</footer>
+
+</div>
+</body>
+</html>

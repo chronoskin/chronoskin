@@ -1,0 +1,93 @@
+# Dark developer tools technical grid product page
+
+## Summary
+
+This is the product page of a content platform in the "technical grid" strand of developer brands from 2022 to 2026: the page is drawn like a spec sheet, inside a frame of two vertical hairlines, with every section a row ruled across the window and a small cross where a row meets the frame. A very large, tight grotesque claim stands beside a sheet of mono facts, and below it cells share their borders instead of floating as cards: a query console, a strip of figures, six capabilities, a dated list. In this set the page is graphite, every label, button and navigation word is uppercase monospace, corners are square, nothing glows and the one hot accent is an acid lime.
+
+## Layout
+
+- Designed for a 1440px viewport, not fluid beyond it. The frame is `.ds-wrap`: `--size-page` (1248px) wide, centred, with a hairline down each side and no padding of its own; whatever sits in it pads itself by `--space-5` (24px) at the sides. `.ds-band` is a row: a hairline across the whole window above it, and the crosses (`--size-tick` 13px) drawn by the frame inside it.
+- Navigation is `.ds-nav`, a bar `--size-top` (56px) tall on `--fill-bar` that stays at the top of the window. Its `.ds-nav__inner` continues the frame and is a run of joined cells: the brand, four links (the first drops a `.ds-menu`), a mono readout pushed to the right (`.ds-nav__meta`) and a cell with a secondary and a primary small button. The current link has a square in `--color-accent-alt` before it and a 7% wash. There is no rail.
+- The label column. Below the hero every row is `.ds-section`: a `--size-gutter` (312px) column at the left holding a numbered mono label, a `--text-h2` title and one muted paragraph (`.ds-section__head`), and the work in `.ds-section__body` at the right of a hairline. The body is flush: tables, lists and toolbars run edge to edge, `.ds-split` halves it (`--wide` is 3 to 2) with a hairline between, and `.ds-cell` pads a half that holds free content.
+- The home view stacks: `.ds-hero` (label, the `--text-display` claim, lead, two large buttons and a mono line of facts at the left; `.ds-spec`, the sheet with its two meters, in a `--size-side` (372px) column at the right); a row with `.ds-console`; a row with `.ds-stat`, four joined cells; a section with `.ds-grid`, six joined cells; a section with the dated `.ds-list`; and `.ds-cta`, the one inverted block, filling its row.
+- Inner pages have no hero. They open with `.ds-page-header`, laid out like a section: the breadcrumb in the label column, and beside the hairline a `--text-h1` title with one muted line at the left and at most two buttons at the right. Sections follow. Tabs sit in a `.ds-toolbar` directly over the table they filter; the pagination is in the `.ds-table__foot`; a sidebar takes the label column of its section.
+- Views. The specimen is a content platform in four views. `home` is the product page described above. `matrix` is the feature matrix: tabs, the ruled table with a tooltip, then the questions as an accordion beside the panel of the current project with its meters and buttons. `model` is the content model: the sidebar of document types beside the table of fields with badges, a switch and pagination, then the modelling guide as prose beside the validation switches, the open dialog that deletes a field and an empty state. `contact` has the steps in the label column, the two notices and the form in the middle, and the engineer, a terminal block and a row of links at the right.
+- Spacing scale: `--space-1` 4px (small button vertical padding, inside key caps), `--space-2` 8px (button and input vertical padding, between adjacent buttons and badges, sidebar rows), `--space-3` 12px (table cell, toolbar and sheet row vertical padding, around the console), `--space-4` 16px (panel padding, list rows, between form rows), `--space-5` 24px (side padding of every cell, between stacked blocks, grid cell padding), `--space-6` 32px (top and bottom of a section head and a padded cell), `--space-7` 48px (page header top, inverted block padding), `--space-8` 72px (hero top, below the hero buttons).
+- Other sizes: `--size-key` 124px (the date column of the list), `--size-art` 56px (the tile of a grid cell), `--size-mark` 24px, `--size-dot` 8px, `--size-dialog` 440px, `--size-narrow` 680px (longest running text).
+- Joined cells and rounded sets. `.ds-stat`, `.ds-grid` and `.ds-cta` are inset by `--radius-page`: with square corners they touch the frame and their outline falls on its lines, with a rounded set they step in by their own radius and read as one rounded box of cells.
+- Below 1320px the frame lines and crosses go and rows stay ruled. Below 980px `.ds-nav__meta` is not shown and the links of the bar become a second row of four equal cells under a hairline, the label column goes over its work, the sheet goes under the claim, halves stack and cells stand two across. Below 640px everything is one column, the console's panes stack, and a wide table scrolls inside `.ds-table__wrap`; the page itself never scrolls sideways.
+- On a phone (640px and below) the bar keeps the form it takes at 980px: `.ds-nav__meta` is not shown, the brand and `.ds-nav__actions` fill the first row and `.ds-nav__links` are a second row of four equal cells under a hairline, each with centred `--text-small` text. The drop-down of a link that has a `.ds-menu` opens as a list `60vw` wide whose items may wrap onto several lines. The current link keeps its marker.
+
+## Typography and colour roles
+
+The conventions for which text sits on which fill are those of the era's first pack; this layout keeps to them.
+
+- `--color-text`, `--color-heading` and `--color-text-muted` sit on `--color-page`, `--fill-panel`, `--color-surface-alt` and `--color-surface-strong`. `--color-bar-text` sits on `--fill-bar` (the top bar). `--color-bar-alt-text` sits on `--fill-bar-alt` (the head of the sheet, the bar of the console, the title strip of a code block, a table head, the footer). `--color-inverse-text` sits on `--fill-inverse`, used for the call to action and the tooltip. `--color-button-text` sits on `--fill-button`, `--color-accent-text` on `--fill-accent`, `--color-input-text` on `--fill-input` (form controls, code, the panes of the console), `--color-notice-text` on `--color-notice`.
+- `--color-fill-1` to `--color-fill-4` never carry text. They are flat tints: 16% behind a drawing with a 34% hairline, 22% in an avatar, and 72% mixed into `--color-heading` for the drawing itself. Nothing glows.
+- `--color-accent-alt` is a text and line colour: numbered labels, the square of the current item, tab brackets, keywords in code, the filled part of a meter, the knob of a switch that is on, list markers, units after a figure.
+- `--color-success`, `--color-warning` and `--color-danger` appear as a dot, as text, or as a 12% tint with a 32% hairline; the destructive button is built the same way.
+- Borders: `--color-border` on the frame, rows, cells and boxes; `--color-border-strong` on secondary buttons, the console, the dialog, avatars and the dashed empty state; `--color-border-muted` between rows inside a box. The crosses are `--color-text-muted`. All lines are `--border-width`; `--border-width-strong` is the left line of a notice, the inset of a switch knob and the focus offset.
+- Type. One grotesque for running text and headings, one monospace for everything a developer reads as data and, through `--font-ui` and `--ui-transform`, for navigation, buttons and badges in capitals. `--text-base` 16px at `--line-body` 1.5; `--text-ui` 13px for controls, tables, card text and code; `--text-small` 11px for mono labels, badges and dates; `--text-large` 20px for the hero lead. `--text-display` 84px is the hero claim only, pulled together by `--display-tracking`; `--text-h1` 44px page titles, figures and the inverted block; `--text-h2` 27px section titles; `--text-h3` 17px cell and panel titles in `--weight-bold`.
+- Uppercase is for mono labels (`.ds-eyebrow`, table heads, form labels, the sheet's keys, the breadcrumb), tracked by 8% of their size, and for whatever `--ui-transform` sets. Running text is never uppercase.
+- Links are `--color-link` with `--link-decoration`; quiet links in the breadcrumb, sidebar and footer are `--color-link-quiet` and turn `--color-heading`.
+- Surface. `--radius-control` on buttons, inputs, the brand tile and the drawing tile; `--radius-panel` on panels, code blocks, notices, the menu and the empty state; `--radius-page` on the console, the dialog, the box of grid cells, the strip of figures and the inverted block; `--radius-pill` on badges, avatars, dots, the tooltip trigger, meters and switches. `--shadow-panel` is on panels and on the boxes of joined cells, `--shadow-control` on buttons and the brand tile, `--shadow-dialog` on the console, the dialog and the menu. `--backdrop-blur` blurs what scrolls under the bar.
+- One-off values written with `calc()` and `color-mix()` because the vocabulary has no token: the tints named above, the wash of the current navigation link (7% of `--color-bar-text`), navigation links at 64% and the readout at 50% of that colour, the hovered destructive button (22%), the hovered inverse button (82%), the notice border (24% and 40%), key cap and inline code corners (half of `--radius-control`), mono label tracking, the claim's size capped at 10vw so that it shrinks on a narrow window. The label of the inverted block and footer titles are at `opacity` 0.7. The crosses are drawn with one linear gradient and two short borders.
+
+## Components
+
+- `.ds-page`: on `<body>`. Sets the font, text colour and `--fill-page`. `.ds-nav`, the views and `.ds-footer` are its direct children.
+- `.ds-wrap`, `.ds-band`, `.ds-section`, `.ds-split`, `.ds-cell`, `.ds-stack`: the frame, a ruled row with its crosses, the label column with its work (`.ds-section__head` with `.ds-section__title` and `.ds-section__text`, `.ds-section__body`), halves (`--wide`), a padded cell (`--roomy`) and a vertical stack 24px apart.
+- `.ds-brand`: the site's mark and name. `.ds-brand__mark` is a 24px tile dressed like the primary button holding the mark as inline SVG with square caps; `.ds-brand__name` is the name. Both are placeholders for the installing project's own name and logo.
+- `.ds-nav`: the top bar. `.ds-nav__inner` holds the brand, `.ds-nav__links` of `.ds-nav__link` (current: `is-current`), `.ds-nav__meta` and `.ds-nav__actions`. In the specimen the showing view marks its link with one `:has()` rule per view; a project sets `is-current`.
+- `.ds-menu`: on the list item of a navigation link; its `.ds-menu__list` of `.ds-menu__item` drops under the link while it is hovered or focused (`is-open` shows it statically). No script.
+- `.ds-hero`: home view only. `.ds-hero__inner` is the claim beside the sheet; `.ds-hero__copy` holds a `.ds-eyebrow`, `.ds-hero__title`, `.ds-hero__lead`, `.ds-hero__actions` and the mono `.ds-hero__meta`.
+- `.ds-spec`: the sheet of facts: `.ds-spec__head`, `.ds-spec__rows` of `.ds-spec__row` (`.ds-spec__key`, `.ds-spec__value`) and `.ds-spec__foot` for meters.
+- `.ds-console`: the product drawn as a window: `.ds-console__bar` (`.ds-console__path`, avatars, a badge) and `.ds-console__body` of two `.ds-console__pane` blocks, each a `pre` under a `.ds-console__label`.
+- `.ds-page-header`: head of an inner page: `.ds-page-header__inner` with `.ds-page-header__lead` (the breadcrumb) and `.ds-page-header__main` (`.ds-page-header__copy` with `.ds-page-header__title` and `.ds-page-header__text`, then `.ds-page-header__actions`).
+- `.ds-prose`: running text: h1, h2, h3, p, lists, `code`, `strong`; `.ds-prose__lead` for the first paragraph.
+- `.ds-code`: a code block on `--fill-input`: optional `.ds-code__head` with `.ds-code__name`, then `.ds-code__body` (a `pre`). Spans `.ds-code__k`, `__s`, `__c`, `__n` colour keywords, strings, comments and names.
+- `.ds-eyebrow`, `.ds-mono`, `.ds-kbd`, `.ds-dot`: the mono label (`--accent`), mono data text, a key cap and a status dot (`--success`, `--warning`, `--danger`, `--accent`).
+- `.ds-avatar`: initials on a tile shaped by `--radius-pill`; `--2` and `--3` tint it, `--large` doubles it, `.ds-avatars` overlaps several. `.ds-person` puts one beside `.ds-person__name` and `.ds-person__role`.
+- `.ds-link`: text link with `is-visited`, `is-hover`, `is-active`, `is-focus`; `--quiet`, `--more` (appends an arrow). `.ds-linkrow` lays links in a row.
+- `.ds-button`: mono capitals in this set. `--secondary` (strong hairline), `--danger` (tint, hairline and text in the danger colour), `--inverse` (on the inverted block only), `--small`, `--large`. States `is-hover`, `is-active`, `is-focus`, `is-disabled`. `.ds-buttonrow` spaces them 8px apart.
+- `.ds-form`: mono labels above fields. `.ds-form__row`, `.ds-form__field`, `.ds-form__label`, `.ds-form__input` (`--mono`), `.ds-form__select`, `.ds-form__textarea`, `is-error` plus `.ds-form__error`, `.ds-form__hint`, `.ds-form__check` with `.ds-form__checkbox`, `.ds-form__actions`.
+- `.ds-switch`: a label holding `.ds-switch__input` (a real checkbox, invisible over the whole control), `.ds-switch__track` and an optional `.ds-switch__label`. `is-on` and `is-focus` show the states statically.
+- `.ds-progress`: a meter: `.ds-progress__head` (name and `.ds-progress__value`) over `.ds-progress__bar`, a native `progress` element painted flat; `--quiet` fills it in the muted colour.
+- `.ds-tooltip`: a small ringed trigger whose `.ds-tooltip__tip` shows under it on hover or focus (`is-open` statically), on `--fill-inverse`.
+- `.ds-accordion`: ruled `details` elements: `.ds-accordion__item`, `.ds-accordion__summary` with a plus that becomes a minus, `.ds-accordion__body`.
+- `.ds-table`: flush in its section: a mono uppercase head on `--fill-bar-alt`, hairline rows, `is-hover` rows on `--color-surface-alt`, `.ds-table__num` for right-aligned mono numbers, `.ds-table__state` for a dot with a word. `--ruled` adds column lines; `.ds-table__yes` and `.ds-table__no` are the marks of a matrix. Wrap in `.ds-table__wrap`; `.ds-table__foot` closes it.
+- `.ds-list`: dated rows: `.ds-list__item` is `.ds-list__meta` (mono date), a `.ds-list__title` link over `.ds-list__text`, and a badge at the right.
+- `.ds-panel`: hairline box on `--fill-panel`: `.ds-panel__head` with `.ds-panel__title`, `.ds-panel__body`; `.ds-panel__rows` of `.ds-panel__row` (`.ds-panel__key`) for facts. `.ds-rules` of `.ds-rules__item` (`.ds-rules__name`) lists settings with a switch each.
+- `.ds-stat`: the strip of figures as joined cells. Each `.ds-stat__item` is a mono `.ds-stat__label` (name and index) over a `.ds-stat__figure`, whose `small` is the unit.
+- `.ds-grid`: joined cells. `.ds-grid__cell` holds `.ds-grid__top` (an index and `.ds-grid__art`, with `--2`, `--3`, `--4` for the other fills, one inline SVG drawn in strokes), `.ds-grid__title` and `.ds-grid__text`. Keep the number of cells a multiple of the columns.
+- `.ds-cta`: the inverted block: `.ds-cta__label`, `.ds-cta__title` and one `.ds-button--inverse`.
+- `.ds-tabs`: mono words in a row, `.ds-tabs__tab`; the current one (`is-current`) stands in square brackets. `.ds-toolbar` puts it in a ruled row with `.ds-toolbar__title`, `.ds-toolbar__note` or `.ds-toolbar__tools`.
+- `.ds-badge`: small mono label on `--fill-accent`. `--quiet`, `--outline`. Status variants: `--success`, `--warning`, `--danger`. `.ds-badgerow` for several.
+- `.ds-sidebar`: a mono `.ds-sidebar__title` over the ruled `.ds-sidebar__list`; `.ds-sidebar__item`, current with `is-current` and a square.
+- `.ds-steps`: numbered `.ds-steps__item` rows with a `.ds-steps__title`.
+- `.ds-notice`: message strip on `--color-notice` with a strong line at its left; `--error` in the danger colours. `.ds-notice__title`; `.ds-noticerow` stacks notices.
+- `.ds-pagination`: joined mono cells, `.ds-pagination__link`; `is-current` on `--color-surface-strong`, `is-disabled` grey.
+- `.ds-breadcrumb`: mono capitals, `.ds-breadcrumb__item` parted by slashes; the last is `.ds-breadcrumb__current`.
+- `.ds-dialog`: a block in `--color-overlay` centring `.ds-dialog__box` with `--shadow-dialog`: `.ds-dialog__head` (`.ds-dialog__title`, `.ds-dialog__close`), `.ds-dialog__body`, `.ds-dialog__actions`.
+- `.ds-empty`: a dashed box: `.ds-empty__icon`, `.ds-empty__title`, `.ds-empty__text` and one small button.
+- `.ds-footer`: on `--fill-bar-alt`: `.ds-footer__inner` continues the frame as four joined `.ds-footer__col` columns (`.ds-footer__about`, `.ds-footer__title`, `.ds-footer__links` of `.ds-footer__link`); `.ds-footer__line` is the mono last line with `.ds-footer__status`.
+
+## Never
+
+- `border-width <= 2px`: every rule is a 1px hairline; 2px is the left line of a notice.
+- `border-radius <= 2px`: boxes are square, controls and tags are eased by 2px.
+- `box-shadow-blur <= 0px`: the only shadows are flat bands and inset lines, never soft.
+- `text-shadow = none`: text is flat on every fill.
+- `font-size >= 11px`: mono labels, badges and dates are the smallest text.
+- `font-size <= 84px`: the hero claim is the largest text.
+- `font-weight <= 600`: headings are medium, small titles semibold; nothing is bold or black.
+- `font-families <= 2`: one grotesque and one monospace.
+- `line-height <= 1.5`: body text is set at 1.5.
+- `uppercase-text <= 20%`: capitals are for mono labels and controls, never for running text.
+- `letter-spacing <= 4px`: only the hero claim is pulled together, by 3.6px.
+- `gradient-fills <= 3%`: nothing is filled with a gradient and nothing glows; the crosses are the only gradient.
+- `animation = none`: nothing moves by itself.
+
+## Extending
+
+Derive a new component from the nearest one in the specimen and use tokens only. A new block of the page is a `.ds-band` holding the frame, and in it a `.ds-section` with a numbered label at the left; put the work flush in `.ds-section__body`, split it with `.ds-split` and pad free content with `.ds-cell`. Several like things become joined cells in the manner of `.ds-grid` (a gap of `--border-width` over `--color-border`), not separate cards with space between. Data a developer would copy is set in `--font-mono`, labels in mono capitals tracked by 8%. Keep to the conventions above for which text sits on which fill: never put text on a full-strength `--color-fill-*` or status colour, tint it instead. Use the accent for one thing per cell and `--fill-inverse` for one block per view. Spacing comes from the `--space-*` scale, and any one-off shade is a `color-mix()` of tokens noted next to the rule.

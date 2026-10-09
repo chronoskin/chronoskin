@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: north basin overview</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#overview">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="13" height="13" rx="4" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="12.5" height="12.5" rx="4" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#overview">Overview</a></li>
+      <li><a class="ds-nav__link" href="#stations">Stations</a></li>
+      <li><a class="ds-nav__link" href="#alerts">Alerts</a></li>
+      <li><a class="ds-nav__link" href="#guide">Guide</a></li>
+    </ul>
+<div class="ds-menu__group">
+<a class="ds-button" href="#alerts">New threshold</a>
+<div class="ds-menu" data-component="menu">
+<a class="ds-avatar ds-menu__trigger" data-component="avatar" href="#overview" aria-label="Account of Ines Varga">IV</a>
+<ul class="ds-menu__list">
+<li><a class="ds-menu__link" href="#overview">North basin</a></li>
+<li><a class="ds-menu__link" href="#alerts">My thresholds</a></li>
+<li><a class="ds-menu__link" href="#guide">Help</a></li>
+</ul>
+</div>
+</div>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="overview">
+
+    <section class="ds-hero" data-component="hero">
+      <div>
+        <h1 class="ds-hero__title">North basin overview</h1>
+        <p class="ds-hero__lead">Water level, flow and temperature from twelve stations, refreshed every five minutes.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#stations">See all stations</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#guide">How readings work</a>
+        </div>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <span class="ds-hero__orb ds-hero__orb--a"></span>
+        <span class="ds-hero__orb ds-hero__orb--b"></span>
+        <div class="ds-hero__tile">
+          <span class="ds-hero__figure">2.84 m</span>
+          <span class="ds-hero__caption">Level at the weir, 09:40</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-page__layout">
+
+      <div class="ds-page__main">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__heading">Basins</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#stations">North basin <span class="ds-badge" data-component="badge">12</span></a></li>
+            <li><a class="ds-sidebar__link" href="#stations">Mill reach <span class="ds-badge ds-badge--glass">7</span></a></li>
+            <li><a class="ds-sidebar__link" href="#stations">Lower marsh <span class="ds-badge ds-badge--glass">4</span></a></li>
+            <li><a class="ds-sidebar__link" href="#stations">Harbour gate <span class="ds-badge ds-badge--alt">New</span></a></li>
+          </ul>
+          <h2 class="ds-sidebar__heading">Saved views</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#alerts">Flood watch</a></li>
+            <li><a class="ds-sidebar__link" href="#stations">Night readings</a></li>
+            <li><a class="ds-sidebar__link" href="#station">Offline stations</a></li>
+          </ul>
+        </aside>
+
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Station notes <span class="ds-badge ds-badge--glass">3</span></h2>
+          <div class="ds-panel__body">
+            The gauge at Reed bank sits behind a stand of willow and loses signal in high wind. A second antenna is planned for the spring visit.
+          </div>
+        </section>
+      </div>
+
+      <main class="ds-page__main">
+
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+            <div><span class="ds-notice__title">Maintenance window.</span> Readings from Mill reach pause on Thursday between 02:00 and 03:00.</div>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+            <div><span class="ds-notice__title">Station 08 is not reporting.</span> The last reading arrived 46 minutes ago. Check the power supply at the gauge.</div>
+          </div>
+        </div>
+
+        <section class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell ds-grid__cell--1">
+            <span class="ds-grid__label">Water level</span>
+            <span class="ds-grid__value">2.84 m</span>
+            <span class="ds-grid__meta">0.12 m above yesterday</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <span class="ds-grid__label">Flow</span>
+            <span class="ds-grid__value">41.6 m³/s</span>
+            <span class="ds-grid__meta">Steady for six hours</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <span class="ds-grid__label">Temperature</span>
+            <span class="ds-grid__value">11.3 °C</span>
+            <span class="ds-grid__meta">Measured at two metres</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <span class="ds-grid__label">Stations online</span>
+            <span class="ds-grid__value">11 / 12</span>
+            <span class="ds-grid__meta">One needs attention</span>
+<span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--90"></span></span>
+          </div>
+        </section>
+
+        <h2 class="ds-page__heading">Latest activity <a class="ds-link" href="#alerts">All alerts</a></h2>
+
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#alerts">Level passed 3.00 m at Old lock</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Alert · today, 09:12</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#alerts">Review</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#station">Reed bank stopped reporting</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Silent for 46 minutes · last seen 08:54</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#station">Open</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#stations">Sensor replaced at Footbridge</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Note by Ines Varga · yesterday</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#stations">Open</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#guide">Weekly summary is ready</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Report · 3 days ago · 14 pages</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#guide">Open</a>
+          </li>
+        </ul>
+
+      </main>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="stations">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">Workspace</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">North basin</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Stations</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Stations</h1>
+        <p class="ds-page-header__lead">Twelve gauges along the north basin, listed from the weir down to the outfall.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#guide">Export</a>
+        <a class="ds-button" href="#alerts">Set a threshold</a>
+      </div>
+    </header>
+
+    <div class="ds-page__main">
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Reporting</dt>
+          <dd class="ds-stat__value">11 <span class="ds-stat__meta">of 12 stations</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Above threshold</dt>
+          <dd class="ds-stat__value">1 <span class="ds-stat__meta">since 09:12</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Readings today</dt>
+          <dd class="ds-stat__value">1,284 <span class="ds-stat__meta">every 5 minutes</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Longest silence</dt>
+          <dd class="ds-stat__value">46 min <span class="ds-stat__meta">at Reed bank</span></dd>
+        </div>
+      </dl>
+
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#stations" aria-current="true">All</a></li>
+        <li><a class="ds-tabs__tab" href="#stations">Online</a></li>
+        <li><a class="ds-tabs__tab" href="#station">Needs attention</a></li>
+        <li><a class="ds-tabs__tab" href="#stations">Archived</a></li>
+      </ul>
+
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr>
+            <th scope="col">Station</th>
+            <th scope="col">Status</th>
+            <th scope="col" class="ds-table__opt">Last reading</th>
+            <th scope="col" class="ds-table__num">Level (m)</th>
+            <th scope="col" class="ds-table__num ds-table__opt">Flow (m³/s)</th>
+            <th scope="col" class="ds-table__num ds-table__opt">Temp. (°C)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">01 Weir crest</a></td>
+            <td><span class="ds-badge ds-badge--success">Online</span></td>
+            <td class="ds-table__meta ds-table__opt">2 minutes ago</td>
+            <td class="ds-table__num">2.84</td>
+            <td class="ds-table__num ds-table__opt">41.6</td>
+            <td class="ds-table__num ds-table__opt">11.3</td>
+          </tr>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">03 Footbridge</a></td>
+            <td><span class="ds-badge ds-badge--success">Online</span></td>
+            <td class="ds-table__meta ds-table__opt">4 minutes ago</td>
+            <td class="ds-table__num">2.61</td>
+            <td class="ds-table__num ds-table__opt">38.9</td>
+            <td class="ds-table__num ds-table__opt">11.2</td>
+          </tr>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">04 Mill race</a></td>
+            <td><span class="ds-badge ds-badge--success">Online</span></td>
+            <td class="ds-table__meta ds-table__opt">2 minutes ago</td>
+            <td class="ds-table__num">2.55</td>
+            <td class="ds-table__num ds-table__opt">12.4</td>
+            <td class="ds-table__num ds-table__opt">11.6</td>
+          </tr>
+          <tr class="is-hover">
+            <td><a class="ds-link ds-link--quiet" href="#station">05 Old lock</a></td>
+            <td><span class="ds-badge ds-badge--warning">Rising</span></td>
+            <td class="ds-table__meta ds-table__opt">1 minute ago</td>
+            <td class="ds-table__num">3.07</td>
+            <td class="ds-table__num ds-table__opt">44.2</td>
+            <td class="ds-table__num ds-table__opt">11.0</td>
+          </tr>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">07 Ferry steps</a></td>
+            <td><span class="ds-badge ds-badge--success">Online</span></td>
+            <td class="ds-table__meta ds-table__opt">5 minutes ago</td>
+            <td class="ds-table__num">2.12</td>
+            <td class="ds-table__num ds-table__opt">39.7</td>
+            <td class="ds-table__num ds-table__opt">10.8</td>
+          </tr>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">08 Reed bank</a></td>
+            <td><span class="ds-badge ds-badge--danger">Silent</span></td>
+            <td class="ds-table__meta ds-table__opt">46 minutes ago</td>
+            <td class="ds-table__num">1.98</td>
+            <td class="ds-table__num ds-table__opt">0.0</td>
+            <td class="ds-table__num ds-table__opt">11.1</td>
+          </tr>
+          <tr>
+            <td><a class="ds-link ds-link--quiet" href="#station">11 Outfall</a></td>
+            <td><span class="ds-badge ds-badge--success">Online</span></td>
+            <td class="ds-table__meta ds-table__opt">3 minutes ago</td>
+            <td class="ds-table__num">1.42</td>
+            <td class="ds-table__num ds-table__opt">40.3</td>
+            <td class="ds-table__num ds-table__opt">10.6</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Pages">
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#stations">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#stations" aria-current="page">1</a></li>
+          <li><a class="ds-pagination__link" href="#stations">2</a></li>
+          <li><a class="ds-pagination__link" href="#stations">Next</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="station">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">North basin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#stations">Stations</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">08 Reed bank</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">08 Reed bank <span class="ds-badge ds-badge--danger">Silent</span></h1>
+        <p class="ds-page-header__lead">Level and flow gauge on the east bank, installed in March. Last heard from at 08:54.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#alerts">Set a threshold</a>
+        <a class="ds-button ds-button--danger" href="#station">Remove station</a>
+      </div>
+    </header>
+
+    <div class="ds-page__layout ds-page__layout--aside">
+
+      <div class="ds-page__main">
+
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">No reading for 46 minutes.</span> The station keeps seven days on board and sends them when the link returns.</div>
+        </div>
+
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th scope="col">Taken at</th>
+              <th scope="col" class="ds-table__opt">Arrived</th>
+              <th scope="col" class="ds-table__num">Level (m)</th>
+              <th scope="col" class="ds-table__num">Flow (m³/s)</th>
+              <th scope="col" class="ds-table__num ds-table__opt">Temp. (°C)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>08:54</td><td class="ds-table__meta ds-table__opt">08:54</td><td class="ds-table__num">1.98</td><td class="ds-table__num">22.4</td><td class="ds-table__num ds-table__opt">11.1</td></tr>
+            <tr><td>08:49</td><td class="ds-table__meta ds-table__opt">08:49</td><td class="ds-table__num">1.98</td><td class="ds-table__num">22.6</td><td class="ds-table__num ds-table__opt">11.1</td></tr>
+            <tr><td>08:44</td><td class="ds-table__meta ds-table__opt">08:51, late</td><td class="ds-table__num">1.97</td><td class="ds-table__num">22.1</td><td class="ds-table__num ds-table__opt">11.0</td></tr>
+            <tr><td>08:39</td><td class="ds-table__meta ds-table__opt">08:51, late</td><td class="ds-table__num">1.97</td><td class="ds-table__num">22.3</td><td class="ds-table__num ds-table__opt">11.0</td></tr>
+            <tr><td>08:34</td><td class="ds-table__meta ds-table__opt">08:34</td><td class="ds-table__num">1.96</td><td class="ds-table__num">21.9</td><td class="ds-table__num ds-table__opt">10.9</td></tr>
+          </tbody>
+        </table>
+
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">Stopped reporting</span>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Today, 09:24 · the duty desk was told</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#alerts">Review</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">Two readings arrived late</span>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Today, 08:51 · weak signal in high wind</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">Battery changed</span>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Visit by Tomas Reuter · 12 days ago</span>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="ds-page__main">
+
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Remove station 08?</h2>
+            <div class="ds-dialog__body">Its readings stay in the archive. Thresholds that use this station are switched off.</div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#station">Keep station</a>
+              <a class="ds-button ds-button--danger" href="#stations">Remove</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">About this station</h2>
+          <div class="ds-panel__body ds-prose">
+            <p>Reed bank sits behind a stand of willow, 1.4 km below the weir. It measures every five minutes and sends over the radio link at Footbridge.</p>
+            <ul>
+              <li>Battery at 71 percent, changed 12 days ago.</li>
+              <li>One threshold: level above 2.60 m.</li>
+              <li>Next visit planned for the spring round.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="alerts">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">Workspace</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">North basin</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Alerts</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Alerts</h1>
+        <p class="ds-page-header__lead">What crossed a threshold today, and the thresholds that decide it.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#guide">What counts as a crossing</a>
+      </div>
+    </header>
+
+    <div class="ds-page__layout ds-page__layout--aside">
+
+      <div class="ds-page__main">
+
+        <h2 class="ds-page__heading">Open <span class="ds-badge">2</span></h2>
+
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#stations">05 Old lock passed 3.00 m</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Threshold crossed · today, 09:12 · now 3.07 m</span>
+            </div>
+            <span class="ds-badge ds-badge--warning">Rising</span>
+            <a class="ds-button ds-button--secondary" href="#stations">Review</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#station">08 Reed bank stopped reporting</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Silent for 46 minutes · last seen 08:54</span>
+            </div>
+            <span class="ds-badge ds-badge--danger">Silent</span>
+            <a class="ds-button ds-button--secondary" href="#station">Review</a>
+          </li>
+        </ul>
+
+        <h2 class="ds-page__heading">Thresholds <span class="ds-badge ds-badge--glass">3</span></h2>
+
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">High water at Old lock</span>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Level above 3.00 m · repeats hourly</span>
+            </div>
+            <span class="ds-badge ds-badge--success">On</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">Low flow at Outfall</span>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Flow below 12.0 m³/s · told once</span>
+            </div>
+            <span class="ds-badge ds-badge--success">On</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <span class="ds-list__title">Reed bank level</span>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Level above 2.60 m · paused while the station is silent</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Paused</span>
+          </li>
+        </ul>
+
+        <h2 class="ds-page__heading">Acknowledged today</h2>
+
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="12" width="32" height="26" rx="4"/><path d="M8 28h10l2 4h8l2-4h10"/></svg>
+          <h2 class="ds-empty__title">Nothing acknowledged yet</h2>
+          <p class="ds-empty__text">Alerts move here once someone on duty has reviewed them.</p>
+          <a class="ds-button" href="#station">Review the oldest alert</a>
+        </section>
+
+      </div>
+
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Alert threshold</h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-name">Name</label>
+              <input class="ds-form__input" id="f-name" type="text" value="High water at Old lock">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-station">Station</label>
+              <span class="ds-form__select-wrap">
+                <select class="ds-form__select" id="f-station">
+                  <option>05 Old lock</option>
+                  <option>01 Weir crest</option>
+                  <option>11 Outfall</option>
+                </select>
+                <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+              </span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-level">Level <span>3.00 m</span></label>
+              <input class="ds-form__range" id="f-level" type="range" min="0" max="100" value="60">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-mail">Send to <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">One address. The duty desk forwards it to whoever is on call.</span></span></label>
+              <input class="ds-form__input is-error" id="f-mail" type="text" value="duty-desk@" aria-invalid="true" aria-describedby="f-mail-error">
+              <span class="ds-form__error" id="f-mail-error">Enter a complete email address.</span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-note">Note</label>
+              <textarea class="ds-form__textarea" id="f-note" placeholder="What should the person on duty do?"></textarea>
+              <span class="ds-form__hint">Shown at the top of the alert.</span>
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              Repeat every hour while the level stays high
+            </label>
+<div class="ds-switch__group">
+<label class="ds-switch" data-component="switch">
+<span class="ds-switch__text">Send by email<span class="ds-switch__hint">To the address above</span></span>
+<input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+</label>
+<label class="ds-switch">
+<span class="ds-switch__text">Send as a text message<span class="ds-switch__hint">Only between 22:00 and 06:00</span></span>
+<input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span>
+</label>
+</div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Save</button>
+              <a class="ds-button ds-button--secondary" href="#overview">Cancel</a>
+              <button class="ds-button ds-button--danger" type="button">Delete</button>
+              <button class="ds-button" type="button" disabled>Test</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="guide">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">Workspace</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">North basin</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Guide</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Guide</h1>
+        <p class="ds-page-header__lead">How a reading gets from the gauge to this workspace, and when it raises an alert.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#alerts">Set a threshold</a>
+      </div>
+    </header>
+
+    <div class="ds-page__layout ds-page__layout--aside">
+
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>How readings are collected</h1>
+            <p class="ds-prose__lead">Each station measures on its own clock and sends what it has when the link is up.</p>
+            <p>A reading is a level, a flow and a temperature taken in the same second. Stations keep <strong>seven days</strong> of readings on board, so a short outage loses nothing. Each one is stored with the field <code>taken_at</code>, not the time it arrived.</p>
+            <h2>Thresholds</h2>
+            <p>A threshold belongs to one station and one measure. When a reading crosses it, the people on the list are told once, and again each hour if repeating is on. Thresholds are kept on the <a class="ds-link" href="#alerts">alerts page</a>.</p>
+            <h3>What counts as a crossing</h3>
+            <ul>
+              <li>Two readings in a row beyond the threshold.</li>
+              <li>A single reading more than ten percent beyond it.</li>
+              <li>A station that has been silent for thirty minutes, as <a class="ds-link" href="#station">08 Reed bank</a> is now.</li>
+            </ul>
+            <p class="ds-link__sample" data-component="links">
+              <a class="ds-link" href="#stations">Normal link</a>
+              <a class="ds-link is-visited" href="#stations">Visited link</a>
+              <a class="ds-link is-hover" href="#stations">Hovered link</a>
+              <a class="ds-link is-active" href="#stations">Active link</a>
+              <a class="ds-link ds-link--quiet" href="#stations">Quiet link</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <div class="ds-page__main">
+
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__heading">In this guide</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#guide">How readings are collected</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Thresholds</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Exporting a week of readings</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Adding a station</a></li>
+          </ul>
+        </aside>
+<div class="ds-accordion" data-component="accordion">
+<details class="ds-accordion__item" open>
+<summary class="ds-accordion__summary">Why did an alert arrive late?</summary>
+<p class="ds-accordion__body">A station that loses its link sends its readings when the link returns. The alert carries the time of the reading.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">Can two people get the same alert?</summary>
+<p class="ds-accordion__body">Yes. Add a second threshold with the same level and another address.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">How long are readings kept?</summary>
+<p class="ds-accordion__body">Seven days on the station and two years in the workspace.</p>
+</details>
+</div>
+
+        <section class="ds-panel ds-panel--dark">
+          <h2 class="ds-panel__title">A threshold as stored</h2>
+          <div class="ds-panel__body ds-prose">
+            <pre class="ds-prose__code">station: 05
+measure: level
+above:   3.00
+repeat:  hourly</pre>
+            <p>Change it on the alerts page; the file is rewritten for you.</p>
+          </div>
+        </section>
+
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">Times are local.</span> Every time in this workspace is shown in the basin's own time zone.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin · North basin workspace</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#stations">Stations</a></li>
+      <li><a class="ds-footer__link" href="#alerts">Alerts</a></li>
+      <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

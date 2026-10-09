@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: a bulletin board for people who repair old computers. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-window">
+<p class="ds-window__title"><span>telnet chronoskin 23</span><span>node 2 of 4</span><span>90x40</span></p>
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#home"><span class="ds-nav__hot">M</span>enu</a></li>
+    <li><a class="ds-nav__link" href="#board"><span class="ds-nav__hot">B</span>oard</a></li>
+    <li><a class="ds-nav__link" href="#thread"><span class="ds-nav__hot">R</span>ead</a></li>
+    <li><a class="ds-nav__link" href="#post"><span class="ds-nav__hot">W</span>rite</a></li>
+  </ul>
+</header>
+
+<main class="ds-main">
+
+<!-- View 1, the main menu: the banner after login, who is on, the four choices, the boards, the latest messages. -->
+<section class="ds-view ds-view--home" id="home">
+  <section class="ds-hero" data-component="hero">
+    <p class="ds-hero__shade" aria-hidden="true">░░░░▒▒▒▒▓▓▓▓████████████████████████████████████████████████████▓▓▓▓▒▒▒▒░░░░</p>
+    <h1 class="ds-hero__title">Welcome back, caller</h1>
+    <p class="ds-hero__lead">chronoskin is a board for people who keep old computers running. Three new messages are waiting in the boards you follow.</p>
+    <div class="ds-buttons">
+      <a class="ds-button" href="#thread">read new messages</a>
+      <a class="ds-button ds-button--secondary" href="#post">write a message</a>
+    </div>
+    <p class="ds-hero__note">Last call: 5 October 2026, 21:14, from node 1. You have 42 minutes today.</p>
+    <p class="ds-hero__shade" aria-hidden="true">░░░░▒▒▒▒▓▓▓▓████████████████████████████████████████████████████▓▓▓▓▒▒▒▒░░░░</p>
+  </section>
+
+  <section class="ds-section">
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__value">3</span><span class="ds-stat__label">on line</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">41</span><span class="ds-stat__label">calls today</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">12,480</span><span class="ds-stat__label">messages</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">302</span><span class="ds-stat__label">files</span></li>
+    </ul>
+  </section>
+
+  <section class="ds-section">
+    <h2 class="ds-section__title">main menu</h2>
+    <div class="ds-grid" data-component="grid">
+      <a class="ds-grid__cell" href="#board"><span class="ds-grid__key">B</span><span class="ds-grid__title">Message boards</span><span class="ds-grid__text">Six boards, 3 new messages for you.</span></a>
+      <a class="ds-grid__cell ds-grid__cell--2" href="#thread"><span class="ds-grid__key">R</span><span class="ds-grid__title">Read new</span><span class="ds-grid__text">Go through what is new, board by board.</span></a>
+      <a class="ds-grid__cell ds-grid__cell--3" href="#post"><span class="ds-grid__key">W</span><span class="ds-grid__title">Write</span><span class="ds-grid__text">A message to a board, or a note to the sysop.</span></a>
+      <a class="ds-grid__cell ds-grid__cell--4" href="#home"><span class="ds-grid__key">G</span><span class="ds-grid__title">Goodbye</span><span class="ds-grid__text">Log off and free the line for the next caller.</span></a>
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <h2 class="ds-section__title">boards</h2>
+    <table class="ds-table" data-component="table">
+      <thead>
+        <tr><th>no</th><th>board</th><th class="ds-table__num ds-table__extra">topics</th><th class="ds-table__num">messages</th><th class="ds-table__extra">last message</th></tr>
+      </thead>
+      <tbody>
+        <tr class="ds-table__group"><td colspan="5">Hardware</td></tr>
+        <tr><td class="ds-table__key">1</td><td><a class="ds-table__title" href="#board">Repairs</a><span class="ds-table__desc">Dead boards, leaking capacitors, tired power supplies.</span></td><td class="ds-table__num ds-table__extra">412</td><td class="ds-table__num">5,106</td><td class="ds-table__extra ds-table__date">today 13:52</td></tr>
+        <tr class="is-alt"><td class="ds-table__key">2</td><td><a class="ds-table__title" href="#board">Cables and adapters</a><span class="ds-table__desc">Pinouts, null modems, getting a picture on a new screen.</span></td><td class="ds-table__num ds-table__extra">198</td><td class="ds-table__num">2,240</td><td class="ds-table__extra ds-table__date">today 09:30</td></tr>
+        <tr><td class="ds-table__key">3</td><td><a class="ds-table__title is-visited" href="#board">Storage</a><span class="ds-table__desc">Floppy drives, old hard disks and what replaces them.</span></td><td class="ds-table__num ds-table__extra">167</td><td class="ds-table__num">1,935</td><td class="ds-table__extra ds-table__date">4 Oct</td></tr>
+        <tr class="ds-table__group"><td colspan="5">Software</td></tr>
+        <tr><td class="ds-table__key">4</td><td><a class="ds-table__title" href="#board">Operating systems</a><span class="ds-table__desc">Installing, booting and patching systems nobody ships any more.</span></td><td class="ds-table__num ds-table__extra">220</td><td class="ds-table__num">2,387</td><td class="ds-table__extra ds-table__date">yesterday</td></tr>
+        <tr class="is-alt"><td class="ds-table__key">5</td><td><a class="ds-table__title is-visited" href="#board">Terminal programs</a><span class="ds-table__desc">Settings, transfer protocols and character sets.</span></td><td class="ds-table__num ds-table__extra">64</td><td class="ds-table__num">812</td><td class="ds-table__extra ds-table__date">28 Sep</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="ds-cols ds-cols--even">
+    <div class="ds-col">
+      <h2 class="ds-section__title">new for you</h2>
+      <ul class="ds-list">
+        <li class="ds-list__item">
+          <span class="ds-list__date">today 13:52</span>
+          <div class="ds-list__main">
+            <a class="ds-list__title" href="#thread">Null modem for a 9-pin port</a>
+            <p class="ds-list__meta">in Cables and adapters, from mira</p>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__date">today 09:30</span>
+          <div class="ds-list__main">
+            <a class="ds-list__title" href="#thread">Supply hums but will not start</a>
+            <p class="ds-list__meta">in Repairs, from otto</p>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__date">yesterday</span>
+          <div class="ds-list__main">
+            <a class="ds-list__title" href="#thread">Boot disk reads on one drive only</a>
+            <p class="ds-list__meta">in Storage, from ines</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="ds-panel" data-component="panel">
+      <h2 class="ds-panel__title">from the sysop</h2>
+      <div class="ds-panel__body">
+        <p class="ds-panel__text">The board is down on Sunday from 02:00 to 04:00 while the disk is copied to a new machine.</p>
+        <p class="ds-progress"><span class="ds-progress__label">disk copy</span><span class="ds-progress__bar"><span class="ds-progress__on">######</span>....</span><span class="ds-progress__value">60%</span></p>
+        <p class="ds-panel__text"><span class="ds-tooltip" tabindex="0">Node 4<span class="ds-tooltip__tip" role="tooltip">The fourth of the four lines into the board.</span></span> now answers at 14400. <a class="ds-link" href="#post">Tell me</a> if it drops you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 2, one board: its topics. -->
+<section class="ds-view" id="board">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">main menu</a></li>
+    <li class="ds-breadcrumb__sep">&gt;</li>
+    <li><a class="ds-breadcrumb__link" href="#home">boards</a></li>
+    <li class="ds-breadcrumb__sep">&gt;</li>
+    <li class="ds-breadcrumb__current">Cables and adapters</li>
+  </ol>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Cables and adapters</h1>
+      <p class="ds-page-header__text">Board 2. 198 topics, 2,240 messages, 2 new for you.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#post">new topic</a></div>
+  </header>
+  <ul class="ds-tabs" data-component="tabs">
+    <li><span class="ds-tabs__tab is-current">all topics</span></li>
+    <li><a class="ds-tabs__tab" href="#board">new 2</a></li>
+    <li><a class="ds-tabs__tab" href="#board">unanswered 5</a></li>
+    <li><a class="ds-tabs__tab" href="#board">mine 0</a></li>
+  </ul>
+  <div class="ds-tabs__body">
+    <ul class="ds-list" data-component="list">
+      <li class="ds-list__item">
+        <span class="ds-list__date">today 13:52</span>
+        <div class="ds-list__main">
+          <a class="ds-list__title" href="#thread">Null modem for a 9-pin port</a> <span class="ds-badge">2 new</span>
+          <p class="ds-list__excerpt">Which pins cross, and which three you can get away with.</p>
+          <p class="ds-list__meta">started by mira, 7 messages, last from the sysop</p>
+        </div>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__date">today 09:30</span>
+        <div class="ds-list__main">
+          <a class="ds-list__title" href="#thread">Picture rolls on a modern flat screen</a>
+          <p class="ds-list__excerpt">15 kHz video into a monitor that expects 31.</p>
+          <p class="ds-list__meta">started by otto, 12 messages, last from ines</p>
+        </div>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__date">3 Oct</span>
+        <div class="ds-list__main">
+          <a class="ds-list__title is-visited" href="#thread">Where to buy 25-pin shells</a>
+          <p class="ds-list__excerpt">Two shops still stock them; one sells by the hundred only.</p>
+          <p class="ds-list__meta">started by pavel, 4 messages, last from pavel</p>
+        </div>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__date">29 Sep</span>
+        <div class="ds-list__main">
+          <a class="ds-list__title is-visited" href="#thread">Keyboard adapter drops the first key</a>
+          <p class="ds-list__excerpt">Works after the second press. Timing or power?</p>
+          <p class="ds-list__meta">started by ines, 9 messages, last from mira</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="ds-pagination" data-component="pagination">
+      <li><span class="ds-pagination__link is-disabled">&lt; back</span></li>
+      <li><span class="ds-pagination__link is-current">1</span></li>
+      <li><a class="ds-pagination__link" href="#board">2</a></li>
+      <li><a class="ds-pagination__link" href="#board">3</a></li>
+      <li><a class="ds-pagination__link" href="#board">50</a></li>
+      <li><a class="ds-pagination__link" href="#board">more &gt;</a></li>
+    </ul>
+  </div>
+  <h2 class="ds-section__title">mine</h2>
+  <div class="ds-empty" data-component="empty">
+    <p class="ds-empty__text">You have not written in this board yet.</p>
+    <a class="ds-button ds-button--secondary" href="#post">start a topic</a>
+  </div>
+</section>
+
+<!-- View 3, a topic: its messages, one frame each. -->
+<section class="ds-view" id="thread">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">main menu</a></li>
+    <li class="ds-breadcrumb__sep">&gt;</li>
+    <li><a class="ds-breadcrumb__link" href="#board">Cables and adapters</a></li>
+    <li class="ds-breadcrumb__sep">&gt;</li>
+    <li class="ds-breadcrumb__current">topic 198</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Null modem for a 9-pin port</h1>
+      <p class="ds-page-header__text">7 messages since 2 October. Messages 1 and 7 are shown.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#post">reply</a></div>
+  </header>
+  <div class="ds-notices" data-component="notice">
+    <p class="ds-notice"><span class="ds-notice__title">Pinned:</span> the sysop keeps the first message of this topic up to date.</p>
+    <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Line noise:</span> message 5 arrived damaged and was left out. Its writer has been asked to send it again.</p>
+  </div>
+  <div class="ds-cols">
+    <div class="ds-col">
+      <article class="ds-post">
+        <h2 class="ds-post__title">message 1 of 7</h2>
+        <dl class="ds-post__head">
+          <dt>From:</dt><dd><span class="ds-avatar">mi</span> mira <span class="ds-badge ds-badge--tag">regular</span></dd>
+          <dt>Date:</dt><dd>2 October 2026, 20:41</dd>
+        </dl>
+        <div class="ds-post__body">
+          <div class="ds-prose" data-component="typography">
+            <h1>A null modem in seven wires</h1>
+            <p>Two machines that both think they are the terminal need their lines crossed. For a 9-pin port on each side this is the <strong>full cable</strong>; it works with every program I have tried.</p>
+            <h2>What crosses</h2>
+            <ul>
+              <li>2 to 3 and 3 to 2: data.</li>
+              <li>7 to 8 and 8 to 7: the two ask and answer lines.</li>
+              <li>4 to 6 and 6 to 4, with 5 straight through as ground.</li>
+            </ul>
+            <h3>The short version</h3>
+            <p>With flow control switched off, pins 2, 3 and 5 are enough. Set <code>9600 8N1</code> on both ends first.</p>
+          </div>
+          <p class="ds-post__sig">-- mira, still soldering</p>
+        </div>
+        <div class="ds-post__foot">
+          <a class="ds-link ds-link--bracket" href="#post">reply</a>
+          <a class="ds-link ds-link--bracket" href="#post">quote</a>
+          <a class="ds-link ds-link--bracket" href="#thread">next</a>
+        </div>
+      </article>
+      <article class="ds-post">
+        <h2 class="ds-post__title">message 7 of 7</h2>
+        <dl class="ds-post__head">
+          <dt>From:</dt><dd><span class="ds-avatar ds-avatar--2">sy</span> the sysop <span class="ds-badge">new</span></dd>
+          <dt>Date:</dt><dd>7 October 2026, 13:52</dd>
+        </dl>
+        <div class="ds-post__body">
+          <p class="ds-post__quote">pins 2, 3 and 5 are enough</p>
+          <p class="ds-panel__text">They are, and that is the cable in the file area now. The drawing is in the list below.</p>
+          <ul class="ds-links" data-component="links">
+            <li><a class="ds-link" href="#thread">nullmodem.txt</a></li>
+            <li><a class="ds-link is-visited" href="#thread">pinouts.txt</a></li>
+            <li><a class="ds-link is-hover" href="#board">more in this board</a></li>
+            <li><a class="ds-link is-active" href="#post">answer the sysop</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <aside class="ds-sidebar" data-component="sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">in this topic</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#thread">mira</a><span class="ds-sidebar__count">3</span></li>
+          <li><a class="ds-sidebar__link" href="#thread">otto</a><span class="ds-sidebar__count">2</span></li>
+          <li><a class="ds-sidebar__link" href="#thread">the sysop</a><span class="ds-sidebar__count">1</span></li>
+          <li><a class="ds-sidebar__link" href="#thread">ines</a><span class="ds-sidebar__count">1</span></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">marks</h2>
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge">new</span>
+          <span class="ds-badge ds-badge--tag">regular</span>
+          <span class="ds-badge ds-badge--success">answered</span>
+          <span class="ds-badge ds-badge--warning">held</span>
+          <span class="ds-badge ds-badge--danger">damaged</span>
+        </div>
+        <p class="ds-sidebar__text">A held message waits for the sysop. A damaged one must be sent again.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 4, write a message: the form, its buttons, the question before throwing it away. -->
+<section class="ds-view" id="post">
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Write a message</h1>
+      <p class="ds-page-header__text">To a board, or to the sysop alone. Plain text, 72 columns.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#thread">back to the topic</a></div>
+  </header>
+  <div class="ds-cols ds-cols--form">
+    <form class="ds-form" data-component="form" action="#post">
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-board">board:</label>
+        <div class="ds-form__field">
+          <select class="ds-form__input ds-form__input--auto" id="f-board"><option>2 Cables and adapters</option><option>1 Repairs</option><option>to the sysop only</option></select>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-subj">subject:</label>
+        <div class="ds-form__field">
+          <input class="ds-form__input is-invalid" id="f-subj" type="text" value="">
+          <p class="ds-form__error">error: a message needs a subject.</p>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-text">message:</label>
+        <div class="ds-form__field">
+          <textarea class="ds-form__input" id="f-text" rows="6">&gt; pins 2, 3 and 5 are enough
+
+Tried it last night between two machines. Works at 9600, drops characters at 19200.</textarea>
+          <p class="ds-form__hint">A line that starts with &gt; is shown as a quote.</p>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-sig">signature:</label>
+        <div class="ds-form__field">
+          <input class="ds-form__input" id="f-sig" type="text" value="-- caller 118">
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> add it to this message</label>
+          <label class="ds-switch"><span class="ds-switch__label">ring the bell when someone answers</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+        </div>
+      </div>
+      <div class="ds-form__actions" data-component="buttons">
+        <button class="ds-button" type="button">send</button>
+        <button class="ds-button ds-button--secondary" type="button">save draft</button>
+        <button class="ds-button ds-button--danger" type="button">throw away</button>
+        <button class="ds-button" type="button" disabled>attach</button>
+      </div>
+    </form>
+    <div class="ds-stack">
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-1">
+          <h2 class="ds-dialog__title" id="dlg-1">throw it away?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">Three lines of your reply are not saved as a draft.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">yes</button>
+              <button class="ds-button ds-button--secondary" type="button">no</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">house rules</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Say which machine. Quote two lines, not twenty. Files go in the file area, not in a message.</p>
+          <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+          <summary class="ds-accordion__title">How long may a message be?</summary>
+          <div class="ds-accordion__body">
+          <p>As long as it needs, in lines of 72 columns.</p>
+          </div>
+          </details>
+          <details class="ds-accordion__item">
+          <summary class="ds-accordion__title">Where do files go?</summary>
+          <div class="ds-accordion__body">
+          <p>In the file area. A message only names them.</p>
+          </div>
+          </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__keys">
+    <li class="ds-key"><span class="ds-key__cap">M</span> <a class="ds-footer__link" href="#home">menu</a></li>
+    <li class="ds-key"><span class="ds-key__cap">B</span> <a class="ds-footer__link" href="#board">board</a></li>
+    <li class="ds-key"><span class="ds-key__cap">R</span> <a class="ds-footer__link" href="#thread">read</a></li>
+    <li class="ds-key"><span class="ds-key__cap">W</span> <a class="ds-footer__link" href="#post">write</a></li>
+  </ul>
+  <p class="ds-footer__text">chronoskin, node 2 | 42 min left | 14:02</p>
+</footer>
+
+</div>
+</body>
+</html>

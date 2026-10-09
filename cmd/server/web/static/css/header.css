@@ -1,0 +1,134 @@
+/* The sticky top bar: brand, navigation, theme switch, repository link. */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--top);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.top .in {
+  height: 100%;
+  max-width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 0 var(--gap);
+}
+
+.brand {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font: 500 17px var(--sans);
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.brand b {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.brand svg {
+  width: 22px;
+  height: 22px;
+  color: var(--ink);
+  flex: none;
+}
+
+.top nav {
+  display: flex;
+  gap: 2px;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.top nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  white-space: nowrap;
+  border-radius: var(--radius-small);
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top nav a:hover, .top nav a[aria-current] {
+  color: var(--ink);
+  background: var(--sunken);
+}
+
+.top .tools {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.top .tools a, .top .tools button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.top .tools a:hover, .top .tools button:hover {
+  color: var(--ink);
+  background: var(--sunken);
+}
+
+.top .tools svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* On a phone the navigation leaves the bar and floats at the bottom. */
+@media (max-width: 720px) {
+  .top .in {
+    display: flex;
+  }
+  .top .tools {
+    margin-left: auto;
+  }
+  .top nav {
+    position: fixed;
+    z-index: 30;
+    left: 50%;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    padding: 5px;
+    overflow: visible;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--panel) 94%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.28);
+  }
+  .top nav a {
+    height: 44px;
+    padding: 0 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+  }
+  .top nav a[aria-current] {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}

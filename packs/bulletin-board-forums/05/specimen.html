@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: member profile and private messages specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<svg class="ds-sprite" width="0" height="0" aria-hidden="true">
+  <symbol id="i-unread" viewBox="0 0 16 16">
+    <path d="M1 3h14v10H1z" fill="currentColor"/>
+    <path d="M1.5 3.5 8 9l6.5-5.5" fill="none" stroke="currentColor" stroke-width="2.4" opacity="0.45"/>
+  </symbol>
+  <symbol id="i-read" viewBox="0 0 16 16">
+    <path d="M1.5 6.5 8 2l6.5 4.5v7h-13z M1.5 6.5 8 10.5l6.5-4" fill="none" stroke="currentColor"/>
+  </symbol>
+  <symbol id="i-person" viewBox="0 0 24 24">
+    <circle cx="12" cy="9" r="5" fill="currentColor"/>
+    <path d="M2 24c0-6 4.5-9 10-9s10 3 10 9z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__head">
+      <div class="ds-nav__brand">
+        <a class="ds-brand" data-component="brand" href="#">
+          <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4C7.5 19.8 4.2 16.4 4.2 11.5V5.6Z"/><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4Z" fill="currentColor"/></svg></span>
+          <span class="ds-brand__name">chronoskin</span>
+        </a>
+        <span class="ds-nav__tagline">The fretted and the fretless: a board for people who build stringed instruments</span>
+      </div>
+      <div class="ds-nav__member">
+        <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+        <div>
+          <span class="ds-nav__who ds-block">Welcome back, oswin_r.</span>
+          <span class="ds-block">You last visited: 08 Oct 2005, 10:14 PM</span>
+          <span class="ds-block"><a class="ds-link" href="#inbox">Private messages</a>: 2 unread, 12 in all. <a class="ds-link ds-link--quiet" href="#profile">Log out</a></span>
+        </div>
+      </div>
+    </div>
+    <ul class="ds-nav__menu">
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#profile">Your profile</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#inbox">Private messages</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#message">Latest message</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#compose">Write a message</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#buddies">Buddy list</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#help">Help</a></li>
+    </ul>
+  </header>
+
+  <div class="ds-page__body">
+
+    <section class="ds-view ds-view--home" id="profile">
+    <div class="ds-view__body">
+
+      <p class="ds-notice" data-component="notice">This is your profile as other members see it. <a class="ds-link ds-link--strong" href="#compose">Two members</a> have written to you since your last visit.</p>
+
+      <section class="ds-hero" data-component="hero">
+        <span class="ds-avatar"><svg role="img" aria-label="Avatar of oswin_r"><use href="#i-person"/></svg></span>
+        <div>
+          <h1 class="ds-hero__title">oswin_r</h1>
+          <p class="ds-hero__rank">Journeyman builder <span class="ds-badge ds-badge--success" data-component="badge">Online</span> <span class="ds-badge">Workshop host</span></p>
+          <p class="ds-hero__lead">Builds mandolins and the occasional tenor guitar in a shed in the hills. Ask about hide glue, do not ask about deadlines.</p>
+          <p class="ds-hero__action"><a class="ds-button" href="#compose">Send a private message</a> <a class="ds-button ds-button--secondary" href="#buddies">Add to your buddy list</a></p>
+        </div>
+        <div class="ds-hero__aside">
+          <span class="ds-block">Member no. 1,206</span>
+          <span class="ds-block">Joined 14 Feb 2003</span>
+          <span class="ds-block">Last active: today, 09:02 PM</span>
+          <span class="ds-block">Local time: 10:02 PM</span>
+          <span class="ds-block">Profile viewed 3,418 times</span>
+        </div>
+      </section>
+
+      <div class="ds-stat" data-component="stats">
+        <div class="ds-stat__item"><span class="ds-stat__value">2,871</span><span class="ds-stat__label">posts</span></div>
+        <div class="ds-stat__item"><span class="ds-stat__value">2.96</span><span class="ds-stat__label">posts a day</span></div>
+        <div class="ds-stat__item"><span class="ds-stat__value">143</span><span class="ds-stat__label">topics started</span></div>
+        <div class="ds-stat__item"><span class="ds-stat__value">38</span><span class="ds-stat__label">build logs</span></div>
+        <div class="ds-stat__item"><span class="ds-stat__value">967</span><span class="ds-stat__label">days a member</span></div>
+      </div>
+
+      <div class="ds-columns">
+
+        <div class="ds-columns__col">
+
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Forum information</h2>
+            <dl class="ds-facts">
+              <dt class="ds-facts__label">Member group</dt>
+              <dd class="ds-facts__value">Journeyman builders, Workshop hosts</dd>
+              <dt class="ds-facts__label">Most active in</dt>
+              <dd class="ds-facts__value"><a class="ds-link" href="#profile">Mandolin family</a> (1,104 posts, 38% of the total)</dd>
+              <dt class="ds-facts__label">Location</dt>
+              <dd class="ds-facts__value">A shed in the hills</dd>
+              <dt class="ds-facts__label">Interests</dt>
+              <dd class="ds-facts__value">Carved tops, hide glue, old banjo-mandolins</dd>
+              <dt class="ds-facts__label">Occupation</dt>
+              <dd class="ds-facts__value">Joiner</dd>
+              <dt class="ds-facts__label">Birthday</dt>
+              <dd class="ds-facts__value">21 November</dd>
+            </dl>
+          </section>
+
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__head">Latest posts by oswin_r</li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#profile">Re: Tap tuning a carved spruce top</a>
+              <span class="ds-list__excerpt">Leave the recurve thicker than you think and take it down after stringing up. You cannot put wood back.</span>
+              <span class="ds-list__meta">Today, 08:51 PM in <a class="ds-link ds-link--quiet" href="#profile">Mandolin family</a></span>
+            </li>
+            <li class="ds-list__item is-alt">
+              <a class="ds-list__title" href="#profile">Re: Fret wire for a short scale</a>
+              <span class="ds-list__excerpt">Narrow and low. Anything taller and the first position chords go sharp under a heavy hand.</span>
+              <span class="ds-list__meta">Yesterday, 11:20 AM in <a class="ds-link ds-link--quiet" href="#profile">Fretwork and set-up</a></span>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#profile">Build log: tenor guitar no. 4</a> <span class="ds-new">updated</span>
+              <span class="ds-list__excerpt">Sides are bent and in the mould. The cutaway cracked once and went back in the kettle.</span>
+              <span class="ds-list__meta">06 Oct 2005, 07:44 PM in <a class="ds-link ds-link--quiet" href="#profile">Build logs</a></span>
+            </li>
+            <li class="ds-list__foot"><a class="ds-link ds-link--quiet" href="#profile">Find all posts by oswin_r</a> &middot; <a class="ds-link ds-link--quiet" href="#profile">Find all topics started</a></li>
+          </ul>
+
+        </div>
+
+        <div class="ds-columns__col">
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Contact</h2>
+            <dl class="ds-facts">
+              <dt class="ds-facts__label">Private message</dt>
+              <dd class="ds-facts__value"><a class="ds-link" href="#compose">Send oswin_r a private message</a></dd>
+              <dt class="ds-facts__label">E-mail</dt>
+              <dd class="ds-facts__value">Hidden. <a class="ds-link" href="#compose">Use the board's mail form</a></dd>
+              <dt class="ds-facts__label">Home page</dt>
+              <dd class="ds-facts__value"><a class="ds-link" href="#profile">Workshop notes and photographs</a></dd>
+              <dt class="ds-facts__label">Messenger</dt>
+              <dd class="ds-facts__value">Not given</dd>
+            </dl>
+            <form class="ds-panel__body ds-panel__body--alt ds-panel__quick" action="#">
+              <label for="q-msg">Quick message</label>
+              <input class="ds-form__input ds-form__input--grow" id="q-msg" type="text" value="Is the spruce still for sale?">
+              <button class="ds-button" type="submit">Send</button>
+            </form>
+          </section>
+
+          <div class="ds-grid ds-grid--2">
+            <h2 class="ds-grid__title">Buddies <span class="ds-badge ds-badge--quiet">4 of 17</span></h2>
+            <div class="ds-grid__cell">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#buddies">marrow_k</a><span class="ds-grid__meta">Online now</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#buddies">t.hallam</a><span class="ds-grid__meta">Online now</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#buddies">edda</a><span class="ds-grid__meta">Seen yesterday</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#buddies">fenwick</a><span class="ds-grid__meta">Seen 02 Oct 2005</span></div>
+            </div>
+            <div class="ds-grid__foot"><a class="ds-link ds-link--quiet" href="#buddies">Show the whole list</a></div>
+          </div>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title ds-panel__title--quiet">Signature</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line">Measure twice, cut once, glue it, then find the pencil line.</p>
+              <p class="ds-panel__line"><a class="ds-link" href="#profile">Build log index</a> &middot; <a class="ds-link" href="#profile">Tonewood for trade</a></p>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="inbox">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#profile">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#inbox">Private messages</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li class="ds-breadcrumb__current">Inbox</li>
+      </ol>
+
+      <div class="ds-page-header" data-component="page-header">
+        <div>
+          <h1 class="ds-page-header__title">Private messages: Inbox</h1>
+          <p class="ds-page-header__desc">12 messages, 2 of them unread. You are using 24% of the space your member group allows.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#compose">New message</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block"><h2 class="ds-sidebar__title">Your quota</h2><div class="ds-progress"><span class="ds-progress__label">Private messages: 68 of 100</span><progress class="ds-progress__bar" value="68" max="100">68%</progress></div><details class="ds-accordion"><summary class="ds-accordion__head">Forum jump</summary><div class="ds-accordion__body"><ul class="ds-accordion__list"><li><a class="ds-link" href="#profile">Board index</a></li><li><a class="ds-link" href="#inbox">Topic listing</a></li><li><a class="ds-link" href="#help">Help and rules</a></li></ul></div></details><details class="ds-accordion"><summary class="ds-accordion__head">FAQ: posting</summary><div class="ds-accordion__body">Keep one topic to one subject and search before you ask.</div></details></div>
+        <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Folders</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#inbox">Inbox</a> <span class="ds-sidebar__count">12</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Sent items</a> <span class="ds-sidebar__count">31</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Drafts</a> <span class="ds-sidebar__count">0</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Wood trades</a> <span class="ds-sidebar__count">5</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Trash</a> <span class="ds-sidebar__count">2</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Storage</h2>
+            <div class="ds-sidebar__body">
+              48 of 200 messages stored.
+              <span class="ds-meter"><span class="ds-meter__bar"></span></span>
+              <a class="ds-link" href="#inbox">Download and clear</a>
+            </div>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Messenger</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#compose">Write a message</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#buddies">Buddy and ignore lists</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Messenger help</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#inbox" aria-current="true">Inbox <span class="ds-tabs__count">(12)</span></a></li>
+            <li><a class="ds-tabs__tab" href="#inbox">Sent items <span class="ds-tabs__count">(31)</span></a></li>
+            <li><a class="ds-tabs__tab" href="#inbox">Drafts <span class="ds-tabs__count">(0)</span></a></li>
+            <li><a class="ds-tabs__tab" href="#inbox">Tracking</a></li>
+          </ul>
+
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Subject</th>
+                <th scope="col">From</th>
+                <th scope="col">Received</th>
+                <th class="ds-table__head--num" scope="col">Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__group"><td colspan="6">This week</td></tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" aria-label="Select message"></td>
+                <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="Unread"><use href="#i-unread"/></svg></td>
+                <td><a class="ds-table__title is-unread" href="#message">Re: Quartered spruce billets</a> <span class="ds-badge">New</span></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">marrow_k</a></td>
+                <td class="ds-table__date">Today, 08:15 PM</td>
+                <td class="ds-table__num">3 KB</td>
+              </tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" aria-label="Select message"></td>
+                <td class="ds-table__status"><svg class="ds-icon" role="img" aria-label="Unread"><use href="#i-unread"/></svg></td>
+                <td><a class="ds-table__title is-unread" href="#message">Your build log has been pinned</a> <span class="ds-badge">New</span></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">t.hallam</a></td>
+                <td class="ds-table__date">Today, 06:40 PM</td>
+                <td class="ds-table__num">1 KB</td>
+              </tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" checked aria-label="Select message"></td>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Read"><use href="#i-read"/></svg></td>
+                <td><a class="ds-table__title" href="#message">Bending iron on loan</a> <span class="ds-badge ds-badge--success">Answered</span></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">edda</a></td>
+                <td class="ds-table__date">06 Oct 2005, 09:31 AM</td>
+                <td class="ds-table__num">2 KB</td>
+              </tr>
+              <tr class="ds-table__group"><td colspan="6">Earlier</td></tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" aria-label="Select message"></td>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Read"><use href="#i-read"/></svg></td>
+                <td><a class="ds-table__title" href="#message">Rosewood offcuts, postage only</a> <span class="ds-badge ds-badge--warning">Receipt asked</span></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">fenwick</a></td>
+                <td class="ds-table__date">28 Sep 2005, 05:02 PM</td>
+                <td class="ds-table__num">6 KB</td>
+              </tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" aria-label="Select message"></td>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Read"><use href="#i-read"/></svg></td>
+                <td><a class="ds-table__title" href="#message">Warning: trade listing in the wrong board</a> <span class="ds-badge ds-badge--danger">Moderator</span></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">t.hallam</a></td>
+                <td class="ds-table__date">19 Sep 2005, 11:48 AM</td>
+                <td class="ds-table__num">1 KB</td>
+              </tr>
+              <tr>
+                <td class="ds-table__check"><input class="ds-form__checkbox" type="checkbox" aria-label="Select message"></td>
+                <td class="ds-table__status is-read"><svg class="ds-icon" role="img" aria-label="Read"><use href="#i-read"/></svg></td>
+                <td><a class="ds-table__title" href="#message">Welcome to the workshop hosts group</a></td>
+                <td class="ds-table__from"><a class="ds-link ds-link--quiet" href="#profile">marrow_k</a></td>
+                <td class="ds-table__date">02 Sep 2005, 08:00 PM</td>
+                <td class="ds-table__num">4 KB</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="ds-toolbar">
+            <div class="ds-buttons" data-component="buttons">
+              <select class="ds-form__input ds-form__input--auto" aria-label="Move the selected messages to">
+                <option>Move selected to...</option>
+                <option>Wood trades</option>
+                <option>Trash</option>
+              </select>
+              <button class="ds-button" type="button">Move</button>
+              <button class="ds-button ds-button--secondary" type="button">Mark as read</button>
+              <a class="ds-button ds-button--danger" href="#message">Delete</a>
+              <button class="ds-button" type="button" disabled>Empty folder</button>
+            </div>
+            <ul class="ds-pagination" data-component="pagination">
+              <li class="ds-pagination__label">Page 1 of 2</li>
+              <li><a class="ds-pagination__link" href="#inbox">&lt;</a></li>
+              <li><a class="ds-pagination__link is-current" href="#inbox" aria-current="page">1</a></li>
+              <li><a class="ds-pagination__link" href="#inbox">2</a></li>
+              <li><a class="ds-pagination__link" href="#inbox">&gt;</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="message">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#profile">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li class="ds-breadcrumb__current">Re: Quartered spruce billets</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Re: Quartered spruce billets</h1>
+          <p class="ds-page-header__desc">From <a class="ds-link" href="#profile">marrow_k</a> to you, today at 08:15 PM. Third message in this conversation.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#compose">Reply</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Folders</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#inbox">Inbox</a> <span class="ds-sidebar__count">12</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Sent items</a> <span class="ds-sidebar__count">31</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Drafts</a> <span class="ds-sidebar__count">0</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Wood trades</a> <span class="ds-sidebar__count">5</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Trash</a> <span class="ds-sidebar__count">2</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">This conversation</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#message">Quartered spruce billets</a> <span class="ds-sidebar__count">04 Oct</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#message">Re: your reply</a> <span class="ds-sidebar__count">05 Oct</span></li>
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#message">Re: this message</a> <span class="ds-sidebar__count">Today</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Messenger</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#compose">Write a message</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#buddies">Buddy and ignore lists</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Messenger help</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <article class="ds-post">
+            <div class="ds-post__head"><span>Today, 08:15 PM</span><span>Message 1 of 12</span></div>
+            <div class="ds-post__author">
+              <a class="ds-post__name" href="#profile">marrow_k</a>
+              <span>Master builder</span>
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <span class="ds-post__meta">Posts: 9,412</span>
+              <span class="ds-post__meta">Joined: Mar 2002</span>
+            </div>
+            <div class="ds-post__body">
+              <blockquote class="ds-post__quote"><span class="ds-post__cite">oswin_r wrote:</span> Is the spruce still for sale? I can take four billets if the grain is as tight as in your photographs.</blockquote>
+              <p class="ds-post__text">It is. I have six left from the same log, all split and not sawn, so there is no run-out to speak of. Twenty rings to the inch at the centre join, a little wider at the edge.</p>
+              <p class="ds-post__text">Four billets fit in one parcel. I would rather trade than sell: you mentioned a spare set of tuners for a tenor. If that still stands, send them along and we are square.</p>
+              <p class="ds-post__sig">Sharp tools, slow hands.</p>
+            </div>
+            <div class="ds-post__foot">
+              <span><a class="ds-link ds-link--quiet" href="#profile">Profile</a> &middot; <a class="ds-link ds-link--quiet" href="#buddies">Add to buddies</a></span>
+              <span><a class="ds-link ds-link--quiet" href="#compose">Reply</a> &middot; <a class="ds-link ds-link--quiet" href="#compose">Forward</a> &middot; <a class="ds-link ds-link--quiet" href="#message">Delete</a></span>
+            </div>
+          </article>
+
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+              <h2 class="ds-dialog__title" id="d-title">Delete this message?</h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">The message from marrow_k will be moved to Trash and removed for good after 30 days.</p>
+                <div class="ds-dialog__actions">
+                  <a class="ds-button ds-button--danger" href="#inbox">Delete message</a>
+                  <a class="ds-button ds-button--secondary" href="#message">Keep it</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-toolbar">
+            <div class="ds-buttons">
+              <a class="ds-button" href="#compose">Reply</a>
+              <a class="ds-button ds-button--secondary" href="#compose">Forward</a>
+              <a class="ds-button ds-button--secondary" href="#inbox">Save to Wood trades</a>
+            </div>
+            <span><a class="ds-link" href="#message">&lt; Older</a> &middot; <a class="ds-link" href="#inbox">Back to the inbox</a></span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="compose">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#profile">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#inbox">Private messages</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li class="ds-breadcrumb__current">Write a message</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Write a message</h1>
+          <p class="ds-page-header__desc">Private messages are read only by you and the people you name. Up to five recipients.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#help">Messenger help</a></div>
+      </div>
+
+      <div class="ds-notice ds-notice--error" role="alert">
+        <span class="ds-notice__title">Your message was not sent.</span> One of the recipients could not be found. Correct the name below and send it again.
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Folders</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Inbox</a> <span class="ds-sidebar__count">12</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Sent items</a> <span class="ds-sidebar__count">31</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Drafts</a> <span class="ds-sidebar__count">0</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Wood trades</a> <span class="ds-sidebar__count">5</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#inbox">Trash</a> <span class="ds-sidebar__count">2</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Buddies online</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#compose">marrow_k</a> <span class="ds-sidebar__count">add</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#compose">t.hallam</a> <span class="ds-sidebar__count">add</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Messenger</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#compose">Write a message</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#buddies">Buddy and ignore lists</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Messenger help</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <form class="ds-form" data-component="form" action="#">
+            <h2 class="ds-form__title">New private message</h2>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-to">To <span class="ds-form__hint">Member names, separated by semicolons</span></label>
+              <div class="ds-form__field">
+                <input class="ds-form__input is-invalid" id="f-to" type="text" value="marrow_k; fenwyck" aria-invalid="true">
+                <span class="ds-form__error">There is no member called fenwyck.</span>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-subject">Subject</label>
+              <div class="ds-form__field"><input class="ds-form__input" id="f-subject" type="text" value="Re: Quartered spruce billets"></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-folder">Keep a copy in</label>
+              <div class="ds-form__field">
+                <select class="ds-form__input ds-form__input--auto" id="f-folder">
+                  <option>Sent items</option>
+                  <option>Wood trades</option>
+                  <option>Do not keep a copy</option>
+                </select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-body">Message <span class="ds-form__hint">Board code is on, images are off</span></label>
+              <div class="ds-form__field"><textarea class="ds-form__input ds-form__input--wide" id="f-body" rows="6">The tuners still stand. They are the open-geared kind with ivoroid buttons, four on a plate. I will post them on Monday.</textarea></div>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label">Options</span>
+              <div class="ds-form__field">
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Ask for a read receipt</label>
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> Add my signature</label>
+              </div>
+            </div>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="submit">Send message</button>
+              <button class="ds-button ds-button--secondary" type="button">Preview</button>
+              <button class="ds-button ds-button--secondary" type="button">Save as draft</button>
+              <a class="ds-link ds-link--quiet" href="#inbox">Cancel</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="buddies">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#profile">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#profile">Your profile</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li class="ds-breadcrumb__current">Buddy and ignore lists</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Buddy and ignore lists</h1>
+          <p class="ds-page-header__desc">Buddies are shown first when you write a message. Posts by ignored members are folded away.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#compose">Message all buddies</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Your lists</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#buddies">Buddies</a> <span class="ds-sidebar__count">17</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#buddies">Ignored members</a> <span class="ds-sidebar__count">0</span></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#buddies">Who lists you</a> <span class="ds-sidebar__count">23</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Add a member</h2>
+            <form class="ds-sidebar__body" action="#">
+              <label class="ds-block" for="b-name">Member name</label>
+              <input class="ds-form__input ds-form__input--wide" id="b-name" type="text">
+              <span class="ds-form__check"><input class="ds-form__checkbox" id="b-ign" type="checkbox"> <label for="b-ign">Ignore instead</label></span>
+              <button class="ds-button" type="submit">Add</button>
+            </form>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <div class="ds-grid" data-component="grid">
+            <h2 class="ds-grid__title">Buddies online and recently seen</h2>
+            <div class="ds-grid__cell">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">marrow_k</a><span class="ds-grid__meta">Master builder</span><span class="ds-badge ds-badge--success">Online</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">t.hallam</a><span class="ds-grid__meta">Moderator</span><span class="ds-badge ds-badge--success">Online</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">edda</a><span class="ds-grid__meta">Apprentice</span><span class="ds-badge ds-badge--warning">Away</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">fenwick</a><span class="ds-grid__meta">Journeyman builder</span><span class="ds-badge ds-badge--quiet">02 Oct</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">hesper</a><span class="ds-grid__meta">Journeyman builder</span><span class="ds-badge ds-badge--quiet">29 Sep</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">old_tobias</a><span class="ds-grid__meta">Apprentice</span><span class="ds-badge ds-badge--quiet">21 Sep</span></div>
+            </div>
+            <div class="ds-grid__cell">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">ines_v</a><span class="ds-grid__meta">Master builder</span><span class="ds-badge ds-badge--quiet">12 Sep</span></div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <span class="ds-avatar ds-avatar--small"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
+              <div><a class="ds-grid__name" href="#profile">quillon</a><span class="ds-grid__meta">Suspended</span><span class="ds-badge ds-badge--danger">Banned</span></div>
+            </div>
+            <div class="ds-grid__foot">8 of 17 shown. <a class="ds-link ds-link--quiet" href="#buddies">Show all</a></div>
+          </div>
+
+          <div class="ds-empty" data-component="empty">
+            <h2 class="ds-empty__title">Ignored members</h2>
+            <div class="ds-empty__body">
+              <p class="ds-empty__text">You are not ignoring anyone. Members you add here cannot send you private messages.</p>
+              <a class="ds-button ds-button--secondary" href="#help">How ignoring works</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="help">
+    <div class="ds-view__body">
+
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#profile">chronoskin</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#help">Help</a></li>
+        <li class="ds-breadcrumb__sep" aria-hidden="true">&gt;</li>
+        <li class="ds-breadcrumb__current">Profiles and private messages</li>
+      </ol>
+
+      <div class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Help: profiles and private messages</h1>
+          <p class="ds-page-header__desc">What other members can see of you, and how the messenger works. Last revised 01 Sep 2005.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#compose">Ask a moderator</a></div>
+      </div>
+
+      <div class="ds-layout">
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Help contents</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item is-current"><a class="ds-link" href="#help">Your profile</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Avatars and signatures</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Private messages</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Folders and storage</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Buddies and ignoring</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#help">Member groups</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Storage by group</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item">Apprentices <span class="ds-sidebar__count">50</span></li>
+              <li class="ds-sidebar__item">Journeymen <span class="ds-sidebar__count">200</span></li>
+              <li class="ds-sidebar__item">Masters <span class="ds-sidebar__count">500</span></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="ds-layout__main">
+
+          <article class="ds-prose" data-component="typography">
+            <h1>Your profile and the messenger</h1>
+            <p>Every member has a profile page. It shows what you chose to tell the board when you registered and <strong>nothing else</strong>: your e-mail address stays hidden unless you tick the box that shows it.</p>
+            <h2>What appears on a profile</h2>
+            <p>The head of the page carries your name, rank and avatar. Below it are your post counts, the details you entered and your latest posts.</p>
+            <ul>
+              <li>Avatars are 84 by 84 pixels at most and are resized on upload.</li>
+              <li>Signatures may run to three lines; use <code>[url]</code> tags for links.</li>
+              <li>Birthdays show the day and month, never the year.</li>
+            </ul>
+            <h3>Private messages</h3>
+            <p>A private message goes to up to five members at once. New messages are marked in your inbox and counted in the box at the top of every page.</p>
+            <h3>Folders and storage</h3>
+            <p>Your member group sets how many messages you may keep. When the meter is full, new messages are held back until you clear some space.</p>
+          </article>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title ds-panel__title--quiet">See also</h2>
+            <div class="ds-panel__body" data-component="links">
+              <p class="ds-panel__line"><a class="ds-link" href="#help">Board code reference</a> &middot; <a class="ds-link is-visited" href="#help">Avatars and signatures</a> &middot; <a class="ds-link is-hover" href="#buddies">Buddies and ignoring</a> &middot; <a class="ds-link is-active" href="#help">Member groups</a> &middot; <a class="ds-link ds-link--quiet" href="#inbox">Back to your inbox</a></p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+  </div>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-footer__row">
+      <li><a class="ds-footer__link" href="#profile">Your profile</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">|</li>
+      <li><a class="ds-footer__link" href="#inbox">Private messages</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">|</li>
+      <li><a class="ds-footer__link" href="#buddies">Buddy list</a></li>
+      <li class="ds-footer__sep" aria-hidden="true">|</li>
+      <li><a class="ds-footer__link" href="#help">Help</a></li>
+    </ul>
+    <span>All times are GMT. The time now is 09:14 PM.</span>
+  </footer>
+
+  <p class="ds-page__legal">chronoskin. Placeholder content for a style specimen.</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: supper in four cards</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8.6" cy="8.8" r="6"/><circle cx="15.4" cy="9.6" r="5.2"/><circle cx="11" cy="15.2" r="6"/><circle cx="19.2" cy="18.8" r="2.6"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <label class="ds-nav__search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+    <input class="ds-form__input" type="text" placeholder="Leeks, lemon, 20 minutes" aria-label="Search recipes">
+  </label>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#home">Tonight</a></li>
+    <li><a class="ds-nav__link" href="#recipe">Recipe</a></li>
+    <li><a class="ds-nav__link" href="#box">My box</a></li>
+    <li><a class="ds-nav__link" href="#write">Write one</a></li>
+  </ul>
+  <div class="ds-nav__actions">
+    <details class="ds-menu ds-menu--end" data-component="menu">
+      <summary class="ds-menu__toggle" aria-label="Account"><span class="ds-avatar ds-avatar--1" data-component="avatar"><span class="ds-avatar__pic">HV</span></span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__link" href="#box">My box <span class="ds-menu__note">38 recipes</span></a></li>
+        <li><a class="ds-menu__link" href="#write">My drafts <span class="ds-menu__note">2</span></a></li>
+        <li><a class="ds-menu__link" href="#box">Shopping list</a></li>
+        <li><a class="ds-menu__link" href="#home">Sign out</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="home">
+  <div class="ds-page__sections">
+
+    <div>
+      <section class="ds-hero" data-component="hero">
+        <span class="ds-badge">Thursday's hand of four</span>
+        <h1 class="ds-hero__title">Pick a card, cook a supper</h1>
+        <p class="ds-hero__lead">Four recipes a day, each short enough for a weeknight and written by somebody who cooked it twice.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#recipe">Cook the first card</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#box">Open my box</a>
+        </div>
+      </section>
+
+      <div class="ds-grid" data-component="grid">
+        <article class="ds-grid__cell ds-grid__cell--1">
+          <span class="ds-plate" aria-hidden="true"><span class="ds-plate__bit ds-plate__bit--2"></span><span class="ds-plate__bit ds-plate__bit--4"></span><span class="ds-plate__bit ds-plate__bit--3"></span></span>
+          <h2 class="ds-grid__title">Brown butter gnocchi</h2>
+          <p class="ds-grid__text">25 minutes · serves 2 · easy</p>
+          <a class="ds-grid__more" href="#recipe">Cook this</a>
+        </article>
+        <article class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-plate" aria-hidden="true"><span class="ds-plate__bit ds-plate__bit--4"></span><span class="ds-plate__bit ds-plate__bit--1"></span><span class="ds-plate__bit ds-plate__bit--3"></span></span>
+          <h2 class="ds-grid__title">Leek and lemon orzo</h2>
+          <p class="ds-grid__text">20 minutes · serves 4 · easy</p>
+          <a class="ds-grid__more" href="#recipe">Cook this</a>
+        </article>
+        <article class="ds-grid__cell ds-grid__cell--3">
+          <span class="ds-plate" aria-hidden="true"><span class="ds-plate__bit ds-plate__bit--1"></span><span class="ds-plate__bit ds-plate__bit--2"></span><span class="ds-plate__bit ds-plate__bit--4"></span></span>
+          <h2 class="ds-grid__title">Tomato rice with eggs</h2>
+          <p class="ds-grid__text">35 minutes · serves 3 · steady</p>
+          <a class="ds-grid__more" href="#recipe">Cook this</a>
+        </article>
+        <article class="ds-grid__cell ds-grid__cell--4">
+          <span class="ds-plate" aria-hidden="true"><span class="ds-plate__bit ds-plate__bit--3"></span><span class="ds-plate__bit ds-plate__bit--2"></span><span class="ds-plate__bit ds-plate__bit--1"></span></span>
+          <h2 class="ds-grid__title">Plum and oat crumble</h2>
+          <p class="ds-grid__text">45 minutes · serves 6 · easy</p>
+          <a class="ds-grid__more" href="#recipe">Cook this</a>
+        </article>
+      </div>
+    </div>
+
+    <dl class="ds-stat" data-component="stats">
+      <div class="ds-stat__item">
+        <dd class="ds-stat__value">1,460</dd>
+        <dt class="ds-stat__label">cards dealt since the first supper</dt>
+      </div>
+      <div class="ds-stat__item">
+        <dd class="ds-stat__value">28 <span class="ds-stat__meta">minutes</span></dd>
+        <dt class="ds-stat__label">from cupboard to table, on average</dt>
+      </div>
+      <div class="ds-stat__item">
+        <dd class="ds-stat__value">9 <span class="ds-stat__meta">things</span></dd>
+        <dt class="ds-stat__label">to buy for a card, at most</dt>
+      </div>
+    </dl>
+
+    <section class="ds-page__split">
+      <div>
+        <h2 class="ds-page__title">Cooked most this week <a class="ds-link ds-page__more" href="#box">All recipes</a></h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__time">20<span class="ds-list__unit">min</span></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Leek and lemon orzo</a>
+              <span class="ds-list__meta">by Hana Vesely · cooked 412 times</span>
+            </div>
+            <span class="ds-badge ds-badge--success" data-component="badge">In season</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__time">25<span class="ds-list__unit">min</span></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Brown butter gnocchi</a>
+              <span class="ds-list__meta">by Tomas Idowu · cooked 388 times</span>
+            </div>
+            <span class="ds-badge">Tonight</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__time">15<span class="ds-list__unit">min</span></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Cucumber, yoghurt and dill</a>
+              <span class="ds-list__meta">by Lotte Brandt · cooked 240 times</span>
+            </div>
+            <span class="ds-badge ds-badge--warning">Last weeks</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__time">40<span class="ds-list__unit">min</span></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Baked beans on thick toast</a>
+              <span class="ds-list__meta">by Hana Vesely · cooked 198 times</span>
+            </div>
+            <span class="ds-badge ds-badge--danger">Needs an oven</span>
+          </li>
+        </ul>
+      </div>
+
+      <section class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">Gnocchi, step 3 <span class="ds-badge ds-badge--quiet">running</span></h2>
+        <div class="ds-panel__body">
+          <div class="ds-timer">
+            <div class="ds-progress ds-progress--ring ds-progress--60" data-component="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Timer"><span class="ds-progress__face">3:12<span class="ds-timer__label">of 8 minutes</span></span></div>
+            <div class="ds-timer__keys">
+              <button class="ds-key" type="button" aria-label="Start again"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12a7 7 0 1 0 2-5M5 5v3h3"/></svg></button>
+              <button class="ds-key ds-key--primary" type="button" aria-label="Pause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg></button>
+              <button class="ds-key" type="button" aria-label="One more minute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></button>
+            </div>
+          </div>
+          <p class="ds-panel__note">Brown the butter until it smells of nuts. <a class="ds-link" href="#recipe">Back to the recipe</a></p>
+        </div>
+      </section>
+    </section>
+
+    <section class="ds-page__band">
+      <div>
+        <h2 class="ds-page__band-title">Cooked something twice?</h2>
+        <p class="ds-page__band-text">Write it down as a card. Nine ingredients, six steps, and it may be dealt next week.</p>
+      </div>
+      <a class="ds-button ds-button--large" href="#write">Write a card</a>
+    </section>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="recipe">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Tonight</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#box">Pasta and dumplings</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Brown butter gnocchi</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Brown butter gnocchi</h1>
+        <p class="ds-page-header__lead">Crisp outside, soft inside, with sage and a squeeze of lemon. 25 minutes for two.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#box">Save to my box</a>
+        <a class="ds-button" href="#recipe">Start cooking</a>
+      </div>
+    </header>
+
+    <div class="ds-page__stack">
+      <div class="ds-page__tools">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#recipe" aria-current="true">Method</a></li>
+          <li><a class="ds-tabs__tab" href="#recipe">Notes</a></li>
+          <li><a class="ds-tabs__tab" href="#recipe">Photos</a></li>
+        </ul>
+        <label class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Grams, not cups</span></label>
+      </div>
+
+      <div class="ds-page__split">
+        <div class="ds-page__stack">
+          <div class="ds-carousel" data-component="carousel" aria-roledescription="carousel" aria-label="Steps">
+            <div class="ds-carousel__track">
+              <article class="ds-carousel__slide ds-step">
+                <span class="ds-step__num">3</span>
+                <div class="ds-step__body">
+                  <h2 class="ds-step__title">Brown the butter</h2>
+                  <p class="ds-step__text">Melt the butter over a medium heat and keep it moving. It foams, goes quiet, then turns the colour of hazelnuts.</p>
+                  <a class="ds-button ds-button--secondary" href="#home">Set 8 minutes</a>
+                </div>
+              </article>
+              <article class="ds-carousel__slide ds-step">
+                <span class="ds-step__num">4</span>
+                <div class="ds-step__body">
+                  <h2 class="ds-step__title">Fry the gnocchi</h2>
+                  <p class="ds-step__text">Tip the gnocchi into the butter in one layer and leave them alone until the undersides are gold.</p>
+                  <a class="ds-button ds-button--secondary" href="#home">Set 5 minutes</a>
+                </div>
+              </article>
+              <article class="ds-carousel__slide ds-step">
+                <span class="ds-step__num">5</span>
+                <div class="ds-step__body">
+                  <h2 class="ds-step__title">Sage and lemon</h2>
+                  <p class="ds-step__text">Add the sage for the last minute, then the lemon off the heat.</p>
+                  <a class="ds-button ds-button--secondary" href="#home">Set 1 minute</a>
+                </div>
+              </article>
+            </div>
+            <div class="ds-carousel__foot">
+              <button class="ds-carousel__arrow" type="button" aria-label="Previous step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 6 8l4 4"/></svg></button>
+              <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+              <button class="ds-carousel__arrow is-hover" type="button" aria-label="Next step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></button>
+            </div>
+          </div>
+
+          <section class="ds-panel">
+            <div class="ds-panel__body">
+              <article class="ds-prose" data-component="typography">
+                <h1>Cook's notes</h1>
+                <p class="ds-prose__lead">Shop gnocchi are fine here. What matters is a dry pan and patience with the butter.</p>
+                <p>The card is filed as <code>PASTA-112</code>. It was tested with <strong>salted butter</strong>; with unsalted, add a pinch of salt with the sage.</p>
+                <h2>What can go wrong</h2>
+                <p>Butter goes from brown to burnt in half a minute. Take the pan off the heat when in doubt.</p>
+                <h3>Swaps that work</h3>
+                <ul>
+                  <li>Thyme for sage, in the same amount.</li>
+                  <li>A spoon of capers instead of the lemon.</li>
+                  <li>Walnuts on top when there is no cheese.</li>
+                </ul>
+                <p>Serve with <a class="ds-link" href="#recipe">cucumber, yoghurt and dill</a>, or <a class="ds-link" href="#box">find another side in your box</a>.</p>
+                <p class="ds-link__sample" data-component="links">
+                  <a class="ds-link" href="#recipe">Leek and lemon orzo</a>
+                  <a class="ds-link is-visited" href="#recipe">Tomato rice</a>
+                  <a class="ds-link is-hover" href="#recipe">Plum crumble</a>
+                  <a class="ds-link is-active" href="#recipe">Baked beans</a>
+                  <a class="ds-link ds-link--quiet" href="#box">All pasta</a>
+                </p>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div class="ds-page__stack">
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">You need <span class="ds-badge">for 2</span></h2>
+            <div class="ds-panel__body">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> 400 g potato gnocchi</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> 60 g salted butter</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> 12 sage leaves</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> Half a lemon</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> 30 g hard cheese, grated</label>
+              <a class="ds-button ds-button--secondary ds-button--wide" href="#box">Add 3 to the shopping list</a>
+            </div>
+          </section>
+
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">A serving has</th>
+                <th scope="col" class="ds-table__num">Amount</th>
+                <th scope="col" class="ds-table__num">Of a day</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ds-table__strong">Energy</td>
+                <td class="ds-table__num">540 kcal</td>
+                <td class="ds-table__num">27%</td>
+              </tr>
+              <tr>
+                <td class="ds-table__strong">Fat</td>
+                <td class="ds-table__num">28 g</td>
+                <td class="ds-table__num">40%</td>
+              </tr>
+              <tr class="is-hover">
+                <td class="ds-table__strong">Carbohydrate</td>
+                <td class="ds-table__num">61 g</td>
+                <td class="ds-table__num">23%</td>
+              </tr>
+              <tr>
+                <td class="ds-table__strong">Protein</td>
+                <td class="ds-table__num">12 g</td>
+                <td class="ds-table__num">24%</td>
+              </tr>
+              <tr>
+                <td class="ds-table__strong"><span class="ds-tooltip" data-component="tooltip"><span tabindex="0">Salt</span><span class="ds-tooltip__tip" role="tooltip">With salted butter, as tested</span></span></td>
+                <td class="ds-table__num">1.9 g</td>
+                <td class="ds-table__num">32%</td>
+              </tr>
+              <tr>
+                <td class="ds-table__strong">Fibre</td>
+                <td class="ds-table__num">4 g</td>
+                <td class="ds-table__num">13%</td>
+              </tr>
+              <tr>
+                <td class="ds-table__strong">Sugar</td>
+                <td class="ds-table__num">3 g</td>
+                <td class="ds-table__num">3%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <section class="ds-panel">
+            <div class="ds-panel__body">
+              <span class="ds-avatar ds-avatar--3"><span class="ds-avatar__pic">TI</span><span class="ds-avatar__text"><span class="ds-avatar__name">Tomas Idowu</span><span class="ds-avatar__meta">14 cards · cooks in a small kitchen</span></span></span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="box">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Tonight</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#box">My box</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Pasta and dumplings</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">My recipe box</h1>
+        <p class="ds-page-header__lead">38 cards you saved, sorted the way a kitchen drawer never is.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#write">Write a card</a>
+      </div>
+    </header>
+
+    <div class="ds-page__split ds-page__split--side">
+      <div class="ds-page__stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__heading">Shelves</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#box">Pasta and dumplings <span class="ds-badge ds-badge--quiet">9</span></a></li>
+            <li><a class="ds-sidebar__link" href="#box">Rice and grains <span class="ds-badge ds-badge--quiet">7</span></a></li>
+            <li><a class="ds-sidebar__link" href="#box">Eggs <span class="ds-badge ds-badge--quiet">5</span></a></li>
+            <li><a class="ds-sidebar__link" href="#box">Sweet things <span class="ds-badge ds-badge--quiet">11</span></a></li>
+            <li><a class="ds-sidebar__link" href="#box">Sides <span class="ds-badge ds-badge--quiet">6</span></a></li>
+          </ul>
+          <h2 class="ds-sidebar__heading">Lists</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#box">Shopping list</a></li>
+            <li><a class="ds-sidebar__link" href="#write">My drafts</a></li>
+          </ul>
+        </aside>
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l-1 12H6zM9 7a3 3 0 0 1 6 0"/></svg>
+          <h2 class="ds-empty__title">The shopping list is empty</h2>
+          <p class="ds-empty__text">Tick what you lack on a recipe and it lands here.</p>
+          <a class="ds-button" href="#recipe">Open a recipe</a>
+        </section>
+      </div>
+
+      <div class="ds-page__stack">
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-plate ds-plate--small" aria-hidden="true"></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Brown butter gnocchi</a>
+              <span class="ds-list__meta">25 minutes · cooked 3 times · last on Sunday</span>
+            </div>
+            <span class="ds-badge ds-badge--success">A keeper</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-plate ds-plate--small" aria-hidden="true"></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Leek and lemon orzo</a>
+              <span class="ds-list__meta">20 minutes · cooked once</span>
+            </div>
+            <span class="ds-badge ds-badge--success">A keeper</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-plate ds-plate--small" aria-hidden="true"></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Spinach and ricotta shells</a>
+              <span class="ds-list__meta">50 minutes · not cooked yet</span>
+            </div>
+            <span class="ds-badge ds-badge--warning">To try</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-plate ds-plate--small" aria-hidden="true"></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#recipe">Noodles with burnt spring onion</a>
+              <span class="ds-list__meta">15 minutes · cooked twice · too salty both times</span>
+            </div>
+            <span class="ds-badge ds-badge--danger">Needs a fix</span>
+          </li>
+        </ul>
+
+        <nav aria-label="Pages">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link" href="#box">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#box" aria-current="page">1</a></li>
+            <li><a class="ds-pagination__link" href="#box">2</a></li>
+            <li><a class="ds-pagination__link" href="#box">3</a></li>
+            <li><a class="ds-pagination__link" href="#box">Next</a></li>
+          </ul>
+        </nav>
+
+        <div class="ds-accordion" data-component="accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">How many cards fit in a box? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body"><p>As many as you like. Shelves are only there so that you find them again.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Can I change a saved recipe? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body"><p>You can add notes to your copy. The card itself stays as its cook wrote it.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Who sees my box? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body"><p>Only you, unless you share a shelf by its link.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="write">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Tonight</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#box">My box</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Write a card</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Write a card</h1>
+        <p class="ds-page-header__lead">Something you cooked at least twice. Nine ingredients and six steps at most.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#box">Back to my box</a>
+      </div>
+    </header>
+
+    <div class="ds-page__split">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">The card <span class="ds-badge">draft</span></h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="w-name">What is it called?</label>
+              <input class="ds-form__input" id="w-name" type="text" value="Baked beans on thick toast">
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="w-time">Minutes</label>
+                <input class="ds-form__input is-error" id="w-time" type="text" value="about an hour" aria-invalid="true" aria-describedby="w-time-error">
+                <span class="ds-form__error" id="w-time-error">Enter a number of minutes.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="w-shelf">Shelf</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="w-shelf">
+                    <option>Sides</option>
+                    <option>Pasta and dumplings</option>
+                    <option>Rice and grains</option>
+                    <option>Sweet things</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="w-need">You need</label>
+              <textarea class="ds-form__textarea" id="w-need" placeholder="One ingredient to a line, with its amount"></textarea>
+              <span class="ds-form__hint">Nine lines at most. Salt, pepper and oil do not count.</span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="w-first">First step</label>
+              <input class="ds-form__input" id="w-first" type="text" placeholder="Heat the oven to 180 degrees">
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              I cooked this at least twice
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox">
+              It may be dealt as a card of the day
+            </label>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Save the card</button>
+              <button class="ds-button ds-button--secondary" type="button">Keep as a draft</button>
+              <button class="ds-button ds-button--danger" type="button">Throw away</button>
+              <button class="ds-button" type="button" disabled>Add a photo</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="ds-page__stack">
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+            <div><span class="ds-notice__title">Drafts are kept for a month.</span> Nobody else sees them.</div>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.500 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+            <div><span class="ds-notice__title">Eleven ingredients are two too many.</span> Join or drop two lines.</div>
+          </div>
+        </div>
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Throw this card away?</h2>
+            <div class="ds-dialog__body">The name, the ingredients and the first step are removed. A draft cannot be brought back.</div>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--secondary" type="button">Keep it</button>
+              <button class="ds-button ds-button--danger" type="button">Throw away</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div class="ds-footer__about">
+      <a class="ds-brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8.6" cy="8.8" r="6"/><circle cx="15.4" cy="9.6" r="5.2"/><circle cx="11" cy="15.2" r="6"/><circle cx="19.2" cy="18.8" r="2.6"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <p class="ds-footer__text">Four supper cards a day, written by people who cook at home.</p>
+    </div>
+    <div>
+      <h2 class="ds-footer__heading">Cook</h2>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#home">Tonight's four</a></li>
+        <li><a class="ds-footer__link" href="#recipe">A recipe</a></li>
+        <li><a class="ds-footer__link" href="#box">My box</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="ds-footer__heading">Write</h2>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#write">Write a card</a></li>
+        <li><a class="ds-footer__link" href="#box">House style</a></li>
+        <li><a class="ds-footer__link" href="#box">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

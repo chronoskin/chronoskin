@@ -1,0 +1,1249 @@
+/* Layout tokens (structure part). A mosaic of tiles: three fixed columns
+   inside a 770px sheet, 5px gutters, 10px tile padding. */
+:root {
+  --size-page: 770px;
+  --size-col-a: 275px;
+  --size-col-b: 200px;
+  --size-figure: 240px;
+  --size-figure-height: 170px;
+  --size-thumb: 64px;
+  --size-thumb-height: 48px;
+  --size-cell: 18px;
+  --size-search: 170px;
+  --size-field: 220px;
+  --size-area: 6em;
+  --size-dialog: 320px;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 4px;
+  --space-4: 5px;
+  --space-5: 10px;
+  --space-6: 14px;
+}
+
+/* ---------- shell ---------- */
+.ds-page {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--fill-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-body);
+  line-height: var(--line-body);
+}
+/* The fixed sheet, centred in the window. Its colour is what shows in the
+   gutters between tiles. */
+.ds-page__frame {
+  box-sizing: border-box;
+  width: var(--size-page);
+  margin: 0 auto;
+  background: var(--color-canvas);
+  border-radius: var(--radius-page);
+}
+/* Top row of the home page: the search tile beside the hero. */
+.ds-page__top {
+  display: grid;
+  grid-template-columns: var(--size-col-a) minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4) 0 0;
+}
+/* The mosaic: three columns of stacked tiles. */
+.ds-page__mosaic {
+  display: grid;
+  grid-template-columns: var(--size-col-a) var(--size-col-b) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+  padding: var(--space-4) 0;
+}
+/* Inner page: one wide working column and one column of tiles. */
+.ds-page__mosaic--inner {
+  grid-template-columns: minmax(0, 1fr) var(--size-col-a);
+}
+.ds-page__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+/* A full-width band of the inner page, above the columns. */
+.ds-page__band {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) 0 0;
+}
+.ds-page__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+.ds-page__legal {
+  margin: 0;
+  padding: var(--space-5) var(--space-5) var(--space-6);
+  font-size: var(--text-small);
+  color: var(--color-text);
+  text-align: center;
+}
+.ds-page__legal-name {
+  display: block;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+}
+
+/* ---------- views ---------- */
+/* The specimen is one site of several screens; one view shows at a time. */
+.ds-view { display: none; }
+.ds-view:target, .ds-page:not(:has(.ds-view:target)) .ds-view--home { display: block; }
+.ds-view:target { scroll-margin-top: 100vh; }
+
+/* ---------- links ---------- */
+.ds-link {
+  color: var(--color-link);
+  text-decoration: var(--link-decoration);
+}
+.ds-link:visited,
+.ds-link.is-visited {
+  color: var(--color-link-visited);
+}
+.ds-link:hover,
+.ds-link.is-hover {
+  color: var(--color-link-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-link:active,
+.ds-link.is-active {
+  color: var(--color-link-active);
+}
+.ds-link:focus-visible,
+.ds-link.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-link--quiet,
+.ds-link--quiet:visited,
+.ds-link--quiet.is-visited {
+  color: var(--color-link-quiet);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-link--quiet:hover,
+.ds-link--quiet.is-hover {
+  color: var(--color-link-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-link--hot,
+.ds-link--hot:visited,
+.ds-link--hot.is-visited {
+  color: var(--color-accent-alt);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-link--strong {
+  font-weight: var(--weight-bold);
+}
+.ds-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+  padding: 0 0 var(--space-5);
+}
+
+/* ---------- nav ---------- */
+/* One strip of cells: the wordmark cell, then one cell per section, divided
+   by 1px lines. Under it a thinner band of service links and the date. */
+.ds-nav {
+  display: block;
+}
+.ds-nav__strip {
+  display: flex;
+  align-items: stretch;
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  text-shadow: var(--shadow-text);
+}
+.ds-nav__brand {
+  padding: var(--space-3) var(--space-5);
+}
+.ds-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  text-decoration: none;
+}
+/* The mark sits on a small tile dressed like the primary button. */
+.ds-brand__mark {
+  display: inline-flex;
+  flex: none;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--size-cell) + var(--space-3));
+  height: calc(var(--size-cell) + var(--space-3));
+  padding: var(--space-1);
+  background: var(--fill-button);
+  color: var(--color-button-text);
+  border: var(--border-width-strong) outset var(--color-border-muted);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-control);
+}
+.ds-brand__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ds-brand__name {
+  color: var(--color-bar-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-display);
+  letter-spacing: var(--heading-tracking);
+  text-transform: var(--heading-transform);
+}
+.ds-nav__links {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  text-transform: var(--ui-transform);
+}
+.ds-nav__item {
+  display: flex;
+  border-left: var(--border-width) solid var(--color-bar-text);
+}
+.ds-nav__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
+  color: var(--color-bar-text);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-nav__link:hover,
+.ds-nav__link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-nav__link.is-current,
+.ds-page:not(:has(.ds-view:target)) .ds-nav__link[href="#home"],
+.ds-page:has(#home:target) .ds-nav__link[href="#home"],
+.ds-page:has(#news:target) .ds-nav__link[href="#news"],
+.ds-page:has(#article:target) .ds-nav__link[href="#news"],
+.ds-page:has(#events:target) .ds-nav__link[href="#events"],
+.ds-page:has(#submit:target) .ds-nav__link[href="#events"] {
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  text-shadow: none;
+}
+.ds-nav__band {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+/* The service band belongs to the home page: an inner page shows its
+   breadcrumb in that place. */
+.ds-page:has(.ds-view:not(.ds-view--home):target) .ds-nav__band {
+  display: none;
+}
+.ds-nav__band-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-nav__band-item,
+.ds-footer__item {
+  padding: 0 var(--space-4);
+  border-left: var(--border-width) solid currentColor;
+}
+.ds-nav__band-item:first-child,
+.ds-footer__item:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.ds-nav__band-link {
+  color: var(--color-bar-alt-text);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-nav__band-link:hover,
+.ds-nav__band-link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+
+/* ---------- breadcrumb ---------- */
+.ds-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  list-style: none;
+  background: var(--color-surface-alt);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+.ds-breadcrumb__sep {
+  color: var(--color-text-muted);
+}
+.ds-breadcrumb__current {
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- tile ---------- */
+/* The unit of the page: a flat block of tint with a large title and no
+   title bar. Tiles never touch; the sheet shows between them. */
+.ds-tile {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-page);
+}
+.ds-tile--1 { background: var(--color-fill-1); }
+.ds-tile--2 { background: var(--color-fill-2); }
+.ds-tile--3 { background: var(--color-fill-3); }
+.ds-tile--4 { background: var(--color-fill-4); }
+.ds-tile--grow {
+  flex: 1 1 auto;
+}
+.ds-tile__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-3);
+}
+.ds-tile__title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-heading-alt);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-tile__head .ds-tile__title {
+  margin: 0;
+}
+.ds-tile__tools {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-tile__text {
+  margin: 0 0 var(--space-3);
+}
+.ds-tile__text:last-child {
+  margin-bottom: 0;
+}
+.ds-tile__label {
+  margin: 0;
+  font-weight: var(--weight-bold);
+}
+.ds-tile__list {
+  margin: 0;
+  padding: 0 0 0 var(--space-5);
+  list-style: none;
+}
+/* A part of a tile set off by a ruled line. */
+.ds-tile__part {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-4) 0 0;
+  border-top: var(--border-width) var(--border-style) var(--color-border);
+}
+.ds-tile__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+}
+
+/* ---------- search tile ---------- */
+.ds-search {
+  margin: 0;
+}
+.ds-search__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) 0 var(--space-4);
+}
+.ds-search__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  padding: 0 0 var(--space-5);
+}
+
+/* ---------- hero ---------- */
+/* A picture slot filling the left of the tile, the feature text on a tint
+   to its right. */
+.ds-hero {
+  display: grid;
+  grid-template-columns: var(--size-figure) minmax(0, 1fr);
+  min-height: var(--size-figure-height);
+  background: var(--color-fill-2);
+  border-radius: var(--radius-page);
+}
+.ds-hero__figure {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: var(--size-figure-height);
+  background: var(--color-surface-strong);
+  color: var(--color-border-strong);
+}
+.ds-hero__body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+.ds-hero__title {
+  margin: 0 0 var(--space-5);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--line-display);
+  letter-spacing: var(--display-tracking);
+}
+.ds-hero__text {
+  margin: 0 0 var(--space-5);
+}
+.ds-hero__actions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-hero__action {
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- page header ---------- */
+/* Head of an inner page: one full-width tile. */
+.ds-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: var(--color-fill-1);
+  border-radius: var(--radius-page);
+}
+.ds-page-header__title {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-page-header__text {
+  margin: 0;
+}
+.ds-page-header__action {
+  flex: none;
+}
+
+/* ---------- stats ---------- */
+/* One tile cut into cells by ruled lines: the figure on the left of its
+   label. */
+.ds-stat {
+  display: flex;
+  margin: 0;
+  padding: var(--space-4) 0;
+  list-style: none;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-page);
+}
+.ds-stat__item {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+  margin: 0;
+  padding: 0 var(--space-5);
+  border-left: var(--border-width) var(--border-style) var(--color-border);
+}
+.ds-stat__item:first-child {
+  border-left: 0;
+}
+.ds-stat__value {
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+}
+.ds-stat__label {
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- prose ---------- */
+.ds-prose h1,
+.ds-prose h2,
+.ds-prose h3 {
+  margin: 0 0 var(--space-3);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-prose h1 { font-size: var(--text-h1); }
+.ds-prose h2 { font-size: var(--text-h2); }
+.ds-prose h3 { font-size: var(--text-h3); color: var(--color-heading-alt); }
+.ds-prose p {
+  margin: 0 0 var(--space-5);
+}
+.ds-prose ul,
+.ds-prose ol {
+  margin: 0 0 var(--space-5);
+  padding: 0 0 0 var(--space-6);
+}
+.ds-prose ul {
+  list-style: square;
+}
+.ds-prose code {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+}
+.ds-prose strong {
+  font-weight: var(--weight-bold);
+}
+.ds-prose > :last-child {
+  margin-bottom: 0;
+}
+.ds-prose__lead {
+  font-size: var(--text-large);
+}
+.ds-prose__byline {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+/* ---------- buttons ---------- */
+.ds-button {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--space-2) var(--space-5);
+  background: var(--fill-button);
+  color: var(--color-button-text);
+  border: var(--border-width-strong) outset var(--color-border-muted);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-control);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-body);
+  text-transform: var(--ui-transform);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.ds-button:hover,
+.ds-button.is-hover {
+  background: var(--fill-button-hover);
+  color: var(--color-button-hover-text);
+  box-shadow: var(--shadow-control-hover);
+}
+.ds-button:active,
+.ds-button.is-active {
+  border-style: inset;
+  box-shadow: var(--shadow-control-pressed);
+}
+.ds-button:focus-visible,
+.ds-button.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-button--secondary {
+  background: var(--fill-button-secondary);
+  color: var(--color-button-secondary-text);
+  font-weight: var(--weight-ui);
+}
+.ds-button--secondary:hover,
+.ds-button--secondary.is-hover {
+  background: var(--fill-button-secondary);
+  color: var(--color-button-secondary-text);
+}
+.ds-button--danger,
+.ds-button--danger:hover,
+.ds-button--danger.is-hover {
+  color: var(--color-danger);
+}
+.ds-button:disabled,
+.ds-button.is-disabled {
+  background: var(--color-disabled);
+  color: var(--color-disabled-text);
+  cursor: default;
+}
+.ds-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ---------- form ---------- */
+/* Labels sit above their fields; the form is the body of a tile. */
+.ds-form {
+  margin: 0;
+}
+.ds-form__row {
+  padding: 0 0 var(--space-5);
+}
+.ds-form__label {
+  display: block;
+  padding: 0 0 var(--space-2);
+  font-weight: var(--weight-bold);
+}
+.ds-form__hint {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-body);
+  color: var(--color-text-muted);
+}
+.ds-form__input {
+  box-sizing: border-box;
+  width: var(--size-field);
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--fill-input);
+  color: var(--color-input-text);
+  border: var(--border-width-strong) inset var(--color-input-border);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-control);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  line-height: var(--line-body);
+}
+.ds-form__input:focus-visible,
+.ds-form__input.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-form__input--small {
+  width: var(--size-search);
+}
+.ds-form__input--auto {
+  width: auto;
+}
+/* Takes whatever its row leaves beside a button. */
+.ds-form__input--fill {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+}
+.ds-form__input--area {
+  width: 100%;
+  height: var(--size-area);
+  resize: vertical;
+}
+.ds-form__input.is-invalid {
+  border-color: var(--color-danger);
+}
+.ds-form__input:disabled,
+.ds-form__input.is-disabled {
+  background: var(--color-disabled);
+  color: var(--color-disabled-text);
+}
+.ds-form__error {
+  display: block;
+  color: var(--color-danger);
+  font-weight: var(--weight-bold);
+}
+.ds-form__check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.ds-form__checkbox {
+  margin: 0;
+}
+.ds-form__actions {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) 0 0;
+  border-top: var(--border-width) var(--border-style) var(--color-border);
+}
+
+/* ---------- table ---------- */
+/* Every cell is its own small tile: the sheet shows as a 1px grid. */
+.ds-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: var(--space-1);
+  border-radius: var(--radius-panel);
+  font-size: var(--text-base);
+}
+.ds-table th {
+  padding: var(--space-3) var(--space-5);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  text-align: left;
+  text-shadow: var(--shadow-text);
+}
+.ds-table td {
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface-alt);
+}
+.ds-table th.ds-table__num,
+.ds-table td.ds-table__num {
+  text-align: right;
+}
+.ds-table td.is-up {
+  color: var(--color-success);
+}
+.ds-table td.is-down {
+  color: var(--color-danger);
+}
+.ds-table__caption {
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-fill-1);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- tabs ---------- */
+/* A strip of equal cells, 1px apart, directly on top of what it switches. */
+.ds-tabs {
+  display: flex;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0 0 var(--space-1);
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  text-transform: var(--ui-transform);
+}
+.ds-tabs__item {
+  display: flex;
+  flex: 1 1 0;
+}
+.ds-tabs__tab {
+  display: block;
+  flex: 1 1 auto;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-strong);
+  color: var(--color-link-quiet);
+  text-align: center;
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-tabs__tab:hover,
+.ds-tabs__tab.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-tabs__tab.is-current {
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  text-shadow: var(--shadow-text);
+}
+
+/* ---------- list ---------- */
+/* Items with a small picture slot on the left, divided by ruled lines. */
+.ds-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-list__item {
+  display: grid;
+  grid-template-columns: var(--size-thumb) minmax(0, 1fr);
+  column-gap: var(--space-5);
+  padding: var(--space-4) 0;
+  border-top: var(--border-width) var(--border-style) var(--color-border);
+}
+.ds-list__item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.ds-list__thumb {
+  box-sizing: border-box;
+  width: var(--size-thumb);
+  height: var(--size-thumb-height);
+  background: var(--color-surface-strong);
+  color: var(--color-border-strong);
+}
+.ds-list__title {
+  font-weight: var(--weight-bold);
+}
+.ds-list__text {
+  display: block;
+}
+.ds-list__meta {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+/* One-line variant without pictures. */
+.ds-list--plain .ds-list__item {
+  display: block;
+  padding: var(--space-2) 0;
+  border-top: 0;
+}
+.ds-list--plain .ds-list__meta {
+  display: inline;
+}
+
+/* ---------- panel ---------- */
+/* The one box with a title bar, for things the visitor fills in. */
+.ds-panel {
+  background: var(--fill-panel);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+}
+.ds-panel__title {
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+  text-shadow: var(--shadow-text);
+}
+.ds-panel__body {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-top: 0;
+}
+.ds-panel__body > :first-child { margin-top: 0; }
+.ds-panel__body > :last-child { margin-bottom: 0; }
+.ds-panel__text {
+  margin: 0 0 var(--space-4);
+}
+.ds-panel__small {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+.ds-panel__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.ds-panel--alt .ds-panel__title {
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+}
+.ds-panel--inverse {
+  background: var(--fill-inverse);
+  color: var(--color-inverse-text);
+}
+.ds-panel--inverse .ds-panel__title {
+  background: transparent;
+  color: var(--color-inverse-text);
+  font-size: var(--text-h2);
+  padding-top: var(--space-4);
+  padding-bottom: 0;
+}
+.ds-panel--inverse .ds-panel__body {
+  border-color: transparent;
+}
+.ds-panel--inverse .ds-link,
+.ds-panel--inverse .ds-link:visited,
+.ds-panel--inverse .ds-link.is-visited {
+  color: var(--color-accent);
+}
+
+/* ---------- index ---------- */
+/* A row of small letter cells. */
+.ds-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-index__cell {
+  display: block;
+  box-sizing: border-box;
+  width: var(--size-cell);
+  padding: var(--space-2) 0;
+  background: var(--color-canvas);
+  color: var(--color-link-quiet);
+  text-align: center;
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-index__cell:hover,
+.ds-index__cell.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-directory {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-directory__title {
+  display: block;
+  font-weight: var(--weight-bold);
+}
+.ds-directory__text {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- grid ---------- */
+/* The closing row of the home page: four equal tiles across the sheet. */
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  padding: 0 0 var(--space-4);
+}
+.ds-grid__cell {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: var(--color-fill-4);
+  border-radius: var(--radius-page);
+}
+.ds-grid__cell--1 { background: var(--color-fill-1); }
+.ds-grid__cell--2 { background: var(--color-fill-2); }
+.ds-grid__cell--3 { background: var(--color-fill-3); }
+.ds-grid__mark {
+  display: block;
+  width: var(--size-thumb-height);
+  height: var(--size-thumb-height);
+  margin: 0 0 var(--space-3);
+  background: var(--color-canvas);
+  color: var(--color-border-strong);
+}
+.ds-grid__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+}
+.ds-grid__text {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- sidebar ---------- */
+/* A tile of grouped links. */
+.ds-sidebar {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-page);
+}
+.ds-sidebar__title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+}
+.ds-sidebar__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-5);
+  margin: 0;
+  padding: 0 0 0 var(--space-5);
+  list-style: none;
+}
+.ds-sidebar__list--single {
+  grid-template-columns: 1fr;
+}
+.ds-sidebar__item {
+  padding: 0;
+}
+.ds-sidebar__item.is-current {
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- badge ---------- */
+.ds-badge {
+  display: inline-block;
+  padding: 0 var(--space-3);
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-body);
+  vertical-align: baseline;
+}
+.ds-badge--alt {
+  background: transparent;
+  color: var(--color-accent-alt);
+  padding: 0;
+}
+.ds-badge--count {
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-body);
+  padding: 0;
+}
+.ds-badge--success {
+  background: var(--color-success);
+  color: var(--color-bar-text);
+}
+.ds-badge--warning {
+  background: var(--color-warning);
+  color: var(--color-accent-text);
+}
+.ds-badge--danger {
+  background: var(--color-danger);
+  color: var(--color-bar-text);
+}
+
+/* ---------- notice ---------- */
+.ds-notice {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-notice);
+  color: var(--color-notice-text);
+  border: var(--border-width) var(--border-style) var(--color-border);
+}
+.ds-notice--error {
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.ds-notice__title {
+  display: block;
+  font-weight: var(--weight-bold);
+}
+.ds-notices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ---------- pagination ---------- */
+/* A row of number cells, 2px apart. */
+.ds-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4) 0 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-pagination__link,
+.ds-pagination__current {
+  display: block;
+  box-sizing: border-box;
+  min-width: var(--size-cell);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+}
+.ds-pagination__link {
+  background: var(--color-surface-strong);
+  color: var(--color-link-quiet);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-pagination__link:hover,
+.ds-pagination__link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-pagination__current {
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+}
+
+/* ---------- dialog ---------- */
+.ds-dialog__backdrop {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--color-overlay);
+}
+.ds-dialog {
+  box-sizing: border-box;
+  width: var(--size-dialog);
+  max-width: 100%;
+  background: var(--color-surface-alt);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-dialog);
+}
+.ds-dialog__title {
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+}
+.ds-dialog__body {
+  padding: var(--space-5);
+}
+.ds-dialog__text {
+  margin: 0 0 var(--space-5);
+}
+.ds-dialog__actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+/* ---------- empty ---------- */
+.ds-empty {
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-page);
+  text-align: center;
+}
+.ds-empty__text {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+}
+
+/* ---------- footer ---------- */
+.ds-footer {
+  display: block;
+}
+.ds-footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  list-style: none;
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-footer__link {
+  color: var(--color-bar-alt-text);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-footer__link:hover,
+.ds-footer__link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+
+/* ---------- block ---------- */
+/* Groups a tab strip, a table and its caption so they touch. */
+.ds-block {
+  display: block;
+}
+
+/* ---------- carousel ---------- */
+/* The lead block as a rotator: numbered buttons name its slides, the one
+   showing in the bar colours. Static; the buttons are not links. */
+.ds-carousel {
+  position: relative;
+}
+.ds-carousel__dots {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-3) 0;
+  list-style: none;
+}
+.ds-carousel__dot {
+  box-sizing: border-box;
+  min-width: 3ch;
+  padding: 0 var(--space-2);
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  text-align: center;
+}
+.ds-carousel__dot.is-current {
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+}
+
+/* ---------- accordion ---------- */
+/* Questions that open and close, each with a plus or minus box. */
+.ds-accordion {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+}
+.ds-accordion__item {
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-muted);
+}
+.ds-accordion__item:last-child {
+  border-bottom: 0;
+}
+.ds-accordion__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+  list-style: none;
+  color: var(--color-link-quiet);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+}
+.ds-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+.ds-accordion__summary::before {
+  content: "";
+  flex: none;
+  box-sizing: border-box;
+  width: calc(var(--text-small) + 2 * var(--border-width));
+  background: linear-gradient(currentColor, currentColor) center / calc(var(--space-2) * 3) var(--space-2) no-repeat,
+    linear-gradient(currentColor, currentColor) center / var(--space-2) calc(var(--space-2) * 3) no-repeat,
+    var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  height: calc(var(--text-small) + 2 * var(--border-width));
+}
+.ds-accordion__item[open] > .ds-accordion__summary::before {
+  background: linear-gradient(currentColor, currentColor) center / calc(var(--space-2) * 3) var(--space-2) no-repeat,
+    var(--color-surface);
+}
+.ds-accordion__summary:hover,
+.ds-accordion__summary.is-hover {
+  color: var(--color-link-hover);
+}
+.ds-accordion__summary:focus-visible,
+.ds-accordion__summary.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-accordion__body {
+  margin: 0;
+  padding: 0 0 var(--space-3) calc(2ch + var(--space-4));
+}

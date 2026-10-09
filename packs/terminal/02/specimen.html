@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin mail: a text-mode mail reader. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-screen">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#inbox"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#inbox"><span class="ds-nav__hot">I</span>nbox</a></li>
+    <li><a class="ds-nav__link" href="#message"><span class="ds-nav__hot">M</span>essage</a></li>
+    <li><a class="ds-nav__link" href="#compose"><span class="ds-nav__hot">C</span>ompose</a></li>
+    <li><a class="ds-nav__link" href="#help"><span class="ds-nav__hot">H</span>elp</a></li>
+  </ul>
+  <p class="ds-nav__status">reader@chronoskin | 2 accounts | 08:44</p>
+</header>
+
+<main class="ds-main">
+
+<!-- View 1, the inbox: message of the day and status, folders beside the message list, a preview. -->
+<section class="ds-view ds-view--home" id="inbox">
+  <div class="ds-panes ds-panes--top">
+    <section class="ds-pane ds-hero" data-component="hero">
+      <h2 class="ds-pane__title">today</h2>
+      <div class="ds-pane__body">
+        <h1 class="ds-hero__title">3 unread in 2 folders</h1>
+        <p class="ds-hero__lead">Last fetched at 08:42. Nothing is waiting in the outbox.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#compose">Compose</a>
+          <a class="ds-button ds-button--secondary is-hover" href="#inbox">Fetch mail</a>
+          <a class="ds-link ds-link--quiet" href="#help">all keys</a>
+        </div>
+      </div>
+    </section>
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">status</h2>
+      <div class="ds-pane__body">
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__label">unread</span><span class="ds-stat__value">3</span></li>
+          <li class="ds-stat"><span class="ds-stat__label">flagged</span><span class="ds-stat__value">5</span></li>
+          <li class="ds-stat"><span class="ds-stat__label">drafts</span><span class="ds-stat__value">2</span></li>
+          <li class="ds-stat"><span class="ds-stat__label">messages kept</span><span class="ds-stat__value">18,204</span></li>
+        </ul>
+        <p class="ds-note">disk <span class="ds-meter"><span class="ds-meter__on">██████████████</span>░░░░░░</span> 71% of 2 GB</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="ds-panes ds-panes--work">
+    <aside class="ds-sidebar" data-component="sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">folders</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#inbox">Inbox</a><span class="ds-sidebar__count">3</span></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Lists</a><span class="ds-sidebar__count">1</span></li>
+          <li><a class="ds-sidebar__link" href="#compose">Drafts</a><span class="ds-sidebar__count">2</span></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Sent</a><span class="ds-sidebar__count">0</span></li>
+          <li><a class="ds-sidebar__link is-hover" href="#inbox">Archive</a><span class="ds-sidebar__count">0</span></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Spam</a><span class="ds-sidebar__count">12</span></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Trash</a><span class="ds-sidebar__count">0</span></li>
+        </ul>
+        <p class="ds-sidebar__text"><span class="ds-key"><span class="ds-key__cap">Tab</span> switch pane</span> <span class="ds-key"><span class="ds-key__cap">c</span> change folder</span></p>
+      </div>
+    </aside>
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">inbox: 24 messages, 3 unread</h2>
+      <div class="ds-pane__body ds-pane__body--flush">
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th></th><th>from</th><th>subject</th><th>date</th><th class="ds-table__num ds-table__extra">size</th></tr>
+          </thead>
+          <tbody>
+            <tr class="is-unread"><td class="ds-table__flag">N</td><td>Ines Varga</td><td><a class="ds-table__title" href="#message">Release notes for 4.2, last look</a></td><td class="ds-table__date">08:31</td><td class="ds-table__num ds-table__extra">6.1K</td></tr>
+            <tr class="is-selected is-unread"><td class="ds-table__flag">N</td><td>Tomas Lind</td><td><a class="ds-table__title" href="#message">Re: Release planning, week 12</a></td><td class="ds-table__date">08:02</td><td class="ds-table__num ds-table__extra">3.4K</td></tr>
+            <tr class="is-unread is-alt"><td class="ds-table__flag">N</td><td>build robot</td><td><a class="ds-table__title" href="#message">nightly: 2 of 214 tests failed</a></td><td class="ds-table__date">03:10</td><td class="ds-table__num ds-table__extra">11K</td></tr>
+            <tr><td class="ds-table__flag">!</td><td>Mara Oyelaran</td><td><a class="ds-table__title is-visited" href="#message">Invoice 2026-031 attached</a></td><td class="ds-table__date">Mar 01</td><td class="ds-table__num ds-table__extra">184K</td></tr>
+            <tr class="is-alt"><td class="ds-table__flag"></td><td>Tomas Lind</td><td><a class="ds-table__title is-visited" href="#message">Release planning, week 12</a></td><td class="ds-table__date">Mar 01</td><td class="ds-table__num ds-table__extra">2.2K</td></tr>
+            <tr><td class="ds-table__flag"></td><td>users list</td><td><a class="ds-table__title is-visited" href="#message">[users] folding quoted text by default?</a></td><td class="ds-table__date">Feb 28</td><td class="ds-table__num ds-table__extra">4.8K</td></tr>
+            <tr class="is-alt"><td class="ds-table__flag">r</td><td>Ines Varga</td><td><a class="ds-table__title is-visited" href="#message">Draft of the release notes</a></td><td class="ds-table__date">Feb 27</td><td class="ds-table__num ds-table__extra">5.0K</td></tr>
+            <tr><td class="ds-table__flag"></td><td>Jun Aoki</td><td><a class="ds-table__title is-visited" href="#message">Keys for the new mirror</a></td><td class="ds-table__date">Feb 26</td><td class="ds-table__num ds-table__extra">1.9K</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ds-pane__foot">
+        <span><span class="ds-key"><span class="ds-key__cap">Enter</span> open</span> <span class="ds-key"><span class="ds-key__cap">r</span> reply</span> <span class="ds-key"><span class="ds-key__cap">d</span> delete</span></span>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><span class="ds-pagination__link is-disabled">&lt; prev</span></li>
+          <li><span class="ds-pagination__link is-current">1</span></li>
+          <li><a class="ds-pagination__link" href="#inbox">2</a></li>
+          <li><a class="ds-pagination__link" href="#inbox">3</a></li>
+          <li><a class="ds-pagination__link" href="#inbox">next &gt;</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="ds-panes ds-panes--wide">
+    <div class="ds-panel" data-component="panel">
+      <h2 class="ds-panel__title">preview</h2>
+      <div class="ds-panel__body">
+        <p class="ds-panel__text"><strong>Re: Release planning, week 12</strong></p>
+        <p class="ds-panel__text">Tuesday works for me. I would rather cut the release from the branch as it stands than wait for the importer; it can go into 4.3 without anyone noticing.</p>
+        <p class="ds-panel__text"><a class="ds-link" href="#message">Open the message</a> or press <span class="ds-key"><span class="ds-key__cap">Enter</span></span>.</p>
+      </div>
+    </div>
+    <div class="ds-panel">
+      <h2 class="ds-panel__title">accounts</h2>
+      <div class="ds-panel__body">
+        <p class="ds-panel__text"><span class="ds-badge ds-badge--success">ok</span> work, fetched 08:42</p>
+        <p class="ds-panel__text"><span class="ds-badge ds-badge--warning">slow</span> <span class="ds-tooltip" tabindex="0">lists<span class="ds-tooltip__tip" role="tooltip">The server took more than ten seconds to answer.</span></span>, fetched 07:15</p>
+        <p class="ds-progress"><span class="ds-progress__label">fetching lists</span><span class="ds-progress__bar"><span class="ds-progress__on">####</span>......</span><span class="ds-progress__value">40%</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 2, one message: its head, its text, the thread and what is attached. -->
+<section class="ds-view" id="message">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#message">Release planning, week 12</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">message 2 of 3</li>
+  </ol>
+  <div class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Re: Release planning, week 12</h1>
+      <p class="ds-page-header__text"><span class="ds-avatar">tl</span> From Tomas Lind to the release group, today at 08:02, 3.4K</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#compose">Reply</a></div>
+  </div>
+  <div class="ds-panes ds-panes--wide">
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">message</h2>
+      <div class="ds-pane__body">
+        <p class="ds-badges" data-component="badge"><span class="ds-badge">3</span> <span class="ds-badge ds-badge--success">signed</span> <span class="ds-badge ds-badge--warning">external</span> <span class="ds-badge ds-badge--danger">1 link removed</span> <span class="ds-badge ds-badge--tag">release</span></p>
+        <div class="ds-prose" data-component="typography">
+          <h1>Release planning, week 12</h1>
+          <p>Tuesday works for me. I would rather cut the release from the branch <strong>as it stands</strong> than wait for the importer; it can go into 4.3 without anyone noticing.</p>
+          <h2>What is left</h2>
+          <ul>
+            <li>The two failing tests from the nightly run, both in the date parser.</li>
+            <li>Release notes: Ines has a draft, it needs one more reader.</li>
+            <li>Tag with <code>make tag VERSION=4.2.0</code> and wait for the mirrors.</li>
+          </ul>
+          <h3>If Tuesday slips</h3>
+          <p>Then Thursday, not Wednesday: the mirror sync runs on Wednesday night and we would ship half a release.</p>
+        </div>
+        <ul class="ds-links" data-component="links">
+          <li><a class="ds-link" href="#message">the nightly report</a></li>
+          <li><a class="ds-link is-visited" href="#message">draft notes (visited)</a></li>
+          <li><a class="ds-link is-hover" href="#message">the branch (hover)</a></li>
+          <li><a class="ds-link is-active" href="#message">mirror status (active)</a></li>
+        </ul>
+      </div>
+      <div class="ds-pane__foot">
+        <span><span class="ds-key"><span class="ds-key__cap">r</span> reply</span> <span class="ds-key"><span class="ds-key__cap">f</span> forward</span> <span class="ds-key"><span class="ds-key__cap">q</span> back to the list</span></span>
+        <ul class="ds-pagination">
+          <li><a class="ds-pagination__link" href="#message">&lt; prev</a></li>
+          <li><a class="ds-pagination__link" href="#message">1</a></li>
+          <li><span class="ds-pagination__link is-current">2</span></li>
+          <li><a class="ds-pagination__link" href="#message">3</a></li>
+          <li><a class="ds-pagination__link" href="#message">next &gt;</a></li>
+        </ul>
+      </div>
+    </section>
+    <div class="ds-stack">
+      <section class="ds-pane">
+        <h2 class="ds-pane__title">thread</h2>
+        <div class="ds-pane__body">
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item">
+              <span class="ds-list__date">Mar 01</span>
+              <div class="ds-list__main">
+                <a class="ds-list__title is-visited" href="#message">Release planning, week 12</a>
+                <p class="ds-list__meta">Tomas Lind | 2.2K | read</p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__date">08:02</span>
+              <div class="ds-list__main">
+                <a class="ds-list__title" href="#message">Re: Release planning, week 12</a>
+                <p class="ds-list__meta">Tomas Lind | 3.4K | this message</p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__date">08:31</span>
+              <div class="ds-list__main">
+                <a class="ds-list__title" href="#message">Release notes for 4.2, last look</a>
+                <p class="ds-list__meta">Ines Varga | 6.1K | unread</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="ds-pane">
+        <h2 class="ds-pane__title">attached</h2>
+        <div class="ds-pane__body">
+          <table class="ds-table">
+            <thead><tr><th>file</th><th class="ds-table__num">size</th></tr></thead>
+            <tbody>
+              <tr><td><a class="ds-table__title" href="#message">checklist-4.2.txt</a></td><td class="ds-table__num">1.1K</td></tr>
+              <tr class="is-alt"><td><a class="ds-table__title" href="#message">signature.asc</a></td><td class="ds-table__num">0.8K</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- View 3, compose: bracketed fields, what went wrong, and the question before a draft is thrown away. -->
+<section class="ds-view" id="compose">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#compose">Drafts</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">new message</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">New message</h1>
+      <p class="ds-page-header__text">Draft 2 of 2, kept in Drafts until it is sent.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#inbox">Back to the inbox</a></div>
+  </div>
+  <div class="ds-notices" data-component="notice">
+    <p class="ds-notice"><span class="ds-notice__title">Saved.</span> The draft was written to Drafts at 08:44.</p>
+    <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not sent.</span> The outgoing server for the account "lists" did not answer within 30 seconds.</p>
+  </div>
+  <div class="ds-panes ds-panes--wide">
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">compose</h2>
+      <div class="ds-pane__body">
+        <form class="ds-form" data-component="form" action="#compose">
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="c-from">From:</label>
+            <div class="ds-form__field">
+              <span class="ds-form__control ds-form__control--auto"><select class="ds-form__input ds-form__input--auto" id="c-from"><option>reader@chronoskin (work)</option><option>reader@chronoskin (lists)</option></select></span>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="c-to">To:</label>
+            <div class="ds-form__field">
+              <span class="ds-form__control"><input class="ds-form__input is-invalid" id="c-to" type="text" value="tomas.lind@, ines"></span>
+              <p class="ds-form__error">Two addresses are incomplete: "tomas.lind@" and "ines".</p>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="c-subject">Subject:</label>
+            <div class="ds-form__field">
+              <span class="ds-form__control"><input class="ds-form__input" id="c-subject" type="text" value="Re: Release planning, week 12"></span>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="c-body">Text:</label>
+            <div class="ds-form__field">
+              <span class="ds-form__control"><textarea class="ds-form__input" id="c-body" rows="8">Tuesday it is. I will read the notes tonight and tag in the morning.
+
+&gt; Then Thursday, not Wednesday: the mirror sync runs on
+&gt; Wednesday night and we would ship half a release.
+
+Agreed.</textarea></span>
+              <p class="ds-form__hint">Plain text, wrapped at 72 columns when sent.</p>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <span class="ds-form__label">Options:</span>
+            <div class="ds-form__field">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> sign this message</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> ask for a receipt</label>
+              <label class="ds-switch"><span class="ds-switch__label">wrap at 72 columns</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+            </div>
+          </div>
+          <div class="ds-form__actions" data-component="buttons">
+            <button class="ds-button" type="button">Send</button>
+            <button class="ds-button ds-button--secondary" type="button">Save draft</button>
+            <button class="ds-button ds-button--danger" type="button">Discard</button>
+            <button class="ds-button" type="button" disabled>Attach</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="ds-stack">
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-2">
+          <h2 class="ds-dialog__title" id="dlg-2">Discard draft?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">The draft "Re: Release planning, week 12" will be removed from Drafts. This cannot be undone.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">Discard</button>
+              <button class="ds-button ds-button--secondary" type="button">Keep</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="ds-pane">
+        <h2 class="ds-pane__title">while writing</h2>
+        <div class="ds-pane__body">
+          <dl class="ds-keys">
+            <dt>Ctrl-X</dt><dd>send</dd>
+            <dt>Ctrl-O</dt><dd>save the draft</dd>
+            <dt>Ctrl-T</dt><dd>pick from the address book</dd>
+            <dt>Ctrl-C</dt><dd>cancel, after asking</dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- View 4, help: the keys in four groups, and the filters, of which there are none yet. -->
+<section class="ds-view" id="help">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">help</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Help</h1>
+      <p class="ds-page-header__text">Every key, by what you are doing when you press it.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#inbox">Close help</a></div>
+  </div>
+  <ul class="ds-tabs" data-component="tabs">
+    <li><span class="ds-tabs__tab is-current">Keys</span></li>
+    <li><a class="ds-tabs__tab" href="#help">Commands</a></li>
+    <li><a class="ds-tabs__tab" href="#help">Accounts</a></li>
+    <li><a class="ds-tabs__tab" href="#help">Filters</a></li>
+  </ul>
+  <div class="ds-tabs__body">
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell">
+        <h3 class="ds-grid__title">Moving</h3>
+        <dl class="ds-keys">
+          <dt>j, k</dt><dd>next, previous message</dd>
+          <dt>Tab</dt><dd>the other pane</dd>
+          <dt>c</dt><dd>change folder</dd>
+          <dt>/</dt><dd>search this folder</dd>
+        </dl>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--2">
+        <h3 class="ds-grid__title">Reading</h3>
+        <dl class="ds-keys">
+          <dt>Enter</dt><dd>open the message</dd>
+          <dt>Space</dt><dd>one screen down</dd>
+          <dt>v</dt><dd>list what is attached</dd>
+          <dt>q</dt><dd>back to the list</dd>
+        </dl>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--3">
+        <h3 class="ds-grid__title">Writing</h3>
+        <dl class="ds-keys">
+          <dt>m</dt><dd>new message</dd>
+          <dt>r, R</dt><dd>reply, reply to all</dd>
+          <dt>f</dt><dd>forward</dd>
+          <dt>Ctrl-X</dt><dd>send</dd>
+        </dl>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--4">
+        <h3 class="ds-grid__title">Filing</h3>
+        <dl class="ds-keys">
+          <dt>s</dt><dd>save to a folder</dd>
+          <dt>d, u</dt><dd>delete, undelete</dd>
+          <dt>!</dt><dd>flag as important</dd>
+          <dt>$</dt><dd>write changes to disk</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="ds-panes ds-panes--even">
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">filters</h2>
+      <div class="ds-pane__body">
+        <div class="ds-empty" data-component="empty">
+          <p class="ds-empty__text">No filters yet. Mail stays in the inbox until you move it.</p>
+          <a class="ds-button ds-button--secondary" href="#help">Add a filter</a>
+        </div>
+      </div>
+    </section>
+    <section class="ds-pane">
+      <h2 class="ds-pane__title">about</h2>
+      <div class="ds-pane__body">
+        <p class="ds-panel__text">chronoskin mail 4.1.3 reads and writes plain mail folders and speaks to two kinds of server. It keeps no copy of your password; it asks the system keyring.</p>
+        <p class="ds-panel__text">The manual is one text file: <a class="ds-link" href="#help">read it here</a> or with any pager.</p>
+        <div class="ds-accordion">
+        <details class="ds-accordion__item" open>
+        <summary class="ds-accordion__title">Where is my mail kept?</summary>
+        <div class="ds-accordion__body">
+        <p>In plain folders under your home directory, one file per message.</p>
+        </div>
+        </details>
+        <details class="ds-accordion__item">
+        <summary class="ds-accordion__title">Which servers does it speak to?</summary>
+        <div class="ds-accordion__body">
+        <p>The two common kinds, both over an encrypted line only.</p>
+        </div>
+        </details>
+        <details class="ds-accordion__item">
+        <summary class="ds-accordion__title">How do I leave?</summary>
+        <div class="ds-accordion__body">
+        <p>Press <code>q</code>. Changes are written to disk first.</p>
+        </div>
+        </details>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__note">chronoskin mail 4.1.3 | work: ok | lists: slow | press a number or follow a link</p>
+  <a class="ds-footer__key" href="#help"><span class="ds-footer__num">1</span><span class="ds-footer__label">Help</span></a>
+  <a class="ds-footer__key" href="#compose"><span class="ds-footer__num">2</span><span class="ds-footer__label">Compose</span></a>
+  <a class="ds-footer__key" href="#message"><span class="ds-footer__num">3</span><span class="ds-footer__label">View</span></a>
+  <a class="ds-footer__key" href="#compose"><span class="ds-footer__num">4</span><span class="ds-footer__label">Reply</span></a>
+  <a class="ds-footer__key" href="#inbox"><span class="ds-footer__num">5</span><span class="ds-footer__label">Fetch</span></a>
+  <a class="ds-footer__key" href="#inbox"><span class="ds-footer__num">6</span><span class="ds-footer__label">Move</span></a>
+  <a class="ds-footer__key" href="#inbox"><span class="ds-footer__num">8</span><span class="ds-footer__label">Delete</span></a>
+  <a class="ds-footer__key" href="#inbox"><span class="ds-footer__num">10</span><span class="ds-footer__label">Quit</span></a>
+</footer>
+
+</div>
+</body>
+</html>

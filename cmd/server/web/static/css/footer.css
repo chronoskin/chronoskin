@@ -1,0 +1,94 @@
+/* The footer: centred on a page that fits the window; on one that scrolls
+   (.is-long) the text sits left and a way back to the top right. */
+.bottom {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.bottom .in {
+  max-width: var(--page);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 12px var(--gap);
+}
+
+.bottom .about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  text-align: center;
+}
+
+.bottom .name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom .name svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: var(--ink);
+}
+
+.bottom b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.bottom .to-top {
+  display: none;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-control);
+  color: var(--muted);
+}
+
+.bottom .to-top:hover {
+  color: var(--ink);
+  background: var(--sunken);
+}
+
+.bottom .to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom.is-long .in {
+  justify-content: space-between;
+}
+
+.bottom.is-long .about {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.bottom.is-long .to-top {
+  display: grid;
+}
+
+/* The style page fills the window on a wide screen, so it has no footer. */
+@media (min-width: 961px) {
+  .app + .bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .bottom .about {
+    flex-direction: column;
+  }
+  .bottom.is-long .about {
+    align-items: flex-start;
+  }
+}

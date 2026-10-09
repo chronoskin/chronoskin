@@ -1,0 +1,64 @@
+/* The anatomy of a Style ID: its pieces side by side, each with a caption.
+   On a phone, a list with each piece beside its caption. */
+.anatomy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.anatomy span {
+  /* The pieces share the row to its end; the longer caption gets more. */
+  flex: 1 1 auto;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.anatomy b {
+  font: 600 18px var(--mono);
+}
+
+.anatomy i {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.anatomy .opt {
+  border-style: dashed;
+  background: none;
+}
+
+@media (max-width: 720px) {
+  .anatomy {
+    display: grid;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel);
+  }
+  .anatomy span {
+    grid-template-columns: 84px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: none;
+  }
+  .anatomy span:last-child {
+    border-bottom: 0;
+  }
+  .anatomy b {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .anatomy i {
+    font-size: 13px;
+  }
+}

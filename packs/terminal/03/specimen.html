@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: notes on small tools and old machines. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-session">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#home">home</a></li>
+    <li><a class="ds-nav__link" href="#posts">posts</a></li>
+    <li><a class="ds-nav__link" href="#post">latest</a></li>
+    <li><a class="ds-nav__link" href="#about">about</a></li>
+    <li><a class="ds-nav__link" href="#contact">contact</a></li>
+  </ul>
+  <details class="ds-menu ds-nav__menu">
+    <summary class="ds-menu__title">menu</summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__item" href="#home">home <span class="ds-menu__key">~/</span></a></li>
+      <li><a class="ds-menu__item" href="#posts">posts <span class="ds-menu__key">~/posts</span></a></li>
+      <li><a class="ds-menu__item" href="#post">latest <span class="ds-menu__key">~/latest</span></a></li>
+      <li><a class="ds-menu__item" href="#about">about <span class="ds-menu__key">~/about</span></a></li>
+      <li><a class="ds-menu__item" href="#contact">contact <span class="ds-menu__key">~/contact</span></a></li>
+    </ul>
+  </details>
+  <p class="ds-nav__host">guest@tty1</p>
+</header>
+
+<!-- View 1, the home page: a session of four commands and what they print. -->
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-cols">
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> whoami</p>
+      <section class="ds-hero" data-component="hero">
+        <h1 class="ds-hero__title">Notes on small tools and old machines.</h1>
+        <p class="ds-hero__lead">I write programs that fit in one file and keep computers running longer than their makers planned. This is where the notes go.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#post">read the latest post</a>
+          <a class="ds-button ds-button--secondary is-hover" href="#posts">ls posts/</a>
+        </div>
+      </section>
+
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> wc posts/*.md | tail -1</p>
+      <div class="ds-out">
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__value">38</span> <span class="ds-stat__label">posts</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">61,204</span> <span class="ds-stat__label">words</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">7</span> <span class="ds-stat__label">years</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">0</span> <span class="ds-stat__label"><span class="ds-tooltip" tabindex="0">trackers<span class="ds-tooltip__tip" role="tooltip">No counters, no cookies, no log of who reads.</span></span></span></li>
+        </ul>
+      </div>
+
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> ls -lt posts/ | head -5</p>
+      <div class="ds-out">
+        <p class="ds-list__total">total 38</p>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__perm">-rw-r--r--</span><span class="ds-list__size">9.4K</span><span class="ds-list__date">Mar 02 2026</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#post">a-status-line-in-forty-lines.md</a> <span class="ds-badge">new</span>
+              <p class="ds-list__meta">A status line for the shell, without a framework. 1,480 words</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__perm">-rw-r--r--</span><span class="ds-list__size">6.1K</span><span class="ds-list__date">Feb 11 2026</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#post">the-laptop-from-2011.md</a>
+              <p class="ds-list__meta">A new battery, a small disk and one more year. 960 words</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__perm">-rw-r--r--</span><span class="ds-list__size">12K</span><span class="ds-list__date">Jan 20 2026</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#post">make-is-enough.md</a>
+              <p class="ds-list__meta">Twelve lines that replaced a build system. 1,910 words</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__perm">-rw-r--r--</span><span class="ds-list__size">4.0K</span><span class="ds-list__date">Dec 03 2025</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#post">plain-text-accounts.md</a>
+              <p class="ds-list__meta">A year of bookkeeping in one file. 640 words</p>
+            </div>
+          </li>
+        </ul>
+        <p class="ds-note"><a class="ds-link" href="#posts">34 more in posts/</a></p>
+      </div>
+
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> ls projects/</p>
+      <div class="ds-out">
+        <div class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell">
+            <h3 class="ds-grid__title">tally/</h3>
+            <p class="ds-grid__text">Counts things in text files. 300 lines of C.</p>
+            <p class="ds-grid__label">C | since 2020</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <h3 class="ds-grid__title">lantern/</h3>
+            <p class="ds-grid__text">A status line for any shell, in forty lines.</p>
+            <p class="ds-grid__label">shell | since 2026</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <h3 class="ds-grid__title">ledgerline/</h3>
+            <p class="ds-grid__text">Plain-text accounts and the script that sums them.</p>
+            <p class="ds-grid__label">awk | since 2024</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <h3 class="ds-grid__title">dotfiles/</h3>
+            <p class="ds-grid__text">What I carry from machine to machine.</p>
+            <p class="ds-grid__label">mixed | since 2019</p>
+          </div>
+        </div>
+      </div>
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> <span class="ds-cursor">&nbsp;</span></p>
+    </div>
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">tags</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#posts">shell</a><span class="ds-sidebar__count">14</span></li>
+          <li><a class="ds-sidebar__link" href="#posts">hardware</a><span class="ds-sidebar__count">9</span></li>
+          <li><a class="ds-sidebar__link is-hover" href="#posts">make</a><span class="ds-sidebar__count">6</span></li>
+          <li><a class="ds-sidebar__link" href="#posts">plain-text</a><span class="ds-sidebar__count">5</span></li>
+          <li><a class="ds-sidebar__link" href="#posts">c</a><span class="ds-sidebar__count">4</span></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">elsewhere</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#posts">feed.xml</a></li>
+          <li><a class="ds-sidebar__link" href="#about">about.txt</a></li>
+          <li><a class="ds-sidebar__link" href="#contact">mail</a></li>
+        </ul>
+      </div>
+      <div class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">now.txt</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Rewriting tally so it reads from a pipe.</p>
+          <p class="ds-panel__text">progress <span class="ds-meter"><span class="ds-meter__on">██████</span>░░░░</span></p>
+          <p class="ds-panel__text"><a class="ds-link" href="#about">more about this site</a></p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 2, the archive: every post as a line of a listing. -->
+<section class="ds-view" id="posts">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">~</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">posts</li>
+  </ol>
+  <div class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">posts/</h1>
+      <p class="ds-page-header__text">38 files, 2019 to 2026, newest first.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#posts">feed.xml</a></div>
+  </div>
+  <p class="ds-prompt"><span class="ds-prompt__path">~/posts</span> <span class="ds-prompt__sign">$</span> ls -lt --year 2026</p>
+  <ul class="ds-tabs" data-component="tabs">
+    <li><a class="ds-tabs__tab" href="#posts">all</a></li>
+    <li><span class="ds-tabs__tab is-current">year 2026</span></li>
+    <li><a class="ds-tabs__tab" href="#posts">year 2025</a></li>
+    <li><a class="ds-tabs__tab" href="#posts">tag shell</a></li>
+    <li><a class="ds-tabs__tab" href="#posts">tag hardware</a></li>
+  </ul>
+  <div class="ds-tabs__body">
+    <table class="ds-table" data-component="table">
+      <thead>
+        <tr><th>date</th><th>file</th><th class="ds-table__extra">tag</th><th class="ds-table__num">words</th><th class="ds-table__num ds-table__extra">min</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="ds-table__date">Mar 02</td><td><a class="ds-table__title" href="#post">a-status-line-in-forty-lines.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">shell</span></td><td class="ds-table__num">1,480</td><td class="ds-table__num ds-table__extra">7</td></tr>
+        <tr class="is-alt"><td class="ds-table__date">Feb 11</td><td><a class="ds-table__title" href="#post">the-laptop-from-2011.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">hardware</span></td><td class="ds-table__num">960</td><td class="ds-table__num ds-table__extra">5</td></tr>
+        <tr><td class="ds-table__date">Jan 20</td><td><a class="ds-table__title is-visited" href="#post">make-is-enough.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">make</span></td><td class="ds-table__num">1,910</td><td class="ds-table__num ds-table__extra">9</td></tr>
+        <tr class="is-alt"><td class="ds-table__date">Jan 04</td><td><a class="ds-table__title is-visited" href="#post">what-i-kept-from-2025.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">plain-text</span></td><td class="ds-table__num">720</td><td class="ds-table__num ds-table__extra">4</td></tr>
+        <tr class="ds-table__group"><td colspan="5">2025, last three of eleven</td></tr>
+        <tr><td class="ds-table__date">Dec 03</td><td><a class="ds-table__title is-visited" href="#post">plain-text-accounts.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">plain-text</span></td><td class="ds-table__num">640</td><td class="ds-table__num ds-table__extra">3</td></tr>
+        <tr class="is-alt"><td class="ds-table__date">Nov 15</td><td><a class="ds-table__title" href="#post">a-serial-console-for-the-router.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">hardware</span></td><td class="ds-table__num">2,230</td><td class="ds-table__num ds-table__extra">11</td></tr>
+        <tr><td class="ds-table__date">Oct 28</td><td><a class="ds-table__title" href="#post">sixteen-colours-are-plenty.md</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--tag">shell</span></td><td class="ds-table__num">1,105</td><td class="ds-table__num ds-table__extra">5</td></tr>
+      </tbody>
+    </table>
+    <ul class="ds-pagination" data-component="pagination">
+      <li><span class="ds-pagination__link is-disabled">&lt; newer</span></li>
+      <li><span class="ds-pagination__link is-current">1</span></li>
+      <li><a class="ds-pagination__link" href="#posts">2</a></li>
+      <li><a class="ds-pagination__link" href="#posts">3</a></li>
+      <li><a class="ds-pagination__link" href="#posts">4</a></li>
+      <li><a class="ds-pagination__link" href="#posts">older &gt;</a></li>
+    </ul>
+  </div>
+  <p class="ds-prompt"><span class="ds-prompt__path">~/posts</span> <span class="ds-prompt__sign">$</span> ls drafts/</p>
+  <div class="ds-empty" data-component="empty">
+    <p class="ds-empty__text">ls: drafts/ is empty. Nothing is half written at the moment.</p>
+    <a class="ds-button ds-button--secondary" href="#contact">suggest a topic</a>
+  </div>
+</section>
+
+<!-- View 3, one post. -->
+<section class="ds-view" id="post">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">~</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#posts">posts</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">a-status-line-in-forty-lines.md</li>
+  </ol>
+  <div class="ds-cols">
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~/posts</span> <span class="ds-prompt__sign">$</span> cat a-status-line-in-forty-lines.md</p>
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">updated Mar 05:</span> the script now also works in a shell without arrays.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">broken:</span> the version in the first listing fails when the path holds a space. Use the second.</p>
+      </div>
+      <article class="ds-prose" data-component="typography">
+        <h1>A status line in forty lines</h1>
+        <p>Every few years I install a prompt framework, admire it for a week and remove it when the shell takes half a second to start. This time I wrote down what I <strong>actually read</strong> in a prompt. It was three things.</p>
+        <h2>What a prompt has to say</h2>
+        <ul>
+          <li>Where I am, shortened to the last two directories.</li>
+          <li>Whether the last command failed, as its exit code.</li>
+          <li>The branch, when there is one, and nothing when there is none.</li>
+        </ul>
+        <p>That is one call to <code>pwd</code>, one read of <code>$?</code> and one small file under <code>.git</code>. No process has to start.</p>
+        <h3>The whole of it</h3>
+<pre class="ds-code">lantern() {
+  code=$?
+  dir=${PWD#"${PWD%/*/*}/"}
+  [ $code -ne 0 ] &amp;&amp; err=" [$code]" || err=""
+  printf '%s%s $ ' "$dir" "$err"
+}</pre>
+        <p>The remaining thirty lines read the branch and choose colours. They are in the repository.</p>
+      </article>
+      <h2 class="ds-section__title">related</h2>
+      <ul class="ds-links" data-component="links">
+        <li><a class="ds-link" href="#post">sixteen-colours-are-plenty.md</a></li>
+        <li><a class="ds-link is-visited" href="#post">make-is-enough.md (visited)</a></li>
+        <li><a class="ds-link is-hover" href="#post">the lantern repository (hover)</a></li>
+        <li><a class="ds-link is-active" href="#post">raw source (active)</a></li>
+      </ul>
+      <ul class="ds-pagination">
+        <li><a class="ds-pagination__link" href="#post">&lt; the-laptop-from-2011.md</a></li>
+        <li><span class="ds-pagination__link is-disabled">newest &gt;</span></li>
+      </ul>
+    </div>
+    <aside class="ds-sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">stat</h2>
+        <p class="ds-sidebar__text">Mar 02 2026, 9.4K<br>1,480 words, 7 minutes<br>changed Mar 05</p>
+        <p class="ds-sidebar__text ds-badges" data-component="badge"><span class="ds-badge">3</span> <span class="ds-badge ds-badge--tag">shell</span> <span class="ds-badge ds-badge--success">tested</span> <span class="ds-badge ds-badge--warning">bash 3</span> <span class="ds-badge ds-badge--danger">not csh</span></p>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">in this post</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#post">What a prompt has to say</a></li>
+          <li><a class="ds-sidebar__link" href="#post">The whole of it</a></li>
+          <li><a class="ds-sidebar__link" href="#post">Colours</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 4, about. -->
+<section class="ds-view" id="about">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">~</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">about.txt</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">about.txt</h1>
+      <p class="ds-page-header__text">Who writes this, on what, and how the pages are made.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#contact">write to me</a></div>
+  </div>
+  <div class="ds-cols ds-cols--even">
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> cat about.txt</p>
+      <div class="ds-prose">
+        <p>I repair and program computers for a small workshop. In the evenings I write the tools I wished I had during the day, and then I write down how they work, because in two years I will have forgotten.</p>
+        <h2>What you will find here</h2>
+        <ul>
+          <li>Short programs, explained line by line.</li>
+          <li>Repairs of machines that were meant to be thrown away.</li>
+          <li>Opinions about plain text, held loosely.</li>
+        </ul>
+        <p>Everything here may be copied. A link back is kind but not required.</p>
+        <p><span class="ds-avatar">au</span> the author, at this desk since 2019</p>
+      </div>
+    </div>
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> column -t uses.tsv</p>
+      <table class="ds-table">
+        <thead><tr><th>what</th><th>which</th><th class="ds-table__num">since</th></tr></thead>
+        <tbody>
+          <tr><td>machine</td><td>a laptop from 2011</td><td class="ds-table__num">2019</td></tr>
+          <tr class="is-alt"><td>editor</td><td>the one that was installed</td><td class="ds-table__num">2012</td></tr>
+          <tr><td>shell</td><td>plain sh, with lantern</td><td class="ds-table__num">2026</td></tr>
+          <tr class="is-alt"><td>site</td><td>make, awk and 60 lines of sh</td><td class="ds-table__num">2020</td></tr>
+        </tbody>
+      </table>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">colophon</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Set in whatever monospace your system has. No scripts, no fonts to fetch, no pictures. The whole site is 412K.</p>
+          <p class="ds-progress"><span class="ds-progress__label">budget</span><span class="ds-progress__bar"><span class="ds-progress__on">####</span>......</span><span class="ds-progress__value">412K of 1M</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 5, contact: a form, and the question before it is sent. -->
+<section class="ds-view" id="contact">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">~</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">contact</li>
+  </ol>
+  <div class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">contact</h1>
+      <p class="ds-page-header__text">A correction, a question or a machine that will not start.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#about">about.txt</a></div>
+  </div>
+  <div class="ds-cols ds-cols--even">
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> mail -s "hello" author</p>
+      <form class="ds-form" data-component="form" action="#contact">
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="m-name">name:</label>
+          <div class="ds-form__field"><input class="ds-form__input" id="m-name" type="text" value="A. Reader"></div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="m-mail">reply-to:</label>
+          <div class="ds-form__field">
+            <input class="ds-form__input is-invalid" id="m-mail" type="text" value="reader at example">
+            <p class="ds-form__error">mail: "reader at example" is not an address.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="m-topic">about:</label>
+          <div class="ds-form__field">
+            <select class="ds-form__input ds-form__input--auto" id="m-topic"><option>a post</option><option>a program</option><option>a repair</option><option>something else</option></select>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="m-text">message:</label>
+          <div class="ds-form__field">
+            <textarea class="ds-form__input" id="m-text" rows="5">The second listing in the status line post has a stray quote on line 3.</textarea>
+            <p class="ds-form__hint">Plain text. End with a line holding a single dot, or press send.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <span class="ds-form__label">copy:</span>
+          <div class="ds-form__field">
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> send a copy to me</label>
+          </div>
+        </div>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="button">send</button>
+          <button class="ds-button ds-button--secondary" type="button">preview</button>
+          <button class="ds-button ds-button--danger" type="button">clear</button>
+          <button class="ds-button" type="button" disabled>attach</button>
+        </div>
+      </form>
+    </div>
+    <div class="ds-main">
+      <p class="ds-prompt"><span class="ds-prompt__path">~</span> <span class="ds-prompt__sign">$</span> rm draft.txt</p>
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-3">
+          <h2 class="ds-dialog__title" id="dlg-3">rm: remove draft.txt?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">The message has not been sent. Clearing the form throws away 14 words.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">clear it</button>
+              <button class="ds-button ds-button--secondary" type="button">keep writing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="ds-note">Answers usually take a few days. The address is never passed on and the form sets no cookie.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__mode">NORMAL</span>
+  <p class="ds-footer__seg">chronoskin | <a class="ds-footer__link" href="#posts">posts/</a> | <a class="ds-footer__link" href="#about">about.txt</a></p>
+  <p class="ds-footer__seg ds-footer__seg--right"><span class="ds-key"><span class="ds-key__cap">j</span> older</span> <span class="ds-key"><span class="ds-key__cap">k</span> newer</span> <span class="ds-key"><span class="ds-key__cap">q</span> home</span> | utf-8 | 2019 to 2026</p>
+</footer>
+
+</div>
+</body>
+</html>

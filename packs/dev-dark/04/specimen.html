@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: dark developer tools changelog specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#latest">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#latest">Changelog</a></li>
+      <li><a class="ds-nav__link" href="#release">Release notes</a></li>
+      <li><a class="ds-nav__link" href="#archive">Archive</a></li>
+      <li><a class="ds-nav__link" href="#subscribe">Subscribe</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <details class="ds-menu"><summary class="ds-menu__button">Docs</summary><ul class="ds-menu__list"><li class="ds-menu__title">Changelog</li><li><a class="ds-menu__item ds-menu__item--view" href="#latest">Latest</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#release">Release notes</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#archive">Archive</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#subscribe">Subscribe</a></li><li class="ds-menu__title ds-menu__title--rule">Developers</li><li><a class="ds-menu__item" href="#release">Upgrade guide</a></li><li><a class="ds-menu__item" href="#archive">Security notices</a></li><li><a class="ds-menu__item" href="#subscribe">RSS feed</a></li></ul></details>
+      <a class="ds-button ds-button--secondary ds-button--small" href="#subscribe">RSS</a>
+      <a class="ds-button ds-button--small" href="#subscribe">Get updates</a>
+    </div>
+  </div>
+  <div class="ds-ticker">
+    <div class="ds-ticker__inner">
+      <span class="ds-ticker__item"><span class="ds-dot ds-dot--success"></span> stable 4.2.0</span>
+      <span class="ds-ticker__item"><span class="ds-dot ds-dot--warning"></span> next 4.3.0-rc.1</span>
+      <span class="ds-ticker__item">lts 3.9.14</span>
+      <span class="ds-ticker__item ds-ticker__item--end">Released 3 days ago <a class="ds-ticker__link" href="#release">read the notes &rarr;</a></span>
+    </div>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="latest">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-wrap">
+      <div class="ds-hero__inner">
+        <div>
+          <span class="ds-eyebrow ds-eyebrow--accent">Changelog and engineering notes</span>
+          <h1 class="ds-hero__title">What shipped, and why</h1>
+          <p class="ds-hero__lead">Every release of the chronoskin query engine, with the reasoning behind it. A new version most Thursdays.</p>
+          <div class="ds-hero__form">
+            <input class="ds-form__input is-focus" type="email" placeholder="you@company.dev" aria-label="E-mail address">
+            <a class="ds-button" href="#subscribe">Subscribe</a>
+          </div>
+          <p class="ds-hero__note"><span>One e-mail per release, no marketing.</span><a class="ds-link ds-link--more" href="#subscribe">Or take the feed</a></p>
+        </div>
+        <div class="ds-release" aria-label="The newest release">
+          <div class="ds-release__head"><span>latest release</span><span>13 Mar 2025</span></div>
+          <div class="ds-release__body">
+            <p class="ds-release__version">v4.2.0 <span class="ds-badge">Minor</span></p>
+            <p class="ds-release__title">Streaming query plans, and a planner that no longer guesses.</p>
+            <ul class="ds-tally">
+              <li class="ds-tally__row ds-tally__row--add"><span class="ds-tally__name">added</span><span class="ds-tally__cells"><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i></span><span class="ds-tally__count">14</span></li>
+              <li class="ds-tally__row"><span class="ds-tally__name">changed</span><span class="ds-tally__cells"><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i><i class="ds-tally__cell"></i></span><span class="ds-tally__count">9</span></li>
+              <li class="ds-tally__row ds-tally__row--fix"><span class="ds-tally__name">fixed</span><span class="ds-tally__cells"><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell is-on"></i><i class="ds-tally__cell"></i></span><span class="ds-tally__count">23</span></li>
+            </ul>
+          </div>
+          <div class="ds-release__foot">
+            <span class="ds-mono">$ chronoskin upgrade 4.2.0</span>
+            <a class="ds-button ds-button--secondary ds-button--small is-hover" href="#release">Release notes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-wrap">
+    <div class="ds-colhead"><h2 class="ds-colhead__title">From the engineering notes</h2><a class="ds-link ds-link--more" href="#archive">All posts</a></div>
+    <div class="ds-grid" data-component="grid">
+      <a class="ds-grid__cell ds-grid__cell--lead" href="#release">
+        <div class="ds-grid__cover" aria-hidden="true"><svg viewBox="0 0 320 180" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 150h280"/><path d="M40 150V96h36v54 M100 150V60h36v90 M160 150V110h36v40 M220 150V36h36v114"/><path d="M58 84l60-36 60 50 60-74" stroke-dasharray="4 5"/><circle cx="58" cy="84" r="4" fill="currentColor"/><circle cx="118" cy="48" r="4" fill="currentColor"/><circle cx="178" cy="98" r="4" fill="currentColor"/><circle cx="238" cy="24" r="4" fill="currentColor"/></svg></div>
+        <div class="ds-grid__body">
+          <span class="ds-grid__kicker">Engineering / 9 min read</span>
+          <h3 class="ds-grid__title">How the planner learned to stop guessing row counts</h3>
+          <p class="ds-grid__text">We replaced fixed selectivity constants with sampled histograms. The slowest one percent of queries got four times faster, and two got slower. Here is why.</p>
+        </div>
+      </a>
+      <a class="ds-grid__cell" href="#release">
+        <div class="ds-grid__cover ds-grid__cover--2" aria-hidden="true"><svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 30h160 M20 55h160 M20 80h160"/><path d="M60 30v50 M140 30v50" stroke-dasharray="3 4"/><circle cx="60" cy="30" r="5" fill="currentColor"/><circle cx="140" cy="55" r="5" fill="currentColor"/><circle cx="100" cy="80" r="5"/></svg></div>
+        <div class="ds-grid__body">
+          <span class="ds-grid__kicker">Release / v4.2</span>
+          <h3 class="ds-grid__title">Streaming query plans</h3>
+        </div>
+      </a>
+      <a class="ds-grid__cell" href="#release">
+        <div class="ds-grid__cover ds-grid__cover--3" aria-hidden="true"><svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M30 20h140v70H30z"/><path d="M30 42h140 M76 42v48 M122 42v48"/><path d="M42 31h30" stroke-width="3"/></svg></div>
+        <div class="ds-grid__body">
+          <span class="ds-grid__kicker">Guide / 5 min read</span>
+          <h3 class="ds-grid__title">Moving from 3.9 without downtime</h3>
+        </div>
+      </a>
+      <a class="ds-grid__cell" href="#release">
+        <div class="ds-grid__cover ds-grid__cover--4" aria-hidden="true"><svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="100" cy="55" r="34"/><path d="M100 30v25l16 12"/><path d="M52 20l-12 12 M148 20l12 12"/></svg></div>
+        <div class="ds-grid__body">
+          <span class="ds-grid__kicker">Postmortem / 12 Feb</span>
+          <h3 class="ds-grid__title">Forty minutes of slow writes</h3>
+        </div>
+      </a>
+      <a class="ds-grid__cell" href="#release">
+        <div class="ds-grid__cover" aria-hidden="true"><svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M40 86l40-62 M88 86l40-62 M136 86l24-38"/><path d="M30 86h140"/><circle cx="80" cy="24" r="4" fill="currentColor"/><circle cx="128" cy="24" r="4" fill="currentColor"/></svg></div>
+        <div class="ds-grid__body">
+          <span class="ds-grid__kicker">Engineering / 6 min read</span>
+          <h3 class="ds-grid__title">Vectorised joins, measured</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="ds-statband">
+    <div class="ds-wrap">
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__item"><span class="ds-stat__figure">41</span><span class="ds-stat__label">releases in the last twelve months</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__figure">612</span><span class="ds-stat__label">fixes shipped since version 4.0</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__figure">137</span><span class="ds-stat__label">people with a merged change</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__figure">0</span><span class="ds-stat__label">breaking changes in the 4.x line</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ds-wrap ds-section">
+    <div class="ds-cols">
+      <div>
+        <div class="ds-colhead"><h2 class="ds-colhead__title">Recent releases</h2><span class="ds-mono">newest first</span></div>
+        <ol class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <div class="ds-list__meta"><span>13 Mar 2025</span><span class="ds-badge ds-badge--mono">v4.2.0</span></div>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#release">Streaming query plans</a>
+              <p class="ds-list__text">Plans are sent to the client while the query runs, so a slow step shows up before the result does. The planner now samples instead of assuming.</p>
+              <div class="ds-list__tags"><span class="ds-badge ds-badge--new">New</span><span class="ds-badge ds-badge--quiet">Planner</span><span>14 added, 23 fixed</span></div>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__meta"><span>27 Feb 2025</span><span class="ds-badge ds-badge--outline ds-badge--mono">v4.1.3</span></div>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#release">Connection pool fixes</a>
+              <p class="ds-list__text">Idle connections are closed after the timeout you set, not the default. Fixes a leak seen under bursty load.</p>
+              <div class="ds-list__tags"><span class="ds-badge ds-badge--success">Fix</span><span class="ds-badge ds-badge--quiet">Driver</span><span>6 fixed</span></div>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__meta"><span>13 Feb 2025</span><span class="ds-badge ds-badge--outline ds-badge--mono">v4.1.2</span></div>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#release">Slow writes on large batches</a>
+              <p class="ds-list__text">A lock was held across the whole batch. It is now taken per page. Read the postmortem for the forty minutes this cost us.</p>
+              <div class="ds-list__tags"><span class="ds-badge ds-badge--success">Fix</span><span class="ds-badge ds-badge--quiet">Storage</span><span>2 fixed</span></div>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__meta"><span>30 Jan 2025</span><span class="ds-badge ds-badge--outline ds-badge--mono">v4.1.0</span></div>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#release">Vectorised hash joins</a>
+              <p class="ds-list__text">Joins on integer keys run in batches of 1,024 rows. The <span class="ds-kbd">join_batch</span> setting from 4.0 is deprecated and will be removed in 5.0.</p>
+              <div class="ds-list__tags"><span class="ds-badge ds-badge--new">New</span><span class="ds-badge ds-badge--warning">Deprecation</span><span>8 added, 11 fixed</span></div>
+            </div>
+          </li>
+        </ol>
+        <a class="ds-button ds-button--secondary" href="#archive">All 41 releases</a>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel" data-component="panel">
+          <div class="ds-panel__head"><h3 class="ds-panel__title">Release lines <span class="ds-tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">A line gets fixes until its end of life date.</span></span></h3><span class="ds-mono">supported</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-panel__key">Stable</span><span class="ds-mono">4.2.0</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Next</span><span class="ds-mono">4.3.0-rc.1</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Long term</span><span class="ds-mono">3.9.14</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">End of life</span><span class="ds-mono">3.8, 30 Jun</span></li>
+            </ul>
+          </div>
+        </section>
+        <div class="ds-callout">
+          <h3 class="ds-callout__title">Still on 3.9?</h3>
+          <p class="ds-callout__text">The upgrade guide walks through the four settings that changed and the one that is gone.</p>
+          <a class="ds-button ds-button--inverse ds-button--small" href="#release">Read the guide</a>
+        </div>
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">feed</span><span class="ds-kbd">atom</span></div>
+<pre class="ds-code__body"><span class="ds-code__c"># every release, as it ships</span>
+<span class="ds-code__k">GET</span> /changelog/feed.xml
+<span class="ds-code__s">200</span>  41 entries</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="release">
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb" data-component="breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#latest">Changelog</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#archive">4.x</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">v4.2.0</li>
+          </ol>
+          <h1 class="ds-page-header__title">Streaming query plans</h1>
+          <div class="ds-page-header__meta"><span class="ds-badge ds-badge--mono">v4.2.0</span><span class="ds-badge ds-badge--new">New</span><span class="ds-mono">13 Mar 2025, 46 commits</span></div>
+          <p class="ds-page-header__text">The plan arrives while the query runs, and the planner samples your data instead of assuming its shape.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#subscribe">Follow releases</a>
+          <a class="ds-button" href="#release">Upgrade guide</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-cols">
+      <div class="ds-stack">
+        <div class="ds-prose" data-component="typography">
+          <h1>What changed in 4.2</h1>
+          <p class="ds-prose__lead">Until now a plan was something you asked for after a query had been slow. From this release it is a stream you can watch.</p>
+          <p>Set <code>plan.stream</code> on a session and every step reports its row count and timing as it finishes. The driver exposes it as an iterator, so <strong>no polling is needed</strong>.</p>
+          <h2>Added</h2>
+          <ul>
+            <li>Streaming plans over the wire protocol, version 7 and later</li>
+            <li>Sampled histograms for every indexed column, refreshed nightly</li>
+            <li>A <code>--explain-live</code> flag in the command line client</li>
+          </ul>
+          <h3>Changed defaults</h3>
+          <p>The sample rate defaults to 1 percent. Tables under 10,000 rows are read in full.</p>
+        </div>
+
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">chronoskin.toml</span><span>3 lines changed</span></div>
+<pre class="ds-code__body"><span class="ds-diff__line ds-diff__line--hunk">@@ planner @@</span><span class="ds-diff__line">  [planner]</span><span class="ds-diff__line ds-diff__line--del">- selectivity = 0.1</span><span class="ds-diff__line ds-diff__line--del">- join_batch  = 256</span><span class="ds-diff__line ds-diff__line--add">+ statistics  = "sampled"</span><span class="ds-diff__line ds-diff__line--add">+ sample_rate = 0.01</span><span class="ds-diff__line">  timeout     = "30s"</span><span class="ds-diff__line ds-diff__line--hunk">@@ session @@</span><span class="ds-diff__line">  [session]</span><span class="ds-diff__line ds-diff__line--add">+ plan.stream = true</span></pre>
+        </div>
+
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Packages in this release</h2><span class="ds-mono">size in kB</span></div>
+          <div class="ds-table__wrap">
+            <table class="ds-table" data-component="table">
+              <thead>
+                <tr><th scope="col">Package</th><th scope="col">From</th><th scope="col">To</th><th scope="col" class="ds-table__num">Size</th><th scope="col" class="ds-table__num">Change</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">chronoskin-server</th><td class="ds-mono">4.1.3</td><td class="ds-mono">4.2.0</td><td class="ds-table__num">18,420</td><td class="ds-table__num">+212</td></tr>
+                <tr class="is-hover"><th scope="row">chronoskin-planner</th><td class="ds-mono">4.1.3</td><td class="ds-mono">4.2.0</td><td class="ds-table__num">3,904</td><td class="ds-table__num">+388</td></tr>
+                <tr><th scope="row">chronoskin-cli</th><td class="ds-mono">4.1.0</td><td class="ds-mono">4.2.0</td><td class="ds-table__num">6,118</td><td class="ds-table__num">+41</td></tr>
+                <tr><th scope="row">driver-node</th><td class="ds-mono">7.3.1</td><td class="ds-mono">7.4.0</td><td class="ds-table__num">212</td><td class="ds-table__num">+9</td></tr>
+                <tr><th scope="row">driver-go</th><td class="ds-mono">2.8.0</td><td class="ds-mono">2.9.0</td><td class="ds-table__num">1,046</td><td class="ds-table__num">-17</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot"><span>Checksums are in the release archive.</span><a class="ds-link ds-link--more" href="#archive">Earlier versions</a></div>
+        </section>
+
+        <div class="ds-pager">
+          <a class="ds-pager__link" href="#release"><span class="ds-pager__label">&larr; older, v4.1.3</span>Connection pool fixes</a>
+          <a class="ds-pager__link ds-pager__link--next is-hover" href="#release"><span class="ds-pager__label">newer, v4.3.0-rc.1 &rarr;</span>Partial indexes, preview</a>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">This release</h2><span class="ds-badge ds-badge--success">Stable</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-panel__key">Released</span><span class="ds-mono">13 Mar 2025</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Commits</span><span class="ds-mono">46</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Protocol</span><span class="ds-mono">7</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Supported until</span><span class="ds-mono">Mar 2026</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__body"><div class="ds-progress"><div class="ds-progress__head"><span>Projects already on 4.2</span><span class="ds-progress__value">64%</span></div><progress class="ds-progress__bar" value="64" max="100">64%</progress></div></div>
+        </section>
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">On this page</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current">What changed in 4.2</li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#release">Added</a> <span class="ds-mono">14</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#release">Changed defaults</a> <span class="ds-mono">9</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#release">Packages</a> <span class="ds-mono">5</span></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Contributors</h2><span class="ds-mono">11</span></div>
+          <div class="ds-panel__body">
+            <div class="ds-avatars"><span class="ds-avatar">AO</span><span class="ds-avatar">IS</span><span class="ds-avatar">MK</span><span class="ds-avatar">TR</span><span class="ds-avatar">LV</span><span class="ds-avatar">+6</span></div>
+            <p class="ds-linkrow" data-component="links">
+              <a class="ds-link" href="#release">Source</a>
+              <a class="ds-link is-visited" href="#release">Milestone</a>
+              <a class="ds-link is-hover" href="#release">Compare with 4.1.3</a>
+              <a class="ds-link is-active" href="#release">Report a regression</a>
+            </p>
+          </div>
+        </section>
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">upgrade</span><span class="ds-kbd">zsh</span></div>
+<pre class="ds-code__body"><span class="ds-code__k">$</span> chronoskin upgrade 4.2.0
+<span class="ds-code__c">checking 4 settings</span>
+<span class="ds-code__s">ok</span>  no manual steps
+<span class="ds-code__k">$</span> chronoskin restart --rolling</pre>
+        </div>
+        <div class="ds-callout">
+          <h2 class="ds-callout__title">Running a release candidate?</h2>
+          <p class="ds-callout__text">4.3.0-rc.1 already has everything on this page, plus partial indexes behind a flag.</p>
+          <a class="ds-button ds-button--inverse ds-button--small" href="#archive">See the next line</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="archive">
+  <header class="ds-page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#latest">Changelog</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">Archive</li>
+          </ol>
+          <h1 class="ds-page-header__title">Every release</h1>
+          <p class="ds-page-header__text">All 41 versions of the last twelve months, with what each one added, changed and fixed.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#subscribe">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-cols ds-cols--menu">
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Release lines</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current">4.x <span class="ds-mono">18</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">3.9 long term</a> <span class="ds-mono">14</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">3.8</a> <span class="ds-mono">9</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">Drivers</a> <span class="ds-mono">27</span></li>
+          </ul>
+        </aside>
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">By year</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">2025</a> <span class="ds-mono">9</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">2024</a> <span class="ds-mono">38</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#archive">2023</a> <span class="ds-mono">31</span></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Labels</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-badgerow" data-component="badge">
+              <span class="ds-badge">Minor</span>
+              <span class="ds-badge ds-badge--new">New</span>
+              <span class="ds-badge ds-badge--quiet">Planner</span>
+              <span class="ds-badge ds-badge--success">Fix</span>
+              <span class="ds-badge ds-badge--warning">Deprecation</span>
+              <span class="ds-badge ds-badge--danger">Breaking</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-toolbar">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#archive">All <span class="ds-mono">18</span></a></li>
+            <li><a class="ds-tabs__tab" href="#archive">Minor</a></li>
+            <li><a class="ds-tabs__tab" href="#archive">Patch</a></li>
+            <li><a class="ds-tabs__tab" href="#archive">Security</a></li>
+            <li><a class="ds-tabs__tab" href="#archive">Posts</a></li>
+          </ul>
+          <span class="ds-toolbar__note">Showing the 4.x line</span>
+        </div>
+        <section class="ds-panel">
+          <div class="ds-table__wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th scope="col">Version</th><th scope="col">Title</th><th scope="col">Kind</th><th scope="col">Date</th><th scope="col" class="ds-table__num">Changes</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="ds-mono">v4.2.0</td><th scope="row"><a class="ds-link" href="#release">Streaming query plans</a></th><td><span class="ds-badge">Minor</span></td><td class="ds-mono">13 Mar 2025</td><td class="ds-table__num">46</td></tr>
+                <tr><td class="ds-mono">v4.1.3</td><th scope="row"><a class="ds-link" href="#release">Connection pool fixes</a></th><td><span class="ds-badge ds-badge--success">Fix</span></td><td class="ds-mono">27 Feb 2025</td><td class="ds-table__num">6</td></tr>
+                <tr class="is-hover"><td class="ds-mono">v4.1.2</td><th scope="row"><a class="ds-link" href="#release">Slow writes on large batches</a></th><td><span class="ds-badge ds-badge--success">Fix</span></td><td class="ds-mono">13 Feb 2025</td><td class="ds-table__num">2</td></tr>
+                <tr><td class="ds-mono">v4.1.1</td><th scope="row"><a class="ds-link" href="#release">Timezone names in exports</a></th><td><span class="ds-badge ds-badge--success">Fix</span></td><td class="ds-mono">6 Feb 2025</td><td class="ds-table__num">4</td></tr>
+                <tr><td class="ds-mono">v4.1.0</td><th scope="row"><a class="ds-link" href="#release">Vectorised hash joins</a></th><td><span class="ds-badge">Minor</span></td><td class="ds-mono">30 Jan 2025</td><td class="ds-table__num">31</td></tr>
+                <tr><td class="ds-mono">v4.0.4</td><th scope="row"><a class="ds-link" href="#release">Replica lag reporting</a></th><td><span class="ds-badge ds-badge--warning">Deprecation</span></td><td class="ds-mono">16 Jan 2025</td><td class="ds-table__num">12</td></tr>
+                <tr><td class="ds-mono">v4.0.3</td><th scope="row"><a class="ds-link" href="#release">Index builds resume after restart</a></th><td><span class="ds-badge ds-badge--success">Fix</span></td><td class="ds-mono">9 Jan 2025</td><td class="ds-table__num">7</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot">
+            <span>7 of 18 releases</span>
+            <ul class="ds-pagination" data-component="pagination">
+              <li><a class="ds-pagination__link is-disabled" href="#archive">Newer</a></li>
+              <li><a class="ds-pagination__link is-current" href="#archive">1</a></li>
+              <li><a class="ds-pagination__link" href="#archive">2</a></li>
+              <li><a class="ds-pagination__link" href="#archive">3</a></li>
+              <li><a class="ds-pagination__link" href="#archive">Older</a></li>
+            </ul>
+          </div>
+        </section>
+        <div class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4l11 5v7c0 6-4.5 10-11 12C9.5 26 5 22 5 16V9z"/><path d="M11 16l4 4 6-7"/></svg>
+          <h2 class="ds-empty__title">No security releases in the 4.x line</h2>
+          <p class="ds-empty__text">When one ships it is listed here first and sent to every subscriber the same hour.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#subscribe">Get security notices</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="subscribe">
+  <header class="ds-page-header">
+    <div class="ds-wrap">
+      <div class="ds-page-header__inner">
+        <div class="ds-page-header__copy">
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#latest">Changelog</a></li>
+            <li class="ds-breadcrumb__item ds-breadcrumb__current">Subscribe</li>
+          </ol>
+          <h1 class="ds-page-header__title">Follow the releases</h1>
+          <p class="ds-page-header__text">By e-mail or by feed. Choose what you hear about and how often.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#archive">Browse the archive</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-wrap">
+    <div class="ds-cols ds-cols--even">
+      <div class="ds-stack">
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Security releases are always sent.</span> They ignore the frequency you pick below.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">We could not confirm that address.</span> Check it and send the form again.</p>
+        </div>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">By e-mail</h2><span class="ds-mono">one click to leave</span></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#subscribe">
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">Name</span><input class="ds-form__input" type="text" value="Ada Okonkwo"></label>
+                <label class="ds-form__field"><span class="ds-form__label">E-mail</span><input class="ds-form__input is-error" type="email" value="ada@northwind"><span class="ds-form__error">This address has no top-level domain.</span></label>
+              </div>
+              <label class="ds-form__field"><span class="ds-form__label">How often</span>
+                <select class="ds-form__select"><option>Every release</option><option>Minor and major releases only</option><option>A digest on the first of the month</option></select>
+              </label>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Engineering notes and postmortems</span></label>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Release candidates of the next line</span></label>
+              <label class="ds-form__field"><span class="ds-form__label">Only when a release mentions</span><textarea class="ds-form__textarea ds-form__textarea--mono" rows="3" placeholder="planner&#10;driver-node"></textarea><span class="ds-form__hint">One word per line. Leave empty to hear about everything.</span></label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Subscribe</button>
+                <a class="ds-button ds-button--secondary" href="#latest">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">Feeds</span><span class="ds-kbd">xml</span><span class="ds-kbd">json</span></div>
+<pre class="ds-code__body"><span class="ds-code__c"># all releases</span>
+/changelog/feed.xml
+<span class="ds-code__c"># one release line</span>
+/changelog/4.x/feed.xml
+<span class="ds-code__c"># security releases only, as JSON</span>
+/changelog/security.json
+<span class="ds-code__k">$</span> curl -s chronoskin.dev/changelog/latest <span class="ds-code__s">| jq .version</span></pre>
+        </div>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Your subscription</h2><span class="ds-badge ds-badge--warning">Unconfirmed</span></div>
+          <div class="ds-panel__body">
+            <p>Every release and the engineering notes, to one address. The last e-mail was v4.2.0 on 13 March.</p>
+            <div class="ds-buttonrow" data-component="buttons">
+              <a class="ds-button" href="#subscribe">Send again</a>
+              <a class="ds-button ds-button--secondary" href="#subscribe">Preview an e-mail</a>
+              <button class="ds-button" type="button" disabled>Confirmed</button>
+              <a class="ds-button ds-button--danger" href="#subscribe">Unsubscribe</a>
+            </div>
+          </div>
+        </section>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Unsubscribe from everything?</h2>
+              <a class="ds-dialog__close" href="#subscribe" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>You will stop getting releases and notes. Security releases stop too.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#subscribe">Keep me subscribed</a>
+              <a class="ds-button ds-button--danger" href="#subscribe">Unsubscribe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <a class="ds-brand" href="#latest">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#latest">Changelog</a></li>
+      <li><a class="ds-footer__link" href="#archive">Archive</a></li>
+      <li><a class="ds-footer__link" href="#release">Upgrade guide</a></li>
+      <li><a class="ds-footer__link" href="#subscribe">Feeds</a></li>
+      <li><a class="ds-footer__link" href="#subscribe">Security notices</a></li>
+    </ul>
+    <a class="ds-button ds-button--secondary ds-button--small" href="#subscribe">Subscribe</a>
+  </div>
+  <div class="ds-footer__line">
+    <span>&copy; 2025 chronoskin</span>
+    <span>stable 4.2.0, built 13 Mar 2025</span>
+  </div>
+</footer>
+
+</body>
+</html>

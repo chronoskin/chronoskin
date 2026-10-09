@@ -1,0 +1,54 @@
+{{/* Saved styles. They live in the browser, so the script draws the cards.
+     Data: EraFilter. */}}
+{{define "main"}}
+<main class="page" x-data="savedList">
+  <h1>Saved</h1>
+  <p class="lead">Styles you marked with the heart. They are kept in this browser only.</p>
+
+  <noscript><p class="empty">Saving styles needs JavaScript.</p></noscript>
+
+  <div class="empty" x-cloak x-show="empty">
+    <p>Nothing saved yet. Open a style and press the heart.</p>
+    <a class="btn primary" href="/">Generate a style</a>
+  </div>
+
+  <div class="toolbar" x-cloak x-show="some" x-on:change="pick">
+    {{template "select" .EraFilter}}
+    <span class="count" x-text="count"></span>
+  </div>
+
+  <div class="saved-wait" aria-hidden="true" x-show="waiting">
+    <i></i>
+    <i></i>
+    <i></i>
+  </div>
+
+  <ul class="saved">
+    <template x-for="item in shown" x-bind:key="item.id">
+      <li class="card" x-data="savedCard" x-bind:data-id="item.id" x-bind:class="state">
+        <span class="thumb" x-data="preview" x-bind:data-width="item.width">
+          <iframe sandbox tabindex="-1" loading="lazy" title="" x-bind:src="item.specimen"></iframe>
+        </span>
+        <a class="cover" x-bind:href="item.url">
+          <span class="name" x-text="item.title"></span>
+          <span class="id" x-text="item.id"></span>
+        </a>
+        <button
+          class="heart"
+          type="button"
+          aria-pressed="true"
+          aria-label="Remove from saved styles"
+          title="Remove from saved styles"
+          x-on:click="ask"
+        >
+          {{template "heart-icon"}}
+        </button>
+        <div class="confirm" role="group" aria-label="Remove this style?" x-cloak x-show="asking">
+          <button class="btn small" type="button" x-on:click="keep">Keep</button>
+          <button class="btn primary small" type="button" data-goatcounter-click="unsave" x-on:click="remove">Remove</button>
+        </div>
+      </li>
+    </template>
+  </ul>
+</main>
+{{end}}

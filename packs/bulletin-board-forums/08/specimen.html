@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: board calendar specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<svg class="ds-sprite" width="0" height="0" aria-hidden="true"><symbol id="i-person" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="3" fill="currentColor"/><path d="M2 15c0-3.5 2.7-5.5 6-5.5s6 2 6 5.5z" fill="currentColor"/></symbol></svg>
+
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__head">
+      <div class="ds-nav__brand">
+        <a class="ds-brand" data-component="brand" href="#">
+          <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4C7.5 19.8 4.2 16.4 4.2 11.5V5.6Z"/><path d="M12 2.8L19.8 5.6V11.5C19.8 16.4 16.5 19.8 12 21.4Z" fill="currentColor"/></svg></span>
+          <span class="ds-brand__name">chronoskin</span>
+        </a>
+        <span class="ds-nav__tagline">Community calendar: chat nights, releases, contests and meetups</span>
+      </div>
+      <form class="ds-nav__jump" action="#">
+        <label for="j-month">Jump to</label>
+        <select class="ds-form__input ds-form__input--auto" id="j-month"><option>November</option><option>December</option><option>January</option></select>
+        <input class="ds-form__input ds-nav__year" type="text" value="2005" aria-label="Year">
+        <button class="ds-button ds-button--secondary" type="button">Go</button>
+      </form>
+    </div>
+    <div class="ds-nav__bar">
+      <ul class="ds-nav__menu">
+        <li><a class="ds-nav__link" href="#month">Month</a></li>
+        <li><a class="ds-nav__link" href="#events">All events</a></li>
+        <li><a class="ds-nav__link" href="#event">Autumn meetup</a></li>
+        <li><a class="ds-nav__link" href="#add">Add event</a></li>
+        <li><a class="ds-nav__link" href="#mine">My calendar</a></li>
+      </ul>
+      <span class="ds-nav__today">Today is Thursday, 10 November 2005. All times are GMT.</span>
+    </div>
+  </header>
+
+  <main class="ds-page__body">
+
+    <!-- ======== month: the month grid ======== -->
+    <section class="ds-view ds-view--home" id="month">
+      <div class="ds-view__body">
+
+        <section class="ds-hero" data-component="hero">
+          <div class="ds-hero__text">
+            <h1 class="ds-hero__title">November 2005</h1>
+            <p class="ds-hero__lead">14 events this month, 3 of them this week. You are signed up for 2.</p>
+          </div>
+          <p class="ds-hero__action">
+            <a class="ds-hero__step" href="#month">&laquo; October</a>
+            <a class="ds-hero__step" href="#month">December &raquo;</a>
+            <a class="ds-button" href="#add">Add an event</a>
+          </p>
+        </section>
+
+        <p class="ds-notice" data-component="notice"><strong>Read-only on Tuesday:</strong> the board is upgraded on 8 November from 06:00 to 08:00. Sign-ups made before then are kept. <a class="ds-notice__link" href="#event">Details</a></p>
+
+        <div class="ds-cal">
+          <div class="ds-cal__head">Mon</div>
+          <div class="ds-cal__head">Tue</div>
+          <div class="ds-cal__head">Wed</div>
+          <div class="ds-cal__head">Thu</div>
+          <div class="ds-cal__head">Fri</div>
+          <div class="ds-cal__head">Sat</div>
+          <div class="ds-cal__head">Sun</div>
+          <div class="ds-cal__day ds-cal__day--other"><span class="ds-cal__num">31</span><a class="ds-cal__event" href="#event">Halloween avatars</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">1</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">2</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">3</span><a class="ds-cal__event ds-cal__event--contest" href="#event">Skin contest opens</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">4</span></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">5</span><a class="ds-cal__event" href="#event">Chat night, 20:00</a></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">6</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">7</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">8</span><a class="ds-cal__event ds-cal__event--upkeep" href="#event">Board upgrade</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">9</span></div>
+          <div class="ds-cal__day is-today"><span class="ds-cal__num">10</span><a class="ds-cal__event ds-cal__event--release" href="#event">Harvest 1.5 release</a><a class="ds-cal__event" href="#event">Moderator meeting</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">11</span></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">12</span><a class="ds-cal__event" href="#event">Chat night, 20:00</a></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">13</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">14</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">15</span><a class="ds-cal__event ds-cal__event--contest" href="#event">Button set deadline</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">16</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">17</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">18</span><a class="ds-cal__event" href="#event">Autumn meetup</a></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">19</span><a class="ds-cal__event" href="#event">Autumn meetup</a><a class="ds-cal__event" href="#event">Chat night, 20:00</a></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">20</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">21</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">22</span><a class="ds-cal__event ds-cal__event--release" href="#event">Slate 1.3 release</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">23</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">24</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">25</span></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">26</span><a class="ds-cal__event" href="#event">Chat night, 20:00</a></div>
+          <div class="ds-cal__day ds-cal__day--weekend"><span class="ds-cal__num">27</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">28</span><a class="ds-cal__event ds-cal__event--contest" href="#event">Contest voting closes</a></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">29</span></div>
+          <div class="ds-cal__day"><span class="ds-cal__num">30</span><a class="ds-cal__event ds-cal__event--upkeep" href="#event">Backup window</a></div>
+          <div class="ds-cal__day ds-cal__day--other"><span class="ds-cal__num">1</span></div>
+          <div class="ds-cal__day ds-cal__day--other"><span class="ds-cal__num">2</span></div>
+          <div class="ds-cal__day ds-cal__day--other"><span class="ds-cal__num">3</span><a class="ds-cal__event" href="#event">Chat night, 20:00</a></div>
+          <div class="ds-cal__day ds-cal__day--other"><span class="ds-cal__num">4</span></div>
+        </div>
+        <ul class="ds-legend">
+          <li class="ds-legend__item"><span class="ds-swatch"></span> Meetups and chat nights</li>
+          <li class="ds-legend__item"><span class="ds-swatch ds-swatch--release"></span> Releases</li>
+          <li class="ds-legend__item"><span class="ds-swatch ds-swatch--contest"></span> Contests</li>
+          <li class="ds-legend__item"><span class="ds-swatch ds-swatch--upkeep"></span> Board upkeep</li>
+        </ul>
+
+        <div class="ds-columns">
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__head">Coming up</li>
+            <li class="ds-list__item">
+              <span class="ds-list__date"><span class="ds-list__day">10</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Harvest 1.5 release</a> <span class="ds-badge" data-component="badge">Today</span>
+                <span class="ds-list__meta">Releases, 18:00. Posted by oldpine.</span></div>
+            </li>
+            <li class="ds-list__item is-alt">
+              <span class="ds-list__date"><span class="ds-list__day">12</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Chat night</a>
+                <span class="ds-list__meta">Meetups, 20:00 to midnight. 11 going.</span></div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__date"><span class="ds-list__day">15</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Button set deadline</a>
+                <span class="ds-list__meta">Contests, entries close at 23:59.</span></div>
+            </li>
+            <li class="ds-list__item is-alt">
+              <span class="ds-list__date"><span class="ds-list__day">18</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Autumn meetup</a> <span class="ds-badge ds-badge--warning">4 places left</span>
+                <span class="ds-list__meta">Meetups, two days. 26 of 30 going.</span></div>
+            </li>
+          </ul>
+
+          <aside class="ds-sidebar" data-component="sidebar">
+            <div class="ds-sidebar__block"><h2 class="ds-sidebar__title">Your quota</h2><span class="ds-avatar"><svg aria-hidden="true"><use href="#i-person"/></svg></span><div class="ds-progress"><span class="ds-progress__label">Private messages: 68 of 100</span><progress class="ds-progress__bar" value="68" max="100">68%</progress></div><details class="ds-accordion"><summary class="ds-accordion__head">Forum jump</summary><div class="ds-accordion__body"><ul class="ds-accordion__list"><li><a class="ds-link" href="#month">Board index</a></li><li><a class="ds-link" href="#events">Topic listing</a></li><li><a class="ds-link" href="#add">Help and rules</a></li></ul></div></details><details class="ds-accordion"><summary class="ds-accordion__head">FAQ: posting</summary><div class="ds-accordion__body">Keep one topic to one subject and search before you ask.</div></details></div>
+        <div class="ds-sidebar__block">
+              <h2 class="ds-sidebar__title">Calendars</h2>
+              <ul class="ds-sidebar__list">
+                <li class="ds-sidebar__item"><a class="ds-link" href="#events">Meetups and chat nights</a><span class="ds-sidebar__count">6</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link" href="#events">Releases</a><span class="ds-sidebar__count">2</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link" href="#events">Contests</a><span class="ds-sidebar__count">3</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link" href="#events">Board upkeep</a><span class="ds-sidebar__count">2</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link" href="#mine">Your own reminders</a><span class="ds-sidebar__count">0</span></li>
+                <li class="ds-sidebar__item"><a class="ds-link" href="#month">Member birthdays</a><span class="ds-sidebar__count">9</span></li>
+              </ul>
+              <p class="ds-sidebar__foot"><a class="ds-sidebar__footlink" href="#events">All events as a list</a></p>
+            </div>
+          </aside>
+
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Birthdays this week</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line"><strong>Today:</strong> <a class="ds-link ds-link--quiet" href="#mine">tessa</a> (27), <a class="ds-link ds-link--quiet" href="#mine">corbin</a></p>
+              <p class="ds-panel__line"><strong>Sat 12:</strong> <a class="ds-link ds-link--quiet" href="#mine">marek_v</a> (31)</p>
+              <p class="ds-panel__line"><strong>Sun 13:</strong> <a class="ds-link ds-link--quiet" href="#mine">ilse</a>, <a class="ds-link ds-link--quiet" href="#mine">fenwick</a> (40)</p>
+              <p class="ds-panel__line"><strong>Mon 14:</strong> <a class="ds-link ds-link--quiet" href="#mine">harrow</a> (35)</p>
+            </div>
+            <p class="ds-panel__sub">On this day</p>
+            <div class="ds-panel__body ds-panel__body--alt">
+              <p class="ds-panel__line">2003: the board opened with 4 forums and 12 members.</p>
+              <p class="ds-panel__line">2004: the first chat night, with 9 members.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="ds-stat" data-component="stats">
+          <div class="ds-stat__item"><span class="ds-stat__value">14</span><span class="ds-stat__label">events this month</span></div>
+          <div class="ds-stat__item"><span class="ds-stat__value">87</span><span class="ds-stat__label">sign-ups</span></div>
+          <div class="ds-stat__item"><span class="ds-stat__value">9</span><span class="ds-stat__label">birthdays</span></div>
+          <div class="ds-stat__item"><span class="ds-stat__value">212</span><span class="ds-stat__label">events since 2003</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== events: every event as a list ======== -->
+    <section class="ds-view" id="events">
+      <div class="ds-view__body">
+
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#month">chronoskin</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li><a class="ds-breadcrumb__link" href="#month">Calendar</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li class="ds-breadcrumb__current">All events</li>
+        </ol>
+
+        <div class="ds-page-header" data-component="page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">All events</h1>
+            <p class="ds-page-header__desc">Everything on the four calendars, soonest first. Sign up from the event page.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button" href="#add">Add an event</a></div>
+        </div>
+
+        <div class="ds-grid" data-component="grid">
+          <h2 class="ds-grid__title">The four calendars</h2>
+          <div class="ds-grid__cell">
+            <span class="ds-swatch"></span> <a class="ds-grid__name" href="#events">Meetups</a>
+            <span class="ds-grid__meta">Chat nights every Saturday and two meetups a year.</span>
+            <span class="ds-grid__count">6 events, 61 sign-ups</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <span class="ds-swatch ds-swatch--release"></span> <a class="ds-grid__name" href="#events">Releases</a>
+            <span class="ds-grid__meta">New versions of skins and add-ons, set by their authors.</span>
+            <span class="ds-grid__count">2 events</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <span class="ds-swatch ds-swatch--contest"></span> <a class="ds-grid__name" href="#events">Contests</a>
+            <span class="ds-grid__meta">Opening days, deadlines and the end of voting.</span>
+            <span class="ds-grid__count">3 events, 26 entries</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <span class="ds-swatch ds-swatch--upkeep"></span> <a class="ds-grid__name" href="#events">Board upkeep</a>
+            <span class="ds-grid__meta">Upgrades and backups, when the board is read-only.</span>
+            <span class="ds-grid__count">2 events</span>
+          </div>
+        </div>
+
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#events">Upcoming</a></li>
+          <li><a class="ds-tabs__tab" href="#events">Past</a></li>
+          <li><a class="ds-tabs__tab" href="#mine">Signed up</a></li>
+        </ul>
+
+        <div class="ds-scroll">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th class="ds-table__head--left">When</th><th class="ds-table__head--left">Event</th><th class="ds-table__head--left">Calendar</th><th>Going</th><th>Replies</th><th class="ds-table__head--left">Sign-up</th></tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__group"><td colspan="6">This week</td></tr>
+              <tr>
+                <td class="ds-table__last">Thu 10 Nov<span class="ds-table__meta">18:00</span></td>
+                <td><a class="ds-table__title" href="#event">Harvest 1.5 release</a><span class="ds-table__desc">The narrow variant becomes the default. Posted by oldpine.</span></td>
+                <td>Releases</td><td class="ds-table__num">0</td><td class="ds-table__num">7</td>
+                <td><span class="ds-badge ds-badge--quiet">No sign-up</span></td>
+              </tr>
+              <tr class="ds-table__row--alt">
+                <td class="ds-table__last">Sat 12 Nov<span class="ds-table__meta">20:00 to 00:00</span></td>
+                <td><a class="ds-table__title" href="#event">Chat night</a><span class="ds-table__desc">The weekly open chat. This week: questions about templates.</span></td>
+                <td>Meetups</td><td class="ds-table__num">11</td><td class="ds-table__num">3</td>
+                <td><span class="ds-badge ds-badge--success">Open</span></td>
+              </tr>
+              <tr class="ds-table__group"><td colspan="6">Later in November</td></tr>
+              <tr>
+                <td class="ds-table__last">Tue 15 Nov<span class="ds-table__meta">23:59</span></td>
+                <td><a class="ds-table__title" href="#event">Button set deadline</a><span class="ds-table__desc">Last day to send an entry for the button contest.</span></td>
+                <td>Contests</td><td class="ds-table__num">26</td><td class="ds-table__num">41</td>
+                <td><span class="ds-badge ds-badge--warning">Closes soon</span></td>
+              </tr>
+              <tr class="ds-table__row--alt">
+                <td class="ds-table__last">Fri 18 Nov<span class="ds-table__meta">two days</span></td>
+                <td><a class="ds-table__title" href="#event">Autumn meetup</a><span class="ds-table__desc">Two days in a hired hall: talks, a skin workshop, dinner.</span></td>
+                <td>Meetups</td><td class="ds-table__num">26</td><td class="ds-table__num">58</td>
+                <td><span class="ds-badge ds-badge--warning">4 places left</span></td>
+              </tr>
+              <tr>
+                <td class="ds-table__last">Tue 22 Nov<span class="ds-table__meta">all day</span></td>
+                <td><a class="ds-table__title" href="#event">Slate 1.3 release</a><span class="ds-table__desc">Adds the calendar pages. Posted by harrow.</span></td>
+                <td>Releases</td><td class="ds-table__num">0</td><td class="ds-table__num">2</td>
+                <td><span class="ds-badge ds-badge--quiet">No sign-up</span></td>
+              </tr>
+              <tr class="ds-table__row--alt">
+                <td class="ds-table__last">Wed 30 Nov<span class="ds-table__meta">03:00 to 04:00</span></td>
+                <td><a class="ds-table__title" href="#event">Backup window</a><span class="ds-table__desc">The board is read-only for an hour.</span></td>
+                <td>Board upkeep</td><td class="ds-table__num">0</td><td class="ds-table__num">0</td>
+                <td><span class="ds-badge ds-badge--danger">Closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ds-toolbar">
+          <span>Events 1 to 6 of 14. <a class="ds-link" href="#month">Back to the month</a></span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link" href="#events">&laquo; Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#events">1</a></li>
+            <li><a class="ds-pagination__link" href="#events">2</a></li>
+            <li><a class="ds-pagination__link" href="#events">3</a></li>
+            <li><a class="ds-pagination__link" href="#events">Next &raquo;</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== event: one event ======== -->
+    <section class="ds-view" id="event">
+      <div class="ds-view__body">
+
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#month">Calendar</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li><a class="ds-breadcrumb__link" href="#events">Meetups</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li class="ds-breadcrumb__current">Autumn meetup</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Autumn meetup</h1>
+            <p class="ds-page-header__desc">Friday 18 and Saturday 19 November 2005. Organised by tessa. You are signed up.</p>
+          </div>
+          <div class="ds-buttons" data-component="buttons">
+            <a class="ds-button" href="#event">I am going</a>
+            <a class="ds-button ds-button--secondary" href="#event">Maybe</a>
+            <a class="ds-button ds-button--danger" href="#event">Withdraw</a>
+            <button class="ds-button is-disabled" type="button" disabled>Bring a guest (full)</button>
+          </div>
+        </div>
+
+        <div class="ds-dialog__backdrop">
+          <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Withdraw from this event?</h2>
+            <div class="ds-dialog__body">
+              <p class="ds-dialog__text">Your place at the Autumn meetup goes to the next member on the waiting list. You can sign up again only while places are left.</p>
+              <div class="ds-dialog__actions">
+                <a class="ds-button ds-button--danger" href="#mine">Withdraw</a>
+                <a class="ds-button ds-button--secondary" href="#event">Stay signed up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-layout">
+          <div class="ds-layout__main">
+            <article class="ds-prose" data-component="typography">
+              <h1>Two days of skins and talk</h1>
+              <p>The autumn meetup is the one time of year the board meets in a room. Friday is for talks, Saturday for the workshop and the dinner. <strong>Thirty places</strong>, of which four are left.</p>
+              <h2>Programme</h2>
+              <ul>
+                <li>Friday 14:00: doors, then three short talks on template edits.</li>
+                <li>Saturday 10:00: skin workshop. Bring a board you can change.</li>
+                <li>Saturday 19:00: dinner, paid on the evening.</li>
+              </ul>
+              <h3>What to bring</h3>
+              <p>A laptop with a local copy of your board. The workshop files are in <code>meetup/workshop.zip</code> in the file archive.</p>
+              <hr>
+              <p data-component="links">Related: <a class="ds-link" href="#events">all meetups</a>, <a class="ds-link is-visited" href="#event">last year's notes</a> (visited), <a class="ds-link is-hover" href="#event">travel thread</a> (hover), <a class="ds-link is-active" href="#event">room sharing</a> (active).</p>
+            </article>
+
+            <div class="ds-comment">
+              <div class="ds-comment__head"><span>quillon wrote</span><span>8 Nov 2005, 21:14</span></div>
+              <div class="ds-comment__body">
+                <p class="ds-comment__text">Two seats free in my car from the north on Friday morning. Reply in the travel thread.</p>
+                <p class="ds-comment__sig">Rank images in every size, see my files.</p>
+              </div>
+              <div class="ds-comment__head"><span>dunmore wrote</span><span>9 Nov 2005, 08:40</span></div>
+              <div class="ds-comment__body ds-comment__body--alt">
+                <p class="ds-comment__text">Can the workshop files be posted a day early? My connection at the hall was slow last year.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-layout__rail">
+            <section class="ds-panel">
+              <h2 class="ds-panel__title ds-panel__title--bar">Event details</h2>
+              <dl class="ds-spec">
+                <dt class="ds-spec__label">Starts</dt><dd class="ds-spec__value">Fri 18 Nov 2005, 14:00</dd>
+                <dt class="ds-spec__label">Ends</dt><dd class="ds-spec__value">Sat 19 Nov 2005, 23:00</dd>
+                <dt class="ds-spec__label">Calendar</dt><dd class="ds-spec__value"><span class="ds-swatch"></span> Meetups</dd>
+                <dt class="ds-spec__label">Places</dt><dd class="ds-spec__value">26 of 30 taken</dd>
+                <dt class="ds-spec__label">Sign-up</dt><dd class="ds-spec__value"><span class="ds-badge ds-badge--warning">4 places left</span></dd>
+                <dt class="ds-spec__label">Repeats</dt><dd class="ds-spec__value">Every year</dd>
+              </dl>
+            </section>
+            <section class="ds-panel">
+              <h2 class="ds-panel__title">Who is going (26)</h2>
+              <div class="ds-panel__body">
+                <p class="ds-panel__line"><a class="ds-link ds-link--quiet ds-link--strong" href="#mine">tessa</a>, <a class="ds-link ds-link--quiet" href="#mine">oldpine</a>, <a class="ds-link ds-link--quiet" href="#mine">quillon</a>, <a class="ds-link ds-link--quiet" href="#mine">harrow</a>, <a class="ds-link ds-link--quiet" href="#mine">marek_v</a>, <a class="ds-link ds-link--quiet" href="#mine">dunmore</a>, <a class="ds-link ds-link--quiet" href="#mine">ilse</a> and 19 more</p>
+              </div>
+              <p class="ds-panel__sub">Maybe (5)</p>
+              <div class="ds-panel__body ds-panel__body--alt">
+                <p class="ds-panel__line"><a class="ds-link ds-link--quiet" href="#mine">fenwick</a>, <a class="ds-link ds-link--quiet" href="#mine">corbin</a> and 3 more</p>
+              </div>
+              <p class="ds-panel__sub">Waiting list (0)</p>
+              <div class="ds-panel__body">
+                <p class="ds-panel__line">Nobody is waiting. A place that comes free goes to the first name here.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== add: the event form ======== -->
+    <section class="ds-view" id="add">
+      <div class="ds-view__body">
+
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#month">chronoskin</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li><a class="ds-breadcrumb__link" href="#month">Calendar</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li class="ds-breadcrumb__current">Add an event</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">Add an event</h1>
+            <p class="ds-page-header__desc">Members add meetups and releases. Contests and board upkeep are added by moderators.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#month">Back to the month</a></div>
+        </div>
+
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The event was not saved.</span> The end of the event lies before its start. Correct the marked field and send the form again.</p>
+
+        <form class="ds-form" data-component="form" action="#">
+          <h2 class="ds-form__title">Event</h2>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="e-title">Title</label>
+            <div class="ds-form__field"><input class="ds-form__input" id="e-title" type="text" value="Chat night: questions about templates"></div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="e-cal">Calendar</label>
+            <div class="ds-form__field">
+              <select class="ds-form__input ds-form__input--auto" id="e-cal"><option>Meetups and chat nights</option><option>Releases</option></select>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="e-start">Starts <span class="ds-form__hint">Day, month, year and time in GMT</span></label>
+            <div class="ds-form__field"><input class="ds-form__input ds-form__input--auto" id="e-start" type="text" value="26 Nov 2005 20:00" size="20"></div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="e-end">Ends</label>
+            <div class="ds-form__field">
+              <input class="ds-form__input ds-form__input--auto is-invalid" id="e-end" type="text" value="26 Nov 2005 00:00" size="20">
+              <span class="ds-form__error">The end must be later than the start. For midnight, give the next day.</span>
+            </div>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__label" for="e-text">Description <span class="ds-form__hint">Board code is allowed</span></label>
+            <div class="ds-form__field"><textarea class="ds-form__input ds-form__input--wide" id="e-text" rows="5">The weekly open chat. This week we take questions about templates.</textarea></div>
+          </div>
+          <div class="ds-form__row">
+            <span class="ds-form__label">Options</span>
+            <div class="ds-form__field">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Members can sign up</label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> Repeat every week</label>
+            </div>
+          </div>
+          <div class="ds-form__actions">
+            <button class="ds-button" type="button">Save event</button>
+            <a class="ds-button ds-button--secondary" href="#month">Cancel</a>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ======== mine: the member's calendar ======== -->
+    <section class="ds-view" id="mine">
+      <div class="ds-view__body">
+
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#month">chronoskin</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li><a class="ds-breadcrumb__link" href="#month">Calendar</a></li>
+          <li class="ds-breadcrumb__sep">&gt;</li>
+          <li class="ds-breadcrumb__current">My calendar</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__text">
+            <h1 class="ds-page-header__title">My calendar</h1>
+            <p class="ds-page-header__desc">The events you signed up for, and reminders only you can see.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button" href="#add">Add a reminder</a></div>
+        </div>
+
+        <div class="ds-columns">
+          <ul class="ds-list">
+            <li class="ds-list__head">Signed up</li>
+            <li class="ds-list__item">
+              <span class="ds-list__date"><span class="ds-list__day">12</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Chat night</a> <span class="ds-badge ds-badge--success">Going</span>
+                <span class="ds-list__meta">Saturday, 20:00 to midnight.</span></div>
+            </li>
+            <li class="ds-list__item is-alt">
+              <span class="ds-list__date"><span class="ds-list__day">18</span>Nov</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Autumn meetup</a> <span class="ds-badge ds-badge--success">Going</span>
+                <span class="ds-list__meta">Friday and Saturday. Place 14 of 30.</span></div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__date"><span class="ds-list__day">3</span>Dec</span>
+              <div class="ds-list__text"><a class="ds-list__title" href="#event">Chat night</a> <span class="ds-badge ds-badge--warning">Maybe</span>
+                <span class="ds-list__meta">Saturday, 20:00 to midnight.</span></div>
+            </li>
+          </ul>
+
+          <div class="ds-empty" data-component="empty">
+            <h2 class="ds-empty__title">Reminders</h2>
+            <div class="ds-empty__body">
+              <p class="ds-empty__text">You have no reminders. A reminder is an event that only you can see.</p>
+              <a class="ds-button ds-button--secondary" href="#add">Add a reminder</a>
+            </div>
+          </div>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Notify me</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__line">By private message, one day before an event you signed up for.</p>
+              <p class="ds-panel__line"><span class="ds-new">New:</span> birthdays of members on your buddy list can be shown on your month.</p>
+              <p class="ds-panel__line"><a class="ds-link" href="#add">Change these settings</a></p>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ds-footer" data-component="footer">
+    <ul class="ds-footer__row">
+      <li><a class="ds-footer__link" href="#month">Month</a></li>
+      <li class="ds-footer__sep">|</li>
+      <li><a class="ds-footer__link" href="#events">All events</a></li>
+      <li class="ds-footer__sep">|</li>
+      <li><a class="ds-footer__link" href="#add">Add event</a></li>
+      <li class="ds-footer__sep">|</li>
+      <li><a class="ds-footer__link" href="#mine">My calendar</a></li>
+    </ul>
+    <p class="ds-footer__line">chronoskin community calendar. Week starts on Monday; change it in your profile.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: dark developer tools status dashboard specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#overview">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <div class="ds-nav__scope"><span>northwind</span><span>production</span></div>
+    <div class="ds-nav__actions">
+      <span class="ds-badge ds-badge--success"><span class="ds-dot ds-dot--success"></span> Operational</span>
+      <a class="ds-button ds-button--secondary ds-button--small" href="#alerts">Alerts</a>
+      <a class="ds-button ds-button--small" href="#incidents">Report</a>
+      <details class="ds-menu"><summary class="ds-menu__button"><span class="ds-avatar" aria-hidden="true">IS</span><span class="ds-menu__label">Imre</span></summary><ul class="ds-menu__list"><li class="ds-menu__title">Status</li><li><a class="ds-menu__item ds-menu__item--view" href="#overview">Overview</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#incidents">Incidents</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#incident">INC-214</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#alerts">Alert rules</a></li><li class="ds-menu__title ds-menu__title--rule">Imre Solvang, on call</li><li><a class="ds-menu__item" href="#overview">northwind <span class="ds-menu__hint">production</span></a></li><li><a class="ds-menu__item" href="#alerts">Alert history</a></li><li><a class="ds-menu__item" href="#overview">Sign out</a></li></ul></details>
+    </div>
+  </div>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#overview">Overview</a></li>
+    <li><a class="ds-nav__link" href="#incidents">Incidents <span class="ds-kbd">1</span></a></li>
+    <li><a class="ds-nav__link" href="#incident">INC-214</a></li>
+    <li><a class="ds-nav__link" href="#alerts">Alert rules</a></li>
+  </ul>
+</header>
+
+<section class="ds-view ds-view--home" id="overview">
+  <div class="ds-main">
+    <div class="ds-hero" data-component="hero">
+      <span class="ds-hero__pulse" aria-hidden="true"></span>
+      <div>
+        <span class="ds-eyebrow ds-eyebrow--accent">Status / checked 40 seconds ago</span>
+        <h1 class="ds-hero__title">All systems operational</h1>
+        <p class="ds-hero__lead">Six of six services answer in every region. One incident is being watched after a fix.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button" href="#alerts">Subscribe to updates</a>
+          <a class="ds-button ds-button--secondary is-hover" href="#incidents">Incident history</a>
+        </div>
+      </div>
+      <ul class="ds-hero__facts">
+        <li class="ds-hero__fact"><span>uptime, 90 days</span><b>99.982%</b></li>
+        <li class="ds-hero__fact"><span>open incidents</span><b>1 monitoring</b></li>
+        <li class="ds-hero__fact"><span>last outage</span><b>19 days ago</b></li>
+        <li class="ds-hero__fact"><span>next maintenance</span><b>Sun 23 Mar, 02:00 UTC</b></li>
+      </ul>
+    </div>
+
+    <ul class="ds-stat" data-component="stats">
+      <li class="ds-stat__item">
+        <span class="ds-stat__label">Requests / s</span>
+        <span class="ds-stat__row"><span class="ds-stat__figure">18.4k</span><span class="ds-stat__delta">+6.1%</span></span>
+        <svg class="ds-stat__spark" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 30L14 27L28 29L42 22L56 24L70 18L84 21L98 15L112 17L126 12L140 16L154 9L168 12L182 6L200 8"/></svg>
+      </li>
+      <li class="ds-stat__item ds-stat__item--2">
+        <span class="ds-stat__label">Latency p95</span>
+        <span class="ds-stat__row"><span class="ds-stat__figure">142 ms</span><span class="ds-stat__delta">-11 ms</span></span>
+        <svg class="ds-stat__spark" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 14L14 16L28 12L42 15L56 11L70 9L84 30L98 34L112 20L126 18L140 21L154 19L168 22L182 20L200 23"/></svg>
+      </li>
+      <li class="ds-stat__item ds-stat__item--3">
+        <span class="ds-stat__label">Error rate</span>
+        <span class="ds-stat__row"><span class="ds-stat__figure">0.04%</span><span class="ds-stat__delta ds-stat__delta--down">+0.01</span></span>
+        <svg class="ds-stat__spark" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 33L14 33L28 32L42 33L56 31L70 32L84 8L98 12L112 28L126 32L140 33L154 31L168 32L182 30L200 31"/></svg>
+      </li>
+      <li class="ds-stat__item ds-stat__item--4">
+        <span class="ds-stat__label">Time to recover</span>
+        <span class="ds-stat__row"><span class="ds-stat__figure">14 min</span><span class="ds-stat__delta">median of 9</span></span>
+        <svg class="ds-stat__spark" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M0 10V34 M25 18V34 M50 26V34 M75 6V34 M100 22V34 M125 28V34 M150 16V34 M175 24V34 M198 20V34"/></svg>
+      </li>
+    </ul>
+
+    <div class="ds-cols">
+      <section class="ds-panel" data-component="panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Services <span class="ds-tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">One bar is one day. A bar turns amber after five minutes of errors.</span></span></h2><span class="ds-mono">last 60 days, one bar a day</span></div>
+        <ul class="ds-uptime">
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> API gateway</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">99.99%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--warning"></span> Query engine</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--down"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day ds-uptime__day--warn"></i></span><span class="ds-uptime__pct">99.91%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> Storage</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">99.99%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> Webhooks</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day ds-uptime__day--down"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">99.94%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> Dashboard</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">100.00%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> Scheduler</span><span class="ds-uptime__days"><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">99.97%</span></li>
+          <li class="ds-uptime__row"><span class="ds-uptime__name"><span class="ds-dot ds-dot--success"></span> Edge cache <span class="ds-badge ds-badge--new">New</span></span><span class="ds-uptime__days"><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day ds-uptime__day--none"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day ds-uptime__day--warn"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i><i class="ds-uptime__day"></i></span><span class="ds-uptime__pct">99.98%</span></li>
+        </ul>
+        <div class="ds-uptime__axis">
+          <span>60 days ago</span>
+          <span><span class="ds-uptime__key"><span class="ds-dot ds-dot--success"></span> up</span><span class="ds-uptime__key"><span class="ds-dot ds-dot--warning"></span> degraded</span><span class="ds-uptime__key"><span class="ds-dot ds-dot--danger"></span> outage</span></span>
+          <span>today</span>
+        </div>
+      </section>
+
+      <div class="ds-stack">
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Latency, 24 hours</h2><span class="ds-mono">fra1</span></div>
+          <div class="ds-chart">
+            <svg class="ds-chart__plot" viewBox="0 0 340 170" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Latency over 24 hours: p50, p95 and p99">
+              <g class="ds-chart__grid" stroke-width="1" stroke-dasharray="2 4"><path d="M0 20h340 M0 65h340 M0 110h340"/></g>
+              <g class="ds-chart__grid" stroke-width="1"><path d="M0 155h340"/></g>
+              <g class="ds-chart__p99"><path d="M0 62L24 58L48 66L72 54L96 60L120 48L144 16L168 24L192 56L216 60L240 52L264 58L288 50L312 56L340 54"/></g>
+              <g class="ds-chart__p95"><path d="M0 92L24 90L48 94L72 88L96 91L120 84L144 58L168 66L192 88L216 92L240 86L264 90L288 85L312 89L340 88"/></g>
+              <g class="ds-chart__p50"><path d="M0 130L24 129L48 131L72 128L96 130L120 127L144 118L168 121L192 129L216 130L240 128L264 130L288 127L312 129L340 128"/><circle cx="340" cy="128" r="3" fill="currentColor"/></g>
+            </svg>
+            <ul class="ds-chart__legend">
+              <li class="ds-chart__key ds-chart__p50">p50 <b>38 ms</b></li>
+              <li class="ds-chart__key ds-chart__p95">p95 <b>142 ms</b></li>
+              <li class="ds-chart__key ds-chart__p99">p99 <b>310 ms</b></li>
+            </ul>
+          </div>
+        </section>
+        <div class="ds-callout">
+          <h2 class="ds-callout__title">Maintenance on Sunday</h2>
+          <p class="ds-callout__text">Storage nodes in fra1 restart one at a time from 02:00 UTC. No downtime is expected.</p>
+          <a class="ds-button ds-button--inverse ds-button--small" href="#incidents">See the plan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-colhead"><h2 class="ds-colhead__title">Regions</h2><span class="ds-mono">p95 from the nearest probe</span></div>
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell"><span class="ds-grid__code">fra1 <span class="ds-dot ds-dot--success"></span></span><h3 class="ds-grid__title">Frankfurt</h3><span class="ds-grid__figure">142 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--mid"></span></span></div>
+      <div class="ds-grid__cell"><span class="ds-grid__code">lhr1 <span class="ds-dot ds-dot--success"></span></span><h3 class="ds-grid__title">London</h3><span class="ds-grid__figure">96 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill"></span></span></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__code">iad1 <span class="ds-dot ds-dot--success"></span></span><h3 class="ds-grid__title">Virginia</h3><span class="ds-grid__figure">88 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill"></span></span></div>
+      <div class="ds-grid__cell ds-grid__cell--2"><span class="ds-grid__code">gru1 <span class="ds-dot ds-dot--warning"></span></span><h3 class="ds-grid__title">Sao Paulo</h3><span class="ds-grid__figure">231 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--high"></span></span></div>
+      <div class="ds-grid__cell ds-grid__cell--3"><span class="ds-grid__code">sin1 <span class="ds-dot ds-dot--success"></span></span><h3 class="ds-grid__title">Singapore</h3><span class="ds-grid__figure">118 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill ds-meter__fill--mid"></span></span></div>
+      <div class="ds-grid__cell ds-grid__cell--4"><span class="ds-grid__code">syd1 <span class="ds-dot ds-dot--success"></span></span><h3 class="ds-grid__title">Sydney</h3><span class="ds-grid__figure">104 <small>ms</small></span><span class="ds-meter"><span class="ds-meter__fill"></span></span></div>
+    </div>
+
+    <div class="ds-colhead"><h2 class="ds-colhead__title">Recent incidents</h2><a class="ds-link ds-link--more" href="#incidents">All incidents</a></div>
+    <ol class="ds-list" data-component="list">
+      <li class="ds-list__item">
+        <div class="ds-list__meta"><span>18 Mar 2025</span><span>09:12 UTC, 21 min</span></div>
+        <div><a class="ds-list__title" href="#incident">Elevated query latency in fra1</a><p class="ds-list__text">A replica fell behind after a schema change and was taken out of rotation. We are watching the fix.</p></div>
+        <span class="ds-badge ds-badge--warning">Monitoring</span>
+      </li>
+      <li class="ds-list__item">
+        <div class="ds-list__meta"><span>27 Feb 2025</span><span>22:40 UTC, 48 min</span></div>
+        <div><a class="ds-list__title" href="#incident">Webhook deliveries delayed</a><p class="ds-list__text">A queue worker ran out of memory. Deliveries were retried and none were lost.</p></div>
+        <span class="ds-badge ds-badge--success">Resolved</span>
+      </li>
+      <li class="ds-list__item">
+        <div class="ds-list__meta"><span>9 Feb 2025</span><span>02:00 UTC, 35 min</span></div>
+        <div><a class="ds-list__title" href="#incident">Scheduled storage maintenance</a><p class="ds-list__text">Nodes in iad1 were restarted one at a time. Finished ten minutes early.</p></div>
+        <span class="ds-badge ds-badge--quiet">Maintenance</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="ds-view" id="incidents">
+  <div class="ds-main">
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Status</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Incidents</li>
+        </ol>
+        <h1 class="ds-page-header__title">Incidents</h1>
+        <p class="ds-page-header__text">Everything that went wrong or was planned since January, with how long it took to put right.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#alerts">Alert rules</a>
+        <a class="ds-button" href="#incident">Report an incident</a>
+      </div>
+    </header>
+
+    <div class="ds-toolbar">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#incidents">All <span class="ds-mono">23</span></a></li>
+        <li><a class="ds-tabs__tab" href="#incidents">Open <span class="ds-mono">1</span></a></li>
+        <li><a class="ds-tabs__tab" href="#incidents">Resolved</a></li>
+        <li><a class="ds-tabs__tab" href="#incidents">Maintenance</a></li>
+      </ul>
+      <span class="ds-toolbar__note">Times in UTC. Durations count from first alert to resolution.</span>
+    </div>
+
+    <section class="ds-panel">
+      <div class="ds-table__wrap">
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th scope="col">Id</th><th scope="col">Incident</th><th scope="col">Service</th><th scope="col">State</th><th scope="col">Started</th><th scope="col" class="ds-table__num">Minutes</th><th scope="col" class="ds-table__num">Requests failed</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="ds-mono">INC-214</td><th scope="row"><a class="ds-link" href="#incident">Elevated query latency in fra1</a></th><td>Query engine</td><td><span class="ds-badge ds-badge--warning">Monitoring</span></td><td class="ds-mono">18 Mar, 09:12</td><td class="ds-table__num">21</td><td class="ds-table__num">0</td></tr>
+            <tr><td class="ds-mono">INC-213</td><th scope="row"><a class="ds-link" href="#incident">Webhook deliveries delayed</a></th><td>Webhooks</td><td><span class="ds-badge ds-badge--success">Resolved</span></td><td class="ds-mono">27 Feb, 22:40</td><td class="ds-table__num">48</td><td class="ds-table__num">0</td></tr>
+            <tr class="is-hover"><td class="ds-mono">INC-212</td><th scope="row"><a class="ds-link" href="#incident">Write errors on large batches</a></th><td>Query engine</td><td><span class="ds-badge ds-badge--success">Resolved</span></td><td class="ds-mono">12 Feb, 14:03</td><td class="ds-table__num">40</td><td class="ds-table__num">1,284</td></tr>
+            <tr><td class="ds-mono">MNT-031</td><th scope="row"><a class="ds-link" href="#incident">Scheduled storage maintenance</a></th><td>Storage</td><td><span class="ds-badge ds-badge--quiet">Maintenance</span></td><td class="ds-mono">9 Feb, 02:00</td><td class="ds-table__num">35</td><td class="ds-table__num">0</td></tr>
+            <tr><td class="ds-mono">INC-211</td><th scope="row"><a class="ds-link" href="#incident">Dashboard sign-in failing</a></th><td>Dashboard</td><td><span class="ds-badge ds-badge--success">Resolved</span></td><td class="ds-mono">30 Jan, 11:26</td><td class="ds-table__num">9</td><td class="ds-table__num">312</td></tr>
+            <tr><td class="ds-mono">INC-210</td><th scope="row"><a class="ds-link" href="#incident">Gateway returning 502 in gru1</a></th><td>API gateway</td><td><span class="ds-badge ds-badge--danger">Outage</span></td><td class="ds-mono">17 Jan, 05:51</td><td class="ds-table__num">14</td><td class="ds-table__num">8,906</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ds-table__foot">
+        <span>6 of 23 incidents</span>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#incidents">Prev</a></li>
+          <li><a class="ds-pagination__link is-current" href="#incidents">1</a></li>
+          <li><a class="ds-pagination__link" href="#incidents">2</a></li>
+          <li><a class="ds-pagination__link" href="#incidents">3</a></li>
+          <li><a class="ds-pagination__link" href="#incidents">4</a></li>
+          <li><a class="ds-pagination__link" href="#incidents">Next</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="ds-cols ds-cols--even">
+      <div class="ds-empty" data-component="empty">
+        <svg class="ds-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9h20v17H6z"/><path d="M6 14h20 M11 5v6 M21 5v6"/></svg>
+        <h2 class="ds-empty__title">No maintenance after 23 March</h2>
+        <p class="ds-empty__text">Planned work is announced here at least seven days ahead.</p>
+        <a class="ds-button ds-button--secondary ds-button--small" href="#alerts">Notify me</a>
+      </div>
+      <section class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">States</h2><span class="ds-mono">what each label means</span></div>
+        <div class="ds-panel__body">
+          <div class="ds-badgerow" data-component="badge">
+            <span class="ds-badge">Investigating</span>
+            <span class="ds-badge ds-badge--new">Identified</span>
+            <span class="ds-badge ds-badge--warning">Monitoring</span>
+            <span class="ds-badge ds-badge--success">Resolved</span>
+            <span class="ds-badge ds-badge--danger">Outage</span>
+            <span class="ds-badge ds-badge--quiet">Maintenance</span>
+          </div>
+          <p>An incident opens with the first alert and closes when the error rate has been normal for thirty minutes.</p>
+          <p class="ds-linkrow" data-component="links">
+            <a class="ds-link" href="#incidents">Export as CSV</a>
+            <a class="ds-link is-visited" href="#incidents">Postmortems</a>
+            <a class="ds-link is-hover" href="#incidents">Uptime report</a>
+            <a class="ds-link is-active" href="#incidents">Status feed</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="incident">
+  <div class="ds-main">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Status</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#incidents">Incidents</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">INC-214</li>
+        </ol>
+        <h1 class="ds-page-header__title">Elevated query latency in fra1 <span class="ds-badge ds-badge--warning">Monitoring</span></h1>
+        <p class="ds-page-header__text">Started 18 Mar 2025 at 09:12 UTC. Queries were slow for 21 minutes; none failed.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#alerts">Subscribe</a>
+        <a class="ds-button" href="#incident">Post an update</a>
+      </div>
+    </header>
+
+    <div class="ds-cols">
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Updates</h2><span class="ds-mono">newest first</span></div>
+          <ol class="ds-timeline">
+            <li class="ds-timeline__item"><span class="ds-mono">09:33 UTC</span><span><span class="ds-badge ds-badge--warning">Monitoring</span></span><p class="ds-timeline__text">The replica is out of rotation and p95 is back under 150 ms. We will watch for thirty minutes before closing.</p></li>
+            <li class="ds-timeline__item"><span class="ds-mono">09:24 UTC</span><span><span class="ds-badge ds-badge--new">Identified</span></span><p class="ds-timeline__text">One replica in fra1 is 90 seconds behind after this morning's schema change. Reads sent to it wait for it to catch up.</p></li>
+            <li class="ds-timeline__item"><span class="ds-mono">09:12 UTC</span><span><span class="ds-badge">Investigating</span></span><p class="ds-timeline__text">Latency alerts fired for the query engine in fra1. Other regions are normal.</p></li>
+          </ol>
+        </section>
+
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Postmortem</h2><span class="ds-badge ds-badge--outline">Draft</span></div>
+          <div class="ds-panel__body">
+            <div class="ds-prose" data-component="typography">
+              <h1>A replica that could not keep up</h1>
+              <p class="ds-prose__lead">A schema change rewrote a large table, and one replica applied it more slowly than the others.</p>
+              <p>The router sends reads to any replica less than <code>max_lag</code> behind. That setting was <strong>120 seconds</strong>, so a replica 90 seconds behind still took traffic.</p>
+              <h2>What we are changing</h2>
+              <ul>
+                <li>The default for <code>max_lag</code> drops to 10 seconds</li>
+                <li>Schema changes on tables over 50 GB are throttled per replica</li>
+                <li>A new alert fires when any replica is behind for more than a minute</li>
+              </ul>
+              <h3>What you need to do</h3>
+              <p>Nothing. The new default applies to every project from 20 March.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Affected components</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><span class="ds-dot ds-dot--warning"></span> Query engine, fra1 <span class="ds-mono">degraded</span></li>
+            <li class="ds-sidebar__item"><span class="ds-dot ds-dot--success"></span> <a class="ds-link ds-link--quiet" href="#overview">API gateway</a> <span class="ds-mono">normal</span></li>
+            <li class="ds-sidebar__item"><span class="ds-dot ds-dot--success"></span> <a class="ds-link ds-link--quiet" href="#overview">Storage</a> <span class="ds-mono">normal</span></li>
+            <li class="ds-sidebar__item"><span class="ds-dot ds-dot--success"></span> <a class="ds-link ds-link--quiet" href="#overview">Dashboard</a> <span class="ds-mono">normal</span></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Facts</h2><span class="ds-mono">INC-214</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-panel__key">Severity</span><span class="ds-mono">minor</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Detected by</span><span class="ds-mono">alert, p95 latency</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">Time to identify</span><span class="ds-mono">12 min</span></li>
+              <li class="ds-panel__row"><span class="ds-panel__key">On call</span><span class="ds-mono">Imre Solvang</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__body"><div class="ds-progress"><div class="ds-progress__head"><span>Error budget, March</span><span class="ds-progress__value">18% used</span></div><progress class="ds-progress__bar" value="18" max="100">18%</progress></div></div>
+        </section>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Actions</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-buttonrow" data-component="buttons">
+              <a class="ds-button" href="#incident">Resolve</a>
+              <a class="ds-button ds-button--secondary" href="#incident">Edit</a>
+              <button class="ds-button" type="button" disabled>Reopen</button>
+              <a class="ds-button ds-button--danger" href="#incident">Delete</a>
+            </div>
+          </div>
+        </section>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Mark INC-214 as resolved?</h2>
+              <a class="ds-dialog__close" href="#incident" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>412 subscribers get a last e-mail and the banner on the status page goes back to green.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#incident">Keep watching</a>
+              <a class="ds-button" href="#incidents">Resolve</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="alerts">
+  <div class="ds-main">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Status</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Alert rules</li>
+        </ol>
+        <h1 class="ds-page-header__title">Alert rules</h1>
+        <p class="ds-page-header__text">A rule watches one measurement and tells a channel when it crosses a line for long enough.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#incidents">Alert history</a>
+      </div>
+    </header>
+
+    <div class="ds-noticerow" data-component="notice">
+      <p class="ds-notice"><span class="ds-notice__title">Alerts are quiet during maintenance.</span> Rules pause for the services named in a maintenance window.</p>
+      <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The webhook for the on-call channel answered 500.</span> Three alerts could not be delivered there today.</p>
+    </div>
+
+    <div class="ds-cols ds-cols--even">
+      <section class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">New rule</h2><span class="ds-mono">7 of 20 used</span></div>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form" action="#alerts">
+            <label class="ds-form__field"><span class="ds-form__label">Name</span><input class="ds-form__input" type="text" value="Replica lag over one minute"></label>
+            <div class="ds-form__row">
+              <label class="ds-form__field"><span class="ds-form__label">Measurement</span>
+                <select class="ds-form__select"><option>Replica lag, seconds</option><option>Latency p95, milliseconds</option><option>Error rate, percent</option><option>Queue depth</option></select>
+              </label>
+              <label class="ds-form__field"><span class="ds-form__label">Is above</span><input class="ds-form__input ds-form__input--mono is-error" type="text" value="sixty"><span class="ds-form__error">Enter a number of seconds.</span></label>
+              <label class="ds-form__field"><span class="ds-form__label">For at least</span><input class="ds-form__input ds-form__input--mono is-focus" type="text" value="1m"></label>
+            </div>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>Open an incident when this fires</span></label>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> <span>Also alert when it recovers</span></label>
+            <label class="ds-form__field"><span class="ds-form__label">Message</span><textarea class="ds-form__textarea" rows="3" placeholder="What should the person on call check first?"></textarea><span class="ds-form__hint">Sent with the alert. Plain text, up to 500 characters.</span></label>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="submit">Create rule</button>
+              <a class="ds-button ds-button--secondary" href="#alerts">Send a test alert</a>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Rules</h2><span class="ds-mono">3 on, 1 off</span></div>
+          <ul class="ds-rules">
+            <li class="ds-rules__item"><span class="ds-rules__name">Latency p95 over 400 ms <span class="ds-mono">any region, for 5m</span></span><span class="ds-badge ds-badge--quiet">on-call</span><span class="ds-switch is-on" role="img" aria-label="On"></span></li>
+            <li class="ds-rules__item"><span class="ds-rules__name">Error rate over 1% <span class="ds-mono">API gateway, for 2m</span></span><span class="ds-badge ds-badge--quiet">on-call</span><span class="ds-switch is-on" role="img" aria-label="On"></span></li>
+            <li class="ds-rules__item"><span class="ds-rules__name">Webhook queue over 10,000 <span class="ds-mono">for 10m</span></span><span class="ds-badge ds-badge--quiet">e-mail</span><span class="ds-switch is-on" role="img" aria-label="On"></span></li>
+            <li class="ds-rules__item"><span class="ds-rules__name">Disk over 85% <span class="ds-mono">storage, for 30m</span></span><span class="ds-badge ds-badge--outline">paused</span><span class="ds-switch" role="img" aria-label="Off"></span></li>
+          </ul>
+        </section>
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">What the webhook receives</span><span class="ds-kbd">json</span></div>
+<pre class="ds-code__body">{
+  <span class="ds-code__k">"rule"</span>:    <span class="ds-code__s">"replica-lag"</span>,
+  <span class="ds-code__k">"state"</span>:   <span class="ds-code__s">"firing"</span>,
+  <span class="ds-code__k">"value"</span>:   <span class="ds-code__n">92</span>,
+  <span class="ds-code__k">"region"</span>:  <span class="ds-code__s">"fra1"</span>,
+  <span class="ds-code__k">"since"</span>:   <span class="ds-code__s">"2025-03-18T09:12:04Z"</span>
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <a class="ds-brand" href="#overview">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <span class="ds-footer__note">status page, probes every 30 s from 6 regions</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#overview">Overview</a></li>
+      <li><a class="ds-footer__link" href="#incidents">Incidents</a></li>
+      <li><a class="ds-footer__link" href="#alerts">Alert rules</a></li>
+      <li><a class="ds-footer__link" href="#incidents">Status feed</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

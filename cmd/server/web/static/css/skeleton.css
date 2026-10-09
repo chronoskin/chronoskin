@@ -1,0 +1,55 @@
+/* Skeletons: where a picture or a specimen is still loading, its place
+   shows a slow grey shimmer. What loads paints over it. */
+.trio > *, .card .shot, .stage, .saved-wait i::before {
+  background: linear-gradient(100deg, var(--sunken) 30%, var(--line) 50%, var(--sunken) 70%) 0 0 / 300% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trio > *, .card .shot, .stage, .saved-wait i::before {
+    animation: none;
+  }
+}
+
+/* The saved page draws its cards with script; until then three empty cards
+   hold their place. */
+.saved-wait {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.saved-wait i {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.saved-wait i::before {
+  content: "";
+  display: block;
+  aspect-ratio: 16 / 10;
+}
+
+.saved-wait i::after {
+  content: "";
+  display: block;
+  height: 62px;
+}
+
+@media (scripting: none) {
+  .saved-wait {
+    display: none;
+  }
+}

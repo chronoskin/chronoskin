@@ -1,0 +1,78 @@
+/* The head of an era's page: name, two lines of description, one button,
+   then its figures in a row. */
+.era-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 22px;
+}
+
+.era-head h1 {
+  font-size: 40px;
+  letter-spacing: -0.035em;
+}
+
+.era-head .lead {
+  max-width: 760px;
+  margin: 12px 0 0;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.era-head .traits {
+  max-width: 760px;
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.era-head .btn {
+  flex: none;
+  margin-top: 6px;
+}
+
+.figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.figures li {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--muted);
+  font: 12px var(--mono);
+}
+
+.figures b {
+  margin-right: 4px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.era-page .cards {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .era-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .era-head h1 {
+    font-size: 28px;
+  }
+  .era-head .lead {
+    font-size: 17px;
+  }
+}

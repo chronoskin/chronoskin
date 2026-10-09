@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: flat design mosaic specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <div class="ds-nav__top">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10" opacity=".3"/><path d="M15.5 8.5L21.64 14.64A10 10 0 0 1 14.64 21.64L8.5 15.5Z" opacity=".35"/><rect x="8.5" y="8.5" width="7" height="7"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <input class="ds-nav__search" type="text" placeholder="Search courses" aria-label="Search courses">
+    </div>
+    <div class="ds-nav__row">
+      <ul class="ds-nav__links">
+        <li><a class="ds-nav__link" href="#home">Courses</a></li>
+        <li><a class="ds-nav__link" href="#about">About</a></li>
+        <li><a class="ds-nav__link" href="#enrolments">My courses</a></li>
+        <li><a class="ds-nav__link" href="#details">My details</a></li>
+      </ul>
+      <div class="ds-nav__aside">
+        <details class="ds-menu">
+          <summary class="ds-menu__toggle">Help</summary>
+          <ul class="ds-menu__list">
+            <li><a class="ds-menu__item" href="#about">How a course works</a></li>
+            <li><a class="ds-menu__item" href="#about">Passes and vouchers</a></li>
+            <li><a class="ds-menu__item" href="#details">Access needs</a></li>
+            <li><a class="ds-menu__item" href="#about">Labels on the timetable</a></li>
+          </ul>
+        </details>
+        <a class="ds-link" href="#enrolments">Sign in</a>
+      </div>
+    </div>
+    <details class="ds-menu ds-menu--nav">
+      <summary class="ds-menu__toggle" aria-label="Menu"><span class="ds-menu__bars"></span></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__item" href="#home">Courses</a></li>
+        <li><a class="ds-menu__item" href="#about">About</a></li>
+        <li><a class="ds-menu__item" href="#enrolments">My courses</a></li>
+        <li><a class="ds-menu__item" href="#details">My details</a></li>
+        <li><a class="ds-menu__item ds-menu__item--plain" href="#about">Help</a></li>
+        <li><a class="ds-menu__item ds-menu__item--plain" href="#enrolments">Sign in</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-hero__main">
+      <h1 class="ds-hero__title">Learn something by Thursday</h1>
+      <p class="ds-hero__lead">Short evening courses taught live by people who do the work. Join free and take your first class this week.</p>
+      <form class="ds-form" action="#enrolments">
+        <label class="ds-form__field"><input class="ds-form__input" type="text" placeholder="First name" aria-label="First name"></label>
+        <label class="ds-form__field"><input class="ds-form__input" type="text" placeholder="Last name" aria-label="Last name"></label>
+        <label class="ds-form__field ds-form__field--wide"><input class="ds-form__input" type="text" placeholder="Email" aria-label="Email"></label>
+        <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> <span>Send me the weekly timetable.</span></label>
+        <div class="ds-form__actions">
+          <a class="ds-button ds-button--inverse" href="#enrolments">Join free</a>
+        </div>
+      </form>
+    </div>
+    <div class="ds-hero__tile" aria-hidden="true">
+      <svg class="ds-grid__icon" viewBox="0 0 48 48" width="64" height="64"><path d="M6 12h36v24H6z M20 18l10 6-10 6z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </div>
+    <div class="ds-hero__tile ds-hero__tile--3" aria-hidden="true">
+      <svg class="ds-grid__icon" viewBox="0 0 48 48" width="64" height="64"><path d="M8 10h14v28H8z M26 10h14v28H26z M12 18h6 M12 24h6 M30 18h6 M30 24h6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </div>
+    <div class="ds-hero__tile ds-hero__tile--quote">
+      <div class="ds-carousel">
+        <input class="ds-carousel__pick" type="radio" name="students" id="student-1" aria-label="First quote" checked>
+        <input class="ds-carousel__pick" type="radio" name="students" id="student-2" aria-label="Second quote">
+        <input class="ds-carousel__pick" type="radio" name="students" id="student-3" aria-label="Third quote">
+        <div class="ds-carousel__slides">
+          <figure class="ds-carousel__slide">
+            <blockquote class="ds-hero__quote">Four evenings, one finished chair, and I can finally read a joinery drawing.</blockquote>
+            <figcaption class="ds-hero__source">A student of Woodwork basics, spring term</figcaption>
+          </figure>
+          <figure class="ds-carousel__slide">
+            <blockquote class="ds-hero__quote">I came for one poster and left knowing how to lock up a forme of type.</blockquote>
+            <figcaption class="ds-hero__source">A student of Letterpress for posters, winter term</figcaption>
+          </figure>
+          <figure class="ds-carousel__slide">
+            <blockquote class="ds-hero__quote">My first page went live in week three. My mother has seen it eleven times.</blockquote>
+            <figcaption class="ds-hero__source">A student of A first web page, spring term</figcaption>
+          </figure>
+        </div>
+        <div class="ds-carousel__dots">
+          <label class="ds-carousel__dot" for="student-1" title="First quote"></label>
+          <label class="ds-carousel__dot" for="student-2" title="Second quote"></label>
+          <label class="ds-carousel__dot" for="student-3" title="Third quote"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-grid" data-component="grid">
+    <div class="ds-grid__cell ds-grid__cell--inverse ds-grid__cell--tall">
+      <h2 class="ds-grid__title">Make</h2>
+      <p class="ds-grid__text">Woodwork, ceramics, bookbinding and print. Tools and materials are on the bench when you arrive.</p>
+      <a class="ds-grid__more" href="#course">38 courses</a>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--plain ds-grid__cell--wide">
+      <h2 class="ds-grid__title">New this term: Saturday studios</h2>
+      <p class="ds-grid__text">A whole day with one tutor and six students. Lunch is included, homework is not.</p>
+      <a class="ds-link ds-link--more" href="#course">See a Saturday studio</a>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--2 ds-grid__cell--icon">
+      <svg class="ds-grid__icon" viewBox="0 0 48 48" width="64" height="64" aria-hidden="true"><path d="M10 38V10h28v28z M10 20h28 M20 20v18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--3 ds-grid__cell--icon">
+      <svg class="ds-grid__icon" viewBox="0 0 48 48" width="64" height="64" aria-hidden="true"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--4">
+      <h2 class="ds-grid__title">Code</h2>
+      <p class="ds-grid__text">From a first web page to a working app.</p>
+      <a class="ds-grid__more" href="#enrolments">21 courses</a>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--strong">
+      <h2 class="ds-grid__title">Gift a course</h2>
+      <p class="ds-grid__text">Vouchers for any class, valid for a year.</p>
+      <a class="ds-link ds-link--more" href="#about">How vouchers work</a>
+    </div>
+  </div>
+
+  <div class="ds-band ds-band--alt">
+    <div class="ds-band__inner">
+      <h2 class="ds-band__title">From the noticeboard</h2>
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <span class="ds-list__meta">11 May 2015 · Timetable</span>
+          <a class="ds-list__title" href="#enrolments">Summer term opens for booking on Monday</a>
+          <p class="ds-list__text">Sixty-two courses, fourteen of them new, across three buildings.</p>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__meta">30 April 2015 · Tutors</span>
+          <a class="ds-list__title" href="#about">Meet the letterpress printer taking over the print room</a>
+          <p class="ds-list__text">She brings two presses and a strong opinion about ink.</p>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__meta">17 April 2015 · Students</span>
+          <a class="ds-list__title" href="#about">The spring show: what three hundred beginners made</a>
+          <p class="ds-list__text">Chairs, bowls, a weather app and one very small boat.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="about">
+  <div class="ds-toolbar">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">About</li>
+    </ol>
+  </div>
+  <header class="ds-page-header">
+    <div class="ds-page-header__tile">
+      <h1 class="ds-page-header__title">About</h1>
+    </div>
+    <div class="ds-page-header__copy">
+      <p class="ds-page-header__text">How a course works, what it costs and what the labels mean.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button" href="#enrolments">Book a course</a>
+    </div>
+  </header>
+
+  <div class="ds-band">
+    <div class="ds-band__inner ds-cols">
+      <div class="ds-stack">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Term pass</h2>
+          <div class="ds-panel__body">
+            <span class="ds-panel__figure">$120</span>
+            <p>Any three courses between now and the end of June.</p>
+            <a class="ds-button ds-button--secondary" href="#enrolments">Get a pass</a>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Gift voucher</h2>
+          <div class="ds-panel__body">
+            <span class="ds-panel__figure">$45</span>
+            <p>One course of the holder's choice, valid for a year.</p>
+            <a class="ds-button ds-button--secondary" href="#details">Buy a voucher</a>
+          </div>
+        </section>
+      </div>
+      <div class="ds-cols__wide ds-stack ds-stack--tight">
+      <article class="ds-prose" data-component="typography">
+        <h1>Taught in a room, not a feed</h1>
+        <p class="ds-prose__lead">Every course meets live, with a tutor who can see what your hands are doing.</p>
+        <p>Classes are capped at twelve. You get the notes the same evening and <strong>a recording for thirty days</strong>, so a missed week is not a lost one.</p>
+        <h2>What a course includes</h2>
+        <ul>
+          <li>Four to six sessions of ninety minutes</li>
+          <li>Materials, or a list of what to bring</li>
+          <li>One piece of finished work to take home</li>
+        </ul>
+        <h3>For course organisers</h3>
+        <p>Timetables are published as a plain feed. Request <code>/feeds/term.ics</code> to add every session to a shared calendar.</p>
+      </article>
+      <div class="ds-accordion">
+        <details class="ds-accordion__item" open>
+          <summary class="ds-accordion__head">What if I miss a session?</summary>
+          <div class="ds-accordion__body"><p>The notes reach you the same evening and the recording stays up for thirty days. Tutors keep ten minutes before the next class for catching up.</p></div>
+        </details>
+        <details class="ds-accordion__item">
+          <summary class="ds-accordion__head">Do I need my own tools?</summary>
+          <div class="ds-accordion__body"><p>No. Tools and materials are on the bench when you arrive, unless the course page lists something to bring.</p></div>
+        </details>
+        <details class="ds-accordion__item">
+          <summary class="ds-accordion__head">Can I move to another term?</summary>
+          <div class="ds-accordion__body"><p>Up to a week before the first session, once, at no cost.</p></div>
+        </details>
+      </div>
+      </div>
+      <div class="ds-stack ds-stack--tight">
+        <div class="ds-prose">
+          <h3>Labels on the timetable</h3>
+          <p>Every course carries one or two of these, so you can see at a glance whether there is room.</p>
+        </div>
+        <div class="ds-badgerow" data-component="badge">
+          <span class="ds-badge">New</span>
+          <span class="ds-badge ds-badge--alt">Pilot</span>
+          <span class="ds-badge ds-badge--quiet">16</span>
+          <span class="ds-badge ds-badge--success">Places left</span>
+          <span class="ds-badge ds-badge--warning">Nearly full</span>
+          <span class="ds-badge ds-badge--danger">Full</span>
+        </div>
+        <div class="ds-prose">
+          <h3>Read next</h3>
+        </div>
+        <p class="ds-linkrow" data-component="links">
+          <a class="ds-link" href="#about">Our buildings</a>
+          <a class="ds-link is-visited" href="#about">Meet the tutors</a>
+          <a class="ds-link is-hover" href="#enrolments">Refunds</a>
+          <a class="ds-link is-active" href="#details">Access needs</a>
+          <a class="ds-link ds-link--quiet" href="#home">All courses</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="enrolments">
+  <div class="ds-toolbar">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#enrolments">My courses</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">Summer term</li>
+    </ol>
+  </div>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__tile">
+      <h1 class="ds-page-header__title">Enrolments</h1>
+    </div>
+    <div class="ds-page-header__copy">
+      <p class="ds-page-header__text">Every course you have booked for the summer term.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#details">My details</a>
+      <a class="ds-button" href="#home">Book a course</a>
+    </div>
+  </header>
+
+  <div class="ds-workspace">
+    <div class="ds-workspace__rail">
+      <aside class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">My courses</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item"><span class="ds-sidebar__count">3</span><a class="ds-link" href="#enrolments">Spring term</a></li>
+          <li class="ds-sidebar__item is-current"><span class="ds-sidebar__count">5</span>Summer term</li>
+          <li class="ds-sidebar__item"><span class="ds-sidebar__count">0</span><a class="ds-link" href="#enrolments">Autumn term</a></li>
+          <li class="ds-sidebar__item"><span class="ds-sidebar__count">2</span><a class="ds-link" href="#enrolments">Waiting lists</a></li>
+          <li class="ds-sidebar__item"><span class="ds-sidebar__count">9</span><a class="ds-link" href="#enrolments">Finished</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="ds-workspace__main ds-stack">
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__item ds-stat__item--1"><span class="ds-stat__figure">5</span><span class="ds-stat__label">Courses booked</span></li>
+        <li class="ds-stat__item ds-stat__item--4"><span class="ds-stat__figure">24</span><span class="ds-stat__label">Sessions to attend</span></li>
+        <li class="ds-stat__item ds-stat__item--inverse"><span class="ds-stat__figure">36</span><span class="ds-stat__label">Hours of teaching</span></li>
+        <li class="ds-stat__item"><span class="ds-stat__figure">$410</span><span class="ds-stat__label">Paid so far</span></li>
+      </ul>
+
+      <div>
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#enrolments">All courses</a></li>
+          <li><a class="ds-tabs__tab" href="#enrolments">Confirmed</a></li>
+          <li><a class="ds-tabs__tab" href="#enrolments">Waiting</a></li>
+          <li><a class="ds-tabs__tab" href="#enrolments">Withdrawn</a></li>
+        </ul>
+        <div class="ds-table__wrap">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">Course</th>
+                <th scope="col">Tutor</th>
+                <th scope="col">Starts</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="ds-table__num">Sessions</th>
+                <th scope="col" class="ds-table__num">Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a class="ds-link" href="#course">Woodwork basics</a></th><td>Ansel Rowe</td><td>2 June 2015</td><td><span class="ds-badge ds-badge--success">Confirmed</span></td><td class="ds-table__num">6</td><td class="ds-table__num">$110.00</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#course">Letterpress for posters</a></th><td>Dalia Wren</td><td>4 June 2015</td><td><span class="ds-badge ds-badge--warning">Waiting</span></td><td class="ds-table__num">4</td><td class="ds-table__num">$85.00</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#course">A first web page</a></th><td>Tomas Keel</td><td>9 June 2015</td><td><span class="ds-badge ds-badge--success">Confirmed</span></td><td class="ds-table__num">5</td><td class="ds-table__num">$90.00</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#course">Throwing on the wheel</a></th><td>Mirren Shaw</td><td>13 June 2015</td><td><span class="ds-badge ds-badge--success">Confirmed</span></td><td class="ds-table__num">6</td><td class="ds-table__num">$125.00</td></tr>
+              <tr><th scope="row"><a class="ds-link" href="#course">Bookbinding by hand</a></th><td>Odile Marsh</td><td>20 June 2015</td><td><span class="ds-badge ds-badge--danger">Withdrawn</span></td><td class="ds-table__num">3</td><td class="ds-table__num">$60.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-tablefoot">
+          <span>Showing 5 of 5 courses in this term.</span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#enrolments">‹ Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#enrolments">1</a></li>
+            <li><a class="ds-pagination__link" href="#enrolments">2</a></li>
+            <li><a class="ds-pagination__link" href="#enrolments">3</a></li>
+            <li><a class="ds-pagination__link" href="#enrolments">Next ›</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ds-empty" data-component="empty">
+        <svg class="ds-empty__icon" viewBox="0 0 48 48" width="64" height="64" aria-hidden="true"><path d="M8 12h32v28H8z M8 20h32 M16 6v10 M32 6v10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="ds-empty__copy">
+          <h2 class="ds-empty__title">Nothing booked for autumn</h2>
+          <p class="ds-empty__text">Courses you book for the autumn term will appear here.</p>
+        </div>
+        <a class="ds-button" href="#home">Browse autumn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="course">
+  <div class="ds-toolbar">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#enrolments">My courses</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">Throwing on the wheel</li>
+    </ol>
+  </div>
+  <header class="ds-page-header">
+    <div class="ds-page-header__tile">
+      <h1 class="ds-page-header__title">Throwing on the wheel</h1>
+    </div>
+    <div class="ds-page-header__copy">
+      <p class="ds-page-header__text">Six Saturday mornings with Mirren Shaw, from 13 June 2015.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#enrolments">All my courses</a>
+    </div>
+  </header>
+
+  <div class="ds-workspace">
+    <div class="ds-workspace__rail">
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">Summer term</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item"><a class="ds-link" href="#course">Woodwork basics</a></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#course">Letterpress for posters</a></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#course">A first web page</a></li>
+          <li class="ds-sidebar__item is-current">Throwing on the wheel</li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#course">Bookbinding by hand</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="ds-workspace__main ds-stack">
+      <div class="ds-cols">
+        <div class="ds-cols__wide ds-stack ds-stack--tight">
+          <div class="ds-prose">
+            <h2>Your place is confirmed</h2>
+            <p>You are one of eight students. Clay, tools and an apron are provided; wear shoes you do not mind getting splashed.</p>
+            <p>The class meets in the <span class="ds-tooltip" tabindex="0">Old Dairy, studio 2<span class="ds-tooltip__tip" role="tooltip">Through the yard on Canal Street. Step-free from the side gate.</span></span>. Doors open fifteen minutes before each session.</p>
+          </div>
+          <div class="ds-byline">
+            <span class="ds-avatar">MS</span>
+            <span class="ds-byline__text"><span class="ds-byline__name">Mirren Shaw</span><span class="ds-byline__role">Your tutor. A potter, teaching here since 2011.</span></span>
+          </div>
+          <div class="ds-progress">
+            <div class="ds-progress__head"><span>Places taken</span><span class="ds-progress__value">8 of 12</span></div>
+            <progress class="ds-progress__bar" value="8" max="12">8 of 12</progress>
+          </div>
+          <div class="ds-buttonrow" data-component="buttons">
+            <a class="ds-button" href="#course">Add to calendar</a>
+            <a class="ds-button is-hover" href="#course">Message tutor</a>
+            <a class="ds-button ds-button--secondary" href="#details">Edit my details</a>
+            <a class="ds-button ds-button--danger" href="#course">Withdraw</a>
+            <button class="ds-button" type="button" disabled>Rate this course</button>
+          </div>
+        </div>
+        <div class="ds-cols__wide">
+          <div class="ds-table__wrap">
+            <table class="ds-table">
+              <thead>
+                <tr>
+                  <th scope="col">Session</th>
+                  <th scope="col">Date</th>
+                  <th scope="col" class="ds-table__num">Starts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Centring the clay</th><td>13 June 2015</td><td class="ds-table__num">10:00</td></tr>
+                <tr><th scope="row">Pulling a cylinder</th><td>20 June 2015</td><td class="ds-table__num">10:00</td></tr>
+                <tr><th scope="row">Bowls and plates</th><td>27 June 2015</td><td class="ds-table__num">10:00</td></tr>
+                <tr><th scope="row">Trimming and handles</th><td>4 July 2015</td><td class="ds-table__num">10:00</td></tr>
+                <tr><th scope="row">Glazing</th><td>11 July 2015</td><td class="ds-table__num">09:30</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-dialog" data-component="dialog">
+        <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+          <div class="ds-dialog__inner">
+            <h2 class="ds-dialog__title" id="dialog-title">Withdraw from this course?</h2>
+            <div class="ds-dialog__body">
+              <p>Your place on Throwing on the wheel will go to the next person on the waiting list. The fee of $125.00 is refunded within five days.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--danger" href="#enrolments">Withdraw</a>
+              <a class="ds-button ds-button--secondary" href="#course">Keep my place</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="details">
+  <div class="ds-toolbar">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#enrolments">My courses</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">My details</li>
+    </ol>
+  </div>
+  <header class="ds-page-header">
+    <div class="ds-page-header__tile">
+      <h1 class="ds-page-header__title">My details</h1>
+    </div>
+    <div class="ds-page-header__copy">
+      <p class="ds-page-header__text">What your tutors see before the first session.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#enrolments">My courses</a>
+    </div>
+  </header>
+
+  <div class="ds-workspace">
+    <div class="ds-workspace__rail">
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">My account</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item is-current">Student details</li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#details">Reminders</a></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#details">Payments and refunds</a></li>
+          <li class="ds-sidebar__item"><a class="ds-link" href="#about">Passes and vouchers</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="ds-workspace__main">
+      <div class="ds-cols">
+        <section class="ds-panel ds-cols__wide">
+          <h2 class="ds-panel__title">Student details</h2>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#details">
+              <label class="ds-form__field"><span class="ds-form__label">First name</span><input class="ds-form__input" type="text" value="Corin"></label>
+              <label class="ds-form__field"><span class="ds-form__label">Last name</span><input class="ds-form__input is-focus" type="text" placeholder="Last name"></label>
+              <label class="ds-form__field"><span class="ds-form__label">Email</span><input class="ds-form__input is-error" type="text" value="corin@postbox"><span class="ds-form__error">Enter a complete email address.</span></label>
+              <label class="ds-form__field"><span class="ds-form__label">Preferred building</span>
+                <select class="ds-form__select"><option>Canal Street</option><option>The Old Dairy</option><option>Northgate</option></select>
+              </label>
+              <label class="ds-form__field ds-form__field--wide"><span class="ds-form__label">Anything the tutor should know</span><textarea class="ds-form__textarea" rows="3" placeholder="Access needs, experience, allergies"></textarea><span class="ds-form__hint">Optional. Only your tutors can read this.</span></label>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>Remind me the day before each session. <a class="ds-link" href="#details">Change reminders</a></span></label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Save details</button>
+                <a class="ds-button ds-button--secondary" href="#enrolments">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+        <div class="ds-cols__wide ds-stack ds-stack--tight">
+          <div class="ds-prose">
+            <h2>Before the first session</h2>
+            <p>Tutors see your name, your building and the note you leave here. Changes reach them the same day.</p>
+          </div>
+          <div class="ds-noticerow" data-component="notice">
+            <p class="ds-notice"><span class="ds-notice__title">Room change.</span> Woodwork basics now meets in the Canal Street workshop.</p>
+            <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Your details were not saved.</span> Check the highlighted field and try again.</p>
+          </div>
+          <div class="ds-prose">
+            <h3>Who can see this</h3>
+            <p>Only the tutors of courses you are booked on, and the office. Nothing here is shown to other students.</p>
+          </div>
+          <div class="ds-prose">
+            <h3>Reminders</h3>
+          </div>
+          <div class="ds-switchlist">
+            <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">The day before a session</span></label>
+            <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">When a waiting list place comes up</span></label>
+            <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">The weekly timetable</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div class="ds-footer__cols">
+      <div>
+        <h2 class="ds-footer__title">Subjects</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Make</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Code</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Write</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Saturday studios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Students</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#enrolments">My courses</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#details">My details</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#about">Term passes</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#about">Gift vouchers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Support</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#about">How a course works</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#about">Access and buildings</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Contact the office</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">About</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#about">Our tutors</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Teach a course</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Noticeboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ds-footer__base">
+      <a class="ds-footer__link" href="#home">Privacy and cookies</a>
+      <a class="ds-footer__link" href="#home">Terms of use</a>
+      <span>© 2015 chronoskin</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

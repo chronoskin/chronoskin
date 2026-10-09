@@ -1,0 +1,45 @@
+{{/* The parts of a style, one row each: its name and value with a tooltip,
+     a Keep toggle and a stepper. Data: the list of parts (Key, Label, Value,
+     About, Keepable, Kept, CanStep, Prev, Next). */}}
+{{define "parts"}}
+<div class="parts">
+  {{range .}}
+  <div class="part tipped">
+    <span class="label asks">
+      <span>{{.Label}}<small>{{.Value}}</small></span>
+      <button class="help" type="button" aria-label="What {{.Label}} is" aria-describedby="about-{{.Key}}">?</button>
+    </span>
+    <span class="tip" role="tooltip" id="about-{{.Key}}">{{.About}}</span>
+    {{if .Keepable}}
+    <label class="keep" title="Keep this {{.Label}} when regenerating">
+      <input type="checkbox" name="lock" value="{{.Key}}"{{if .Kept}} checked{{end}}>
+      <span class="off">Keep</span>
+      <span class="on">Kept</span>
+    </label>
+    {{end}}
+    <span class="stepper">
+      <a
+        class="step"
+        href="{{.Prev}}"
+        aria-label="Previous {{.Label}}"
+        title="Previous {{.Label}}"
+        data-goatcounter-click="step-{{.Key}}"
+        {{if not .CanStep}}aria-disabled="true" tabindex="-1"{{end}}
+      >
+        {{template "chevron-left"}}
+      </a>
+      <a
+        class="step"
+        href="{{.Next}}"
+        aria-label="Next {{.Label}}"
+        title="Next {{.Label}}"
+        data-goatcounter-click="step-{{.Key}}"
+        {{if not .CanStep}}aria-disabled="true" tabindex="-1"{{end}}
+      >
+        {{template "chevron-right"}}
+      </a>
+    </span>
+  </div>
+  {{end}}
+</div>
+{{end}}

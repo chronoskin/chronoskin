@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin, dashboard bento specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__tile">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="8" rx="2.5"/><rect x="15.5" y="2.5" width="6" height="8" rx="2.5" opacity=".5"/><rect x="2.5" y="12.5" width="6" height="9" rx="2.5" opacity=".5"/><rect x="10.5" y="12.5" width="11" height="9" rx="2.5"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+  </div>
+  <nav class="ds-nav__tile ds-nav__tile--grow" aria-label="Main">
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Overview</a></li>
+      <li><a class="ds-nav__link" href="#entries">Entries</a></li>
+      <li class="ds-menu"><a class="ds-nav__link" href="#budget">Budgets<svg class="ds-menu__caret" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 3 2.5 2.5L6.5 3"/></svg></a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#budget">Materials <span class="ds-menu__hint">81%</span></a></li>
+          <li><a class="ds-menu__item" href="#budget">Travel <span class="ds-menu__hint">86%</span></a></li>
+          <li><a class="ds-menu__item" href="#budget">Studio</a></li>
+          <li class="ds-menu__rule"></li>
+          <li><a class="ds-menu__item" href="#entries">All entries</a></li>
+        </ul>
+      </li>
+      <li><a class="ds-nav__link" href="#guide">Guide</a></li>
+    </ul>
+  </nav>
+  <div class="ds-nav__tile ds-nav__tile--extra">
+    <span class="ds-nav__meta"><span class="ds-nav__dot"></span>Synced a minute ago</span>
+  </div>
+  <div class="ds-nav__tile">
+    <a class="ds-button ds-button--secondary ds-button--small ds-nav__extra" href="#entries">Sign in</a>
+    <a class="ds-button ds-button--small" href="#add">Add entry</a>
+  </div>
+</header>
+
+<main class="ds-page__inner">
+  <section class="ds-view ds-view--home" id="home">
+  <div class="ds-grid" data-component="grid">
+    <section class="ds-grid__cell ds-grid__cell--w6 ds-grid__cell--h6 ds-hero" data-component="hero">
+      <div><a class="ds-badge ds-badge--new" href="#budget"><span class="ds-badge__dot"></span>Shared budgets are here</a></div>
+      <h1 class="ds-hero__title">Know where the month went</h1>
+      <p class="ds-hero__lead">chronoskin keeps a small studio's spending on one board: every entry, every budget and the week ahead, each in a tile of its own.</p>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--large" href="#add">Start tracking</a>
+        <a class="ds-button ds-button--secondary ds-button--large" href="#entries">See a live board</a>
+      </div>
+      <p class="ds-hero__note">Free for one budget. No card needed.</p>
+      <svg class="ds-hero__chart" viewBox="0 0 600 92" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" fill-opacity="0.3" stroke="none" d="M0 70 C40 62 70 74 110 58 S180 30 230 44 S310 66 360 40 S450 10 500 26 S570 34 600 14 V92 H0Z"/><path fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" d="M0 70 C40 62 70 74 110 58 S180 30 230 44 S310 66 360 40 S450 10 500 26 S570 34 600 14"/></svg>
+    </section>
+
+    <article class="ds-grid__cell ds-grid__cell--w2 ds-grid__cell--h2 ds-grid__cell--between">
+      <p class="ds-grid__label">Spent this week</p>
+      <p class="ds-stat"><span class="ds-stat__value">1,284</span><span class="ds-stat__note ds-stat__note--success">8% under plan</span></p>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--h2">
+      <div class="ds-grid__head">
+        <h2 class="ds-grid__title">Spend against plan</h2>
+        <ul class="ds-legend ds-legend--inline">
+          <li class="ds-legend__item"><span class="ds-legend__key"></span>Spent</li>
+          <li class="ds-legend__item"><span class="ds-legend__key ds-legend__key--alt"></span>Plan</li>
+        </ul>
+      </div>
+      <div class="ds-plot">
+        <svg class="ds-plot__svg" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><g class="ds-plot__grid" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path vector-effect="non-scaling-stroke" d="M0 1H400M0 34H400M0 67H400M0 99H400"/></g><path class="ds-plot__line ds-plot__line--alt" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke" d="M0 84 L400 18"/><path class="ds-plot__line" fill="currentColor" fill-opacity="0.16" stroke="none" d="M0 88 L40 80 L80 82 L120 66 L160 60 L200 62 L240 44 L280 40 L320 30 L360 32 L400 22 V100 H0Z"/><path class="ds-plot__line" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke" d="M0 88 L40 80 L80 82 L120 66 L160 60 L200 62 L240 44 L280 40 L320 30 L360 32 L400 22"/></svg>
+        <div class="ds-plot__axis"><span>1 May</span><span>8</span><span>15</span><span>22</span><span>31 May</span></div>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--h2 ds-grid__cell--split">
+      <div class="ds-donut">
+        <svg class="ds-donut__svg" viewBox="0 0 36 36" aria-hidden="true"><circle class="ds-donut__ring" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="4"/><circle class="ds-donut__arc" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="46 54"/><circle class="ds-donut__arc ds-donut__arc--alt" cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="22 78" stroke-dashoffset="-46"/></svg>
+        <span class="ds-donut__value">68%</span>
+      </div>
+      <ul class="ds-legend">
+        <li class="ds-legend__item"><span class="ds-legend__key"></span>Studio<span class="ds-legend__value">46%</span></li>
+        <li class="ds-legend__item"><span class="ds-legend__key ds-legend__key--alt"></span>Travel<span class="ds-legend__value">22%</span></li>
+        <li class="ds-legend__item"><span class="ds-legend__key ds-legend__key--mute"></span>Left<span class="ds-legend__value">32%</span></li>
+      </ul>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--h2 ds-grid__cell--fill-2">
+      <h2 class="ds-grid__title">Due this week</h2>
+      <div class="ds-grid__visual">
+        <ul class="ds-rows">
+          <li class="ds-rows__item">Studio rent <span class="ds-rows__value">1,450.00</span></li>
+          <li class="ds-rows__item">Print run <span class="ds-rows__value">312.80</span></li>
+          <li class="ds-rows__item">Type licence <span class="ds-rows__value">96.00</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--h2">
+      <div class="ds-grid__head">
+        <h2 class="ds-grid__title">Busy days</h2>
+        <span class="ds-grid__label">Last 18 weeks</span>
+      </div>
+      <div class="ds-grid__visual">
+        <div class="ds-heat"><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--1"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--2"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell ds-heat__cell--3"></span><span class="ds-heat__cell"></span><span class="ds-heat__cell"></span></div>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w2 ds-grid__cell--h2 ds-grid__cell--inverse ds-grid__cell--between">
+      <p class="ds-grid__label">Runway</p>
+      <p class="ds-stat"><span class="ds-stat__value">9<span class="ds-stat__unit"> mo</span></span><span class="ds-stat__note">at this month's pace</span></p>
+    </article>
+
+    <ul class="ds-grid__cell ds-grid__cell--w12 ds-stats" data-component="stats">
+      <li class="ds-stat">
+        <span class="ds-stat__label">Entries this month</span>
+        <span class="ds-stat__value">214</span>
+        <span class="ds-stat__note ds-stat__note--success">31 more than April</span>
+      </li>
+      <li class="ds-stat">
+        <span class="ds-stat__label">Average entry</span>
+        <span class="ds-stat__value">38.20</span>
+        <span class="ds-stat__note">Median 21.00</span>
+      </li>
+      <li class="ds-stat">
+        <span class="ds-stat__label">Budgets on track</span>
+        <span class="ds-stat__value">5<span class="ds-stat__unit"> of 6</span></span>
+        <span class="ds-stat__note ds-stat__note--warning">Travel is close</span>
+      </li>
+      <li class="ds-stat">
+        <span class="ds-stat__label">Unfiled receipts</span>
+        <span class="ds-stat__value">3</span>
+        <span class="ds-stat__note ds-stat__note--danger">Oldest is 12 days</span>
+      </li>
+    </ul>
+
+    <article class="ds-grid__cell ds-grid__cell--h4 ds-grid__cell--stack">
+      <h2 class="ds-grid__title">Latest entries</h2>
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Paper stock, 40 sheets</a>
+          <span class="ds-list__meta">Today &middot; Materials &middot; 64.00</span>
+        </li>
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Train to the print fair</a>
+          <span class="ds-list__meta">Yesterday &middot; Travel &middot; 118.40</span>
+        </li>
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Font licence renewal</a>
+          <span class="ds-list__meta">Monday &middot; Software &middot; 96.00</span>
+        </li>
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Courier, two parcels</a>
+          <span class="ds-list__meta">Monday &middot; Post &middot; 23.50</span>
+        </li>
+      </ul>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w6 ds-grid__cell--h4">
+      <div class="ds-grid__head">
+        <div>
+          <h2 class="ds-grid__title ds-grid__title--lead">Where it goes</h2>
+          <p class="ds-grid__text">Five budgets, measured against what each was given for May.</p>
+        </div>
+        <span class="ds-badge">May</span>
+      </div>
+      <p class="ds-stat ds-stat--row"><span class="ds-stat__value">3,325</span><span class="ds-stat__note">of 4,200 planned, with nine days left</span></p>
+      <div class="ds-grid__visual">
+        <ul class="ds-meters">
+          <li class="ds-meter">Studio<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--5"></span></span><span class="ds-meter__value">1,450</span></li>
+          <li class="ds-meter">Materials<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--4"></span></span><span class="ds-meter__value">812</span></li>
+          <li class="ds-meter">Travel<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--3 ds-meter__bar--alt"></span></span><span class="ds-meter__value">604</span></li>
+          <li class="ds-meter">Software<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--2"></span></span><span class="ds-meter__value">318</span></li>
+          <li class="ds-meter">Post<span class="ds-meter__track"><span class="ds-meter__bar"></span></span><span class="ds-meter__value">141</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--h2 ds-grid__cell--fill-3 ds-grid__cell--between">
+      <div>
+        <h2 class="ds-grid__title">Everyone logs their own</h2>
+        <p class="ds-grid__text">Four people, one ledger, no <span class="ds-tooltip" tabindex="0">end of month chase<span class="ds-tooltip__mark">?</span><span class="ds-tooltip__tip">Unfiled receipts are listed for their owner every Friday.</span></span>.</p>
+      </div>
+      <div class="ds-avatars">
+        <span class="ds-avatar">IO</span>
+        <span class="ds-avatar">TR</span>
+        <span class="ds-avatar">ML</span>
+        <span class="ds-avatar ds-avatar--accent">+1</span>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--h2 ds-grid__cell--between">
+      <div>
+        <h2 class="ds-grid__title">Comes in from</h2>
+        <p class="ds-grid__text">Entries arrive without typing.</p>
+      </div>
+      <div class="ds-chips">
+        <span class="ds-badge">Bank feed</span>
+        <span class="ds-badge">Receipt photo</span>
+        <span class="ds-badge">Email</span>
+        <span class="ds-badge">CSV</span>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--h2 ds-grid__cell--accent ds-grid__cell--split">
+      <div class="ds-grid__copy">
+        <h2 class="ds-grid__title">Put this month on one board</h2>
+        <p class="ds-grid__text">Add the first entry now and the tiles fill in around it.</p>
+      </div>
+      <div class="ds-grid__actions">
+        <a class="ds-button ds-button--inverse ds-button--large" href="#add">Start tracking</a>
+      </div>
+    </article>
+
+    <article class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--h2 ds-grid__cell--fill-4">
+      <h2 class="ds-grid__title">Nudges</h2>
+      <div class="ds-grid__visual">
+        <ul class="ds-rows">
+          <li class="ds-rows__item">Budget at 80% <span class="ds-switch is-on"></span></li>
+          <li class="ds-rows__item">Receipt missing <span class="ds-switch is-on"></span></li>
+          <li class="ds-rows__item">Friday summary <span class="ds-switch"></span></li>
+        </ul>
+        <div class="ds-progress">
+          <span class="ds-progress__label">May budget used <span class="ds-progress__value">3,325 of 9,600</span></span>
+          <span class="ds-progress__bar"><span class="ds-progress__fill ds-progress__fill--2"></span></span>
+        </div>
+      </div>
+    </article>
+  </div>
+  </section>
+
+  <section class="ds-view" id="entries">
+  <header class="ds-section__head">
+    <ol class="ds-breadcrumb" data-component="breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Board</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#entries">Entries</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">May</li>
+    </ol>
+  </header>
+
+  <div class="ds-grid ds-grid--auto">
+    <header class="ds-grid__cell ds-grid__cell--w9 ds-page-header" data-component="page-header">
+      <div class="ds-page-header__copy">
+        <span class="ds-badge">214 entries</span>
+        <h1 class="ds-page-header__title">Entries</h1>
+        <p class="ds-page-header__text">Everything logged in May, with its budget and who added it.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#entries">Export</a>
+        <a class="ds-button" href="#add">Add entry</a>
+      </div>
+    </header>
+
+    <div class="ds-grid__cell ds-grid__cell--between">
+      <p class="ds-grid__label">Logged in May</p>
+      <p class="ds-stat"><span class="ds-stat__value">8,174</span><span class="ds-stat__note">of 9,600 planned</span></p>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--stack">
+      <div class="ds-toolbar">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#entries" aria-current="true">All</a></li>
+          <li><a class="ds-tabs__tab" href="#entries">Paid</a></li>
+          <li><a class="ds-tabs__tab" href="#entries">Pending</a></li>
+          <li><a class="ds-tabs__tab" href="#entries">Overdue</a></li>
+        </ul>
+        <span class="ds-badge">Week 21</span>
+      </div>
+      <div class="ds-table__scroll">
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th>Entry</th><th class="ds-table__extra">Budget</th><th class="ds-table__extra">Logged by</th><th>Status</th><th class="ds-table__num">Amount</th></tr>
+        </thead>
+        <tbody>
+          <tr class="is-current"><td><a class="ds-table__link" href="#budget">Studio rent</a></td><td class="ds-table__muted ds-table__extra">Studio</td><td class="ds-table__muted ds-table__extra">Ines Okafor</td><td><span class="ds-badge ds-badge--warning">Pending</span></td><td class="ds-table__num">1,450.00</td></tr>
+          <tr><td><a class="ds-table__link" href="#budget">Paper stock, 40 sheets</a></td><td class="ds-table__muted ds-table__extra">Materials</td><td class="ds-table__muted ds-table__extra">Tomas Reyl</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">64.00</td></tr>
+          <tr><td><a class="ds-table__link" href="#budget">Train to the print fair</a></td><td class="ds-table__muted ds-table__extra">Travel</td><td class="ds-table__muted ds-table__extra">Mara Lindqvist</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">118.40</td></tr>
+          <tr><td><a class="ds-table__link" href="#budget">Print run, spring zine</a></td><td class="ds-table__muted ds-table__extra">Materials</td><td class="ds-table__muted ds-table__extra">Tomas Reyl</td><td><span class="ds-badge ds-badge--danger">Overdue</span></td><td class="ds-table__num">312.80</td></tr>
+          <tr><td><a class="ds-table__link" href="#budget">Font licence renewal</a></td><td class="ds-table__muted ds-table__extra">Software</td><td class="ds-table__muted ds-table__extra">Ines Okafor</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">96.00</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <ul class="ds-pagination" data-component="pagination" aria-label="Pages">
+        <li><a class="ds-pagination__link is-disabled" href="#entries">Previous</a></li>
+        <li><a class="ds-pagination__link is-current" href="#entries" aria-current="page">1</a></li>
+        <li><a class="ds-pagination__link" href="#entries">2</a></li>
+        <li><a class="ds-pagination__link" href="#entries">3</a></li>
+        <li><a class="ds-pagination__link" href="#entries">Next</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--stack">
+      <div>
+        <h3 class="ds-grid__title">What the board tells you</h3>
+        <p class="ds-grid__text">Messages stay inside the tile they belong to.</p>
+      </div>
+      <div class="ds-notices" data-component="notice">
+        <div class="ds-notice">
+          <strong class="ds-notice__title">Travel is at 86% of its budget</strong>
+          <p class="ds-notice__text">Two more trips this month would take it over.</p>
+        </div>
+        <div class="ds-notice ds-notice--error">
+          <strong class="ds-notice__title">The bank feed stopped on Tuesday</strong>
+          <p class="ds-notice__text">Sign in to the bank again to resume it.</p>
+        </div>
+      </div>
+      <section class="ds-panel" data-component="panel">
+        <h4 class="ds-panel__title">Month end</h4>
+        <p class="ds-panel__body">On the last day the board locks and a summary goes to everyone.</p>
+        <span class="ds-panel__meta">Next lock: 31 May</span>
+      </section>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-stage">
+      <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="d-title">
+        <div class="ds-dialog__bar">
+          <h3 class="ds-dialog__title" id="d-title">Close the month of May?</h3>
+          <button class="ds-dialog__close" type="button" aria-label="Close"><svg class="ds-dialog__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8"/></svg></button>
+        </div>
+        <div class="ds-dialog__body">
+          <p>Closing locks all 214 entries and sends the summary. Three receipts are still unfiled.</p>
+        </div>
+        <div class="ds-dialog__actions">
+          <button class="ds-button ds-button--secondary" type="button">Not yet</button>
+          <button class="ds-button" type="button">Close the month</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--bare">
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-grid__icon"><svg class="ds-grid__glyph" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M10 7v6m-3-3h6"/></svg></span>
+        <h3 class="ds-empty__title">No entries in June yet</h3>
+        <p class="ds-empty__text">They appear here as they are logged.</p>
+        <a class="ds-button ds-button--secondary" href="#add">Add entry</a>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="ds-view" id="budget">
+  <header class="ds-section__head">
+    <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Board</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#budget">Budgets</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">Materials</li>
+    </ol>
+  </header>
+
+  <div class="ds-grid ds-grid--auto">
+    <header class="ds-grid__cell ds-grid__cell--w9 ds-page-header">
+      <div class="ds-page-header__copy">
+        <span class="ds-badge">Budget</span>
+        <h1 class="ds-page-header__title">Materials</h1>
+        <p class="ds-page-header__text">Paper, ink and print runs for May. Four people log against it.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#entries">See its entries</a>
+        <a class="ds-button" href="#add">Add entry</a>
+      </div>
+    </header>
+
+    <div class="ds-grid__cell ds-grid__cell--between">
+      <p class="ds-grid__label">Spent in May</p>
+      <p class="ds-stat"><span class="ds-stat__value">812</span><span class="ds-stat__note">of 1,000 planned</span></p>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--stack">
+      <div class="ds-grid__head">
+        <div>
+          <h3 class="ds-grid__title">Spent by week</h3>
+          <p class="ds-grid__text">Paper and print for the spring zine, against 250 a week.</p>
+        </div>
+        <span class="ds-badge ds-badge--warning"><span class="ds-badge__dot"></span>Close to plan</span>
+      </div>
+      <ul class="ds-meters">
+        <li class="ds-meter">Week 18<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--2"></span></span><span class="ds-meter__value">96</span></li>
+        <li class="ds-meter">Week 19<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--3"></span></span><span class="ds-meter__value">148</span></li>
+        <li class="ds-meter">Week 20<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--5 ds-meter__bar--alt"></span></span><span class="ds-meter__value">312</span></li>
+        <li class="ds-meter">Week 21<span class="ds-meter__track"><span class="ds-meter__bar ds-meter__bar--4"></span></span><span class="ds-meter__value">256</span></li>
+      </ul>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--stack">
+      <h3 class="ds-grid__title">Latest in this budget</h3>
+      <ul class="ds-list">
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Paper stock, 40 sheets</a>
+          <span class="ds-list__meta">Today &middot; Tomas Reyl &middot; 64.00</span>
+        </li>
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Print run, spring zine</a>
+          <span class="ds-list__meta">Friday &middot; Tomas Reyl &middot; 312.80</span>
+        </li>
+        <li class="ds-list__item">
+          <a class="ds-list__title" href="#entries">Ink, two colours</a>
+          <span class="ds-list__meta">12 May &middot; Ines Okafor &middot; 48.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--split">
+      <div class="ds-grid__copy">
+        <h3 class="ds-grid__title">Actions</h3>
+        <p class="ds-grid__text">One filled button per tile. Red undoes the last entry.</p>
+      </div>
+      <div class="ds-buttons" data-component="buttons">
+        <button class="ds-button" type="button">Add entry</button>
+        <button class="ds-button ds-button--secondary" type="button">Preview</button>
+        <button class="ds-button ds-button--danger" type="button">Delete</button>
+        <button class="ds-button is-disabled" type="button" disabled>Month closed</button>
+      </div>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--fill-3 ds-grid__cell--between">
+      <div>
+        <h3 class="ds-grid__title">Shared with the studio</h3>
+        <p class="ds-grid__text">Four people can add entries to Materials.</p>
+      </div>
+      <div class="ds-avatars">
+        <span class="ds-avatar">IO</span>
+        <span class="ds-avatar">TR</span>
+        <span class="ds-avatar">ML</span>
+        <span class="ds-avatar ds-avatar--accent">+1</span>
+      </div>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--stack">
+      <div>
+        <h3 class="ds-grid__title">Remove this budget</h3>
+        <p class="ds-grid__text">Its entries stay in the ledger and move to Unsorted.</p>
+      </div>
+      <ul class="ds-rows">
+        <li class="ds-rows__item">Pause the budget until next month <button class="ds-button ds-button--secondary ds-button--small" type="button">Pause</button></li>
+        <li class="ds-rows__item">Delete the budget for good <button class="ds-button ds-button--danger ds-button--small" type="button">Delete budget</button></li>
+      </ul>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--fill-4">
+      <h3 class="ds-grid__title">Nudges for this budget</h3>
+      <div class="ds-grid__visual">
+        <ul class="ds-rows">
+          <li class="ds-rows__item">Budget at 80% <span class="ds-switch is-on"></span></li>
+          <li class="ds-rows__item">Receipt missing <span class="ds-switch is-on"></span></li>
+          <li class="ds-rows__item">Friday summary <span class="ds-switch"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="ds-view" id="add">
+  <header class="ds-section__head">
+    <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Board</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#entries">Entries</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">New</li>
+    </ol>
+  </header>
+
+  <div class="ds-grid ds-grid--auto">
+    <header class="ds-grid__cell ds-grid__cell--w9 ds-page-header">
+      <div class="ds-page-header__copy">
+        <span class="ds-badge">Week 21</span>
+        <h1 class="ds-page-header__title">Add an entry</h1>
+        <p class="ds-page-header__text">Four fields and it is on the board. A receipt can follow later.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#entries">Back to entries</a>
+      </div>
+    </header>
+
+    <div class="ds-grid__cell ds-grid__cell--between">
+      <p class="ds-grid__label">Unfiled receipts</p>
+      <p class="ds-stat"><span class="ds-stat__value">3</span><span class="ds-stat__note">oldest is 12 days</span></p>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w8 ds-grid__cell--stack">
+      <div>
+        <h3 class="ds-grid__title">The entry</h3>
+        <p class="ds-grid__text">The bank feed fills in the day and the payee when it can.</p>
+      </div>
+      <form class="ds-form" data-component="form">
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="f-what">What</label>
+          <input class="ds-form__control" id="f-what" type="text" value="Courier, two parcels">
+        </div>
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="f-budget">Budget</label>
+          <select class="ds-form__control" id="f-budget"><option>Post</option><option>Materials</option><option>Travel</option></select>
+        </div>
+        <div class="ds-form__field ds-form__field--full">
+          <label class="ds-form__label" for="f-amount">Amount</label>
+          <input class="ds-form__control is-invalid" id="f-amount" type="text" value="23,5o" aria-invalid="true">
+          <span class="ds-form__error">Enter a number, such as 23.50.</span>
+        </div>
+        <div class="ds-form__field ds-form__field--full">
+          <label class="ds-form__label" for="f-note">Note</label>
+          <textarea class="ds-form__control ds-form__control--area" id="f-note" placeholder="Anything the bookkeeper should know"></textarea>
+        </div>
+        <div class="ds-form__actions">
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Receipt attached</label>
+          <span class="ds-buttons"><a class="ds-button ds-button--secondary" href="#entries">Cancel</a><a class="ds-button" href="#entries">Add entry</a></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w4 ds-grid__cell--fill-2">
+      <h3 class="ds-grid__title">Still to log this week</h3>
+      <p class="ds-grid__text">Planned payments that have no entry yet. Adding one ticks it off here.</p>
+      <div class="ds-grid__visual">
+        <ul class="ds-rows">
+          <li class="ds-rows__item">Studio rent <span class="ds-rows__value">1,450.00</span></li>
+          <li class="ds-rows__item">Print run <span class="ds-rows__value">312.80</span></li>
+          <li class="ds-rows__item">Courier, two parcels <span class="ds-rows__value">23.50</span></li>
+          <li class="ds-rows__item">Framing, six prints <span class="ds-rows__value">180.00</span></li>
+          <li class="ds-rows__item">Type licence <span class="ds-rows__value">96.00</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="ds-view" id="guide">
+  <header class="ds-section__head">
+    <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Board</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#guide">Guide</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">Budgets</li>
+    </ol>
+  </header>
+
+  <div class="ds-grid ds-grid--auto">
+    <header class="ds-grid__cell ds-grid__cell--w9 ds-page-header">
+      <div class="ds-page-header__copy">
+        <span class="ds-badge">Guide</span>
+        <h1 class="ds-page-header__title">How a board is put together</h1>
+        <p class="ds-page-header__text">Budgets, entries and the small parts every tile is made of.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#add">Add entry</a>
+      </div>
+    </header>
+
+    <div class="ds-grid__cell ds-grid__cell--fill-1 ds-grid__cell--stack">
+      <span class="ds-grid__icon"><svg class="ds-grid__glyph" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12v12H4z"/><path d="M4 8h12M8 8v8"/></svg></span>
+      <div>
+        <h3 class="ds-grid__title">One subject per tile</h3>
+        <p class="ds-grid__text">If a tile needs a second title, it is two tiles.</p>
+      </div>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--w6 ds-grid__cell--h2">
+      <article class="ds-prose" data-component="typography">
+        <h1>Budgets</h1>
+        <p>A budget is a sum set aside for one purpose and one month. It is <strong>never topped up silently</strong>: moving money in leaves a line in the ledger.</p>
+        <h2>Adding an entry</h2>
+        <p>Type the amount and pick a budget, or run <code>chronoskin add 64 materials</code> from the terminal. The <a href="#entries">bank feed</a> fills in the rest.</p>
+        <h3>What an entry keeps</h3>
+        <ul>
+          <li>The amount, the day and who logged it</li>
+          <li>The budget it was taken from</li>
+          <li>A photo of the receipt, when there is one</li>
+        </ul>
+        <h2>Questions</h2>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Can an entry sit in two budgets?</summary>
+            <p class="ds-accordion__body">No. Split it into two entries, one for each.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Who can close a month?</summary>
+            <p class="ds-accordion__body">Whoever opened the board, and anyone they name.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What does the bank feed fill in?</summary>
+            <p class="ds-accordion__body">The day, the amount and the payee. The budget is still yours to choose.</p>
+          </details>
+        </div>
+      </article>
+    </div>
+
+    <aside class="ds-grid__cell ds-grid__cell--h2 ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__title">In this guide</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#guide">Budgets</a></li>
+        <li><a class="ds-sidebar__link" href="#entries">Entries</a></li>
+        <li><a class="ds-sidebar__link" href="#guide">Receipts <span class="ds-badge ds-badge--count">3</span></a></li>
+        <li><a class="ds-sidebar__link" href="#guide">Month end</a></li>
+        <li><a class="ds-sidebar__link" href="#guide">Exports</a></li>
+      </ul>
+    </aside>
+
+    <div class="ds-grid__cell ds-grid__cell--stack">
+      <div>
+        <h3 class="ds-grid__title">Labels</h3>
+        <p class="ds-grid__text">Pills mark state, squares count.</p>
+      </div>
+      <div class="ds-chips" data-component="badge">
+        <span class="ds-badge">Draft</span>
+        <span class="ds-badge ds-badge--accent">Beta</span>
+        <span class="ds-badge ds-badge--new"><span class="ds-badge__dot"></span>New</span>
+        <span class="ds-badge ds-badge--count">12</span>
+        <span class="ds-badge ds-badge--success"><span class="ds-badge__dot"></span>Paid</span>
+        <span class="ds-badge ds-badge--warning"><span class="ds-badge__dot"></span>Pending</span>
+        <span class="ds-badge ds-badge--danger"><span class="ds-badge__dot"></span>Overdue</span>
+      </div>
+    </div>
+
+    <div class="ds-grid__cell ds-grid__cell--stack">
+      <div>
+        <h3 class="ds-grid__title">Further reading</h3>
+        <p class="ds-grid__text">A link when new, visited, under the pointer and pressed.</p>
+      </div>
+      <p class="ds-links" data-component="links">
+        <a class="ds-link" href="#guide">Month end</a>
+        <a class="ds-link is-visited" href="#guide">Receipts</a>
+        <a class="ds-link is-hover" href="#entries">Entries</a>
+        <a class="ds-link is-active" href="#add">Add one</a>
+      </p>
+    </div>
+  </div>
+  </section>
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__tile ds-footer__tile--brand">
+    <span class="ds-footer__brand">chronoskin</span>
+    <p class="ds-footer__text">A spending board for small studios that would rather be making things.</p>
+  </div>
+  <div class="ds-footer__tile">
+    <h2 class="ds-footer__title">Product</h2>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#home">Overview</a></li>
+      <li><a class="ds-footer__link" href="#budget">Budgets</a></li>
+      <li><a class="ds-footer__link" href="#entries">Entries</a></li>
+    </ul>
+  </div>
+  <div class="ds-footer__tile">
+    <h2 class="ds-footer__title">Resources</h2>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+      <li><a class="ds-footer__link" href="#guide">Templates</a></li>
+      <li><a class="ds-footer__link" href="#entries">Status</a></li>
+    </ul>
+  </div>
+  <div class="ds-footer__tile">
+    <h2 class="ds-footer__title">Company</h2>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#home">About</a></li>
+      <li><a class="ds-footer__link" href="#add">Contact</a></li>
+      <li><a class="ds-footer__link" href="#guide">Privacy</a></li>
+    </ul>
+  </div>
+  <div class="ds-footer__tile">
+    <h2 class="ds-footer__title">Get it</h2>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#home">Web</a></li>
+      <li><a class="ds-footer__link" href="#home">Phone</a></li>
+      <li><a class="ds-footer__link" href="#guide">Terminal</a></li>
+    </ul>
+  </div>
+  <div class="ds-footer__strip">
+    <span>chronoskin is a placeholder name for this specimen.</span>
+    <span>All figures are invented.</span>
+  </div>
+</footer>
+
+</body>
+</html>

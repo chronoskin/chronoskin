@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: the town notice board. Web brutalism, 2014 to 2019: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__head">
+      <a class="ds-brand" data-component="brand" href="#board"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17"/><line x1="3.5" y1="20.5" x2="20.5" y2="3.5"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+      <form class="ds-nav__search" action="#listings">
+        <input class="ds-form__input" type="search" aria-label="Search every notice" placeholder="search 4408 notices">
+        <button class="ds-button ds-button--secondary" type="submit">Search</button>
+      </form>
+      <div class="ds-nav__tools">
+        <a class="ds-button" href="#post">Post a notice</a>
+        <details class="ds-menu ds-menu--plain ds-menu--right">
+          <summary class="ds-menu__button">my notices (3)</summary>
+          <ul class="ds-menu__list">
+            <li><a class="ds-menu__link" href="#notice">Touring bicycle</a></li>
+            <li><a class="ds-menu__link" href="#listings">Wanted: a ladder</a></li>
+            <li><a class="ds-menu__link" href="#listings">Free: seedlings</a></li>
+            <li><a class="ds-menu__link" href="#help">Sign out</a></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+    <ul class="ds-nav__bar">
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#board">the board</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#listings">for sale</a></li>
+      <li class="ds-nav__item"><a class="ds-nav__link" href="#post">post</a></li>
+      <li class="ds-nav__item">
+        <details class="ds-menu" data-component="menu">
+          <summary class="ds-menu__button">more sections</summary>
+          <ul class="ds-menu__list">
+            <li><a class="ds-menu__link" href="#listings">housing</a></li>
+            <li><a class="ds-menu__link" href="#listings">work</a></li>
+            <li><a class="ds-menu__link" href="#listings">services</a></li>
+            <li><a class="ds-menu__link" href="#listings">lost and found</a></li>
+            <li><a class="ds-menu__link" href="#listings">free</a></li>
+            <li><a class="ds-menu__link" href="#listings">events</a></li>
+          </ul>
+        </details>
+      </li>
+      <li class="ds-nav__item ds-nav__item--right"><a class="ds-nav__link" href="#help">help and rules</a></li>
+    </ul>
+  </header>
+
+  <!-- View 1, the home page: what the board is, its figures, every section as a box of links, four pinned notices, the newest. -->
+  <section class="ds-view ds-view--home" id="board">
+    <div class="ds-page__body">
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__main">
+          <h1 class="ds-hero__title">Everything the town has to sell, lend, find or give away.</h1>
+          <p class="ds-hero__lead">One page of plain notices, pinned up by the people who live here. No pictures on this page, no account needed to read, and a notice comes down by itself after thirty days.</p>
+        </div>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#post">Pin up a notice, free</a>
+        </div>
+      </section>
+      <ul class="ds-stats" data-component="stats">
+        <li class="ds-stat"><span class="ds-stat__value">4408</span> <span class="ds-stat__label">notices up today</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">61</span> <span class="ds-stat__label">pinned since midnight</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">30</span> <span class="ds-stat__label">days before one comes down</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">0.00</span> <span class="ds-stat__label">to post, to read, to reply</span></li>
+      </ul>
+
+      <section class="ds-page__section">
+        <h2 class="ds-page__label">The board <a class="ds-link ds-page__more" href="#help">how the sections work</a></h2>
+        <div class="ds-board">
+          <section class="ds-panel" data-component="panel">
+            <h3 class="ds-panel__title">For sale</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">bicycles</a> <span class="ds-board__count">214</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">books and records</a> <span class="ds-board__count">188</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">boats</a> <span class="ds-board__count">23</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">cameras</a> <span class="ds-board__count">41</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">clothes</a> <span class="ds-board__count">302</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">computers</a> <span class="ds-board__count">97</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">furniture</a> <span class="ds-board__count">260</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">garden</a> <span class="ds-board__count">118</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">instruments</a> <span class="ds-board__count">64</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">kitchen</a> <span class="ds-board__count">143</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">tools</a> <span class="ds-board__count">171</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">toys</a> <span class="ds-board__count">89</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">everything else</a> <span class="ds-board__count">407</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Housing</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">rooms to let</a> <span class="ds-board__count">76</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">flats to let</a> <span class="ds-board__count">112</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">houses to let</a> <span class="ds-board__count">38</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">wanted to rent</a> <span class="ds-board__count">54</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">garages and sheds</a> <span class="ds-board__count">29</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">holiday swaps</a> <span class="ds-board__count">12</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">workshops and studios</a> <span class="ds-board__count">17</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Wanted</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">wanted to buy</a> <span class="ds-board__count">93</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">wanted to borrow</a> <span class="ds-board__count">21</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">lifts and shared journeys</a> <span class="ds-board__count">34</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">help wanted</a> <span class="ds-board__count">58</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Work</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">building and trades</a> <span class="ds-board__count">61</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">care</a> <span class="ds-board__count">44</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">cleaning</a> <span class="ds-board__count">39</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">driving</a> <span class="ds-board__count">27</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">kitchens and bars</a> <span class="ds-board__count">83</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">offices</a> <span class="ds-board__count">36</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">shops</a> <span class="ds-board__count">52</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">teaching</a> <span class="ds-board__count">31</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">odd jobs</a> <span class="ds-board__count">120</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Lost and found</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">lost</a> <span class="ds-board__count">46</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">found</a> <span class="ds-board__count">51</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">cats and dogs</a> <span class="ds-board__count">19</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Services</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">repairs</a> <span class="ds-board__count">134</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">removals</a> <span class="ds-board__count">42</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">lessons</a> <span class="ds-board__count">77</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">gardening</a> <span class="ds-board__count">65</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">sewing and mending</a> <span class="ds-board__count">28</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">computers and phones</a> <span class="ds-board__count">59</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">printing</a> <span class="ds-board__count">14</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Free</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">free to collect</a> <span class="ds-board__count">163</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">swaps</a> <span class="ds-board__count">48</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">skips and leftovers</a> <span class="ds-board__count">22</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">seedlings and cuttings</a> <span class="ds-board__count">37</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Community</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">clubs and societies</a> <span class="ds-board__count">88</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">volunteers</a> <span class="ds-board__count">57</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">allotments</a> <span class="ds-board__count">26</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">childcare circles</a> <span class="ds-board__count">18</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">choirs and bands</a> <span class="ds-board__count">33</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">sport</a> <span class="ds-board__count">71</span></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <h3 class="ds-panel__title">Events</h3>
+            <div class="ds-panel__body">
+              <ul class="ds-board__list">
+                <li class="ds-board__item"><a class="ds-link" href="#listings">this week</a> <span class="ds-board__count">42</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">markets and fairs</a> <span class="ds-board__count">16</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">classes</a> <span class="ds-board__count">63</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">talks</a> <span class="ds-board__count">24</span></li>
+                <li class="ds-board__item"><a class="ds-link" href="#listings">jumble sales</a> <span class="ds-board__count">11</span></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="ds-page__section" data-component="grid">
+        <h2 class="ds-page__label">Pinned at the top this week <a class="ds-link ds-page__more" href="#help">how a notice gets pinned</a></h2>
+        <div class="ds-grid">
+          <div class="ds-grid__cell">
+            <p class="ds-grid__kicker">for sale / boats <span class="ds-badge">new</span></p>
+            <h3 class="ds-grid__title">Rowing boat, 12 foot, with oars</h3>
+            <p class="ds-grid__text">Clinker built, dry all winter, on a road trailer. See it at the Old Quay any evening.</p>
+            <p class="ds-grid__text"><a class="ds-link" href="#notice">Read the notice</a></p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <p class="ds-grid__kicker">housing / rooms to let</p>
+            <h3 class="ds-grid__title">Room over the bakery, from 1 May</h3>
+            <p class="ds-grid__text">Warm in the mornings. Shared kitchen, own door to the yard, bills in the rent.</p>
+            <p class="ds-grid__text"><a class="ds-link" href="#notice">Read the notice</a></p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <p class="ds-grid__kicker">events / markets and fairs</p>
+            <h3 class="ds-grid__title">Spring jumble, the school hall, Saturday</h3>
+            <p class="ds-grid__text">Tables are free. Bring what you no longer want and take what you do. Doors at ten.</p>
+            <p class="ds-grid__text"><a class="ds-link" href="#notice">Read the notice</a></p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <p class="ds-grid__kicker">lost and found / found</p>
+            <h3 class="ds-grid__title">Grey cat, white bib, very loud</h3>
+            <p class="ds-grid__text">Has lived in the allotment shed since Monday. Eats well. Whose is she?</p>
+            <p class="ds-grid__text"><a class="ds-link" href="#notice">Read the notice</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ds-page__section ds-page__section--last" data-component="list">
+        <h2 class="ds-page__label">Pinned in the last hour <a class="ds-link ds-page__more" href="#listings">all of today</a></h2>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-avatar" data-component="avatar">mk</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#notice">Touring bicycle, steel frame, 56cm</a>
+              <p class="ds-list__excerpt">New chain and tyres last spring, racks front and back, a few honest scratches.</p>
+              <p class="ds-list__meta">for sale / bicycles, Old Quay, 09:14, by m. kovar</p>
+            </div>
+            <span class="ds-list__price">180.00</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-avatar">ts</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#notice">Wanted: someone to cut a hedge before the birds nest</a>
+              <p class="ds-list__excerpt">Forty metres of hawthorn, head height. I have the ladder and will make the tea.</p>
+              <p class="ds-list__meta">wanted / help wanted, North Field, 09:02, by t. sorel</p>
+            </div>
+            <span class="ds-list__price">ask</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-avatar">ab</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#notice">Forty tomato seedlings, four kinds, free to collect</a>
+              <p class="ds-list__excerpt">Sown too many again. In pots by the gate; take what you can plant.</p>
+              <p class="ds-list__meta">free / seedlings and cuttings, Mill Lane, 08:47, by a. brandt</p>
+            </div>
+            <span class="ds-list__price">free</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-avatar">rd</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#notice">Upright piano, in tune, you carry it</a>
+              <p class="ds-list__excerpt">Ground floor, two steps to the street. Stool and a box of music go with it.</p>
+              <p class="ds-list__meta">for sale / instruments, Hill Road, 08:31, by r. dane</p>
+            </div>
+            <span class="ds-list__price">95.00</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <!-- View 2, one section of the board: the filter column, tabs over the table of notices, pagination, the empty state of a search. -->
+  <section class="ds-view" id="listings">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#board">the board</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li><a class="ds-breadcrumb__link" href="#listings">for sale</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li class="ds-breadcrumb__current">bicycles</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">For sale: bicycles</h1>
+          <p class="ds-page-header__text">214 notices, the newest first. A price with nothing after it is what the seller asks.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">Post in bicycles</a></div>
+      </header>
+      <div class="ds-page__columns">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <section class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">In for sale</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-current" href="#listings">bicycles</a> <span class="ds-sidebar__count">214</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">books and records</a> <span class="ds-sidebar__count">188</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">boats</a> <span class="ds-sidebar__count">23</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">furniture</a> <span class="ds-sidebar__count">260</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">tools</a> <span class="ds-sidebar__count">171</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#board">all thirteen</a> <span class="ds-sidebar__count">2117</span></li>
+            </ul>
+          </section>
+          <section class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Where</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-current" href="#listings">the whole town</a> <span class="ds-sidebar__count">214</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">Old Quay</a> <span class="ds-sidebar__count">58</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">Hill Road</a> <span class="ds-sidebar__count">47</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">Station</a> <span class="ds-sidebar__count">61</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">Mill Lane</a> <span class="ds-sidebar__count">22</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#listings">North Field</a> <span class="ds-sidebar__count">26</span></li>
+            </ul>
+          </section>
+          <section class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Show only</h2>
+            <p class="ds-sidebar__text"><label class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span>notices with a price</span></label></p>
+            <p class="ds-sidebar__text"><label class="ds-switch"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span>pinned this week</span></label></p>
+            <div class="ds-sidebar__row">
+              <input class="ds-form__input" type="text" aria-label="Highest price" placeholder="up to, e.g. 100">
+              <button class="ds-button ds-button--secondary" type="button">Apply</button>
+            </div>
+          </section>
+        </aside>
+        <main class="ds-page__main">
+          <section class="ds-page__section" data-component="tabs">
+            <ul class="ds-tabs">
+              <li><span class="ds-tabs__tab is-current">all 214</span></li>
+              <li><a class="ds-tabs__tab" href="#listings">offered 187</a></li>
+              <li><a class="ds-tabs__tab" href="#listings">wanted 21</a></li>
+              <li><a class="ds-tabs__tab" href="#listings">swaps 6</a></li>
+            </ul>
+            <div class="ds-tabs__body">
+              <table class="ds-table" data-component="table">
+                <thead>
+                  <tr><th>No.</th><th>Notice</th><th class="ds-table__extra">Where</th><th class="ds-table__extra">Pinned</th><th class="ds-table__num">Price</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="ds-table__id">48213</td><td><a class="ds-link" href="#notice">Touring bicycle, steel frame, 56cm</a> <span class="ds-badge">new</span></td><td class="ds-table__extra">Old Quay</td><td class="ds-table__extra">today 09:14</td><td class="ds-table__num">180.00</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__id">48207</td><td><a class="ds-link" href="#notice">Child's bicycle, 20 inch wheels, two owners</a></td><td class="ds-table__extra">Hill Road</td><td class="ds-table__extra">today 08:02</td><td class="ds-table__num">35.00</td></tr>
+                  <tr><td class="ds-table__id">48195</td><td><a class="ds-link" href="#notice">Folding bicycle, three gears, needs a tyre</a> <span class="ds-badge ds-badge--warning">reserved</span></td><td class="ds-table__extra">Station</td><td class="ds-table__extra">yesterday</td><td class="ds-table__num">60.00</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__id">48188</td><td><a class="ds-link" href="#notice">Pair of panniers, canvas, waterproofed</a></td><td class="ds-table__extra">Old Quay</td><td class="ds-table__extra">yesterday</td><td class="ds-table__num">25.00</td></tr>
+                  <tr><td class="ds-table__id">48170</td><td><a class="ds-link" href="#notice">Tandem, 1980s, runs well</a> <span class="ds-badge ds-badge--danger">sold</span></td><td class="ds-table__extra">Mill Lane</td><td class="ds-table__extra">2 days ago</td><td class="ds-table__num">240.00</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__id">48164</td><td><a class="ds-link" href="#notice">Racing bicycle, 54cm, with spare wheels</a> <span class="ds-badge ds-badge--success">price dropped</span></td><td class="ds-table__extra">North Field</td><td class="ds-table__extra">2 days ago</td><td class="ds-table__num">310.00</td></tr>
+                  <tr><td class="ds-table__id">48151</td><td><a class="ds-link" href="#notice">Box of inner tubes and brake blocks</a></td><td class="ds-table__extra">Station</td><td class="ds-table__extra">3 days ago</td><td class="ds-table__num">8.00</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__id">48139</td><td><a class="ds-link" href="#notice">Cargo trailer for a bicycle, home made</a> <span class="ds-badge ds-badge--danger">withdrawn</span></td><td class="ds-table__extra">Hill Road</td><td class="ds-table__extra">4 days ago</td><td class="ds-table__num">45.00</td></tr>
+                </tbody>
+              </table>
+              <ul class="ds-pagination" data-component="pagination">
+                <li><span class="ds-pagination__link is-disabled">newer</span></li>
+                <li><span class="ds-pagination__link is-current">1</span></li>
+                <li><a class="ds-pagination__link" href="#listings">2</a></li>
+                <li><a class="ds-pagination__link" href="#listings">3</a></li>
+                <li><a class="ds-pagination__link" href="#listings">27</a></li>
+                <li><a class="ds-pagination__link" href="#listings">older</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <h2 class="ds-page__label">Your saved search: "unicycle"</h2>
+            <div class="ds-empty" data-component="empty">
+              <h3 class="ds-empty__title">Nothing pinned under that word.</h3>
+              <p class="ds-empty__text">Nobody in town is selling a unicycle today. Pin up a wanted notice and the board will ask for you.</p>
+              <a class="ds-button ds-button--secondary" href="#post">Post a wanted notice</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 3, one notice: its pictures, its text and facts, and beside them who pinned it, the messages and the question before reporting it. -->
+  <section class="ds-view" id="notice">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#board">the board</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li><a class="ds-breadcrumb__link" href="#listings">bicycles</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li class="ds-breadcrumb__current">no. 48213</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Touring bicycle, steel frame, 56cm: 180.00</h1>
+          <p class="ds-page-header__text">No. 48213, for sale / bicycles, Old Quay. Pinned today at 09:14, comes down on 13 April.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">Reply to the seller</a></div>
+      </header>
+      <div class="ds-page__columns ds-page__columns--aside">
+        <main class="ds-page__main">
+          <section class="ds-page__section">
+            <div class="ds-carousel" data-component="carousel">
+              <div class="ds-carousel__track">
+                <div class="ds-carousel__slide"><p class="ds-carousel__caption">[picture 1 of 3: the whole bicycle, drive side]</p></div>
+                <div class="ds-carousel__slide ds-carousel__slide--2"><p class="ds-carousel__caption">[picture 2 of 3: the rear rack and mudguard]</p></div>
+                <div class="ds-carousel__slide ds-carousel__slide--3"><p class="ds-carousel__caption">[picture 3 of 3: the scratch on the top tube]</p></div>
+              </div>
+              <div class="ds-carousel__bar">
+                <span>1 of 3. Drag sideways for the next.</span>
+                <ul class="ds-carousel__dots">
+                  <li><span class="ds-carousel__dot is-current"></span></li>
+                  <li><span class="ds-carousel__dot"></span></li>
+                  <li><span class="ds-carousel__dot"></span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section ds-prose">
+            <h2>What it is</h2>
+            <p>A steel touring bicycle I have ridden to work for six years and across two countries once. It has a new chain and tyres from last spring, racks front and back, and mudguards that do not rattle. The frame number is stamped under the bottom bracket; quote <code>no. 48213</code> when you write.</p>
+            <h3>What goes with it</h3>
+            <ul>
+              <li>Two canvas panniers, one with a mended strap.</li>
+              <li>A pump, a lock with both keys, a spare tube.</li>
+              <li>The original bell, which sticks in the rain.</li>
+            </ul>
+            <p>Come and ride it round the quay before you decide. Cash or a transfer on the day; I will not post it.</p>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <h2 class="ds-page__label">The facts</h2>
+            <table class="ds-table">
+              <tbody>
+                <tr><td>Frame</td><td>steel, lugged, 56cm</td><td class="ds-table__num">1</td></tr>
+                <tr class="ds-table__row--alt"><td>Gears</td><td>three by eight, friction levers</td><td class="ds-table__num">24</td></tr>
+                <tr><td>Wheels</td><td>700c, 36 spokes each</td><td class="ds-table__num">2</td></tr>
+                <tr class="ds-table__row--alt"><td>Weight</td><td>with racks, without bags, in kg</td><td class="ds-table__num">14.5</td></tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+        <aside class="ds-page__aside">
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">Pinned by</h2>
+              <div class="ds-panel__body">
+                <p class="ds-person"><span class="ds-avatar">mk</span><span><span class="ds-person__name">m. kovar</span><span class="ds-person__meta">on the board since 2015, 31 notices</span></span></p>
+                <p class="ds-panel__text">Replies within a day, as a rule. <span class="ds-badge ds-badge--success">address checked</span></p>
+                <p class="ds-panel__text"><a class="ds-link" href="#listings">Other notices by m. kovar (3)</a></p>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section">
+            <div class="ds-notices" data-component="notice">
+              <p class="ds-notice"><span class="ds-notice__title">Seen 46 times.</span> Two people have written to the seller since this morning.</p>
+              <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Never pay before you have seen it.</span> The board does not hold money and cannot get it back.</p>
+            </div>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <h2 class="ds-page__label">Something wrong with it?</h2>
+            <div class="ds-dialog__backdrop">
+              <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+                <h3 class="ds-dialog__title" id="dlg-title">Report notice no. 48213?</h3>
+                <div class="ds-dialog__body">
+                  <p class="ds-dialog__text">It comes off the board at once and a person looks at it within a day. The seller is told why, not by whom.</p>
+                  <div class="ds-dialog__actions">
+                    <button class="ds-button ds-button--danger" type="button">Report and take down</button>
+                    <a class="ds-button ds-button--secondary" href="#notice">Leave it up</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 4, pinning up a notice: how far along, the form as a ruled table with its error, and the rules beside it. -->
+  <section class="ds-view" id="post">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#board">the board</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li><a class="ds-breadcrumb__link" href="#post">post</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li class="ds-breadcrumb__current">write the notice</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Pin up a notice</h1>
+          <p class="ds-page-header__text">Four steps: where it goes, what it says, a look at it, up on the board. Nothing is shown until the last.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#help">Read the rules first</a></div>
+      </header>
+      <div class="ds-page__columns ds-page__columns--aside">
+        <main class="ds-page__main">
+          <div class="ds-progress" data-component="progress">
+            <p class="ds-progress__label"><span>Step 2 of 4: what it says</span> <span>50%</span></p>
+            <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--50"></div></div>
+          </div>
+          <form class="ds-form" data-component="form" action="#post">
+            <p class="ds-notice ds-notice--error ds-form__notice"><span class="ds-notice__title">Not pinned yet.</span> One line below needs putting right.</p>
+            <div class="ds-form__rows">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="p-title">Headline</label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input ds-form__input--wide" id="p-title" type="text" value="Touring bicycle, steel frame, 56cm">
+                  <p class="ds-form__hint">What it is, in the words a neighbour would search for.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="p-section">Section</label>
+                <div class="ds-form__field">
+                  <select class="ds-form__input ds-form__input--auto" id="p-section">
+                    <option>for sale / bicycles</option>
+                    <option>for sale / everything else</option>
+                    <option>wanted / wanted to buy</option>
+                    <option>free / free to collect</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="p-price">Price <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__text" role="tooltip">Leave it empty for "ask", or write 0 for free. No currency sign.</span></span></label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input ds-form__input--short is-invalid" id="p-price" type="text" value="180 ono" aria-invalid="true" aria-describedby="p-price-err">
+                  <p class="ds-form__error" id="p-price-err">A price is a number and nothing else. Put "or near offer" in the text.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="p-text">The notice</label>
+                <div class="ds-form__field">
+                  <textarea class="ds-form__input ds-form__input--wide" id="p-text" rows="5">New chain and tyres last spring, racks front and back, a few honest scratches. Come and ride it round the quay before you decide.</textarea>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label">Replies</span>
+                <div class="ds-form__field">
+                  <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span>send replies to my address, which is never shown</span></label>
+                  <p class="ds-form__hint">Off means people can only come and knock.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label">Promise</span>
+                <div class="ds-form__field">
+                  <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>It is mine to sell and it is in this town.</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="ds-form__actions ds-buttons" data-component="buttons">
+              <button class="ds-button" type="submit">Look at it before pinning</button>
+              <button class="ds-button ds-button--secondary" type="button">Keep as a draft</button>
+              <button class="ds-button ds-button--danger" type="button">Throw it away</button>
+              <button class="ds-button" type="button" disabled>Pin it up</button>
+            </div>
+          </form>
+        </main>
+        <aside class="ds-page__aside">
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">As it will hang on the board</h2>
+              <div class="ds-panel__body">
+                <p class="ds-person"><span class="ds-avatar">mk</span><span><span class="ds-person__name">Touring bicycle, steel frame, 56cm</span><span class="ds-person__meta">for sale / bicycles, Old Quay, by m. kovar</span></span></p>
+                <p class="ds-panel__text">The price is left off until it is a number. <span class="ds-badge">new</span> shows for the first day.</p>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">The four steps</h2>
+              <div class="ds-panel__body">
+                <ul class="ds-board__list">
+                  <li class="ds-board__item"><span>1. Where it goes</span> <span class="ds-badge ds-badge--success">done</span></li>
+                  <li class="ds-board__item"><span>2. What it says</span> <span class="ds-badge ds-badge--warning">one line to fix</span></li>
+                  <li class="ds-board__item"><span>3. A look at it</span> <span class="ds-board__count">next</span></li>
+                  <li class="ds-board__item"><span>4. Up on the board</span> <span class="ds-board__count">last</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">Before you pin</h2>
+              <div class="ds-panel__body">
+                <p class="ds-panel__text">One thing to a notice, one notice to a thing. A notice stays up thirty days and you may pin it again once.</p>
+                <p class="ds-panel__text">No animals for sale, nothing that needs a licence, no notices for somebody else's business.</p>
+                <p class="ds-panel__text"><a class="ds-link" href="#help">All eleven rules</a></p>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">Your notices</h2>
+              <div class="ds-panel__body">
+                <ul class="ds-board__list">
+                  <li class="ds-board__item"><a class="ds-link" href="#listings">Wanted: a ladder</a> <span class="ds-badge ds-badge--success">up</span></li>
+                  <li class="ds-board__item"><a class="ds-link" href="#listings">Free: seedlings</a> <span class="ds-badge ds-badge--warning">2 days left</span></li>
+                  <li class="ds-board__item"><a class="ds-link" href="#listings">Garden roller</a> <span class="ds-badge ds-badge--danger">came down</span></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 5, help and rules: running text, the marks and link colours explained, questions that open and close. -->
+  <section class="ds-view" id="help">
+    <div class="ds-page__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#board">the board</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li><a class="ds-breadcrumb__link" href="#help">help</a></li>
+        <li class="ds-breadcrumb__sep">/</li>
+        <li class="ds-breadcrumb__current">rules</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Help and rules</h1>
+          <p class="ds-page-header__text">How the board works, what may go on it, and what the marks beside a notice mean.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#post">Post a notice</a></div>
+      </header>
+      <div class="ds-page__columns ds-page__columns--aside">
+        <main class="ds-page__main">
+          <section class="ds-page__section ds-prose" data-component="typography">
+            <h1>The board is a wall with pins in it</h1>
+            <p>Anyone may read it. Anyone with an address in town may pin a notice to it. The board keeps no pictures on its front page, sells nothing itself and shows no advertising other than the notices, which are all advertising.</p>
+            <h2>What may go up</h2>
+            <p>Things you own, rooms you may let, work you can offer or need done, what you have lost and what you have found. Write the headline the way you would say it over a fence.</p>
+            <h3>What may not</h3>
+            <ul>
+              <li>Animals for sale, and anything that needs a licence to sell.</li>
+              <li>The same notice in two sections.</li>
+              <li>A price with words in it. The price box takes <code>180</code> and not <code>180 ono</code>.</li>
+            </ul>
+            <p>A notice that breaks a rule comes down and its owner is told which one.</p>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <h2 class="ds-page__label">Asked most weeks</h2>
+            <div class="ds-accordion" data-component="accordion">
+              <details class="ds-accordion__item" open>
+                <summary class="ds-accordion__title">Why did my notice come down?</summary>
+                <p class="ds-accordion__body">Thirty days passed, or somebody reported it. You were sent a line saying which. A notice that timed out can be pinned up once more from "my notices".</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__title">Can I change the price after pinning?</summary>
+                <p class="ds-accordion__body">Yes, downwards, as often as you like. The notice is marked "price dropped" for two days.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__title">Who sees my address?</summary>
+                <p class="ds-accordion__body">Nobody. Replies are passed on by the board until you answer one yourself.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__title">How does a notice get pinned at the top?</summary>
+                <p class="ds-accordion__body">Four are picked by hand each Monday. It cannot be bought.</p>
+              </details>
+            </div>
+          </section>
+        </main>
+        <aside class="ds-page__aside">
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">The marks</h2>
+              <div class="ds-panel__body" data-component="badge">
+                <p class="ds-panel__text"><span class="ds-badge">new</span> pinned in the last day.</p>
+                <p class="ds-panel__text"><span class="ds-badge ds-badge--tag">wanted</span> somebody is looking, not selling.</p>
+                <p class="ds-panel__text"><span class="ds-badge ds-badge--success">price dropped</span> or address checked.</p>
+                <p class="ds-panel__text"><span class="ds-badge ds-badge--warning">reserved</span> promised but not yet gone.</p>
+                <p class="ds-panel__text"><span class="ds-badge ds-badge--danger">sold</span> gone, or taken down.</p>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section" data-component="links">
+            <h2 class="ds-page__label">The colours of a link</h2>
+            <ul class="ds-links">
+              <li><a class="ds-link" href="#listings">a notice you have not read</a></li>
+              <li><a class="ds-link is-visited" href="#notice">one you have</a></li>
+              <li><a class="ds-link is-hover" href="#listings">under the pointer</a></li>
+              <li><a class="ds-link is-active" href="#listings">while you press</a></li>
+            </ul>
+          </section>
+          <section class="ds-page__section">
+            <div class="ds-panel">
+              <h2 class="ds-panel__title">Who keeps the board</h2>
+              <div class="ds-panel__body">
+                <p class="ds-person"><span class="ds-avatar">jo</span><span><span class="ds-person__name">j. oduya, keeper</span><span class="ds-person__meta">reads every report, Monday to Saturday</span></span></p>
+                <p class="ds-panel__text">The board is paid for by the town library and run from a desk beside the newspapers. It has no owner to sell it and no plans to grow.</p>
+              </div>
+            </div>
+          </section>
+          <section class="ds-page__section ds-page__section--last">
+            <div class="ds-notices">
+              <p class="ds-notice"><span class="ds-notice__title">Still stuck?</span> Leave a note for the keeper of the board under <a class="ds-link ds-link--quiet" href="#post">services / everything else</a>.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <div class="ds-footer__row">
+      <span>chronoskin, the town notice board. Kept by hand since 2014. No pictures on the front page, no tracking, nothing for sale but what is pinned up.</span>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#board">the board</a></li>
+        <li><a class="ds-footer__link" href="#post">post a notice</a></li>
+        <li><a class="ds-footer__link" href="#help">help and rules</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

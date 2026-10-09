@@ -1,0 +1,79 @@
+{{/* The colour editor: every palette colour of the style, in a dialog.
+     Data: ID, Keep, Within, Pool, Colours (groups), CustomColours. It needs
+     the script to open; applying is a plain form. */}}
+{{define "colours"}}
+<div class="box" x-data="colours">
+  <div class="colours-bar">
+    <span class="label">Colours</span>
+    <span class="muted">{{if .CustomColours}}edited by hand{{else}}as the palette has them{{end}}</span>
+    <button class="btn small" type="button" data-goatcounter-click="colours-open" x-cloak x-on:click="open">Edit colours</button>
+  </div>
+  <noscript><p class="hint">Editing colours needs JavaScript.</p></noscript>
+
+  <dialog class="editor" aria-labelledby="editor-title" x-ref="dialog">
+    {{/* All four parts are locked, so the style stays and only its colours
+         change; "keep" says which parts the visitor had kept. */}}
+    <form action="/api/generate" method="get">
+      <input type="hidden" name="from" value="{{.ID}}">
+      <input type="hidden" name="lock" value="structure,palette,type,surface">
+      <input type="hidden" name="keep" value="{{.Keep}}">
+      <input type="hidden" name="archetype" value="{{.Within}}">
+      <input type="hidden" name="era" value="{{.Pool}}">
+
+      <header>
+        <h2 id="editor-title">Edit colours</h2>
+        <p>Change any colour of this style. Type <code>#rrggbb</code> or <code>rgba()</code>, or use the picker.</p>
+      </header>
+
+      <div class="groups">
+        {{range .Colours}}
+        <fieldset>
+          <legend>{{.Name}}</legend>
+          {{range .Colours}}
+          <div class="colour{{if .Custom}} is-custom{{end}}" data-own="{{.Own}}">
+            <input
+              class="swatch"
+              type="color"
+              value="{{.Hex}}"
+              aria-label="Pick {{.Label}}"
+              {{if not .Editable}}disabled{{end}}
+              x-on:input="pick"
+            >
+            <label>
+              <span>{{.Label}}</span>
+              <input
+                class="value"
+                type="text"
+                value="{{.Value}}"
+                spellcheck="false"
+                autocomplete="off"
+                {{if .Editable}}name="{{.Token}}"{{else}}disabled{{end}}
+                x-on:input="type"
+              >
+            </label>
+            <button class="undo" type="button" aria-label="Reset {{.Label}}" title="Back to the palette's own" x-on:click="reset">
+              {{template "undo"}}
+            </button>
+          </div>
+          {{end}}
+        </fieldset>
+        {{end}}
+      </div>
+
+      <footer>
+        {{if .CustomColours}}
+        <a
+          class="btn"
+          href="/api/generate?from={{.ID}}&amp;lock=structure,palette,type,surface&amp;colours=none&amp;keep={{.Keep}}&amp;archetype={{.Within}}&amp;era={{.Pool}}"
+        >
+          Reset all
+        </a>
+        {{end}}
+        <span class="grow"></span>
+        <button class="btn" type="button" x-on:click="close">Cancel</button>
+        <button class="btn primary" type="submit" data-goatcounter-click="colours-apply">Apply</button>
+      </footer>
+    </form>
+  </dialog>
+</div>
+{{end}}

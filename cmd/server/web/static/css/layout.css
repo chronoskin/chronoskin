@@ -1,0 +1,81 @@
+/* Page shells: the centred page, and the style page's two columns. */
+.page {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 28px var(--gap) 56px;
+}
+
+.page .lead {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 6px 0 22px;
+}
+
+.hero {
+  margin: 8px 0 22px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px var(--gap);
+  padding: 14px var(--gap) var(--gap);
+  height: calc(100dvh - var(--top));
+  max-width: var(--page);
+  margin: 0 auto;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.side > * {
+  min-width: 0;
+  flex: none;
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    height: auto;
+  }
+  .side {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+}

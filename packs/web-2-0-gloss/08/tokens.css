@@ -1,0 +1,114 @@
+/* @part palette */
+:root {
+  --color-page: #d8f0f0;
+  --color-canvas: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4faf4;
+  --color-surface-strong: #e4f4c4;
+  --color-bar: #188888;
+  --color-bar-text: #ffffff;
+  --color-bar-alt: #d0ecec;
+  --color-bar-alt-text: #0c4a4a;
+  --color-inverse: #0c4a4a;
+  --color-inverse-text: #e8f8ff;
+  --color-text: #333333;
+  --color-text-muted: #8a9a9a;
+  --color-heading: #222222;
+  --color-heading-alt: #188888;
+  --color-link: #0e5ca5;
+  --color-link-quiet: #4f6f6f;
+  --color-link-visited: #7060a0;
+  --color-link-hover: #e06000;
+  --color-link-active: #a03000;
+  --color-border: #c8dcdc;
+  --color-border-strong: #5aa8a8;
+  --color-border-muted: #e4f0f0;
+  --color-accent: #98c038;
+  --color-accent-text: #1c3300;
+  --color-accent-alt: #ff7800;
+  --color-fill-1: #fff3b0;
+  --color-fill-2: #c8ecec;
+  --color-fill-3: #e0f2b8;
+  --color-fill-4: #ffe0c4;
+  --color-button: #e06000;
+  --color-button-text: #ffffff;
+  --color-button-hover-text: #ffffff;
+  --color-button-secondary: #eaf6f6;
+  --color-button-secondary-text: #0c4a4a;
+  --color-input: #ffffff;
+  --color-input-text: #222222;
+  --color-input-border: #9cc4c4;
+  --color-disabled: #edf1f1;
+  --color-disabled-text: #9aa8a8;
+  --color-danger: #cc2200;
+  --color-danger-surface: #ffe9e2;
+  --color-success: #4a8a10;
+  --color-warning: #ffd020;
+  --color-notice: #fffbd0;
+  --color-notice-text: #333333;
+  --color-focus: #3888c0;
+  --color-shadow: #0c4a4a;
+  --color-overlay: rgba(12, 74, 74, 0.5);
+}
+
+/* @part type */
+:root {
+  --font-body: Tahoma, Verdana, Geneva, sans-serif;
+  --font-heading: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  --font-ui: Tahoma, Verdana, Geneva, sans-serif;
+  --font-mono: "Lucida Console", "Courier New", monospace;
+  --text-base: 12px;
+  --text-small: 11px;
+  --text-ui: 12px;
+  --text-large: 15px;
+  --text-display: 32px;
+  --text-h1: 24px;
+  --text-h2: 17px;
+  --text-h3: 14px;
+  --line-body: 1.45;
+  --line-heading: 1.2;
+  --line-display: 1.1;
+  --weight-body: 400;
+  --weight-bold: 700;
+  --weight-heading: 400;
+  --weight-display: 400;
+  --weight-ui: 700;
+  --heading-transform: none;
+  --heading-tracking: 0;
+  --display-tracking: -0.5px;
+  --figure-shift: 0em;
+  --ui-transform: none;
+  --link-decoration: underline;
+  --link-decoration-hover: none;
+  --link-decoration-quiet: none;
+}
+
+/* @part surface */
+:root {
+  --border-width: 1px;
+  --border-width-strong: 5px;
+  --border-style: solid;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+  --radius-pill: 20px;
+  --radius-page: 18px;
+  --shadow-panel: 2px 3px 0 color-mix(in srgb, var(--color-shadow) 14%, transparent);
+  --shadow-control: inset 0 -2px 0 color-mix(in srgb, var(--color-shadow) 22%, transparent);
+  --shadow-control-hover: inset 0 -2px 0 color-mix(in srgb, var(--color-shadow) 22%, transparent), 0 0 4px color-mix(in srgb, var(--color-shadow) 40%, transparent);
+  --shadow-control-pressed: inset 0 2px 0 color-mix(in srgb, var(--color-shadow) 30%, transparent);
+  --shadow-dialog: 4px 6px 0 color-mix(in srgb, var(--color-shadow) 30%, transparent);
+  --shadow-text: 1px 1px 0 color-mix(in srgb, var(--color-shadow) 50%, transparent);
+  --fill-page: repeating-linear-gradient(135deg, var(--color-page) 0, var(--color-page) 12px, color-mix(in srgb, var(--color-page), white 45%) 12px, color-mix(in srgb, var(--color-page), white 45%) 24px);
+  --fill-bar: repeating-linear-gradient(135deg, color-mix(in srgb, white 9%, transparent) 0, color-mix(in srgb, white 9%, transparent) 8px, transparent 8px, transparent 16px), linear-gradient(to bottom, color-mix(in srgb, var(--color-bar), white 20%) 0, var(--color-bar) 100%);
+  --fill-bar-alt: linear-gradient(to bottom, color-mix(in srgb, var(--color-bar-alt), white 55%) 0, var(--color-bar-alt) 100%);
+  --fill-inverse: repeating-linear-gradient(135deg, color-mix(in srgb, white 6%, transparent) 0, color-mix(in srgb, white 6%, transparent) 8px, transparent 8px, transparent 16px), var(--color-inverse);
+  --fill-accent: radial-gradient(circle at 50% 0, color-mix(in srgb, var(--color-accent), white 55%) 0, var(--color-accent) 75%);
+  --fill-panel: var(--color-surface);
+  --fill-button: linear-gradient(to bottom, color-mix(in srgb, var(--color-button), white 40%) 0, var(--color-button) 60%, color-mix(in srgb, var(--color-button), black 6%) 100%);
+  --fill-button-hover: linear-gradient(to bottom, color-mix(in srgb, var(--color-button), white 52%) 0, color-mix(in srgb, var(--color-button), white 12%) 60%, var(--color-button) 100%);
+  --fill-button-secondary: linear-gradient(to bottom, color-mix(in srgb, var(--color-button-secondary), white 90%) 0, var(--color-button-secondary) 60%, color-mix(in srgb, var(--color-button-secondary), black 6%) 100%);
+  --fill-input: var(--color-input);
+  --focus-ring: 3px solid color-mix(in srgb, var(--color-focus) 55%, transparent);
+  --transition: none;
+  --backdrop-blur: 0px;
+}

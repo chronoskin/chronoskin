@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: read music in ten minutes a day</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#today">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8.6" cy="8.8" r="6"/><circle cx="15.4" cy="9.6" r="5.2"/><circle cx="11" cy="15.2" r="6"/><circle cx="19.2" cy="18.8" r="2.6"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Today</a></li>
+      <li><a class="ds-nav__link" href="#lessons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14v14H5zM5 10h14M10 10v9"/></svg>Lessons</a></li>
+      <li><a class="ds-nav__link" href="#lesson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.500" cy="18" r="2.500"/><circle cx="16.500" cy="16" r="2.500"/></svg>Practice</a></li>
+      <li><a class="ds-nav__link" href="#settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h9M18 7h1M5 12h2M11 12h8M5 17h7M16 17h3"/><circle cx="16" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="14" cy="17" r="2"/></svg>Settings</a></li>
+    </ul>
+    <div class="ds-nav__card">
+      <span class="ds-nav__card-title">14 day streak</span>
+      <span class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Today's goal"><span class="ds-progress__bar"></span></span>
+      <span>6 of 10 minutes today</span>
+    </div>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <div class="ds-page__top">
+    <input class="ds-form__input ds-page__search" type="search" placeholder="Find a lesson or a sign" aria-label="Search">
+    <div class="ds-page__top-end">
+      <span class="ds-tooltip" data-component="tooltip"><a class="ds-badge" href="#today">14 days</a><span class="ds-tooltip__tip" role="tooltip">Your streak, one freeze left</span></span>
+      <details class="ds-menu ds-menu--end" data-component="menu">
+        <summary class="ds-menu__toggle ds-page__account"><span class="ds-avatar ds-avatar--3" data-component="avatar"><span class="ds-avatar__pic">MV</span></span><span class="ds-page__account-name">Mira</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#settings">Profile</a></li>
+          <li><a class="ds-menu__link" href="#settings">Reminders <span class="ds-menu__note">18:30</span></a></li>
+          <li><a class="ds-menu__link" href="#lessons">Saved signs <span class="ds-menu__note">0</span></a></li>
+          <li><a class="ds-menu__link" href="#today">Log out</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <section class="ds-view ds-view--home" id="today">
+  <div class="ds-page__stack">
+
+    <section class="ds-hero" data-component="hero">
+      <div>
+        <h1 class="ds-hero__title">Good afternoon, Mira</h1>
+        <p class="ds-hero__lead">Lesson 12 is ten minutes of quarter rests. Do it today and the streak reaches fifteen days.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#lesson">Continue lesson 12</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#lessons">Pick another</a>
+        </div>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <span class="ds-clay ds-clay--3 ds-clay--tiny"></span>
+        <span class="ds-clay ds-clay--1 ds-clay--large"><span class="ds-clay__eye"></span><span class="ds-clay__eye"></span><span class="ds-clay__smile"></span><span class="ds-clay__cheek"></span><span class="ds-clay__cheek"></span></span>
+        <span class="ds-clay ds-clay--4 ds-clay--small ds-clay--cube"></span>
+      </div>
+    </section>
+
+    <section class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell ds-grid__cell--1">
+        <span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg></span>
+        <span class="ds-grid__value">14</span>
+        <span class="ds-grid__label">day streak</span>
+        <span class="ds-grid__meta">Best so far: 21 days</span>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--2">
+        <span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.500" cy="18" r="2.500"/><circle cx="16.500" cy="16" r="2.500"/></svg></span>
+        <span class="ds-grid__value">86</span>
+        <span class="ds-grid__label">signs learned</span>
+        <span class="ds-grid__meta">Seven new this week</span>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--3">
+        <span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.500 2M9 3h6"/></svg></span>
+        <span class="ds-grid__value">42</span>
+        <span class="ds-grid__label">minutes this week</span>
+        <span class="ds-grid__meta">Goal: 70 minutes</span>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--4">
+        <span class="ds-grid__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 2.400 5 5.600.800-4 3.900 1 5.500-5-2.700-5 2.700 1-5.500-4-3.900 5.600-.800z"/></svg></span>
+        <span class="ds-grid__value">92%</span>
+        <span class="ds-grid__label">right first time</span>
+        <span class="ds-grid__meta">Up from 88% last week</span>
+      </div>
+    </section>
+
+    <div class="ds-page__cols">
+
+      <div>
+        <h2 class="ds-page__heading">Today's path <a class="ds-link" href="#lessons">All lessons</a></h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__step">11</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#lesson">Half notes and half rests</a>
+              <span class="ds-list__meta">Done yesterday · 10 of 10 right</span>
+            </div>
+            <span class="ds-badge ds-badge--success">Done</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__step ds-list__step--2">12</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#lesson">Quarter rests</a>
+              <span class="ds-list__meta">10 minutes · 8 new signs · step 4 of 10</span>
+            </div>
+            <a class="ds-button" href="#lesson">Continue</a>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__step ds-list__step--3">13</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#lessons">Counting in three</a>
+              <span class="ds-list__meta">12 minutes · opens after lesson 12</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#lessons">Peek</a>
+          </li>
+          <li class="ds-list__item is-locked">
+            <span class="ds-list__step ds-list__step--4">14</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#lessons">The dotted half note</a>
+              <span class="ds-list__meta">9 minutes · locked until Thursday</span>
+            </div>
+            <span class="ds-badge ds-badge--quiet">Locked</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ds-page__stack">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">This week <span class="ds-badge ds-badge--quiet">day 4 of 7</span></h2>
+          <div class="ds-panel__body">
+            <div class="ds-panel__goal">
+              <span class="ds-progress ds-progress--ring ds-progress--60" data-component="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Weekly goal"><span class="ds-progress__face">60%</span></span>
+              <div class="ds-panel__bars">
+                <div>
+                  <div class="ds-progress__legend"><span>Notes</span><span>18 of 24</span></div>
+                  <span class="ds-progress ds-progress--75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Notes"><span class="ds-progress__bar"></span></span>
+                </div>
+                <div>
+                  <div class="ds-progress__legend"><span>Rests</span><span>4 of 10</span></div>
+                  <span class="ds-progress ds-progress--40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Rests"><span class="ds-progress__bar"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__heading">Your courses</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#lessons">Rhythm <span class="ds-badge" data-component="badge">11 of 40</span></a></li>
+            <li><a class="ds-sidebar__link" href="#lessons">The treble clef <span class="ds-badge ds-badge--quiet">3 of 24</span></a></li>
+            <li><a class="ds-sidebar__link" href="#lessons">Keys and scales <span class="ds-badge ds-badge--quiet">new</span></a></li>
+          </ul>
+        </aside>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="lessons">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#lessons">Lessons</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Rhythm</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Rhythm</h1>
+        <p class="ds-page-header__lead">Forty short lessons, from the whole note to counting in six.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#lesson">Continue lesson 12</a>
+      </div>
+    </header>
+
+    <div class="ds-page__stack">
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Lessons done</dt>
+          <dd class="ds-stat__value">11 <span class="ds-stat__meta">of 40</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Right first time</dt>
+          <dd class="ds-stat__value">92% <span class="ds-stat__meta">this course</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Time spent</dt>
+          <dd class="ds-stat__value">118 <span class="ds-stat__meta">minutes</span></dd>
+        </div>
+      </dl>
+
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#lessons" aria-current="true">All</a></li>
+        <li><a class="ds-tabs__tab" href="#lessons">In progress</a></li>
+        <li><a class="ds-tabs__tab" href="#lessons">Done</a></li>
+        <li><a class="ds-tabs__tab" href="#lessons">Saved</a></li>
+      </ul>
+
+      <div class="ds-page__cols">
+
+        <div class="ds-page__stack">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">Lesson</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="ds-table__num ds-table__opt">Signs</th>
+                <th scope="col" class="ds-table__num ds-table__opt">Minutes</th>
+                <th scope="col" class="ds-table__num">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#lesson">9 Whole notes</a></td>
+                <td><span class="ds-badge ds-badge--success">Done</span></td>
+                <td class="ds-table__num ds-table__opt">6</td>
+                <td class="ds-table__num ds-table__opt">8</td>
+                <td class="ds-table__num">100</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#lesson">10 Whole rests</a></td>
+                <td><span class="ds-badge ds-badge--success">Done</span></td>
+                <td class="ds-table__num ds-table__opt">5</td>
+                <td class="ds-table__num ds-table__opt">7</td>
+                <td class="ds-table__num">90</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#lesson">11 Half notes and rests</a></td>
+                <td><span class="ds-badge ds-badge--success">Done</span></td>
+                <td class="ds-table__num ds-table__opt">9</td>
+                <td class="ds-table__num ds-table__opt">10</td>
+                <td class="ds-table__num">100</td>
+              </tr>
+              <tr class="is-hover">
+                <td><a class="ds-link ds-link--quiet" href="#lesson">12 Quarter rests</a></td>
+                <td><span class="ds-badge ds-badge--warning">Step 4 of 10</span></td>
+                <td class="ds-table__num ds-table__opt">8</td>
+                <td class="ds-table__num ds-table__opt">10</td>
+                <td class="ds-table__num">40</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#lesson">13 Counting in three</a></td>
+                <td><span class="ds-badge ds-badge--quiet">Next</span></td>
+                <td class="ds-table__num ds-table__opt">7</td>
+                <td class="ds-table__num ds-table__opt">12</td>
+                <td class="ds-table__num">0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#lesson">14 The dotted half note</a></td>
+                <td><span class="ds-badge ds-badge--danger">Locked</span></td>
+                <td class="ds-table__num ds-table__opt">6</td>
+                <td class="ds-table__num ds-table__opt">9</td>
+                <td class="ds-table__num">0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <nav aria-label="Pages">
+            <ul class="ds-pagination" data-component="pagination">
+              <li><a class="ds-pagination__link" href="#lessons">Previous</a></li>
+              <li><a class="ds-pagination__link" href="#lessons">1</a></li>
+              <li><a class="ds-pagination__link is-current" href="#lessons" aria-current="page">2</a></li>
+              <li><a class="ds-pagination__link" href="#lessons">3</a></li>
+              <li><a class="ds-pagination__link" href="#lessons">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="ds-page__stack">
+          <section class="ds-empty" data-component="empty">
+            <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-4-5 4z"/></svg>
+            <h2 class="ds-empty__title">No saved signs yet</h2>
+            <p class="ds-empty__text">Tap the ribbon on a card and it waits here for another go.</p>
+            <a class="ds-button" href="#lesson">Open a lesson</a>
+          </section>
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Unit 3 opens soon</h2>
+            <div class="ds-panel__body">
+              <div>
+                <div class="ds-progress__legend"><span>Lessons done</span><span>11 of 15</span></div>
+                <span class="ds-progress ds-progress--75" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" aria-label="Unit 3"><span class="ds-progress__bar"></span></span>
+              </div>
+              <p class="ds-panel__note">Four more lessons and counting in six unlocks.</p>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="lesson">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#lessons">Rhythm</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Lesson 12</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Quarter rests</h1>
+        <p class="ds-page-header__lead">Card 4 of 10. Which sign means one beat of silence?</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#lessons">All lessons</a>
+      </div>
+    </header>
+
+    <div class="ds-page__cols">
+
+      <div class="ds-page__stack">
+        <div>
+          <div class="ds-progress__legend"><span>Card 4 of 10</span><span>3 right, 0 wrong</span></div>
+          <span class="ds-progress ds-progress--40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress"><span class="ds-progress__bar"></span></span>
+        </div>
+
+        <div class="ds-carousel" data-component="carousel" aria-roledescription="carousel" aria-label="Cards of lesson 12">
+          <div class="ds-carousel__track">
+            <div class="ds-carousel__slide ds-card">
+              <span class="ds-card__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 3 5 6-4 4 5 5c-3-1-6 0-5 3"/></svg></span>
+              <h2 class="ds-card__title">One beat of silence</h2>
+              <p class="ds-card__text">It sits in the middle of the staff and lasts as long as a quarter note.</p>
+            </div>
+            <div class="ds-carousel__slide ds-card ds-card--2">
+              <span class="ds-card__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M8 12V9h8v3"/></svg></span>
+              <h2 class="ds-card__title">Two beats of silence</h2>
+              <p class="ds-card__text">A small hat that sits on the middle line.</p>
+            </div>
+            <div class="ds-carousel__slide ds-card ds-card--4">
+              <span class="ds-card__sign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h16M8 10v3h8v-3"/></svg></span>
+              <h2 class="ds-card__title">Four beats of silence</h2>
+              <p class="ds-card__text">The same hat, hanging under the line.</p>
+            </div>
+          </div>
+          <div class="ds-carousel__foot">
+            <button class="ds-carousel__arrow" type="button" aria-label="Previous card"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4 6 8l4 4"/></svg></button>
+            <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+            <button class="ds-carousel__arrow is-hover" type="button" aria-label="Next card"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg></button>
+          </div>
+        </div>
+
+        <div class="ds-card__answers">
+          <button class="ds-button ds-button--secondary ds-button--large is-active" type="button">Quarter rest</button>
+          <button class="ds-button ds-button--secondary ds-button--large" type="button">Half rest</button>
+          <button class="ds-button ds-button--secondary ds-button--large" type="button">Whole rest</button>
+          <button class="ds-button ds-button--secondary ds-button--large" type="button">Eighth rest</button>
+        </div>
+
+        <div class="ds-button__row" data-component="buttons">
+          <button class="ds-button" type="button">Check</button>
+          <button class="ds-button ds-button--secondary" type="button">Skip this card</button>
+          <button class="ds-button ds-button--danger" type="button">Leave the lesson</button>
+          <button class="ds-button" type="button" disabled>Next card</button>
+        </div>
+      </div>
+
+      <div class="ds-page__stack">
+        <section class="ds-panel">
+          <div class="ds-panel__body">
+            <article class="ds-prose" data-component="typography">
+              <h1>About rests</h1>
+              <p>A rest is silence that is <strong>counted</strong>. In <code>4/4</code> time a quarter rest takes one of the four beats.</p>
+              <h2>How to count it</h2>
+              <p>Say the number in your head and keep your hands still.</p>
+              <h3>Easy to mix up</h3>
+              <ul>
+                <li>The half rest sits on the line.</li>
+                <li>The whole rest hangs under it.</li>
+                <li>The quarter rest looks like a small bolt.</li>
+              </ul>
+              <p class="ds-link__sample" data-component="links">
+                <a class="ds-link" href="#lessons">Whole rests</a>
+                <a class="ds-link is-visited" href="#lessons">Half rests</a>
+                <a class="ds-link is-hover" href="#lessons">Counting in three</a>
+                <a class="ds-link is-active" href="#lesson">This card</a>
+                <a class="ds-link ds-link--quiet" href="#settings">Sound</a>
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Leave the lesson?</h2>
+            <div class="ds-dialog__body">Your three right answers are kept, and the streak waits until midnight.</div>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--secondary" type="button">Stay</button>
+              <button class="ds-button ds-button--danger" type="button">Leave</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="settings">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#settings">Settings</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Profile and reminders</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Settings</h1>
+        <p class="ds-page-header__lead">Your name, your daily goal and when to nudge you.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#today">Back to today</a>
+      </div>
+    </header>
+
+    <div class="ds-page__cols">
+
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Profile</h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-name">Name</label>
+                <input class="ds-form__input" id="f-name" type="text" value="Mira Voss">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-mail">Email</label>
+                <input class="ds-form__input is-error" id="f-mail" type="text" value="mira@" aria-invalid="true" aria-describedby="f-mail-error">
+                <span class="ds-form__error" id="f-mail-error">Enter a complete email address.</span>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-goal">Daily goal</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-goal">
+                    <option>10 minutes</option>
+                    <option>5 minutes</option>
+                    <option>15 minutes</option>
+                    <option>20 minutes</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-time">Remind me at</label>
+                <input class="ds-form__input" id="f-time" type="text" value="18:30">
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-why">What do you want to play?</label>
+              <textarea class="ds-form__textarea" id="f-why" placeholder="A song, an instrument, a choir part"></textarea>
+              <span class="ds-form__hint">We pick the examples in your lessons from this.</span>
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              Show me on the weekly board
+            </label>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="button">Save</button>
+              <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="ds-page__stack">
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.500"/></svg>
+            <div><span class="ds-notice__title">One streak freeze left.</span> It is used by itself on a missed day.</div>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.500 18 17H2z"/><path d="M10 8v4M10 14v.500"/></svg>
+            <div><span class="ds-notice__title">Yesterday's reminder was not sent.</span> Check the email address.</div>
+          </div>
+        </div>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Reminders</h2>
+          <div class="ds-panel__body">
+            <label class="ds-switch ds-switch--end" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Daily nudge <span class="ds-switch__hint">At 18:30, if the goal is open</span></span></label>
+            <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Sounds in lessons</span></label>
+            <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Weekly summary by email</span></label>
+          </div>
+        </section>
+        <div class="ds-accordion" data-component="accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">What is a streak freeze? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body"><p>A day off that does not break the streak. You earn one for every seven days in a row.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Can I change the course? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body"><p>Yes, from the list of courses on the Today page. Progress is kept in each.</p></div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <div class="ds-footer__inner">
+      <span>chronoskin · read music in ten minutes a day</span>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#lessons">Lessons</a></li>
+        <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+        <li><a class="ds-footer__link" href="#today">Help</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

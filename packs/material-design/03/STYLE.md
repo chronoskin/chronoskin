@@ -1,0 +1,93 @@
+# Material product landing, 2016
+
+## Summary
+
+A developer landing page in the paper-and-ink manner: a white toolbar with the links at the right, a full-width hero block in the primary colour with a floating action button on its lower edge, and below it a sequence of full-width bands with centred headings. The first band is a mosaic of solid colour-block cards of unequal size; later bands alternate between the page colour, a grey band of white cards and a dark band. Platform, product and developer-hub home pages built on the 2014 guidelines used this skeleton until about 2018.
+
+## Layout
+
+- The page is fluid: `--size-page` is `100%`; toolbar, hero, bands and footer span the window. Designed at 1440px. Content inside every band is centred in `.ds-container`, capped at `--size-content` (1200px) with `--space-5` side padding; running text is capped at `--size-measure` (600px).
+- Order on the home page: `.ds-nav` (a white sheet, `--size-bar` 64px, brand left, links right, current link marked by a `--border-width-strong` (3px) line in `--color-link`), `.ds-hero` (title, lead and button at the left, a composition of flat shapes `--size-art` wide at the right, `.ds-hero__fab` straddling the bottom edge), then `.ds-section` bands, then `.ds-footer`. There is no drawer and no sidebar on the home page.
+- A `.ds-section` has `--space-7` (72px) of padding above and below and usually opens with a centred `.ds-intro`. Bands are separated by a change of fill, never by a rule: plain (page colour), `--strong` (grey, holds white cards only) and `--inverse` (dark, holds one left-aligned `.ds-intro--start` and a button). `--tight` removes the top padding when two plain bands follow each other.
+- The mosaic `.ds-grid` has four columns and rows of `--size-tile` (168px), `--space-2` (8px) apart. One `--feature` cell spans two columns and two rows, one `--wide` cell spans two columns, the rest are single. Text sits directly on the fill.
+- `.ds-columns` splits a band in two (`--split` 7:5 for text beside a ruled list, `--cards` 1:2 for cards). `.ds-stack` piles blocks `--space-4` apart. `.ds-columns--even` stretches both columns of a split band to one height: the cards of its `.ds-stack` share the height of the neighbouring column equally, so both columns end on the same line.
+- Spacing: `--space-1` 4px, `--space-2` 8px (mosaic gap, between flat buttons), `--space-3` 16px (button padding, list row padding, table cell padding), `--space-4` 24px (card padding, gap between cards and stacked blocks), `--space-5` 40px (container side padding, gap between main column and rail, form column gap), `--space-6` 56px (under a centred intro, top of the footer), `--space-7` 72px (band padding, hero top, gap in a split band), `--space-8` 104px (hero bottom, bottom of an inner page).
+- Heights: toolbar `--size-bar` 64px; tabs and table rows `--size-row` 48px; table head and rail links `--size-row-dense` 40px; buttons and fields `--size-control` 36px; floating button `--size-fab` 56px. Other sizes: `--size-sidebar` 280px, `--size-stripe` 4px, `--size-icon` 24px, `--size-check` 18px, `--size-badge` 22px, `--size-dialog` 440px, `--size-area` 96px.
+- Inner pages (a guide, reference, a record and its table, settings, the console) have no `.ds-hero`. Under the same white `.ds-nav` comes `.ds-page-header`, a compact full-width strip in the primary colour: the `.ds-breadcrumb` on its first line, then the title and one line of description at the left and one white raised button at the right. Directly under it `.ds-tabs` is a full-width white strip with a shadow, when the page has tabs. Then `.ds-layout` in a container: the main column at the left (`.ds-stats` unboxed on the page, the `.ds-table` sheet and its status key, or a form card with fields in two columns, `--space-4` apart) and a right rail of `--size-sidebar` holding the `.ds-sidebar` card and secondary cards. The rail is always on the right and only on inner pages. A guide page uses `.ds-section--inner` with `.ds-columns--split` instead: the `.ds-prose` text at the left, notices and cards stacked at the right.
+- Views: the specimen is one site with five views. `develop` is the home view: hero, the mosaic of guides, the list of latest changes beside two cards, and the dark band that leads to the console. `guide` is a guide page: page header strip, prose beside notices and a card of related links. `reference` is a reference page: page header strip, tabs, stats, the table and its status key, with the section rail at the right. `driver` is the settings form for one table row, with all its actions at the foot of the form and the reset dialog and a destructive card in the rail. `console` is the stations list, shown empty, beside two help cards.
+- Below 900px every grid becomes one column, the mosaic and the footer two, the hero shapes are dropped and the page header stacks. Below 600px the toolbar wraps into a brand row and a full-width `.ds-nav__links` row whose items share the width and centre their links (the current one keeps `.is-current`), the account menu `.ds-menu--account` is pinned at the right of the brand row with its name (`.ds-menu__label`) hidden, the mosaic becomes one column, stats sit two by two, and table cells marked `.ds-table__extra` are hidden.
+
+## Typography and colour roles
+
+- `--color-bar` soft teal `#80cbc4` with dark `--color-bar-text` `#212121`: navigation bar and header band carry dark text, not white. `--color-bar-alt` and `--color-inverse` are blue-grey `#455a64` with white text (toolbar, footer).
+- Green is the colour of action: `--color-button`, `--color-link`, `--color-focus` and `--color-success` are `#46873b` with white button text; `--color-link-hover` stays `#46873b`, so hover is shown by elevation; `--color-link-active` is `#455a64`.
+- `--color-accent` mint `#64ffda` with `#212121` text: floating button, count badges. The 3px indicator under the current toolbar link and tab is `--color-link`, which reads on a white sheet under every palette. `--color-accent-alt` is blue-grey `#455a64`.
+- Page `#f3f3f3`, sheets white, `--color-surface-alt` `#fafafa`, `--color-surface-strong` `#e3e3e3`; borders `#dcdcdc`, inner dividers `#ebebec`. Text `#212121`, secondary `#757575`, section titles `#444444`.
+- Block fills: teal `#80cbc4`, mint `#64ffda`, light green `#6ab344` (all with dark text), blue-grey `#455a64` (white text). `--color-danger` `#c2185b`, `--color-warning` amber `#ffc400`, notice `#e3e3e3`.
+- One family, Roboto, for body, headings and UI; `--font-mono` for code only.
+- Dense text: `--text-base` 13px on a 24px line (`--line-body` 1.85), `--text-small` 12px, `--text-ui` 14px.
+- Small regular headings: `--text-display` 34px, `--text-h1` 24px, `--text-h2` 20px, `--text-h3` 15px at `--weight-bold` 500; `--text-large` 18px for the lead.
+- `--ui-transform` is `none`: buttons, navigation and tabs are sentence case at `--weight-ui` 500. No uppercase anywhere, no underlines, no tracking.
+- Raised paper: every sheet floats visibly. `--shadow-panel` is a three-layer shadow (10px blur, 4px drop); `--shadow-control` a deeper one (14px blur, 6px drop) on resting buttons; `--shadow-control-hover` drops 8px; `--shadow-control-pressed` falls back to two tight layers; `--shadow-dialog` is two layers, 14px blur with a 12px drop.
+- All corners are 2px, including `--radius-pill`: badges, chips and pagination cells are small rectangles, not pills.
+- Fills are flat; depth comes from shadow only. `--border-width` 1px, `--border-width-strong` 3px for indicators, stat rules and the focus and error line of a field. A hovered button darkens: `--fill-button-hover` is the button colour mixed with 12% black. `--fill-input` is transparent, so fields are a bottom line only; `--focus-ring` is a solid 3px line; `--transition` is a quick 0.15s ease-out.
+- In this layout the toolbar is a white sheet (`--fill-panel`) with `--color-text-muted` links and a `--color-heading` brand name; `--fill-bar` with `--color-bar-text` fills the hero and the inner page header instead. `--fill-inverse` with `--color-inverse-text` is the dark band and the footer. `--color-surface-strong` is the grey band and the table head, both with `--color-text`.
+- Text on fills follows fixed pairs: `--color-bar-text` on the hero, the page header, `--color-fill-1` and `--color-fill-3`; `--color-accent-text` on the accent, `--color-fill-2` and the warning badge; `--color-inverse-text` on `--color-fill-4`, the dark band and the footer; `--color-button-text` on the primary and danger buttons and on the new, success and danger badges. Links and muted text are used only on the page and on white sheets, never on a grey, coloured or dark band.
+- One-off values built with `color-mix()`, `calc()` or `opacity` because the vocabulary has no token: 87% and 70% of the bar text colour for the hero lead, the page header text and its breadcrumb; 14%, 22% and 40% washes of it for the hero shapes; 87% opacity for card text on a colour block; 87%, 70% and 40% of the inverse text in the dark band and footer; 66% of the quiet link colour for rail links; a 20% grey wash behind a hovered flat button; line heights 1.18, 1.2, 1.43, 1.6 and 1.85.
+
+## Components
+
+- `.ds-page` on `<body>`: page fill, body family and size.
+- `.ds-nav`: the white toolbar. `.ds-brand` at the left; `.ds-nav__links` > `.ds-nav__item` > `.ds-nav__link` at the right; `is-current` has the 3px `--color-link` line on the toolbar's bottom edge.
+- `.ds-brand`: the site's mark and name at the left of the toolbar, one link. `.ds-brand__mark` is a `--size-brand` (28px) tile dressed like the primary raised button (`--fill-button`, `--color-button-text`, `--radius-control`, `--shadow-control`, no border, as buttons in this style have none) holding the mark as inline SVG in the current colour; `.ds-brand__name` is the name at `--text-h2` in the heading font with `--weight-heading`, `--heading-tracking` and `--heading-transform`, in `--color-heading` because the toolbar is a white sheet (`--fill-panel`). The name `chronoskin` and its mark are placeholders for the installing project's own name and logo.
+- `.ds-hero`: full-width block in the primary colour. `.ds-hero__inner` (with `.ds-container`) places the text column (`.ds-hero__title`, `.ds-hero__lead`, one raised `.ds-button--secondary`) beside `.ds-hero__art`, a group of flat `.ds-hero__shape` rectangles (`--2`, `--3`) and one accent disc (`--disc`). `.ds-hero__fab` positions the floating button on the bottom edge.
+- `.ds-container`: centres content at the page width inside any full-width block. `.ds-section` is a band (`--strong`, `--inverse`, `--tight`). `.ds-intro` is its heading: `.ds-intro__title`, `.ds-intro__text`, optional `.ds-intro__actions`; centred by default, `--start` left-aligned. `.ds-columns` (`--split`, `--cards`), `.ds-stack`, `.ds-center` and `.ds-label` (a column heading) arrange what is inside. `.ds-layout` is the inner page's main column plus right rail.
+- `.ds-page-header`: the coloured strip at the head of an inner page. `.ds-page-header__row` holds `.ds-page-header__body` (`.ds-page-header__title`, `.ds-page-header__text`) and `.ds-page-header__actions` with one `.ds-button--secondary`.
+- `.ds-breadcrumb`: small trail of `.ds-breadcrumb__item` with `.ds-breadcrumb__link`, separated by drawn chevrons; the last carries `is-current`. Inside the page header it takes the bar text colour.
+- `.ds-tabs`: a full-width white strip under the page header; `.ds-tabs__list` aligns the `.ds-tabs__tab` items with the container; `is-current` has a 3px line in `--color-link`.
+- `.ds-prose`: long-form text; styles h1 to h3, paragraphs, lists, `strong`, inline `code`, `pre` and links. `.ds-prose__lead` is the opening paragraph. It sits directly on the page, not on a sheet.
+- `.ds-link`: inline link with `is-visited`, `is-hover`, `is-active`, `is-focus`; `--quiet` is text-coloured. `.ds-links` lays several out in a row.
+- `.ds-button`: raised primary button. `--secondary` is the white raised button (use it on the hero and the page header), `--flat` has no fill (inside cards, dialogs, empty states), `--danger` is the destructive form (with `--flat`: danger-coloured text), `--fab` the accent disc with one `.ds-icon`. States `is-hover`, `is-active`, `is-focus`, `is-disabled`. Group with `.ds-buttons`.
+- `.ds-icon`: 24px stroked inline SVG in the current text colour.
+- `.ds-form`: fields in two columns on a card. `.ds-form__field` wraps `.ds-form__label` and a `.ds-form__control` with only a bottom line (`--area` for a textarea, inside `.ds-form__select` for a select); `--full` spans both columns; `is-focus`, `is-invalid` with `.ds-form__error`, `.ds-form__hint`, `.ds-form__check` with `.ds-form__checkbox`, and `.ds-form__actions` right-aligned across both columns.
+- `.ds-table`: a white shadowed sheet; the head row is a 40px grey strip with dark text, body rows are 48px with hairlines. `.ds-table__num` right-aligns numbers, `.ds-table__name` sets a code name, `.ds-table__extra` marks cells a phone can do without, `tr.is-current` is tinted.
+- `.ds-list`: an unboxed list on the page: rows divided by full-width hairlines, no sheet and no avatars. `.ds-list__item` holds `.ds-list__body` with a link-coloured `.ds-list__title` and `.ds-list__text`, and `.ds-list__meta` at the right.
+- `.ds-panel`: a white card with `.ds-panel__title`, `.ds-panel__body` and optional ruled `.ds-panel__actions`; `--pad` gives the body normal text colour for controls or a form. Use it on the grey band and in the rail.
+- `.ds-stat`: one summary figure, unboxed on the page: a 3px rule above, `.ds-stat__value`, `.ds-stat__label`. Three or more sit in a `.ds-stats` row, `--space-4` apart.
+- `.ds-grid`: the mosaic. Each `.ds-grid__cell` is a link filled with a block colour (`--2`, `--3`, `--4`), sized by `--feature` or `--wide`, holding `.ds-grid__title`, `.ds-grid__text` and a `.ds-grid__more` label pinned to the bottom.
+- `.ds-badge`: accent count tag; `--new`, `--chip`, and the status fills `--success`, `--warning`, `--danger`. Group with `.ds-badges`.
+- `.ds-sidebar`: the right-rail card of an inner page: `.ds-sidebar__title` headings and `.ds-sidebar__list` groups of 40px `.ds-sidebar__link` rows; `is-current` is link-coloured on a tint.
+- `.ds-notice`: tinted block with a 4px left stripe and `.ds-notice__title`; `--error` is a white sheet in the danger colour. `.ds-notices` stacks them.
+- `.ds-pagination`: `.ds-pagination__link` cells, `is-current` filled, `is-disabled` grey, centred under the list it pages.
+- `.ds-dialog`: sheet with the deepest shadow, `.ds-dialog__title`, `.ds-dialog__body`, right-aligned flat buttons in `.ds-dialog__actions`; shown on `.ds-overlay`.
+- `.ds-empty`: centred `.ds-empty__mark` disc, `.ds-empty__title`, `.ds-empty__text` and one flat button, directly on the page.
+- `.ds-footer`: dark band. `.ds-footer__cols` puts `.ds-footer__brand` with `.ds-footer__text` in a wide first column and three link columns (`.ds-footer__title`, `.ds-footer__list`, `.ds-footer__link`) beside it; `.ds-footer__legal` is a ruled last line.
+- `.ds-menu`: a `<details>` whose `.ds-menu__button` (the `<summary>`: an icon, or the account's `.ds-avatar`) opens `.ds-menu__list`, a white sheet with the dialog shadow holding 48px `.ds-menu__link` rows. Use it for the account menu and the overflow (three dots) at the end of the bar; `--start` hangs the sheet from the left, for the menu button that carries the navigation on a phone.
+- `.ds-menu--account`: the account menu in the bar; its `.ds-menu__label` shows the name beside the avatar and is hidden on a phone, where only the avatar is left.
+- `.ds-avatar`: a person as a `--size-control` disc in the accent fill with one initial; use it in the bar as the account button.
+- `.ds-tooltip`: on an icon-only button, with a `.ds-tooltip__text` child naming it; the small dark label shows on hover and focus (`is-open` statically). It sits below; `--left`, `--right` and `--above` move it. Use it on the floating button and bar icons, never on a button that already has a text label.
+- `.ds-switch`: an on-off setting that takes effect at once: a `<span>` or `<label>` holding `.ds-switch__input` (a checkbox) and `.ds-switch__track`, which draws the track and the round thumb; `is-on` shows the on state statically. Keep the checkbox for choices that are saved with a form.
+- `.ds-progress`: a `--size-progress` line with `.ds-progress__bar` (`--low`, `--high`) for work whose length is known; `--ring` is the small ring for work whose length is not. Put it inside the card or notice it reports on.
+- `.ds-accordion`: expansion panels inside a card: `<details class="ds-accordion__item">` with a `.ds-accordion__head` summary (a chevron is drawn at its right) and a `.ds-accordion__body` paragraph. Use it for short questions and answers, closed by default.
+
+## Never
+
+- `gradient-fills = 0%`: every fill is one flat colour; depth comes from shadow.
+- `text-shadow = none`: no text has a shadow.
+- `border-radius <= 2px`: every box, tag and control has a 2px corner; only discs are round.
+- `box-shadow-blur <= 14px`: shadows are layered and tight, never a wide glow.
+- `uppercase-text = 0%`: labels, buttons and navigation are sentence case.
+- `underlined-links = 0%`: links are marked by colour and weight.
+- `font-weight <= 500`: emphasis is medium, never bold.
+- `font-size >= 12px`: captions are the smallest text.
+- `font-size <= 34px`: the header band title is the largest text.
+- `letter-spacing = 0px`: no tracking.
+- `font-families <= 2`: one sans-serif plus the mono for code.
+- `border-width <= 4px`: hairlines are 1px, indicators and stat rules 3px, the notice stripe 4px.
+- `row-gap <= 4px`: table and list rows touch and are divided by hairlines; bullet items sit 4px apart at most.
+- `block-gap <= 72px`: bands touch; inside a band blocks are at most one band padding apart.
+- `content-width >= 70%`: content fills a 1200px container in a 1440px window; it is never a narrow centred column.
+
+## Extending
+
+Derive a new component from the nearest one in the specimen. A new block of the home page is a new `.ds-section` band with a `.ds-intro` and a `.ds-container`; choose its fill so neighbouring bands differ, and put only white cards on a grey band. A new entry point is a `.ds-grid__cell` on one flat `--color-fill-*` with the text colour paired with it above. Secondary navigation of an inner page goes in the right rail as another `.ds-sidebar` group or `.ds-panel`; never move the rail to the left or add one to the home page. Use tokens only and take heights and gaps from the `--size-*` and `--space-*` scale.

@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: framework default documentation specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12,2.5 20.2,7.25 20.2,16.75 12,21.5 3.8,16.75 3.8,7.25"/><polyline points="12,7.5 12,12 15.5,14"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Overview</a></li>
+      <li><a class="ds-nav__link" href="#guide">Getting started</a></li>
+      <li class="ds-menu">
+        <a class="ds-nav__link ds-menu__toggle" href="#reference" aria-haspopup="true">Reference</a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#reference">Bookings</a></li>
+          <li><a class="ds-menu__item" href="#reference">Rooms</a></li>
+          <li><a class="ds-menu__item" href="#reference">People</a></li>
+          <li><a class="ds-menu__item" href="#reference">Webhooks</a></li>
+          <li class="ds-menu__divider"></li>
+          <li><a class="ds-menu__item" href="#guide">Errors and rate limits</a></li>
+        </ul>
+      </li>
+      <li><a class="ds-nav__link" href="#libraries">Libraries</a></li>
+      <li><a class="ds-nav__link" href="#keys">API keys</a></li>
+    </ul>
+    <form class="ds-nav__aside" action="#reference">
+      <input class="ds-form__input ds-form__input--small ds-nav__search" type="text" placeholder="Search the docs" aria-label="Search the docs">
+      <a class="ds-button ds-button--secondary ds-button--small" href="#reference">Go</a>
+    </form>
+    <details class="ds-menu ds-menu--nav">
+      <summary class="ds-menu__toggle" aria-label="Menu"><span class="ds-menu__bars"></span></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__item" href="#home">Overview</a></li>
+        <li><a class="ds-menu__item" href="#guide">Getting started</a></li>
+        <li><a class="ds-menu__item" href="#reference">Reference</a></li>
+        <li><a class="ds-menu__item" href="#libraries">Libraries</a></li>
+        <li><a class="ds-menu__item" href="#keys">API keys</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-hero__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/><path d="M12 17a5 5 0 1 1 5-5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+    <h1 class="ds-hero__title">The chronoskin API</h1>
+    <p class="ds-hero__lead">Rooms, people and bookings over plain HTTP. Add scheduling to your own application with a handful of calls and a library for the language you already write.</p>
+    <div class="ds-hero__actions">
+      <a class="ds-button ds-button--large" href="#guide">Get started</a>
+      <a class="ds-button ds-button--outline ds-button--large" href="#libraries">Download a library</a>
+    </div>
+    <p class="ds-hero__note">Currently version 2.4.1</p>
+  </div>
+  <div class="ds-strip">
+    <div class="ds-strip__inner">
+      <span>All systems normal <span class="ds-tooltip ds-tooltip--plain" tabindex="0"><span class="ds-badge ds-badge--success">Up</span><span class="ds-tooltip__tip" role="tooltip">No incidents in the last 30 days.</span></span></span>
+      <span>Released 9 September 2013</span>
+      <a class="ds-link" href="#libraries">Read the changelog</a>
+      <a class="ds-link" href="#keys">Get an API key</a>
+    </div>
+  </div>
+
+  <div class="ds-container ds-main">
+    <div class="ds-intro">
+      <h2 class="ds-intro__title">Scheduling, without writing a calendar.</h2>
+      <p class="ds-intro__lead">chronoskin keeps the calendar and its rules. Your application asks what is free, books it, and hears about every change.</p>
+    </div>
+
+    <div class="ds-row ds-row--centred">
+      <div class="ds-col">
+        <div class="ds-col__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16v14H4z M4 10h16 M8 3v5 M16 3v5"/></svg></div>
+        <h3 class="ds-col__title">Bookings</h3>
+        <p class="ds-col__text">Create, move and cancel a booking with one request each. Clashes are refused with a reason your code can read.</p>
+        <a class="ds-button ds-button--secondary" href="#reference">View details &raquo;</a>
+      </div>
+      <div class="ds-col">
+        <div class="ds-col__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l4 2"/></svg></div>
+        <h3 class="ds-col__title">Availability</h3>
+        <p class="ds-col__text">Ask for free slots by room, person or both. Opening hours, breaks and time zones are worked out on our side.</p>
+        <a class="ds-button ds-button--secondary" href="#reference">View details &raquo;</a>
+      </div>
+      <div class="ds-col">
+        <div class="ds-col__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12a7 7 0 0 1 14 0v5H5z M3 17h18 M10 20h4"/></svg></div>
+        <h3 class="ds-col__title">Webhooks</h3>
+        <p class="ds-col__text">Name an address and we post to it whenever a booking is made, moved or cancelled, with retries for a day.</p>
+        <a class="ds-button ds-button--secondary" href="#guide">View details &raquo;</a>
+      </div>
+    </div>
+    <hr class="ds-rule">
+
+    <div class="ds-row ds-row--level">
+      <div class="ds-col ds-col--wide">
+        <h2 class="ds-title">Your first call <small class="ds-title__small">from a terminal</small></h2>
+        <pre class="ds-code ds-code--inverse">$ curl api.chronoskin.example/v2/rooms/14/free \
+    -u YOUR_KEY: \
+    -d day=2013-09-16</pre>
+        <pre class="ds-code">{
+  <span class="ds-code__key">"room"</span>: 14,
+  <span class="ds-code__key">"free"</span>: ["09:00", "09:30", "11:00", "14:30"]
+}</pre>
+        <ul class="ds-stat" data-component="stats">
+          <li class="ds-stat__item"><span class="ds-stat__figure">38 ms</span><span class="ds-stat__label"><span class="ds-tooltip ds-tooltip--start" tabindex="0">median response<span class="ds-tooltip__tip" role="tooltip">Measured at our edge over the last seven days.</span></span></span></li>
+          <li class="ds-stat__item"><span class="ds-stat__figure">99.98%</span><span class="ds-stat__label">uptime, last 90 days</span></li>
+          <li class="ds-stat__item"><span class="ds-stat__figure">2.1 m</span><span class="ds-stat__label">calls a day</span></li>
+          <li class="ds-stat__item"><span class="ds-stat__figure">6</span><span class="ds-stat__label">official libraries</span></li>
+        </ul>
+      </div>
+      <div class="ds-col ds-col--stack">
+        <section class="ds-panel ds-grow" data-component="panel">
+          <h2 class="ds-panel__title">Latest releases <span class="ds-badge">2.4.1</span></h2>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><a class="ds-list__title" href="#libraries">2.4.1: recurring bookings</a><span class="ds-list__meta">9 September 2013</span></li>
+              <li class="ds-list__item"><a class="ds-list__title" href="#libraries">2.4.0: webhooks with retries</a><span class="ds-list__meta">21 August 2013</span></li>
+              <li class="ds-list__item"><a class="ds-list__title" href="#libraries">2.3.2: faster availability</a><span class="ds-list__meta">30 July 2013</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__foot">Version 1 is switched off on 1 March 2014.</div>
+        </section>
+      </div>
+    </div>
+    <hr class="ds-rule">
+
+    <div class="ds-intro">
+      <h2 class="ds-intro__title">A library for your language.</h2>
+      <p class="ds-intro__lead">Each one wraps the same calls and is released together with the API.</p>
+    </div>
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell">
+        <div class="ds-grid__tile"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5l13 9-5 18H12L7 14z M7 14h26 M12 32l8-27 8 27" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+        <div class="ds-grid__caption">
+          <h3 class="ds-grid__title">Ruby</h3>
+          <p class="ds-grid__text">A gem for Ruby 1.9 and later.</p>
+          <a class="ds-link" href="#libraries">Version 2.4.1</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__tile ds-grid__tile--2"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 8h8a4 4 0 0 1 4 4v6H14a4 4 0 0 0-4 4v6 M26 32h-8a4 4 0 0 1-4-4v-6h12a4 4 0 0 0 4-4v-6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+        <div class="ds-grid__caption">
+          <h3 class="ds-grid__title">Python</h3>
+          <p class="ds-grid__text">A package for Python 2.6 and 2.7.</p>
+          <a class="ds-link" href="#libraries">Version 2.4.1</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__tile ds-grid__tile--3"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 10l-9 10 9 10 M26 10l9 10-9 10 M23 7l-6 26" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+        <div class="ds-grid__caption">
+          <h3 class="ds-grid__title">PHP</h3>
+          <p class="ds-grid__text">A package for PHP 5.3 and later.</p>
+          <a class="ds-link" href="#libraries">Version 2.4.0</a>
+        </div>
+      </div>
+      <div class="ds-grid__cell">
+        <div class="ds-grid__tile ds-grid__tile--4"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8h24v24H8z M17 16v9a3 3 0 0 1-5 2 M30 18a4 4 0 0 0-7 1c0 4 7 2 7 6a4 4 0 0 1-7 1" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+        <div class="ds-grid__caption">
+          <h3 class="ds-grid__title">JavaScript</h3>
+          <p class="ds-grid__text">For the server and for the browser.</p>
+          <a class="ds-link" href="#libraries">Version 2.3.2</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="guide">
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__inner">
+      <div class="ds-page-header__copy">
+        <h1 class="ds-page-header__title">Getting started</h1>
+        <p class="ds-page-header__text">From nothing to a confirmed booking in about ten minutes.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outline" href="#keys">Get an API key</a>
+      </div>
+    </div>
+  </header>
+  <div class="ds-container ds-main ds-main--inner">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Overview</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#guide">Getting started</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">Your first booking</li>
+    </ol>
+    <div class="ds-row ds-row--flush">
+      <div class="ds-col">
+        <article class="ds-prose ds-spaced" data-component="typography">
+          <h1>Your first booking</h1>
+          <p class="ds-prose__lead">Every call is an HTTPS request that answers in JSON.</p>
+          <p>You need an API key, which you send as the user name of each request. Keys come in two kinds: a <strong>test key</strong> that books nothing real, and a live key.</p>
+          <h2>Find a free slot</h2>
+          <p>Ask a room for its free slots on a day. Times come back in the time zone of the room, in steps set by <code>slot_minutes</code>.</p>
+        </article>
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#guide">curl</a></li>
+          <li><a class="ds-tabs__tab" href="#guide">Ruby</a></li>
+          <li><a class="ds-tabs__tab" href="#guide">Python</a></li>
+          <li><a class="ds-tabs__tab" href="#guide">PHP</a></li>
+        </ul>
+        <pre class="ds-code ds-spaced"><span class="ds-code__comment"># free slots in room 14 on 16 September</span>
+$ curl api.chronoskin.example/v2/rooms/14/free \
+    -u YOUR_KEY: \
+    -d day=2013-09-16</pre>
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice ds-notice--callout"><span class="ds-notice__title">Test keys are safe.</span> A booking made with a test key is kept for an hour and never reaches a calendar.</p>
+          <p class="ds-notice ds-notice--error ds-notice--callout"><span class="ds-notice__title">Do not ship a live key in a web page.</span> Anyone who reads the page source can book with it. Call the API from your server.</p>
+        </div>
+        <article class="ds-prose ds-spaced">
+          <h2>Book it</h2>
+          <p>Post the slot back with the name of whoever it is for. The answer carries the booking and its address.</p>
+          <ul>
+            <li>A slot that has gone answers <code>409</code> with the nearest free time</li>
+            <li>A room that is closed answers <code>422</code> with the opening hours</li>
+            <li>Too many calls answer <code>429</code>; wait and send it again</li>
+          </ul>
+          <h3>What to read next</h3>
+          <p>Bookings can repeat, belong to several people and tell your server when they change. The reference has every field.</p>
+        </article>
+        <div class="ds-buttonrow">
+          <a class="ds-button ds-button--secondary" href="#home">&laquo; Overview</a>
+          <a class="ds-button" href="#reference">Reference &raquo;</a>
+        </div>
+      </div>
+      <div class="ds-col ds-col--side">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Getting started</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#guide">Your first booking</a></li>
+            <li><a class="ds-sidebar__link ds-sidebar__link--sub" href="#guide">Find a free slot</a></li>
+            <li><a class="ds-sidebar__link ds-sidebar__link--sub" href="#guide">Book it</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Authentication</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Errors</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Rate limits</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Webhooks</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Time zones</a></li>
+          </ul>
+          <p class="ds-sidebar__foot"><a class="ds-link ds-link--quiet" href="#guide">Back to top</a></p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="reference">
+  <header class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div class="ds-page-header__copy">
+        <h1 class="ds-page-header__title">Reference</h1>
+        <p class="ds-page-header__text">Every address, what it takes and what it answers.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outline" href="#libraries">Download a library</a>
+      </div>
+    </div>
+  </header>
+  <div class="ds-container ds-main ds-main--inner">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Overview</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#reference">Reference</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">Bookings</li>
+    </ol>
+    <div class="ds-row ds-row--flush">
+      <div class="ds-col">
+        <ul class="ds-tabs">
+          <li><a class="ds-tabs__tab is-current" href="#reference">Bookings <span class="ds-badge ds-badge--quiet">5</span></a></li>
+          <li><a class="ds-tabs__tab" href="#reference">Rooms <span class="ds-badge ds-badge--quiet">4</span></a></li>
+          <li><a class="ds-tabs__tab" href="#reference">People <span class="ds-badge ds-badge--quiet">4</span></a></li>
+          <li><a class="ds-tabs__tab" href="#reference">Webhooks <span class="ds-badge ds-badge--quiet">3</span></a></li>
+        </ul>
+        <div class="ds-table__wrap">
+          <table class="ds-table" data-component="table">
+            <caption class="ds-table__caption">Limits are calls a minute for one key. Addresses are relative to /v2.</caption>
+            <thead>
+              <tr><th scope="col">Method</th><th scope="col">Address</th><th scope="col">What it does</th><th scope="col">Status</th><th scope="col" class="ds-table__num">Limit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="ds-method">GET</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/bookings</a></th><td>Lists bookings, newest first</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__num">120</td></tr>
+              <tr><td><span class="ds-method">POST</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/bookings</a></th><td>Books a free slot</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__num">60</td></tr>
+              <tr><td><span class="ds-method">PUT</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/bookings/:id</a></th><td>Moves or renames a booking</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__num">60</td></tr>
+              <tr><td><span class="ds-method">POST</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/bookings/:id/repeat</a></th><td>Repeats a booking on a pattern</td><td><span class="ds-badge ds-badge--warning">Beta</span></td><td class="ds-table__num">30</td></tr>
+              <tr><td><span class="ds-method">DELETE</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/bookings/:id</a></th><td>Cancels a booking</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__num">60</td></tr>
+              <tr><td><span class="ds-method">GET</span></td><th scope="row"><a class="ds-link ds-method" href="#reference">/reservations</a></th><td>The version 1 name for the list</td><td><span class="ds-badge ds-badge--danger">Going away</span></td><td class="ds-table__num">10</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-table__foot ds-spaced">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#reference" aria-label="Previous"></a></li>
+            <li><a class="ds-pagination__link is-current" href="#reference">1</a></li>
+            <li><a class="ds-pagination__link" href="#reference">2</a></li>
+            <li><a class="ds-pagination__link" href="#reference">3</a></li>
+            <li><a class="ds-pagination__link" href="#reference" aria-label="Next"></a></li>
+          </ul>
+          <div class="ds-badgerow" data-component="badge">
+            <span class="ds-badge">2.4</span>
+            <span class="ds-badge ds-badge--info">New</span>
+            <span class="ds-badge ds-badge--success">Stable</span>
+            <span class="ds-tooltip ds-tooltip--plain" tabindex="0"><span class="ds-badge ds-badge--warning">Beta</span><span class="ds-tooltip__tip" role="tooltip">May change before 2.5. Tell us what breaks.</span></span>
+            <span class="ds-badge ds-badge--danger">Going away</span>
+            <span class="ds-badge ds-badge--quiet">16</span>
+          </div>
+        </div>
+
+        <section class="ds-panel ds-spaced">
+          <h2 class="ds-panel__title">POST /bookings <span class="ds-badge ds-badge--success">Stable</span></h2>
+          <div class="ds-panel__body">
+            <p>Books a free slot in one room. Send <code class="ds-method">room</code>, <code class="ds-method">start</code> and <code class="ds-method">name</code>; the length defaults to one slot.</p>
+            <pre class="ds-code">{
+  <span class="ds-code__key">"id"</span>: 90211,
+  <span class="ds-code__key">"room"</span>: 14,
+  <span class="ds-code__key">"start"</span>: "2013-09-16T09:30:00+02:00",
+  <span class="ds-code__key">"name"</span>: "Design review"
+}</pre>
+          </div>
+          <div class="ds-panel__foot">Answers 201 with the booking, or 409 when the slot has gone.</div>
+        </section>
+        <h2 class="ds-title ds-title--small">When it does not answer 201</h2>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" name="answers" open>
+            <summary class="ds-accordion__head">409: the slot has gone</summary>
+            <div class="ds-accordion__body"><p>Somebody else booked it first. The answer carries the nearest free time, so you can offer it straight away.</p></div>
+          </details>
+          <details class="ds-accordion__item" name="answers">
+            <summary class="ds-accordion__head">422: the room is closed</summary>
+            <div class="ds-accordion__body"><p>The start lies outside the opening hours of the room. The answer lists them.</p></div>
+          </details>
+          <details class="ds-accordion__item" name="answers">
+            <summary class="ds-accordion__head">429: too many calls</summary>
+            <div class="ds-accordion__body"><p>Wait for the number of seconds in the <code class="ds-method">Retry-After</code> header and send the call again.</p></div>
+          </details>
+        </div>
+        <p class="ds-linkrow" data-component="links">
+          <strong>See also:</strong>
+          <a class="ds-link" href="#guide">Your first booking</a>
+          <a class="ds-link is-visited" href="#guide">Errors</a>
+          <a class="ds-link is-hover" href="#guide">Rate limits</a>
+          <a class="ds-link is-active" href="#libraries">Libraries</a>
+          <a class="ds-link ds-link--quiet" href="#home">Overview</a>
+        </p>
+      </div>
+      <div class="ds-col ds-col--side">
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Reference</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#reference">Bookings</a></li>
+            <li><a class="ds-sidebar__link ds-sidebar__link--sub" href="#reference">List</a></li>
+            <li><a class="ds-sidebar__link ds-sidebar__link--sub" href="#reference">Create</a></li>
+            <li><a class="ds-sidebar__link ds-sidebar__link--sub" href="#reference">Repeat</a></li>
+            <li><a class="ds-sidebar__link" href="#reference">Rooms</a></li>
+            <li><a class="ds-sidebar__link" href="#reference">People</a></li>
+            <li><a class="ds-sidebar__link" href="#reference">Webhooks</a></li>
+          </ul>
+          <p class="ds-sidebar__foot"><a class="ds-link ds-link--quiet" href="#reference">Back to top</a></p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="libraries">
+  <header class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div class="ds-page-header__copy">
+        <h1 class="ds-page-header__title">Libraries</h1>
+        <p class="ds-page-header__text">Official clients, released together with the API.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outline" href="#guide">Read the guide</a>
+      </div>
+    </div>
+  </header>
+  <div class="ds-container ds-main ds-main--inner">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Overview</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">Libraries</li>
+    </ol>
+    <div class="ds-panels">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Ruby <span class="ds-badge">2.4.1</span></h2>
+        <div class="ds-panel__body">
+          <p>For Ruby 1.9 and later. No dependencies beyond the standard library.</p>
+          <pre class="ds-code">$ gem install chronoskin</pre>
+          <a class="ds-button ds-button--block" href="#libraries">Download the gem</a>
+        </div>
+        <div class="ds-panel__foot">48 KB, released 9 September 2013</div>
+      </section>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Python <span class="ds-badge">2.4.1</span></h2>
+        <div class="ds-panel__body">
+          <p>For Python 2.6 and 2.7. A build for Python 3 is in beta.</p>
+          <pre class="ds-code">$ pip install chronoskin</pre>
+          <a class="ds-button ds-button--block" href="#libraries">Download the package</a>
+        </div>
+        <div class="ds-panel__foot">36 KB, released 9 September 2013</div>
+      </section>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">PHP <span class="ds-badge ds-badge--warning">2.4.0</span></h2>
+        <div class="ds-panel__body">
+          <p>For PHP 5.3 and later. One release behind while 2.4.1 is tested.</p>
+          <pre class="ds-code">$ composer require chronoskin/client</pre>
+          <a class="ds-button ds-button--secondary ds-button--block" href="#libraries">Download the archive</a>
+        </div>
+        <div class="ds-panel__foot">61 KB, released 21 August 2013</div>
+      </section>
+    </div>
+
+    <div class="ds-row ds-row--level ds-row--flush">
+      <div class="ds-col ds-col--wide">
+        <h2 class="ds-title">Changelog</h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <a class="ds-list__title" href="#reference">2.4.1: recurring bookings</a>
+            <p class="ds-list__text">A booking can repeat daily, weekly or on named weekdays. In beta, behind one new address.</p>
+            <span class="ds-list__meta">9 September 2013, 14 changes, 3 contributors <span class="ds-avatar ds-avatar--small">A</span> <span class="ds-avatar ds-avatar--small ds-avatar--2">K</span> <span class="ds-avatar ds-avatar--small ds-avatar--3">T</span></span>
+          </li>
+          <li class="ds-list__item">
+            <a class="ds-list__title" href="#guide">2.4.0: webhooks with retries</a>
+            <p class="ds-list__text">A failed delivery is tried again for a day, at growing intervals, and listed in the dashboard.</p>
+            <span class="ds-list__meta">21 August 2013, 22 changes, 5 contributors</span>
+          </li>
+          <li class="ds-list__item">
+            <a class="ds-list__title" href="#reference">2.3.2: faster availability</a>
+            <p class="ds-list__text">Free slots for a whole week now come back in one call and in a third of the time.</p>
+            <span class="ds-list__meta">30 July 2013, 9 changes, 2 contributors <span class="ds-avatar ds-avatar--small ds-avatar--2">K</span> <span class="ds-avatar ds-avatar--small ds-avatar--4">M</span></span>
+          </li>
+          <li class="ds-list__item">
+            <a class="ds-list__title" href="#reference">2.3.0: people as well as rooms</a>
+            <p class="ds-list__text">A booking can need a person, a room or both, and availability takes all of them into account.</p>
+            <span class="ds-list__meta">2 July 2013, 31 changes, 6 contributors</span>
+          </li>
+        </ul>
+      </div>
+      <div class="ds-col ds-col--stack">
+        <section class="ds-panel ds-panel--info">
+          <h2 class="ds-panel__title">Other languages</h2>
+          <div class="ds-panel__body">
+            <p>JavaScript, Java and Go clients are kept by their own maintainers and follow a release or two behind.</p>
+            <a class="ds-link" href="#home">See all six</a>
+          </div>
+        </section>
+        <div class="ds-well ds-grow">
+          <h2 class="ds-title ds-title--small">Written your own?</h2>
+          <p class="ds-col__text">Tell us and we will list it here, with a link to its source.</p>
+          <a class="ds-button ds-button--secondary" href="#keys">Send us a note</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="keys">
+  <header class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div class="ds-page-header__copy">
+        <h1 class="ds-page-header__title">API keys</h1>
+        <p class="ds-page-header__text">One key for each application that calls the API.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outline" href="#guide">How keys work</a>
+      </div>
+    </div>
+  </header>
+  <div class="ds-container ds-main ds-main--inner">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Overview</a></li>
+      <li class="ds-breadcrumb__item ds-breadcrumb__current">API keys</li>
+    </ol>
+    <div class="ds-row ds-row--level ds-row--flush">
+      <div class="ds-col">
+        <h2 class="ds-title">Ask for a key</h2>
+        <form class="ds-form ds-spaced" data-component="form" action="#keys">
+          <div class="ds-form__row">
+            <label class="ds-form__field"><span class="ds-form__label">Application name</span><input class="ds-form__input" type="text" value="Front desk"></label>
+            <label class="ds-form__field"><span class="ds-form__label">Kind of key</span>
+              <select class="ds-form__select"><option>Test key</option><option>Live key</option></select>
+            </label>
+          </div>
+          <label class="ds-form__field is-error"><span class="ds-form__label">Address for webhooks</span><input class="ds-form__input is-error" type="text" value="frontdesk.example/hooks"><span class="ds-form__error">Give the full address of a secure page.</span></label>
+          <label class="ds-form__field"><span class="ds-form__label">Contact email</span><input class="ds-form__input is-focus" type="text" placeholder="Who we write to when something breaks"></label>
+          <label class="ds-form__field"><span class="ds-form__label">What will it do?</span><textarea class="ds-form__textarea" rows="3" placeholder="A sentence or two"></textarea><span class="ds-form__hint">Optional. It helps us answer questions faster.</span></label>
+          <label class="ds-switch"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track" aria-hidden="true"></span><span class="ds-switch__label">Send webhooks for test bookings too</span></label>
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>Email me when a new version is released. <a class="ds-link" href="#libraries">See the changelog</a></span></label>
+          <div class="ds-buttonrow" data-component="buttons">
+            <button class="ds-button" type="submit">Create the key</button>
+            <a class="ds-button ds-button--secondary" href="#guide">Cancel</a>
+            <a class="ds-button ds-button--danger" href="#keys">Revoke all keys</a>
+            <button class="ds-button" type="button" disabled>Copy the key</button>
+          </div>
+        </form>
+      </div>
+      <div class="ds-col ds-col--stack">
+        <div>
+          <h2 class="ds-title">Calls this month</h2>
+          <p class="ds-progress__label"><span>61,400 of 100,000 on the free plan</span><span>resets on 1 October</span></p>
+          <div class="ds-progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div class="ds-progress__bar ds-progress__bar--60"></div></div>
+        </div>
+        <div>
+          <h2 class="ds-title">Your keys</h2>
+          <div class="ds-empty" data-component="empty">
+            <svg class="ds-empty__icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M20 20h16 M30 20v6 M35 20v4" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+            <h3 class="ds-empty__title">No keys yet</h3>
+            <p class="ds-empty__text">Keys you create are listed here with the date they were last used.</p>
+            <a class="ds-button ds-button--secondary" href="#guide">Read how keys work</a>
+          </div>
+        </div>
+        <div class="ds-dialog ds-grow" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Revoke every key?</h2>
+              <a class="ds-dialog__close" href="#keys" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>Applications that use these keys stop working at once. This cannot be undone.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#keys">Keep them</a>
+              <a class="ds-button ds-button--danger" href="#keys">Revoke all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__text">The chronoskin API, version 2.4.1. Documentation written by the people who run it.</p>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#guide">Getting started</a></li>
+    <li><a class="ds-footer__link" href="#reference">Reference</a></li>
+    <li><a class="ds-footer__link" href="#libraries">Libraries</a></li>
+    <li><a class="ds-footer__link" href="#keys">API keys</a></li>
+    <li><a class="ds-footer__link" href="#home">Back to top</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

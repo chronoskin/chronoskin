@@ -1,0 +1,102 @@
+# Whole-page bento, 2024
+
+## Summary
+
+A landing page that is one bento from top to bottom: there is no separate hero band, the introduction is simply the largest cell of a six-track grid, and features, figures, the call to action and even the footer are cells around it. Cells are rounded, sit close together with a 12px gap, and differ strongly in size, from one-track icon cells to the four-track hero, with a pill-shaped navigation floating above the grid. The form was common on product, developer-tool and design-tool sites from about 2022 to 2026.
+
+## Layout
+
+- Fixed centred column: `--size-page` is 1280px, designed at a 1440px viewport, padded by `--space-5` at the sides and below.
+- `.ds-nav` is not a bar: it is a pill as wide as its content, centred, sticky at the top with `--space-4` of clear space around it, floating over the cells with `--fill-bar`, a hairline and `--shadow-panel`. Brand at the left, four or five links, one small pill button at the right.
+- `.ds-brand`: the site's mark and name, at the left end of the floating navigation pill. `.ds-brand__mark` is a small square tile dressed like the primary button (`--fill-button` over `--color-button`, `--color-button-text` for the drawing, a 1px hairline, `--radius-control`, `--shadow-control`), so it takes on every palette and surface; it holds the mark as inline SVG painted with `currentColor`. `.ds-brand__name` is the name in the heading family at 16px, with the heading weight, tracking and transform, in `--color-bar-text`. The name `chronoskin` and its mark are placeholders: the installing project puts its own name and logo here.
+- One `.ds-grid` of six equal tracks (about 203px). A cell takes two tracks by default; `--mini` takes one, `--half` three, `--wide` four, `--full` all six, `--tall` two rows. Rows of the home grid are at least `--size-row` (208px) tall. `.ds-grid--auto` lets rows follow their content.
+- The home page opens with the `.ds-hero` cell, four tracks by two rows, in the top-left corner, with a `--tall` two-track cell at its right. Below it a `--wide` `.ds-stats` cell with a two-track cell, then a row of two `--mini` cells and two default cells, then two `--half` cells, then the `--full` accent cell with its button at the right. No two neighbouring rows use the same split.
+- Tight: the gap between cells is `--space-gap` (12px) in both directions and the padding inside a cell is `--space-cell` (28px); the hero cell and the footer cell use `--space-7` (48px), a `--mini` cell `--space-4` (16px).
+- Spacing scale: `--space-1` 4px (pill padding, title to caption), `--space-2` 8px (button gap, nav pill padding), `--space-3` 12px (nav link padding, sidebar item padding), `--space-4` 16px (table cell padding, list gap, icon to title, nav offset from the top), `--space-5` 24px (page gutter, stack gap inside a cell, section title to grid), `--space-6` 32px (hero lead to buttons, footer columns), `--space-7` 48px (hero and footer padding), `--space-8` 64px (above a section title, dialog stage), `--space-9` 96px (textarea height).
+- Controls are `--size-control` (40px) tall, `--size-control-large` (48px) in the hero and the accent cell; icon tiles are `--size-icon` (44px) with a `--size-glyph` (22px) line icon.
+- A second run of cells may be introduced by a `.ds-section__head`: the title at `--text-h2` at the left and one grey line at the right on the same baseline, `--space-8` above and `--space-5` below. It is never centred.
+- Inner pages have no hero and keep the six tracks. Each is one `.ds-grid--auto` `.ds-grid--page` whose first cell is the `.ds-page-header`, a `--full` cell that holds the `.ds-breadcrumb` at its top, the title at `--text-h1` with one grey line and the buttons at the right, and at its bottom an optional `.ds-toolbar` with the `.ds-tabs` pill and a count. Under it the working table takes a `--wide` cell with a two-track cell beside it (an activity `.ds-list` or a `.ds-sidebar`); forms and messages take `--half` cells, a form with its dialog stage beside it, messages with a `--bare` empty cell.
+- Views: `home` is the landing grid (hero cell, a sample invoice, stats, the small feature cells and the call to action); `invoices` is the month's list (tabs in the page header, the table with pagination, the activity list, messages and the empty state for credit notes); `invoice` is one invoice (its lines and total, the action buttons, its terms in panels and its history); `new` is the form for an invoice with the confirmation dialog beside it; `guide` is the guide (prose, the section menu, labels, links and a terminal sample). The navigation pill marks Overview, Invoices, Latest or Guide; the form marks Invoices.
+- `.ds-footer` is the last cell: full width, the cell's fill and corners, four columns and a 12px strip inside.
+- Below 960px the grid has two tracks and every cell except `--mini` takes both; below 600px the navigation pill becomes a `--radius-page` box as wide as the page with its links on a second line, cells drop to `--space-5` padding, the stats stack, the `--row` cell stacks and the page header's buttons go under its text. Below 600px a table hides the columns marked `.ds-table__extra` and scrolls sideways inside `.ds-table__scroll` if it still does not fit; a row's first cell holds a `.ds-table__link` to its detail view.
+- On a phone (600px and below) the links of the pill stay in `.ds-nav__links`, which becomes an edge-to-edge strip on the second line of the box: one row that scrolls sideways without a scrollbar, with the right edge faded by a mask. A drop-down cannot open inside it, so the Credit notes entry of the Invoices menu is shown as `.ds-nav__more`, a last link in the strip, and the menu list and its caret are not shown. The current view's link stays a filled pill; the `.ds-nav__more` link is never filled. Below 960px a tooltip opens as a full row under its line.
+
+## Typography and colour roles
+
+- A neutral graphite ramp without any blue in it: `--color-page`, `--color-canvas` and `--color-bar` `#1c1c1c`; cells `--color-surface` `#232323`; panels, the dialog and current navigation items `--color-surface-alt` `#2e2e2e`; current tab, neutral badges, chart bars and inline code `--color-surface-strong` `#3e3e3e`. `--color-bar-alt` and `--color-input` are the darker `#161616` (table head strip, tab row, form controls).
+- Text: `--color-bar-text` `#ffffff` (brand and hovered navigation), `--color-heading` `#ededed`, `--color-text` and `--color-heading-alt` `#dddddd`, `--color-text-muted`, `--color-link-quiet` and `--color-bar-alt-text` `#a0a0a0`, `--color-disabled-text` `#707070`.
+- Green leads. `--color-button` and `--color-accent` are the deeper green `#37996b` with white text: primary button, accent badge, highlighted chart bar, call-to-action cell. `--color-link`, `--color-focus` and `--color-success` are the brighter `#3ecf8e`: links, icons, the accent phrase of the hero title.
+- `--color-accent-alt` `#569cd6` is a quiet blue for "new" markers, passed checks, switched-on toggles and code keys, so that green stays the brand colour and the status colour only.
+- Borders are solid greys, not translucent white: `--color-border` `#343434`, `--color-border-strong` and `--color-input-border` `#505050`, `--color-border-muted` `#2e2e2e`.
+- Feature cells are barely tinted: `--color-fill-1` `#002533` (teal), `--color-fill-2` `#28302c` (green-grey), `--color-fill-3` `#0c0f24` (navy), `--color-fill-4` `#2e2e2e`.
+- Status: `--color-warning` `#f7be2b`, `--color-danger` `#fa1f41` on `--color-danger-surface` `#201818`; the notice is `--color-notice` `#002533` with `--color-notice-text` `#dddddd`. `--color-inverse` `#ededed` with `--color-inverse-text` `#1c1c1c` is the button on the accent cell.
+- One neutral grotesque, Inter first with the system sans behind it, for `--font-body`, `--font-heading` and `--font-ui`; `--font-mono` is the system mono.
+- Heavy headings: `--weight-display` 800 on the hero title and stat figures, `--weight-heading` and `--weight-bold` 700 on every title, `--weight-ui` 600 on buttons, navigation, tabs and labels, `--weight-body` 400.
+- Sizes are a step up from the usual: `--text-display` 56px at `--line-display` 1.06, `--text-h1` 46px, `--text-h2` 32px, `--text-h3` 22px at `--line-heading` 1.15; `--text-large` 20px for the lead and cell titles.
+- `--text-base` and `--text-ui` are both 16px (`--line-body` 1.5), so buttons, navigation and form controls read as large as the body; `--text-small` 14px is for captions, tables and lists.
+- Links in running text are underlined at rest and on hover (`--link-decoration`, `--link-decoration-hover` underline); quiet links in navigation, sidebar and footer are not (`--link-decoration-quiet` none). No tracking, no transforms.
+- Medium corners: `--radius-page` 20px on cells, `--radius-panel` 16px on panels, tables, notices and the dialog, `--radius-control` 11px on buttons, inputs and icon tiles, `--radius-pill` for badges, tabs and switches.
+- Cells are lit, not dropped: `--shadow-panel` is a 1px inset line of `--color-heading` at 5% on the top edge plus a 20px halo of `--color-accent` at 32%, so every cell stands in a glow of the accent colour that fills the gaps of the grid; the dialog has the same halo at 36%.
+- `--fill-panel` is a vertical gradient from 2% to 6% of `--color-text` laid into `--color-surface`: the cell is a touch stronger at the bottom than at the top.
+- Buttons are lit from above: `--fill-button` runs from the button colour mixed 15% with white down to the plain colour, `--shadow-control` adds an inset top line of `--color-heading` at 10% and a 2px drop of `--color-shadow` at 28%; hover deepens the drop to 4px at 25% and `--fill-button-hover` moves 15% toward the button's text colour.
+- `--fill-bar` is `--color-bar` at 80% so the page shows through the floating navigation pill. `--border-width` is 1px, `--border-width-strong` 2px for the focus ring. `--transition` is a 0.2s fade of colours and shadow.
+- The smallest text is 12px, written as `calc(var(--text-small) * 0.857)` because the vocabulary has no token for it: badges, hints, list meta, stat notes, the footer strip. Code in a cell is `calc(var(--text-small) * 0.886)`.
+- Which text sits on which fill: `--color-bar-text` on the navigation pill (current item on `--color-surface-alt`); `--color-heading`, `--color-text` and `--color-text-muted` on cells, including the hero cell, the footer cell and the `--color-fill-*` cells; `--color-accent-text` on the accent cell; `--color-bar-alt-text` on the table head strip and the tab row; `--color-inverse-text` only on the `--inverse` button. Table rows have no fill of their own and take `--color-text` on the cell.
+- Fills 1 to 3 are the corner of a diagonal gradient that fades to `--color-surface`; fill 4 is flat. At most half the cells of a grid are tinted.
+- The hero glow and the `--glow` cell are a radial fade from `--color-fill-2` to transparent, so a glow is always the palette's own tint (green-grey here) and a palette with neutral fills simply has none; the accent colour is never used for it.
+- One-off mixes written in `components.css` because no token exists: the button hairline (25% button text in the button colour), the `--new` and status badges (the colour at 14% with a 30% hairline), the danger button's hairline (danger at 45%) and hover fill, notice borders.
+
+## Components
+
+- `.ds-page` on `<body>`: sets the page fill, family and body size. `.ds-page__inner` is the 1280px column.
+- `.ds-nav`: the floating pill. `.ds-nav__inner` is the pill itself and holds the `.ds-brand`, `.ds-nav__links` of `.ds-nav__link` (current: `is-current`, a filled pill) and `.ds-nav__actions` with one `.ds-button--small`, which takes the pill radius here.
+- `.ds-nav__more`: a link at the end of `.ds-nav__links` that repeats the drop-down's extra entry; hidden above 600px, where the drop-down opens, and shown in the strip on a phone.
+- `.ds-hero`: a `.ds-grid__cell` that also carries `.ds-hero`: four tracks by two rows, copy at the bottom left, one glow in the top-right corner. `.ds-hero__top` holds an announcement badge, then `.ds-hero__title` (`--text-display`, one phrase in `.ds-hero__title-accent`), `.ds-hero__lead`, `.ds-hero__actions` with two large buttons and the 12px `.ds-hero__note` on the same line. It is always the first child of the home grid.
+- `.ds-section__head`: left-aligned title line between two grids, with `.ds-section__title` and `.ds-section__lead`.
+- `.ds-grid`: the bento. Children are `.ds-grid__cell` with span variants `--mini`, `--half`, `--wide`, `--full`, `--tall`; alignment variants `--end`, `--center`, `--stack` (24px between children), `--row` (copy left in `.ds-grid__copy`, actions right); fill variants `--fill-1` to `--fill-4`, `--glow`, `--accent` (the call to action, with a `.ds-button--inverse`), `--bare` (outline only). Inside: `.ds-grid__icon` with a `.ds-grid__glyph`, `.ds-grid__head` (title at the left, a badge at the right), `.ds-grid__title`, `.ds-grid__text`, `.ds-grid__visual` (pushed to the bottom) and `.ds-grid__actions`. `.ds-grid--auto` is for cells that hold components; `.ds-grid--page` is the grid of an inner page; `.ds-grid__link` makes a cell title a link in the specimen.
+- Cell visuals: `.ds-chart` of `.ds-chart__bar` (`--2` to `--5` set the height, `is-current` the accent), `.ds-code` with `.ds-code__key` and `.ds-code__str`, `.ds-checks` of `.ds-checks__item` with `.ds-checks__mark`, `.ds-chips`, `.ds-rows` of `.ds-rows__item` with a `.ds-switch` (`is-on`), a figure or a small button.
+- `.ds-page-header`: a `--full` cell at the top of an inner page. It holds the `.ds-breadcrumb`, a `.ds-page-header__row` with `.ds-page-header__copy` (`.ds-page-header__title`, `.ds-page-header__text`) and `.ds-page-header__actions` at the right, and the `.ds-toolbar`. Never use it together with a `.ds-hero`.
+- `.ds-stat`: one figure: `.ds-stat__label` over `.ds-stat__value` (`--text-h1`, `--weight-display`, tabular figures, optional `.ds-stat__unit`) over an optional 12px `.ds-stat__note` (`--success`, `--warning`, `--danger`). `.ds-stats` is the row and is itself one `--wide` cell: three or four `.ds-stat` side by side, cut apart by vertical hairlines, not separate cells. A single `.ds-stat` may close a cell's visual; `.ds-stat--display` raises it to `--text-display`.
+- `.ds-prose`: long-form text in a `--wide` cell; styles h1 to h3, paragraphs, lists, `strong`, `code` and links.
+- `.ds-link`: inline link with `is-visited`, `is-hover`, `is-active`, `is-focus`; `--quiet` for grey links. `.ds-links` lays several out in a row.
+- `.ds-button`: primary. `--secondary` is held by a hairline, `--danger` is the destructive action (danger text on `--color-danger-surface` with a danger hairline, never a solid block), `--inverse` only on the accent cell, `--large` in the hero, `--small` in the navigation and in rows. States `is-hover`, `is-active`, `is-focus`, `is-disabled`. Group with `.ds-buttons`.
+- `.ds-badge`: 12px pill. `--accent` filled, `--new` tinted, `--count` a square-cornered number; optional `.ds-badge__dot`. Status labels are `--success`, `--warning` and `--danger`: coloured text on a 14% tint with a 30% hairline, used in a table's status column and a cell's head.
+- `.ds-form`: two-column grid of `.ds-form__field` (`--full` spans both) with `.ds-form__label` and `.ds-form__control` (`--area`; `is-invalid`, `is-focus`, `is-disabled`), `.ds-form__hint`, `.ds-form__error`, `.ds-form__check` with `.ds-form__checkbox`, and `.ds-form__actions`. It lives in a `--half` cell.
+- `.ds-table`: open rows straight on a `--wide` cell with no box around them: a `--fill-bar-alt` head strip with rounded ends, hairlines between rows; `.ds-table__num` right-aligns numbers, `.ds-table__muted` greys a column, `tr.is-current` sets a row in the heading colour and bold weight.
+- `.ds-list`: a timeline: each `.ds-list__item` is led by a `.ds-list__mark` dot and stacks `.ds-list__title`, optional `.ds-list__text` and `.ds-list__meta`; items are separated by space, not rules.
+- `.ds-panel`: a small card inside a cell with `.ds-panel__title`, `.ds-panel__body` and `.ds-panel__meta`. `.ds-panels` puts two side by side.
+- `.ds-tabs`: a segmented pill of `.ds-tabs__tab`; `is-current` is the filled segment. `.ds-toolbar` puts it on one line with a count, at the bottom of the page-header cell.
+- `.ds-sidebar`: a two-track cell with `.ds-sidebar__title` and a `.ds-sidebar__list` of `.ds-sidebar__link` (`is-current` filled).
+- `.ds-notice`: information box with `.ds-notice__title` and `.ds-notice__text`; `--error` is the danger variant. `.ds-notices` stacks them.
+- `.ds-pagination`: `.ds-pagination__link` items under a table in the same cell; `is-current` filled with a hairline, `is-disabled` greyed.
+- `.ds-breadcrumb`: trail of `.ds-breadcrumb__item` separated by slashes; the last carries `is-current`. It is the first line inside the page-header cell.
+- `.ds-dialog`: box with `.ds-dialog__bar` (`.ds-dialog__title`, `.ds-dialog__close` with `.ds-dialog__glyph`), `.ds-dialog__body` and `.ds-dialog__actions`, shown on a `.ds-stage`, a `--wide` cell filled with `--color-overlay`.
+- `.ds-empty`: centred icon, `.ds-empty__title`, `.ds-empty__text` and one secondary button inside a `--bare` cell.
+- `.ds-footer`: the last cell. `.ds-footer__inner` is the cell, with `.ds-footer__brand`, `.ds-footer__text`, three columns of `.ds-footer__title` over a `.ds-footer__list` of `.ds-footer__link`, and `.ds-footer__strip` across the bottom.
+- `.ds-menu`: a drop-down under a navigation item, opened by hover or keyboard focus (`is-open` by hand). `.ds-menu__list` of `.ds-menu__item` with an optional `.ds-menu__hint`, parted by `.ds-menu__rule`; `.ds-menu__caret` in the trigger; `--end` aligns it to the right edge. Use it under the one navigation item that has sub-pages.
+- `.ds-accordion`: `<details>` as `.ds-accordion__item` with a `.ds-accordion__head` summary and `.ds-accordion__body`. Use it for questions at the end of a guide or inside a tile.
+- `.ds-tooltip`: a focusable term with `.ds-tooltip__mark` and `.ds-tooltip__tip`, shown on hover or focus (`is-open` by hand) on `--fill-inverse`. Use it for one sentence of explanation, never for an action.
+- `.ds-progress`: `.ds-progress__label` with `.ds-progress__value` over `.ds-progress__bar` with `.ds-progress__fill` (`--1` to `--5` set the width; `--success`, `--warning` the colour). Use it inside a tile for a quota or a share used.
+
+## Never
+
+- `palette-colours <= 36`: graphite greys, two greens and one blue; no purple, no second brand colour.
+- `font-weight <= 800`: 800 is the hero weight; nothing is heavier.
+- `font-size <= 56px`: the hero heading tops out at 56px; weight carries the emphasis, not size.
+- `font-size >= 12px`: the smallest text is 12px.
+- `font-families <= 2`: one sans for everything plus the mono for code.
+- `line-height <= 1.6`: body text sits at 1.5.
+- `uppercase-text <= 1%`: nothing is set in capitals.
+- `border-radius <= 20px`: the largest box radius is the 20px cell.
+- `border-radius >= 4px`: no box is square.
+- `border-width <= 2px`: every hairline is 1px; 2px exists only as the focus ring.
+- `box-shadow-blur <= 20px`: the halo around a cell is the largest blur, 20px.
+- `text-shadow = none`: no text shadows.
+- `animation = none`: nothing animates.
+- `content-width <= 1280px`: everything stays in the centred 1280px grid.
+- `block-gap <= 64px`: cells sit 12px apart; the largest gap between stacked blocks is the 64px around a section title.
+- `gradient-fills <= 30%`: gradients are cell lighting, corner tints and two glows, never a full-page wash.
+
+## Extending
+
+Derive a new component from the nearest one in the specimen. Anything new is a cell: choose its span so that its row does not repeat the split of the row above, give it a title, one 14px caption and one small visual pushed to the bottom. A page-wide statement is a `--full` cell, never a band outside the grid; a box inside a cell is a `.ds-panel`; a chip is a `.ds-badge`. Use tokens only: fills are `--fill-panel` or a `--color-fill-*` tint, outlines are `--border-width` in `--color-border`, corners are `--radius-page` for cells, `--radius-panel` inside them and `--radius-control` for controls, spacing comes from the `--space-*` scale. Keep one subject per cell, separate cells with the 12px gap and never with a rule, and do not add a full-width navigation bar, a centred hero outside the grid or a footer band.

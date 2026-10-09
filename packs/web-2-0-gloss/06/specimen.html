@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>chronoskin: Web 2.0 gloss developer blog specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__sheet">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__head">
+    <a class="ds-brand" data-component="brand" href="#"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 10.5V8a5 5 0 0 1 5-5h9a5 5 0 0 1 5 5v2.5z" opacity=".55"/><path d="M2.5 10.5h19V13a5 5 0 0 1-5 5H12l-4.5 3.8V18a5 5 0 0 1-5-5z"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+    <p class="ds-nav__tagline">for developers</p>
+  </div>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#home">Blog</a></li>
+    <li class="ds-menu" data-component="menu"><a class="ds-nav__link" href="#reference">API reference <span class="ds-menu__caret">&raquo;</span></a>
+      <ul class="ds-menu__list">
+        <li class="ds-menu__item"><a class="ds-menu__link" href="#reference">Notes</a></li>
+        <li class="ds-menu__item"><a class="ds-menu__link" href="#reference">Notebooks</a></li>
+        <li class="ds-menu__item"><a class="ds-menu__link" href="#reference">Labels</a></li>
+        <li class="ds-menu__item"><a class="ds-menu__link" href="#reference">People</a></li>
+        <li class="ds-menu__item is-ruled"><a class="ds-menu__link" href="#reference">Error codes</a></li>
+      </ul>
+    </li>
+    <li><a class="ds-nav__link" href="#keys">Your keys</a></li>
+  </ul>
+  <div class="ds-nav__block">
+    <form class="ds-nav__search" action="#">
+      <input class="ds-nav__input" type="text" placeholder="Search the docs" aria-label="Search the docs">
+      <button class="ds-button ds-button--secondary" type="button">Go</button>
+    </form>
+  </div>
+  <div class="ds-nav__block">
+    <span class="ds-nav__label">The API today</span>
+    <p class="ds-nav__text">All methods answering. Last trouble: 19 days ago.</p>
+  </div>
+  <div class="ds-nav__block">
+    <span class="ds-nav__label">Signed in</span>
+    <p class="ds-nav__text">maren_holt, <a class="ds-nav__tool" href="#keys">2 keys</a></p>
+  </div>
+</header>
+
+<div class="ds-page__content">
+<div class="ds-page__body">
+
+  <section class="ds-view ds-view--home" id="home">
+
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__main">
+        <h1 class="ds-hero__title">Build on your notebooks</h1>
+        <p class="ds-hero__lead">Everything chronoskin does in the browser, your own program can do with one web address and a key.</p>
+        <p class="ds-hero__action">
+          <a class="ds-button ds-button--large" href="#keys">Get a key</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#reference">Read the reference</a>
+        </p>
+      </div>
+      <div class="ds-hero__code">
+        <div class="ds-code">
+          <p class="ds-code__title">Ask for the newest notes</p>
+          <pre class="ds-code__body">GET /v2/notes?book=harbour&amp;key=YOUR_KEY
+
+<span class="ds-code__dim">200 OK</span>
+{ "notes": [
+  { "id": 412, "title": "Ferry times" },
+  { "id": 409, "title": "Tide table" } ] }</pre>
+        </div>
+      </div>
+    </div>
+
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__number">1.2 million</span><span class="ds-stat__label">calls answered yesterday</span></li>
+      <li class="ds-stat"><span class="ds-stat__number">840</span><span class="ds-stat__label">programs with a key</span> <span class="ds-tooltip" data-component="tooltip"><a class="ds-tooltip__trigger" href="#keys" aria-describedby="tip-programs">?</a><span class="ds-tooltip__tip" id="tip-programs" role="tooltip">A program counts once it has made a call with its key.</span></span></li>
+      <li class="ds-stat"><span class="ds-stat__number">0.09 s</span><span class="ds-stat__label">for a usual answer</span></li>
+    </ul>
+
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell ds-grid__cell--1">
+        <h2 class="ds-grid__title">Ruby</h2>
+        <p class="ds-grid__text">Every method in one small file. Version 0.4.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#post">Get the library</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--2">
+        <h2 class="ds-grid__title">PHP</h2>
+        <p class="ds-grid__text">One class, no extensions needed. Version 1.1.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#post">Get the library</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--3">
+        <h2 class="ds-grid__title">Python</h2>
+        <p class="ds-grid__text">Reads and writes notes in three lines. Version 0.9.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#post">Get the library</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--4">
+        <h2 class="ds-grid__title">JavaScript</h2>
+        <p class="ds-grid__text">For pages that show a notebook. Version 0.2.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#post">Get the script</a></p>
+      </div>
+    </div>
+
+    <div class="ds-page__columns">
+      <main class="ds-page__main">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#home">Latest posts</a></li>
+          <li><a class="ds-tabs__tab" href="#home">Releases <span class="ds-tabs__count">(9)</span></a></li>
+          <li><a class="ds-tabs__tab" href="#home">How to <span class="ds-tabs__count">(17)</span></a></li>
+        </ul>
+        <ol class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <div class="ds-list__date"><span class="ds-list__day">12</span><span class="ds-list__month">Oct</span></div>
+            <div class="ds-list__body">
+              <h2 class="ds-list__title"><a class="ds-link ds-link--title" href="#post">Version 2 of the notes API is open to everyone</a> <span class="ds-badge ds-badge--new">NEW</span></h2>
+              <p class="ds-list__meta"><span class="ds-avatar ds-avatar--1" data-component="avatar"></span>by Ines Varga, <a class="ds-link ds-link--quiet" href="#post">14 comments</a></p>
+              <p class="ds-list__text">After six weeks behind a sign-up list, version 2 is switched on for every key. Answers come back as JSON by default, paging works the same way on every list, and the old XML replies stay for a year.</p>
+              <p class="ds-list__foot"><a class="ds-badge ds-badge--tag" href="#home">release</a><a class="ds-badge ds-badge--tag" href="#home">api</a><a class="ds-link ds-list__more" href="#post">Read on &raquo;</a></p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__date"><span class="ds-list__day">3</span><span class="ds-list__month">Oct</span></div>
+            <div class="ds-list__body">
+              <h2 class="ds-list__title"><a class="ds-link ds-link--title" href="#post">Paging through long lists without losing your place</a></h2>
+              <p class="ds-list__meta"><span class="ds-avatar ds-avatar--2"></span>by Tobias Renn, <a class="ds-link ds-link--quiet" href="#post">6 comments</a></p>
+              <p class="ds-list__text">Page numbers break when a notebook changes while you read it. The new <strong>after</strong> marker does not: ask for the notes after the last one you saw.</p>
+              <p class="ds-list__foot"><a class="ds-badge ds-badge--tag" href="#home">howto</a><a class="ds-badge ds-badge--tag" href="#home">paging</a><a class="ds-link ds-list__more" href="#post">Read on &raquo;</a></p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__date"><span class="ds-list__day">21</span><span class="ds-list__month">Sep</span></div>
+            <div class="ds-list__body">
+              <h2 class="ds-list__title"><a class="ds-link ds-link--title is-visited" href="#post">What we learned from a million calls a day</a></h2>
+              <p class="ds-list__meta"><span class="ds-avatar ds-avatar--3"></span>by Maren Holt, <a class="ds-link ds-link--quiet" href="#post">22 comments</a></p>
+              <p class="ds-list__text">Most calls ask for the same forty notebooks. We now keep those answers ready, and nine calls in ten come back in under a tenth of a second.</p>
+              <p class="ds-list__foot"><a class="ds-badge ds-badge--tag" href="#home">servers</a><a class="ds-badge ds-badge--tag" href="#home">numbers</a><a class="ds-link ds-list__more" href="#post">Read on &raquo;</a></p>
+            </div>
+          </li>
+          <li class="ds-list__item is-last">
+            <div class="ds-list__date"><span class="ds-list__day">9</span><span class="ds-list__month">Sep</span></div>
+            <div class="ds-list__body">
+              <h2 class="ds-list__title"><a class="ds-link ds-link--title" href="#post">A Ruby library, written by one of you</a></h2>
+              <p class="ds-list__meta"><span class="ds-avatar ds-avatar--4"></span>by Ines Varga, <a class="ds-link ds-link--quiet" href="#post">3 comments</a></p>
+              <p class="ds-list__text">Oskar Lind wrapped every method in forty lines of Ruby and sent it in. It is now the library we point to.</p>
+              <p class="ds-list__foot"><a class="ds-badge ds-badge--tag" href="#home">libraries</a><a class="ds-badge ds-badge--tag" href="#home">thanks</a><a class="ds-link ds-list__more" href="#post">Read on &raquo;</a></p>
+            </div>
+          </li>
+        </ol>
+        <ul class="ds-pagination" data-component="pagination">
+          <li class="ds-pagination__start"><span class="ds-pagination__link is-disabled">&laquo; Newer</span></li>
+          <li><span class="ds-pagination__link is-current">1</span></li>
+          <li><a class="ds-pagination__link" href="#home">2</a></li>
+          <li><a class="ds-pagination__link" href="#home">3</a></li>
+          <li class="ds-pagination__gap">&hellip;</li>
+          <li><a class="ds-pagination__link" href="#home">11</a></li>
+          <li class="ds-pagination__end"><a class="ds-pagination__link" href="#home">Older &raquo;</a></li>
+        </ul>
+      </main>
+
+      <div class="ds-page__side">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">New here?</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">A key is free and takes a minute. The first call usually works within five.</p>
+            <div class="ds-panel__actions">
+              <a class="ds-button" href="#keys">Get a key</a>
+              <a class="ds-link" href="#reference">First steps</a>
+            </div>
+          </div>
+        </section>
+        <nav class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Feeds</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--feed" href="#home"><span class="ds-link__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 6a4 4 0 0 1 4 4"/><path d="M2 2a8 8 0 0 1 8 8"/><circle cx="2.4" cy="9.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>All posts</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--feed" href="#home"><span class="ds-link__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 6a4 4 0 0 1 4 4"/><path d="M2 2a8 8 0 0 1 8 8"/><circle cx="2.4" cy="9.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>Releases only</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--feed" href="#home"><span class="ds-link__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 6a4 4 0 0 1 4 4"/><path d="M2 2a8 8 0 0 1 8 8"/><circle cx="2.4" cy="9.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>Comments</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--feed" href="#reference"><span class="ds-link__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 6a4 4 0 0 1 4 4"/><path d="M2 2a8 8 0 0 1 8 8"/><circle cx="2.4" cy="9.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>Changes to the API</a></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Archive</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#home">October</a><span class="ds-sidebar__count">2 posts</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#home">September</a><span class="ds-sidebar__count">5 posts</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#home">August</a><span class="ds-sidebar__count">3 posts</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#home">July</a><span class="ds-sidebar__count">4 posts</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#home">Earlier</a><span class="ds-sidebar__count">38 posts</span></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Filed under</h2>
+          <p class="ds-sidebar__tags"><a class="ds-badge ds-badge--tag" href="#home">api</a><a class="ds-badge ds-badge--tag" href="#home">release</a><a class="ds-badge ds-badge--tag" href="#home">howto</a><a class="ds-badge ds-badge--tag" href="#home">libraries</a><a class="ds-badge ds-badge--tag" href="#home">paging</a><a class="ds-badge ds-badge--tag" href="#home">servers</a><a class="ds-badge ds-badge--tag" href="#home">numbers</a><a class="ds-badge ds-badge--tag" href="#home">thanks</a></p>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Made with the API</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">Notes on the desktop</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">A notebook by mail</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">The ferry timetable page</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="post">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li><a class="ds-link" href="#home">Developers</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li><a class="ds-link" href="#home">Blog</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li class="ds-breadcrumb__current">Version 2 is open to everyone</li>
+    </ol>
+
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Version 2 of the notes API is open to everyone</h1>
+        <p class="ds-page-header__text">Posted on 12 October by Ines Varga, filed under <a class="ds-badge ds-badge--tag" href="#home">release</a> <a class="ds-badge ds-badge--tag" href="#home">api</a></p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#reference">See the reference</a>
+      </div>
+    </div>
+
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+        <div class="ds-prose" data-component="typography">
+          <h1>What changes today</h1>
+          <p>After six weeks behind a sign-up list, version 2 is switched on for every key. <mark>Nothing you have written stops working</mark>: version 1 keeps answering for a year, at its old address.</p>
+          <h2>Answers in JSON</h2>
+          <p>Every method now answers in JSON unless you ask otherwise. Add <code>format=xml</code> to a call and you get the reply you are used to. <strong>The names of the fields are the same in both.</strong></p>
+          <h3>Three things to check in your program</h3>
+          <ul>
+            <li>Calls go to <code>/v2/</code> instead of <code>/v1/</code>.</li>
+            <li>Lists come twenty to a page, not fifty.</li>
+            <li>A missing note answers 404, no longer an empty list.</li>
+          </ul>
+          <p>The full list of methods, with their limits, is in the <a href="#reference">reference</a>.</p>
+        </div>
+        <div class="ds-code ds-code--after">
+          <p class="ds-code__title">The same call, old and new</p>
+          <pre class="ds-code__body"><span class="ds-code__dim">before</span>  GET /v1/notes.xml?book=harbour
+<span class="ds-code__dim">now</span>     GET /v2/notes?book=harbour</pre>
+        </div>
+
+      </div>
+
+      <div class="ds-page__side">
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">In this post</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><a class="ds-link" href="#post">What changes today</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">Answers in JSON</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">Three things to check</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">Comments</a><span class="ds-sidebar__count">14</span></li>
+          </ul>
+        </nav>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Still on version 1?</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">It answers until next October. Your keys work for both.</p>
+            <div class="ds-panel__actions">
+              <a class="ds-link" href="#keys">Check your keys</a>
+            </div>
+          </div>
+        </section>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Read next</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">Paging through long lists</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">A million calls a day</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#post">A Ruby library</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="ds-page__split">
+      <section>
+          <h2 class="ds-section__label">Four of 14 comments</h2>
+          <ol class="ds-list">
+            <li class="ds-list__item">
+              <div class="ds-list__date"><span class="ds-list__day">12</span><span class="ds-list__month">Oct</span></div>
+              <div class="ds-list__body">
+                <p class="ds-list__meta"><span class="ds-avatar ds-avatar--1"></span><a class="ds-link ds-link--title" href="#post">Oskar Lind</a> wrote at 10:42</p>
+                <p class="ds-list__text">Moved the Ruby library over in ten minutes. The 404 for a missing note is what I wanted all along.</p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <div class="ds-list__date"><span class="ds-list__day">12</span><span class="ds-list__month">Oct</span></div>
+              <div class="ds-list__body">
+                <p class="ds-list__meta"><span class="ds-avatar ds-avatar--2"></span><a class="ds-link ds-link--title" href="#post">quietharbour</a> wrote at 13:05</p>
+                <p class="ds-list__text">Does the limit of 120 calls a minute count per key or per program?</p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <div class="ds-list__date"><span class="ds-list__day">13</span><span class="ds-list__month">Oct</span></div>
+              <div class="ds-list__body">
+                <p class="ds-list__meta"><span class="ds-avatar ds-avatar--3"></span><a class="ds-link ds-link--title" href="#post">Ines Varga</a> wrote at 9:20 <span class="ds-badge">Staff</span></p>
+                <p class="ds-list__text">Per key. The reference says so now; thank you for asking.</p>
+              </div>
+            </li>
+            <li class="ds-list__item is-last">
+              <div class="ds-list__date"><span class="ds-list__day">13</span><span class="ds-list__month">Oct</span></div>
+              <div class="ds-list__body">
+                <p class="ds-list__meta"><span class="ds-avatar ds-avatar--4"></span><a class="ds-link ds-link--title" href="#post">Annika Dorn</a> wrote at 16:48</p>
+                <p class="ds-list__text">Paging by marker fixed a bug we had chased for a month.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="ds-buttons"><a class="ds-button ds-button--secondary" href="#post">Show all 14 comments</a></p>
+      </section>
+
+      <section>
+          <h2 class="ds-section__label">Write a comment</h2>
+          <div data-component="notice">
+            <p class="ds-notice ds-notice--error is-first"><span class="ds-notice__title">Not posted yet.</span> The mail address below does not look complete.</p>
+            <p class="ds-notice"><span class="ds-notice__title">First comment here?</span> It is read by one of us before it appears, usually within the hour.</p>
+          </div>
+          <form class="ds-form ds-form--after" data-component="form" action="#">
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="f-name">Name</label>
+                <input class="ds-form__input" id="f-name" type="text" value="Maren Holt">
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="f-mail">Mail address</label>
+                <input class="ds-form__input is-error" id="f-mail" type="text" value="maren@harbour">
+                <p class="ds-form__error">Add the ending, such as .example.</p>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-text">Comment</label>
+              <textarea class="ds-form__textarea" id="f-text">Will the PHP library follow this week?</textarea>
+              <p class="ds-form__hint">Plain text. Lines that start with four spaces are shown as code.</p>
+            </div>
+            <div class="ds-form__pair">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="f-note">Tell me about answers</label>
+                <select class="ds-form__select" id="f-note">
+                  <option>By mail, each one</option>
+                  <option>By mail, once a day</option>
+                  <option>Not at all</option>
+                </select>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label">Next time</span>
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Remember my name here</label>
+              </div>
+            </div>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="button">Post the comment</button>
+              <button class="ds-button ds-button--secondary" type="button">Preview</button>
+            </div>
+          </form>
+      </section>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="reference">
+
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-link" href="#home">Developers</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li><a class="ds-link" href="#reference">API reference</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li class="ds-breadcrumb__current">Notes</li>
+    </ol>
+
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">API reference: notes</h1>
+        <p class="ds-page-header__text">Every method that reads or writes a note, with the address to call and how often you may.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#keys">Get a key</a>
+      </div>
+    </div>
+
+    <section class="ds-section ds-section--tight">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab is-current" href="#reference">Methods <span class="ds-tabs__count">(6)</span></a></li>
+        <li><a class="ds-tabs__tab" href="#reference">Fields of a note</a></li>
+        <li><a class="ds-tabs__tab" href="#reference">Error codes</a></li>
+        <li><a class="ds-tabs__tab" href="#post">What changed in version 2</a></li>
+      </ul>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr>
+            <th class="ds-table__head">Method</th>
+            <th class="ds-table__head">What it does</th>
+            <th class="ds-table__head">Status</th>
+            <th class="ds-table__head is-numeric">Calls a minute</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">notes.list</a><br><span class="ds-table__verb">GET /v2/notes</span></td>
+              <td class="ds-table__cell">The notes of one notebook, newest first, twenty to a page.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+              <td class="ds-table__cell is-numeric">120</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">notes.get</a><br><span class="ds-table__verb">GET /v2/notes/412</span></td>
+              <td class="ds-table__cell">One note with its text, labels and the people who can read it.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+              <td class="ds-table__cell is-numeric">120</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">notes.add</a><br><span class="ds-table__verb">POST /v2/notes</span></td>
+              <td class="ds-table__cell">Adds a note to a notebook. Needs a key that may write.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+              <td class="ds-table__cell is-numeric">30</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">notes.remove</a><br><span class="ds-table__verb">DELETE /v2/notes/412</span></td>
+              <td class="ds-table__cell">Moves a note to the bin, where it stays for thirty days.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Stable</span></td>
+              <td class="ds-table__cell is-numeric">30</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">search.find</a><br><span class="ds-table__verb">GET /v2/search</span></td>
+              <td class="ds-table__cell">Notes that contain every word of the query.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Beta</span></td>
+              <td class="ds-table__cell is-numeric">20</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell is-name"><a class="ds-link ds-table__name" href="#reference">export.all</a><br><span class="ds-table__verb">GET /v1/export</span></td>
+              <td class="ds-table__cell">Every note as one XML file. Use notes.list with paging instead.</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Going away</span></td>
+              <td class="ds-table__cell is-numeric">2</td>
+            </tr>
+        </tbody>
+      </table>
+      <p class="ds-badges" data-component="badge">
+        <span><span class="ds-badge ds-badge--success">Stable</span> will not change within version 2</span>
+        <span><span class="ds-badge ds-badge--warning">Beta</span> may still change</span>
+        <span><span class="ds-badge ds-badge--danger">Going away</span> switched off next October</span>
+        <span><span class="ds-badge ds-badge--new">NEW</span> added this month</span>
+        <span><span class="ds-badge">Staff</span></span>
+        <span><span class="ds-badge ds-badge--count">6</span> methods</span>
+        <span><a class="ds-badge ds-badge--tag" href="#home">api</a></span>
+      </p>
+    </section>
+
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+        <h2 class="ds-section__label">Making a call</h2>
+        <div class="ds-prose">
+          <p>Every call is a plain web address with your key on the end. Lists take <code>page</code> or <code>after</code>; everything else is named in the table above.</p>
+        </div>
+        <div class="ds-code ds-code--after">
+          <p class="ds-code__title">notes.get</p>
+          <pre class="ds-code__body">GET /v2/notes/412?key=YOUR_KEY
+
+<span class="ds-code__dim">200 OK</span>
+{ "id": 412, "title": "Ferry times",
+  "labels": ["harbour", "travel"],
+  "changed": "2008-10-12T09:20:00Z" }</pre>
+        </div>
+        <p class="ds-links" data-component="links">
+          <a class="ds-link" href="#keys">Get a key</a>
+          <a class="ds-link is-visited" href="#post">What changed in version 2</a>
+          <a class="ds-link is-hover" href="#home">Libraries</a>
+          <a class="ds-link is-active" href="#home">Back to the blog</a>
+        </p>
+      </div>
+      <div class="ds-page__side">
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Reference</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><a class="ds-link" href="#reference">Notes</a><span class="ds-sidebar__count">6 methods</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#reference">Notebooks</a><span class="ds-sidebar__count">4 methods</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#reference">Labels</a><span class="ds-sidebar__count">3 methods</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#reference">People</a><span class="ds-sidebar__count">2 methods</span></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Good to know</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link" href="#reference">Keys and limits</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#reference">Dates and times</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--feed" href="#reference"><span class="ds-link__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 6a4 4 0 0 1 4 4"/><path d="M2 2a8 8 0 0 1 8 8"/><circle cx="2.4" cy="9.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>Changes to the API</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="keys">
+
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-link" href="#home">Developers</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li><a class="ds-link" href="#keys">maren_holt</a></li>
+      <li class="ds-breadcrumb__sep">/</li>
+      <li class="ds-breadcrumb__current">Keys</li>
+    </ol>
+
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Your keys</h1>
+        <p class="ds-page-header__text">One key for each program that calls the API. A key can read, or read and write.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#reference">Keys and limits</a>
+      </div>
+    </div>
+
+    <div class="ds-page__columns">
+      <div class="ds-page__main">
+
+        <div class="ds-buttons ds-buttons--bar" data-component="buttons">
+          <button class="ds-button" type="button">New key</button>
+          <button class="ds-button ds-button--secondary" type="button">Download the log</button>
+          <button class="ds-button is-disabled" type="button" disabled>Raise limit</button>
+          <button class="ds-button ds-button--danger" type="button">Revoke</button>
+        </div>
+
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th class="ds-table__head">Program</th>
+              <th class="ds-table__head">May</th>
+              <th class="ds-table__head">Status</th>
+              <th class="ds-table__head is-numeric">Calls today</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#keys">Ferry timetable page</a><br><span class="ds-table__verb">7f3a...c2e1</span></td>
+              <td class="ds-table__cell">read</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">In use</span></td>
+              <td class="ds-table__cell is-numeric">4,812</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#keys">Notebook by mail</a><br><span class="ds-table__verb">b90d...41aa</span></td>
+              <td class="ds-table__cell">read and write</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Near its limit</span></td>
+              <td class="ds-table__cell is-numeric">27,440</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#keys">Old desktop tool</a><br><span class="ds-table__verb">02c7...9be4</span></td>
+              <td class="ds-table__cell">read</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Revoked</span></td>
+              <td class="ds-table__cell is-numeric">0</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#keys">Test script</a><br><span class="ds-table__verb">e1d4...7703</span></td>
+              <td class="ds-table__cell">read and write</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">In use</span></td>
+              <td class="ds-table__cell is-numeric">36</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <section class="ds-section ds-section--tight">
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+              <h2 class="ds-dialog__title" id="dlg-title">Revoke the key of Notebook by mail? <a class="ds-dialog__close" href="#keys">close</a></h2>
+              <div class="ds-dialog__body">
+                <p class="ds-dialog__text">The program stops getting answers at once. A revoked key cannot be switched on again; you would make a new one.</p>
+              </div>
+              <div class="ds-dialog__actions">
+                <button class="ds-button ds-button--danger" type="button">Revoke it</button>
+                <a class="ds-button ds-button--secondary" href="#keys">Keep it</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="ds-page__side">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Your limits</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">120 calls a minute and 30,000 a day for each key. One key is close to the daily limit.</p>
+            <div class="ds-progress" data-component="progress">
+              <p class="ds-progress__label"><span class="ds-progress__name">Notebook by mail</span><span>91%</span></p>
+              <progress class="ds-progress__bar ds-progress__bar--warning" value="27440" max="30000">27,440 of 30,000</progress>
+            </div>
+            <div class="ds-progress">
+              <p class="ds-progress__label"><span class="ds-progress__name">Ferry timetable page</span><span>16%</span></p>
+              <progress class="ds-progress__bar" value="4812" max="30000">4,812 of 30,000</progress>
+            </div>
+            <div class="ds-panel__actions">
+              <a class="ds-link" href="#reference">How limits work</a>
+            </div>
+          </div>
+        </section>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Your account</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><a class="ds-link" href="#keys">Keys</a><span class="ds-sidebar__count">4</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#keys">Call log</a><span class="ds-sidebar__count">today</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#keys">Listed programs</a><span class="ds-sidebar__count">0</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link" href="#keys">Mail from us</a></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Calls this week</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><span>Monday</span><span class="ds-sidebar__count">31,204</span></li>
+            <li class="ds-sidebar__item"><span>Tuesday</span><span class="ds-sidebar__count">29,870</span></li>
+            <li class="ds-sidebar__item"><span>Wednesday</span><span class="ds-sidebar__count">33,015</span></li>
+            <li class="ds-sidebar__item"><span>Today</span><span class="ds-sidebar__count">32,288</span></li>
+          </ul>
+        </nav>
+        <nav class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Help with keys</h2>
+          <div class="ds-accordion" data-component="accordion">
+            <details class="ds-accordion__item is-first" open>
+              <summary class="ds-accordion__title">Reading and writing</summary>
+              <p class="ds-accordion__body">A key that may only read cannot add, change or remove a note.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">When a key leaks</summary>
+              <p class="ds-accordion__body">Revoke it here and make a new one. The old one stops at once.</p>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">Keys in version 2</summary>
+              <p class="ds-accordion__body">The same keys work. Nothing has to be made again.</p>
+            </details>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <section class="ds-section">
+          <h2 class="ds-section__label">Programs you have listed for others</h2>
+          <div class="ds-empty" data-component="empty">
+            <h3 class="ds-empty__title">Nothing listed yet</h3>
+            <p class="ds-empty__text">Tell other people what you built and it appears beside the blog.</p>
+            <a class="ds-button" href="#keys">List a program</a>
+          </div>
+    </section>
+
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#home">Blog</a></li>
+    <li><a class="ds-footer__link" href="#reference">Reference</a></li>
+    <li><a class="ds-footer__link" href="#keys">Keys</a></li>
+    <li><a class="ds-footer__link" href="#reference">Terms for developers</a></li>
+  </ul>
+  <p class="ds-footer__legal">The chronoskin API is free for programs of any size.</p>
+</footer>
+</div>
+
+</div>
+</body>
+</html>

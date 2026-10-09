@@ -1,0 +1,73 @@
+/* A tooltip: a small "?" beside a heading (.asks holds both) and the text
+   it explains (.tip), inside a .tipped ancestor. The text spans that
+   ancestor, so it cannot reach past the edge of the screen. */
+.tipped {
+  position: relative;
+}
+
+.asks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  cursor: help;
+}
+
+/* A button, so that a tap gives it focus and opens the text on a phone. */
+.help {
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  color: var(--muted);
+  font: 600 8px/1 var(--sans);
+  opacity: 0.65;
+  cursor: help;
+  user-select: none;
+}
+
+/* Beside small text the mark sits on its middle, not raised like an
+   exponent. */
+.box .head .help, .part .help {
+  align-self: center;
+}
+
+.asks:hover .help, .help:focus-visible {
+  border-color: var(--ink);
+  color: var(--ink);
+  opacity: 1;
+}
+
+.tipped > .tip {
+  position: absolute;
+  z-index: 15;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.18);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.tipped:has(.asks:hover, .help:focus, .help:active) > .tip {
+  visibility: visible;
+  opacity: 1;
+}

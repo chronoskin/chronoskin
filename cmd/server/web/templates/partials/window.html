@@ -1,0 +1,27 @@
+{{/* The specimen of a style in a window, at its design width and scaled to
+     fit, with three buttons that change the width. Data: ID, LongID, Style. */}}
+{{define "window"}}
+<div class="window" data-width="{{.Style.Viewport.Width}}"{{if .Style.Viewport.Responsive}} data-responsive{{end}} x-data="preview">
+  <div class="bar">
+    <span class="name">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="id" title="{{.LongID}}">{{.ID}}</span>
+    </span>
+    <span class="devices" role="group" aria-label="Preview width" x-cloak>
+      <button type="button" aria-label="Desktop width" title="Desktop: the style's own width" x-on:click="desktop" x-bind:aria-pressed="isDesktop">
+        {{template "device-desktop"}}
+      </button>
+      <button type="button" aria-label="Tablet width" title="{{if .Style.Viewport.Responsive}}Tablet: 768px{{else}}Tablet: this layout has one width, shown as a tablet shows it{{end}}" x-on:click="tablet" x-bind:aria-pressed="isTablet">
+        {{template "device-tablet"}}
+      </button>
+      <button type="button" aria-label="Phone width" title="{{if .Style.Viewport.Responsive}}Phone: 390px{{else}}Phone: this layout has one width, shown as a phone shows it{{end}}" x-on:click="phone" x-bind:aria-pressed="isPhone">
+        {{template "device-phone"}}
+      </button>
+    </span>
+    <a href="/s/{{.ID}}/specimen.html" target="_blank" rel="noopener" data-goatcounter-click="open-specimen">Open<span class="long"> full page</span> ↗</a>
+  </div>
+  <div class="stage" x-ref="stage">
+    <iframe sandbox="allow-scripts" title="Specimen of this style" src="/s/{{.ID}}/specimen.html?frame"></iframe>
+  </div>
+</div>
+{{end}}

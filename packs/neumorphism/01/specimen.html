@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: practice rooms</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#today">Today</a></li>
+      <li><a class="ds-nav__link" href="#rooms">Rooms</a></li>
+      <li><a class="ds-nav__link" href="#book">New booking</a></li>
+      <li><a class="ds-nav__link" href="#rules">House rules</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <a class="ds-button ds-button--secondary" href="#book">Book a room</a>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu"><span class="ds-avatar"><span class="ds-avatar__pic">AP</span></span><svg class="ds-menu__caret" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#rooms">My bookings</a></li>
+          <li><a class="ds-menu__link" href="#book">New booking</a></li>
+          <li><a class="ds-menu__link" href="#rules">House rules</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#today">Sign out</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="today">
+
+  <section class="ds-hero" data-component="hero">
+    <div>
+      <h1 class="ds-hero__title">Practice rooms, Tuesday</h1>
+      <p class="ds-hero__lead">Nine rooms on two floors. Six are in use now and the next one comes free at half past three.</p>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--large" href="#book">Book a room</a>
+        <a class="ds-button ds-button--secondary ds-button--large" href="#rooms">See the rooms</a>
+      </div>
+    </div>
+    <div class="ds-hero__art" aria-hidden="true">
+      <div class="ds-hero__well">
+        <span class="ds-hero__figure">6 / 9</span>
+        <span class="ds-hero__caption">rooms in use at 14:50</span>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="ds-page__layout">
+
+    <div class="ds-page__main">
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__heading">Floors</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#rooms">Ground floor <span class="ds-badge" data-component="badge">5</span></a></li>
+        <li><a class="ds-sidebar__link" href="#rooms">Upper floor <span class="ds-badge ds-badge--quiet">4</span></a></li>
+        <li><a class="ds-sidebar__link" href="#rooms">Annexe <span class="ds-badge ds-badge--quiet">0</span></a></li>
+      </ul>
+      <h2 class="ds-sidebar__heading">Shortcuts</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#rooms">Free right now</a></li>
+        <li><a class="ds-sidebar__link" href="#rooms">With a piano</a></li>
+        <li><a class="ds-sidebar__link" href="#rules">Waiting list</a></li>
+        <li><a class="ds-sidebar__link" href="#rooms">Closed for repair</a></li>
+      </ul>
+      <h2 class="ds-sidebar__heading">This week</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#rooms">Timetable</a></li>
+        <li><a class="ds-sidebar__link" href="#rules">Recitals <span class="ds-badge ds-badge--quiet">2</span></a></li>
+        <li><a class="ds-sidebar__link" href="#rooms">Tuning days</a></li>
+      </ul>
+    </aside>
+    <section class="ds-panel" data-component="panel">
+      <h2 class="ds-panel__title">Caretaker's note <span class="ds-tooltip ds-tooltip--end"><span class="ds-badge ds-badge--quiet" tabindex="0">2</span><span class="ds-tooltip__tip" role="tooltip">Two notes this week</span></span></h2>
+      <div class="ds-panel__body">
+        The upright in room 5 has a sticking pedal. It can be played, and the tuner will look at it on Friday.
+      </div>
+    </section>
+    </div>
+
+
+    <main class="ds-page__main">
+
+      <div class="ds-notice__stack" data-component="notice">
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">Piano tuning on Friday.</span> Rooms 2 and 5 cannot be booked between nine and noon.</div>
+        </div>
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">Room 7 was not locked last night.</span> The door sensor has reported it open since 22:10.</div>
+        </div>
+      </div>
+
+
+      <section class="ds-grid" data-component="grid">
+        <div class="ds-grid__cell ds-grid__cell--1">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">In use now</span>
+          <span class="ds-grid__value">6 rooms</span>
+          <span class="ds-grid__meta">Two free on the upper floor</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Booked today</span>
+          <span class="ds-grid__value">41 hours</span>
+          <span class="ds-grid__meta">Of 63 that can be booked</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--3">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Waiting</span>
+          <span class="ds-grid__value">3 people</span>
+          <span class="ds-grid__meta">All for the evening</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--4">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Next free</span>
+          <span class="ds-grid__value">15:30</span>
+          <span class="ds-grid__meta">Room 4, with a piano</span>
+        </div>
+      </section>
+
+
+      <div class="ds-page__row">
+
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#rooms">String quartet, room 3</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Started 14:00 · ends 16:00</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#rooms">Open</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#rooms">Marit Oyelaran, room 4</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Started 14:30 · ends 15:30</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#rooms">Open</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#rooms">Brass section, room 7</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Did not check in · 14:00</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#today">Release</a>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#rooms">Evening choir, room 1</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> New request · 19:00 to 21:00</span>
+            </div>
+            <a class="ds-button ds-button--secondary" href="#book">Review</a>
+          </li>
+        </ul>
+
+
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Release room 7?</h2>
+            <div class="ds-dialog__body">The brass section loses this booking and the room is offered to the waiting list.</div>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--secondary" type="button">Keep booking</button>
+              <button class="ds-button ds-button--danger" type="button">Release</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  </section>
+
+  <section class="ds-view" id="rooms">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#rooms">Rooms</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">All floors</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Rooms</h1>
+        <p class="ds-page-header__lead">Eight rooms on two floors, listed from the entrance to the attic.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#rules">House rules</a>
+        <a class="ds-button" href="#book">Book a room</a>
+      </div>
+    </header>
+
+    <div class="ds-page__main">
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">In use</dt>
+          <dd class="ds-stat__value">5 <span class="ds-stat__meta">of 8 rooms</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Hours booked</dt>
+          <dd class="ds-stat__value">36.5 <span class="ds-stat__meta">today</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">No-shows</dt>
+          <dd class="ds-stat__value">1 <span class="ds-stat__meta">this week</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Longest wait</dt>
+          <dd class="ds-stat__value">40 min <span class="ds-stat__meta">for room 2</span></dd>
+        </div>
+      </dl>
+
+
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#rooms" aria-current="true">All rooms</a></li>
+        <li><a class="ds-tabs__tab" href="#rooms">Free</a></li>
+        <li><a class="ds-tabs__tab" href="#rooms">In use</a></li>
+        <li><a class="ds-tabs__tab" href="#rooms">Closed</a></li>
+      </ul>
+
+
+      <div class="ds-page__layout ds-page__layout--aside">
+
+        <div class="ds-page__main">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col">Room</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="ds-table__opt">Booked by</th>
+                <th scope="col" class="ds-table__num ds-table__opt">Seats</th>
+                <th scope="col" class="ds-table__num">Hours today</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">1 Garden room</a></td>
+                <td><span class="ds-badge ds-badge--success">Free</span></td>
+                <td class="ds-table__meta ds-table__opt">Nobody until 19:00</td>
+                <td class="ds-table__num ds-table__opt">24</td>
+                <td class="ds-table__num">4.0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">2 Small piano</a></td>
+                <td><span class="ds-badge ds-badge--warning">Ends soon</span></td>
+                <td class="ds-table__meta ds-table__opt">Ansel Brandvold</td>
+                <td class="ds-table__num ds-table__opt">2</td>
+                <td class="ds-table__num">6.5</td>
+              </tr>
+              <tr class="is-hover">
+                <td><a class="ds-link ds-link--quiet" href="#book">3 Quartet room</a></td>
+                <td><span class="ds-badge ds-badge--success">In use</span></td>
+                <td class="ds-table__meta ds-table__opt">String quartet</td>
+                <td class="ds-table__num ds-table__opt">6</td>
+                <td class="ds-table__num">5.0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">4 Large piano</a></td>
+                <td><span class="ds-badge ds-badge--success">In use</span></td>
+                <td class="ds-table__meta ds-table__opt">Marit Oyelaran</td>
+                <td class="ds-table__num ds-table__opt">4</td>
+                <td class="ds-table__num">7.5</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">5 Yard room</a></td>
+                <td><span class="ds-badge ds-badge--danger">Closed</span></td>
+                <td class="ds-table__meta ds-table__opt">Pedal repair</td>
+                <td class="ds-table__num ds-table__opt">3</td>
+                <td class="ds-table__num">0.0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">6 Drum room</a></td>
+                <td><span class="ds-badge ds-badge--success">In use</span></td>
+                <td class="ds-table__meta ds-table__opt">Percussion class</td>
+                <td class="ds-table__num ds-table__opt">5</td>
+                <td class="ds-table__num">8.0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">7 Brass room</a></td>
+                <td><span class="ds-badge ds-badge--warning">No check-in</span></td>
+                <td class="ds-table__meta ds-table__opt">Brass section</td>
+                <td class="ds-table__num ds-table__opt">12</td>
+                <td class="ds-table__num">3.0</td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#book">8 Attic studio</a></td>
+                <td><span class="ds-badge ds-badge--success">Free</span></td>
+                <td class="ds-table__meta ds-table__opt">Nobody until 17:00</td>
+                <td class="ds-table__num ds-table__opt">2</td>
+                <td class="ds-table__num">2.5</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <nav aria-label="Pages">
+            <ul class="ds-pagination" data-component="pagination">
+              <li><a class="ds-pagination__link" href="#rooms">Previous</a></li>
+              <li><a class="ds-pagination__link" href="#rooms">1</a></li>
+              <li><a class="ds-pagination__link is-current" href="#rooms" aria-current="page">2</a></li>
+              <li><a class="ds-pagination__link" href="#rooms">3</a></li>
+              <li><a class="ds-pagination__link" href="#rooms">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="ds-page__main">
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+          <h2 class="ds-empty__title">Nothing booked in the annexe</h2>
+          <p class="ds-empty__text">Its hall can be booked by the day for recitals. No day is taken this month.</p>
+          <a class="ds-button" href="#book">Book the annexe hall</a>
+        </section>
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Room 5 is closed</h2>
+            <div class="ds-panel__body">
+              The upright has a sticking pedal and the tuner comes on Friday. Bookings for the yard room were moved to the attic studio.
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="book">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#rooms">Rooms</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">New booking</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">New booking</h1>
+        <p class="ds-page-header__lead">Whole hours, up to two a day. The room is held for ten minutes after the start.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#rooms">Back to rooms</a>
+      </div>
+    </header>
+
+    <div class="ds-page__layout ds-page__layout--aside">
+
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Tuesday, from 19:00</h2>
+        <div class="ds-panel__body">
+            <form class="ds-form" data-component="form">
+              <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-name">Booked for</label>
+                <input class="ds-form__input" id="f-name" type="text" value="Evening choir">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-room">Room</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-room">
+                    <option>1 Garden room</option>
+                    <option>3 Quartet room</option>
+                    <option>4 Large piano</option>
+                    <option>8 Attic studio</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              </div>
+              <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-length">Length <span>2 hours</span></label>
+                <input class="ds-form__range" id="f-length" type="range" min="0" max="100" value="66">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-mail">Confirmation to</label>
+                <input class="ds-form__input is-error" id="f-mail" type="text" value="choir@" aria-invalid="true" aria-describedby="f-mail-error">
+                <span class="ds-form__error" id="f-mail-error">Enter a complete email address.</span>
+              </div>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-note">Note for the caretaker</label>
+                <textarea class="ds-form__textarea" id="f-note" placeholder="Chairs, stands, anything to set out"></textarea>
+                <span class="ds-form__hint">Shown on the door display.</span>
+              </div>
+              <label class="ds-form__check">
+                <input class="ds-form__checkbox" type="checkbox" checked>
+                Repeat every Tuesday
+              </label>
+              <label class="ds-form__check">
+                <input class="ds-switch" type="checkbox" checked>
+                Offer to the waiting list if nobody checks in
+              </label>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Book</button>
+                <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+                <button class="ds-button ds-button--danger" type="button">Delete</button>
+                <button class="ds-button" type="button" disabled>Hold</button>
+              </div>
+            </form>
+        </div>
+      </section>
+
+      <div class="ds-page__main">
+    <section class="ds-panel">
+      <h2 class="ds-panel__title">On the door display</h2>
+      <div class="ds-panel__body">
+        <pre class="ds-prose__code">room:    4
+from:    14:30
+hold:    10 minutes
+release: waiting list</pre>
+      </div>
+    </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Free at 19:00 <span class="ds-badge ds-badge--quiet">3</span></h2>
+          <div class="ds-panel__body">
+            The garden room, the quartet room and the attic studio. The large piano is taken until eight.
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Your week <span class="ds-badge ds-badge--quiet">2 of 10 hours</span></h2>
+          <div class="ds-panel__body">
+            <div class="ds-progress ds-progress--20" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Hours booked this week"><span class="ds-progress__bar"></span></div>
+            You have the small piano on Thursday at 17:00. A repeating booking counts against each week it falls in.
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="rules">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">Today</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">House rules</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">House rules</h1>
+        <p class="ds-page-header__lead">What every member agrees to when booking a room.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#book">Book a room</a>
+      </div>
+    </header>
+
+    <div class="ds-page__layout ds-page__layout--aside">
+
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+        <article class="ds-prose" data-component="typography">
+          <h1>How booking works</h1>
+          <p class="ds-prose__lead">A room is held for the person who booked it until ten minutes past the hour.</p>
+          <p>Members book in whole hours, up to <strong>two hours a day</strong>. A booking is kept under its own reference, such as <code>R4-1430</code>, which is printed on the door display.</p>
+          <h2>Checking in</h2>
+          <p>Tap the door display when you arrive. If nobody has checked in ten minutes after the start, the room is released and offered to the waiting list.</p>
+          <h3>Who is asked first</h3>
+          <ul>
+            <li>Whoever has waited longest for that floor.</li>
+            <li>Then anyone waiting for a room with the same instrument.</li>
+            <li>Then the room is shown as free to everyone.</li>
+          </ul>
+          <h2>Giving a room back</h2>
+          <p>If you finish early, tap the display again and choose <strong>Done</strong>. The remaining time goes back on the board at once, and it does not count against your two hours. See <a class="ds-link" href="#rooms">which rooms are free</a> or <a class="ds-link" href="#book">book the next one</a>.</p>
+          <p class="ds-link__sample" data-component="links">
+            <a class="ds-link" href="#rooms">Rooms free now</a>
+            <a class="ds-link is-visited" href="#today">Today's board</a>
+            <a class="ds-link is-hover" href="#book">Book a room</a>
+            <a class="ds-link is-active" href="#rules">Waiting list</a>
+            <a class="ds-link ds-link--quiet" href="#rules">Opening hours</a>
+          </p>
+        </article>
+        </div>
+      </section>
+
+      <div class="ds-page__main">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Opening hours</h2>
+          <div class="ds-panel__body">
+            Monday to Friday from eight until ten in the evening, Saturday from nine until six. The building is closed on Sunday.
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Waiting list <span class="ds-badge ds-badge--quiet">3</span></h2>
+          <div class="ds-panel__body">
+            Three people are waiting for this evening. Put your name down from the booking form, and you are asked first when a room is released.
+          </div>
+        </section>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Ask the caretaker <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">The desk by the entrance is staffed until six. After that, leave a note with your booking.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Recitals <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">On a recital day the garden room is set out with chairs from four, and it cannot be booked after three.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Bringing a guest <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">A guest plays under your booking and your name stays on the door display.</div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin · practice room bookings for the Harrow Lane music school</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#rules">House rules</a></li>
+      <li><a class="ds-footer__link" href="#rules">Help</a></li>
+      <li><a class="ds-footer__link" href="#rooms">Rooms</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

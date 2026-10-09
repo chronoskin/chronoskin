@@ -1,0 +1,66 @@
+{{/* The custom select: a disclosure of radio buttons, or of checkboxes when
+     several may be chosen. Data: Name, Label (the accessible name), Options,
+     Submit (submit the form on a choice), Multiple, Placeholder (what a
+     multiple select shows with nothing chosen). The summary shows what is
+     chosen through CSS, so it is right without script. */}}
+{{define "select"}}
+<details
+  class="cselect{{if .Multiple}} multi{{end}}"
+  {{if .Submit}}data-submit{{end}}
+  x-data="select"
+  x-on:change="choose"
+  x-on:keydown.escape="escape"
+  x-on:click.outside="close"
+>
+  <summary>
+    {{/* One span per option; CSS shows those whose option is checked. They
+         are written without space between them, which would show. */}}
+    <span class="values">
+      <span class="sr-only">{{.Label}}: </span>
+      {{- range .Options -}}
+        <span class="value">{{.Label}}</span>
+      {{- end -}}
+      {{- if .Multiple -}}
+        <em class="none">{{.Placeholder}}</em>
+      {{- end -}}
+    </span>
+    {{if .Multiple}}
+    <b class="n" x-cloak x-show="many" x-text="count"></b>
+    <button
+      class="clear"
+      type="button"
+      aria-label="Clear {{.Label}}"
+      title="Clear all"
+      x-cloak
+      x-show="some"
+      x-on:click.prevent="none"
+    >
+      {{template "cross"}}
+    </button>
+    {{end}}
+  </summary>
+  <div class="menu" role="{{if .Multiple}}group{{else}}radiogroup{{end}}" aria-label="{{.Label}}">
+    <div class="tools">
+      <input
+        class="filter"
+        type="search"
+        placeholder="Search"
+        aria-label="Search {{.Label}}"
+        autocomplete="off"
+        x-cloak
+        x-on:input="filter"
+      >
+      {{if .Multiple}}
+      <button class="clear-all" type="button" x-cloak x-bind:disabled="nothing" x-on:click="none">Clear all</button>
+      {{end}}
+    </div>
+    {{range .Options}}
+    <label>
+      <input type="{{if $.Multiple}}checkbox{{else}}radio{{end}}" name="{{$.Name}}" value="{{.Value}}"{{if .Selected}} checked{{end}}>
+      <span>{{.Label}}</span>
+      {{if .Note}}<small>{{.Note}}</small>{{end}}
+    </label>
+    {{end}}
+  </div>
+</details>
+{{end}}

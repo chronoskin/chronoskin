@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: bookings for shared workshops</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="13" height="13" rx="4" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="12.5" height="12.5" rx="4" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li class="ds-menu" data-component="menu"><a class="ds-nav__link ds-menu__trigger" href="#home">Product</a>
+<ul class="ds-menu__list ds-menu__list--start">
+<li><a class="ds-menu__link" href="#home">Calendar</a></li>
+<li><a class="ds-menu__link" href="#home">Waitlist and fair use</a></li>
+<li><a class="ds-menu__link" href="#pricing">Door locks <span class="ds-menu__meta">Workshop plan</span></a></li>
+<li><a class="ds-menu__link" href="#changelog">What is new</a></li>
+</ul>
+</li>
+      <li><a class="ds-nav__link" href="#pricing">Pricing</a></li>
+      <li><a class="ds-nav__link" href="#changelog">Changelog</a></li>
+      <li><a class="ds-nav__link" href="#waitlist">Waitlist</a></li>
+    </ul>
+    <div class="ds-nav__actions">
+      <a class="ds-button" href="#waitlist">Get early access</a>
+      <details class="ds-menu ds-nav__fold">
+        <summary class="ds-nav__toggle" aria-label="Menu"><span class="ds-nav__bars"></span></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#home">Product</a></li>
+          <li><a class="ds-menu__link" href="#pricing">Pricing</a></li>
+          <li><a class="ds-menu__link" href="#changelog">Changelog</a></li>
+          <li><a class="ds-menu__link" href="#waitlist">Waitlist</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="home">
+
+    <section class="ds-hero" data-component="hero">
+      <div class="ds-hero__text">
+        <span class="ds-badge" data-component="badge">Opening in spring</span>
+        <h1 class="ds-hero__title">Book the kiln, not a meeting about the kiln</h1>
+        <p class="ds-hero__lead">One calendar for every bench, press and kiln in a shared workshop. Members book their own hours and the waitlist moves by itself.</p>
+        <form class="ds-hero__form">
+          <input class="ds-form__input" type="email" placeholder="you@yourworkshop.example" aria-label="Email address">
+          <a class="ds-button ds-button--large" href="#waitlist">Join the waitlist</a>
+        </form>
+        <p class="ds-hero__note">214 workshops are ahead of you. No card needed. <a class="ds-link" href="#pricing">See the plans</a></p>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <span class="ds-hero__orb ds-hero__orb--a"></span>
+        <span class="ds-hero__orb ds-hero__orb--b"></span>
+        <div class="ds-hero__card">
+          <span class="ds-hero__card-title">Kiln 2, Thursday <span class="ds-badge ds-badge--glass">3 free</span></span>
+          <span class="ds-hero__slot"><span class="ds-hero__time">09:00</span><span class="ds-hero__who">Glaze firing</span><span class="ds-badge ds-badge--success">Booked</span></span>
+          <span class="ds-hero__slot is-current"><span class="ds-hero__time">13:00</span><span class="ds-hero__who">Free until 17:00</span><span class="ds-badge">Book</span></span>
+          <span class="ds-hero__slot"><span class="ds-hero__time">17:00</span><span class="ds-hero__who">Evening class</span><span class="ds-badge ds-badge--warning">Waitlist 2</span></span>
+          <span class="ds-hero__slot"><span class="ds-hero__time">21:00</span><span class="ds-hero__who">Cooling, door locked</span><span class="ds-badge ds-badge--glass">Auto</span></span>
+        </div>
+      </div>
+    </section>
+
+    <dl class="ds-stat" data-component="stats">
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">workshops in the pilot</dt>
+        <dd class="ds-stat__value">38</dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">hours booked last month</dt>
+        <dd class="ds-stat__value">12,460</dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">of freed slots refilled</dt>
+        <dd class="ds-stat__value">91% <span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--90"></span></span></dd>
+      </div>
+      <div class="ds-stat__item">
+        <dt class="ds-stat__label">to set up a space</dt>
+        <dd class="ds-stat__value">25 min</dd>
+      </div>
+    </dl>
+
+    <div class="ds-page__band">
+      <div class="ds-page__band-head">
+        <div>
+          <span class="ds-page__eyebrow">What it does</span>
+          <h2 class="ds-page__heading">Everything the sign-up sheet on the door could not do</h2>
+        </div>
+        <p class="ds-page__sub">Six parts, switched on one at a time. Most workshops start with the calendar and add the rest when they miss it.</p>
+      </div>
+
+      <section class="ds-grid" data-component="grid">
+        <div class="ds-grid__cell ds-grid__cell--1">
+          <ul class="ds-grid__week">
+            <li class="ds-grid__day">Mon<strong>4</strong></li>
+            <li class="ds-grid__day">Tue<strong>7</strong></li>
+            <li class="ds-grid__day">Wed<strong>2</strong></li>
+            <li class="ds-grid__day is-current">Thu<strong>9</strong></li>
+            <li class="ds-grid__day">Fri<strong>6</strong></li>
+            <li class="ds-grid__day">Sat<strong>11</strong></li>
+            <li class="ds-grid__day">Sun<strong>3</strong></li>
+          </ul>
+          <span class="ds-grid__figure">42 <span class="ds-grid__unit">bookings this week, 9 of them today</span></span>
+          <h3 class="ds-grid__title">One calendar for every machine</h3>
+          <p class="ds-grid__text">Benches, presses, looms and kilns side by side, each with its own opening hours and its own rules for who may book.</p>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-grid__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h12M4 10h8M4 15h5M15 12v5M12.500 14.500h5"/></svg></span>
+          <h3 class="ds-grid__title">A waitlist that moves by itself</h3>
+          <p class="ds-grid__text">When someone cancels, the next member is offered the slot and has two hours to take it.</p>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--3">
+          <span class="ds-grid__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="10" r="3.500"/><path d="M10.500 10H17M14 10v3M16.500 10v2"/></svg></span>
+          <h3 class="ds-grid__title">Keys and inductions</h3>
+          <p class="ds-grid__text">Only members who passed the induction can book the lathe.</p>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--4">
+          <span class="ds-grid__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 2"/></svg></span>
+          <h3 class="ds-grid__title">Fair-use limits</h3>
+          <p class="ds-grid__text">Cap the hours per member and week, per machine.</p>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--wide">
+          <span class="ds-grid__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="14" height="10" rx="2"/><path d="M3 9h14M6 12.500h3"/></svg></span>
+          <h3 class="ds-grid__title">Billing by the hour</h3>
+          <p class="ds-grid__text">Kiln hours, materials and day passes land on one statement per member at the end of the month.</p>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--wide">
+          <span class="ds-grid__icon"><svg class="ds-page__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 17V4h8v13M3 17h14M10.500 10.500v.5"/></svg></span>
+          <h3 class="ds-grid__title">Opens the door, too</h3>
+          <p class="ds-grid__text">A booking can unlock the room for its own hours and nothing else. Works with the common keypad locks.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="ds-page__band">
+      <div class="ds-page__band-head">
+        <div>
+          <span class="ds-page__eyebrow">From the pilot</span>
+          <h2 class="ds-page__heading">Shipped this month</h2>
+        </div>
+        <p class="ds-page__sub">The pilot workshops tell us what is missing and we build it in the open. <a class="ds-link" href="#changelog">Read the whole changelog</a></p>
+      </div>
+
+      <div class="ds-page__split">
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__date">12 March</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Recurring bookings for classes</a>
+              <span class="ds-list__meta">Book every Tuesday evening for a term in one go.</span>
+            </div>
+            <span class="ds-badge ds-badge--alt">New</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">5 March</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Cooling time after a firing</a>
+              <span class="ds-list__meta">The kiln stays blocked until it is safe to open.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Kilns</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">26 February</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Statements as a spreadsheet</a>
+              <span class="ds-list__meta">One file per month for the treasurer.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Billing</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">14 February</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Induction records per machine</a>
+              <span class="ds-list__meta">Who was shown what, by whom and when.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Safety</span>
+          </li>
+        </ul>
+
+        <section class="ds-carousel" data-component="carousel" aria-label="What pilot workshops say">
+<ul class="ds-carousel__track">
+<li class="ds-carousel__slide">
+<p class="ds-carousel__quote">We used to lose a press day every week to a booking nobody remembered making. Now the slot goes to the next person before we have noticed.</p>
+<div class="ds-avatar__row"><span class="ds-avatar" data-component="avatar">MS</span><span><span class="ds-avatar__name">Marta Solheim</span><span class="ds-avatar__meta">A print studio, 46 members</span></span></div>
+</li>
+<li class="ds-carousel__slide">
+<p class="ds-carousel__quote">The kiln rota took an evening a month. It takes nothing now.</p>
+<div class="ds-avatar__row"><span class="ds-avatar ds-avatar--2">TR</span><span><span class="ds-avatar__name">Tomas Reuter</span><span class="ds-avatar__meta">A ceramics studio, 28 members</span></span></div>
+</li>
+</ul>
+<div class="ds-carousel__dots"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span></div>
+</section>
+      </div>
+    </div>
+
+    <div class="ds-page__band">
+      <section class="ds-page__cta">
+        <div class="ds-page__cta-text">
+          <h2 class="ds-page__cta-title">Open your workshop's calendar in an afternoon</h2>
+          <p class="ds-page__cta-lead">Free while we are in the pilot. Bring the spreadsheet you use today and we import it.</p>
+        </div>
+        <a class="ds-button ds-button--inverse ds-button--large" href="#waitlist">Join the waitlist</a>
+      </section>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="pricing">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Product</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Pricing</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Priced by the room, not by the member</h1>
+        <p class="ds-page-header__lead">Every plan has unlimited members. You pay for the spaces you put on the calendar.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#waitlist">Join the waitlist</a>
+      </div>
+    </header>
+
+    <div class="ds-page__stack">
+
+      <div class="ds-page__center">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#pricing" aria-current="true">Monthly</a></li>
+          <li><a class="ds-tabs__tab" href="#pricing">Yearly <span class="ds-badge">2 months free</span></a></li>
+        </ul>
+      </div>
+
+      <div class="ds-page__plans">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Shed</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__price">0 <span class="ds-panel__per">for one room, for good</span></p>
+            <ul class="ds-panel__list">
+              <li>One room, up to five machines</li>
+              <li>Calendar and waitlist</li>
+              <li>Statements as a spreadsheet</li>
+            </ul>
+          </div>
+          <div class="ds-panel__foot"><a class="ds-button ds-button--secondary ds-button--block" href="#waitlist">Start with Shed</a></div>
+        </section>
+        <section class="ds-panel ds-panel--featured">
+          <h2 class="ds-panel__title">Workshop <span class="ds-badge">Most pilots</span></h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__price">29 <span class="ds-panel__per">per room and month</span></p>
+            <ul class="ds-panel__list">
+              <li>Any number of machines</li>
+              <li>Inductions and fair-use limits</li>
+              <li>Billing by the hour</li>
+              <li>Door locks for two rooms</li>
+            </ul>
+          </div>
+          <div class="ds-panel__foot"><a class="ds-button ds-button--block" href="#waitlist">Join the waitlist</a></div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Guild</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__price">79 <span class="ds-panel__per">per site and month</span></p>
+            <ul class="ds-panel__list">
+              <li>Every room on one site</li>
+              <li>Several sites under one account</li>
+              <li>Door locks everywhere</li>
+              <li>A person to call</li>
+            </ul>
+          </div>
+          <div class="ds-panel__foot"><a class="ds-button ds-button--secondary ds-button--block" href="#waitlist">Talk to us</a></div>
+        </section>
+      </div>
+
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr>
+            <th scope="col">What you get</th>
+            <th scope="col" class="ds-table__num">Shed</th>
+            <th scope="col" class="ds-table__num">Workshop</th>
+            <th scope="col" class="ds-table__num">Guild</th>
+            <th scope="col" class="ds-table__opt">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Rooms on the calendar</th>
+            <td class="ds-table__num">1</td>
+            <td class="ds-table__num ds-table__hl">10</td>
+            <td class="ds-table__num">60</td>
+            <td class="ds-table__meta ds-table__opt">A room is anything with a door</td>
+          </tr>
+          <tr>
+            <th scope="row">Machines per room</th>
+            <td class="ds-table__num">5</td>
+            <td class="ds-table__num ds-table__hl">40</td>
+            <td class="ds-table__num">40</td>
+            <td class="ds-table__meta ds-table__opt">Benches and tables count as machines</td>
+          </tr>
+          <tr class="is-hover">
+            <th scope="row">Bookings per month</th>
+            <td class="ds-table__num">200</td>
+            <td class="ds-table__num ds-table__hl">5,000</td>
+            <td class="ds-table__num">50,000</td>
+            <td class="ds-table__meta ds-table__opt">Cancelled bookings are not counted</td>
+          </tr>
+          <tr>
+            <th scope="row">Door locks</th>
+            <td class="ds-table__num">0</td>
+            <td class="ds-table__num ds-table__hl">2</td>
+            <td class="ds-table__num">60</td>
+            <td class="ds-table__meta ds-table__opt">The common keypad locks</td>
+          </tr>
+          <tr>
+            <th scope="row">History kept, in months</th>
+            <td class="ds-table__num">6</td>
+            <td class="ds-table__num ds-table__hl">36</td>
+            <td class="ds-table__num">120</td>
+            <td class="ds-table__meta ds-table__opt">Statements are kept for ten years on every plan</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ds-accordion" data-component="accordion">
+<details class="ds-accordion__item" open>
+<summary class="ds-accordion__summary">What counts as a room?</summary>
+<p class="ds-accordion__body">Anything members book as one place: a ceramics studio, a darkroom, the yard with the forge. Machines inside a room are free on every paid plan.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">Is the pilot free?</summary>
+<p class="ds-accordion__body">Yes. Nobody pays until the spring opening, and pilot workshops keep their first room free afterwards.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">Can we change plan later?</summary>
+<p class="ds-accordion__body">At any time. The new price counts from the next month.</p>
+</details>
+</div>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="changelog">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Product</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Changelog</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Changelog</h1>
+        <p class="ds-page-header__lead">What changed for the pilot workshops, newest first.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#waitlist">Get it by email</a>
+      </div>
+    </header>
+
+    <div class="ds-page__cols ds-page__cols--side">
+
+      <aside class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__heading">Releases</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#changelog">March <span class="ds-badge">2</span></a></li>
+          <li><a class="ds-sidebar__link" href="#changelog">February <span class="ds-badge ds-badge--glass">4</span></a></li>
+          <li><a class="ds-sidebar__link" href="#changelog">January <span class="ds-badge ds-badge--glass">3</span></a></li>
+        </ul>
+        <h2 class="ds-sidebar__heading">Topics</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#changelog">Calendar</a></li>
+          <li><a class="ds-sidebar__link" href="#changelog">Kilns</a></li>
+          <li><a class="ds-sidebar__link" href="#changelog">Billing</a></li>
+          <li><a class="ds-sidebar__link" href="#changelog">Safety</a></li>
+        </ul>
+      </aside>
+
+      <div class="ds-page__stack">
+
+        <section class="ds-panel">
+          <div class="ds-panel__body">
+            <article class="ds-prose" data-component="typography">
+              <h1>Recurring bookings for classes</h1>
+              <p class="ds-prose__lead">A class that meets every Tuesday no longer needs twelve bookings.</p>
+              <p>Pick a slot, choose <strong>Repeat weekly</strong> and an end date. The whole series is checked against opening hours and fair-use limits before it is saved, and each date can still be moved on its own. In an export a series carries the field <code>series_id</code>.</p>
+              <h2>What happens on a clash</h2>
+              <p>If one date of the series is already taken, the rest is booked and you are put on the waitlist for that date. The <a class="ds-link" href="#pricing">Workshop plan</a> allows twenty series at a time.</p>
+              <h3>Also in this release</h3>
+              <ul>
+                <li>The week view starts on the day your workshop opens.</li>
+                <li>Waitlist offers now say how long the slot is.</li>
+                <li>Statements round to the quarter hour, not the minute.</li>
+              </ul>
+              <p class="ds-link__sample" data-component="links">
+                <a class="ds-link" href="#changelog">Normal link</a>
+                <a class="ds-link is-visited" href="#changelog">Visited link</a>
+                <a class="ds-link is-hover" href="#changelog">Hovered link</a>
+                <a class="ds-link is-active" href="#changelog">Active link</a>
+                <a class="ds-link ds-link--quiet" href="#changelog">Quiet link</a>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-list__date">8 March</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Door locks did not open for an hour</a>
+              <span class="ds-list__meta">Fixed the same morning. Bookings were not affected.</span>
+            </div>
+            <span class="ds-badge ds-badge--danger">Incident</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">5 March</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Cooling time after a firing</a>
+              <span class="ds-list__meta">The kiln stays blocked until it is safe to open.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Kilns</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">26 February</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Statements as a spreadsheet</a>
+              <span class="ds-list__meta">One file per month for the treasurer.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Billing</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">14 February</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#changelog">Induction records per machine</a>
+              <span class="ds-list__meta">Who was shown what, by whom and when.</span>
+            </div>
+            <span class="ds-badge ds-badge--glass">Safety</span>
+          </li>
+        </ul>
+
+        <nav aria-label="Pages">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#changelog">Newer</a></li>
+            <li><a class="ds-pagination__link is-current" href="#changelog" aria-current="page">1</a></li>
+            <li><a class="ds-pagination__link" href="#changelog">2</a></li>
+            <li><a class="ds-pagination__link" href="#changelog">3</a></li>
+            <li><a class="ds-pagination__link" href="#changelog">Older</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="waitlist">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#pricing">Pricing</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Waitlist</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Join the waitlist</h1>
+        <p class="ds-page-header__lead">Tell us about your workshop. We open ten new spaces every week, in the order they signed up.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#pricing">Back to the plans</a>
+      </div>
+    </header>
+
+    <div class="ds-page__cols">
+
+      <div class="ds-page__stack">
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Your workshop</h2>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form">
+              <div class="ds-form__row">
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="w-name">Workshop name</label>
+                  <input class="ds-form__input" id="w-name" type="text" value="Tidewater Print Room">
+                </div>
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="w-mail">Your email</label>
+                  <input class="ds-form__input is-error" id="w-mail" type="text" value="marta@tidewater" aria-invalid="true" aria-describedby="w-mail-error">
+                  <span class="ds-form__error" id="w-mail-error">Enter a complete email address.</span>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="w-kind">What you make</label>
+                  <span class="ds-form__select-wrap">
+                    <select class="ds-form__select" id="w-kind">
+                      <option>Printmaking</option>
+                      <option>Ceramics</option>
+                      <option>Wood and metal</option>
+                      <option>Textiles</option>
+                    </select>
+                    <svg class="ds-form__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg>
+                  </span>
+                </div>
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="w-rooms">Rooms to put on the calendar <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">You can add rooms later; the first is free.</span></span></label>
+                  <input class="ds-form__input" id="w-rooms" type="text" value="3">
+                  <span class="ds-form__hint">A room is anything with a door.</span>
+                </div>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="w-note">How do members book today?</label>
+                <textarea class="ds-form__textarea" id="w-note" placeholder="A sheet on the door, a shared spreadsheet, a group chat"></textarea>
+              </div>
+              <label class="ds-form__check">
+                <input class="ds-form__checkbox" type="checkbox" checked>
+                Send me the changelog once a month
+              </label>
+<div class="ds-switch__group">
+<label class="ds-switch" data-component="switch">
+<span class="ds-switch__text">Tell me when my turn comes<span class="ds-switch__hint">One email, a week ahead</span></span>
+<input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+</label>
+<label class="ds-switch">
+<span class="ds-switch__text">Share my place with my workshop<span class="ds-switch__hint">Members see how long is left</span></span>
+<input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span>
+</label>
+</div>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Join the waitlist</button>
+                <a class="ds-button ds-button--secondary" href="#home">Not now</a>
+                <button class="ds-button ds-button--danger" type="button">Leave the list</button>
+                <button class="ds-button" type="button" disabled>Skip the queue</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Leave the waitlist?</h2>
+            <div class="ds-dialog__body">You give up place 215. If you join again later you start at the end of the list.</div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#waitlist">Keep my place</a>
+              <a class="ds-button ds-button--danger" href="#home">Leave the list</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="ds-page__stack">
+
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.500"/></svg>
+            <div><span class="ds-notice__title">You would be number 215.</span> At ten spaces a week your turn comes in late summer.</div>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 2.500 18 17H2z"/><path d="M10 8v4M10 14v.500"/></svg>
+            <div><span class="ds-notice__title">This workshop is already on the list.</span> Someone signed up Tidewater Print Room in January. Ask them to add you instead.</div>
+          </div>
+        </div>
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">What happens next</h2>
+          <div class="ds-panel__body ds-prose">
+            <ol>
+              <li>We write to confirm your place.</li>
+              <li>When your turn comes, we import the sheet you use today.</li>
+              <li>You invite your members with one link.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="10" width="32" height="24" rx="5"/><path d="m7 13 15 11 15-11"/></svg>
+          <h2 class="ds-empty__title">No invitations sent yet</h2>
+          <p class="ds-empty__text">Every workshop you invite that joins moves you up five places.</p>
+          <a class="ds-button ds-button--secondary" href="#waitlist">Invite a workshop</a>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div>
+      <span class="ds-footer__brand">chronoskin</span>
+      <span>Bookings for shared workshops. In pilot with 38 spaces.</span>
+    </div>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#home">Product</a></li>
+      <li><a class="ds-footer__link" href="#pricing">Pricing</a></li>
+      <li><a class="ds-footer__link" href="#changelog">Changelog</a></li>
+      <li><a class="ds-footer__link" href="#waitlist">Waitlist</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

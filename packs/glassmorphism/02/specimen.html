@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: warm when you are in</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-page__backdrop" aria-hidden="true">
+  <span class="ds-page__shard ds-page__shard--a"></span>
+  <span class="ds-page__shard ds-page__shard--b"></span>
+  <span class="ds-page__shard ds-page__shard--c"></span>
+  <span class="ds-page__shard ds-page__shard--d"></span>
+  <span class="ds-page__shard ds-page__shard--e"></span>
+  <span class="ds-page__shard ds-page__shard--f"></span>
+  <span class="ds-page__shard ds-page__shard--g"></span>
+  <span class="ds-page__shard ds-page__shard--h"></span>
+</div>
+
+<div class="ds-nav__wrap">
+  <header class="ds-nav" data-component="nav">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="13" height="13" rx="4" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="12.5" height="12.5" rx="4" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#home">Home</a></li>
+      <li><a class="ds-nav__link" href="#kitchen">Rooms</a></li>
+      <li><a class="ds-nav__link" href="#schedules">Schedules</a></li>
+      <li><a class="ds-nav__link" href="#guide">Guide</a></li>
+    </ul>
+<div class="ds-menu__group">
+<a class="ds-button" href="#settings">Settings</a>
+<div class="ds-menu" data-component="menu">
+<a class="ds-avatar ds-menu__trigger" data-component="avatar" href="#home" aria-label="Household account">OB</a>
+<ul class="ds-menu__list">
+<li><a class="ds-menu__link" href="#home">Alder Row</a></li>
+<li><a class="ds-menu__link" href="#schedules">Schedules</a></li>
+<li><a class="ds-menu__link" href="#settings">Room settings</a></li>
+<li><a class="ds-menu__link" href="#guide">Help</a></li>
+</ul>
+</div>
+</div>
+  </header>
+</div>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="home">
+
+  <section class="ds-hero" data-component="hero">
+    <h1 class="ds-hero__title">Warm when you are in</h1>
+    <p class="ds-hero__lead">Seven rooms on one boiler, each kept at its own temperature.</p>
+    <div class="ds-hero__actions">
+      <a class="ds-button ds-button--large" href="#schedules">Set a schedule</a>
+      <a class="ds-button ds-button--secondary ds-button--large" href="#guide">How it decides</a>
+    </div>
+  </section>
+
+    <div class="ds-page__stack">
+
+      <main class="ds-page__sheet">
+
+      <div class="ds-page__group">
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+            <div><span class="ds-notice__title">Frost guard is on.</span> Every room is held above 7 °C until Sunday evening.</div>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+            <div><span class="ds-notice__title">The attic valve does not answer.</span> It last reported at 06:20. Replace its batteries or move the hub closer.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-page__group">
+        <h2 class="ds-page__group-title">Right now</h2>
+        <dl class="ds-stat__row" data-component="stats">
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Average indoors</dt>
+            <dd class="ds-stat__value">20.5 °C</dd>
+          </div>
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Rooms heating</dt>
+            <dd class="ds-stat__value">3 of 7 <span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--40"></span></span></dd>
+          </div>
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Used today</dt>
+            <dd class="ds-stat__value">14.2 kWh</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="ds-page__group">
+        <h2 class="ds-page__group-title">Rooms</h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 12V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M1 12h16v3H1z"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#kitchen">Living room</a>
+              <span class="ds-list__meta">Heating to 21 °C until 22:30</span>
+            </div>
+            <span class="ds-list__value">20.4 °C</span>
+            <a class="ds-button ds-button--secondary" href="#kitchen">Adjust</a>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 15V4h12v11M3 9h12M7 4v5"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#kitchen">Kitchen</a>
+              <span class="ds-list__meta">On schedule · next change at 17:00</span>
+            </div>
+            <span class="ds-list__value">19.8 °C</span>
+            <a class="ds-button ds-button--secondary" href="#kitchen">Adjust</a>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 14V6M2 11h14v3M16 11V9a2 2 0 0 0-2-2H7v4"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#schedules">Back bedroom <span class="ds-badge ds-badge--alt">New</span></a>
+              <span class="ds-list__meta">Added on Tuesday · no schedule yet</span>
+            </div>
+            <span class="ds-list__value">17.1 °C</span>
+            <a class="ds-button ds-button--secondary" href="#kitchen">Adjust</a>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 9 9 3l7 6M4 8v7h10V8"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#settings">Attic study</a>
+              <span class="ds-list__meta">Valve silent since 06:20</span>
+            </div>
+            <span class="ds-list__value">n/a</span>
+            <a class="ds-button ds-button--secondary" href="#settings">Check</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ds-page__group">
+        <h2 class="ds-page__group-title">Scenes</h2>
+        <section class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell ds-grid__cell--1">
+            <div class="ds-grid__head"><span class="ds-grid__label">Morning</span> <span class="ds-badge" data-component="badge">On</span></div>
+            <span class="ds-grid__value">21 °C</span>
+            <span class="ds-grid__meta">Kitchen and bathroom from 06:30</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <div class="ds-grid__head"><span class="ds-grid__label">Away</span> <span class="ds-badge ds-badge--glass">Off</span></div>
+            <span class="ds-grid__value">15 °C</span>
+            <span class="ds-grid__meta">Whole house while nobody is in</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <div class="ds-grid__head"><span class="ds-grid__label">Night</span> <span class="ds-badge ds-badge--glass">Off</span></div>
+            <span class="ds-grid__value">17 °C</span>
+            <span class="ds-grid__meta">Bedrooms only, from 23:00</span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <div class="ds-grid__head"><span class="ds-grid__label">Guests</span> <span class="ds-badge ds-badge--glass">Off</span></div>
+            <span class="ds-grid__value">20 °C</span>
+            <span class="ds-grid__meta">Adds the back bedroom</span>
+          </div>
+        </section>
+      </div>
+
+      </main>
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__heading">Elsewhere in the house</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#home">Heating <span class="ds-badge ds-badge--glass">7</span></a></li>
+        <li><a class="ds-sidebar__link" href="#schedules">Hot water</a></li>
+        <li><a class="ds-sidebar__link" href="#schedules">Ventilation</a></li>
+        <li><a class="ds-sidebar__link" href="#kitchen">Window sensors</a></li>
+        <li><a class="ds-sidebar__link" href="#kitchen">Energy report</a></li>
+        <li><a class="ds-sidebar__link" href="#settings">People and keys</a></li>
+      </ul>
+    </aside>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="kitchen">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Rooms</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Kitchen</li>
+    </ol>
+
+    <div class="ds-page__sheet">
+
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Kitchen</h1>
+          <p class="ds-page-header__lead">One radiator valve and a window sensor, on the weekday schedule.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#kitchen">Boost for an hour</a>
+        </div>
+      </header>
+
+      <div class="ds-page__group">
+        <ul class="ds-tabs" data-component="tabs">
+          <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" aria-current="true" href="#kitchen">Schedule</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#kitchen">History</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#kitchen">Devices</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#settings">Settings</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-page__group">
+        <dl class="ds-stat__row">
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Now</dt>
+            <dd class="ds-stat__value">19.8 °C</dd>
+          </div>
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Target until 21:00</dt>
+            <dd class="ds-stat__value">21.0 °C</dd>
+          </div>
+          <div class="ds-stat">
+            <dt class="ds-stat__label">Used this week</dt>
+            <dd class="ds-stat__value">10.8 kWh</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="ds-page__group">
+        <h2 class="ds-page__group-title">This week</h2>
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">State</th>
+              <th scope="col" class="ds-table__opt">Warm between</th>
+              <th scope="col" class="ds-table__num">Target (°C)</th>
+              <th scope="col" class="ds-table__num">Used (kWh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#kitchen">Monday</a></td>
+              <td><span class="ds-badge ds-badge--success">Reached</span></td>
+              <td class="ds-table__meta ds-table__opt">06:30 to 08:15, 17:00 to 21:00</td>
+              <td class="ds-table__num">21.0</td>
+              <td class="ds-table__num">2.6</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#kitchen">Tuesday</a></td>
+              <td><span class="ds-badge ds-badge--success">Reached</span></td>
+              <td class="ds-table__meta ds-table__opt">06:30 to 08:15, 17:00 to 21:00</td>
+              <td class="ds-table__num">21.0</td>
+              <td class="ds-table__num">2.4</td>
+            </tr>
+            <tr class="is-hover">
+              <td><a class="ds-link ds-link--quiet" href="#kitchen">Wednesday</a></td>
+              <td><span class="ds-badge ds-badge--warning">Window open</span></td>
+              <td class="ds-table__meta ds-table__opt">06:30 to 07:10, 17:00 to 21:00</td>
+              <td class="ds-table__num">21.0</td>
+              <td class="ds-table__num">1.9</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#kitchen">Thursday</a></td>
+              <td><span class="ds-badge ds-badge--danger">Missed</span></td>
+              <td class="ds-table__meta ds-table__opt">Boiler locked out until 09:40</td>
+              <td class="ds-table__num">21.0</td>
+              <td class="ds-table__num">0.8</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#kitchen">Friday</a></td>
+              <td><span class="ds-badge ds-badge--success">Reached</span></td>
+              <td class="ds-table__meta ds-table__opt">06:30 to 08:15, 16:00 to 22:00</td>
+              <td class="ds-table__num">21.5</td>
+              <td class="ds-table__num">3.1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ds-page__group">
+        <nav aria-label="Weeks">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link" href="#kitchen">Previous</a></li>
+            <li><a class="ds-pagination__link" href="#kitchen">11</a></li>
+            <li><a class="ds-pagination__link is-current" href="#kitchen" aria-current="page">12</a></li>
+            <li><a class="ds-pagination__link" href="#kitchen">13</a></li>
+            <li><a class="ds-pagination__link" href="#kitchen">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="schedules">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Heating</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Schedules</li>
+    </ol>
+
+    <div class="ds-page__stack">
+
+      <div class="ds-page__sheet">
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Schedules</h1>
+          <p class="ds-page-header__lead">Times and targets a room follows. Scenes sit on top while they are on.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#settings">Assign to a room</a>
+        </div>
+      </header>
+
+        <div class="ds-page__group">
+          <h2 class="ds-page__group-title">Weekdays</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item">
+              <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></span>
+              <div class="ds-list__body">
+                <a class="ds-list__title" href="#kitchen">Weekday, early start</a>
+                <span class="ds-list__meta">06:30 to 08:15 and 17:00 to 21:00 · kitchen, bathroom, living room</span>
+              </div>
+              <span class="ds-badge ds-badge--success">In use</span>
+              <a class="ds-button ds-button--secondary" href="#kitchen">Open</a>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></span>
+              <div class="ds-list__body">
+                <a class="ds-list__title" href="#kitchen">Weekday, late start</a>
+                <span class="ds-list__meta">08:00 to 09:30 and 18:00 to 23:00 · both bedrooms</span>
+              </div>
+              <span class="ds-badge ds-badge--success">In use</span>
+              <a class="ds-button ds-button--secondary" href="#kitchen">Open</a>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__icon"><svg class="ds-page__icon" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></span>
+              <div class="ds-list__body">
+                <a class="ds-list__title" href="#kitchen">Always on</a>
+                <span class="ds-list__meta">18 °C day and night · no room follows it</span>
+              </div>
+              <span class="ds-badge ds-badge--glass">Unused</span>
+              <a class="ds-button ds-button--secondary" href="#kitchen">Open</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-page__group">
+          <h2 class="ds-page__group-title">Weekend</h2>
+          <div class="ds-page__pair">
+          <section class="ds-empty" data-component="empty">
+            <svg class="ds-empty__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l6 4"/></svg>
+            <h2 class="ds-empty__title">No schedule for the weekend</h2>
+            <p class="ds-empty__text">Saturday and Sunday follow the weekday times until you add one.</p>
+            <a class="ds-button" href="#settings">Add weekend times</a>
+          </section>
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Frost guard <span class="ds-badge ds-badge--warning">Until Sunday</span></h2>
+            <div class="ds-panel__body">
+              Every room is held above 7 °C until Sunday evening, whatever its schedule says. Weekend times you add now start once frost guard ends.
+            </div>
+          </section>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="settings">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#kitchen">Kitchen</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Settings</li>
+    </ol>
+
+    <div class="ds-page__stack">
+
+      <div class="ds-page__sheet">
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Kitchen settings</h1>
+          <p class="ds-page-header__lead">What the room is called, which times it follows and how low it may fall.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#kitchen">Back to the week</a>
+        </div>
+      </header>
+
+      <div class="ds-page__group">
+          <ul class="ds-tabs">
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#kitchen">Schedule</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#kitchen">History</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#kitchen">Devices</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" aria-current="true" href="#settings">Settings</a></li>
+          </ul>
+        </div>
+
+      <div class="ds-page__group">
+        <h2 class="ds-page__group-title">Room settings</h2>
+        <form class="ds-form" data-component="form">
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-name">Name</label>
+            <div class="ds-form__control">
+              <input class="ds-form__input" id="f-name" type="text" value="Kitchen">
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-schedule">Schedule <span class="ds-form__hint">Times the room follows on working days.</span></label>
+            <div class="ds-form__control">
+              <span class="ds-form__select-wrap">
+                <select class="ds-form__select" id="f-schedule">
+                  <option>Weekday, early start</option>
+                  <option>Weekday, late start</option>
+                  <option>Always on</option>
+                </select>
+                <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-target">Comfort target <span class="ds-form__hint">Now 21.0 °C</span></label>
+            <div class="ds-form__control">
+              <input class="ds-form__range" id="f-target" type="range" min="0" max="100" value="64">
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-low">Lowest allowed <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">Frost guard never lets a room fall below this.</span></span></label>
+            <div class="ds-form__control">
+              <input class="ds-form__input is-error" id="f-low" type="text" value="31" aria-invalid="true" aria-describedby="f-low-error">
+              <span class="ds-form__error" id="f-low-error">Enter a temperature between 5 and 25 °C.</span>
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="f-note">Note for the household</label>
+            <div class="ds-form__control">
+              <textarea class="ds-form__textarea" id="f-note" placeholder="Anything people should know about this room"></textarea>
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <span class="ds-form__label">Open window</span>
+            <div class="ds-form__control">
+              <label class="ds-form__check">
+                <input class="ds-form__checkbox" type="checkbox" checked>
+                Stop heating while the window is open
+              </label>
+<div class="ds-switch__group">
+<label class="ds-switch" data-component="switch">
+<span class="ds-switch__text">Boost from the dial<span class="ds-switch__hint">Anyone in the room may add an hour</span></span>
+<input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+</label>
+<label class="ds-switch">
+<span class="ds-switch__text">Hold at night<span class="ds-switch__hint">Keep the lowest allowed until 06:00</span></span>
+<input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span>
+</label>
+</div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+        <div class="ds-page__group">
+          <div class="ds-button__row" data-component="buttons">
+            <button class="ds-button ds-button--danger" type="button">Remove room</button>
+            <button class="ds-button" type="button" disabled>Revert</button>
+            <a class="ds-button ds-button--secondary" href="#kitchen">Cancel</a>
+            <button class="ds-button" type="button">Save changes</button>
+          </div>
+        </div>
+
+      </div>
+
+      <section class="ds-dialog" data-component="dialog">
+        <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+          <h2 class="ds-dialog__title" id="d-title">Remove the kitchen?</h2>
+          <div class="ds-dialog__body">The room leaves every schedule and scene. Its history stays in the energy report.</div>
+          <div class="ds-dialog__actions">
+            <a class="ds-button ds-button--danger ds-button--block" href="#home">Remove room</a>
+            <a class="ds-button ds-button--secondary ds-button--block" href="#settings">Keep it</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="ds-view" id="guide">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#home">Heating</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Guide</li>
+    </ol>
+
+    <div class="ds-page__sheet">
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Guide</h1>
+          <p class="ds-page-header__lead">How the hub chooses which room gets heat, and when a schedule steps aside.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#schedules">See the schedules</a>
+        </div>
+      </header>
+
+      <div class="ds-page__group">
+        <article class="ds-prose" data-component="typography">
+          <h1>How the house decides</h1>
+          <p class="ds-prose__lead">Each room asks for heat on its own, and the boiler answers the room that is furthest from its target.</p>
+          <p>A room has a target and a <strong>comfort band</strong> of half a degree around it. Inside the band the valve rests. The hub stores each change with the field <code>set_by</code>, so you can tell a schedule from a hand on the dial.</p>
+          <h2>Schedules</h2>
+          <p>A schedule is a list of times and targets for one room. Scenes sit on top: while a scene is on, its targets win.</p>
+          <h3>When a schedule is skipped</h3>
+          <ul>
+            <li>A window in the room has been open for five minutes.</li>
+            <li>Someone changed the dial in the last two hours.</li>
+            <li>Frost guard is holding the whole house.</li>
+          </ul>
+          <pre class="ds-prose__code">room:   kitchen
+at:     06:30
+target: 21.0
+until:  08:15</pre>
+        </article>
+      </div>
+
+<div class="ds-page__group">
+<div class="ds-accordion ds-accordion--flush" data-component="accordion">
+<details class="ds-accordion__item" open>
+<summary class="ds-accordion__summary">Why is a room colder than its target?</summary>
+<p class="ds-accordion__body">The boiler answers the room that is furthest from its target first. The others follow within the hour.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">What does an open window do?</summary>
+<p class="ds-accordion__body">Heating in that room stops after five minutes and starts again when the window closes.</p>
+</details>
+<details class="ds-accordion__item">
+<summary class="ds-accordion__summary">Can a scene run on a timer?</summary>
+<p class="ds-accordion__body">Yes. A scene can end by itself after one to twelve hours.</p>
+</details>
+</div>
+</div>
+
+      <div class="ds-page__group">
+        <p class="ds-link__sample" data-component="links">
+          <a class="ds-link" href="#home">Normal link</a>
+          <a class="ds-link is-visited" href="#home">Visited link</a>
+          <a class="ds-link is-hover" href="#home">Hovered link</a>
+          <a class="ds-link is-active" href="#home">Active link</a>
+          <a class="ds-link ds-link--quiet" href="#home">Quiet link</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <span>chronoskin · hub 4 at Alder Row · firmware 3.2</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+      <li><a class="ds-footer__link" href="#schedules">Schedules</a></li>
+      <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+    </ul>
+  </footer>
+
+</div>
+
+</body>
+</html>

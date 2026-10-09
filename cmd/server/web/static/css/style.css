@@ -1,0 +1,61 @@
+/* The side panel of the style page: what the style is, and the form that
+   regenerates it. */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title .heart {
+  margin-left: auto;
+}
+
+/* One line always: a longer name is cut short (its title has it whole),
+   so the controls below never move from one style to the next. */
+.sub {
+  color: var(--muted);
+  margin-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.chip {
+  font: 11px var(--mono);
+  padding: 2px 8px;
+  border-radius: var(--radius-small);
+  background: var(--sunken);
+  color: var(--muted);
+}
+
+.regen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.regen > .box {
+  margin-top: 6px;
+}
+
+.box .head {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.box .head h2 {
+  margin: 0;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}

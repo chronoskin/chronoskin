@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: tonal component kit documentation specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#components">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g opacity=".42"><circle cx="7.6" cy="7.6" r="5.1"/><circle cx="16.4" cy="7.6" r="5.1"/><circle cx="7.6" cy="16.4" r="5.1"/><circle cx="16.4" cy="16.4" r="5.1"/></g><circle cx="12" cy="12" r="3.6"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <details class="ds-menu"><summary class="ds-menu__button"><span class="ds-menu__label">3.2</span><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul class="ds-menu__list"><li><a class="ds-menu__item is-current" href="#components">3.2, current</a></li><li><a class="ds-menu__item" href="#components">3.1</a></li><li><a class="ds-menu__item" href="#components">2.9, until March</a></li></ul></details>
+  <a class="ds-search" href="#search"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14 M16 16l4 4"/></svg><span class="ds-search__text">Search components and tokens</span></a>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#components">Components</a></li>
+    <li><a class="ds-nav__link" href="#guidance">Guidance</a></li>
+    <li><a class="ds-nav__link" href="#tokens">Tokens</a></li>
+    <li><a class="ds-nav__link" href="#feedback">Feedback</a></li>
+  </ul>
+</header>
+
+<nav class="ds-sidebar" data-component="sidebar">
+  <h2 class="ds-sidebar__title">The kit</h2>
+  <ul class="ds-sidebar__list">
+    <li><a class="ds-sidebar__link ds-sidebar__link--page" href="#components"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z"/></svg>All components<span class="ds-sidebar__count">24</span></a></li>
+    <li><a class="ds-sidebar__link ds-sidebar__link--page" href="#guidance"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7h8a5 5 0 0 1 0 10H8A5 5 0 0 1 8 7z M16 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></svg>Buttons</a></li>
+    <li><a class="ds-sidebar__link" href="#guidance"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z M4 10h16"/></svg>Cards</a></li>
+    <li><a class="ds-sidebar__link" href="#guidance"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z M7.5 8v.5"/></svg>Chips</a></li>
+    <li><a class="ds-sidebar__link" href="#guidance"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12 M8 12h12 M8 18h12 M4 6h.5 M4 12h.5 M4 18h.5"/></svg>Lists</a></li>
+  </ul>
+  <h2 class="ds-sidebar__title">Foundations</h2>
+  <ul class="ds-sidebar__list">
+    <li><a class="ds-sidebar__link ds-sidebar__link--page" href="#tokens"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-2 1-2h2a4 4 0 0 0 4-4c0-5-4-9-9-9z M8 11v.5 M12 8v.5 M16 11v.5"/></svg>Colour tokens<span class="ds-sidebar__count">48</span></a></li>
+    <li><a class="ds-sidebar__link" href="#tokens"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6V4h14v2 M12 4v16 M9 20h6"/></svg>Type scale</a></li>
+    <li><a class="ds-sidebar__link" href="#tokens"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4z M17 13a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M13 11l4-7 4 7z"/></svg>Shape</a></li>
+  </ul>
+  <h2 class="ds-sidebar__title">Taking part</h2>
+  <ul class="ds-sidebar__list">
+    <li><a class="ds-sidebar__link ds-sidebar__link--page" href="#feedback"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Request a component</a></li>
+    <li><a class="ds-sidebar__link ds-sidebar__link--page" href="#search"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14 M16 16l4 4"/></svg>Search</a></li>
+  </ul>
+</nav>
+
+<section class="ds-view ds-view--home" id="components">
+  <div class="ds-main">
+    <div class="ds-banner">
+      <span class="ds-badge ds-badge--new">3.2</span>
+      <p class="ds-banner__text">The new release adds the segmented button and renames two colour tokens.</p>
+      <a class="ds-button ds-button--text" href="#tokens">See what changed</a>
+    </div>
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__copy">
+        <h1 class="ds-hero__title">Components</h1>
+        <p class="ds-hero__lead">Twenty-four building blocks for chronoskin apps, each with guidance, measurements and tokens.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#guidance">Start with buttons</a>
+          <a class="ds-button ds-button--secondary" href="#tokens">Browse the tokens</a>
+        </div>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <div class="ds-shapes">
+          <span class="ds-shape ds-shape--1"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg></span>
+          <span class="ds-shape ds-shape--2"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4z M17 13a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M13 11l4-7 4 7z"/></svg></span>
+          <span class="ds-shape ds-shape--3"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7h8a5 5 0 0 1 0 10H8A5 5 0 0 1 8 7z M16 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></svg></span>
+          <span class="ds-shape ds-shape--4"></span>
+        </div>
+      </div>
+    </div>
+    <div class="ds-stats" data-component="stats">
+      <div class="ds-stat"><p class="ds-stat__value">24</p><p class="ds-stat__label">components</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">48</p><p class="ds-stat__label">colour tokens</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">3.2</p><p class="ds-stat__label">current release</p></div>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-toolbar">
+        <h2 class="ds-section__title">Actions and selection</h2>
+        <ul class="ds-chips">
+          <li><a class="ds-chip is-current" href="#components"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>All</a></li>
+          <li><a class="ds-chip" href="#components">Actions</a></li>
+          <li><a class="ds-chip" href="#components">Containment</a></li>
+          <li><a class="ds-chip" href="#components">Selection</a></li>
+        </ul>
+      </div>
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview"><span class="ds-mini">Save</span><span class="ds-mini ds-mini--outlined">Cancel</span></span><h3 class="ds-grid__title">Buttons</h3><p class="ds-grid__text">Filled, tonal, outlined and text</p></a>
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview ds-grid__preview--2"><span class="ds-mini ds-mini--fab"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg></span></span><h3 class="ds-grid__title">Floating action button</h3><p class="ds-grid__text">The one main action of a screen</p></a>
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview ds-grid__preview--3"><span class="ds-mini ds-mini--chip">Oak</span><span class="ds-mini ds-mini--chip">Ash</span><span class="ds-mini ds-mini--chip">Steel</span></span><h3 class="ds-grid__title">Chips</h3><p class="ds-grid__text">Filters, choices and suggestions</p></a>
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview ds-grid__preview--4"><span class="ds-mini ds-mini--card"><span class="ds-mini__line ds-mini__line--short"></span><span class="ds-mini__line"></span><span class="ds-mini__line"></span></span></span><h3 class="ds-grid__title">Cards</h3><p class="ds-grid__text">Filled or outlined, never both</p></a>
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview ds-grid__preview--3"><input class="ds-switch" type="checkbox" checked aria-label="Example switch, on"><input class="ds-switch" type="checkbox" aria-label="Example switch, off"></span><h3 class="ds-grid__title">Switches</h3><p class="ds-grid__text">On and off, with a thumb that grows</p></a>
+        <a class="ds-grid__cell" href="#guidance"><span class="ds-grid__preview"><span class="ds-mini ds-mini--tonal"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z"/></svg></span><span class="ds-mini ds-mini--chip"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h12 M8 12h12 M8 18h12 M4 6h.5 M4 12h.5 M4 18h.5"/></svg></span><span class="ds-mini ds-mini--chip"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z M4 10h16"/></svg></span></span><h3 class="ds-grid__title">Navigation bar</h3><p class="ds-grid__text">Three to five places, one pill</p></a>
+      </div>
+    </div>
+
+    <div class="ds-section ds-columns">
+      <div class="ds-panel ds-panel--outlined">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Latest changes</h2><a class="ds-link ds-link--more" href="#tokens">All releases <svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--1"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7h8a5 5 0 0 1 0 10H8A5 5 0 0 1 8 7z M16 10a2 2 0 1 0 0 4a2 2 0 0 0 0-4"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#guidance">Segmented button added</a><p class="ds-list__text">Two to five options in one outlined pill</p></div><span class="ds-list__meta">3.2, 4 June</span></li>
+          <li class="ds-list__item"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-2 1-2h2a4 4 0 0 0 4-4c0-5-4-9-9-9z M8 11v.5 M12 8v.5 M16 11v.5"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#tokens">Two container tokens renamed</a><p class="ds-list__text">The old names keep working until 4.0</p></div><span class="ds-list__meta">3.2, 4 June</span></li>
+          <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--3"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z M4 10h16"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#guidance">Card corners now 16</a><p class="ds-list__text">Up from 12, to match dialogs and sheets</p></div><span class="ds-list__meta">3.1, 12 May</span></li>
+        </ul>
+        <div class="ds-progress-group"><div><p class="ds-progress__label"><strong>Moved to 3.2</strong><span>18 of 24 components</span></p><div class="ds-progress ds-progress--75" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="24"><span class="ds-progress__bar"></span><span class="ds-progress__rest"></span></div></div></div>
+      </div>
+      <div class="ds-panel ds-panel--tonal" data-component="panel">
+        <h2 class="ds-panel__title">New to the kit?</h2>
+        <div class="ds-panel__body"><p>Read the page on buttons first. It shows how the four emphasis levels work, and every other component follows the same pattern.</p></div>
+        <div class="ds-panel__actions"><a class="ds-button ds-button--secondary" href="#guidance">Read the guidance</a><a class="ds-button ds-button--text" href="#feedback">Ask for a component</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="guidance">
+  <div class="ds-main">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#components">Components</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#components">Actions</a></li>
+      <li class="ds-breadcrumb__item is-current">Buttons</li>
+    </ol>
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Buttons</h1>
+        <p class="ds-page-header__text">Buttons start most actions. Four kinds carry four levels of emphasis.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#tokens"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-2 1-2h2a4 4 0 0 0 4-4c0-5-4-9-9-9z M8 11v.5 M12 8v.5 M16 11v.5"/></svg>Tokens</a>
+        <a class="ds-button" href="#feedback">Suggest a change</a>
+      </div>
+    </div>
+    <ul class="ds-tabs" data-component="tabs">
+      <li><a class="ds-tabs__tab" href="#guidance"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg>Overview</a></li>
+      <li><a class="ds-tabs__tab is-current" href="#guidance"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg>Guidance</a></li>
+      <li><a class="ds-tabs__tab" href="#tokens"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5"/></svg>Specs</a></li>
+      <li><a class="ds-tabs__tab" href="#guidance"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8 M4 20a8 8 0 0 1 16 0"/></svg>Accessibility</a></li>
+    </ul>
+    <div class="ds-article">
+      <div>
+        <article class="ds-prose" data-component="typography">
+          <h1>Choosing a button</h1>
+          <p class="ds-prose__lead">Pick the kind by how much the action matters on this screen, not by how it looks.</p>
+          <p>A screen has one filled button at most. Tonal buttons support it, outlined buttons step back, and text buttons sit inside cards and dialogs. Every kind uses the class <code>ds-button</code> and is described in the <a href="#tokens">token table</a>.</p>
+          <h2>Emphasis</h2>
+          <ul>
+            <li><strong>Filled</strong> for the action that finishes the task</li>
+            <li><strong>Tonal</strong> for the next most likely action</li>
+            <li><strong>Outlined</strong> and <strong>text</strong> for everything else</li>
+          </ul>
+          <h3>Labels</h3>
+          <p>Start with a verb and keep to three words. Sentence case, no full stop.</p>
+        </article>
+        <div class="ds-guides">
+          <div class="ds-guide">
+            <div class="ds-guide__preview"><span class="ds-mini ds-mini--outlined">Cancel</span><span class="ds-mini">Save</span></div>
+            <p class="ds-guide__body"><span class="ds-guide__label"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Do</span>Pair one filled button with a quieter one.</p>
+          </div>
+          <div class="ds-guide ds-guide--dont">
+            <div class="ds-guide__preview"><span class="ds-mini">Cancel</span><span class="ds-mini">Save</span></div>
+            <p class="ds-guide__body"><span class="ds-guide__label"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg>Do not</span>Put two filled buttons side by side.</p>
+          </div>
+        </div>
+        <div class="ds-notices" data-component="notice">
+          <div class="ds-notice"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Destructive actions</strong>Use the danger variant only for the final step, inside a dialog.</p></div>
+          <div class="ds-notice ds-notice--error"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z M12 10v4 M12 17v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">The raised button is withdrawn</strong>It was removed in 3.0. Replace it with the tonal button.</p></div>
+        </div>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#components" aria-label="Previous"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></a></li>
+          <li><a class="ds-pagination__link" href="#guidance">1</a></li>
+          <li><a class="ds-pagination__link is-current" href="#guidance">2</a></li>
+          <li><a class="ds-pagination__link" href="#tokens">3</a></li>
+          <li><a class="ds-pagination__link" href="#guidance">4</a></li>
+          <li><a class="ds-pagination__link" href="#tokens" aria-label="Next"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></li>
+        </ul>
+      </div>
+      <ul class="ds-toc" data-component="links">
+        <li class="ds-toc__title">On this page</li>
+        <li><a class="ds-link" href="#guidance">Choosing a button</a></li>
+        <li><a class="ds-link is-visited" href="#guidance">Emphasis</a></li>
+        <li><a class="ds-link is-hover" href="#guidance">Labels</a></li>
+        <li><a class="ds-link is-active" href="#guidance">Do and do not</a></li>
+        <li><a class="ds-link ds-link--quiet" href="#tokens">Related tokens</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="tokens">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Colour tokens</h1>
+        <p class="ds-page-header__text">Every colour in the kit is a tone of one source colour. Use the role, never the value.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outlined" href="#feedback">Report a token</a>
+      </div>
+    </div>
+    <div class="ds-toolbar">
+      <ul class="ds-chips">
+        <li><a class="ds-chip is-current" href="#tokens"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Colour</a></li>
+        <li><a class="ds-chip" href="#tokens">Type</a></li>
+        <li><a class="ds-chip" href="#tokens">Shape</a></li>
+      </ul>
+      <div class="ds-badges" data-component="badge">
+        <span class="ds-badge">48 tokens</span>
+        <span class="ds-badge ds-badge--success">Stable</span>
+        <span class="ds-badge ds-badge--warning">Renamed</span>
+        <span class="ds-badge ds-badge--danger">Withdrawn</span>
+      </div>
+    </div>
+    <div class="ds-table-wrap">
+      <table class="ds-table" data-component="table">
+        <thead><tr><th>Token</th><th class="ds-table__extra">Used for</th><th>Status</th><th class="ds-table__extra">Since</th><th class="ds-table__num">Tone</th></tr></thead>
+        <tbody>
+          <tr><td><span class="ds-swatch ds-swatch--button"></span><span class="ds-table__name">primary</span></td><td class="ds-table__extra">Filled buttons, the current page</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__extra">1.0</td><td class="ds-table__num">40</td></tr>
+          <tr class="is-current"><td><span class="ds-swatch"></span><span class="ds-table__name">primary-container</span></td><td class="ds-table__extra">Floating button, hero cards</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__extra">1.0</td><td class="ds-table__num">90</td></tr>
+          <tr><td><span class="ds-swatch ds-swatch--2"></span><span class="ds-table__name">secondary-container</span></td><td class="ds-table__extra">Tonal buttons, navigation pill</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__extra">1.0</td><td class="ds-table__num">90</td></tr>
+          <tr><td><span class="ds-swatch ds-swatch--3"></span><span class="ds-table__name">tertiary-container</span></td><td class="ds-table__extra">Notices, contrasting accents</td><td><span class="ds-badge ds-badge--success">Stable</span></td><td class="ds-table__extra">2.0</td><td class="ds-table__num">90</td></tr>
+          <tr><td><span class="ds-swatch ds-swatch--4"></span><span class="ds-table__name">surface-container-highest</span></td><td class="ds-table__extra">Tonal cards, inline code</td><td><span class="ds-badge ds-badge--warning">Renamed</span></td><td class="ds-table__extra">3.2</td><td class="ds-table__num">90</td></tr>
+          <tr><td><span class="ds-swatch ds-swatch--canvas"></span><span class="ds-table__name">surface-raised</span></td><td class="ds-table__extra">Was used for raised buttons</td><td><span class="ds-badge ds-badge--danger">Withdrawn</span></td><td class="ds-table__extra">1.0</td><td class="ds-table__num">98</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ds-section ds-columns ds-columns--even">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">Text on a fill</h2>
+        <p class="ds-panel__body">Each container has its own text role. Pair them as the table shows and contrast takes care of itself in light and dark.</p>
+      </div>
+      <div class="ds-panel ds-panel--accent">
+        <h2 class="ds-panel__title">Elevation is a tint</h2>
+        <p class="ds-panel__body">A raised surface takes the next container tone. Shadows are kept for things that float.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="feedback">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Request a component</h1>
+        <p class="ds-page-header__text">Tell the kit team what is missing. Requests are read every Thursday.</p>
+      </div>
+    </div>
+    <div class="ds-columns">
+      <form class="ds-form ds-panel" data-component="form" action="#feedback">
+        <div class="ds-form__row">
+          <label class="ds-form__field"><span class="ds-form__label">Your name</span><input class="ds-form__control" type="text" value="Mirela Voss"></label>
+          <label class="ds-form__field is-invalid"><span class="ds-form__label">Team address</span><input class="ds-form__control" type="text" value="payments-team"><span class="ds-form__error">This needs to be a full address.</span></label>
+        </div>
+        <label class="ds-form__field"><span class="ds-form__label">Nearest existing component</span><span class="ds-form__select"><select class="ds-form__control"><option>Buttons</option><option>Cards</option><option>Chips</option><option>None of them</option></select></span><span class="ds-form__hint">We look here first for something to extend.</span></label>
+        <label class="ds-form__field"><span class="ds-form__label">What do you need it to do?</span><textarea class="ds-form__control ds-form__control--area">A button that splits into a main action and a menu of related ones.</textarea></label>
+        <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Tell me when it ships<small>One message, no newsletter</small></span><input class="ds-switch" type="checkbox" checked></label>
+        <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> I have checked the list of open requests</label>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="button">Send the request</button>
+          <button class="ds-button ds-button--secondary" type="button">Save a draft</button>
+          <button class="ds-button ds-button--danger" type="button">Discard</button>
+          <button class="ds-button is-disabled" type="button" disabled>Attach a file</button>
+        </div>
+      </form>
+      <div class="ds-stack">
+        <div class="ds-overlay">
+          <div class="ds-dialog" data-component="dialog" role="dialog" aria-label="Discard this request?">
+            <span class="ds-dialog__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13"/></svg></span>
+            <h2 class="ds-dialog__title">Discard this request?</h2>
+            <p class="ds-dialog__body">What you have written will be lost. Drafts are kept for a week.</p>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--text" href="#feedback">Keep writing</a>
+              <a class="ds-button ds-button--text ds-button--danger" href="#components">Discard</a>
+            </div>
+          </div>
+        </div>
+        <div class="ds-panel ds-panel--outlined">
+          <h2 class="ds-panel__title">Open requests</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item"><span class="ds-avatar">MV</span><div class="ds-list__body"><a class="ds-list__title" href="#feedback">Date range picker</a><p class="ds-list__text">Mirela Voss and three teams</p></div><span class="ds-badge ds-badge--warning">Planned</span></li>
+            <li class="ds-list__item"><span class="ds-avatar">TR</span><div class="ds-list__body"><a class="ds-list__title" href="#feedback">Split button</a><p class="ds-list__text">Tomas Reyl and one team</p></div><span class="ds-badge">Open</span></li>
+          </ul>
+        </div>
+        <div class="ds-accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__summary"><span>What makes a good request<span class="ds-accordion__hint">A screen, not a wish</span></span></summary><div class="ds-accordion__body"><p>Show the screen where the component is missing and what you used instead.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>How long it takes<span class="ds-accordion__hint">About two releases</span></span></summary><div class="ds-accordion__body"><p>A request is planned, drawn, reviewed for access and then built.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>When we say no<span class="ds-accordion__hint">If a pattern already covers it</span></span></summary><div class="ds-accordion__body"><p>We point to the guidance page and keep the request on file.</p></div></details></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="search">
+  <div class="ds-main">
+    <div class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Search</h1>
+        <p class="ds-page-header__text">No results for "carousel" in components, guidance or tokens.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--outlined" href="#components">Clear the search</a>
+      </div>
+    </div>
+    <div class="ds-columns">
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-empty__mark"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14 M16 16l4 4"/></svg></span>
+        <h2 class="ds-empty__title">Nothing matches "carousel"</h2>
+        <p class="ds-empty__text">The kit has no carousel yet. You can ask for one, or look at cards in a scrolling row.</p>
+        <a class="ds-button ds-button--secondary" href="#feedback">Request a component</a>
+      </div>
+      <div class="ds-panel ds-panel--tonal">
+        <h2 class="ds-panel__title">People also look for</h2>
+        <ul class="ds-chips">
+          <li><a class="ds-chip" href="#guidance">Buttons</a></li>
+          <li><a class="ds-chip" href="#guidance">Cards</a></li>
+          <li><a class="ds-chip" href="#guidance">Chips</a></li>
+          <li><a class="ds-chip" href="#tokens">Colour tokens</a></li>
+          <li><a class="ds-chip" href="#tokens">Shape</a></li>
+        </ul>
+        <p class="ds-panel__body">Search looks at page titles, token names and the first paragraph of each guidance page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__legal">chronoskin component kit, release 3.2</p>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#tokens">Releases</a></li>
+    <li><a class="ds-footer__link" href="#feedback">Feedback</a></li>
+    <li><a class="ds-footer__link" href="#search">Search</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

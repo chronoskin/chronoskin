@@ -1,0 +1,18 @@
+{{/* What a person sees when a page cannot be served. Data: Heading, Text,
+     Detail (the status and the plain message a program would get), Retry. */}}
+{{define "main"}}
+<main class="page oops">
+  <h1>{{.Heading}}</h1>
+  <p class="lead">{{.Text}}</p>
+  <div class="ways-out">
+    {{if .Retry}}
+    <a class="btn primary big" href="">Try again</a>
+    <a class="btn big" href="/">Home</a>
+    {{else}}
+    <a class="btn primary big" href="/">Generate a style</a>
+    <a class="btn big" href="/">Browse the eras</a>
+    {{end}}
+  </div>
+  <p class="detail">{{.Detail}}</p>
+</main>
+{{end}}

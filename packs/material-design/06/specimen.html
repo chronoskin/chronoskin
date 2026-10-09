@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin tasks</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h8.5v8.5H21V21H4z"/><path d="M14.5 3l6.5 6.5h-6.5z" fill-opacity="0.55"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#inbox">Inbox</a></li>
+    <li><a class="ds-nav__link" href="#lists">Lists</a></li>
+    <li><a class="ds-nav__link" href="#new">New task</a></li>
+    <li><a class="ds-nav__link" href="#settings">Settings</a></li>
+  </ul>
+  <details class="ds-menu ds-menu--account" data-component="menu">
+    <summary class="ds-menu__button" aria-label="Account"><span class="ds-avatar" data-component="avatar">A</span><span class="ds-menu__label">Anouk Verhey</span></summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__link" href="#settings">Settings</a></li>
+      <li><a class="ds-menu__link" href="#lists">Your lists</a></li>
+      <li><a class="ds-menu__link" href="#new">New task</a></li>
+    </ul>
+  </details>
+</header>
+
+<section class="ds-view ds-view--home" id="inbox">
+
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-hero__body">
+      <h1 class="ds-hero__title">Five tasks for today</h1>
+      <p class="ds-hero__lead">Two are overdue. The print shop closes at four, so start with the posters.</p>
+    </div>
+    <div class="ds-hero__actions">
+      <a class="ds-button ds-button--flat" href="#lists">See all lists</a>
+      <a class="ds-button ds-button--secondary" href="#new">New task</a>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-split">
+
+      <section class="ds-pane">
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#inbox">Today <span class="ds-badge">5</span></a></li>
+          <li><a class="ds-tabs__tab" href="#inbox">This week</a></li>
+          <li><a class="ds-tabs__tab" href="#inbox">Mine</a></li>
+          <li><a class="ds-tabs__tab" href="#inbox">Done</a></li>
+        </ul>
+        <div class="ds-pane__tools">
+          <a class="ds-badge ds-badge--chip is-active" href="#inbox">All lists</a>
+          <a class="ds-badge ds-badge--chip" href="#inbox">Open day</a>
+          <a class="ds-badge ds-badge--chip" href="#inbox">Workshop</a>
+          <label class="ds-pane__field">
+            <input class="ds-form__control" type="text" placeholder="Find a task" aria-label="Find a task">
+          </label>
+        </div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item is-current">
+            <span class="ds-list__avatar ds-list__avatar--alt">J</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Collect the posters from the print shop</a>
+              <span class="ds-list__text">Jonas Abara. Forty copies, paid in advance.</span>
+            </span>
+            <span class="ds-list__meta">Today, 16:00 <span class="ds-badge ds-badge--danger">Overdue</span></span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar ds-list__avatar--accent">A</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Book the hall for the open day</a>
+              <span class="ds-list__text">Anouk Verhey. Ask about the side room too.</span>
+            </span>
+            <span class="ds-list__meta">Today <span class="ds-badge ds-badge--warning">Waiting</span></span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">S</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Sharpen the plane irons</a>
+              <span class="ds-list__text">Sorin Okonkwo. Both benches, before Thursday class.</span>
+            </span>
+            <span class="ds-list__meta">Today <span class="ds-badge ds-badge--success">Started</span></span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar ds-list__avatar--alt">J</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Order sandpaper and glue</a>
+              <span class="ds-list__text">Jonas Abara. Three grits, two litres.</span>
+            </span>
+            <span class="ds-list__meta">Today</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar ds-list__avatar--accent">A</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Write the welcome sheet</a>
+              <span class="ds-list__text">Anouk Verhey. One page, large type.</span>
+            </span>
+            <span class="ds-list__meta">Today <span class="ds-badge ds-badge--new">New</span></span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">L</span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#task">Check the first aid box</a>
+              <span class="ds-list__text">Leila Marchetti. Plasters ran out last month.</span>
+            </span>
+            <span class="ds-list__meta">Tomorrow</span>
+          </li>
+        </ul>
+        <div class="ds-pane__foot">
+          <span>1 to 6 of 14</span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#inbox" aria-label="Previous">
+              <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" fill="none"/></svg>
+            </a></li>
+            <li><a class="ds-pagination__link is-current" href="#inbox">1</a></li>
+            <li><a class="ds-pagination__link" href="#inbox">2</a></li>
+            <li><a class="ds-pagination__link" href="#inbox">3</a></li>
+            <li><a class="ds-pagination__link" href="#inbox" aria-label="Next">
+              <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" fill="none"/></svg>
+            </a></li>
+          </ul>
+        </div>
+        <a class="ds-button ds-button--fab ds-pane__fab ds-tooltip ds-tooltip--left" href="#new" aria-label="New task"><span class="ds-tooltip__text" role="tooltip">New task</span>
+          <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" fill="none"/></svg>
+        </a>
+      </section>
+
+      <aside class="ds-sheet">
+        <div class="ds-sheet__head">
+          <h2 class="ds-sheet__title">Collect the posters from the print shop</h2>
+          <a class="ds-button ds-button--icon" href="#task" aria-label="Open the task">
+            <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M10 7H5v12h12v-5" stroke="currentColor" fill="none"/></svg>
+          </a>
+          <a class="ds-button ds-button--icon" href="#inbox" aria-label="Close">
+            <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" fill="none"/></svg>
+          </a>
+        </div>
+        <div class="ds-sheet__body">
+          <div class="ds-badges">
+            <span class="ds-badge ds-badge--danger">Overdue</span>
+            <span class="ds-badge ds-badge--chip">Open day</span>
+            <span class="ds-badge ds-badge--chip">Errand</span>
+          </div>
+          <div class="ds-facts">
+            <div><span class="ds-facts__label">Assigned to</span><p class="ds-facts__value"><span class="ds-list__avatar ds-list__avatar--small ds-list__avatar--alt">J</span> Jonas Abara</p></div>
+            <div><span class="ds-facts__label">Due</span><p class="ds-facts__value">Today, 16:00</p></div>
+            <div><span class="ds-facts__label">List</span><p class="ds-facts__value">Open day</p></div>
+          </div>
+          <p>The shop holds the order under the workshop's name. Take the van: the tubes do not fit in a bicycle basket. Leave ten posters at the library on the way back.</p>
+          <p class="ds-subhead">Steps</p>
+          <span class="ds-progress" data-component="progress" role="progressbar" aria-label="Two of four steps done"><span class="ds-progress__bar"></span></span>
+          <ul class="ds-checks">
+            <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span class="ds-checks__done">Confirm the order is ready</span></label></li>
+            <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span class="ds-checks__done">Borrow the van key</span></label></li>
+            <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> <span>Collect before four</span></label></li>
+            <li><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> <span>Drop ten at the library</span></label></li>
+          </ul>
+        </div>
+        <div class="ds-sheet__actions">
+          <a class="ds-button" href="#inbox">Mark as done</a>
+          <a class="ds-button ds-button--flat" href="#task">Open</a>
+          <span class="ds-sheet__spacer"></span>
+          <a class="ds-button ds-button--flat" href="#new">Edit</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="task">
+
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__body">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#lists">Open day</a></li>
+        <li class="ds-breadcrumb__item is-current">Posters</li>
+      </ol>
+      <h1 class="ds-page-header__title">Collect the posters from the print shop</h1>
+      <p class="ds-page-header__text">Due today at 16:00, assigned to Jonas Abara.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#inbox">Mark as done</a>
+    </div>
+  </header>
+
+  <div class="ds-main">
+    <div class="ds-split ds-split--form">
+
+      <div class="ds-panel ds-panel--pad">
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>What needs doing</h1>
+            <p>The shop holds the order under the workshop's name. Take the van: the tubes do not fit in a bicycle basket. The reference on the receipt is <code>WS 2291</code>.</p>
+            <h2>On the way back</h2>
+            <p>Leave ten posters at the library desk and ask them to put two in the window. The rest go in the store room, flat, not rolled. The <a href="#lists">open day list</a> has the other errands.</p>
+            <ul>
+              <li>Check the date on every poster before you leave the shop.</li>
+              <li>Keep the receipt for the treasurer.</li>
+              <li>Return the van key to the hook.</li>
+            </ul>
+            <h3>If the shop is shut</h3>
+            <p>Ring the bell at the side door. They work late on weekdays.</p>
+          </article>
+          <p class="ds-subhead">Related</p>
+          <div class="ds-links" data-component="links">
+            <a class="ds-link" href="#task">Book the hall</a>
+            <a class="ds-link is-visited" href="#task">Write the welcome sheet</a>
+            <a class="ds-link is-hover" href="#task">Order sandpaper</a>
+            <a class="ds-link is-active" href="#lists">Open day list</a>
+          </div>
+          <p class="ds-subhead">Labels</p>
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge">3</span>
+            <span class="ds-badge ds-badge--new">New</span>
+            <span class="ds-badge ds-badge--success">Started</span>
+            <span class="ds-badge ds-badge--warning">Waiting</span>
+            <span class="ds-badge ds-badge--danger">Overdue</span>
+            <span class="ds-badge ds-badge--chip">Errand</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-stack ds-stack--fill">
+        <div class="ds-panel" data-component="panel">
+          <h3 class="ds-panel__title">Who is on it</h3>
+          <div class="ds-panel__body">
+            <p>Jonas has the van until five. Anouk can take over if the hall booking runs late.</p>
+            <div class="ds-accordion" data-component="accordion">
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">If Jonas is delayed</summary>
+                <p class="ds-accordion__body">Anouk takes the van key from the hook and collects before four.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">Who to ring</summary>
+                <p class="ds-accordion__body">The print shop desk. The number is on the receipt in the office tray.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">Receipts</summary>
+                <p class="ds-accordion__body">Hand the receipt to the treasurer the same day.</p>
+              </details>
+            </div>
+          </div>
+          <div class="ds-panel__actions">
+            <a class="ds-button ds-button--flat" href="#new">Reassign</a>
+            <a class="ds-button ds-button--flat" href="#lists">Open the list</a>
+          </div>
+        </div>
+        <div class="ds-sheet ds-sheet--bottom">
+          <div class="ds-sheet__head">
+            <h2 class="ds-sheet__title">Notes</h2>
+            <a class="ds-button ds-button--flat" href="#new">Add a note</a>
+          </div>
+          <ul class="ds-list ds-list--open">
+            <li class="ds-list__item">
+              <span class="ds-list__avatar ds-list__avatar--alt">J</span>
+              <span class="ds-list__body">
+                <span class="ds-list__title">Jonas Abara</span>
+                <span class="ds-list__text">Shop says ready after two. Going at half past three.</span>
+              </span>
+              <span class="ds-list__meta">11:40</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__avatar ds-list__avatar--accent">A</span>
+              <span class="ds-list__body">
+                <span class="ds-list__title">Anouk Verhey</span>
+                <span class="ds-list__text">Library wants twelve, not ten.</span>
+              </span>
+              <span class="ds-list__meta">09:15</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__avatar">S</span>
+              <span class="ds-list__body">
+                <span class="ds-list__title">Sorin Okonkwo</span>
+                <span class="ds-list__text">Van key is on the hook by the lathe.</span>
+              </span>
+              <span class="ds-list__meta">Mon</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="lists">
+
+  <header class="ds-page-header">
+    <div class="ds-page-header__body">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+        <li class="ds-breadcrumb__item is-current">Lists</li>
+      </ol>
+      <h1 class="ds-page-header__title">Lists</h1>
+      <p class="ds-page-header__text">Every task belongs to one list. Four are active this month.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#new">New task</a>
+    </div>
+  </header>
+
+  <div class="ds-main">
+    <div class="ds-stack">
+
+      <ul class="ds-stats" data-component="stats">
+        <li class="ds-stat"><span class="ds-stat__value">14</span><span class="ds-stat__label">Open tasks</span></li>
+        <li class="ds-stat ds-stat--2"><span class="ds-stat__value">5</span><span class="ds-stat__label">Due today</span></li>
+        <li class="ds-stat ds-stat--3"><span class="ds-stat__value">2</span><span class="ds-stat__label">Overdue</span></li>
+        <li class="ds-stat ds-stat--4"><span class="ds-stat__value">31</span><span class="ds-stat__label">Done this month</span></li>
+      </ul>
+
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell" href="#inbox">
+          <span class="ds-grid__media"><span class="ds-grid__title">Open day</span><span class="ds-grid__count">6 open</span></span>
+          <span class="ds-grid__text">Hall, posters, welcome sheet and the tea urn.</span>
+          <span class="ds-grid__meter"><span class="ds-grid__meter-bar"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#inbox">
+          <span class="ds-grid__media"><span class="ds-grid__title">Workshop</span><span class="ds-grid__count">4 open</span></span>
+          <span class="ds-grid__text">Tools, stock and the Thursday evening class.</span>
+          <span class="ds-grid__meter"><span class="ds-grid__meter-bar ds-grid__meter-bar--high"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#inbox">
+          <span class="ds-grid__media"><span class="ds-grid__title">Building</span><span class="ds-grid__count">3 open</span></span>
+          <span class="ds-grid__text">Roof gutter, first aid box and the back door lock.</span>
+          <span class="ds-grid__meter"><span class="ds-grid__meter-bar ds-grid__meter-bar--low"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#inbox">
+          <span class="ds-grid__media"><span class="ds-grid__title">Accounts</span><span class="ds-grid__count">1 open</span></span>
+          <span class="ds-grid__text">Receipts, the grant report and the year end.</span>
+          <span class="ds-grid__meter"><span class="ds-grid__meter-bar ds-grid__meter-bar--high"></span></span>
+        </a>
+      </div>
+
+      <div class="ds-panel">
+        <div class="ds-panel__head">
+          <h2 class="ds-panel__title">Who has what</h2>
+          <a class="ds-button ds-button--flat" href="#settings">Manage members</a>
+        </div>
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th>Member</th><th class="ds-table__extra">Main list</th><th>Next due</th><th class="ds-table__num">Open</th><th class="ds-table__num ds-table__extra">Overdue</th><th class="ds-table__num ds-table__extra">Done this month</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a class="ds-link ds-link--quiet" href="#inbox">Anouk Verhey</a></td><td class="ds-table__extra">Open day</td><td><span class="ds-badge ds-badge--warning">Today</span></td><td class="ds-table__num">5</td><td class="ds-table__num ds-table__extra">0</td><td class="ds-table__num ds-table__extra">11</td></tr>
+            <tr class="is-current"><td><a class="ds-link ds-link--quiet" href="#inbox">Jonas Abara</a></td><td class="ds-table__extra">Open day</td><td><span class="ds-badge ds-badge--danger">Overdue</span></td><td class="ds-table__num">4</td><td class="ds-table__num ds-table__extra">2</td><td class="ds-table__num ds-table__extra">8</td></tr>
+            <tr><td><a class="ds-link ds-link--quiet" href="#inbox">Sorin Okonkwo</a></td><td class="ds-table__extra">Workshop</td><td><span class="ds-badge ds-badge--success">Thursday</span></td><td class="ds-table__num">3</td><td class="ds-table__num ds-table__extra">0</td><td class="ds-table__num ds-table__extra">9</td></tr>
+            <tr><td><a class="ds-link ds-link--quiet" href="#inbox">Leila Marchetti</a></td><td class="ds-table__extra">Building</td><td><span class="ds-badge ds-badge--success">Tomorrow</span></td><td class="ds-table__num">2</td><td class="ds-table__num ds-table__extra">0</td><td class="ds-table__num ds-table__extra">3</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="new">
+
+  <header class="ds-page-header">
+    <div class="ds-page-header__body">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#lists">Workshop</a></li>
+        <li class="ds-breadcrumb__item is-current">New task</li>
+      </ol>
+      <h1 class="ds-page-header__title">New task</h1>
+      <p class="ds-page-header__text">Say what needs doing, who does it and by when.</p>
+    </div>
+  </header>
+
+  <div class="ds-main">
+    <div class="ds-split ds-split--form">
+
+      <div class="ds-panel ds-panel--pad">
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <label class="ds-form__field">
+              <span class="ds-form__label">Task</span>
+              <input class="ds-form__control" type="text" value="Oil the bench vices">
+            </label>
+            <div class="ds-form__row">
+              <label class="ds-form__field">
+                <span class="ds-form__label">List</span>
+                <span class="ds-form__select">
+                  <select class="ds-form__control">
+                    <option>Workshop</option>
+                    <option>Open day</option>
+                    <option>Building</option>
+                    <option>Accounts</option>
+                  </select>
+                </span>
+              </label>
+              <label class="ds-form__field is-invalid">
+                <span class="ds-form__label">Due</span>
+                <input class="ds-form__control" type="text" value="31 June">
+                <span class="ds-form__error">June has 30 days. Pick another date.</span>
+              </label>
+            </div>
+            <label class="ds-form__field">
+              <span class="ds-form__label">Notes</span>
+              <textarea class="ds-form__control ds-form__control--area">All six, front and tail. The oil can is on the shelf above the grinder.</textarea>
+              <span class="ds-form__hint">Plain text. Others on the list can read this.</span>
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              <span>Remind me the day before</span>
+            </label>
+          </form>
+        </div>
+        <div class="ds-panel__actions ds-panel__actions--end ds-buttons" data-component="buttons">
+          <button class="ds-button ds-button--danger" type="button">Delete</button>
+          <button class="ds-button ds-button--secondary" type="button">Save as draft</button>
+          <button class="ds-button is-disabled" type="button" disabled>Assign</button>
+          <a class="ds-button" href="#inbox">Add task</a>
+        </div>
+      </div>
+
+      <div class="ds-stack ds-stack--fill">
+        <div class="ds-notices" data-component="notice">
+          <div class="ds-notice">
+            <div class="ds-notice__body">
+              <strong class="ds-notice__title">Sorin is away next week</strong>
+              Tasks you assign to him will wait until the 14th.
+            </div>
+          </div>
+          <div class="ds-notice ds-notice--error">
+            <div class="ds-notice__body">
+              <strong class="ds-notice__title">The task was not saved</strong>
+              The due date is not a real date.
+            </div>
+          </div>
+        </div>
+        <div class="ds-overlay">
+          <div class="ds-dialog" role="dialog" aria-labelledby="dialog-title" data-component="dialog">
+            <h3 class="ds-dialog__title" id="dialog-title">Delete this task?</h3>
+            <div class="ds-dialog__body">
+              <p>Its notes and steps go with it. Others on the list will no longer see it.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--flat" href="#new">Keep it</a>
+              <a class="ds-button ds-button--flat ds-button--danger" href="#inbox">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+
+  <header class="ds-page-header">
+    <div class="ds-page-header__body">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#settings">Settings</a></li>
+        <li class="ds-breadcrumb__item is-current">Reminders</li>
+      </ol>
+      <h1 class="ds-page-header__title">Settings</h1>
+      <p class="ds-page-header__text">How and when chronoskin tells you about your tasks.</p>
+    </div>
+  </header>
+
+  <div class="ds-main">
+    <div class="ds-split ds-split--settings ds-split--start">
+
+      <nav class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__title">Settings</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#settings">Reminders</a></li>
+          <li><a class="ds-sidebar__link" href="#settings">Account</a></li>
+          <li><a class="ds-sidebar__link" href="#settings">Members <span class="ds-badge">4</span></a></li>
+          <li><a class="ds-sidebar__link" href="#settings">Calendars</a></li>
+        </ul>
+        <h2 class="ds-sidebar__title">Go to</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#inbox">Inbox</a></li>
+          <li><a class="ds-sidebar__link" href="#lists">Lists</a></li>
+        </ul>
+      </nav>
+
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <div class="ds-panel__head">
+            <h2 class="ds-panel__title">Reminders</h2>
+          </div>
+          <ul class="ds-settings">
+            <li class="ds-settings__item">
+              <span class="ds-settings__body"><span class="ds-settings__title">Morning summary</span><span class="ds-settings__text">One message at eight with the tasks due that day.</span></span>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked aria-label="Morning summary"><span class="ds-switch__track"></span></label>
+            </li>
+            <li class="ds-settings__item">
+              <span class="ds-settings__body"><span class="ds-settings__title">Day before</span><span class="ds-settings__text">A reminder at six in the evening for tomorrow's tasks.</span></span>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked aria-label="Day before"><span class="ds-switch__track"></span></label>
+            </li>
+            <li class="ds-settings__item">
+              <span class="ds-settings__body"><span class="ds-settings__title">When someone adds a note</span><span class="ds-settings__text">Only for tasks assigned to you.</span></span>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" aria-label="When someone adds a note"><span class="ds-switch__track"></span></label>
+            </li>
+            <li class="ds-settings__item">
+              <span class="ds-settings__body"><span class="ds-settings__title">Quiet at weekends</span><span class="ds-settings__text">Hold everything from Friday evening to Monday morning.</span></span>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" aria-label="Quiet at weekends"><span class="ds-switch__track"></span></label>
+            </li>
+          </ul>
+          <div class="ds-panel__actions ds-panel__actions--end">
+            <a class="ds-button ds-button--flat" href="#settings">Reset</a>
+            <a class="ds-button" href="#inbox">Save</a>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head">
+            <h2 class="ds-panel__title">Calendars</h2>
+          </div>
+          <div class="ds-empty" data-component="empty">
+            <span class="ds-empty__mark">
+              <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14v13H5zM5 10h14M9 4v4M15 4v4" stroke="currentColor" fill="none"/></svg>
+            </span>
+            <h3 class="ds-empty__title">No calendar connected</h3>
+            <p class="ds-empty__text">Connect one and due dates appear beside your appointments.</p>
+            <a class="ds-button ds-button--flat" href="#settings">Connect a calendar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#inbox">Inbox</a></li>
+    <li><a class="ds-footer__link" href="#lists">Lists</a></li>
+    <li><a class="ds-footer__link" href="#new">New task</a></li>
+    <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+  </ul>
+  <p class="ds-footer__legal">chronoskin is a sample task list for a small workshop.</p>
+</footer>
+
+</body>
+</html>

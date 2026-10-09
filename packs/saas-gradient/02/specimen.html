@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: SaaS gradient dashboard specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#overview">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="13.6" cy="10" r="7.6" opacity=".45"/><circle cx="9.2" cy="15" r="5.8"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <details class="ds-menu ds-nav__menu">
+    <summary class="ds-menu__button">Menu</summary>
+    <ul class="ds-menu__list">
+    <li><a class="ds-menu__link" href="#overview">Overview</a></li>
+    <li><a class="ds-menu__link" href="#projects">Projects</a></li>
+    <li><a class="ds-menu__link" href="#team">Team</a></li>
+    <li><a class="ds-menu__link" href="#settings">Settings</a></li>
+    <li><a class="ds-menu__link" href="#news">What's new</a></li>
+    </ul>
+  </details>
+  <p class="ds-nav__group">Track</p>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#overview"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10l7-6 7 6v7H3z"/></svg><span class="ds-nav__label">Overview</span></a></li>
+    <li><a class="ds-nav__link" href="#projects"><svg class="ds-nav__icon ds-nav__icon--2" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h5l2 2h7v9H3z"/></svg><span class="ds-nav__label">Projects</span><span class="ds-badge">14</span></a></li>
+    <li><a class="ds-nav__link" href="#team"><svg class="ds-nav__icon ds-nav__icon--3" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="7" r="3"/><path d="M4 17c1-4 11-4 12 0"/></svg><span class="ds-nav__label">Team</span></a></li>
+  </ul>
+  <p class="ds-nav__group">Workspace</p>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#settings"><svg class="ds-nav__icon ds-nav__icon--4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="3"/><path d="M10 2v3 M10 15v3 M2 10h3 M15 10h3"/></svg><span class="ds-nav__label">Settings</span></a></li>
+    <li><a class="ds-nav__link" href="#news"><svg class="ds-nav__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3l2 5 5 .5-4 3.500 1.500 5-4.500-3-4.500 3 1.500-5-4-3.500 5-.5z"/></svg><span class="ds-nav__label">What's new</span><span class="ds-badge ds-badge--alt">3</span></a></li>
+  </ul>
+  <div class="ds-nav__foot">
+    <p class="ds-nav__foot-title">9 days of trial left</p>
+    <p class="ds-nav__foot-text">Keep your projects and reports by choosing a plan.</p>
+    <a class="ds-button ds-button--inverse ds-button--small" href="#settings">Choose a plan</a>
+  </div>
+</header>
+
+<div class="ds-topbar">
+  <input class="ds-topbar__search" type="search" placeholder="Search projects and people" aria-label="Search">
+  <a class="ds-topbar__link" href="#news">What's new</a>
+  <details class="ds-menu ds-topbar__account" data-component="menu">
+    <summary class="ds-menu__button"><span class="ds-topbar__name">Tomas Okafor</span><span class="ds-avatar ds-avatar--plain" aria-hidden="true">TO</span></summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__link" href="#settings">Your profile</a></li>
+      <li><a class="ds-menu__link" href="#settings">Workspace settings</a></li>
+      <li><a class="ds-menu__link" href="#team">People</a></li>
+      <li><a class="ds-menu__link" href="#news">What's new</a></li>
+      <li><a class="ds-menu__link" href="#overview">Sign out</a></li>
+    </ul>
+  </details>
+</div>
+
+<section class="ds-view ds-view--home" id="overview">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-hero__inner">
+      <div>
+        <h1 class="ds-hero__title">Good morning, Tomas</h1>
+        <p class="ds-hero__lead">The team tracked 164 hours this week, 12 more than last. Two projects are close to their budget.</p>
+      </div>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--inverse" href="#projects">Start a timer</a>
+        <a class="ds-button ds-button--ghost" href="#projects">Add hours by hand</a>
+      </div>
+    </div>
+  </div>
+  <div class="ds-content ds-content--lift">
+    <div class="ds-stat" data-component="stats">
+      <div class="ds-stat__item">
+        <div class="ds-stat__head"><div><p class="ds-stat__label">Hours this week</p><p class="ds-stat__figure">164</p></div><span class="ds-tile ds-tile--round"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 5v5l3 2"/><circle cx="10" cy="10" r="7"/></svg></span></div>
+        <p class="ds-stat__delta"><span class="ds-stat__up">+8%</span> on last week</p>
+        <svg class="ds-spark" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 30 L35 26 L68 28 L101 16 L134 20 L167 9 L198 6"/></svg>
+      </div>
+      <div class="ds-stat__item">
+        <div class="ds-stat__head"><div><p class="ds-stat__label">Billable share <span class="ds-tooltip ds-tooltip--mark ds-tooltip--start" tabindex="0" data-component="tooltip">?<span class="ds-tooltip__text">Hours on client projects, out of all hours tracked.</span></span></p><p class="ds-stat__figure">81%</p></div><span class="ds-tile ds-tile--round ds-tile--2"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16V8 M9 16V4 M14 16v-6"/></svg></span></div>
+        <p class="ds-stat__delta"><span class="ds-stat__up">+3 points</span> on last week</p>
+        <svg class="ds-spark ds-spark--2" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 22 L35 24 L68 18 L101 20 L134 14 L167 15 L198 10"/></svg>
+      </div>
+      <div class="ds-stat__item">
+        <div class="ds-stat__head"><div><p class="ds-stat__label">Unbilled hours</p><p class="ds-stat__figure">46.5</p></div><span class="ds-tile ds-tile--round ds-tile--3"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h7l3 3v11H5z M8 10h4 M8 13h4"/></svg></span></div>
+        <p class="ds-stat__delta"><span class="ds-stat__down">+11 hours</span> since Monday</p>
+        <svg class="ds-spark ds-spark--3" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 32 L35 30 L68 24 L101 25 L134 16 L167 12 L198 8"/></svg>
+      </div>
+      <div class="ds-stat__item">
+        <div class="ds-stat__head"><div><p class="ds-stat__label">Active projects</p><p class="ds-stat__figure">14</p></div><span class="ds-tile ds-tile--round ds-tile--4"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h5l2 2h7v9H3z"/></svg></span></div>
+        <p class="ds-stat__delta">2 started this month</p>
+        <svg class="ds-spark ds-spark--4" viewBox="0 0 200 40" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 26 L35 26 L68 20 L101 20 L134 20 L167 12 L198 12"/></svg>
+      </div>
+    </div>
+
+    <div class="ds-cols ds-cols--level">
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Hours by day</h2><div class="ds-chart__legend"><span class="ds-chart__key">Billable</span><span class="ds-chart__key ds-chart__key--alt">Internal</span></div></div>
+        <div class="ds-panel__body">
+          <div class="ds-chart">
+            <svg class="ds-chart__svg" viewBox="0 0 700 220" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M0 220 L0 150 L117 110 L233 126 L350 70 L467 88 L583 40 L700 58 L700 220z" fill="currentColor" fill-opacity="0.1" stroke="none"/>
+              <path d="M0 150 L117 110 L233 126 L350 70 L467 88 L583 40 L700 58"/>
+              <path class="ds-chart__alt" d="M0 190 L117 176 L233 182 L350 160 L467 170 L583 150 L700 164"/>
+            </svg>
+          </div>
+          <ul class="ds-chart__axis"><li>Mon</li><li>Tue</li><li>Wed</li><li>Thu</li><li>Fri</li><li>Sat</li><li>Sun</li></ul>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Finish setting up</h2><span class="ds-badge ds-badge--quiet">3 of 5</span></div>
+        <div class="ds-panel__body">
+          <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--60"></span></span>
+          <ul class="ds-steps">
+            <li class="ds-steps__item is-done"><span class="ds-steps__mark"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg></span><span class="ds-steps__text">Create the workspace</span></li>
+            <li class="ds-steps__item is-done"><span class="ds-steps__mark"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg></span><span class="ds-steps__text">Add a first project</span></li>
+            <li class="ds-steps__item is-done"><span class="ds-steps__mark"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M4 10l4 4 8-8"/></svg></span><span class="ds-steps__text">Track an hour</span></li>
+            <li class="ds-steps__item"><span class="ds-steps__mark"></span><span class="ds-steps__text">Invite the team</span><a class="ds-link" href="#team">Invite</a></li>
+            <li class="ds-steps__item"><span class="ds-steps__mark"></span><span class="ds-steps__text">Set hourly rates</span><a class="ds-link" href="#settings">Set</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="ds-section-title">Close to budget</h2>
+    <div class="ds-grid" data-component="grid">
+      <a class="ds-grid__cell" href="#projects">
+        <span class="ds-tile"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h14v10H3z M3 8h14"/></svg></span>
+        <h3 class="ds-grid__title">Harbour Bakery shop</h3>
+        <p class="ds-grid__text">108 of 120 hours</p>
+        <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--90"></span></span>
+      </a>
+      <a class="ds-grid__cell" href="#projects">
+        <span class="ds-tile ds-tile--2"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 16l1-4 9-9 3 3-9 9z"/></svg></span>
+        <h3 class="ds-grid__title">Tern Cycles identity</h3>
+        <p class="ds-grid__text">45 of 60 hours</p>
+        <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--75"></span></span>
+      </a>
+      <a class="ds-grid__cell" href="#projects">
+        <span class="ds-tile ds-tile--3"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h7l3 3v11H5z M8 10h4 M8 13h4"/></svg></span>
+        <h3 class="ds-grid__title">Marrow Press catalogue</h3>
+        <p class="ds-grid__text">32 of 80 hours</p>
+        <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--40"></span></span>
+      </a>
+      <a class="ds-grid__cell" href="#projects">
+        <span class="ds-tile ds-tile--4"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 5v6 M10 14v1"/><circle cx="10" cy="10" r="7"/></svg></span>
+        <h3 class="ds-grid__title">Fieldnote app, phase 2</h3>
+        <p class="ds-grid__text">212 of 200 hours</p>
+        <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--over"></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="projects">
+  <div class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#overview">Workspace</a></li>
+          <li><a class="ds-breadcrumb__item" href="#overview">Track</a></li>
+          <li class="ds-breadcrumb__current">Projects</li>
+        </ol>
+        <h1 class="ds-page-header__title">Projects</h1>
+        <p class="ds-page-header__text">Hours against budget for everything the team is working on.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--inverse" href="#projects">New project</a>
+      </div>
+    </div>
+  </div>
+  <div class="ds-content ds-content--lift">
+    <div class="ds-panel">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#projects">Active</a></li>
+        <li><a class="ds-tabs__tab" href="#projects">On hold</a></li>
+        <li><a class="ds-tabs__tab" href="#projects">Archived</a></li>
+      </ul>
+      <div class="ds-table__wrap">
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th>Project</th><th>Client</th><th>Status</th><th class="ds-table__num">Hours</th><th class="ds-table__num">Budget</th><th class="ds-table__num">Unbilled</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a class="ds-table__title" href="#projects">Shop redesign</a></td><td>Harbour Bakery</td><td><span class="ds-badge ds-badge--warning">Near budget</span></td><td class="ds-table__num">108.0</td><td class="ds-table__num">120</td><td class="ds-table__num">12.5</td></tr>
+            <tr class="is-hover"><td><a class="ds-table__title" href="#projects">Identity</a></td><td>Tern Cycles</td><td><span class="ds-badge ds-badge--success">On track</span></td><td class="ds-table__num">45.0</td><td class="ds-table__num">60</td><td class="ds-table__num">8.0</td></tr>
+            <tr><td><a class="ds-table__title" href="#projects">Spring catalogue</a></td><td>Marrow Press</td><td><span class="ds-badge ds-badge--success">On track</span></td><td class="ds-table__num">32.5</td><td class="ds-table__num">80</td><td class="ds-table__num">14.0</td></tr>
+            <tr><td><a class="ds-table__title" href="#projects">App, phase 2</a></td><td>Fieldnote</td><td><span class="ds-badge ds-badge--danger">Over budget</span></td><td class="ds-table__num">212.0</td><td class="ds-table__num">200</td><td class="ds-table__num">12.0</td></tr>
+            <tr><td><a class="ds-table__title" href="#projects">Annual report</a></td><td>Lindqvist Studio</td><td><span class="ds-badge ds-badge--quiet">Not started</span></td><td class="ds-table__num">0.0</td><td class="ds-table__num">40</td><td class="ds-table__num">0.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ds-table__foot">
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#projects">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#projects">1</a></li>
+          <li><a class="ds-pagination__link" href="#projects">2</a></li>
+          <li><a class="ds-pagination__link" href="#projects">3</a></li>
+          <li><a class="ds-pagination__link" href="#projects">Next</a></li>
+        </ul>
+        <span>1 to 5 of 14 projects</span>
+      </div>
+    </div>
+    <div class="ds-cols ds-cols--even ds-cols--level">
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">What the status means</h2></div>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">A project changes status by itself as hours are tracked against its budget.</p>
+          <div class="ds-badgerow" data-component="badge">
+            <span class="ds-badge">Active</span>
+            <span class="ds-badge ds-badge--success">On track</span>
+            <span class="ds-badge ds-badge--warning">Near budget, from 85%</span>
+            <span class="ds-badge ds-badge--danger">Over budget</span>
+            <span class="ds-badge ds-badge--quiet">Not started</span>
+          </div>
+        </div>
+      </div>
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-empty__icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h14v3H3z M4 8v8h12V8 M8 11h4"/></svg></span>
+        <h2 class="ds-empty__title">Nothing archived yet</h2>
+        <p class="ds-empty__text">Finished projects move here with their hours, so old reports keep working.</p>
+        <a class="ds-button ds-button--secondary ds-button--small" href="#projects">Archive a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="team">
+  <div class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#overview">Workspace</a></li>
+          <li><a class="ds-breadcrumb__item" href="#overview">Track</a></li>
+          <li class="ds-breadcrumb__current">Team</li>
+        </ol>
+        <h1 class="ds-page-header__title">Team</h1>
+        <p class="ds-page-header__text">Four people track time here. Two invitations are waiting.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--inverse" href="#team">Invite someone</a>
+      </div>
+    </div>
+  </div>
+  <div class="ds-content ds-content--lift">
+    <div class="ds-cols">
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">People</h2><a class="ds-link" href="#settings">Roles and rates</a></div>
+        <div class="ds-panel__body">
+          <ul class="ds-list ds-list--people" data-component="list">
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--1" aria-hidden="true">TO</span>
+              <div class="ds-list__grow"><span class="ds-list__title">Tomas Okafor</span><p class="ds-list__meta">Owner. 38.5 hours this week, last entry today</p></div>
+              <span class="ds-badge">Owner</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--2" aria-hidden="true">IL</span>
+              <div class="ds-list__grow"><span class="ds-list__title">Ingrid Lindqvist</span><p class="ds-list__meta">Designer. 41.0 hours this week, last entry today</p></div>
+              <span class="ds-badge ds-badge--success">Tracking now</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar" aria-hidden="true">MP</span>
+              <div class="ds-list__grow"><span class="ds-list__title">Maya Prentice</span><p class="ds-list__meta">Developer. 44.5 hours this week, last entry yesterday</p></div>
+              <span class="ds-badge ds-badge--warning">Over 40 hours</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--4" aria-hidden="true">DR</span>
+              <div class="ds-list__grow"><span class="ds-list__title">Dana Reyes</span><p class="ds-list__meta">Contractor. 0 hours this week, last entry 23 days ago</p></div>
+              <a class="ds-link ds-link--quiet" href="#team">Remove</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Waiting to join</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><div class="ds-list__head"><span class="ds-list__title">Sam Whitlock</span><a class="ds-link" href="#team">Send again</a></div><p class="ds-list__meta">Invited 2 days ago as a designer</p></li>
+              <li class="ds-list__item"><div class="ds-list__head"><span class="ds-list__title">Noor Haddad</span><a class="ds-link" href="#team">Send again</a></div><p class="ds-list__meta">Invited 6 days ago as a contractor</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="tm-dialog">
+            <div class="ds-dialog__head"><h2 class="ds-dialog__title" id="tm-dialog">Remove Dana Reyes?</h2><a class="ds-dialog__close" href="#team" aria-label="Close"></a></div>
+            <div class="ds-dialog__body"><p>Dana will lose access today. The 96 hours she tracked stay in your reports.</p></div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary ds-button--small" href="#team">Keep</a>
+              <a class="ds-button ds-button--danger ds-button--small" href="#team">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <div class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#overview">Workspace</a></li>
+          <li><a class="ds-breadcrumb__item" href="#settings">Settings</a></li>
+          <li class="ds-breadcrumb__current">Workspace details</li>
+        </ol>
+        <h1 class="ds-page-header__title">Settings</h1>
+        <p class="ds-page-header__text">Names, rates and the working week for everyone in this workspace.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ds-content ds-content--lift">
+    <div class="ds-cols ds-cols--side">
+      <div class="ds-panel ds-panel--side">
+        <nav class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Settings</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__item is-current" href="#settings">Workspace details</a></li>
+            <li><a class="ds-sidebar__item" href="#settings">Roles and rates <span class="ds-sidebar__count">4</span></a></li>
+            <li><a class="ds-sidebar__item" href="#settings">Notifications</a></li>
+            <li><a class="ds-sidebar__item" href="#settings">Plan and billing</a></li>
+            <li><a class="ds-sidebar__item" href="#settings">Export</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Workspace details</h2><span class="ds-badge ds-badge--alt">Trial</span></div>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form" action="#settings">
+            <div class="ds-noticerow" data-component="notice">
+              <p class="ds-notice"><span class="ds-notice__title">Rates are private.</span> Only owners see what an hour costs.</p>
+              <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not saved.</span> The default rate needs a number.</p>
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="st-name">Workspace name</label>
+                <input class="ds-form__input" id="st-name" type="text" value="Okafor and Reyes">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="st-rate">Default hourly rate</label>
+                <input class="ds-form__input is-error" id="st-rate" type="text" value="sixty">
+                <span class="ds-form__error">Write the rate in figures, for example 60.</span>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="st-week">Week starts on</label>
+                <select class="ds-form__select" id="st-week"><option>Monday</option><option>Sunday</option><option>Saturday</option></select>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="st-round">Round entries to</label>
+                <select class="ds-form__select" id="st-round"><option>15 minutes</option><option>6 minutes</option><option>Do not round</option></select>
+                <span class="ds-form__hint">Applies to new entries only.</span>
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="st-note">Note on timesheets</label>
+              <textarea class="ds-form__textarea" id="st-note">Hours are sent to clients on the first working day of the month.</textarea>
+            </div>
+            <div class="ds-form__check"><label class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span>Remind people on Friday if their week is under 30 hours</span></label></div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="submit">Save changes</button>
+              <a class="ds-button ds-button--secondary" href="#overview">Cancel</a>
+              <button class="ds-button is-disabled" type="button" disabled>Export all hours</button>
+              <a class="ds-button ds-button--danger" href="#settings">Delete workspace</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="news">
+  <div class="ds-page-header">
+    <div class="ds-page-header__inner">
+      <div>
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__item" href="#overview">Workspace</a></li>
+          <li><a class="ds-breadcrumb__item" href="#news">What's new</a></li>
+          <li class="ds-breadcrumb__current">March</li>
+        </ol>
+        <h1 class="ds-page-header__title">What's new</h1>
+        <p class="ds-page-header__text">Changes to chronoskin, newest first.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ds-content ds-content--lift">
+    <div class="ds-cols">
+      <div class="ds-panel">
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>Budgets that warn you in time</h1>
+            <p class="ds-prose__lead">A project now tells you when it is about to run out of hours, not after it has.</p>
+            <h2>How the warning works</h2>
+            <p>Set a budget in hours on any project. At 85% the project is marked <strong>Near budget</strong> and its owner gets one email; past 100% it is marked over budget.</p>
+            <h3>Changing the threshold</h3>
+            <p>The 85% mark suits most teams. To move it, open the project and set <code>warn_at</code> to a value between 50 and 95.</p>
+            <h3>Also in this release</h3>
+            <ul>
+              <li>Timers survive a closed browser tab.</li>
+              <li>Reports can be grouped by person, then by project.</li>
+              <li>The weekly summary email arrives on Monday at 8, in your own time zone.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-panel" data-component="panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Earlier</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item"><div class="ds-list__head"><a class="ds-list__title" href="#news">Rounding rules</a><span class="ds-badge ds-badge--alt">New</span></div><p class="ds-list__meta">February, 2 minute read</p></li>
+              <li class="ds-list__item"><div class="ds-list__head"><a class="ds-list__title" href="#news">Faster reports</a><span class="ds-badge ds-badge--quiet">Improved</span></div><p class="ds-list__meta">January, 1 minute read</p></li>
+              <li class="ds-list__item"><div class="ds-list__head"><a class="ds-list__title" href="#news">Contractor role</a><span class="ds-badge ds-badge--alt">New</span></div><p class="ds-list__meta">December, 3 minute read</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Read more</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-linkrow" data-component="links">
+              <li><a class="ds-link" href="#projects">Set a budget</a></li>
+              <li><a class="ds-link is-visited" href="#news">Release notes</a></li>
+              <li><a class="ds-link is-hover" href="#settings">Email settings</a></li>
+              <li><a class="ds-link is-active" href="#team">Who gets warned</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__name">chronoskin</span>
+  <span>2019. Time tracking for small teams.</span>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#news">What's new</a></li>
+    <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+    <li><a class="ds-footer__link" href="#overview">Help</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: memphis podcast app specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<span class="ds-shape ds-shape--ring ds-shape--l ds-shape--c2 ds-shape--far"></span>
+<span class="ds-shape ds-shape--tri ds-shape--l ds-shape--c3 ds-shape--near ds-shape--turn"></span>
+<div class="ds-sheet">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 18q2.3-5.6 4.6 0t4.6 0t4.6 0t4.6 0" stroke-width="2.4"/><circle cx="6.5" cy="7" r="3.4" fill="currentColor" stroke="none"/><polygon points="16.8,3.6 21.2,10.6 12.4,10.6"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <nav class="ds-nav__bar" aria-label="Main">
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Listen now</a></li>
+      <li><a class="ds-nav__link" href="#show">Shows</a></li>
+      <li><a class="ds-nav__link" href="#episode">Episode</a></li>
+      <li><a class="ds-nav__link" href="#settings">Settings</a></li>
+    </ul>
+  </nav>
+  <div class="ds-nav__search">
+    <input class="ds-form__control" type="search" aria-label="Search shows and episodes" placeholder="Search shows and episodes">
+  </div>
+  <div class="ds-nav__actions">
+    <details class="ds-menu ds-menu--end" data-component="menu">
+      <summary class="ds-nav__link ds-nav__account ds-menu__toggle"><span class="ds-avatar ds-avatar--2" data-component="avatar"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><path d="M7.5 14.5c2.6 2.8 6.4 2.8 9 0"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Aino</span></span></span> <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__link" href="#settings">Your account</a></li>
+        <li><a class="ds-menu__link" href="#settings">Downloads <span class="ds-menu__note">0</span></a></li>
+        <li><a class="ds-menu__link" href="#show">Followed shows <span class="ds-menu__note">12</span></a></li>
+        <li><a class="ds-menu__link" href="#home">Sign out</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<main class="ds-main">
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-dash">
+    <div class="ds-stack ds-stack--lib">
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__title">Your library</h2>
+      <ul class="ds-sidebar__list">
+        <li class="ds-sidebar__item is-current"><a class="ds-link ds-link--quiet" href="#home">Listen now</a><span class="ds-badge">3</span></li>
+        <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#show">Followed shows</a><span class="ds-badge ds-badge--plain">12</span></li>
+        <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#episode">In progress</a><span class="ds-badge ds-badge--plain">4</span></li>
+        <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#settings">Downloads</a><span class="ds-badge ds-badge--plain">0</span></li>
+        <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#show">Saved for later</a><span class="ds-badge ds-badge--plain">9</span></li>
+        <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#show">History</a></li>
+      </ul>
+      <div class="ds-sidebar__art" aria-hidden="true"><span class="ds-shape ds-shape--half ds-shape--c2"></span><span class="ds-shape ds-shape--disc ds-shape--s ds-shape--c1"></span><span class="ds-shape ds-shape--tri ds-shape--s ds-shape--c4"></span></div>
+    </aside>
+    <aside class="ds-sidebar ds-sidebar--plain">
+      <h2 class="ds-sidebar__title">Voices</h2>
+      <ul class="ds-sidebar__list">
+        <li class="ds-sidebar__item"><a class="ds-avatar ds-avatar--1" href="#show"><span class="ds-avatar__pic">IM</span><span class="ds-avatar__text"><span class="ds-avatar__name">Ines</span><span class="ds-avatar__meta">2 shows</span></span></a></li>
+        <li class="ds-sidebar__item"><a class="ds-avatar ds-avatar--4" href="#show"><span class="ds-avatar__pic">TO</span><span class="ds-avatar__text"><span class="ds-avatar__name">Tunde</span><span class="ds-avatar__meta">1 show</span></span></a></li>
+        <li class="ds-sidebar__item"><a class="ds-avatar ds-avatar--3" href="#show"><span class="ds-avatar__pic">PH</span><span class="ds-avatar__text"><span class="ds-avatar__name">Petra</span><span class="ds-avatar__meta">1 show</span></span></a></li>
+      </ul>
+    </aside>
+    </div>
+
+    <div class="ds-stack">
+      <section class="ds-hero" data-component="hero">
+        <span class="ds-badge ds-badge--plain ds-badge--tilt">New today</span>
+        <h1 class="ds-hero__title">The colour of loud</h1>
+        <p class="ds-hero__lead">Shapes and Noise, episode 48. Two designers argue about whether yellow can be quiet. 42 minutes.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--secondary ds-button--large" href="#episode">Play episode</a>
+          <a class="ds-link ds-link--plain" href="#show">Go to the show</a>
+        </div>
+        <div class="ds-hero__art ds-cover ds-cover--1 ds-cover--rings" aria-hidden="true">
+          <span class="ds-shape ds-shape--disc ds-shape--xl ds-shape--c3"></span>
+          <span class="ds-shape ds-shape--quarter ds-shape--l ds-shape--c4"></span>
+          <span class="ds-shape ds-shape--tri ds-shape--l ds-shape--paper ds-shape--turn"></span>
+          <span class="ds-shape ds-shape--dots ds-shape--l ds-shape--ink"></span>
+          <span class="ds-shape ds-shape--line ds-shape--ink ds-shape--tilt"><svg viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 18 4l15 16L48 4l15 16L78 4l15 16 15-16 9 10"/></svg></span>
+        </div>
+      </section>
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__cell"><dt class="ds-stat__label">hours this week</dt><dd class="ds-stat__value">6.5</dd></div>
+        <div class="ds-stat__cell"><dt class="ds-stat__label">shows followed</dt><dd class="ds-stat__value">12</dd></div>
+        <div class="ds-stat__cell"><dt class="ds-stat__label">day streak</dt><dd class="ds-stat__value">19</dd></div>
+      </dl>
+
+      <div class="ds-row">
+        <h2 class="ds-label">Keep listening</h2>
+        <a class="ds-link" href="#show">All in progress</a>
+      </div>
+      <ul class="ds-grid" data-component="grid">
+            <li class="ds-grid__cell">
+              <div class="ds-cover ds-cover--2 ds-cover--dots" aria-hidden="true"><span class="ds-shape ds-shape--tri ds-shape--s ds-shape--ink"></span></div>
+              <div class="ds-grid__body">
+                <h3 class="ds-grid__title"><a class="ds-link ds-link--quiet" href="#episode">A short history of the squiggle</a></h3>
+                <p class="ds-grid__text">Shapes and Noise, 18 min left</p>
+                <span class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Listened"><span class="ds-progress__bar"></span></span>
+              </div>
+            </li>
+            <li class="ds-grid__cell">
+              <div class="ds-cover ds-cover--3 ds-cover--stripes" aria-hidden="true"><span class="ds-shape ds-shape--disc ds-shape--s ds-shape--c1"></span></div>
+              <div class="ds-grid__body">
+                <h3 class="ds-grid__title"><a class="ds-link ds-link--quiet" href="#episode">Why the bus is orange</a></h3>
+                <p class="ds-grid__text">Street Furniture, 31 min left</p>
+                <span class="ds-progress ds-progress--25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Listened"><span class="ds-progress__bar"></span></span>
+              </div>
+            </li>
+            <li class="ds-grid__cell">
+              <div class="ds-cover ds-cover--4 ds-cover--zig" aria-hidden="true"><span class="ds-shape ds-shape--block ds-shape--s ds-shape--c2 ds-shape--turn"></span></div>
+              <div class="ds-grid__body">
+                <h3 class="ds-grid__title"><a class="ds-link ds-link--quiet" href="#episode">Terrazzo, explained by a tiler</a></h3>
+                <p class="ds-grid__text">Floor Notes, 9 min left</p>
+                <span class="ds-progress ds-progress--75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Listened"><span class="ds-progress__bar"></span></span>
+              </div>
+            </li>
+            <li class="ds-grid__cell">
+              <div class="ds-cover ds-cover--1 ds-cover--terrazzo" aria-hidden="true"><span class="ds-shape ds-shape--ring ds-shape--s ds-shape--ink"></span></div>
+              <div class="ds-grid__body">
+                <h3 class="ds-grid__title"><a class="ds-link ds-link--quiet" href="#episode">Forty chairs nobody sat on</a></h3>
+                <p class="ds-grid__text">Shapes and Noise, 4 min left</p>
+                <span class="ds-progress ds-progress--90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Listened"><span class="ds-progress__bar"></span></span>
+              </div>
+            </li>
+      </ul>
+    </div>
+
+    <div class="ds-stack ds-stack--side">
+      <div class="ds-row">
+        <h2 class="ds-label">Up next</h2>
+        <a class="ds-link" href="#show">Edit queue</a>
+      </div>
+      <ol class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#episode">The colour of loud</a></h3><p class="ds-list__text">Shapes and Noise</p></div>
+          <span class="ds-list__meta">42:10</span>
+        </li>
+        <li class="ds-list__item">
+          <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#episode">A bench is a sentence</a></h3><p class="ds-list__text">Street Furniture</p></div>
+          <span class="ds-list__meta">28:45</span>
+        </li>
+        <li class="ds-list__item">
+          <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#episode">Grout lines</a></h3><p class="ds-list__text">Floor Notes</p></div>
+          <span class="ds-list__meta">35:02</span>
+        </li>
+        <li class="ds-list__item">
+          <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#episode">Stickers on everything</a></h3><p class="ds-list__text">Shapes and Noise</p></div>
+          <span class="ds-list__meta">51:30</span>
+        </li>
+      </ol>
+      <section class="ds-panel" data-component="panel">
+        <h3 class="ds-panel__title">Weekly goal</h3>
+        <div class="ds-panel__body">
+          <p>Eight hours of listening. You are an hour and a half away.</p>
+          <div class="ds-progress__legend"><span>6.5 of 8 hours</span><span>75%</span></div>
+          <span class="ds-progress ds-progress--75 ds-progress--alt" data-component="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Weekly goal"><span class="ds-progress__bar"></span></span>
+        </div>
+      </section>
+      <div class="ds-carousel" data-component="carousel" aria-roledescription="carousel" aria-label="New shows">
+        <div class="ds-carousel__track">
+          <figure class="ds-carousel__slide">
+            <blockquote class="ds-carousel__quote">Floor Notes: a tiler and an architect look down.</blockquote>
+            <figcaption class="ds-avatar ds-avatar--3"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 9.5h3M14 9.5h3"/><circle cx="12" cy="15.5" r="2"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Milan Dvorak</span><span class="ds-avatar__meta">host, 24 episodes</span></span></figcaption>
+          </figure>
+          <figure class="ds-carousel__slide">
+            <blockquote class="ds-carousel__quote">Street Furniture: the things a city sits on.</blockquote>
+            <figcaption class="ds-avatar ds-avatar--4"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><path d="M7.5 14.5c2.6 2.8 6.4 2.8 9 0"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Petra Halloran</span><span class="ds-avatar__meta">host, 61 episodes</span></span></figcaption>
+          </figure>
+        </div>
+        <div class="ds-carousel__foot">
+          <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+          <button class="ds-carousel__arrow" type="button" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+          <button class="ds-carousel__arrow" type="button" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="show">
+  <header class="ds-page-header" data-component="page-header">
+    <ol class="ds-breadcrumb" data-component="breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Listen now</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#show">Shows</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">Shapes and Noise</li>
+    </ol>
+    <div class="ds-page-header__row">
+      <div class="ds-page-header__main">
+        <div class="ds-cover ds-cover--2 ds-cover--dots" aria-hidden="true"><span class="ds-shape ds-shape--tri ds-shape--ink ds-shape--tilt"></span></div>
+        <div>
+          <h1 class="ds-page-header__title">Shapes and Noise</h1>
+          <p class="ds-page-header__lead">Two designers and one loud opinion, every Thursday.</p>
+        </div>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#settings">Notify me</a>
+        <a class="ds-button" href="#episode">Play latest</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-dash ds-dash--two">
+    <div class="ds-stack">
+      <div class="ds-row">
+        <ul class="ds-tabs" data-component="tabs" role="tablist">
+          <li><a class="ds-tabs__tab is-current" href="#show" role="tab" aria-selected="true">Episodes</a></li>
+          <li><a class="ds-tabs__tab" href="#show" role="tab">Unplayed <span class="ds-badge ds-badge--plain">3</span></a></li>
+          <li><a class="ds-tabs__tab" href="#show" role="tab">About</a></li>
+          <li><a class="ds-tabs__tab" href="#show" role="tab">Reviews</a></li>
+        </ul>
+        <span class="ds-list__meta">41 to 48 of 48</span>
+      </div>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th class="ds-table__num">No.</th><th>Episode</th><th class="ds-table__extra">Out</th><th>State</th><th class="ds-table__num">Minutes</th></tr>
+        </thead>
+        <tbody>
+          <tr class="is-current"><td class="ds-table__num">48</td><td><a class="ds-link ds-link--quiet" href="#episode">The colour of loud</a></td><td class="ds-table__extra">Today</td><td><span class="ds-badge ds-badge--alt">New</span></td><td class="ds-table__num">42</td></tr>
+          <tr><td class="ds-table__num">47</td><td><a class="ds-link ds-link--quiet" href="#episode">Stickers on everything</a></td><td class="ds-table__extra">7 March</td><td><span class="ds-badge ds-badge--warning">Queued</span></td><td class="ds-table__num">52</td></tr>
+          <tr><td class="ds-table__num">46</td><td><span class="ds-tooltip" data-component="tooltip"><a class="ds-link ds-link--quiet" href="#episode">A short history of the squiggle</a><span class="ds-tooltip__tip" role="tooltip">18 minutes left</span></span></td><td class="ds-table__extra">29 February</td><td><span class="ds-badge">Playing</span></td><td class="ds-table__num">45</td></tr>
+          <tr><td class="ds-table__num">45</td><td><a class="ds-link ds-link--quiet" href="#episode">Forty chairs nobody sat on</a></td><td class="ds-table__extra">22 February</td><td><span class="ds-badge ds-badge--success">Played</span></td><td class="ds-table__num">38</td></tr>
+          <tr><td class="ds-table__num">44</td><td><a class="ds-link ds-link--quiet" href="#episode">The grid is a lie</a></td><td class="ds-table__extra">15 February</td><td><span class="ds-badge ds-badge--success">Played</span></td><td class="ds-table__num">47</td></tr>
+          <tr><td class="ds-table__num">43</td><td><a class="ds-link ds-link--quiet" href="#episode">Live from the print shop</a></td><td class="ds-table__extra">8 February</td><td><span class="ds-badge ds-badge--danger">Failed</span></td><td class="ds-table__num">63</td></tr>
+          <tr><td class="ds-table__num">42</td><td><a class="ds-link ds-link--quiet" href="#episode">Pink is a neutral</a></td><td class="ds-table__extra">1 February</td><td><span class="ds-badge ds-badge--success">Played</span></td><td class="ds-table__num">40</td></tr>
+        </tbody>
+      </table>
+      <div class="ds-row">
+        <ul class="ds-pagination" data-component="pagination" aria-label="Pages">
+          <li><a class="ds-pagination__link is-disabled" href="#show" aria-disabled="true">Newer</a></li>
+          <li><a class="ds-pagination__link is-current" href="#show" aria-current="page">1</a></li>
+          <li><a class="ds-pagination__link" href="#show">2</a></li>
+          <li><a class="ds-pagination__link" href="#show">3</a></li>
+          <li><a class="ds-pagination__link" href="#show">Older</a></li>
+        </ul>
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge">Playing</span>
+          <span class="ds-badge ds-badge--alt">New</span>
+          <span class="ds-badge ds-badge--plain">Saved</span>
+          <span class="ds-badge ds-badge--success">Played</span>
+          <span class="ds-badge ds-badge--warning">Queued</span>
+          <span class="ds-badge ds-badge--danger">Failed</span>
+        </div>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-notice" role="status">
+        <strong class="ds-notice__title">Season 5</strong>
+        <p class="ds-notice__text">New episodes every Thursday until June.</p>
+      </div>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Hosts</h2>
+        <div class="ds-panel__body">
+          <span class="ds-avatar ds-avatar--1"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><path d="M7.5 14.5c2.6 2.8 6.4 2.8 9 0"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Ines Marchetti</span><span class="ds-avatar__meta">says yellow is loud</span></span></span>
+          <span class="ds-avatar ds-avatar--4"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 9.5h3M14 9.5h3"/><circle cx="12" cy="15.5" r="2"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Tunde Okafor</span><span class="ds-avatar__meta">says it depends</span></span></span>
+          <a class="ds-link" href="#episode">Start with episode 48</a>
+        </div>
+      </section>
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">About the show</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item">Episodes <span>48</span></li>
+          <li class="ds-sidebar__item">Since <span>2018</span></li>
+          <li class="ds-sidebar__item">Out on <span>Thursdays</span></li>
+          <li class="ds-sidebar__item">You played <span class="ds-badge ds-badge--plain">39</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="episode">
+  <header class="ds-page-header">
+    <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#show">Shows</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#show">Shapes and Noise</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">Episode 48</li>
+    </ol>
+    <div class="ds-page-header__row">
+      <div class="ds-page-header__main">
+        <div class="ds-cover ds-cover--3 ds-cover--stripes" aria-hidden="true"><span class="ds-shape ds-shape--disc ds-shape--c1"></span></div>
+        <div>
+          <h1 class="ds-page-header__title">The colour of loud</h1>
+          <p class="ds-page-header__lead">Episode 48, out today, 42 minutes.</p>
+        </div>
+      </div>
+      <div class="ds-buttons" data-component="buttons">
+        <button class="ds-button" type="button">Play</button>
+        <button class="ds-button ds-button--secondary" type="button">Add to queue</button>
+        <button class="ds-button ds-button--danger" type="button">Remove download</button>
+        <button class="ds-button" type="button" disabled>Share clip</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-dash ds-dash--two">
+    <div class="ds-stack">
+      <div class="ds-notice ds-notice--error" role="alert" data-component="notice">
+        <strong class="ds-notice__title">Download failed</strong>
+        <p class="ds-notice__text">The file stopped at 60%. Playing now will stream it instead.</p>
+      </div>
+      <article class="ds-prose" data-component="typography">
+        <h1>Show notes</h1>
+        <p class="ds-prose__lead">Ines thinks yellow shouts. Tunde thinks it only shouts next to violet. Forty minutes later nobody has moved.</p>
+        <h2>In this episode</h2>
+        <p>They test the claim on a real poster, swap one colour at a time and read the listener letters. The file they argue over is named <code>poster-final-loud.pdf</code>.</p>
+        <ul>
+          <li>Why pink and teal fight and still look friendly</li>
+          <li>What a black outline does to a quiet colour</li>
+          <li>The letter about a yellow kitchen</li>
+        </ul>
+        <h3>Mentioned</h3>
+        <p>A book of wrapping paper, a tram seat fabric and <strong>one very orange bus</strong>.</p>
+      </article>
+      <ul class="ds-links" data-component="links">
+        <li><a class="ds-link" href="#show">More from this show</a></li>
+        <li><a class="ds-link is-visited" href="#episode">Episode 47</a></li>
+        <li><a class="ds-link is-hover" href="#show">Why the bus is orange</a></li>
+        <li><a class="ds-link is-active" href="#home">Back to listen now</a></li>
+      </ul>
+    </div>
+    <div class="ds-stack">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Chapters</h2>
+        <div class="ds-panel__body">
+          <div class="ds-progress__legend"><span>Yellow shouts</span><span>00:00</span></div>
+          <span class="ds-progress ds-progress--90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Chapter one"><span class="ds-progress__bar"></span></span>
+          <div class="ds-progress__legend"><span>The poster test</span><span>14:20</span></div>
+          <span class="ds-progress ds-progress--25 ds-progress--alt" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Chapter two"><span class="ds-progress__bar"></span></span>
+          <div class="ds-progress__legend"><span>Letters</span><span>31:05</span></div>
+          <span class="ds-progress ds-progress--0" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Chapter three"><span class="ds-progress__bar"></span></span>
+        </div>
+      </section>
+      <aside class="ds-sidebar">
+        <h2 class="ds-sidebar__title">Details</h2>
+        <ul class="ds-sidebar__list">
+          <li class="ds-sidebar__item">Show <a class="ds-link ds-link--quiet" href="#show">Shapes and Noise</a></li>
+          <li class="ds-sidebar__item">Length <span>42:10</span></li>
+          <li class="ds-sidebar__item">File <span class="ds-badge ds-badge--danger">60%</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <header class="ds-page-header">
+    <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Listen now</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#settings">Settings</a></li>
+      <li class="ds-breadcrumb__item is-current" aria-current="page">Account and playback</li>
+    </ol>
+    <div class="ds-page-header__row">
+      <div>
+        <h1 class="ds-page-header__title">Settings</h1>
+        <p class="ds-page-header__lead">Your account, how episodes play and what stays on this device.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#home">Done</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="ds-dash ds-dash--even">
+    <section class="ds-panel">
+      <h2 class="ds-panel__title">Account</h2>
+      <div class="ds-panel__body">
+        <form class="ds-form" data-component="form">
+          <div class="ds-form__row">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="s-name">Display name</label>
+              <input class="ds-form__control" id="s-name" type="text" value="Aino">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="s-mail">Email</label>
+              <input class="ds-form__control is-invalid" id="s-mail" type="email" value="aino@example" aria-invalid="true" aria-describedby="s-mail-err">
+              <p class="ds-form__error" id="s-mail-err">Enter a full address, such as name@example.org.</p>
+            </div>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="s-speed">Playback speed</label>
+            <select class="ds-form__control" id="s-speed">
+              <option>Normal</option>
+              <option>A little faster</option>
+              <option>Much faster</option>
+            </select>
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="s-note">About you</label>
+            <textarea class="ds-form__control ds-form__control--area" id="s-note">Listens on the tram. Skips intros.</textarea>
+            <p class="ds-form__hint">Shown next to your reviews.</p>
+          </div>
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Email me when a followed show returns</label>
+          <div class="ds-buttons">
+            <button class="ds-button" type="button">Save changes</button>
+            <a class="ds-button ds-button--secondary" href="#home">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="ds-stack">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Playback</h2>
+        <div class="ds-panel__body">
+          <label class="ds-switch ds-switch--end" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Download new episodes<span class="ds-switch__hint">On wifi only</span></span></label>
+          <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Skip silences<span class="ds-switch__hint">Saves about four minutes an hour</span></span></label>
+          <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Keep played episodes<span class="ds-switch__hint">Otherwise removed after a day</span></span></label>
+        </div>
+      </section>
+      <div class="ds-accordion" data-component="accordion">
+        <details class="ds-accordion__item" open>
+          <summary class="ds-accordion__head">Where are downloads kept? <span class="ds-accordion__sign"></span></summary>
+          <div class="ds-accordion__body"><p>On this device only. Signing out removes them.</p></div>
+        </details>
+        <details class="ds-accordion__item">
+          <summary class="ds-accordion__head">Can I move my queue to another device? <span class="ds-accordion__sign"></span></summary>
+          <div class="ds-accordion__body"><p>Yes, the queue follows your account.</p></div>
+        </details>
+        <details class="ds-accordion__item">
+          <summary class="ds-accordion__head">What does the streak count? <span class="ds-accordion__sign"></span></summary>
+          <div class="ds-accordion__body"><p>Any day with ten minutes of listening.</p></div>
+        </details>
+      </div>
+      <div class="ds-empty" data-component="empty">
+        <div class="ds-empty__art" aria-hidden="true"><span class="ds-shape ds-shape--disc ds-shape--s ds-shape--c2"></span><span class="ds-shape ds-shape--half ds-shape--s ds-shape--c4"></span><span class="ds-shape ds-shape--tri ds-shape--s ds-shape--c1"></span></div>
+        <h3 class="ds-empty__title">No downloads yet</h3>
+        <p class="ds-empty__text">Episodes you download for the tram appear here.</p>
+        <a class="ds-button ds-button--secondary ds-button--small" href="#show">Browse your shows</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-overlay">
+    <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+      <div class="ds-dialog__bar">
+        <h2 class="ds-dialog__title" id="dlg-title">Clear listening history?</h2>
+        <a class="ds-dialog__close" href="#settings" aria-label="Close">&times;</a>
+      </div>
+      <div class="ds-dialog__body">
+        <p>Your streak of 19 days and the played marks on 212 episodes will be removed. Followed shows stay.</p>
+      </div>
+      <div class="ds-dialog__actions">
+        <a class="ds-button ds-button--secondary" href="#settings">Keep it</a>
+        <button class="ds-button ds-button--danger" type="button">Clear history</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="ds-player" aria-label="Now playing">
+  <div class="ds-player__now">
+    <div class="ds-cover ds-cover--2 ds-cover--dots" aria-hidden="true"></div>
+    <div><span class="ds-player__title">A short history of the squiggle</span><span class="ds-player__show">Shapes and Noise, episode 46</span></div>
+  </div>
+  <div class="ds-player__keys">
+    <button class="ds-player__key" type="button" aria-label="Back 15 seconds"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+    <button class="ds-player__key ds-player__key--play" type="button" aria-label="Play"><svg viewBox="0 0 16 16" fill="currentColor" stroke="none" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button>
+    <button class="ds-player__key" type="button" aria-label="Forward 30 seconds"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+  </div>
+  <div class="ds-player__bar">
+    <span>27:04</span>
+    <span class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Position"><span class="ds-progress__bar"></span></span>
+    <span>45:00</span>
+  </div>
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__brand">chronoskin</p>
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#home">Listen now</a></li>
+    <li><a class="ds-footer__link" href="#show">Shows</a></li>
+    <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+    <li><a class="ds-footer__link" href="#settings">Help</a></li>
+  </ul>
+  <p class="ds-footer__legal">Specimen page. All shows, names and figures are placeholders.</p>
+</footer>
+
+</div>
+</body>
+</html>

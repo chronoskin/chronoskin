@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin player</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h8.5v8.5H21V21H4z"/><path d="M14.5 3l6.5 6.5h-6.5z" fill-opacity="0.55"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <ul class="ds-nav__links">
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#listen">Listen</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#library">Library</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#upload">Upload</a></li>
+  </ul>
+  <label class="ds-nav__search">
+    <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6" stroke="currentColor" fill="none"/><path d="M16 16l4 4" stroke="currentColor" fill="none"/></svg>
+    <input class="ds-nav__field" type="search" placeholder="Search recordings" aria-label="Search">
+  </label>
+  <details class="ds-menu" data-component="menu">
+    <summary class="ds-menu__button" aria-label="Account"><span class="ds-avatar" data-component="avatar">M</span></summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__link" href="#library">Your library</a></li>
+      <li><a class="ds-menu__link" href="#upload">Upload a recording</a></li>
+      <li><a class="ds-menu__link" href="#notes">Notes on the record</a></li>
+    </ul>
+  </details>
+</header>
+
+<section class="ds-view ds-view--home" id="listen">
+  <div class="ds-app">
+    <div class="ds-main">
+
+      <div class="ds-hero" data-component="hero">
+        <span class="ds-cover ds-cover--2 ds-cover--large" aria-hidden="true"></span>
+        <div class="ds-hero__body">
+          <p class="ds-hero__label">Record of the week</p>
+          <h1 class="ds-hero__title">Harbour at dawn</h1>
+          <p class="ds-hero__lead">Twelve field recordings from a working harbour, from the first gulls to the morning ferry. 48 minutes.</p>
+          <div class="ds-buttons">
+            <a class="ds-button ds-button--secondary" href="#record">
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+              Play record
+            </a>
+            <a class="ds-button ds-button--onbar" href="#notes">Read the notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-content">
+
+        <div class="ds-toolbar">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#listen">For you</a></li>
+            <li><a class="ds-tabs__tab" href="#listen">New</a></li>
+            <li><a class="ds-tabs__tab" href="#listen">Places</a></li>
+            <li><a class="ds-tabs__tab" href="#listen">Weather</a></li>
+          </ul>
+          <input class="ds-form__control ds-toolbar__field" type="text" placeholder="Filter records" aria-label="Filter records">
+        </div>
+
+        <div class="ds-grid" data-component="grid">
+          <a class="ds-grid__cell" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Night trains</span>9 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--2 ds-grid__cell--square" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Harbour at dawn</span>12 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--3" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Rain on a tin roof</span>6 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--4 ds-grid__cell--square" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Snow, no wind</span>4 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--3 ds-grid__cell--square" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Market hall</span>8 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--4" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Pine wood, midday</span>10 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--square" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Ferry crossing</span>5 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+          <a class="ds-grid__cell ds-grid__cell--2" href="#record">
+            <span class="ds-grid__caption"><span class="ds-grid__text"><span class="ds-grid__title">Kitchen radio</span>7 recordings</span>
+              <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          </a>
+        </div>
+
+        <div class="ds-columns">
+          <div class="ds-panel">
+            <div class="ds-panel__head">
+              <h3 class="ds-panel__title">Recently played</h3>
+              <a class="ds-button ds-button--flat" href="#library">History</a>
+            </div>
+            <ul class="ds-list" data-component="list">
+              <li class="ds-list__item">
+                <span class="ds-cover ds-cover--2" aria-hidden="true"></span>
+                <span class="ds-list__body">
+                  <a class="ds-list__title" href="#record">First gulls</a>
+                  <span class="ds-list__text">Harbour at dawn, recorded by Ines Okafor</span>
+                </span>
+                <span class="ds-list__meta">4:30</span>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-cover" aria-hidden="true"></span>
+                <span class="ds-list__body">
+                  <a class="ds-list__title" href="#record">Goods yard, two in the morning</a>
+                  <span class="ds-list__text">Night trains, recorded by Tomas Lind</span>
+                </span>
+                <span class="ds-list__meta">6:12</span>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-cover ds-cover--3" aria-hidden="true"></span>
+                <span class="ds-list__body">
+                  <a class="ds-list__title" href="#record">Gutter and downpipe</a>
+                  <span class="ds-list__text">Rain on a tin roof, recorded by Mira Okafor</span>
+                </span>
+                <span class="ds-list__meta">3:48</span>
+              </li>
+            </ul>
+          </div>
+          <div class="ds-panel" data-component="panel">
+            <h3 class="ds-panel__title">Your week</h3>
+            <div class="ds-panel__body">
+              <p>You listened for 3 hours and 20 minutes, mostly to water and weather.</p>
+              <span class="ds-progress" data-component="progress" role="progressbar" aria-label="Listening this week"><span class="ds-progress__bar"></span></span>
+            </div>
+            <div class="ds-panel__actions">
+              <a class="ds-button ds-button--flat" href="#library">Open library</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__title">Up next</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">First gulls</span><span class="ds-sidebar__count">4:30</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">Ropes and fenders</span><span class="ds-sidebar__count">3:05</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover" aria-hidden="true"></span><span class="ds-sidebar__name">Signal box</span><span class="ds-sidebar__count">5:41</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--3" aria-hidden="true"></span><span class="ds-sidebar__name">Gutter and downpipe</span><span class="ds-sidebar__count">3:48</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--4" aria-hidden="true"></span><span class="ds-sidebar__name">Boots on fresh snow</span><span class="ds-sidebar__count">2:56</span></a></li>
+      </ul>
+      <h2 class="ds-sidebar__title">Playlists</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#library"><span class="ds-sidebar__name">For reading</span><span class="ds-sidebar__count">24</span></a></li>
+        <li><a class="ds-sidebar__link" href="#library"><span class="ds-sidebar__name">Falling asleep</span><span class="ds-sidebar__count">17</span></a></li>
+        <li><a class="ds-sidebar__link" href="#library"><span class="ds-sidebar__name">Long walks</span><span class="ds-badge ds-badge--new">New</span></a></li>
+      </ul>
+      <div class="ds-sidebar__actions">
+        <a class="ds-button is-hover" href="#library">Save queue</a>
+        <a class="ds-button ds-button--secondary is-active" href="#listen">Clear</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="ds-view" id="record">
+  <div class="ds-app">
+    <div class="ds-main">
+      <div class="ds-content">
+
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Places</a></li>
+          <li class="ds-breadcrumb__item is-current">Harbour at dawn</li>
+        </ol>
+
+        <header class="ds-page-header" data-component="page-header">
+          <div class="ds-page-header__body">
+            <h1 class="ds-page-header__title">Harbour at dawn</h1>
+            <p class="ds-page-header__text">Twelve recordings by Ines Okafor, made over one week in March.</p>
+          </div>
+          <div class="ds-page-header__actions">
+            <a class="ds-button ds-button--secondary" href="#notes">Notes</a>
+            <a class="ds-button" href="#record">Play all</a>
+          </div>
+        </header>
+
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__value">12</span><span class="ds-stat__label">Recordings</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">48</span><span class="ds-stat__label">Minutes</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">18,204</span><span class="ds-stat__label">Plays</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">1,310</span><span class="ds-stat__label">Saves</span></li>
+        </ul>
+
+        <div class="ds-panel">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th class="ds-table__index">#</th><th>Recording</th><th class="ds-table__extra">Place</th><th>Status</th><th class="ds-table__num ds-table__extra">Plays</th><th class="ds-table__num">Length</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-current"><td class="ds-table__index">1</td><td class="ds-table__name">First gulls</td><td class="ds-table__extra">Outer pier</td><td><span class="ds-badge ds-badge--success">Playing</span></td><td class="ds-table__num ds-table__extra">4,812</td><td class="ds-table__num">4:30</td></tr>
+              <tr><td class="ds-table__index">2</td><td class="ds-table__name">Ropes and fenders</td><td class="ds-table__extra">Fish quay</td><td><span class="ds-badge ds-badge--chip">Free</span></td><td class="ds-table__num ds-table__extra">3,377</td><td class="ds-table__num">3:05</td></tr>
+              <tr><td class="ds-table__index">3</td><td class="ds-table__name">Ice machine</td><td class="ds-table__extra">Fish quay</td><td><span class="ds-badge ds-badge--warning">Preview</span></td><td class="ds-table__num ds-table__extra">2,950</td><td class="ds-table__num">2:41</td></tr>
+              <tr><td class="ds-table__index">4</td><td class="ds-table__name">Morning ferry</td><td class="ds-table__extra">Ferry slip</td><td><span class="ds-badge ds-badge--chip">Free</span></td><td class="ds-table__num ds-table__extra">4,120</td><td class="ds-table__num">6:02</td></tr>
+              <tr><td class="ds-table__index">5</td><td class="ds-table__name">Auction bell</td><td class="ds-table__extra">Market shed</td><td><span class="ds-badge ds-badge--danger">Withdrawn</span></td><td class="ds-table__num ds-table__extra">2,945</td><td class="ds-table__num">1:58</td></tr>
+            </tbody>
+          </table>
+          <div class="ds-panel__foot">
+            <span>Recordings 1 to 5 of 12</span>
+            <ul class="ds-pagination" data-component="pagination">
+              <li><a class="ds-pagination__link is-disabled" href="#record" aria-label="Previous">
+                <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" fill="none"/></svg>
+              </a></li>
+              <li><a class="ds-pagination__link is-current" href="#record">1</a></li>
+              <li><a class="ds-pagination__link" href="#record">2</a></li>
+              <li><a class="ds-pagination__link" href="#record">3</a></li>
+              <li><a class="ds-pagination__link" href="#record" aria-label="Next">
+                <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" fill="none"/></svg>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="ds-caption">Labels</p>
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge">12</span>
+          <span class="ds-badge ds-badge--success">Playing</span>
+          <span class="ds-badge ds-badge--warning">Preview</span>
+          <span class="ds-badge ds-badge--danger">Withdrawn</span>
+          <span class="ds-badge ds-badge--new">New</span>
+          <span class="ds-badge ds-badge--chip">Water</span>
+          <span class="ds-badge ds-badge--chip">Morning</span>
+        </div>
+
+      </div>
+    </div>
+
+    <aside class="ds-sidebar">
+      <h2 class="ds-sidebar__title">Up next</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">First gulls</span><span class="ds-sidebar__count">4:30</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">Ropes and fenders</span><span class="ds-sidebar__count">3:05</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">Ice machine</span><span class="ds-sidebar__count">2:41</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--2" aria-hidden="true"></span><span class="ds-sidebar__name">Morning ferry</span><span class="ds-sidebar__count">6:02</span></a></li>
+      </ul>
+      <h2 class="ds-sidebar__title">More by this recordist</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--4" aria-hidden="true"></span><span class="ds-sidebar__name">Snow, no wind</span><span class="ds-sidebar__count">4</span></a></li>
+        <li><a class="ds-sidebar__link" href="#record"><span class="ds-cover ds-cover--3" aria-hidden="true"></span><span class="ds-sidebar__name">Market hall</span><span class="ds-sidebar__count">8</span></a></li>
+      </ul>
+      <div class="ds-sidebar__actions">
+        <a class="ds-button" href="#library">Save queue</a>
+        <a class="ds-button ds-button--secondary" href="#record">Clear</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="ds-view" id="notes">
+  <div class="ds-content ds-content--wide">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#record">Harbour at dawn</a></li>
+      <li class="ds-breadcrumb__item is-current">Notes</li>
+    </ol>
+
+    <div class="ds-columns ds-columns--detail">
+      <div class="ds-panel ds-panel--pad">
+        <article class="ds-prose" data-component="typography">
+          <h1>Notes on the record</h1>
+          <p class="ds-prose__lead">A harbour is loudest before anyone is awake to hear it. These recordings start at half past four.</p>
+          <h2>How it was recorded</h2>
+          <p>Two small microphones on a rail, a recorder in a dry bag and a week of early mornings. Nothing was added afterwards; the <a href="#record">twelve recordings</a> are in the order they were made.</p>
+          <ul>
+            <li>Stereo pair, about one metre above the water.</li>
+            <li>No filtering apart from a gentle cut below 40 Hz.</li>
+            <li>Best on headphones, at a low volume.</li>
+          </ul>
+          <h3>Files</h3>
+          <p>Each recording can be downloaded as a lossless file named like <code>harbour-01.flac</code>. Previews are limited to ninety seconds.</p>
+        </article>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-notices" data-component="notice">
+          <div class="ds-notice">
+            <strong class="ds-notice__title">Three recordings are previews</strong>
+            Sign in to hear them in full and to download the files.
+          </div>
+          <div class="ds-notice ds-notice--error">
+            <strong class="ds-notice__title">One recording was withdrawn</strong>
+            Auction bell cannot be played at the recordist's request.
+          </div>
+        </div>
+        <div class="ds-panel">
+          <h3 class="ds-panel__title">Listen next</h3>
+          <div class="ds-panel__body">
+            <div class="ds-links" data-component="links">
+              <a class="ds-link" href="#record">Ferry crossing</a>
+              <a class="ds-link is-visited" href="#record">Night trains</a>
+              <a class="ds-link is-hover" href="#record">Rain on a tin roof</a>
+              <a class="ds-link is-active" href="#record">Market hall</a>
+              <a class="ds-link ds-link--quiet" href="#listen">All places</a>
+            </div>
+          </div>
+          <div class="ds-panel__actions">
+            <a class="ds-button ds-button--flat" href="#record">Back to the record</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="upload">
+  <div class="ds-content ds-content--wide">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#library">Library</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#upload">Uploads</a></li>
+      <li class="ds-breadcrumb__item is-current">New recording</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Upload a recording</h1>
+        <p class="ds-page-header__text">Describe where and when it was made. You can publish it later.</p>
+      </div>
+      <div class="ds-page-header__actions ds-buttons" data-component="buttons">
+        <button class="ds-button ds-button--danger" type="button">Delete draft</button>
+        <a class="ds-button ds-button--secondary" href="#library">Save draft</a>
+        <button class="ds-button is-disabled" type="button" disabled>Publish</button>
+        <a class="ds-button" href="#record">Preview</a>
+      </div>
+    </header>
+
+    <div class="ds-columns ds-columns--detail">
+      <div class="ds-panel ds-panel--form">
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__row">
+              <label class="ds-form__field">
+                <span class="ds-form__label">Title</span>
+                <input class="ds-form__control is-focus" type="text" value="Tide under the pier">
+              </label>
+              <label class="ds-form__field is-invalid">
+                <span class="ds-form__label">Recorded on</span>
+                <input class="ds-form__control" type="text" value="31 June">
+                <span class="ds-form__error">Enter a date that exists.</span>
+              </label>
+            </div>
+            <label class="ds-form__field">
+              <span class="ds-form__label">Record</span>
+              <span class="ds-form__select">
+                <select class="ds-form__control">
+                  <option>Harbour at dawn</option>
+                  <option>Ferry crossing</option>
+                  <option>A new record</option>
+                </select>
+              </span>
+            </label>
+            <label class="ds-form__field">
+              <span class="ds-form__label">Notes</span>
+              <textarea class="ds-form__control ds-form__control--area">Low tide, no wind. A rope creaks about halfway through.</textarea>
+              <span class="ds-form__hint">Shown under the recording, up to 300 characters.</span>
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              <span>Let listeners download the file</span>
+            </label>
+            <label class="ds-form__check"><span class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></span><span>Show on my public page</span></label>
+          </form>
+        </div>
+        <div class="ds-panel__actions ds-panel__actions--end">
+          <a class="ds-button ds-button--flat" href="#library">Cancel</a>
+          <a class="ds-button" href="#record">Save recording</a>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <h3 class="ds-panel__title">File received</h3>
+          <div class="ds-panel__body">
+            <p>One lossless file, 4 minutes 10 seconds, 41 MB. Checking levels.</p>
+            <span class="ds-progress" data-component="progress" role="progressbar" aria-label="Checking levels"><span class="ds-progress__bar ds-progress__bar--high"></span></span>
+            <div class="ds-accordion" data-component="accordion">
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">Which files are accepted?</summary>
+                <p class="ds-accordion__body">Lossless files up to 200 MB, in one or two channels.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">What is checked?</summary>
+                <p class="ds-accordion__body">Peak level and silence at the start and the end.</p>
+              </details>
+              <details class="ds-accordion__item">
+                <summary class="ds-accordion__head">Who can listen?</summary>
+                <p class="ds-accordion__body">Only you, until you publish the recording.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+        <div class="ds-overlay">
+          <div class="ds-dialog" role="dialog" aria-labelledby="dialog-title" data-component="dialog">
+            <h3 class="ds-dialog__title" id="dialog-title">Delete this draft?</h3>
+            <div class="ds-dialog__body">
+              <p>The file and its notes are removed. This cannot be undone.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--flat" href="#upload">Keep it</a>
+              <a class="ds-button ds-button--flat ds-button--danger" href="#library">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="library">
+  <div class="ds-content ds-content--wide">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#library">Library</a></li>
+      <li class="ds-breadcrumb__item is-current">Playlists</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__body">
+        <h1 class="ds-page-header__title">Your library</h1>
+        <p class="ds-page-header__text">Saved records, playlists and your own uploads, for Mira Okafor.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#upload">Upload a recording</a>
+      </div>
+    </header>
+
+    <div class="ds-columns ds-columns--detail ds-columns--even">
+      <div class="ds-panel">
+        <ul class="ds-tabs">
+          <li><a class="ds-tabs__tab" href="#library">Saved</a></li>
+          <li><a class="ds-tabs__tab is-current" href="#library">Playlists</a></li>
+          <li><a class="ds-tabs__tab" href="#library">Uploads</a></li>
+        </ul>
+        <div class="ds-empty" data-component="empty">
+          <span class="ds-empty__mark">
+            <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h10M5 12h10M5 17h6M16 14v6l4-3z" stroke="currentColor" fill="none"/></svg>
+          </span>
+          <h3 class="ds-empty__title">No playlists yet</h3>
+          <p class="ds-empty__text">Save the queue or add a recording to a playlist and it appears here.</p>
+          <a class="ds-button ds-button--flat" href="#listen">Find something to play</a>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <div class="ds-panel__head">
+          <h3 class="ds-panel__title">Saved records</h3>
+          <a class="ds-button ds-button--flat" href="#listen">Browse</a>
+        </div>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-cover ds-cover--2" aria-hidden="true"></span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#record">Harbour at dawn</a>
+              <span class="ds-list__text">12 recordings, saved today</span>
+            </span>
+            <span class="ds-list__meta">48 min</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-cover" aria-hidden="true"></span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#record">Night trains</a>
+              <span class="ds-list__text">9 recordings, saved 3 March</span>
+            </span>
+            <span class="ds-list__meta">52 min</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-cover ds-cover--4" aria-hidden="true"></span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#record">Snow, no wind</a>
+              <span class="ds-list__text">4 recordings, saved 20 February</span>
+            </span>
+            <span class="ds-list__meta">31 min</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-cover ds-cover--3" aria-hidden="true"></span>
+            <span class="ds-list__body">
+              <a class="ds-list__title" href="#record">Market hall</a>
+              <span class="ds-list__text">8 recordings, saved 11 February</span>
+            </span>
+            <span class="ds-list__meta">44 min</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#listen">Listen</a></li>
+    <li><a class="ds-footer__link" href="#library">Library</a></li>
+    <li><a class="ds-footer__link" href="#upload">Upload</a></li>
+    <li><a class="ds-footer__link" href="#notes">Notes</a></li>
+  </ul>
+  <p class="ds-footer__legal">chronoskin is a sample player. The recordings named here do not exist.</p>
+</footer>
+
+<div class="ds-player">
+  <span class="ds-meter ds-player__progress"><span class="ds-meter__bar"></span></span>
+  <div class="ds-player__now">
+    <span class="ds-cover ds-cover--2" aria-hidden="true"></span>
+    <span class="ds-list__body">
+      <a class="ds-list__title" href="#record">First gulls</a>
+      <span class="ds-list__text">Harbour at dawn</span>
+    </span>
+  </div>
+  <div class="ds-player__controls">
+    <a class="ds-iconbutton" href="#record" aria-label="Previous">
+      <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zM19 6v12l-9-6z" fill="currentColor"/></svg>
+    </a>
+    <a class="ds-button ds-button--fab ds-tooltip ds-tooltip--above" href="#record" aria-label="Play"><span class="ds-tooltip__text" role="tooltip">Play</span>
+      <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+    </a>
+    <a class="ds-iconbutton" href="#record" aria-label="Next">
+      <svg class="ds-icon ds-icon--solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM5 6v12l9-6z" fill="currentColor"/></svg>
+    </a>
+  </div>
+  <div class="ds-player__extra">
+    <span>1:42 / 4:30</span>
+    <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4zM17 9a4 4 0 0 1 0 6" stroke="currentColor" fill="none"/></svg>
+    <span class="ds-meter ds-player__volume"><span class="ds-meter__bar ds-meter__bar--2"></span></span>
+  </div>
+</div>
+
+</body>
+</html>

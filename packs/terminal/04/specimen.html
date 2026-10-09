@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: the manual of a snapshot backup program. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-book">
+
+<header class="ds-nav" data-component="nav">
+  <a class="ds-brand" data-component="brand" href="#home"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <p class="ds-nav__tag">the manual, for 3.2</p>
+  <p class="ds-nav__root">manual/</p>
+  <ul class="ds-nav__list">
+    <li><a class="ds-nav__link" href="#home">index</a></li>
+    <li><a class="ds-nav__link" href="#page">chronoskin(1)</a></li>
+    <li><a class="ds-nav__link" href="#search">search</a></li>
+    <li><a class="ds-nav__link" href="#feedback">report an error</a></li>
+  </ul>
+  <p class="ds-nav__root ds-nav__root--sub">sections/</p>
+  <ul class="ds-nav__list ds-nav__list--sub">
+    <li><a class="ds-nav__sub" href="#search">1 commands</a><span class="ds-nav__count">6</span></li>
+    <li><a class="ds-nav__sub" href="#search">5 file formats</a><span class="ds-nav__count">3</span></li>
+    <li><a class="ds-nav__sub" href="#search">7 concepts</a><span class="ds-nav__count">2</span></li>
+    <li><a class="ds-nav__sub" href="#search">8 administration</a><span class="ds-nav__count">3</span></li>
+  </ul>
+  <ul class="ds-nav__keys">
+    <li class="ds-key"><span class="ds-key__cap">/</span> search</li>
+    <li class="ds-key"><span class="ds-key__cap">n</span> next page</li>
+    <li class="ds-key"><span class="ds-key__cap">p</span> previous page</li>
+    <li class="ds-key"><span class="ds-key__cap">q</span> back to the index</li>
+  </ul>
+</header>
+
+<div class="ds-body">
+<main class="ds-main">
+
+<!-- View 1, the index of the manual: what it documents, figures, the four sections, every page. -->
+<section class="ds-view ds-view--home" id="home">
+  <section class="ds-hero" data-component="hero">
+    <p class="ds-hero__head"><span>CHRONOSKIN(7)</span><span>chronoskin manual</span><span>CHRONOSKIN(7)</span></p>
+    <div class="ds-hero__cols">
+      <div class="ds-hero__text">
+        <h1 class="ds-hero__title">Snapshots of a directory, kept as plain files.</h1>
+        <p class="ds-hero__lead">chronoskin copies a directory into a dated snapshot, shares unchanged files between snapshots and thins old ones on a schedule you write down. This is its whole manual: fourteen pages, the same text that <code>man</code> shows.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#page">read chronoskin(1)</a>
+          <a class="ds-button ds-button--secondary" href="#search">search the manual</a>
+        </div>
+      </div>
+      <div class="ds-box">
+        <p class="ds-box__title">synopsis</p>
+<pre class="ds-box__screen"><span class="ds-box__in">chronoskin take</span> [<span class="ds-box__arg">-n</span>] [<span class="ds-box__arg">-x</span> pattern] source
+<span class="ds-box__in">chronoskin list</span> [<span class="ds-box__arg">--since</span> date]
+<span class="ds-box__in">chronoskin restore</span> snapshot [path]
+<span class="ds-box__in">chronoskin prune</span> [<span class="ds-box__arg">--keep</span> rule]
+
+<span class="ds-box__dim">$</span> man chronoskin<span class="ds-cursor">&nbsp;</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-section">
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__value">14</span><span class="ds-stat__label">pages in four sections</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">212</span><span class="ds-stat__label">options and settings</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">96</span><span class="ds-stat__label"><span class="ds-tooltip" tabindex="0">examples you can paste<span class="ds-tooltip__tip" role="tooltip">Each one is run against the program on every release.</span></span></span></li>
+      <li class="ds-stat"><span class="ds-stat__value">3.2.0</span><span class="ds-stat__label">version described here</span></li>
+    </ul>
+  </section>
+
+  <section class="ds-section">
+    <h2 class="ds-section__title">sections</h2>
+    <div class="ds-grid" data-component="grid">
+      <div class="ds-grid__cell">
+        <span class="ds-grid__num">1</span>
+        <h3 class="ds-grid__title">Commands</h3>
+        <p class="ds-grid__text">What you type: take, list, restore, prune, verify, mount.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#page">6 pages</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--2">
+        <span class="ds-grid__num">5</span>
+        <h3 class="ds-grid__title">File formats</h3>
+        <p class="ds-grid__text">The configuration file, the keep rules and the index of a snapshot.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#search">3 pages</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--3">
+        <span class="ds-grid__num">7</span>
+        <h3 class="ds-grid__title">Concepts</h3>
+        <p class="ds-grid__text">How snapshots share files, and what a keep rule decides.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#search">2 pages</a></p>
+      </div>
+      <div class="ds-grid__cell ds-grid__cell--4">
+        <span class="ds-grid__num">8</span>
+        <h3 class="ds-grid__title">Administration</h3>
+        <p class="ds-grid__text">Timers, remote targets and repairing a damaged store.</p>
+        <p class="ds-grid__more"><a class="ds-link" href="#search">3 pages</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ds-cols">
+    <div class="ds-col">
+      <h2 class="ds-section__title">every page</h2>
+      <table class="ds-table ds-table--framed" data-component="table">
+        <thead>
+          <tr><th>page</th><th class="ds-table__extra">what it describes</th><th class="ds-table__extra">changed</th><th class="ds-table__num">options</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin(1)</a></td><td class="ds-table__extra">The command and what its four verbs have in common.</td><td class="ds-table__extra ds-table__date">2026-09-28</td><td class="ds-table__num">18</td></tr>
+          <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin-take(1)</a></td><td class="ds-table__extra">Take a snapshot of a directory.</td><td class="ds-table__extra ds-table__date">2026-09-28</td><td class="ds-table__num">31</td></tr>
+          <tr><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin-restore(1)</a></td><td class="ds-table__extra">Copy files back out of a snapshot.</td><td class="ds-table__extra ds-table__date">2026-08-11</td><td class="ds-table__num">22</td></tr>
+          <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin-prune(8)</a></td><td class="ds-table__extra">Thin old snapshots by the keep rules.</td><td class="ds-table__extra ds-table__date">2026-09-02</td><td class="ds-table__num">14</td></tr>
+          <tr><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin.conf(5)</a></td><td class="ds-table__extra">The configuration file, setting by setting.</td><td class="ds-table__extra ds-table__date">2026-09-28</td><td class="ds-table__num">64</td></tr>
+          <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin-keep(5)</a></td><td class="ds-table__extra">The grammar of a keep rule.</td><td class="ds-table__extra ds-table__date">2026-06-19</td><td class="ds-table__num">9</td></tr>
+          <tr><td class="ds-table__code"><a class="ds-table__title" href="#page">chronoskin-store(7)</a></td><td class="ds-table__extra">How a store is laid out on disk.</td><td class="ds-table__extra ds-table__date">2026-03-04</td><td class="ds-table__num">0</td></tr>
+        </tbody>
+      </table>
+      <p class="ds-note">Seven of fourteen pages. <a class="ds-link" href="#search">Search</a> finds the rest.</p>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">at the prompt</h2>
+        <div class="ds-panel__body">
+<pre class="ds-code">$ man chronoskin
+$ man 5 chronoskin.conf
+$ apropos snapshot</pre>
+          <p class="ds-panel__text">The pages are installed with the program. This site is built from the same files on every release.</p>
+          <p class="ds-progress"><span class="ds-progress__label">examples tested</span><span class="ds-progress__bar"><span class="ds-progress__on">#########</span>.</span><span class="ds-progress__value">91 of 96</span></p>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">how to read a page</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Words in <code>[brackets]</code> are optional. A word after a flag is a value you supply. A number in parentheses is the section the page lives in.</p>
+          <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+          <summary class="ds-accordion__title">What the numbers mean</summary>
+          <div class="ds-accordion__body">
+          <p>1 is commands, 5 file formats, 7 concepts, 8 administration.</p>
+          </div>
+          </details>
+          <details class="ds-accordion__item">
+          <summary class="ds-accordion__title">What the words in capitals mean</summary>
+          <div class="ds-accordion__body">
+          <p>They are the fixed headings of a page, always in the same order.</p>
+          </div>
+          </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 2, one page of the manual. -->
+<section class="ds-view" id="page">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">manual</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#search">1 commands</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">chronoskin(1)</li>
+  </ol>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">chronoskin(1)</h1>
+      <p class="ds-page-header__text">Take, list, restore and thin snapshots of a directory.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#feedback">report an error</a></div>
+  </header>
+
+  <div class="ds-cols ds-cols--rail">
+    <div class="ds-col">
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">Note:</span> this page describes 3.2. Run <code>chronoskin --version</code> to see which one you have.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Removed:</span> <code>--force-prune</code> is gone since 3.0. A script that still passes it stops with exit status 2.</p>
+      </div>
+      <article class="ds-prose ds-prose--man" data-component="typography">
+        <h1>chronoskin</h1>
+        <p>Keep dated snapshots of a directory as plain files.</p>
+        <h2>Synopsis</h2>
+<pre class="ds-code">chronoskin [-c file] [-q] verb [options] [arguments]</pre>
+        <h2>Description</h2>
+        <p><strong>chronoskin</strong> copies a source directory into a store. Each run of <code>take</code> makes one snapshot, a directory named by date and time. A file that has not changed since the last snapshot is linked, not copied, so a snapshot costs only what changed.</p>
+        <p>A snapshot is an ordinary directory. You can read it with any program, and <code>restore</code> is only a careful copy.</p>
+        <h2>Options</h2>
+        <h3>-c file, --config file</h3>
+        <p>Read settings from <em>file</em> instead of <code>~/.config/chronoskin.conf</code>.</p>
+        <h3>-n, --dry-run</h3>
+        <p>Print what would be done and change nothing.</p>
+        <h3>-q, --quiet</h3>
+        <p>Print errors only.</p>
+        <h2>Exit status</h2>
+        <ul>
+          <li>0 when the verb finished.</li>
+          <li>1 when some files could not be read; the snapshot is kept and marked partial.</li>
+          <li>2 when the command line or the configuration is wrong.</li>
+        </ul>
+      </article>
+      <h2 class="ds-section__title">see also</h2>
+      <ul class="ds-links" data-component="links">
+        <li><a class="ds-link" href="#page">chronoskin-take(1)</a></li>
+        <li><a class="ds-link is-visited" href="#page">chronoskin.conf(5)</a></li>
+        <li><a class="ds-link is-hover" href="#page">chronoskin-keep(5)</a></li>
+        <li><a class="ds-link is-active" href="#page">chronoskin-prune(8)</a></li>
+      </ul>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link" href="#home">&lt; index</a></li>
+        <li><span class="ds-pagination__link is-current">1</span></li>
+        <li><a class="ds-pagination__link" href="#page">2</a></li>
+        <li><a class="ds-pagination__link" href="#page">3</a></li>
+        <li><a class="ds-pagination__link" href="#page">14</a></li>
+        <li><a class="ds-pagination__link" href="#page">chronoskin-take(1) &gt;</a></li>
+        <li class="ds-pagination__note">page 1 of 14</li>
+      </ul>
+    </div>
+    <aside class="ds-sidebar" data-component="sidebar">
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">on this page</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#page">name</a></li>
+          <li><a class="ds-sidebar__link" href="#page">synopsis</a></li>
+          <li><a class="ds-sidebar__link" href="#page">description</a></li>
+          <li><a class="ds-sidebar__link" href="#page">options</a><span class="ds-sidebar__count">18</span></li>
+          <li><a class="ds-sidebar__link" href="#page">exit status</a><span class="ds-sidebar__count">3</span></li>
+          <li><a class="ds-sidebar__link" href="#page">see also</a><span class="ds-sidebar__count">4</span></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">this page</h2>
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge ds-badge--success">stable</span>
+          <span class="ds-badge ds-badge--warning">2 deprecated</span>
+          <span class="ds-badge ds-badge--danger">1 removed</span>
+          <span class="ds-badge ds-badge--tag">commands</span>
+          <span class="ds-badge">18</span>
+        </div>
+        <p class="ds-sidebar__text">Changed 2026-09-28 for 3.2. Checked against the program on every release.</p>
+      </div>
+      <div class="ds-sidebar__block">
+        <h2 class="ds-sidebar__title">other versions</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#page">3.2</a><span class="ds-sidebar__count">now</span></li>
+          <li><a class="ds-sidebar__link" href="#page">3.1</a><span class="ds-sidebar__count">2025</span></li>
+          <li><a class="ds-sidebar__link" href="#page">2.9</a><span class="ds-sidebar__count">2023</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 3, search: the result of apropos, by section. -->
+<section class="ds-view" id="search">
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">search</h1>
+      <p class="ds-page-header__text">Five pages mention "keep". Pick a section to narrow it.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#home">every page</a></div>
+  </header>
+  <p class="ds-prompt"><span class="ds-prompt__sign">$</span> apropos keep<span class="ds-cursor">&nbsp;</span></p>
+
+  <div class="ds-cols ds-cols--rail">
+    <div class="ds-col">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><span class="ds-tabs__tab is-current">all 5</span></li>
+        <li><a class="ds-tabs__tab" href="#search">commands 2</a></li>
+        <li><a class="ds-tabs__tab" href="#search">file formats 2</a></li>
+        <li><a class="ds-tabs__tab" href="#search">concepts 0</a></li>
+        <li><a class="ds-tabs__tab" href="#search">administration 1</a></li>
+      </ul>
+      <div class="ds-tabs__body">
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__date">section 5</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#page">chronoskin-keep(5)</a>
+              <p class="ds-list__excerpt">The grammar of a <span class="ds-list__hit">keep</span> rule: how many snapshots of each age stay in the store.</p>
+              <p class="ds-list__meta">12 matches, first under <span class="ds-list__where">Description</span></p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">section 8</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#page">chronoskin-prune(8)</a>
+              <p class="ds-list__excerpt">Thin old snapshots. Reads the <span class="ds-list__hit">keep</span> rules and removes what none of them holds on to.</p>
+              <p class="ds-list__meta">7 matches, first under <span class="ds-list__where">Synopsis</span></p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">section 5</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#page">chronoskin.conf(5)</a>
+              <p class="ds-list__excerpt">The setting <code>keep</code> takes one rule per line; the default is to <span class="ds-list__hit">keep</span> everything.</p>
+              <p class="ds-list__meta">3 matches, first under <span class="ds-list__where">Settings</span></p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">section 1</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#page">chronoskin(1)</a>
+              <p class="ds-list__excerpt">Passing <code>--keep</code> on the command line overrides the file for one run.</p>
+              <p class="ds-list__meta">1 match, under <span class="ds-list__where">Options</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="ds-section__title">7 concepts</h2>
+      <div class="ds-empty" data-component="empty">
+        <p class="ds-empty__text">No page in section 7 mentions "keep". The concept is explained under "retention".</p>
+        <a class="ds-button ds-button--secondary" href="#search">search for retention</a>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">how search works</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">It looks through the name line and the text of every page, as <code>apropos</code> and <code>man -K</code> do. Whole words only; no stemming.</p>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">try also</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text"><a class="ds-link" href="#search">retention</a>, <a class="ds-link" href="#search">prune</a>, <a class="ds-link" href="#search">schedule</a>, <a class="ds-link" href="#search">hard link</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 4, report an error in a page: the form, its buttons, the question before discarding. -->
+<section class="ds-view" id="feedback">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#home">manual</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">report an error</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">report an error</h1>
+      <p class="ds-page-header__text">A wrong default, a missing option, a sentence nobody can follow.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#page">back to the page</a></div>
+  </header>
+
+  <div class="ds-cols ds-cols--form">
+    <form class="ds-form" data-component="form" action="#feedback">
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-page">page:</label>
+        <div class="ds-form__field">
+          <select class="ds-form__input ds-form__input--auto" id="f-page"><option>chronoskin(1)</option><option>chronoskin-take(1)</option><option>chronoskin.conf(5)</option></select>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-where">heading:</label>
+        <div class="ds-form__field">
+          <input class="ds-form__input is-invalid" id="f-where" type="text" value="Optoins">
+          <p class="ds-form__error">error: chronoskin(1) has no heading "Optoins".</p>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-what">what is wrong:</label>
+        <div class="ds-form__field">
+          <textarea class="ds-form__input" id="f-what" rows="4">-q is said to print errors only, but it also prints the summary line.</textarea>
+          <p class="ds-form__hint">Quote the sentence if you can. Plain text.</p>
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <label class="ds-form__label" for="f-mail">your address:</label>
+        <div class="ds-form__field">
+          <input class="ds-form__input" id="f-mail" type="text" value="reader@example.org">
+        </div>
+      </div>
+      <div class="ds-form__row">
+        <span class="ds-form__label">reply:</span>
+        <div class="ds-form__field">
+          <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> write to me when the page is corrected</label>
+          <label class="ds-switch"><span class="ds-switch__label">attach the version of my program</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label>
+        </div>
+      </div>
+      <div class="ds-form__actions" data-component="buttons">
+        <button class="ds-button" type="button">send report</button>
+        <button class="ds-button ds-button--secondary" type="button">preview</button>
+        <button class="ds-button ds-button--danger" type="button">discard</button>
+        <button class="ds-button" type="button" disabled>attach output</button>
+      </div>
+    </form>
+    <div class="ds-stack">
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-1">
+          <h2 class="ds-dialog__title" id="dlg-1">discard this report?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">What you wrote about chronoskin(1) is not saved anywhere else.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">discard</button>
+              <button class="ds-button ds-button--secondary" type="button">keep writing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">what happens next</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">A report becomes a ticket against the page. Corrections ship with the next release and appear here the same day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__text">chronoskin 3.2.0</p>
+  <p class="ds-footer__text">2026-10-07 | <a class="ds-footer__link" href="#home">index</a> | <a class="ds-footer__link" href="#feedback">report an error</a></p>
+  <p class="ds-footer__text">CHRONOSKIN(7)</p>
+</footer>
+</div>
+
+</div>
+</body>
+</html>

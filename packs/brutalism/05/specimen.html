@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin(1): the manual. Web brutalism, 2014 to 2019: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__head">
+    <a class="ds-brand" data-component="brand" href="#manual"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17"/><line x1="3.5" y1="20.5" x2="20.5" y2="3.5"/></svg></span><span class="ds-brand__name">chronoskin<span class="ds-brand__section">(1)</span></span></a>
+    <p class="ds-nav__title">General Commands Manual</p>
+    <p class="ds-nav__version">version 2.4.1, 14 March 2017</p>
+  </div>
+  <ul class="ds-nav__bar">
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#manual">manual</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#reference">options</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#changelog">changelog</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#download">download</a></li>
+    <li class="ds-nav__item ds-nav__item--right"><a class="ds-nav__link" href="#report">report a mistake</a></li>
+  </ul>
+</header>
+
+<div class="ds-page__frame">
+
+  <!-- View 1, the home page: the first page of the manual. Name, synopsis, status, chapters, news. -->
+  <section class="ds-view ds-view--home" id="manual">
+    <div class="ds-page__columns">
+      <aside class="ds-sidebar" data-component="sidebar">
+        <div class="ds-sidebar__fixed">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Search the manual</h2>
+            <form class="ds-sidebar__search" action="#">
+              <input class="ds-form__input" type="text" value="weekday" aria-label="Search the manual">
+              <button class="ds-button ds-button--secondary" type="button">Find</button>
+            </form>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Contents</h2>
+            <ol class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link is-current" href="#manual">Name and synopsis</a></li>
+              <li><a class="ds-sidebar__link is-visited" href="#manual">The timetable file</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Options</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Output formats</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Exit status</a></li>
+              <li><a class="ds-sidebar__link is-hover" href="#changelog">Changelog</a></li>
+              <li><a class="ds-sidebar__link" href="#download">Download and build</a></li>
+              <li><a class="ds-sidebar__link" href="#report">Reporting mistakes</a></li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Elsewhere</h2>
+            <ul class="ds-sidebar__list ds-sidebar__list--plain">
+              <li><a class="ds-sidebar__link" href="#download">source/</a></li>
+              <li><a class="ds-sidebar__link" href="#report">mailing list/</a></li>
+              <li><a class="ds-sidebar__link" href="#changelog">releases.txt</a> <span class="ds-sidebar__count">(31)</span></li>
+              <li><a class="ds-sidebar__link" href="#manual">this page as text</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <p class="ds-sidebar__text">One page of HTML per chapter, written by hand. No scripts, no fonts to fetch, nothing that moves.</p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="ds-page__main">
+        <section class="ds-hero" data-component="hero">
+          <h1 class="ds-hero__title">chronoskin prints a timetable from a text file.</h1>
+          <p class="ds-hero__lead">You keep one plain file of times and what happens at them. It gives you back a week, a month or a single day, as text you can read, print or pipe.</p>
+          <pre class="ds-code ds-hero__synopsis">chronoskin [-w | -m | -d date] [-f format] [-o file] timetable.txt
+chronoskin -c timetable.txt</pre>
+          <div class="ds-hero__actions">
+            <a class="ds-button" href="#download">Download 2.4.1</a>
+            <a class="ds-button ds-button--secondary" href="#reference">Read the options</a>
+            <a class="ds-link" href="#changelog">what changed in 2.4.1</a>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="stats">
+          <h2 class="ds-page__label">Status</h2>
+          <div class="ds-page__content">
+            <ul class="ds-stats">
+              <li class="ds-stat"><span class="ds-stat__label">releases since 2014</span><span class="ds-stat__value">31</span></li>
+              <li class="ds-stat"><span class="ds-stat__label">lines of C</span><span class="ds-stat__value">4,180</span></li>
+              <li class="ds-stat"><span class="ds-stat__label">size of the binary, KB</span><span class="ds-stat__value">212</span></li>
+              <li class="ds-stat"><span class="ds-stat__label">libraries it needs</span><span class="ds-stat__value">0</span></li>
+            </ul>
+            <div class="ds-progress" data-component="progress">
+              <p class="ds-progress__label"><span>Chapters rewritten for 2.4</span> <span>6 of 8</span></p>
+              <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--75"></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="grid">
+          <h2 class="ds-page__label">Chapters</h2>
+          <div class="ds-page__content">
+            <div class="ds-grid">
+              <div class="ds-grid__cell">
+                <p class="ds-grid__number">chapter 2</p>
+                <h3 class="ds-grid__title">The file</h3>
+                <p class="ds-grid__text">One line, one event. How times, days and repeats are written. <a class="ds-link" href="#manual">Read</a></p>
+              </div>
+              <div class="ds-grid__cell ds-grid__cell--2">
+                <p class="ds-grid__number">chapter 3</p>
+                <h3 class="ds-grid__title">Options</h3>
+                <p class="ds-grid__text">All fourteen flags in one table, with defaults. <a class="ds-link" href="#reference">Read</a></p>
+              </div>
+              <div class="ds-grid__cell ds-grid__cell--3">
+                <p class="ds-grid__number">chapter 6</p>
+                <h3 class="ds-grid__title">Changelog</h3>
+                <p class="ds-grid__text">Every release since 0.1, newest first. <a class="ds-link" href="#changelog">Read</a></p>
+              </div>
+              <div class="ds-grid__cell ds-grid__cell--4">
+                <p class="ds-grid__number">chapter 7</p>
+                <h3 class="ds-grid__title">Download</h3>
+                <p class="ds-grid__text">Source, four binaries and their checksums. <a class="ds-link" href="#download">Get it</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="list">
+          <h2 class="ds-page__label">News</h2>
+          <div class="ds-page__content">
+            <ul class="ds-list">
+              <li class="ds-list__item">
+                <span class="ds-list__date">2017-03-14</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title" href="#changelog">2.4.1 is out</a> <span class="ds-badge ds-badge--alt">new</span>
+                  <p class="ds-list__excerpt">Fixes the week that lost an hour when the clocks went forward. Everyone on 2.4.0 should upgrade.</p>
+                  <p class="ds-list__meta">release | 3 fixes | 212 KB</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__date">2017-02-02</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title" href="#reference">The -f option now takes a file</a>
+                  <p class="ds-list__excerpt">A format can live beside the timetable instead of on the command line. The old form still works.</p>
+                  <p class="ds-list__meta">manual | chapter 4 rewritten</p>
+                </div>
+              </li>
+              <li class="ds-list__item">
+                <span class="ds-list__date">2016-11-20</span>
+                <div class="ds-list__main">
+                  <a class="ds-list__title is-visited" href="#download">Binaries are now built for ARM</a>
+                  <p class="ds-list__excerpt">It runs on the small board in the hallway that drives the printer.</p>
+                  <p class="ds-list__meta">download | 1 new file</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last">
+          <h2 class="ds-page__label">This release</h2>
+          <div class="ds-page__content ds-page__pair">
+            <div class="ds-panel" data-component="panel">
+              <h3 class="ds-panel__title">chronoskin-2.4.1.tar.gz</h3>
+              <div class="ds-panel__body">
+                <p class="ds-panel__text">Source, 88 KB. Builds with any C compiler and <code>make</code>; no configure step.</p>
+                <p class="ds-panel__text"><a class="ds-link" href="#download">All files and checksums</a></p>
+              </div>
+            </div>
+            <p class="ds-notice"><span class="ds-notice__title">Note.</span> 2.4.0 was withdrawn two days after it came out. If <code>chronoskin -V</code> prints 2.4.0, replace it.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </section>
+
+  <!-- View 2: one chapter of the manual. Path, page header, running text, tabs over the table of options. -->
+  <section class="ds-view" id="reference">
+    <div class="ds-page__columns">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__fixed">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">On this page</h2>
+            <ol class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link" href="#reference">How options are read</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">All options</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">See also</a></li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Contents</h2>
+            <ol class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link is-visited" href="#manual">Name and synopsis</a></li>
+              <li><a class="ds-sidebar__link is-visited" href="#manual">The timetable file</a></li>
+              <li><a class="ds-sidebar__link is-current" href="#reference">Options</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Output formats</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Exit status</a></li>
+              <li><a class="ds-sidebar__link" href="#changelog">Changelog</a></li>
+              <li><a class="ds-sidebar__link" href="#download">Download and build</a></li>
+              <li><a class="ds-sidebar__link" href="#report">Reporting mistakes</a></li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block" data-component="badge">
+            <h2 class="ds-sidebar__title">Marks</h2>
+            <ul class="ds-sidebar__list ds-sidebar__list--plain">
+              <li><span class="ds-badge">14</span> flags in all</li>
+              <li><span class="ds-badge ds-badge--success">stable</span> will not change</li>
+              <li><span class="ds-badge ds-badge--warning">new</span> may still change</li>
+              <li><span class="ds-badge ds-badge--danger">going</span> do not rely on it</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ds-page__main">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#manual">chronoskin(1)</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li><a class="ds-breadcrumb__link" href="#manual">manual</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li class="ds-breadcrumb__current">3 options</li>
+        </ol>
+
+        <div class="ds-page-header" data-component="page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Chapter 3. Options</h1>
+            <p class="ds-page-header__text">Fourteen flags, each one letter. All of them can be left out.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#reference">This chapter as text</a></div>
+        </div>
+
+        <section class="ds-page__section" data-component="typography">
+          <h2 class="ds-page__label">Reading</h2>
+          <div class="ds-page__content ds-prose">
+            <h1>How options are read</h1>
+            <p>Options come before the name of the timetable file and are read from left to right. When two of them disagree, the later one wins, so a shell alias can set your habits and the command line can still overrule them.</p>
+            <h2>Choosing the span</h2>
+            <p>With no option at all the program prints <strong>the current week</strong>, Monday first. Three flags choose something else, and only one of them may be given:</p>
+            <ul>
+              <li><code>-w</code> prints a week, which is the default.</li>
+              <li><code>-m</code> prints the whole month, one line a day.</li>
+              <li><code>-d 2017-03-14</code> prints that one day in full.</li>
+            </ul>
+            <h3>Dates</h3>
+            <p>A date is always year, month, day with hyphens. Nothing else is accepted, and a date that does not exist ends the run with status 2.</p>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="tabs">
+          <h2 class="ds-page__label">All options</h2>
+          <div class="ds-page__content">
+            <ul class="ds-tabs">
+              <li class="ds-tabs__item"><span class="ds-tabs__tab is-current" aria-current="true">all 14</span></li>
+              <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#reference">span</a></li>
+              <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#reference">output</a></li>
+              <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#reference">checking</a></li>
+            </ul>
+            <div class="ds-tabs__body">
+              <table class="ds-table" data-component="table">
+                <thead>
+                  <tr><th>Flag</th><th>What it does</th><th class="ds-table__extra">Default</th><th>State</th><th class="ds-table__num">Since</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="ds-table__code">-w</td><td>Print one week, Monday first.</td><td class="ds-table__extra">on</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">0.1</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__code">-m</td><td>Print one month, a line for each day.</td><td class="ds-table__extra">off</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">0.4</td></tr>
+                  <tr><td class="ds-table__code">-d date</td><td>Print a single day in full.</td><td class="ds-table__extra">today</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">0.4</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__code">-f format</td><td>Lay each line out as the format says. May name a file.</td><td class="ds-table__extra">%t  %e</td><td><span class="ds-badge ds-badge--warning">new</span></td><td class="ds-table__num">2.3</td></tr>
+                  <tr><td class="ds-table__code">-o file</td><td>Write to the file instead of standard output.</td><td class="ds-table__extra">none</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">1.0</td></tr>
+                  <tr class="ds-table__row--alt"><td class="ds-table__code">-c</td><td>Check the file and print nothing but its mistakes.</td><td class="ds-table__extra">off</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">1.2</td></tr>
+                  <tr><td class="ds-table__code">-x width</td><td>Wrap lines at the width. Use a pager instead.</td><td class="ds-table__extra">80</td><td><span class="ds-badge ds-badge--danger">going</span></td><td class="ds-table__num">0.2</td></tr>
+                </tbody>
+              </table>
+              <p class="ds-page__note">Showing 7 of 14. <span class="ds-badge ds-badge--tag">-x</span> goes in 3.0.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="links">
+          <h2 class="ds-page__label">See also</h2>
+          <div class="ds-page__content">
+            <ul class="ds-links">
+              <li><a class="ds-link" href="#reference">formats(5)</a></li>
+              <li><a class="ds-link is-visited" href="#manual">timetable(5)</a></li>
+              <li><a class="ds-link is-hover" href="#reference">exit-status(7)</a></li>
+              <li><a class="ds-link is-active" href="#changelog">changelog(7)</a></li>
+              <li><a class="ds-link ds-link--quiet" href="#report">report a mistake in this chapter</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <ul class="ds-pagination" data-component="pagination">
+          <li class="ds-pagination__prev"><a class="ds-pagination__link" href="#manual">&lt; 2 the file</a></li>
+          <li><a class="ds-pagination__link" href="#manual">1</a></li>
+          <li><a class="ds-pagination__link" href="#manual">2</a></li>
+          <li><span class="ds-pagination__link is-current" aria-current="page">3</span></li>
+          <li><a class="ds-pagination__link" href="#reference">4</a></li>
+          <li><a class="ds-pagination__link" href="#reference">5</a></li>
+          <li class="ds-pagination__next"><a class="ds-pagination__link" href="#reference">4 formats &gt;</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 3: the changelog. Releases as a grouped table, what is coming, and the empty state of the next release. -->
+  <section class="ds-view" id="changelog">
+    <div class="ds-page__columns">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__fixed">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">By series</h2>
+            <ul class="ds-sidebar__list ds-sidebar__list--plain">
+              <li><a class="ds-sidebar__link is-current" href="#changelog">2.x</a> <span class="ds-sidebar__count">(9)</span></li>
+              <li><a class="ds-sidebar__link" href="#changelog">1.x</a> <span class="ds-sidebar__count">(14)</span></li>
+              <li><a class="ds-sidebar__link" href="#changelog">0.x</a> <span class="ds-sidebar__count">(8)</span></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Contents</h2>
+            <ol class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link" href="#manual">Name and synopsis</a></li>
+              <li><a class="ds-sidebar__link" href="#manual">The timetable file</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Options</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Output formats</a></li>
+              <li><a class="ds-sidebar__link" href="#reference">Exit status</a></li>
+              <li><a class="ds-sidebar__link is-current" href="#changelog">Changelog</a></li>
+              <li><a class="ds-sidebar__link" href="#download">Download and build</a></li>
+              <li><a class="ds-sidebar__link" href="#report">Reporting mistakes</a></li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block">
+            <p class="ds-sidebar__text">The same list is kept in the source as <a class="ds-sidebar__link" href="#download">CHANGES</a>, one line a change.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ds-page__main">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#manual">chronoskin(1)</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li><a class="ds-breadcrumb__link" href="#manual">manual</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li class="ds-breadcrumb__current">6 changelog</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Chapter 6. Changelog</h1>
+            <p class="ds-page-header__text">Every release of the 2.x series, newest first.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button" href="#download">Download 2.4.1</a></div>
+        </div>
+
+        <section class="ds-page__section">
+          <h2 class="ds-page__label">Releases</h2>
+          <div class="ds-page__content">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Version</th><th>Date</th><th>What changed</th><th class="ds-table__extra">State</th><th class="ds-table__num">Lines</th></tr>
+              </thead>
+              <tbody>
+                <tr class="ds-table__group"><td colspan="5">2.4, daylight saving</td></tr>
+                <tr><td class="ds-table__code">2.4.1</td><td class="ds-table__date">2017-03-14</td><td>A week that crosses a clock change keeps all its hours. <a class="ds-link" href="#download">Files</a></td><td class="ds-table__extra"><span class="ds-badge ds-badge--success">current</span></td><td class="ds-table__num">+38</td></tr>
+                <tr class="ds-table__row--alt"><td class="ds-table__code">2.4.0</td><td class="ds-table__date">2017-03-12</td><td>Time zones are read from the file. Lost an hour in spring.</td><td class="ds-table__extra"><span class="ds-badge ds-badge--danger">withdrawn</span></td><td class="ds-table__num">+412</td></tr>
+                <tr class="ds-table__group"><td colspan="5">2.3, formats</td></tr>
+                <tr><td class="ds-table__code">2.3.2</td><td class="ds-table__date">2017-02-02</td><td>The <span class="ds-badge ds-badge--tag">-f</span> option takes a file as well as a string.</td><td class="ds-table__extra"><span class="ds-badge ds-badge--success">kept</span></td><td class="ds-table__num">+96</td></tr>
+                <tr class="ds-table__row--alt"><td class="ds-table__code">2.3.1</td><td class="ds-table__date">2016-12-09</td><td>An empty line in a format no longer ends it.</td><td class="ds-table__extra"><span class="ds-badge ds-badge--success">kept</span></td><td class="ds-table__num">+7</td></tr>
+                <tr><td class="ds-table__code">2.3.0</td><td class="ds-table__date">2016-11-20</td><td>Formats. ARM binaries. The <span class="ds-badge ds-badge--tag">-x</span> option is on its way out.</td><td class="ds-table__extra"><span class="ds-badge ds-badge--warning">old</span></td><td class="ds-table__num">+530</td></tr>
+              </tbody>
+            </table>
+            <ul class="ds-pagination">
+              <li class="ds-pagination__prev"><span class="ds-pagination__link is-disabled">&lt; newer</span></li>
+              <li><span class="ds-pagination__link is-current" aria-current="page">1</span></li>
+              <li><a class="ds-pagination__link" href="#changelog">2</a></li>
+              <li><a class="ds-pagination__link" href="#changelog">3</a></li>
+              <li class="ds-pagination__next"><a class="ds-pagination__link" href="#changelog">older &gt;</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ds-page__section">
+          <h2 class="ds-page__label">Unreleased</h2>
+          <div class="ds-page__content">
+            <div class="ds-empty" data-component="empty">
+              <p class="ds-empty__text">Nothing has been changed since 2.4.1. When something is, it is listed here before it is released.</p>
+              <a class="ds-button ds-button--secondary" href="#report">Report a mistake</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last">
+          <h2 class="ds-page__label">Upgrading</h2>
+          <div class="ds-page__content ds-page__pair">
+            <div class="ds-prose">
+              <p>Releases within a series read the same files and take the same options. Between series, read the first entry of the new one before you replace the binary.</p>
+              <p>To see what you have, run <code>chronoskin -V</code>.</p>
+            </div>
+            <div class="ds-panel">
+              <h3 class="ds-panel__title">From 1.x to 2.x</h3>
+              <div class="ds-panel__body">
+                <p class="ds-panel__text">Weeks start on Monday unless the file says otherwise. Add <code>week sunday</code> as its first line to keep the old behaviour.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 4: download. The files of the current release, how to check them, how to build. -->
+  <section class="ds-view" id="download">
+    <div class="ds-page__columns">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__fixed">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">On this page</h2>
+            <ol class="ds-sidebar__list">
+              <li><a class="ds-sidebar__link" href="#download">Files</a></li>
+              <li><a class="ds-sidebar__link" href="#download">Checking a file</a></li>
+              <li><a class="ds-sidebar__link" href="#download">Building</a></li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Older releases</h2>
+            <ul class="ds-sidebar__list ds-sidebar__list--plain">
+              <li><a class="ds-sidebar__link" href="#changelog">2.3.2</a> <span class="ds-sidebar__count">2017-02-02</span></li>
+              <li><a class="ds-sidebar__link" href="#changelog">2.3.1</a> <span class="ds-sidebar__count">2016-12-09</span></li>
+              <li><a class="ds-sidebar__link is-visited" href="#changelog">1.9.4</a> <span class="ds-sidebar__count">2016-05-30</span></li>
+              <li><a class="ds-sidebar__link" href="#changelog">all 31</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <p class="ds-sidebar__text">Everything is under the ISC licence. Copy it, change it, ship it.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ds-page__main">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#manual">chronoskin(1)</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li><a class="ds-breadcrumb__link" href="#manual">manual</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li class="ds-breadcrumb__current">7 download</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Chapter 7. Download and build</h1>
+            <p class="ds-page-header__text">Release 2.4.1 of 14 March 2017: the source and four binaries.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button" href="#download">chronoskin-2.4.1.tar.gz</a></div>
+        </div>
+
+        <section class="ds-page__section">
+          <h2 class="ds-page__label">Files</h2>
+          <div class="ds-page__content">
+            <table class="ds-table">
+              <thead>
+                <tr><th>File</th><th>For</th><th class="ds-table__extra">SHA-256, first 16</th><th class="ds-table__num">KB</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><a class="ds-link" href="#download">chronoskin-2.4.1.tar.gz</a></td><td>source</td><td class="ds-table__extra ds-table__code">9c41e07ab35d2f18</td><td class="ds-table__num">88</td></tr>
+                <tr class="ds-table__row--alt"><td><a class="ds-link" href="#download">chronoskin-2.4.1-linux-amd64</a></td><td>Linux, 64 bit</td><td class="ds-table__extra ds-table__code">03b7d1c95e6a40f2</td><td class="ds-table__num">212</td></tr>
+                <tr><td><a class="ds-link" href="#download">chronoskin-2.4.1-linux-arm</a></td><td>Linux, ARM</td><td class="ds-table__extra ds-table__code">e58a20c6714bd93f</td><td class="ds-table__num">196</td></tr>
+                <tr class="ds-table__row--alt"><td><a class="ds-link is-visited" href="#download">chronoskin-2.4.1-openbsd-amd64</a></td><td>OpenBSD</td><td class="ds-table__extra ds-table__code">71fd08e2a9c3b654</td><td class="ds-table__num">204</td></tr>
+                <tr><td><a class="ds-link" href="#download">chronoskin-2.4.1-macos</a></td><td>macOS 10.9 on</td><td class="ds-table__extra ds-table__code">b26c94f0d17e83a5</td><td class="ds-table__num">231</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="ds-page__section">
+          <h2 class="ds-page__label">Checking a file</h2>
+          <div class="ds-page__content ds-page__pair">
+            <div class="ds-prose">
+              <p>Every file is listed in <code>SHA256</code>, which is signed. Fetch both, then:</p>
+              <pre class="ds-code">sha256sum -c SHA256
+signify -V -p chronoskin.pub -m SHA256</pre>
+            </div>
+            <p class="ds-notice"><span class="ds-notice__title">Mirrors.</span> The two mirrors copy this directory once a night. A release less than a day old may not be on them yet.</p>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last">
+          <h2 class="ds-page__label">Building</h2>
+          <div class="ds-page__content ds-page__pair">
+            <div class="ds-prose">
+              <p>There is no configure step. Unpack, build, and copy one file to where you keep programs:</p>
+              <pre class="ds-code">tar xzf chronoskin-2.4.1.tar.gz
+cd chronoskin-2.4.1
+make &amp;&amp; make test
+cp chronoskin ~/bin/</pre>
+            </div>
+            <div class="ds-panel">
+              <h3 class="ds-panel__title">What it needs</h3>
+              <div class="ds-panel__body">
+                <p class="ds-panel__text">A C compiler from this century and <code>make</code>. The tests also want <code>diff</code>.</p>
+                <p class="ds-panel__text"><a class="ds-link" href="#report">It did not build</a></p>
+                <div class="ds-accordion" data-component="accordion">
+                  <details class="ds-accordion__item" open>
+                    <summary class="ds-accordion__title">make: cc: not found</summary>
+                    <p class="ds-accordion__body">No compiler is installed. Install one, or set <code>CC</code> to the one you have.</p>
+                  </details>
+                  <details class="ds-accordion__item">
+                    <summary class="ds-accordion__title">One test fails on dates</summary>
+                    <p class="ds-accordion__body">Your clock is in a zone that changes this week. Run the tests again with <code>TZ=UTC</code>.</p>
+                  </details>
+                  <details class="ds-accordion__item">
+                    <summary class="ds-accordion__title">Permission denied on copy</summary>
+                    <p class="ds-accordion__body">Copy the binary to a directory of your own; nothing needs root.</p>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 5: report a mistake. The two answers the form can give, the form with its error, and the confirmation for throwing a draft away. -->
+  <section class="ds-view" id="report">
+    <div class="ds-page__columns">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar__fixed">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Before you write</h2>
+            <ol class="ds-sidebar__list">
+              <li>Run <a class="ds-sidebar__link" href="#reference">chronoskin -c</a> on your file.</li>
+              <li>Check the <a class="ds-sidebar__link" href="#changelog">changelog</a>.</li>
+              <li>Find the smallest file that shows it.</li>
+            </ol>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Open reports</h2>
+            <ul class="ds-sidebar__list ds-sidebar__list--plain">
+              <li><a class="ds-sidebar__link" href="#report">-m skips 29 February</a></li>
+              <li><a class="ds-sidebar__link" href="#report">chapter 4: wrong example</a></li>
+              <li><a class="ds-sidebar__link is-visited" href="#report">tabs in a format</a></li>
+              <li><a class="ds-sidebar__link" href="#report">all 6</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <p class="ds-sidebar__text">Reports are read by one person, usually within a week.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ds-page__main">
+        <ol class="ds-breadcrumb">
+          <li><a class="ds-breadcrumb__link" href="#manual">chronoskin(1)</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li><a class="ds-breadcrumb__link" href="#manual">manual</a></li>
+          <li class="ds-breadcrumb__sep" aria-hidden="true">/</li>
+          <li class="ds-breadcrumb__current">8 reporting mistakes</li>
+        </ol>
+
+        <div class="ds-page-header">
+          <div class="ds-page-header__main">
+            <h1 class="ds-page-header__title">Chapter 8. Reporting mistakes</h1>
+            <p class="ds-page-header__text">In the program or in this manual. Both count.</p>
+          </div>
+          <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#report">See open reports</a></div>
+        </div>
+
+        <section class="ds-page__section" data-component="notice">
+          <h2 class="ds-page__label">Answers</h2>
+          <div class="ds-page__content ds-notices">
+            <p class="ds-notice"><span class="ds-notice__title">Draft kept.</span> What you typed is stored in this browser until you send it or throw it away.</p>
+            <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not sent.</span> One field below needs another look. Nothing has left this page.</p>
+          </div>
+        </section>
+
+        <section class="ds-page__section" data-component="form">
+          <h2 class="ds-page__label">The report</h2>
+          <div class="ds-page__content">
+            <form class="ds-form" action="#">
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="r-where">Where</label>
+                <div class="ds-form__field">
+                  <select class="ds-form__input ds-form__input--auto" id="r-where">
+                    <option>Chapter 3, options</option>
+                    <option>Chapter 4, output formats</option>
+                    <option>The program itself</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="r-version">Version <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__text" role="tooltip">The three numbers that chronoskin -V prints, with the dots.</span></span></label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input is-invalid" id="r-version" type="text" value="the latest">
+                  <p class="ds-form__error">Give the number that chronoskin -V prints, such as 2.4.1.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="r-mail">Reply to</label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input" id="r-mail" type="text" value="ines@example.org">
+                  <p class="ds-form__hint">Used once, to answer you. Never published.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="r-text">What is wrong</label>
+                <div class="ds-form__field">
+                  <textarea class="ds-form__input ds-form__input--wide" id="r-text" rows="6">The table says -x wraps at 80 by default. Here it wraps at 72.</textarea>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label"></span>
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Add this to the public list of open reports</label>
+              </div>
+              <div class="ds-form__actions ds-buttons" data-component="buttons">
+                <button class="ds-button" type="button">Send report</button>
+                <button class="ds-button ds-button--secondary" type="button">Preview</button>
+                <button class="ds-button ds-button--danger" type="button">Throw away</button>
+                <button class="ds-button is-disabled" type="button" disabled>Attach a file</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="ds-page__section ds-page__section--last" data-component="dialog">
+          <h2 class="ds-page__label">Throwing away</h2>
+          <div class="ds-page__content">
+            <div class="ds-dialog__backdrop">
+              <div class="ds-dialog" role="dialog" aria-labelledby="dlg-title">
+                <h3 class="ds-dialog__title" id="dlg-title">Throw this draft away?</h3>
+                <div class="ds-dialog__body">
+                  <p class="ds-dialog__text">The report you have typed will be removed from this browser. It was never sent, so nothing else changes.</p>
+                  <div class="ds-dialog__actions">
+                    <button class="ds-button ds-button--danger" type="button">Throw away</button>
+                    <a class="ds-button ds-button--secondary" href="#report">Keep writing</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__row">
+    <p class="ds-footer__text">chronoskin 2.4.1</p>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#manual">manual</a></li>
+      <li><a class="ds-footer__link" href="#reference">options</a></li>
+      <li><a class="ds-footer__link" href="#changelog">changelog</a></li>
+      <li><a class="ds-footer__link" href="#download">download</a></li>
+      <li><a class="ds-footer__link" href="#report">report a mistake</a></li>
+    </ul>
+    <p class="ds-footer__text ds-footer__text--right">14 March 2017, written by hand</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: dark developer tools issue tracker specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__head">
+    <a class="ds-brand" data-component="brand" href="#issues">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <span class="ds-kbd">G I</span>
+  </div>
+  <p class="ds-nav__group">Workspace</p>
+  <ul class="ds-nav__links ds-nav__links--main">
+    <li><a class="ds-nav__link" href="#issues"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8l2 2 3-4"/></svg><span class="ds-nav__label">Issues</span><span class="ds-badge ds-badge--quiet">23</span></a></li>
+    <li><a class="ds-nav__link" href="#deploys"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 2l5.5 10h-11z"/></svg><span class="ds-nav__label">Deployments</span></a></li>
+    <li><a class="ds-nav__link" href="#settings"><svg class="ds-nav__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5h12 M2 11h12"/><circle cx="6" cy="5" r="1.8" fill="currentColor"/><circle cx="10" cy="11" r="1.8" fill="currentColor"/></svg><span class="ds-nav__label">Settings</span></a></li>
+  </ul>
+  <p class="ds-nav__group">Teams</p>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#issues"><span class="ds-dot ds-dot--accent"></span><span class="ds-nav__label">Web</span><span class="ds-mono">WEB</span></a></li>
+    <li><a class="ds-nav__link" href="#issues"><span class="ds-dot ds-dot--success"></span><span class="ds-nav__label">Platform</span><span class="ds-mono">PLT</span></a></li>
+    <li><a class="ds-nav__link" href="#issues"><span class="ds-dot ds-dot--warning"></span><span class="ds-nav__label">Mobile</span><span class="ds-mono">MOB</span></a></li>
+  </ul>
+  <div class="ds-nav__foot">
+    <span class="ds-avatar" aria-hidden="true">RV</span>
+    <span><span class="ds-nav__who">Runa Vestergaard</span>Northwind, admin</span>
+  </div>
+</header>
+
+<div class="ds-topbar">
+  <span class="ds-topbar__where">northwind / web</span>
+  <a class="ds-search" href="#issues" aria-label="Search or run a command">
+    <svg class="ds-search__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+    <span class="ds-search__text">Search issues or run a command</span>
+    <span class="ds-kbd">Ctrl K</span>
+  </a>
+  <div class="ds-topbar__actions">
+    <a class="ds-button ds-button--secondary ds-button--small" href="#deploys">Deploy</a>
+    <a class="ds-button ds-button--small" href="#issue">New issue</a>
+    <details class="ds-menu"><summary class="ds-menu__button"><span class="ds-avatar" aria-hidden="true">RV</span><span class="ds-menu__label">Runa</span></summary><ul class="ds-menu__list"><li class="ds-menu__title">Workspace</li><li><a class="ds-menu__item ds-menu__item--view" href="#issues">Issues</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#deploys">Deployments</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#settings">Settings</a></li><li class="ds-menu__title ds-menu__title--rule">Teams</li><li><a class="ds-menu__item" href="#issues">Web <span class="ds-menu__hint">WEB</span></a></li><li><a class="ds-menu__item" href="#issues">Platform <span class="ds-menu__hint">PLT</span></a></li><li><a class="ds-menu__item" href="#issues">Mobile <span class="ds-menu__hint">MOB</span></a></li><li class="ds-menu__title ds-menu__title--rule">Runa Vestergaard, admin</li><li><a class="ds-menu__item" href="#settings">Shortcuts</a></li><li><a class="ds-menu__item" href="#issues">Sign out</a></li></ul></details>
+  </div>
+</div>
+
+<section class="ds-view ds-view--home" id="issues">
+  <div class="ds-content">
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__copy">
+        <span class="ds-eyebrow ds-eyebrow--accent">Cycle 14 / ends Friday</span>
+        <h1 class="ds-hero__title">9 of 23 issues done, 3 days left</h1>
+        <p class="ds-hero__lead">The team closes about four issues a day, so this cycle lands on time if nothing new is pulled in.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button" href="#issue">New issue</a>
+          <a class="ds-button ds-button--secondary is-hover" href="#deploys">See what shipped</a>
+        </div>
+      </div>
+      <div class="ds-hero__art" aria-hidden="true">
+        <div class="ds-meter">
+          <span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--done"></span><span class="ds-meter__cell ds-meter__cell--doing"></span><span class="ds-meter__cell ds-meter__cell--doing"></span><span class="ds-meter__cell ds-meter__cell--doing"></span>
+          <span class="ds-meter__cell ds-meter__cell--doing"></span><span class="ds-meter__cell ds-meter__cell--doing"></span><span class="ds-meter__cell ds-meter__cell--doing"></span><span class="ds-meter__cell ds-meter__cell--late"></span><span class="ds-meter__cell ds-meter__cell--late"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span><span class="ds-meter__cell"></span>
+        </div>
+        <div class="ds-meter__key"><span class="ds-mono">9 done</span><span class="ds-mono">6 in progress</span><span class="ds-mono">2 blocked</span><span class="ds-mono">6 todo</span></div>
+      </div>
+    </div>
+
+    <ul class="ds-stat" data-component="stats">
+      <li class="ds-stat__item"><span class="ds-stat__label"><span class="ds-dot ds-dot--ring"></span>Open issues</span><span class="ds-stat__figure">14</span><span class="ds-stat__delta">3 fewer than Monday</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__label"><span class="ds-dot ds-dot--warning"></span>In review</span><span class="ds-stat__figure">5</span><span class="ds-stat__delta">2 waiting on you</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__label"><span class="ds-dot ds-dot--success"></span>Deployed this week</span><span class="ds-stat__figure">31</span><span class="ds-stat__delta">all healthy</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__label"><span class="ds-dot ds-dot--danger"></span>Median time to close</span><span class="ds-stat__figure">2.4 d</span><span class="ds-stat__delta ds-stat__delta--down">0.3 d slower</span></li>
+    </ul>
+
+    <div class="ds-cols">
+      <section class="ds-panel" data-component="panel">
+        <div class="ds-panel__head">
+          <h2 class="ds-panel__title">Active issues</h2>
+          <a class="ds-link ds-link--more" href="#issues">All 23</a>
+        </div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__group"><span class="ds-dot ds-dot--warning"></span>In progress <span class="ds-mono">3</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--warning"></span><span class="ds-mono ds-list__id">WEB-142</span><a class="ds-list__title" href="#issue">Retry uploads that time out on slow connections</a><span class="ds-list__meta"><span class="ds-badge ds-badge--danger">Bug</span><span class="ds-avatar">RV</span>12 Mar</span></li>
+          <li class="ds-list__item is-hover"><span class="ds-dot ds-dot--warning"></span><span class="ds-mono ds-list__id">WEB-139</span><a class="ds-list__title" href="#issue">Export usage as CSV from the billing page</a><span class="ds-list__meta"><span class="ds-badge ds-badge--quiet">Feature</span><span class="ds-avatar">IS</span>11 Mar</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--warning"></span><span class="ds-mono ds-list__id">PLT-88</span><a class="ds-list__title" href="#issue">Move session storage to the new cache cluster</a><span class="ds-list__meta"><span class="ds-badge ds-badge--warning">Infra</span><span class="ds-avatar">KO</span>10 Mar</span></li>
+          <li class="ds-list__group"><span class="ds-dot ds-dot--ring"></span>Todo <span class="ds-mono">4</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--ring"></span><span class="ds-mono ds-list__id">WEB-147</span><a class="ds-list__title" href="#issue">Keyboard shortcut list does not open on Firefox</a><span class="ds-list__meta"><span class="ds-badge ds-badge--danger">Bug</span><span class="ds-avatar">AO</span>12 Mar</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--ring"></span><span class="ds-mono ds-list__id">WEB-145</span><a class="ds-list__title" href="#issue">Show the deploy that closed an issue on its page</a><span class="ds-list__meta"><span class="ds-badge ds-badge--quiet">Feature</span><span class="ds-avatar">RV</span>11 Mar</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--ring"></span><span class="ds-mono ds-list__id">MOB-31</span><a class="ds-list__title" href="#issue">Offline drafts lose their labels after a sync</a><span class="ds-list__meta"><span class="ds-badge ds-badge--danger">Bug</span><span class="ds-avatar">TN</span>9 Mar</span></li>
+          <li class="ds-list__item"><span class="ds-dot ds-dot--ring"></span><span class="ds-mono ds-list__id">PLT-91</span><a class="ds-list__title" href="#issue">Rotate the signing keys before April</a><span class="ds-list__meta"><span class="ds-badge ds-badge--warning">Infra</span><span class="ds-avatar">KO</span>8 Mar</span></li>
+        </ul>
+      </section>
+
+      <div class="ds-stack">
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Latest deployments <span class="ds-tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">Every push builds a deployment. The time is since the build finished.</span></span></h2><a class="ds-link ds-link--more" href="#deploys">All</a></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>main</span><span class="ds-mono">7be02d1 / 4m</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span>fix/retry-uploads</span><span class="ds-mono">a41f9c2 / now</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>feat/usage-export</span><span class="ds-mono">c93a771 / 26m</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--danger"></span>chore/bump-runtime</span><span class="ds-mono">19d4e0b / 1h</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>docs/shortcuts</span><span class="ds-mono">52f8a36 / 3h</span></li>
+            </ul>
+          </div>
+        </section>
+        <div class="ds-tip">
+          <span class="ds-tip__title">Close issues from a commit</span>
+          <p>Write <span class="ds-mono">fixes WEB-142</span> in the message and the issue closes when the commit is deployed.</p>
+          <a class="ds-button ds-button--inverse ds-button--small" href="#settings">Connect a repository</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-colhead"><h2 class="ds-colhead__title">Projects</h2><span class="ds-mono">4 active</span></div>
+    <div class="ds-grid" data-component="grid">
+      <a class="ds-grid__cell" href="#issues">
+        <span class="ds-mono">WEB / Q1</span>
+        <h3 class="ds-grid__title">Resilient uploads</h3>
+        <p class="ds-grid__text">Uploads survive a dropped connection.</p>
+        <span class="ds-grid__bar ds-grid__bar--75"><span></span></span>
+        <span class="ds-grid__foot"><span class="ds-mono">9 of 12</span><span class="ds-mono">due 28 Mar</span></span>
+      </a>
+      <a class="ds-grid__cell ds-grid__cell--2" href="#issues">
+        <span class="ds-mono">WEB / Q1</span>
+        <h3 class="ds-grid__title">Billing exports</h3>
+        <p class="ds-grid__text">Usage and invoices as files.</p>
+        <span class="ds-grid__bar ds-grid__bar--50"><span></span></span>
+        <span class="ds-grid__foot"><span class="ds-mono">4 of 8</span><span class="ds-mono">due 4 Apr</span></span>
+      </a>
+      <a class="ds-grid__cell ds-grid__cell--3" href="#issues">
+        <span class="ds-mono">PLT / Q1</span>
+        <h3 class="ds-grid__title">Cache migration</h3>
+        <p class="ds-grid__text">Sessions move to the new cluster.</p>
+        <span class="ds-grid__bar ds-grid__bar--90"><span></span></span>
+        <span class="ds-grid__foot"><span class="ds-mono">10 of 11</span><span class="ds-mono">due 21 Mar</span></span>
+      </a>
+      <a class="ds-grid__cell ds-grid__cell--4" href="#issues">
+        <span class="ds-mono">MOB / Q2</span>
+        <h3 class="ds-grid__title">Offline mode</h3>
+        <p class="ds-grid__text">Drafts and comments without a signal.</p>
+        <span class="ds-grid__bar"><span></span></span>
+        <span class="ds-grid__foot"><span class="ds-mono">3 of 14</span><span class="ds-mono">due 30 May</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="issue">
+  <div class="ds-content">
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#issues">Issues</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#issues">Web</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">WEB-142</li>
+        </ol>
+        <h1 class="ds-page-header__title">Retry uploads that time out on slow connections</h1>
+        <p class="ds-page-header__text"><span class="ds-badge ds-badge--warning"><span class="ds-dot ds-dot--warning"></span> In progress</span> Opened by Imre Solvang on 10 March 2025, 4 comments</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#issues">Back to issues</a>
+        <a class="ds-button" href="#issues">Mark as done</a>
+      </div>
+    </header>
+
+    <div class="ds-cols ds-cols--side">
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__body">
+            <article class="ds-prose" data-component="typography">
+              <h1>What goes wrong</h1>
+              <p class="ds-prose__lead">An upload over 20 MB fails for good when the connection stalls for more than ten seconds.</p>
+              <p>The client sends the file in one request. When that request times out the whole upload is <strong>thrown away</strong>, and the user starts again from zero.</p>
+              <h2>Proposed fix</h2>
+              <ul>
+                <li>Send the file in parts of 5 MB</li>
+                <li>Retry a failed part up to three times, waiting longer each time</li>
+                <li>Keep finished parts for an hour so a reload can resume</li>
+              </ul>
+              <h3>How to check it</h3>
+              <p>Throttle the network to 200 kbit/s, upload <code>fixtures/large.bin</code> and pull the cable for fifteen seconds.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Activity</h2><span class="ds-mono">newest last</span></div>
+          <ul class="ds-activity">
+            <li class="ds-activity__item"><span class="ds-avatar">IS</span><span class="ds-activity__text"><strong>Imre Solvang</strong> opened the issue and added the label Bug</span><span class="ds-mono">10 Mar</span></li>
+            <li class="ds-activity__item"><span class="ds-avatar">RV</span><span class="ds-activity__text"><strong>Runa Vestergaard</strong> moved it from Todo to In progress</span><span class="ds-mono">11 Mar</span></li>
+            <li class="ds-activity__item"><span class="ds-avatar">RV</span><span class="ds-activity__text"><strong>Runa Vestergaard</strong> pushed <span class="ds-kbd">a41f9c2</span> to fix/retry-uploads. The preview is building.</span><span class="ds-mono">now</span></li>
+          </ul>
+        </section>
+
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Delete WEB-142?</h2>
+              <a class="ds-dialog__close" href="#issue" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>The issue, its 4 comments and its history are removed for everyone. The branch and its deployments stay.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#issue">Keep it</a>
+              <a class="ds-button ds-button--danger" href="#issues">Delete issue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Properties</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Status</span><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span><a class="ds-link ds-link--quiet" href="#issues">In progress</a></span></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Assignee</span><a class="ds-link ds-link--quiet" href="#issues">Runa Vestergaard</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Priority</span><a class="ds-link ds-link--quiet" href="#issues">High</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Project</span><a class="ds-link" href="#issues">Resilient uploads</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Cycle</span><a class="ds-link" href="#issues">Cycle 14</a></li>
+            <li class="ds-sidebar__item"><span class="ds-sidebar__key">Branch</span><span class="ds-mono">fix/retry-uploads</span></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Actions</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-buttonrow" data-component="buttons">
+              <a class="ds-button" href="#issues">Mark as done</a>
+              <a class="ds-button ds-button--secondary" href="#issue">Assign</a>
+              <button class="ds-button" type="button" disabled>Merge</button>
+              <a class="ds-button ds-button--danger" href="#issue">Delete</a>
+            </div>
+          </div>
+        </section>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Linked</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span>Preview</span><a class="ds-link" href="#deploys">a41f9c2</a></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--ring"></span>Blocks</span><a class="ds-link is-visited" href="#issue">WEB-145</a></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Related</span><a class="ds-link" href="#issue">MOB-31</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="deploys">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#issues">Northwind</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Deployments</li>
+        </ol>
+        <h1 class="ds-page-header__title">Deployments</h1>
+        <p class="ds-page-header__text">Every build of every branch, and the issues each one closed.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#settings">Environments</a>
+        <a class="ds-button" href="#deploys">Deploy main</a>
+      </div>
+    </header>
+
+    <section class="ds-panel">
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#deploys">All <span class="ds-mono">128</span></a></li>
+        <li><a class="ds-tabs__tab" href="#deploys">Production <span class="ds-mono">31</span></a></li>
+        <li><a class="ds-tabs__tab" href="#deploys">Preview <span class="ds-mono">94</span></a></li>
+        <li><a class="ds-tabs__tab" href="#deploys">Failed <span class="ds-mono">3</span></a></li>
+      </ul>
+      <div class="ds-table__wrap">
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th scope="col">Branch</th><th scope="col">Commit</th><th scope="col">State</th><th scope="col">Closes</th><th scope="col">By</th><th scope="col" class="ds-table__num">Build, s</th><th scope="col" class="ds-table__num">Size, kB</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">fix/retry-uploads</th><td><span class="ds-mono">a41f9c2</span></td><td><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span>Building</span></td><td><a class="ds-link" href="#issue">WEB-142</a></td><td>Runa V.</td><td class="ds-table__num">41</td><td class="ds-table__num">812</td></tr>
+            <tr class="is-hover"><th scope="row">main</th><td><span class="ds-mono">7be02d1</span></td><td><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Production</span></td><td><a class="ds-link" href="#issue">WEB-136</a></td><td>Imre S.</td><td class="ds-table__num">38</td><td class="ds-table__num">806</td></tr>
+            <tr><th scope="row">feat/usage-export</th><td><span class="ds-mono">c93a771</span></td><td><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Preview</span></td><td><a class="ds-link" href="#issue">WEB-139</a></td><td>Imre S.</td><td class="ds-table__num">44</td><td class="ds-table__num">831</td></tr>
+            <tr><th scope="row">chore/bump-runtime</th><td><span class="ds-mono">19d4e0b</span></td><td><span class="ds-table__state"><span class="ds-dot ds-dot--danger"></span>Failed</span></td><td>none</td><td>Kofi O.</td><td class="ds-table__num">12</td><td class="ds-table__num">0</td></tr>
+            <tr><th scope="row">docs/shortcuts</th><td><span class="ds-mono">52f8a36</span></td><td><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Preview</span></td><td><a class="ds-link" href="#issue">WEB-147</a></td><td>Ada O.</td><td class="ds-table__num">36</td><td class="ds-table__num">806</td></tr>
+            <tr><th scope="row">spike/edge-cache</th><td><span class="ds-mono">e07b115</span></td><td><span class="ds-table__state"><span class="ds-dot"></span>Expired</span></td><td>none</td><td>Kofi O.</td><td class="ds-table__num">52</td><td class="ds-table__num">904</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ds-table__foot">
+        <span>Showing 6 of 128 deployments</span>
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#deploys">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#deploys">1</a></li>
+          <li><a class="ds-pagination__link" href="#deploys">2</a></li>
+          <li><a class="ds-pagination__link" href="#deploys">3</a></li>
+          <li><a class="ds-pagination__link" href="#deploys">22</a></li>
+          <li><a class="ds-pagination__link" href="#deploys">Next</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="ds-cols ds-cols--even">
+      <div class="ds-empty" data-component="empty">
+        <svg class="ds-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 5l12 21H4z"/><path d="M16 13v6 M16 22v1"/></svg>
+        <h2 class="ds-empty__title">No incidents this cycle</h2>
+        <p class="ds-empty__text">A failed production deployment or a rollback would be listed here with the issue that caused it.</p>
+        <a class="ds-button ds-button--secondary ds-button--small" href="#settings">Set up alerts</a>
+      </div>
+      <section class="ds-panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Environments</h2><a class="ds-link ds-link--more" href="#settings">Manage</a></div>
+        <div class="ds-panel__body">
+          <ul class="ds-panel__rows">
+            <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Production</span><span class="ds-mono">7be02d1 / 3 regions</span></li>
+            <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span>Staging</span><span class="ds-mono">c93a771 / 1 region</span></li>
+            <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span>Preview</span><span class="ds-mono">12 live / expire in 14 d</span></li>
+            <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot"></span>Sandbox</span><span class="ds-mono">paused</span></li>
+          </ul>
+        </div>
+        <div class="ds-panel__body"><div class="ds-progress"><div class="ds-progress__head"><span>Building fix/retry-uploads, a41f9c2</span><span class="ds-progress__value">step 5 of 8</span></div><progress class="ds-progress__bar" value="62" max="100">62%</progress></div></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#issues">Northwind</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#settings">Settings</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Workspace</li>
+        </ol>
+        <h1 class="ds-page-header__title">Workspace settings</h1>
+        <p class="ds-page-header__text">Name, address and defaults for everyone in Northwind.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#issues">Discard changes</a>
+      </div>
+    </header>
+
+    <div class="ds-cols ds-cols--menu">
+      <ul class="ds-subnav">
+        <li><a class="ds-subnav__link is-current" href="#settings">Workspace</a></li>
+        <li><a class="ds-subnav__link" href="#settings">Members</a></li>
+        <li><a class="ds-subnav__link" href="#settings">Labels</a></li>
+        <li><a class="ds-subnav__link" href="#settings">Repositories</a></li>
+        <li><a class="ds-subnav__link" href="#settings">API keys</a></li>
+        <li><a class="ds-subnav__link" href="#settings">Billing</a></li>
+      </ul>
+
+      <div class="ds-stack">
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Changes apply to all 14 members.</span> Their open tabs pick them up on the next reload.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The settings were not saved.</span> Fix the highlighted field and save again.</p>
+        </div>
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">General</h2><span class="ds-mono">id ws_8f2c41</span></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#settings">
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">Workspace name</span><input class="ds-form__input" type="text" value="Northwind"></label>
+                <label class="ds-form__field"><span class="ds-form__label">Address</span><input class="ds-form__input ds-form__input--mono is-error" type="text" value="north wind"><span class="ds-form__error">Use lowercase letters, digits and hyphens only.</span></label>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">Issue prefix</span><input class="ds-form__input ds-form__input--mono is-focus" type="text" placeholder="WEB"></label>
+                <label class="ds-form__field"><span class="ds-form__label">Cycle length</span>
+                  <select class="ds-form__select"><option>Two weeks, starting Monday</option><option>One week, starting Monday</option><option>No cycles</option></select>
+                </label>
+              </div>
+              <label class="ds-form__field"><span class="ds-form__label">Template for new issues</span><textarea class="ds-form__textarea ds-form__textarea--mono" rows="3" placeholder="## What goes wrong&#10;## How to check it"></textarea><span class="ds-form__hint">Markdown. Shown when someone presses New issue.</span></label>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Close an issue when the commit that fixes it reaches production</span></label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Save changes</button>
+                <a class="ds-button ds-button--secondary" href="#settings">Reset</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <div class="ds-cols ds-cols--even">
+          <section class="ds-panel">
+            <div class="ds-panel__head"><h2 class="ds-panel__title">Labels</h2><a class="ds-link ds-link--more" href="#settings">Edit</a></div>
+            <div class="ds-panel__body">
+              <div class="ds-badgerow" data-component="badge">
+                <span class="ds-badge">Release</span>
+                <span class="ds-badge ds-badge--quiet">Feature</span>
+                <span class="ds-badge ds-badge--new">Idea</span>
+                <span class="ds-badge ds-badge--success">Shipped</span>
+                <span class="ds-badge ds-badge--warning">Infra</span>
+                <span class="ds-badge ds-badge--danger">Bug</span>
+              </div>
+              <p class="ds-linkrow" data-component="links">
+                <a class="ds-link" href="#settings">Import labels</a>
+                <a class="ds-link is-visited" href="#settings">Label guide</a>
+                <a class="ds-link is-hover" href="#settings">Archive unused</a>
+                <a class="ds-link is-active" href="#settings">Sort by use</a>
+              </p>
+            </div>
+          </section>
+          <section class="ds-panel">
+            <div class="ds-panel__head"><h2 class="ds-panel__title">Danger zone</h2></div>
+            <div class="ds-panel__body">
+              <p>Deleting the workspace removes 1,204 issues and every deployment record. This cannot be undone.</p>
+              <div class="ds-buttonrow">
+                <a class="ds-button ds-button--secondary" href="#settings">Export everything</a>
+                <a class="ds-button ds-button--danger" href="#settings">Delete workspace</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__status"><span class="ds-dot ds-dot--success"></span> chronoskin is up to date</span>
+  <span>&copy; 2025 chronoskin, build 7be02d1</span>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#settings">Shortcuts</a></li>
+    <li><a class="ds-footer__link" href="#deploys">Status</a></li>
+    <li><a class="ds-footer__link" href="#settings">Help</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

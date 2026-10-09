@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin chat: a text-mode chat client. Terminal, 2015 to 2026: specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-client">
+
+<header class="ds-topbar">
+  <a class="ds-brand" data-component="brand" href="#lobby"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><polyline points="4,6 11,12 4,18"/><line x1="13" y1="19" x2="21" y2="19"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+  <p class="ds-topbar__topic">chat.chronoskin.example | 42 online in 12 channels | release 3.2 is out, notes in #announce</p>
+  <details class="ds-menu">
+    <summary class="ds-menu__title">server</summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__item" href="#channel">join a channel <span class="ds-menu__key">/join</span></a></li>
+      <li><a class="ds-menu__item" href="#logs">search the logs <span class="ds-menu__key">/search</span></a></li>
+      <li><a class="ds-menu__item is-hover" href="#settings">change nick <span class="ds-menu__key">/nick</span></a></li>
+      <li class="ds-menu__rule"></li>
+      <li><a class="ds-menu__item" href="#help">all commands <span class="ds-menu__key">/help</span></a></li>
+      <li><a class="ds-menu__item" href="#lobby">disconnect <span class="ds-menu__key">/quit</span></a></li>
+    </ul>
+  </details>
+</header>
+
+<main class="ds-main">
+
+<!-- View 1, the lobby: message of the day, figures, pinned channels and the channel list, beside who is on. -->
+<section class="ds-view ds-view--home" id="lobby">
+  <div class="ds-cols">
+    <div class="ds-col">
+      <section class="ds-hero" data-component="hero">
+        <p class="ds-hero__motd"><span class="ds-hero__sign">-!-</span> message of the day, set by the operators on 2026-10-05</p>
+        <h1 class="ds-hero__title">Welcome to chronoskin chat</h1>
+        <p class="ds-hero__lead">One server, twelve channels, plain text. Ask about the program in #help, follow the work in #dev, and say hello in #general.</p>
+        <div class="ds-buttons">
+          <a class="ds-button" href="#channel">Join #general</a>
+          <a class="ds-button ds-button--secondary" href="#help">Read the rules</a>
+          <a class="ds-link ds-link--bracket" href="#logs">search the logs</a>
+        </div>
+        <p class="ds-hero__note">You are connected as <strong>reader</strong> over TLS. Your nick is not registered yet.</p>
+      </section>
+
+      <ul class="ds-stats" data-component="stats">
+        <li class="ds-stat"><span class="ds-stat__value">42</span><span class="ds-stat__label">people online</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">12</span><span class="ds-stat__label">channels</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">1,204</span><span class="ds-stat__label">lines today</span></li>
+        <li class="ds-stat"><span class="ds-stat__value">311 d</span><span class="ds-stat__label">server uptime</span></li>
+      </ul>
+
+      <section class="ds-section">
+        <h2 class="ds-section__title">pinned channels</h2>
+        <div class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell">
+            <h3 class="ds-grid__title"><a class="ds-link" href="#channel">#general</a></h3>
+            <p class="ds-grid__text">Everything about the program that has no better place.</p>
+            <p class="ds-grid__label">31 here, 3 unread</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <h3 class="ds-grid__title"><a class="ds-link" href="#channel">#help</a></h3>
+            <p class="ds-grid__text">Questions and answers. Paste the error, not a picture of it.</p>
+            <p class="ds-grid__label">18 here, quiet</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <h3 class="ds-grid__title"><a class="ds-link" href="#channel">#dev</a></h3>
+            <p class="ds-grid__text">Patches, reviews and the build. Logged in public.</p>
+            <p class="ds-grid__label">9 here, 1 mention</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <h3 class="ds-grid__title"><a class="ds-link" href="#channel">#announce</a></h3>
+            <p class="ds-grid__text">Releases and planned downtime. Operators write, all read.</p>
+            <p class="ds-grid__label">40 here, read only</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <h2 class="ds-section__title">/list</h2>
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th>channel</th><th class="ds-table__extra">topic</th><th class="ds-table__num">here</th><th class="ds-table__num">lines today</th><th class="ds-table__extra">last line</th></tr>
+          </thead>
+          <tbody>
+            <tr class="is-selected"><td class="ds-table__code">#general</td><td class="ds-table__extra">Release 3.2 is out. Be kind, stay on topic.</td><td class="ds-table__num">31</td><td class="ds-table__num">486</td><td class="ds-table__extra">14:01</td></tr>
+            <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#channel">#help</a></td><td class="ds-table__extra">Ask your question, then wait. Someone will read it.</td><td class="ds-table__num">18</td><td class="ds-table__num">212</td><td class="ds-table__date ds-table__extra">13:48</td></tr>
+            <tr><td class="ds-table__code"><a class="ds-table__title" href="#channel">#dev</a></td><td class="ds-table__extra">Freeze for 3.3 starts on 2026-10-19.</td><td class="ds-table__num">9</td><td class="ds-table__num">340</td><td class="ds-table__date ds-table__extra">13:57</td></tr>
+            <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#channel">#announce</a></td><td class="ds-table__extra">Releases and downtime.</td><td class="ds-table__num">40</td><td class="ds-table__num">2</td><td class="ds-table__date ds-table__extra">09:30</td></tr>
+            <tr><td class="ds-table__code"><a class="ds-table__title" href="#channel">#themes</a></td><td class="ds-table__extra">Show your colours. One screenshot a day, please.</td><td class="ds-table__num">14</td><td class="ds-table__num">97</td><td class="ds-table__date ds-table__extra">12:20</td></tr>
+            <tr class="is-alt"><td class="ds-table__code"><a class="ds-table__title" href="#channel">#offtopic</a></td><td class="ds-table__extra">Everything else.</td><td class="ds-table__num">22</td><td class="ds-table__num">67</td><td class="ds-table__date ds-table__extra">13:15</td></tr>
+          </tbody>
+        </table>
+        <p class="ds-note">6 of 12 channels shown. Type <code>/list -all</code> for the rest, or <code>/join #name</code> to open one.</p>
+      </section>
+    </div>
+
+    <aside class="ds-side">
+      <div class="ds-sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">on now</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar">mk</span>mika</a><span class="ds-sidebar__count">op</span></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--2">jo</span>jonas</a><span class="ds-sidebar__count">op</span></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--3">ai</span>aiko</a></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar">te</span>tereza</a></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--2">ld</span>ludo</a></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--3">bt</span>buildbot</a><span class="ds-sidebar__count">bot</span></li>
+          </ul>
+          <p class="ds-sidebar__text">36 more. <a class="ds-link ds-link--quiet" href="#channel">/names</a> lists them all.</p>
+        </div>
+      </div>
+      <div class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">this server</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text">Run by volunteers. Channels are logged for 90 days, private messages never.</p>
+          <p class="ds-progress"><span class="ds-progress__label">history</span><span class="ds-progress__bar"><span class="ds-progress__on">########</span>....</span><span class="ds-progress__value">67%</span></p>
+          <p class="ds-progress"><span class="ds-progress__label">log disk</span><span class="ds-progress__bar"><span class="ds-progress__on ds-progress__on--warning">##########</span>..</span><span class="ds-progress__value">84%</span></p>
+          <p class="ds-panel__text"><span class="ds-tooltip" tabindex="0">lag 38 ms<span class="ds-tooltip__tip" role="tooltip">The time a line takes from your key to the server and back.</span></span>, last netsplit 61 days ago.</p>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">named you</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text"><a class="ds-link" href="#channel">#general 13:50</a> jonas: your patch for the status line went in.</p>
+          <p class="ds-panel__text"><a class="ds-link" href="#channel">#dev 11:32</a> mika: reader, can you test the tarball?</p>
+          <p class="ds-panel__text"><a class="ds-link is-visited" href="#logs">#help yesterday</a> aiko: thanks, reader, that fixed it.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 2, a channel: the log with its day rule, joins and a mention, beside the names. -->
+<section class="ds-view" id="channel">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#lobby">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li><a class="ds-breadcrumb__link" href="#lobby">channels</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">#general</li>
+  </ol>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">#general</h1>
+      <p class="ds-page-header__text">Topic: release 3.2 is out. Be kind, stay on topic. Set by mika on 2026-10-05.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#lobby">Leave</a></div>
+  </header>
+  <div class="ds-cols">
+    <div class="ds-col">
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">Joined.</span> You are in #general with 30 others. The last 200 lines were replayed.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Bridge down.</span> Lines from the mail gateway are late since 13:20. Nothing is lost.</p>
+      </div>
+      <ol class="ds-log">
+        <li class="ds-log__day">Tuesday, 6 October 2026</li>
+        <li class="ds-log__line"><time class="ds-log__time">13:41</time><span class="ds-log__nick">mika</span><p class="ds-log__text">3.2 is tagged. Packages follow within the hour.</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:42</time><span class="ds-log__nick">aiko</span><p class="ds-log__text">Does the new pager keep its place after a resize?</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:42</time><span class="ds-log__nick">mika</span><p class="ds-log__text">It does. Set <code>pager.keep = true</code> if you ran an older config.</p></li>
+        <li class="ds-log__line ds-log__line--event"><time class="ds-log__time">13:44</time><span class="ds-log__nick">-!-</span><p class="ds-log__text">ludo has joined #general</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:45</time><span class="ds-log__nick">ludo</span><p class="ds-log__text">Morning. The tarball builds clean on my old laptop, 41 seconds.</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:47</time><span class="ds-log__nick">buildbot</span><p class="ds-log__text">Build 3.2.0 passed on 6 of 6 targets.</p></li>
+        <li class="ds-log__line is-mention"><time class="ds-log__time">13:50</time><span class="ds-log__nick">jonas</span><p class="ds-log__text">reader: your patch for the status line went in, thank you.</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:52</time><span class="ds-log__nick">tereza</span><p class="ds-log__text">Where do the release notes live now?</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:53</time><span class="ds-log__nick">buildbot</span><div class="ds-log__text"><ul class="ds-links" data-component="links">
+          <li><a class="ds-link" href="#help">release notes</a></li>
+          <li><a class="ds-link is-visited" href="#help">upgrade guide (visited)</a></li>
+          <li><a class="ds-link is-hover" href="#logs">yesterday's log (hover)</a></li>
+          <li><a class="ds-link is-active" href="#help">known issues (active)</a></li>
+        </ul></div></li>
+        <li class="ds-log__line ds-log__line--event"><time class="ds-log__time">13:55</time><span class="ds-log__nick">-!-</span><p class="ds-log__text">mode/#general [+v ludo] by mika</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">13:58</time><span class="ds-log__nick">aiko</span><p class="ds-log__text">Upgraded two machines. Nothing to report, which is the best report.</p></li>
+        <li class="ds-log__line"><time class="ds-log__time">14:01</time><span class="ds-log__nick">ludo</span><p class="ds-log__text">Same here. Off to read the notes.</p></li>
+      </ol>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link" href="#logs">&lt; older</a></li>
+        <li><a class="ds-pagination__link" href="#logs">1</a></li>
+        <li><a class="ds-pagination__link" href="#logs">2</a></li>
+        <li><span class="ds-pagination__link is-current">3</span></li>
+        <li><span class="ds-pagination__link is-disabled">newer &gt;</span></li>
+      </ul>
+    </div>
+
+    <aside class="ds-side">
+      <div class="ds-sidebar" data-component="sidebar">
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">operators</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar">mk</span>mika</a><span class="ds-sidebar__count">@</span></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--2">jo</span>jonas</a><span class="ds-sidebar__count">@</span></li>
+          </ul>
+        </div>
+        <div class="ds-sidebar__block">
+          <h2 class="ds-sidebar__title">here, 31</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--3">ai</span>aiko</a></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--3">bt</span>buildbot</a><span class="ds-sidebar__count">bot</span></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar ds-avatar--2">ld</span>ludo</a><span class="ds-sidebar__count">+</span></li>
+            <li><a class="ds-sidebar__link is-current" href="#settings"><span class="ds-avatar">re</span>reader</a><span class="ds-sidebar__count">you</span></li>
+            <li><a class="ds-sidebar__link" href="#channel"><span class="ds-avatar">te</span>tereza</a></li>
+          </ul>
+          <p class="ds-sidebar__text">26 more are idle. <span class="ds-tooltip" tabindex="0">What the signs mean<span class="ds-tooltip__tip" role="tooltip">@ may set the topic and remove people. + may speak when the channel is moderated.</span></span></p>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">status words</h2>
+        <div class="ds-panel__body">
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge">3</span>
+            <span class="ds-badge ds-badge--success">here</span>
+            <span class="ds-badge ds-badge--warning">away</span>
+            <span class="ds-badge ds-badge--danger">muted</span>
+            <span class="ds-badge ds-badge--tag">release</span>
+          </div>
+          <p class="ds-panel__text">The count is unread lines that name you.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 3, the logs: a search, its hits under tabs, the empty state of shared files, the archive by month. -->
+<section class="ds-view" id="logs">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#lobby">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">logs</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Logs</h1>
+      <p class="ds-page-header__text">Every public channel, kept for 90 days. Search them or read a day from the top.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#settings">Log settings</a></div>
+  </header>
+  <div class="ds-cols">
+    <div class="ds-col">
+      <p class="ds-prompt"><span class="ds-prompt__sign">/search</span> <span class="ds-prompt__path">-channel #general</span> pager resize</p>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><span class="ds-tabs__tab is-current">lines 18</span></li>
+        <li><a class="ds-tabs__tab" href="#logs">files 0</a></li>
+        <li><a class="ds-tabs__tab" href="#logs">pinned 3</a></li>
+      </ul>
+      <div class="ds-tabs__body">
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <span class="ds-list__date">10-06 13:42</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#channel">#general, aiko</a>
+              <p class="ds-list__excerpt">Does the new pager keep its place after a resize?</p>
+              <p class="ds-list__meta">2 replies in the next minute</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">10-02 09:15</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title is-visited" href="#channel">#dev, jonas</a>
+              <p class="ds-list__excerpt">The pager loses its line on resize when wrapping is off. Patch attached.</p>
+              <p class="ds-list__meta">7 replies, closed by a commit</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">09-28 21:03</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#channel">#help, tereza</a>
+              <p class="ds-list__excerpt">After a resize the pager jumps to the top. Is that a setting?</p>
+              <p class="ds-list__meta">4 replies, answered</p>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__date">09-11 16:40</span>
+            <div class="ds-list__main">
+              <a class="ds-list__title" href="#channel">#general, ludo</a>
+              <p class="ds-list__excerpt">Small request: let the pager remember its place when the window changes size.</p>
+              <p class="ds-list__meta">11 replies, where it all began</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="ds-section__title">files 0</h2>
+      <div class="ds-empty" data-component="empty">
+        <p class="ds-empty__text">No file that matches was shared in the last 90 days.</p>
+        <a class="ds-button ds-button--secondary" href="#logs">Search all channels</a>
+      </div>
+    </div>
+    <aside class="ds-side">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">archive</h2>
+        <div class="ds-panel__body">
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__title">2026-10</summary>
+              <div class="ds-accordion__body">
+                <p><a class="ds-link" href="#channel">10-06, today</a></p>
+                <p><a class="ds-link is-visited" href="#channel">10-05, 1,512 lines</a></p>
+                <p><a class="ds-link" href="#channel">10-04, 640 lines</a></p>
+              </div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">2026-09</summary>
+              <div class="ds-accordion__body"><p>30 days, 28,204 lines.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">2026-08</summary>
+              <div class="ds-accordion__body"><p>31 days, 24,880 lines.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">search words</h2>
+        <div class="ds-panel__body">
+          <p class="ds-panel__text"><code>-channel</code> limits to one channel, <code>-nick</code> to one person, <code>-since</code> to a date.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- View 4, settings: the account form beside the switches and the question before an account is removed. -->
+<section class="ds-view" id="settings">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#lobby">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">settings</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Settings</h1>
+      <p class="ds-page-header__text">Your nick, what counts as a mention, and what the client shows.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#help">Help</a></div>
+  </header>
+  <div class="ds-cols ds-cols--form">
+    <div class="ds-col">
+      <h2 class="ds-section__title">account</h2>
+      <form class="ds-form" data-component="form">
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-nick">nick</label>
+          <div class="ds-form__field"><input class="ds-form__input" id="f-nick" type="text" value="reader"></div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-mail">mail</label>
+          <div class="ds-form__field">
+            <input class="ds-form__input is-invalid" id="f-mail" type="text" value="reader@example">
+            <p class="ds-form__error">This address has no domain ending. A nick is registered by mail.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-away">when away</label>
+          <div class="ds-form__field">
+            <select class="ds-form__input ds-form__input--auto" id="f-away">
+              <option>keep the lines for me</option>
+              <option>mail me the mentions</option>
+              <option>do nothing</option>
+            </select>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="f-words">mention on</label>
+          <div class="ds-form__field">
+            <textarea class="ds-form__input ds-form__input--wide" id="f-words" rows="3">reader
+status line
+pager</textarea>
+            <p class="ds-form__hint">One word or phrase a line. Your nick always counts.</p>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <span class="ds-form__label">privacy</span>
+          <div class="ds-form__field">
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> hide my address from /whois</label>
+          </div>
+        </div>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="button">Save</button>
+          <button class="ds-button ds-button--secondary" type="button">Reset</button>
+          <button class="ds-button ds-button--danger" type="button">Drop nick</button>
+          <button class="ds-button" type="button" disabled>Export</button>
+        </div>
+      </form>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">the client shows</h2>
+        <div class="ds-panel__body">
+          <div class="ds-setting"><label class="ds-switch"><span class="ds-switch__label">joins and parts</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label></div>
+          <div class="ds-setting"><label class="ds-switch"><span class="ds-switch__label">seconds in the time</span><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span></label></div>
+          <div class="ds-setting"><label class="ds-switch"><span class="ds-switch__label">a bell on mentions</span><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></label></div>
+          <div class="ds-setting"><label class="ds-switch"><span class="ds-switch__label">names in colour</span><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span></label></div>
+        </div>
+      </div>
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-1">
+          <h2 class="ds-dialog__title" id="dlg-1">drop the nick?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">reader will be free for anyone to take after 30 days. Your lines stay in the logs.</p>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--danger" type="button">Drop it</button>
+              <a class="ds-button ds-button--secondary" href="#settings">Keep it</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- View 5, help: the rules and first steps as running text, beside the commands as a folding tree. -->
+<section class="ds-view" id="help">
+  <ol class="ds-breadcrumb">
+    <li><a class="ds-breadcrumb__link" href="#lobby">chronoskin</a></li>
+    <li class="ds-breadcrumb__sep">/</li>
+    <li class="ds-breadcrumb__current">help</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__main">
+      <h1 class="ds-page-header__title">Help</h1>
+      <p class="ds-page-header__text">The rules of the place and the commands that get you around it.</p>
+    </div>
+    <div class="ds-page-header__action"><a class="ds-button" href="#channel">Ask in #help</a></div>
+  </header>
+  <div class="ds-cols ds-cols--form">
+    <div class="ds-col">
+      <div class="ds-prose" data-component="typography">
+        <h1>Rules and first steps</h1>
+        <p>chronoskin chat is a small server for people who use and build <strong>chronoskin</strong>. It speaks a plain line protocol, so any client works; this page is one of them.</p>
+        <h2>Three rules</h2>
+        <ul>
+          <li>Be kind. Disagree with the idea, not with the person.</li>
+          <li>Paste text, not pictures of text. Long pastes go to a file.</li>
+          <li>Ask your question at once; do not ask whether you may ask.</li>
+        </ul>
+        <h2>Getting around</h2>
+        <p>Everything is a command typed into the input line at the foot. A command starts with a slash: <code>/join #help</code> opens a channel, <code>/part</code> leaves it.</p>
+        <h3>Windows</h3>
+        <p>Each channel is a window with a number. The window list above the input line shows them, and the one you are reading is cut out of the bar.</p>
+        <h3>Mentions</h3>
+        <p>A line that names you is set on a stronger ground with a mark at its left edge, and its window gets a count.</p>
+      </div>
+    </div>
+    <div class="ds-stack">
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">commands</h2>
+        <div class="ds-panel__body">
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__title">channels</summary>
+              <div class="ds-accordion__body">
+                <p><code>/join #name</code> open a channel</p>
+                <p><code>/part</code> leave this one</p>
+                <p><code>/topic text</code> set the topic</p>
+              </div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">people</summary>
+              <div class="ds-accordion__body"><p><code>/msg nick text</code> write to one person</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">yourself</summary>
+              <div class="ds-accordion__body"><p><code>/nick name</code> take another name</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__title">the server</summary>
+              <div class="ds-accordion__body"><p><code>/list</code> every public channel</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="ds-panel">
+        <h2 class="ds-panel__title">keys</h2>
+        <div class="ds-panel__body">
+          <ul class="ds-keys">
+            <li class="ds-key"><span class="ds-key__cap">alt 1..9</span> window</li>
+            <li class="ds-key"><span class="ds-key__cap">tab</span> finish a nick</li>
+            <li class="ds-key"><span class="ds-key__cap">pgup</span> older lines</li>
+            <li class="ds-key"><span class="ds-key__cap">ctrl l</span> redraw</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <ul class="ds-keys">
+    <li><a class="ds-footer__link" href="#help">rules</a></li>
+    <li><a class="ds-footer__link" href="#logs">logs</a></li>
+    <li><a class="ds-footer__link" href="#settings">settings</a></li>
+  </ul>
+  <p class="ds-footer__text">chronoskin chat 3.2.0, a plain text server run by its users</p>
+</footer>
+
+<div class="ds-dock">
+  <nav class="ds-nav" data-component="nav">
+    <p class="ds-nav__clock">[14:02]</p>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#lobby"><span class="ds-nav__num">1</span><span class="ds-nav__name">lobby</span></a></li>
+      <li><a class="ds-nav__link" href="#channel"><span class="ds-nav__num">2</span><span class="ds-nav__name">#general</span></a></li>
+      <li><a class="ds-nav__link" href="#logs"><span class="ds-nav__num">3</span><span class="ds-nav__name">logs</span></a></li>
+      <li><a class="ds-nav__link" href="#settings"><span class="ds-nav__num">4</span><span class="ds-nav__name">settings</span></a></li>
+      <li><a class="ds-nav__link" href="#help"><span class="ds-nav__num">5</span><span class="ds-nav__name">help</span></a></li>
+    </ul>
+    <p class="ds-nav__act"><span class="ds-nav__word">unread</span> <span class="ds-badge">3</span></p>
+  </nav>
+  <label class="ds-dock__input"><span class="ds-dock__who">[reader]</span><input class="ds-form__input" type="text" placeholder="type a line, or /help"></label>
+</div>
+
+</div>
+</body>
+</html>

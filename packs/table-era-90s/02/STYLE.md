@@ -1,0 +1,93 @@
+# Table-era news front, 1999
+
+## Summary
+
+A news and services front page as built between 1996 and 2000: one fixed 770px table centred in an 800px window, with a flat coloured navigation rail running down the left side and the stories in ruled cells to its right. Nearly all text is an underlined blue link in the browser's default 16px serif, with 13px sans-serif only in the rail, the controls and the small print, on white with one lavender rail, grey title strips and grey slabs. It was the standard skeleton of newspaper, broadcaster and magazine sites until stylesheet layouts replaced the rail-and-table page after 2000.
+
+## Layout
+
+- The page is fixed, not fluid, and centred: `--size-page` is 770px, and `.ds-page__frame` sits in the middle of the window with the spare width split on both sides. Nothing stretches with the window.
+- Order from the top: `.ds-masthead` (wordmark at the left, a small tagline, the search form at the right, all on one line), then `.ds-page__columns`, then the `.ds-footer` opened by a 2px `.ds-rule`.
+- The specimen is one example site, a news front with a reader reviews section, of five views. The `.ds-masthead`, the rail with the `.ds-nav` and the `.ds-footer` are written once, outside the views; each view is a `.ds-view` section inside `.ds-page__content`, the content column, and one shows at a time.
+- `.ds-page__columns` is two columns: the `--size-rail` (130px) `.ds-page__rail` on the left, filled with `--fill-bar` for the whole height of the page, and the content column `.ds-page__content` to its right after a `--space-4` (12px) gutter. The rail holds the `.ds-nav` (a vertical list of section links, one per line, then a second group under a grey label) and under it `.ds-sidebar` blocks. There is no horizontal navigation bar and no right-hand sidebar.
+- The home page content column, `.ds-page__main`, runs: the `.ds-tabs` line of service links, the `.ds-dateline`, a `.ds-notice` for breaking news, then `.ds-page__lead`, which sets the `.ds-hero` lead story beside a `--size-side` (220px) column of modules (`.ds-page__side`: a `.ds-panel` and a short list). Under the lead comes the `.ds-grid`, one outlined band of four ruled cells, then `.ds-sections`, two equal columns of headline groups, each a linked section name over a `.ds-list`.
+- Inner pages (a story, a section list, a form) keep the masthead, the rail and the footer unchanged. The lead story, the module column and the cell band go. The content column, `.ds-page__inner`, is a single 628px column and opens with the `.ds-breadcrumb`, then the `.ds-page-header` (title and one line at the left, one button at the right, closed by its own 2px rule in the bar colour), then the `.ds-tabs` line when the page has views of its own. Below come `.ds-stat` when the page has figures, the `.ds-table` or `.ds-list`, the `.ds-pagination`, or the running text of a story, or the `.ds-notices` and the `.ds-form`.
+- Views: `front` is the front page (service links, dateline, breaking news, lead story and modules, the cell band, two columns of headlines). `story` is one story as running text, closed by a line of related links and more headlines of its section. `reviews` is the list of a section: figures, the table of reader reviews with its status key, and the page links. `send` is the form for a new review, with its notices and the message box that discarding a draft opens. `mine` is the reader's own list while it is empty: the empty state, a list of products readers ask about and a panel of advice. The rail marks the view that is showing with the strip in `--fill-bar-alt`; the front page link is marked when the address names no view.
+- Blocks are separated by rules, title strips and outlines, never by cards with shadows or wide gutters. Everything in the content column is left-aligned; nothing is centred.
+- Spacing scale: `--space-1` 2px is the padding of strips, table cells and controls; `--space-2` 4px is the side padding of cells and strips and the gap between a title and its body; `--space-3` 8px is the page margin, paragraph spacing and the gap between buttons and form rows; `--space-4` 12px is the gutter between columns and the gap between neighbouring blocks of the content column; `--space-5` 20px is the indent of short bullet lists and the foot of the page; `--space-6` 40px is the indent of headline lists and lists in running text.
+- Fixed sizes: `--size-search` 130px masthead search field, `--size-field` 220px text input, `--size-area` 320px textarea, `--size-check` 13px checkbox, `--size-dialog` 360px message box.
+
+## Typography and colour roles
+
+- Family: lavender, slate and three greys on white, with dark green for positive status.
+- `--color-page`, `--color-canvas`, `--color-surface` are white `#ffffff`; `--color-surface-alt` `#eeeeee` is alternate table rows and the empty state; `--color-surface-strong` `#dddddd` is the strongest grey and carries no text.
+- `--color-bar` `#ccccff` (lavender, black text, blue links) is the navigation rail, the table head and the 2px rules of the page header and the footer. `--color-bar-alt` `#cccccc` (grey, black text) is every title strip (rail labels, panel titles, `.ds-heading`), the current item of the rail, the footer link strip and the notice border.
+- `--color-inverse` `#666666` with white text is the dialog title bar only.
+- Links are the browser's default blue `--color-link` `#0000ee`, visited slate `--color-link-visited` `#666699`, active `#cc0000`; hover equals the link colour.
+- `--color-heading-alt` `#303068` (dark slate) is the wordmark, tagline, h3 and positive figures. `--color-accent` and `--color-accent-alt` `#cc0000` are the solid badge, the flag of a notice, the "New!" word and negative figures.
+- `--color-fill-1` to `--color-fill-4` are `#dddddd`, `#ccccff`, `#cccccc`, `#eeeeee`: grey and lavender slabs for the four cells of the band, no warm colour. They carry black text and blue links.
+- `--color-warning` `#ff6600` (the one orange of the family) is a fill only and carries black text; `--color-success` `#006600` and `--color-danger` `#cc0000` carry white. Notices are `#eeeeee`; the error notice is red text on white.
+- Borders: `--color-border` `#666666`, `--color-border-strong` `#000000` (dialog outline), `--color-border-muted` and `--color-input-border` `#cccccc` for bevels.
+- One serif for text and headings: `--font-body` and `--font-heading` are Georgia, the screen serif of the 1996 core web fonts, falling back to Times New Roman. `--font-ui` (Arial) sets the rail, the search form, forms, buttons, strips, notices, cell band and small print; `--font-mono` is Courier New.
+- `--text-base` 16px, the browser default the era left untouched; `--text-small` and `--text-ui` 13px; nothing is smaller than 13px.
+- Headings stay close to the text: `--text-h2`, `--text-h3` and `--text-large` 16px bold, `--text-h1` 19px for the lead headline and a page title, `--text-display` 24px bold (`--weight-display` 700) for the wordmark only.
+- Line height is set, as the first stylesheets of 1999 set it: `--line-body` 1.25 and `--line-heading` 1.1. No transform, no tracking; capitals in the rail are typed. All three link decorations are `underline`.
+- `--border-style` is `inset`: table cells, the figure line, panels, the cell band and rules are drawn as the browser drew `border=2` tables and `<hr>`, dark on top and left, light on bottom and right. `--border-width` 2px for cells, outlines and thin rules; `--border-width-strong` 3px for the header and footer rules and the deep bevel of controls.
+- The surface is the chrome of the 1999 desktop. Controls carry a second bevel line inside their border (`--shadow-control`, a hard 1px light edge and a 1px dark edge with no blur, reversed in `--shadow-control-pressed`); the message box stands off the page by a hard 2px edge (`--shadow-dialog`); `--shadow-panel` and `--shadow-text` are `none`. Title strips fade to the right like a window title bar: `--fill-bar-alt` and `--fill-inverse` are horizontal gradients from the palette colour to a lighter mix of it. `--fill-input` shades the top 4px of a field so it reads as sunk. Every other fill is the flat palette colour (`--fill-panel` is `--color-surface`). Radius 0; `--focus-ring` is `1px dotted` in `--color-focus`; `--transition` is `none`.
+- Not expressible by a token, written literally in `components.css`: the bevel of buttons and selects is `border-style: outset` and of inputs, checkboxes and pressed buttons `inset`, drawn in `--color-border-muted` and `--color-input-border`.
+
+## Components
+
+- `.ds-menu`: a jump menu in the sidebar, a `<select>` "Go to a section..." with a `.ds-menu__go` button beside it; use it where a page offers a quick way to a section.
+- `.ds-page`: on `<body>`; page fill and body type. `.ds-page__frame` is the centred 770px table; `.ds-page__columns` the rail-plus-content grid; `.ds-page__rail` the coloured left column; `.ds-page__content` the content column that holds the views; `.ds-page__main` the home content column and `.ds-page__inner` the inner-page content column, both with `--space-4` between blocks; `.ds-page__lead` sets the lead story beside `.ds-page__side`. The page margin is padding inside `.ds-page__frame`, not on `<body>`: when a palette gives `--color-canvas` a colour of its own the frame shows as a sheet on the page and its content keeps that margin from the sheet edge. `.ds-page__frame` takes `--shadow-panel` as well, so a surface set that outlines its boxes also outlines the sheet.
+- `.ds-masthead`: the line above the columns: the `.ds-brand`, `.ds-masthead__tagline`, and `.ds-masthead__search` with `.ds-masthead__field`.
+- `.ds-brand`: the site's mark and name, at the left of the `.ds-masthead`. `.ds-brand__mark` is a small square tile dressed like the button (`--fill-button` over `--color-button`, `--color-button-text` for the drawing, the 2px `outset` bevel in `--color-border-muted`, `--radius-control`, `--shadow-control`), so every palette and surface reskins it; it holds the mark as inline SVG painted with `currentColor`, drawn with square line caps, a 3 unit stroke and crisp edges. `.ds-brand__name` is the name in the heading family at `--text-display`, with the heading weight, tracking and transform, in `--color-heading-alt`. The name `chronoskin` and its mark are placeholders for the installing project's own name and logo.
+- `.ds-nav`: the site navigation, a vertical list at the top of the rail. `.ds-nav__links` holds `.ds-nav__item` / `.ds-nav__link`, one per line, section names typed in capitals; the link of the view that is showing is a bold strip in `--fill-bar-alt` without underline (`components.css` has one selector per view for this, and `is-current` does the same by hand). `.ds-nav__label` is a grey strip that opens a second group of links. A link to a section that has no view of its own carries `.ds-nav__link--elsewhere`: it opens the nearest fitting view and is never marked as the view that is showing.
+- `.ds-hero`: the lead story, the era's page introduction: `.ds-hero__title` (19px bold, itself a link), one or two `.ds-hero__lead` paragraphs, `.ds-hero__action` (the bold "FULL STORY" link, the main action) and `.ds-hero__related`, a short bullet list. Never a band, a banner or a large heading.
+- `.ds-page-header`: the head of an inner page, used instead of `.ds-hero`: `.ds-page-header__text` with `.ds-page-header__title` and `.ds-page-header__lead`, `.ds-page-header__action` with one button at the right, and a 2px bottom rule in `--color-bar`.
+- `.ds-prose`: running text; styles `h1`, `h2`, `h3`, `p`, `ul`, `ol`, `strong`, `code`; `.ds-prose__lead` for a bold opening line.
+- `.ds-link`: every link. States `is-visited`, `is-hover`, `is-active`, `is-focus`. `.ds-link--quiet` for secondary links in the sans face, `.ds-link--strong` for bold links. `.ds-links` wraps a line of links.
+- `.ds-button`: grey bevelled button with a 13px sans label, on a `<button>` or, when it leads to another page, on a link. `.ds-button--secondary` is a darker grey, `.ds-button--danger` the destructive action (the same bevel on `--color-surface` with a bold label in `--color-danger`, never a red button). States `is-hover`, `is-pressed`, `is-focus`, `is-disabled`. `.ds-buttons` lays out a row.
+- `.ds-form`: a stacked form: each `.ds-form__row` puts a bold `.ds-form__label` on its own line above its `.ds-form__field`. Controls: `.ds-form__input`, `.ds-form__select`, `.ds-form__textarea`, `.ds-form__check` inside a `.ds-form__option` line. `.ds-form__hint` for help, `.ds-form__error` for a bold red message under the field, `.ds-form__actions` for the button row. A select is a bevelled key in `--fill-button` with `--color-button-text`; a checkbox is a small inset field in `--color-input` whose tick is a block of `--color-input-text`.
+- `.ds-table`: one ruled grid with no space between cells. `.ds-table__head` (bar colour, bold sans, left-aligned; `--num` right-aligned), `.ds-table__cell` with `--num`, `--up`, `--down` and `--group` (a full-width summary row on `--color-fill-1`), `.ds-table__row--alt` for grey rows, `.ds-table__caption` for the line beneath.
+- `.ds-stat`: the row. One outlined line divided by 1px rules; each `.ds-stat__item` has its `.ds-stat__label` (13px sans) at the left and its `.ds-stat__value` (16px bold) at the right, on one baseline. Never stacked numerals or separate cards.
+- `.ds-list`: bulleted headline list with a 40px indent; `.ds-list__item`, `.ds-list__meta` (grey time in brackets), `.ds-list__more` (right-aligned link), `.ds-list--sub` for the indented list under an "In depth:" line.
+- `.ds-sections`: two columns of headline groups: `.ds-sections__title` (a linked section name in typed capitals) over a `.ds-list`, with `.ds-sections__sub` for the "In depth:" line.
+- `.ds-panel`: an outlined module: `.ds-panel__title` grey strip with an optional `.ds-panel__tool` link at the right, `.ds-panel__body`, `.ds-panel__list` for a short bullet list.
+- `.ds-grid`: one outlined band of four cells in a row, divided by 1px rules with no gap: `.ds-grid__cell` and `--2`, `--3`, `--4` for the four fills, `.ds-grid__title`, `.ds-grid__text`.
+- `.ds-tabs`: the era's tabs, one line of 16px links separated by bars over a 1px rule, used for the services line at the top of the home page and for the views of an inner page; `.ds-tabs__item`, `.ds-tabs__tab`, current `is-current` (bold, black, not underlined).
+- `.ds-badge`: small solid red label. `.ds-badge--text` is a bold red word beside a link; `.ds-badge--count` is a grey count in brackets. Status labels, typed in capitals: `.ds-badge--success` (green, white text), `.ds-badge--warning` (orange, black text), `.ds-badge--danger` (red, white text). `.ds-badges` is a key line under a table.
+- `.ds-sidebar`: a block of the rail under the navigation: `.ds-sidebar__title` grey strip, `.ds-sidebar__list` / `.ds-sidebar__item` (links, one per line, no bullets), `.ds-sidebar__text`, `.ds-sidebar__lookup` with `.ds-sidebar__field` for a one-field form.
+- `.ds-notice`: a flag and a line: `.ds-notice__label` is a solid red block with white capitals, `.ds-notice__text` the message on grey. `.ds-notice--error` is red text on white with a red border. `.ds-notices` stacks several.
+- `.ds-pagination`: one left-aligned line: `.ds-pagination__label`, then `.ds-pagination__item` entries separated by bars holding `.ds-pagination__link`; current `is-current`, `is-disabled`.
+- `.ds-breadcrumb`: a 13px sans path separated by colons; `.ds-breadcrumb__item`, last one `is-current` (bold).
+- `.ds-dialog`: a 360px box in the page flow, left-aligned, with a 1px black border, `.ds-dialog__title` bar in `--fill-inverse`, `.ds-dialog__body` and right-aligned `.ds-dialog__actions`. No backdrop, no shadow.
+- `.ds-empty`: outlined grey block with `.ds-empty__title`, `.ds-empty__text` and a button, left-aligned.
+- `.ds-footer`: a `.ds-rule`, then `.ds-footer__links`, a grey strip of `.ds-footer__item` links separated by bars after a bold `.ds-footer__label`, then `.ds-footer__legal`. Left-aligned.
+- `.ds-view`: one screen of the example site; only the one named in the address shows, and `.ds-view--home` shows when none is named. It has no box of its own.
+- `.ds-rule`: 2px rule in the bar colour; `.ds-rule--thin` 1px grey. `.ds-heading`: a section title on a grey strip. `.ds-dateline`: the date and update line.
+
+## Never
+
+- `border-radius <= 0px`: no reference has a rounded corner.
+- `box-shadow-blur <= 0px`: shadows are hard bevel lines and the offset edge of the message box; nothing is blurred.
+- `text-shadow = none`: no reference has a text shadow.
+- `gradient-fills <= 6%`: only title strips and the top edge of form fields are shaded; every other fill is flat.
+- `border-width <= 3px`: the widest border is the 3px bevel of a control and the header and footer rules.
+- `transition = none`: nothing in the references changes on hover.
+- `animation = none`: no reference has a CSS animation.
+- `font-size >= 13px`: this type set has no 10px small print; the smallest text is 13px.
+- `font-size <= 24px`: the wordmark is the largest text; headings stop at 19px.
+- `font-families <= 3`: Georgia, Arial for controls and small print, Courier for code.
+- `font-weight >= 400`: only regular, bold and black weights were measured.
+- `underlined-links >= 95%`: every reference underlines 100% of its link text.
+- `letter-spacing = 0`: no reference tracks its text.
+- `uppercase-text <= 0%`: no reference uses text-transform; capitals are typed.
+- `row-gap <= 2px`: headlines and table rows follow each other with no space between them.
+- `block-gap <= 12px`: neighbouring blocks are at most one 12px gutter apart.
+- `content-width <= 770px`: the page is a fixed 770px table and never grows with the window.
+- `content-width >= 700px`: the table fills an 800px window; the page is never a narrow centred column.
+
+## Extending
+
+Derive a new component from the nearest one in the specimen and use tokens only. A new module is a `.ds-panel` in the column beside the lead or a cell of the `.ds-grid` band; a new group of headlines is one more entry in `.ds-sections`; a new group of navigation or service links is a `.ds-sidebar` block in the rail under a grey strip; anything tabular is a `.ds-table` with ruled cells. Keep the rail on the left on every page, keep the content column left-aligned, keep text at 16px serif and controls at 13px sans, keep links underlined and blue, separate with 1px outlines, 2px rules and grey strips, and never add radius, shadow, gradient, hover effects, centred blocks or more whitespace than `--space-4` between blocks.

@@ -1,0 +1,1304 @@
+/* Layout tokens (structure part). Taken from the references' block widths,
+   gutters and cell paddings. */
+:root {
+  --size-page: 740px;
+  --size-sidebar: 144px;
+  --size-rail: 164px;
+  --size-figure: 96px;
+  --size-mark: 26px;
+  --size-search: 104px;
+  --size-label: 96px;
+  --size-field: 180px;
+  --size-area: 56px;
+  --size-dialog: 300px;
+  --size-led: 5px;
+  --size-dot: 6px;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-3: 4px;
+  --space-4: 6px;
+  --space-5: 10px;
+  --space-6: 14px;
+}
+
+/* ---------- shell ---------- */
+.ds-page {
+  margin: 0;
+  padding: var(--space-5) var(--space-3);
+  background: var(--fill-page);
+  background-color: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-body);
+  line-height: var(--line-body);
+}
+/* The fixed sheet, centred in the window. Everything that carries text sits
+   on it; the page colour only shows around it. */
+.ds-page__frame {
+  box-sizing: border-box;
+  width: var(--size-page);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--color-canvas);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-page);
+}
+.ds-page__columns {
+  display: grid;
+  grid-template-columns: var(--size-sidebar) minmax(0, 1fr) var(--size-rail);
+  gap: var(--space-4);
+  align-items: start;
+  padding: var(--space-4);
+}
+.ds-page__main,
+.ds-page__side,
+.ds-page__rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+/* Inner page: the link column stays, the rail goes. The link column is a
+   stack (.ds-page__side) of the section's links and small modules. */
+.ds-page__columns--inner {
+  grid-template-columns: var(--size-sidebar) minmax(0, 1fr);
+}
+.ds-block {
+  display: block;
+}
+/* A full-width row under the columns, for the home page's feature. */
+.ds-page__wide {
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+/* ---------- views ---------- */
+/* The specimen is one example site; one view shows at a time. */
+.ds-view { display: none; }
+.ds-view:target, .ds-page:not(:has(.ds-view:target)) .ds-view--home { display: block; }
+.ds-view:target { scroll-margin-top: 100vh; }
+
+/* ---------- links ---------- */
+.ds-link {
+  color: var(--color-link);
+  text-decoration: var(--link-decoration);
+}
+.ds-link:visited,
+.ds-link.is-visited {
+  color: var(--color-link-visited);
+}
+.ds-link:hover,
+.ds-link.is-hover {
+  color: var(--color-link-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-link:active,
+.ds-link.is-active {
+  color: var(--color-link-active);
+}
+.ds-link:focus-visible,
+.ds-link.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-link--quiet,
+.ds-link--quiet:visited,
+.ds-link--quiet.is-visited {
+  color: var(--color-link-quiet);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-link--quiet:hover,
+.ds-link--quiet.is-hover {
+  color: var(--color-link-hover);
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+}
+
+/* ---------- brand ---------- */
+/* The site's mark and name. The mark sits on a small tile dressed like
+   the primary button, so every palette and surface reskins it. */
+.ds-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-heading);
+  text-decoration: none;
+}
+.ds-brand__mark {
+  display: flex;
+  flex: none;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: var(--size-mark);
+  height: var(--size-mark);
+  padding: var(--space-2);
+  background: var(--fill-button);
+  color: var(--color-button-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-control);
+}
+.ds-brand__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ds-brand__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--line-display);
+  letter-spacing: var(--display-tracking);
+  text-transform: var(--heading-transform);
+}
+
+/* ---------- nav ---------- */
+.ds-nav {
+  display: block;
+}
+.ds-nav__utility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-2) var(--space-5);
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-shadow: var(--shadow-text);
+}
+.ds-nav__utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-nav__utility-link {
+  color: var(--color-bar-alt-text);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-nav__utility-link:hover,
+.ds-nav__utility-link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-nav__search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+}
+.ds-nav__search-label {
+  font-weight: var(--weight-bold);
+  text-transform: var(--ui-transform);
+}
+.ds-nav__masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+}
+.ds-nav__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.ds-nav__tagline {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+/* Small status read-out at the right of the masthead: a framed line of
+   label and value pairs. */
+.ds-nav__status {
+  display: flex;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-1) var(--space-4);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-control);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+.ds-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  list-style: none;
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-ui);
+  text-transform: var(--ui-transform);
+  text-shadow: var(--shadow-text);
+}
+.ds-nav__link {
+  display: block;
+  padding: var(--space-1) var(--space-5);
+  color: var(--color-bar-text);
+  border-radius: var(--radius-control);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-nav__link:hover,
+.ds-nav__link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+/* The current section is a lit capsule set into the bar. */
+.ds-nav__link.is-current,
+.ds-page:not(:has(.ds-view:target)) .ds-nav__link[href="#home"],
+.ds-page:has(#home:target) .ds-nav__link[href="#home"],
+.ds-page:has(#downloads:target) .ds-nav__link[href="#downloads"],
+.ds-page:has(#feature:target) .ds-nav__link[href="#feature"],
+.ds-page:has(#mylist:target) .ds-nav__link[href="#mylist"],
+.ds-page:has(#submit:target) .ds-nav__link[href="#submit"] {
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  text-shadow: none;
+}
+
+/* ---------- breadcrumb ---------- */
+.ds-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-2) var(--space-5);
+  list-style: none;
+  background: var(--color-surface-alt);
+  border-bottom: var(--border-width) var(--border-style) var(--color-border);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+.ds-breadcrumb__sep {
+  color: var(--color-text-muted);
+}
+.ds-breadcrumb__current {
+  color: var(--color-heading);
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- sidebar ---------- */
+.ds-sidebar {
+  overflow: hidden;
+  background: var(--color-surface-alt);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-panel);
+}
+.ds-sidebar__title {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface-strong);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-sidebar__list {
+  margin: 0;
+  padding: var(--space-2) 0 var(--space-3);
+  list-style: none;
+}
+.ds-sidebar__item {
+  padding: var(--space-1) var(--space-4);
+}
+
+/* ---------- section head ---------- */
+/* A small tab that sits on a thin line: the heading of a block. */
+.ds-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-5);
+  margin: 0;
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-strong);
+}
+.ds-section__title {
+  margin: 0;
+  padding: var(--space-2) var(--space-5);
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+  text-shadow: var(--shadow-text);
+}
+.ds-section__more {
+  padding: 0 var(--space-2) var(--space-1);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- hero ---------- */
+/* A tinted module with a ring graphic, the lead title and one capsule
+   button; a dot-matrix run closes it. */
+.ds-hero {
+  overflow: hidden;
+  background: var(--color-fill-1);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-page);
+}
+.ds-hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--size-figure);
+  gap: var(--space-5);
+  align-items: center;
+  padding: var(--space-5);
+}
+.ds-hero__kicker {
+  display: inline-block;
+  margin: 0 0 var(--space-3);
+  padding: 0 var(--space-4);
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  text-transform: var(--ui-transform);
+}
+.ds-hero__title {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--line-display);
+  letter-spacing: var(--display-tracking);
+  text-transform: var(--heading-transform);
+}
+.ds-hero__text {
+  margin: var(--space-2) 0 var(--space-4);
+  font-size: var(--text-large);
+}
+.ds-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+.ds-hero__figure {
+  display: block;
+  width: var(--size-figure);
+  height: var(--size-figure);
+  color: var(--color-border-strong);
+}
+.ds-hero__dots {
+  height: var(--size-dot);
+  border-top: var(--border-width) var(--border-style) var(--color-border);
+  background-image: radial-gradient(circle, var(--color-border-strong) 34%, transparent 40%);
+  background-size: var(--size-dot) var(--size-dot);
+}
+
+/* ---------- page header ---------- */
+.ds-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-5);
+  padding: var(--space-2) 0 var(--space-3);
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-strong);
+}
+.ds-page-header__title {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-page-header__text {
+  margin: 0;
+  color: var(--color-text);
+}
+.ds-page-header__action {
+  flex: none;
+}
+
+/* ---------- stats ---------- */
+/* A row of read-out cells: figure over a small label. */
+.ds-stat {
+  display: flex;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-stat__item {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  background: var(--color-surface-alt);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-panel);
+}
+.ds-stat__value {
+  display: block;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+}
+.ds-stat__label {
+  display: block;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-transform: var(--ui-transform);
+}
+
+/* ---------- prose ---------- */
+.ds-prose {
+  padding: var(--space-4) var(--space-2);
+}
+.ds-prose h1,
+.ds-prose h2,
+.ds-prose h3 {
+  margin: 0 0 var(--space-3);
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+.ds-prose h1 { font-size: var(--text-h1); }
+.ds-prose h2 { font-size: var(--text-h2); }
+.ds-prose h3 { font-size: var(--text-h3); color: var(--color-heading-alt); }
+.ds-prose p {
+  margin: 0 0 var(--space-5);
+}
+.ds-prose ul,
+.ds-prose ol {
+  margin: 0 0 var(--space-5);
+  padding: 0 0 0 var(--space-6);
+}
+.ds-prose ul {
+  list-style: square;
+}
+.ds-prose code {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+}
+.ds-prose strong {
+  font-weight: var(--weight-bold);
+}
+.ds-prose > :last-child {
+  margin-bottom: 0;
+}
+/* The article set in two columns, where it runs the width of the sheet. */
+.ds-prose--columns {
+  column-count: 2;
+  column-gap: var(--space-6);
+}
+.ds-prose--columns p,
+.ds-prose--columns ul,
+.ds-prose--columns ol {
+  break-inside: avoid;
+}
+.ds-prose--columns h1,
+.ds-prose--columns h2,
+.ds-prose--columns h3 {
+  break-after: avoid;
+}
+.ds-prose__lead {
+  font-size: var(--text-large);
+}
+.ds-prose__byline {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+/* ---------- buttons ---------- */
+/* The glass capsule that was drawn as an image. */
+.ds-button {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--space-1) var(--space-5);
+  background: var(--fill-button);
+  color: var(--color-button-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-control);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-ui);
+  line-height: var(--line-body);
+  text-transform: var(--ui-transform);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.ds-button:hover,
+.ds-button.is-hover {
+  background: var(--fill-button-hover);
+  color: var(--color-button-hover-text);
+  box-shadow: var(--shadow-control-hover);
+}
+.ds-button:active,
+.ds-button.is-active {
+  box-shadow: var(--shadow-control-pressed);
+}
+.ds-button:focus-visible,
+.ds-button.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-button--secondary,
+.ds-button--secondary:hover,
+.ds-button--secondary.is-hover {
+  background: var(--fill-button-secondary);
+  color: var(--color-button-secondary-text);
+}
+/* Destructive action: the secondary capsule with a danger-coloured rim and
+   lamp. The label keeps the secondary text colour. */
+.ds-button--danger,
+.ds-button--danger:hover,
+.ds-button--danger.is-hover {
+  background: var(--fill-button-secondary);
+  color: var(--color-button-secondary-text);
+  border-color: var(--color-danger);
+}
+.ds-button--danger::before {
+  content: "";
+  display: inline-block;
+  width: var(--size-led);
+  height: var(--size-led);
+  margin-right: var(--space-3);
+  background: var(--color-danger);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+}
+.ds-button:disabled,
+.ds-button.is-disabled {
+  background: var(--color-disabled);
+  color: var(--color-disabled-text);
+  box-shadow: none;
+  cursor: default;
+}
+.ds-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* ---------- form ---------- */
+.ds-form {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-alt);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-top: 0;
+}
+.ds-form__row {
+  display: grid;
+  grid-template-columns: var(--size-label) minmax(0, 1fr);
+  column-gap: var(--space-4);
+  align-items: start;
+  padding: var(--space-2) 0;
+}
+.ds-form__label {
+  padding-top: var(--space-2);
+  color: var(--color-text);
+  font-weight: var(--weight-bold);
+}
+.ds-form__hint {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-body);
+  color: var(--color-text-muted);
+}
+.ds-form__input {
+  box-sizing: border-box;
+  width: var(--size-field);
+  margin: 0;
+  padding: var(--space-1) var(--space-4);
+  background: var(--fill-input);
+  color: var(--color-input-text);
+  border: var(--border-width) var(--border-style) var(--color-input-border);
+  border-radius: var(--radius-control);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  line-height: var(--line-body);
+}
+.ds-form__input:focus-visible,
+.ds-form__input.is-focus {
+  outline: var(--focus-ring);
+}
+.ds-form__input--small {
+  width: var(--size-search);
+  font-size: var(--text-small);
+}
+.ds-form__input--auto {
+  width: auto;
+}
+.ds-form__input--area {
+  width: 100%;
+  height: var(--size-area);
+  resize: vertical;
+}
+.ds-form__input.is-invalid {
+  border-color: var(--color-danger);
+}
+.ds-form__input:disabled,
+.ds-form__input.is-disabled {
+  background: var(--color-disabled);
+  color: var(--color-disabled-text);
+}
+/* Error text always sits on its own chip of the error surface. */
+.ds-form__error {
+  display: inline-block;
+  margin: var(--space-2) 0 0;
+  padding: 0 var(--space-4);
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+  border: var(--border-width) var(--border-style) var(--color-danger);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-form__check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+}
+.ds-form__checkbox {
+  margin: 0;
+}
+.ds-form__actions {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) 0 var(--space-2) calc(var(--size-label) + var(--space-4));
+}
+
+/* ---------- table ---------- */
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: var(--border-width) var(--border-style) var(--color-border);
+  font-size: var(--text-base);
+}
+.ds-table th {
+  padding: var(--space-2) var(--space-4);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  text-align: left;
+  text-transform: var(--ui-transform);
+  text-shadow: var(--shadow-text);
+}
+.ds-table td {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.ds-table tr:nth-child(even) td {
+  background: var(--color-surface-alt);
+}
+.ds-table th.ds-table__num,
+.ds-table td.ds-table__num {
+  text-align: right;
+}
+.ds-table td.ds-table__num {
+  font-family: var(--font-mono);
+}
+.ds-table__caption {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- tabs ---------- */
+/* Round-shouldered tabs standing on a rule in the bar colour. */
+.ds-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0 var(--space-4);
+  list-style: none;
+  border-bottom: var(--border-width-strong) var(--border-style) var(--color-bar);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-ui);
+  text-transform: var(--ui-transform);
+}
+.ds-tabs__tab {
+  display: block;
+  padding: var(--space-2) var(--space-5);
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+  text-decoration: var(--link-decoration-quiet);
+  text-shadow: var(--shadow-text);
+}
+.ds-tabs__tab:hover,
+.ds-tabs__tab.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+.ds-tabs__tab.is-current {
+  padding-top: var(--space-3);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+}
+
+/* ---------- list ---------- */
+.ds-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-list__item {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-width) var(--border-style) var(--color-border-muted);
+}
+.ds-list__title {
+  font-weight: var(--weight-bold);
+}
+.ds-list__text {
+  display: block;
+}
+.ds-list__meta {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+/* One line per item, for rails. */
+.ds-list--compact .ds-list__item {
+  padding: var(--space-2) var(--space-4);
+}
+.ds-list--compact .ds-list__item:last-child {
+  border-bottom: 0;
+}
+.ds-list--compact .ds-list__title {
+  font-weight: var(--weight-body);
+}
+.ds-list--compact .ds-list__meta {
+  display: inline;
+}
+/* A compact list whose note is longer than a count: the note takes its own
+   line under the title instead of breaking in the middle. */
+.ds-list--noted .ds-list__meta {
+  display: block;
+}
+
+/* ---------- panel ---------- */
+.ds-panel {
+  overflow: hidden;
+  background: var(--fill-panel);
+  color: var(--color-text);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+}
+.ds-panel__title {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+  text-shadow: var(--shadow-text);
+}
+.ds-panel__body {
+  padding: var(--space-4);
+}
+.ds-panel__body > :first-child { margin-top: 0; }
+.ds-panel__body > :last-child { margin-bottom: 0; }
+.ds-panel__text {
+  margin: 0 0 var(--space-4);
+}
+.ds-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ds-panel__small {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+.ds-panel--alt .ds-panel__title {
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+}
+/* Inverted panel: the one block in the opposite tone. Everything in it,
+   links included, takes the inverse text colour. */
+.ds-panel--inverse {
+  background: var(--fill-inverse);
+  color: var(--color-inverse-text);
+}
+.ds-panel--inverse .ds-panel__title {
+  background: transparent;
+  color: var(--color-inverse-text);
+  font-size: var(--text-h2);
+  text-shadow: none;
+}
+.ds-panel--inverse .ds-link,
+.ds-panel--inverse .ds-link:visited,
+.ds-panel--inverse .ds-link.is-visited,
+.ds-panel--inverse .ds-link:hover,
+.ds-panel--inverse .ds-link.is-hover {
+  color: var(--color-inverse-text);
+}
+.ds-panel__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+}
+.ds-panel__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+}
+.ds-panel__field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ---------- grid ---------- */
+.ds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.ds-grid__cell {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background: var(--color-fill-4);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-page);
+}
+.ds-grid__cell--1 { background: var(--color-fill-1); }
+.ds-grid__cell--2 { background: var(--color-fill-2); }
+.ds-grid__cell--3 { background: var(--color-fill-3); }
+.ds-grid__title {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+}
+/* Titles keep the heading colour: a cell fill may be close to the link
+   colour. */
+.ds-grid__title .ds-link,
+.ds-grid__title .ds-link:visited {
+  color: var(--color-heading);
+}
+.ds-grid__text {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+
+/* ---------- badge ---------- */
+.ds-badge {
+  display: inline-block;
+  padding: 0 var(--space-3);
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-body);
+  text-transform: var(--ui-transform);
+  vertical-align: baseline;
+}
+.ds-badge--count {
+  padding: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-body);
+}
+/* Status labels: a lamp in the status colour on a plain chip. The lamp has
+   a ring in the text colour so that it shows on any chip, and the status
+   colour never carries text. */
+.ds-badge--alt,
+.ds-badge--success,
+.ds-badge--warning,
+.ds-badge--danger {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  font-weight: var(--weight-body);
+}
+.ds-badge--alt::before,
+.ds-badge--success::before,
+.ds-badge--warning::before,
+.ds-badge--danger::before {
+  content: "";
+  display: inline-block;
+  width: var(--size-led);
+  height: var(--size-led);
+  margin-right: var(--space-3);
+  border: var(--border-width) var(--border-style) var(--color-text);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+}
+.ds-badge--alt { border-color: var(--color-accent-alt); }
+.ds-badge--success { border-color: var(--color-success); }
+.ds-badge--warning { border-color: var(--color-warning); }
+.ds-badge--danger { border-color: var(--color-danger); }
+.ds-badge--alt::before { background: var(--color-accent-alt); }
+.ds-badge--success::before { background: var(--color-success); }
+.ds-badge--warning::before { background: var(--color-warning); }
+.ds-badge--danger::before { background: var(--color-danger); }
+
+/* ---------- notice ---------- */
+.ds-notice {
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-notice);
+  color: var(--color-notice-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-panel);
+}
+.ds-notice--error {
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.ds-notice__title {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: var(--weight-bold);
+  text-transform: var(--ui-transform);
+}
+.ds-notices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ---------- pagination ---------- */
+.ds-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+}
+.ds-pagination__link,
+.ds-pagination__current {
+  display: block;
+  padding: 0 var(--space-3);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-control);
+}
+.ds-pagination__current {
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  border-color: var(--color-border-strong);
+  font-weight: var(--weight-bold);
+}
+
+/* ---------- dialog ---------- */
+/* A small window in the page flow: title bar, message, capsules. */
+.ds-dialog__backdrop {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--color-overlay);
+  border: var(--border-width) var(--border-style) var(--color-border);
+}
+.ds-dialog {
+  box-sizing: border-box;
+  width: var(--size-dialog);
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--fill-panel);
+  color: var(--color-text);
+  border: var(--border-width-strong) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-dialog);
+}
+.ds-dialog__title {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  background: var(--fill-bar);
+  color: var(--color-bar-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--line-heading);
+  text-transform: var(--heading-transform);
+  letter-spacing: var(--heading-tracking);
+  text-shadow: var(--shadow-text);
+}
+.ds-dialog__body {
+  padding: var(--space-5);
+}
+.ds-dialog__text {
+  margin: 0 0 var(--space-5);
+}
+.ds-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-4);
+}
+
+/* ---------- empty ---------- */
+.ds-empty {
+  padding: var(--space-5) var(--space-4);
+  background: var(--color-surface-alt);
+  border: var(--border-width) dotted var(--color-border-strong);
+  border-radius: var(--radius-panel);
+  text-align: center;
+}
+.ds-empty__text {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+}
+
+/* ---------- footer ---------- */
+.ds-footer {
+  display: block;
+}
+.ds-footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-2) var(--space-5);
+  list-style: none;
+  background: var(--fill-bar-alt);
+  color: var(--color-bar-alt-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-shadow: var(--shadow-text);
+}
+.ds-footer__link {
+  color: var(--color-bar-alt-text);
+  text-decoration: var(--link-decoration-quiet);
+}
+.ds-footer__link:hover,
+.ds-footer__link.is-hover {
+  text-decoration: var(--link-decoration-hover);
+}
+/* The closing band in the inverse tone, holding the copyright line. */
+.ds-footer__band {
+  margin: 0;
+  padding: var(--space-3) var(--space-5);
+  background: var(--fill-inverse);
+  color: var(--color-inverse-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-align: center;
+}
+.ds-footer__band-link,
+.ds-footer__band-link:visited {
+  color: var(--color-inverse-text);
+  text-decoration: var(--link-decoration);
+}
+
+/* current item also carries a marker that no token set can remove */
+.ds-nav__link.is-current::before,
+.ds-page:not(:has(.ds-view:target)) .ds-nav__link[href="#home"]::before,
+.ds-page:has(#home:target) .ds-nav__link[href="#home"]::before,
+.ds-page:has(#downloads:target) .ds-nav__link[href="#downloads"]::before,
+.ds-page:has(#feature:target) .ds-nav__link[href="#feature"]::before,
+.ds-page:has(#mylist:target) .ds-nav__link[href="#mylist"]::before,
+.ds-page:has(#submit:target) .ds-nav__link[href="#submit"]::before {
+  content: ">";
+  margin-right: var(--space-1);
+}
+
+/* ---------- period components: menu, progress, accordion, tooltip, carousel, avatar ---------- */
+.ds-menu {
+  position: relative;
+}
+.ds-menu__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  display: none;
+  min-width: var(--size-menu);
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+  box-shadow: var(--shadow-panel);
+  text-shadow: none;
+  text-transform: none;
+}
+.ds-menu:hover > .ds-menu__list,
+.ds-menu:focus-within > .ds-menu__list {
+  display: block;
+}
+.ds-menu__link {
+  display: block;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-link);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-decoration: var(--link-decoration-quiet);
+  white-space: nowrap;
+}
+.ds-menu__link:hover,
+.ds-menu__link:focus-visible {
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+}
+.ds-meter {
+  margin: 0 0 var(--space-3);
+}
+.ds-meter__label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+}
+.ds-progress {
+  display: block;
+  height: var(--space-3);
+  overflow: hidden;
+  background: var(--color-surface-strong);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+}
+.ds-progress__bar {
+  display: block;
+  height: 100%;
+  background-color: var(--color-accent);
+  background-image: repeating-linear-gradient(90deg, transparent 0, transparent var(--size-seg), var(--color-surface-strong) var(--size-seg), var(--color-surface-strong) var(--size-seg-gap));
+}
+.ds-progress--70 .ds-progress__bar { width: 70%; }
+.ds-accordion {
+  margin: 0 0 var(--space-3);
+  border: var(--border-width) var(--border-style) var(--color-border);
+  border-radius: var(--radius-control);
+}
+.ds-accordion__summary {
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+}
+.ds-accordion__body {
+  padding: var(--space-2) var(--space-3);
+  border-top: var(--border-width) var(--border-style) var(--color-border);
+  font-size: var(--text-small);
+}
+.ds-accordion__body p {
+  margin: 0;
+}
+.ds-tooltip {
+  position: relative;
+  border-bottom: var(--border-width) dotted var(--color-border-strong);
+  cursor: help;
+}
+.ds-tooltip__tip {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  z-index: 20;
+  display: none;
+  width: max-content;
+  max-width: var(--size-tip);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-inverse);
+  color: var(--color-inverse-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: var(--weight-body);
+  text-shadow: none;
+  text-transform: none;
+}
+.ds-tooltip:hover > .ds-tooltip__tip,
+.ds-tooltip:focus > .ds-tooltip__tip,
+.ds-tooltip:focus-within > .ds-tooltip__tip {
+  display: block;
+}
+.ds-carousel {
+  margin: 0 0 var(--space-3);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-control);
+}
+.ds-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-avatar);
+  height: var(--size-avatar);
+  margin-right: var(--space-2);
+  background: var(--fill-accent);
+  color: var(--color-accent-text);
+  border: var(--border-width) var(--border-style) var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: var(--weight-bold);
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+:root {
+  --size-tip: 220px;
+  --size-menu: 150px;
+  --size-avatar: 24px;
+  --size-seg: 6px;
+  --size-seg-gap: 8px;
+}

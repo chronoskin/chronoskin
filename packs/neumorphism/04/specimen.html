@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: training log</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#today"><svg class="ds-nav__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8.5 8 3l6 5.5V14H2z"/></svg>Today</a></li>
+      <li><a class="ds-nav__link" href="#sessions"><svg class="ds-nav__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h6"/></svg>Sessions</a></li>
+      <li><a class="ds-nav__link" href="#plan"><svg class="ds-nav__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="3" width="11" height="10.5" rx="2"/><path d="M2.5 6.5h11M6 1.5v3M10 1.5v3"/></svg>Plan</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <a class="ds-button ds-button--secondary" href="#log">Log a session</a>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu"><span class="ds-avatar"><span class="ds-avatar__pic">MK</span></span><svg class="ds-menu__caret" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#plan">Spring 10 km plan</a></li>
+          <li><a class="ds-menu__link" href="#sessions">Sessions</a></li>
+          <li><a class="ds-menu__link" href="#log">Log a session</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#today">Sign out</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="today">
+  <div class="ds-page__stack">
+
+  <div class="ds-bento ds-bento--lead">
+    <section class="ds-hero" data-component="hero">
+      <div>
+        <span class="ds-hero__date">Thursday, week 11</span>
+        <h1 class="ds-hero__title">Two goals met today</h1>
+        <p class="ds-hero__lead">A 6 km run this morning closed the move and exercise goals. Ten minutes of stretching closes the third.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#log">Start stretching</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#sessions">See the week</a>
+        </div>
+      </div>
+      <div class="ds-ring" aria-hidden="true">
+        <div class="ds-ring__arc">
+          <div class="ds-ring__face">
+            <span class="ds-ring__figure">68%</span>
+            <span class="ds-ring__caption">of the weekly plan</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-panel" data-component="panel">
+      <h2 class="ds-panel__title">Today <span class="ds-tooltip ds-tooltip--end"><span class="ds-badge ds-badge--quiet" tabindex="0">14:20</span><span class="ds-tooltip__tip" role="tooltip">Watch synced at 14:20</span></span></h2>
+      <div class="ds-panel__body ds-panel__body--grow">
+        <div class="ds-progress ds-progress--fill">
+          <div class="ds-progress__row">
+            <span class="ds-progress__label">Move <span>510 of 600 kcal</span></span>
+            <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--85"></div></div>
+          </div>
+          <div class="ds-progress__row">
+            <span class="ds-progress__label">Exercise <span>26 of 40 min</span></span>
+            <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--65"></div></div>
+          </div>
+          <div class="ds-progress__row">
+            <span class="ds-progress__label">Stretch <span>3 of 10 min</span></span>
+            <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--30"></div></div>
+          </div>
+          <div class="ds-progress__row">
+            <span class="ds-progress__label">Water <span>1.0 of 2.0 l</span></span>
+            <div class="ds-progress__track"><div class="ds-progress__bar"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <dl class="ds-stat" data-component="stats">
+    <div class="ds-stat__item">
+      <div class="ds-ring ds-ring--small" aria-hidden="true"><div class="ds-ring__arc"><div class="ds-ring__face"><span class="ds-ring__figure"> 68</span></div></div></div>
+      <div class="ds-stat__text">
+        <dt class="ds-stat__label">Distance this week</dt>
+        <dd class="ds-stat__value">31.4 km <span class="ds-stat__meta">of 46 km planned</span></dd>
+      </div>
+    </div>
+    <div class="ds-stat__item">
+      <div class="ds-ring ds-ring--small" aria-hidden="true"><div class="ds-ring__arc ds-ring__arc--50"><div class="ds-ring__face"><span class="ds-ring__figure">50</span></div></div></div>
+      <div class="ds-stat__text">
+        <dt class="ds-stat__label">Active time</dt>
+        <dd class="ds-stat__value">4 h 12 <span class="ds-stat__meta">of 8 h 30 planned</span></dd>
+      </div>
+    </div>
+    <div class="ds-stat__item">
+      <div class="ds-ring ds-ring--small" aria-hidden="true"><div class="ds-ring__arc ds-ring__arc--90"><div class="ds-ring__face"><span class="ds-ring__figure">90</span></div></div></div>
+      <div class="ds-stat__text">
+        <dt class="ds-stat__label">Sleep, 7 day average</dt>
+        <dd class="ds-stat__value">7 h 10 <span class="ds-stat__meta">goal 8 h</span></dd>
+      </div>
+    </div>
+  </dl>
+
+
+  <section class="ds-grid" data-component="grid">
+    <div class="ds-grid__cell ds-grid__cell--1">
+      <span class="ds-grid__label">Running</span>
+      <span class="ds-grid__value">18.2 km</span>
+      <span class="ds-grid__bars"><span class="ds-grid__bar ds-grid__bar--3"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--4"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--5"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--2"></span></span>
+      <span class="ds-grid__meta">3 runs, 5:42 per km</span>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--2">
+      <span class="ds-grid__label">Cycling</span>
+      <span class="ds-grid__value">46.0 km</span>
+      <span class="ds-grid__bars"><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--4"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--3"></span><span class="ds-grid__bar ds-grid__bar--5"></span><span class="ds-grid__bar"></span></span>
+      <span class="ds-grid__meta">2 rides, 24 km/h</span>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--3">
+      <span class="ds-grid__label">Swimming</span>
+      <span class="ds-grid__value">2,400 m</span>
+      <span class="ds-grid__bars"><span class="ds-grid__bar"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--3"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--4"></span><span class="ds-grid__bar"></span></span>
+      <span class="ds-grid__meta">2 swims, 2:05 per 100 m</span>
+    </div>
+    <div class="ds-grid__cell ds-grid__cell--4">
+      <span class="ds-grid__label">Strength</span>
+      <span class="ds-grid__value">3 sessions</span>
+      <span class="ds-grid__bars"><span class="ds-grid__bar ds-grid__bar--2"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--2"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar"></span><span class="ds-grid__bar ds-grid__bar--3"></span><span class="ds-grid__bar"></span></span>
+      <span class="ds-grid__meta">1 h 50 in total</span>
+    </div>
+  </section>
+
+
+  <div class="ds-bento ds-bento--three">
+
+    <ul class="ds-list" data-component="list">
+      <li class="ds-list__item">
+        <span class="ds-list__day">12</span>
+        <div class="ds-list__body">
+          <a class="ds-list__title" href="#sessions">Morning run, river loop</a>
+          <span class="ds-list__meta"><span class="ds-list__dot"></span> Done, 6.1 km in 34:40</span>
+        </div>
+        <span class="ds-list__value">410 kcal</span>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__day">11</span>
+        <div class="ds-list__body">
+          <a class="ds-list__title" href="#sessions">Pool, intervals</a>
+          <span class="ds-list__meta"><span class="ds-list__dot"></span> Done, 1,200 m in 26:10</span>
+        </div>
+        <span class="ds-list__value">320 kcal</span>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__day">10</span>
+        <div class="ds-list__body">
+          <a class="ds-list__title" href="#sessions">Long ride, north road</a>
+          <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Cut short at 28 km, rain</span>
+        </div>
+        <span class="ds-list__value">640 kcal</span>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__day">13</span>
+        <div class="ds-list__body">
+          <a class="ds-list__title" href="#sessions">Strength, upper body</a>
+          <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Planned for tomorrow, 45 min</span>
+        </div>
+        <span class="ds-list__value">Plan</span>
+      </li>
+      <li class="ds-list__item">
+        <span class="ds-list__day">14</span>
+        <div class="ds-list__body">
+          <a class="ds-list__title" href="#sessions">Easy run, park</a>
+          <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Planned for Saturday, 5 km</span>
+        </div>
+        <span class="ds-list__value">Plan</span>
+      </li>
+    </ul>
+
+    <div class="ds-page__stack">
+      <div class="ds-notice__stack" data-component="notice">
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">Rest day on Sunday.</span> The plan leaves it empty on purpose.</div>
+        </div>
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">The watch has not synced since 09:12.</span> Later sessions are missing.</div>
+        </div>
+      </div>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Coach's note <span class="ds-badge">New</span></h2>
+        <div class="ds-panel__body">
+          Keep Saturday's run easy. The long ride moved to next week, so this week ends lighter than planned.
+        </div>
+      </section>
+    </div>
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__heading">Plans</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#plan">Spring 10 km <span class="ds-badge" data-component="badge">7</span></a></li>
+        <li><a class="ds-sidebar__link" href="#plan">Base swimming <span class="ds-badge ds-badge--quiet">4</span></a></li>
+        <li><a class="ds-sidebar__link" href="#plan">Strength, twice a week</a></li>
+      </ul>
+      <h2 class="ds-sidebar__heading">Shortcuts</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link" href="#sessions">Personal bests</a></li>
+        <li><a class="ds-sidebar__link" href="#sessions">Routes</a></li>
+        <li><a class="ds-sidebar__link" href="#sessions">Shoes and bikes</a></li>
+        <li><a class="ds-sidebar__link" href="#sessions">Export</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="sessions">
+  <div class="ds-page__section">
+
+    <div>
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#plan">Spring 10 km</a></li>
+        <li class="ds-breadcrumb__item" aria-current="page">Sessions</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Sessions</h1>
+          <p class="ds-page-header__lead">Five sessions this week, three of them done.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#plan">See the plan</a>
+          <a class="ds-button" href="#log">Log a session</a>
+        </div>
+      </header>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#sessions" aria-current="true">This week</a></li>
+        <li><a class="ds-tabs__tab" href="#sessions">Planned</a></li>
+        <li><a class="ds-tabs__tab" href="#sessions">Done</a></li>
+        <li><a class="ds-tabs__tab" href="#sessions">Missed</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-bento ds-bento--text ds-bento--start">
+
+      <div class="ds-page__stack">
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr>
+            <th scope="col">Session</th>
+            <th scope="col">Status</th>
+            <th scope="col" class="ds-table__opt">Kind</th>
+            <th scope="col" class="ds-table__num ds-table__opt">Distance</th>
+            <th scope="col" class="ds-table__num">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#log">Long ride, north road</a></td>
+          <td><span class="ds-badge ds-badge--danger">Cut short</span></td>
+          <td class="ds-table__meta ds-table__opt">Cycling</td>
+          <td class="ds-table__num ds-table__opt">28.0 km</td>
+          <td class="ds-table__num">1:12:30</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#log">Pool, intervals</a></td>
+          <td><span class="ds-badge ds-badge--success">Done</span></td>
+          <td class="ds-table__meta ds-table__opt">Swimming</td>
+          <td class="ds-table__num ds-table__opt">1.2 km</td>
+          <td class="ds-table__num">26:10</td>
+        </tr>
+        <tr class="is-hover">
+          <td><a class="ds-link ds-link--quiet" href="#log">Morning run, river loop</a></td>
+          <td><span class="ds-badge ds-badge--success">Done</span></td>
+          <td class="ds-table__meta ds-table__opt">Running</td>
+          <td class="ds-table__num ds-table__opt">6.1 km</td>
+          <td class="ds-table__num">34:40</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#log">Strength, upper body</a></td>
+          <td><span class="ds-badge ds-badge--warning">Tomorrow</span></td>
+          <td class="ds-table__meta ds-table__opt">Strength</td>
+          <td class="ds-table__num ds-table__opt">0.0 km</td>
+          <td class="ds-table__num">45:00</td>
+        </tr>
+        <tr>
+          <td><a class="ds-link ds-link--quiet" href="#log">Easy run, park</a></td>
+          <td><span class="ds-badge ds-badge--warning">Saturday</span></td>
+          <td class="ds-table__meta ds-table__opt">Running</td>
+          <td class="ds-table__num ds-table__opt">5.0 km</td>
+          <td class="ds-table__num">30:00</td>
+        </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Pages">
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#sessions">Previous</a></li>
+          <li><a class="ds-pagination__link" href="#sessions">9</a></li>
+          <li><a class="ds-pagination__link" href="#sessions">10</a></li>
+          <li><a class="ds-pagination__link is-current" href="#sessions" aria-current="page">11</a></li>
+          <li><a class="ds-pagination__link" href="#sessions">Next</a></li>
+        </ul>
+      </nav>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Week 11 against the plan <span class="ds-badge ds-badge--quiet">3 of 5 done</span></h2>
+        <div class="ds-panel__body">
+          <div class="ds-progress">
+        <div class="ds-progress__row">
+          <span class="ds-progress__label">Minutes <span>185 of 270</span></span>
+          <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--65"></div></div>
+        </div>
+        <div class="ds-progress__row">
+          <span class="ds-progress__label">Distance <span>35.3 of 46.0 km</span></span>
+          <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--85"></div></div>
+        </div>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <div class="ds-page__stack">
+      <section class="ds-dialog" data-component="dialog">
+        <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+          <h2 class="ds-dialog__title" id="d-title">Delete the long ride?</h2>
+          <div class="ds-dialog__body">The session and its route are removed and the week drops to 61 percent.</div>
+          <div class="ds-dialog__actions">
+            <button class="ds-button ds-button--secondary" type="button">Keep</button>
+            <button class="ds-button ds-button--danger" type="button">Delete</button>
+          </div>
+        </div>
+      </section>
+      <ul class="ds-list">
+        <li class="ds-list__item">
+          <span class="ds-list__day">15</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#log">Rest day</a>
+            <span class="ds-list__meta"><span class="ds-list__dot"></span> Nothing planned, on purpose</span>
+          </div>
+          <span class="ds-list__value">Rest</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__day">16</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#log">Tempo run, canal path</a>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Planned for Monday, 8 km</span>
+          </div>
+          <span class="ds-list__value">Plan</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__day">17</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#log">Pool, long swim</a>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Planned for Tuesday, 1,800 m</span>
+          </div>
+          <span class="ds-list__value">Plan</span>
+        </li>
+      </ul>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="log">
+  <div class="ds-page__section">
+
+    <div>
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#sessions">Sessions</a></li>
+        <li class="ds-breadcrumb__item" aria-current="page">Log a session</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Log a session</h1>
+          <p class="ds-page-header__lead">Anything the watch missed, or a session done without it.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#sessions">Back to sessions</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="ds-bento ds-bento--text ds-bento--start">
+
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Thursday, week 11 <span class="ds-badge ds-badge--quiet">By hand</span></h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__row">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-name">Name</label>
+              <input class="ds-form__input" id="f-name" type="text" value="Evening stretch">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-kind">Kind</label>
+              <span class="ds-form__select-wrap">
+                <select class="ds-form__select" id="f-kind">
+                  <option>Stretching</option>
+                  <option>Running</option>
+                  <option>Strength</option>
+                </select>
+                <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+              </span>
+            </div>
+            </div>
+            <div class="ds-form__row">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-time">Duration</label>
+              <input class="ds-form__input is-error" id="f-time" type="text" value="0:00" aria-invalid="true" aria-describedby="f-time-error">
+              <span class="ds-form__error" id="f-time-error">Enter at least one minute.</span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-effort">Effort <span>Easy</span></label>
+              <input class="ds-form__range" id="f-effort" type="range" min="0" max="100" value="25">
+            </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-note">Note</label>
+              <textarea class="ds-form__textarea" id="f-note" placeholder="How it felt"></textarea>
+              <span class="ds-form__hint">Your coach can read this.</span>
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              Count towards the weekly plan
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-switch" type="checkbox" checked>
+              Share with the coach
+            </label>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Save</button>
+              <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+              <button class="ds-button ds-button--danger" type="button">Delete</button>
+              <button class="ds-button" type="button" disabled>Sync</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="ds-page__stack">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Still open today <span class="ds-badge ds-badge--warning">7 min left</span></h2>
+          <div class="ds-panel__body">
+            <div class="ds-progress">
+              <div class="ds-progress__row">
+                <span class="ds-progress__label">Stretch <span>3 of 10 min</span></span>
+                <div class="ds-progress__track"><div class="ds-progress__bar ds-progress__bar--30"></div></div>
+              </div>
+              <div class="ds-progress__row">
+                <span class="ds-progress__label">Water <span>1.0 of 2.0 l</span></span>
+                <div class="ds-progress__track"><div class="ds-progress__bar"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">What counts</h2>
+          <div class="ds-panel__body">
+            A session entered by hand needs a duration. It counts towards the week once it is at least eighty percent as long as planned.
+          </div>
+        </section>
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">The watch last synced at 09:12.</span> Check that this session is not already on its way.</div>
+        </div>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">After you save</h2>
+          <div class="ds-panel__body">
+            The session appears under <a class="ds-link" href="#sessions">this week</a> and the ring on the home view moves at once. You can change it until Sunday night.
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="plan">
+  <div class="ds-page__section">
+
+    <div>
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">chronoskin</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">Plans</a></li>
+        <li class="ds-breadcrumb__item" aria-current="page">Spring 10 km</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Spring 10 km</h1>
+          <p class="ds-page-header__lead">Week 11 of 14. Seven sessions are left before the taper.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#sessions">Sessions</a>
+          <a class="ds-button" href="#log">Log a session</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="ds-bento ds-bento--text ds-bento--start">
+
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+        <article class="ds-prose" data-component="typography">
+          <h1>How the weekly plan is scored</h1>
+          <p class="ds-prose__lead">Each planned session is worth its planned minutes, and the ring shows the share you have done.</p>
+          <p>A session counts once it is at least <strong>eighty percent</strong> as long as planned. Sessions are matched by day and kind, with a key such as <code>thu-run</code>.</p>
+          <h2>Moved and missed sessions</h2>
+          <p>A session you move inside the week keeps its value. One that is not done by Sunday night counts as missed.</p>
+          <h3>What never counts</h3>
+          <ul>
+            <li>Walks shorter than ten minutes.</li>
+            <li>Sessions entered by hand without a duration.</li>
+            <li>Anything logged on a rest day.</li>
+          </ul>
+          <p class="ds-link__sample" data-component="links">
+            <a class="ds-link" href="#sessions">This week's sessions</a>
+            <a class="ds-link is-visited" href="#today">Today's goals</a>
+            <a class="ds-link is-hover" href="#log">Log a session</a>
+            <a class="ds-link is-active" href="#plan">Rest days</a>
+            <a class="ds-link ds-link--quiet" href="#plan">Scoring in full</a>
+          </p>
+        </article>
+        </div>
+      </section>
+
+      <div class="ds-page__stack">
+      <section class="ds-empty" data-component="empty">
+        <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 16l5-5 3 2 8-8"/><path d="M4 20h16"/></svg>
+        <h2 class="ds-empty__title">No races entered yet</h2>
+        <p class="ds-empty__text">Add a race and the plan counts down to its date.</p>
+        <a class="ds-button" href="#plan">Add a race</a>
+      </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Weeks to go <span class="ds-badge ds-badge--quiet">3</span></h2>
+          <div class="ds-panel__body">
+            Two build weeks of about 46 km, then a taper week at half the distance. Sunday stays a rest day throughout.
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">This week <span class="ds-badge ds-badge--quiet">68%</span></h2>
+          <div class="ds-panel__body">
+            Three of five sessions are done. The long ride was cut short and moved, so the week ends lighter than planned.
+          </div>
+        </section>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">What counts as done? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">A session of at least eighty percent of its planned minutes, on its day or moved inside the week.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Can I swap two days? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">Yes. Both sessions keep their value as long as they stay in the same week.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What happens in the taper? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">The plan halves the distance and the ring is scored against the shorter week.</div>
+          </details>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  </section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin · training log for the Marsh Lane running club</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#sessions">Sessions</a></li>
+      <li><a class="ds-footer__link" href="#plan">How scoring works</a></li>
+      <li><a class="ds-footer__link" href="#log">Log a session</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

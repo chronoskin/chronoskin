@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: your money</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#overview">Overview</a></li>
+      <li><a class="ds-nav__link" href="#activity">Activity</a></li>
+      <li><a class="ds-nav__link" href="#send">Send</a></li>
+      <li><a class="ds-nav__link" href="#cards">Cards</a></li>
+      <li><a class="ds-nav__link" href="#help">Help</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <span class="ds-tooltip ds-tooltip--below ds-tooltip--end"><a class="ds-nav__key" href="#activity" aria-label="Alerts"><svg class="ds-page__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16v-5a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/></svg></a><span class="ds-tooltip__tip" role="tooltip">One payment was declined</span></span>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu"><span class="ds-avatar"><span class="ds-avatar__pic">IV</span></span><svg class="ds-menu__caret" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#cards">Cards</a></li>
+          <li><a class="ds-menu__link" href="#help">Fees and limits</a></li>
+          <li><a class="ds-menu__link" href="#activity">Statement</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#overview">Sign out</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<div class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="overview">
+  <div class="ds-board">
+
+    <div class="ds-page__stack">
+
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__eyebrow"><span>Main account, ends 4418</span> <span class="ds-badge ds-badge--success">Open</span></div>
+        <h1 class="ds-hero__title">Good evening, Ilse. You have</h1>
+        <span class="ds-hero__figure">4,812.60</span>
+        <p class="ds-hero__lead">Two payments leave tomorrow. After them you keep 4,263.10 until the 28th.</p>
+        <div class="ds-hero__limit">
+          <div class="ds-hero__limit-text"><span>Spent of this month's plan</span> <span>1,440 of 2,000</span></div>
+          <div class="ds-progress"><div class="ds-progress__bar ds-progress__bar--most"></div></div>
+        </div>
+        <div class="ds-hero__actions">
+          <a class="ds-button" href="#send">Send money</a>
+          <a class="ds-button ds-button--secondary" href="#activity">Statement</a>
+        </div>
+      </section>
+
+      <ul class="ds-keys">
+        <li><a class="ds-keys__key ds-keys__key--primary" href="#send"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>Send</a></li>
+        <li><a class="ds-keys__key is-hover" href="#send"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7 7 17M15 17H7V9"/></svg></span>Request</a></li>
+        <li><a class="ds-keys__key" href="#activity"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>Top up</a></li>
+        <li><a class="ds-keys__key" href="#cards"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg></span>Cards</a></li>
+      </ul>
+
+      <a class="ds-card" href="#cards">
+        <span class="ds-card__top"><span>chronoskin debit</span> <span class="ds-card__chip"></span></span>
+        <span class="ds-card__number"><span>····</span><span>····</span><span>····</span><span>4418</span></span>
+        <span class="ds-card__row">
+          <span><span class="ds-card__label">Card holder</span><span class="ds-card__value">Ilse Varga</span></span>
+          <span><span class="ds-card__label">Expires</span><span class="ds-card__value">09 / 23</span></span>
+        </span>
+      </a>
+
+    </div>
+
+    <main class="ds-page__stack">
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Money in</dt>
+          <dd class="ds-stat__value">3,150.00 <span class="ds-stat__meta">this month</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Money out</dt>
+          <dd class="ds-stat__value">1,440.35 <span class="ds-stat__meta">28 payments</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Set aside</dt>
+          <dd class="ds-stat__value">420.00 <span class="ds-stat__meta">into four pots</span></dd>
+        </div>
+      </dl>
+
+      <div class="ds-notice__stack" data-component="notice">
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">Rent leaves tomorrow.</span> 780.00 to Harbour Lettings, as on the first of every month.</div>
+        </div>
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">A card payment was declined.</span> 64.90 at Linden Books, because the online limit was reached.</div>
+        </div>
+      </div>
+
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__head">Latest activity <a class="ds-link" href="#activity">See all</a></li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">MG</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#activity">Market Garden</a>
+            <span class="ds-list__meta"><span class="ds-list__dot"></span> Today 18:12 · groceries</span>
+          </div>
+          <span class="ds-list__amount">- 23.80</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">TO</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#activity">Tomas Okonjo</a>
+            <span class="ds-list__meta"><span class="ds-list__dot"></span> Today 12:40 · paid you back</span>
+          </div>
+          <span class="ds-list__amount ds-list__amount--in">+ 40.00</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">LB</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#cards">Linden Books</a>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Today 09:05 · declined</span>
+          </div>
+          <span class="ds-list__amount">64.90</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">NW</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#activity">Northway Rail</a>
+            <span class="ds-list__meta"><span class="ds-list__dot"></span> Yesterday · travel</span>
+          </div>
+          <span class="ds-list__amount">- 18.50</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">QP</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#activity">Quay Press, salary</a>
+            <span class="ds-list__meta"><span class="ds-list__dot"></span> Monday · income</span>
+          </div>
+          <span class="ds-list__amount ds-list__amount--in">+ 3,110.00</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__icon">HL</span>
+          <div class="ds-list__body">
+            <a class="ds-list__title" href="#send">Harbour Lettings</a>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Tomorrow · scheduled</span>
+          </div>
+          <span class="ds-list__amount">- 780.00</span>
+        </li>
+      </ul>
+
+    </main>
+
+    <div class="ds-page__stack">
+
+      <aside class="ds-sidebar" data-component="sidebar">
+        <h2 class="ds-sidebar__heading">Accounts</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#overview">Main <span class="ds-sidebar__sum">4,812.60</span></a></li>
+          <li><a class="ds-sidebar__link" href="#activity">Savings <span class="ds-sidebar__sum">12,300.00</span></a></li>
+          <li><a class="ds-sidebar__link" href="#activity">Shared flat <span class="ds-sidebar__sum">318.25</span></a></li>
+        </ul>
+        <h2 class="ds-sidebar__heading">Shortcuts</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#send">Saved payees <span class="ds-badge" data-component="badge">6</span></a></li>
+          <li><a class="ds-sidebar__link" href="#activity">Scheduled <span class="ds-badge ds-badge--quiet">2</span></a></li>
+          <li><a class="ds-sidebar__link" href="#cards">Card limits</a></li>
+          <li><a class="ds-sidebar__link" href="#help">Fees and rates</a></li>
+        </ul>
+      </aside>
+
+      <section class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell ds-grid__cell--1" href="#activity">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Holiday</span>
+          <span class="ds-grid__value">930</span>
+          <span class="ds-grid__track"><span class="ds-grid__bar"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#activity">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">New bike</span>
+          <span class="ds-grid__value">280</span>
+          <span class="ds-grid__track"><span class="ds-grid__bar"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#activity">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Bills</span>
+          <span class="ds-grid__value">440</span>
+          <span class="ds-grid__track"><span class="ds-grid__bar"></span></span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#activity">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Rainy day</span>
+          <span class="ds-grid__value">200</span>
+          <span class="ds-grid__track"><span class="ds-grid__bar"></span></span>
+        </a>
+      </section>
+
+    </div>
+
+  </div>
+  </section>
+
+  <section class="ds-view" id="activity">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">Main account</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Activity</li>
+    </ol>
+
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Activity</h1>
+        <p class="ds-page-header__lead">Every payment in and out of the main account since the first of the month.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#help">Download statement</a>
+        <a class="ds-button" href="#send">Send money</a>
+      </div>
+    </header>
+
+    <div class="ds-split">
+
+      <div class="ds-page__stack">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Where it went</h2>
+          <div class="ds-panel__body ds-panel__meters">
+            <div>
+              <div class="ds-panel__meter-text"><span>Home and bills</span> <span>840.00</span></div>
+              <div class="ds-progress"><div class="ds-progress__bar ds-progress__bar--most"></div></div>
+            </div>
+            <div>
+              <div class="ds-panel__meter-text"><span>Groceries</span> <span>312.40</span></div>
+              <div class="ds-progress"><div class="ds-progress__bar"></div></div>
+            </div>
+            <div>
+              <div class="ds-panel__meter-text"><span>Travel</span> <span>148.50</span></div>
+              <div class="ds-progress"><div class="ds-progress__bar ds-progress__bar--quarter"></div></div>
+            </div>
+            <div>
+              <div class="ds-panel__meter-text"><span>Everything else</span> <span>139.45</span></div>
+              <div class="ds-progress"><div class="ds-progress__bar ds-progress__bar--quarter"></div></div>
+            </div>
+          </div>
+        </section>
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+          <h2 class="ds-empty__title">Nothing is waiting</h2>
+          <p class="ds-empty__text">No payment is pending approval. Requests you send to others show up here until they are paid.</p>
+          <a class="ds-button" href="#send">Request money</a>
+        </section>
+      </div>
+
+      <div class="ds-page__stack">
+
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#activity" aria-current="true">All</a></li>
+          <li><a class="ds-tabs__tab" href="#activity">Money in</a></li>
+          <li><a class="ds-tabs__tab" href="#activity">Money out</a></li>
+          <li><a class="ds-tabs__tab" href="#activity">Scheduled</a></li>
+        </ul>
+
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr>
+              <th scope="col" class="ds-table__opt">Date</th>
+              <th scope="col">Payee</th>
+              <th scope="col" class="ds-table__opt">Category</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="ds-table__num">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">12 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Market Garden</a></td>
+              <td class="ds-table__meta ds-table__opt">Groceries</td>
+              <td><span class="ds-badge ds-badge--success">Paid</span></td>
+              <td class="ds-table__num">- 23.80</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">12 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Tomas Okonjo</a></td>
+              <td class="ds-table__meta ds-table__opt">Friends</td>
+              <td><span class="ds-badge ds-badge--success">Received</span></td>
+              <td class="ds-table__num">+ 40.00</td>
+            </tr>
+            <tr class="is-hover">
+              <td class="ds-table__meta ds-table__opt">12 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#cards">Linden Books</a></td>
+              <td class="ds-table__meta ds-table__opt">Shopping</td>
+              <td><span class="ds-badge ds-badge--danger">Declined</span></td>
+              <td class="ds-table__num">64.90</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">11 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Northway Rail</a></td>
+              <td class="ds-table__meta ds-table__opt">Travel</td>
+              <td><span class="ds-badge ds-badge--success">Paid</span></td>
+              <td class="ds-table__num">- 18.50</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">10 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Quay Press, salary</a></td>
+              <td class="ds-table__meta ds-table__opt">Income</td>
+              <td><span class="ds-badge ds-badge--success">Received</span></td>
+              <td class="ds-table__num">+ 3,110.00</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">9 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Fenwick Energy</a></td>
+              <td class="ds-table__meta ds-table__opt">Bills</td>
+              <td><span class="ds-badge ds-badge--warning">Pending</span></td>
+              <td class="ds-table__num">- 61.20</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">8 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#activity">Corner Bakery</a></td>
+              <td class="ds-table__meta ds-table__opt">Groceries</td>
+              <td><span class="ds-badge ds-badge--success">Paid</span></td>
+              <td class="ds-table__num">- 7.40</td>
+            </tr>
+            <tr>
+              <td class="ds-table__meta ds-table__opt">13 May</td>
+              <td><a class="ds-link ds-link--quiet" href="#send">Harbour Lettings</a></td>
+              <td class="ds-table__meta ds-table__opt">Home</td>
+              <td><span class="ds-badge ds-badge--warning">Scheduled</span></td>
+              <td class="ds-table__num">- 780.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <nav aria-label="Pages">
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link" href="#activity">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#activity" aria-current="page">1</a></li>
+            <li><a class="ds-pagination__link" href="#activity">2</a></li>
+            <li><a class="ds-pagination__link" href="#activity">3</a></li>
+            <li><a class="ds-pagination__link" href="#activity">Next</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="send">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#activity">Activity</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Send money</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Send money</h1>
+        <p class="ds-page-header__lead">A transfer to a saved payee arrives within the hour, on any day.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#overview">Back to overview</a>
+      </div>
+    </header>
+
+    <div class="ds-split">
+
+      <div class="ds-page__stack">
+        <a class="ds-card" href="#cards">
+          <span class="ds-card__top"><span>Paying from</span> <span class="ds-card__chip"></span></span>
+          <span class="ds-card__number"><span>Main account</span></span>
+          <span class="ds-card__row">
+            <span><span class="ds-card__label">Available</span><span class="ds-card__value">4,812.60</span></span>
+            <span><span class="ds-card__label">After this transfer</span><span class="ds-card__value">4,692.60</span></span>
+          </span>
+        </a>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Limits today</h2>
+          <div class="ds-panel__body">
+            <dl class="ds-panel__facts">
+              <dt>One transfer</dt><dd>5,000.00</dd>
+              <dt>Left today</dt><dd>9,880.00</dd>
+              <dt>New payees</dt><dd>1,000.00</dd>
+            </dl>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Check the name</h2>
+          <div class="ds-panel__body">
+            We compare the name you type with the name on the account, and tell you before any money moves if they differ.
+          </div>
+        </section>
+      </div>
+
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">To a saved payee</h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-payee">Payee</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-payee">
+                    <option>Tomas Okonjo</option>
+                    <option>Harbour Lettings</option>
+                    <option>Fenwick Energy</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-name">Name on the account</label>
+                <input class="ds-form__input" id="f-name" type="text" value="T Okonjo">
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-amount">Amount</label>
+                <input class="ds-form__input is-error" id="f-amount" type="text" value="12,000.00" aria-invalid="true" aria-describedby="f-amount-error">
+                <span class="ds-form__error" id="f-amount-error">Enter 5,000.00 or less for one transfer.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-tip">Round up into a pot <span>2.00</span></label>
+                <input class="ds-form__range" id="f-tip" type="range" min="0" max="100" value="40">
+                <span class="ds-form__hint">Goes to the holiday pot with this transfer.</span>
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-ref">Reference</label>
+              <textarea class="ds-form__textarea" id="f-ref" placeholder="What the payee sees, up to 140 characters"></textarea>
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              Repeat on the 12th of every month
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-switch" type="checkbox" checked>
+              Tell me when the money arrives
+            </label>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Send 120.00</button>
+              <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+              <button class="ds-button ds-button--danger" type="button">Remove payee</button>
+              <button class="ds-button" type="button" disabled>Schedule</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="cards">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">Main account</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Cards</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Cards</h1>
+        <p class="ds-page-header__lead">One debit card on the main account. Limits and locks apply at once.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#help">Order a second card</a>
+      </div>
+    </header>
+
+    <div class="ds-split">
+
+      <div class="ds-page__stack">
+        <a class="ds-card" href="#cards">
+          <span class="ds-card__top"><span>chronoskin debit</span> <span class="ds-card__chip"></span></span>
+          <span class="ds-card__number"><span>····</span><span>····</span><span>····</span><span>4418</span></span>
+          <span class="ds-card__row">
+            <span><span class="ds-card__label">Card holder</span><span class="ds-card__value">Ilse Varga</span></span>
+            <span><span class="ds-card__label">Expires</span><span class="ds-card__value">09 / 23</span></span>
+          </span>
+        </a>
+        <ul class="ds-keys">
+          <li><a class="ds-keys__key ds-keys__key--primary" href="#cards"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>Freeze</a></li>
+          <li><a class="ds-keys__key" href="#cards"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/></svg></span>Show PIN</a></li>
+          <li><a class="ds-keys__key" href="#cards"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14M5 15h14M9 5v14M15 5v14"/></svg></span>Limits</a></li>
+          <li><a class="ds-keys__key" href="#help"><span class="ds-keys__disc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12a7 7 0 0 1 12-5l2 2M19 12a7 7 0 0 1-12 5l-2-2M19 5v4h-4M5 19v-4h4"/></svg></span>Replace</a></li>
+        </ul>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">This card</h2>
+          <div class="ds-panel__body">
+            <dl class="ds-panel__facts">
+              <dt>Online limit</dt><dd>500.00 a day</dd>
+              <dt>Cash limit</dt><dd>300.00 a day</dd>
+              <dt>Spent today</dt><dd>42.30</dd>
+            </dl>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-page__stack">
+
+        <div class="ds-page__row">
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Where it works</h2>
+            <div class="ds-panel__body">
+              <div class="ds-form">
+                <label class="ds-form__check">
+                  <input class="ds-switch" type="checkbox" checked>
+                  Payments online
+                </label>
+                <label class="ds-form__check">
+                  <input class="ds-switch" type="checkbox" checked>
+                  Contactless in shops
+                </label>
+                <label class="ds-form__check">
+                  <input class="ds-switch" type="checkbox">
+                  Cash machines abroad
+                </label>
+                <label class="ds-form__check">
+                  <input class="ds-switch" type="checkbox">
+                  Gambling and lotteries
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <section class="ds-dialog" data-component="dialog">
+            <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+              <h2 class="ds-dialog__title" id="d-title">Freeze the card ending 4418?</h2>
+              <div class="ds-dialog__body">Every new payment is declined until you unfreeze it. Scheduled transfers still leave.</div>
+              <div class="ds-dialog__actions">
+                <button class="ds-button ds-button--secondary" type="button">Keep it on</button>
+                <button class="ds-button ds-button--danger" type="button">Freeze</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <ul class="ds-list">
+          <li class="ds-list__head">Paid with this card <a class="ds-link" href="#activity">See all</a></li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon">MG</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#activity">Market Garden</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Today 18:12 · contactless</span>
+            </div>
+            <span class="ds-list__amount">- 23.80</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon">LB</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#activity">Linden Books</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Today 09:05 · online, declined</span>
+            </div>
+            <span class="ds-list__amount">64.90</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__icon">NW</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#activity">Northway Rail</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Yesterday · online</span>
+            </div>
+            <span class="ds-list__amount">- 18.50</span>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="help">
+
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#overview">chronoskin</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#help">Help</a></li>
+      <li class="ds-breadcrumb__item" aria-current="page">Fees and limits</li>
+    </ol>
+
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Fees and limits</h1>
+        <p class="ds-page-header__lead">What the main account costs and how much can move in a day.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#send">Send money</a>
+      </div>
+    </header>
+
+    <div class="ds-split">
+
+      <div class="ds-page__stack">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">In short</h2>
+          <div class="ds-panel__body">
+            <dl class="ds-panel__facts">
+              <dt>Monthly fee</dt><dd>0.00</dd>
+              <dt>Transfers</dt><dd>Free</dd>
+              <dt>Cash abroad</dt><dd>1.5%</dd>
+              <dt>Replacement card</dt><dd>5.00</dd>
+            </dl>
+          </div>
+        </section>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Talk to someone <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">The chat is staffed from seven until ten in the evening. A lost card can be frozen at any hour from the cards page.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Is my money protected? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">Balances are held in a separate client account and are covered by the national deposit scheme up to its limit.</div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Lost your card? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+            <div class="ds-accordion__body">Freeze it at once from the cards page. A replacement arrives within five working days.</div>
+          </details>
+        </div>
+      </div>
+
+      <section class="ds-panel">
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>How much can move</h1>
+            <p class="ds-prose__lead">Limits protect the account when a phone or a card is lost. You can lower any of them yourself.</p>
+            <p>One transfer can be up to <strong>5,000.00</strong> and a day's transfers up to 10,000.00. A transfer carries its own reference, such as <code>TR-0512-88</code>, which both sides see on their statement.</p>
+            <h2>New payees</h2>
+            <p>The first transfer to a new payee is limited to 1,000.00 and is held for an hour, so that a mistake can still be stopped.</p>
+            <h3>What we check first</h3>
+            <ul>
+              <li>That the name matches the name on the receiving account.</li>
+              <li>That the amount fits what is left of today's limit.</li>
+              <li>That the device has been used with this account before.</li>
+            </ul>
+            <h2>Cards</h2>
+            <p>The card has its own limits for shops, online payments and cash. See <a class="ds-link" href="#cards">the card's limits</a> or <a class="ds-link" href="#activity">what was declined</a>.</p>
+            <p class="ds-link__sample" data-component="links">
+              <a class="ds-link" href="#cards">Card limits</a>
+              <a class="ds-link is-visited" href="#activity">Last statement</a>
+              <a class="ds-link is-hover" href="#send">Send money</a>
+              <a class="ds-link is-active" href="#help">Rates abroad</a>
+              <a class="ds-link ds-link--quiet" href="#help">Terms</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin · a current account that lives on your phone and your desk</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#help">Fees and limits</a></li>
+      <li><a class="ds-footer__link" href="#cards">Cards</a></li>
+      <li><a class="ds-footer__link" href="#activity">Statements</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

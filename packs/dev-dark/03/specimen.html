@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: dark developer tools documentation specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__brand">
+    <a class="ds-brand" data-component="brand" href="#overview">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="20,3 8,3 3,12 8,21 20,21 20,16.5 10.6,16.5 8.1,12 10.6,7.5 20,7.5"/><polygon points="16,9.6 18.4,12 16,14.4 13.6,12"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <span class="ds-badge ds-badge--outline ds-badge--mono">docs</span>
+  </div>
+  <ul class="ds-nav__links">
+    <li><a class="ds-nav__link" href="#overview">Overview</a></li>
+    <li><a class="ds-nav__link" href="#guide">Guides</a></li>
+    <li><a class="ds-nav__link" href="#reference">API reference</a></li>
+    <li><a class="ds-nav__link" href="#console">Console</a></li>
+  </ul>
+  <div class="ds-nav__actions">
+    <a class="ds-search" href="#overview" aria-label="Search the documentation">
+      <svg class="ds-search__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+      <span class="ds-search__text">Search the docs</span>
+      <span class="ds-kbd">Ctrl K</span>
+    </a>
+    <a class="ds-button ds-button--small" href="#console">Dashboard</a>
+    <details class="ds-menu"><summary class="ds-menu__button"><span class="ds-avatar" aria-hidden="true">AO</span><span class="ds-menu__label">Northwind</span></summary><ul class="ds-menu__list"><li class="ds-menu__title">Documentation</li><li><a class="ds-menu__item ds-menu__item--view" href="#overview">Overview</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#guide">Guides</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#reference">API reference</a></li><li><a class="ds-menu__item ds-menu__item--view" href="#console">Console</a></li><li class="ds-menu__title ds-menu__title--rule">Ada Okonkwo, Northwind</li><li><a class="ds-menu__item" href="#console">API keys</a></li><li><a class="ds-menu__item" href="#reference">Version 2 <span class="ds-menu__hint">current</span></a></li><li><a class="ds-menu__item" href="#overview">Sign out</a></li></ul></details>
+  </div>
+</header>
+
+<nav class="ds-tree" aria-label="Pages">
+  <h2 class="ds-tree__title">Get started</h2>
+  <ul class="ds-tree__list">
+    <li><a class="ds-tree__link ds-tree__link--view" href="#overview">Introduction</a></li>
+    <li><a class="ds-tree__link" href="#guide">Quickstart</a></li>
+    <li><a class="ds-tree__link" href="#guide">Verify a domain</a></li>
+  </ul>
+  <h2 class="ds-tree__title">Guides</h2>
+  <ul class="ds-tree__list">
+    <li><a class="ds-tree__link ds-tree__link--view" href="#guide">Send an e-mail</a></li>
+    <li><a class="ds-tree__link" href="#guide">Attachments</a></li>
+    <li><a class="ds-tree__link" href="#guide">Templates <span class="ds-badge ds-badge--new">New</span></a></li>
+    <li><a class="ds-tree__link" href="#guide">Webhooks</a></li>
+    <li><a class="ds-tree__link" href="#guide">Bounces and complaints</a></li>
+  </ul>
+  <h2 class="ds-tree__title">API reference</h2>
+  <ul class="ds-tree__list">
+    <li><a class="ds-tree__link ds-tree__link--view" href="#reference">Send e-mail <span class="ds-mono">POST</span></a></li>
+    <li><a class="ds-tree__link" href="#reference">Retrieve e-mail <span class="ds-mono">GET</span></a></li>
+    <li><a class="ds-tree__link" href="#reference">List domains <span class="ds-mono">GET</span></a></li>
+    <li><a class="ds-tree__link" href="#reference">Delete a key <span class="ds-mono">DEL</span></a></li>
+    <li><a class="ds-tree__link" href="#reference">Errors</a></li>
+  </ul>
+  <h2 class="ds-tree__title">Tools</h2>
+  <ul class="ds-tree__list">
+    <li><a class="ds-tree__link ds-tree__link--view" href="#console">API console</a></li>
+    <li><a class="ds-tree__link" href="#console">Command line</a></li>
+  </ul>
+</nav>
+
+<section class="ds-view ds-view--home" id="overview">
+  <div class="ds-content">
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__copy">
+        <span class="ds-eyebrow ds-eyebrow--accent">Documentation / v2</span>
+        <h1 class="ds-hero__title">Send e-mail from your code</h1>
+        <p class="ds-hero__lead">chronoskin is one HTTP endpoint for transactional e-mail. These pages take you from an API key to a delivered message.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#guide">Quickstart</a>
+          <a class="ds-button ds-button--secondary ds-button--large is-hover" href="#reference">API reference</a>
+        </div>
+      </div>
+      <div class="ds-hero__art">
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-dot ds-dot--success"></span><span class="ds-code__name">POST /v2/emails</span><span>202 in 84 ms</span></div>
+<pre class="ds-code__body"><span class="ds-code__k">curl</span> api.chronoskin.dev/v2/emails \
+  -H <span class="ds-code__s">"Authorization: Bearer $KEY"</span> \
+  -d <span class="ds-code__n">from</span>=<span class="ds-code__s">"hello@harbour.dev"</span> \
+  -d <span class="ds-code__n">to</span>=<span class="ds-code__s">"ada@example.org"</span> \
+  -d <span class="ds-code__n">subject</span>=<span class="ds-code__s">"Your receipt"</span>
+
+<span class="ds-code__c">{ "id": "em_41f9c2", "status": "queued" }</span></pre>
+        </div>
+      </div>
+    </div>
+
+    <ul class="ds-stat" data-component="stats">
+      <li class="ds-stat__item"><span class="ds-stat__figure">1.2 s</span><span class="ds-stat__label">median time to inbox</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">100 / s</span><span class="ds-stat__label">requests on every plan</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">8</span><span class="ds-stat__label">official libraries</span></li>
+      <li class="ds-stat__item"><span class="ds-stat__figure">3,000</span><span class="ds-stat__label">free e-mails a month</span></li>
+    </ul>
+
+    <div class="ds-doc">
+      <div class="ds-stack">
+        <div class="ds-colhead"><h2 class="ds-colhead__title">Guides</h2><a class="ds-link ds-link--more" href="#guide">All guides</a></div>
+        <div class="ds-grid" data-component="grid">
+          <a class="ds-grid__cell" href="#guide">
+            <span class="ds-grid__tile"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 4h12v8H2z M2 4l6 5 6-5"/></svg></span>
+            <h3 class="ds-grid__title">Send an e-mail</h3>
+            <p class="ds-grid__text">One request, with HTML, text or a template.</p>
+          </a>
+          <a class="ds-grid__cell" href="#guide">
+            <span class="ds-grid__tile ds-grid__tile--2"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M2 8h12 M8 2c2.5 2 2.5 10 0 12 M8 2c-2.5 2-2.5 10 0 12"/></svg></span>
+            <h3 class="ds-grid__title">Verify a domain</h3>
+            <p class="ds-grid__text">Three DNS records so mail arrives as you.</p>
+          </a>
+          <a class="ds-grid__cell" href="#guide">
+            <span class="ds-grid__tile ds-grid__tile--3"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 2h7l3 3v9H3z M6 7h4 M6 10h4"/></svg></span>
+            <h3 class="ds-grid__title">Templates</h3>
+            <p class="ds-grid__text">Store a layout once, fill it per message.</p>
+          </a>
+          <a class="ds-grid__cell" href="#guide">
+            <span class="ds-grid__tile ds-grid__tile--4"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 8h4l2-5 2 10 2-5h2"/></svg></span>
+            <h3 class="ds-grid__title">Webhooks</h3>
+            <p class="ds-grid__text">Be told when a message is delivered or opened.</p>
+          </a>
+          <a class="ds-grid__cell" href="#guide">
+            <span class="ds-grid__tile ds-grid__tile--2"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12l8-8 M5 4h7v7"/></svg></span>
+            <h3 class="ds-grid__title">Bounces</h3>
+            <p class="ds-grid__text">What comes back, and what to stop sending.</p>
+          </a>
+          <a class="ds-grid__cell" href="#reference">
+            <span class="ds-grid__tile"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 4L1.5 8 5 12 M11 4l3.5 4-3.5 4 M9 3l-2 10"/></svg></span>
+            <h3 class="ds-grid__title">API reference</h3>
+            <p class="ds-grid__text">Every endpoint, parameter and error code.</p>
+          </a>
+        </div>
+
+        <section class="ds-panel" data-component="panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Install a library <span class="ds-tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">All four libraries follow the API version. 2.4 is current.</span></span></h2><span class="ds-mono">all at version 2.4</span></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span>Node.js</span><span class="ds-kbd">npm install chronoskin</span></li>
+              <li class="ds-panel__row"><span>Python</span><span class="ds-kbd">pip install chronoskin</span></li>
+              <li class="ds-panel__row"><span>Go</span><span class="ds-kbd">go get chronoskin.dev/go/v2</span></li>
+              <li class="ds-panel__row"><span>Ruby</span><span class="ds-kbd">gem install chronoskin</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__body"><div class="ds-accordion" data-component="accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__summary">Which runtimes are supported?</summary><p class="ds-accordion__body">Node.js 18, Python 3.9, Go 1.21 and Ruby 3.1, and every later version.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__summary">Is there a library for another language?</summary><p class="ds-accordion__body">Not yet. The API is plain HTTP and JSON, so any client works.</p></details><details class="ds-accordion__item"><summary class="ds-accordion__summary">How do I pin a version?</summary><p class="ds-accordion__body">Pin the library as usual. Each one sends the API version it was built for.</p></details></div></div>
+        </section>
+
+        <div class="ds-colhead"><h2 class="ds-colhead__title">Recently updated</h2><span class="ds-mono">March 2025</span></div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item"><div class="ds-list__body"><a class="ds-list__title" href="#guide">Templates</a> <span class="ds-badge ds-badge--new">New</span><p class="ds-list__text">Variables, partials and a preview endpoint.</p></div><span class="ds-list__meta">12 Mar 2025</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><a class="ds-list__title" href="#reference">Send e-mail</a><p class="ds-list__text">The <span class="ds-kbd">scheduled_at</span> parameter accepts a time zone.</p></div><span class="ds-list__meta">4 Mar 2025</span></li>
+          <li class="ds-list__item"><div class="ds-list__body"><a class="ds-list__title" href="#guide">Bounces and complaints</a><p class="ds-list__text">A table of the codes each large provider returns.</p></div><span class="ds-list__meta">26 Feb 2025</span></li>
+        </ul>
+      </div>
+
+      <div class="ds-doc__aside">
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">On this page</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current">Guides</li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#overview">Install a library</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#overview">Recently updated</a></li>
+          </ul>
+        </aside>
+        <div class="ds-next">
+          <span><span class="ds-next__title">No key yet?</span><span class="ds-next__text">Make one in the console and send a test.</span></span>
+          <a class="ds-button ds-button--inverse ds-button--small" href="#console">Open the console</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="guide">
+  <div class="ds-content">
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb" data-component="breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Docs</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#guide">Guides</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Send an e-mail</li>
+        </ol>
+        <h1 class="ds-page-header__title">Send an e-mail</h1>
+        <p class="ds-page-header__text">From an API key to a message in an inbox, in about five minutes.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#console">Try it in the console</a>
+      </div>
+    </header>
+
+    <div class="ds-doc">
+      <div class="ds-stack">
+        <div class="ds-tabbed">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#guide">Node.js</a></li>
+            <li><a class="ds-tabs__tab" href="#guide">Python</a></li>
+            <li><a class="ds-tabs__tab" href="#guide">Go</a></li>
+            <li><a class="ds-tabs__tab" href="#guide">cURL</a></li>
+          </ul>
+          <div class="ds-code">
+            <div class="ds-code__head"><span class="ds-code__name">send.js</span><span class="ds-kbd">Copy</span></div>
+<pre class="ds-code__body"><span class="ds-code__k">import</span> { Chronoskin } <span class="ds-code__k">from</span> <span class="ds-code__s">"chronoskin"</span>;
+
+<span class="ds-code__k">const</span> mail = <span class="ds-code__k">new</span> Chronoskin(process.env.<span class="ds-code__n">CHRONOSKIN_KEY</span>);
+
+<span class="ds-code__k">const</span> { id } = <span class="ds-code__k">await</span> mail.emails.send({
+  <span class="ds-code__n">from</span>: <span class="ds-code__s">"Harbour &lt;hello@harbour.dev&gt;"</span>,
+  <span class="ds-code__n">to</span>: [<span class="ds-code__s">"ada@example.org"</span>],
+  <span class="ds-code__n">subject</span>: <span class="ds-code__s">"Your receipt"</span>,
+  <span class="ds-code__n">html</span>: <span class="ds-code__s">"&lt;p&gt;Thanks for your order.&lt;/p&gt;"</span>,
+});  <span class="ds-code__c">// em_41f9c2</span></pre>
+          </div>
+        </div>
+
+        <article class="ds-prose" data-component="typography">
+          <h1>Before you send</h1>
+          <p class="ds-prose__lead">You need an API key and a sender address on a domain you have verified.</p>
+          <p>Until a domain is verified you can only send to <strong>your own address</strong>. That is enough to try everything on this page.</p>
+          <h2>What the call returns</h2>
+          <ul>
+            <li>An <code>id</code> you can use to look the message up later</li>
+            <li>The status <code>queued</code>, which becomes <code>delivered</code> or <code>bounced</code></li>
+            <li>Nothing else: delivery itself is reported by webhook</li>
+          </ul>
+          <h3>Sending to several people</h3>
+          <p>Pass up to 50 addresses in <code>to</code>. Each recipient gets a separate message and never sees the others.</p>
+        </article>
+
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Keys are shown once.</span> Store the key in an environment variable, never in the repository.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">403 domain_not_verified.</span> The sender address is on a domain without valid DNS records.</p>
+        </div>
+
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#overview">Previous</a></li>
+          <li><a class="ds-pagination__link" href="#guide">1</a></li>
+          <li><a class="ds-pagination__link is-current" href="#guide">2</a></li>
+          <li><a class="ds-pagination__link" href="#guide">3</a></li>
+          <li><a class="ds-pagination__link" href="#guide">4</a></li>
+          <li><a class="ds-pagination__link" href="#reference">Next</a></li>
+        </ul>
+      </div>
+
+      <div class="ds-doc__aside">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">On this page</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">The request</a></li>
+            <li class="ds-sidebar__item is-current">Before you send</li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">What the call returns</a></li>
+            <li class="ds-sidebar__item ds-sidebar__item--sub"><a class="ds-link ds-link--quiet" href="#guide">Several people</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#guide">Common errors</a></li>
+          </ul>
+        </aside>
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Related</h2>
+          <p class="ds-linkrow" data-component="links">
+            <a class="ds-link" href="#reference">Send e-mail reference</a>
+            <a class="ds-link is-visited" href="#guide">Verify a domain</a>
+            <a class="ds-link is-hover" href="#guide">Attachments</a>
+            <a class="ds-link is-active" href="#guide">Webhooks</a>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="reference">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Docs</a></li>
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#reference">API reference</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">Send e-mail</li>
+        </ol>
+        <h1 class="ds-page-header__title">Send e-mail <span class="ds-badge ds-badge--success ds-badge--mono">POST</span></h1>
+        <p class="ds-page-header__text">Queues one message for each recipient and returns its id.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#console">Run in the console</a>
+      </div>
+    </header>
+
+    <div class="ds-doc ds-doc--split">
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Body parameters</h2><span class="ds-mono">application/json</span></div>
+          <div class="ds-table__wrap">
+            <table class="ds-table" data-component="table">
+              <thead>
+                <tr><th scope="col">Name</th><th scope="col">Type</th><th scope="col">Needed</th><th scope="col" class="ds-table__num">Max</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row" class="ds-table__name">from</th><td>string</td><td><span class="ds-badge ds-badge--danger">required</span></td><td class="ds-table__num">320</td></tr>
+                <tr class="is-hover"><th scope="row" class="ds-table__name">to</th><td>string[]</td><td><span class="ds-badge ds-badge--danger">required</span></td><td class="ds-table__num">50</td></tr>
+                <tr><th scope="row" class="ds-table__name">subject</th><td>string</td><td><span class="ds-badge ds-badge--danger">required</span></td><td class="ds-table__num">998</td></tr>
+                <tr><th scope="row" class="ds-table__name">html</th><td>string</td><td><span class="ds-badge ds-badge--quiet">optional</span></td><td class="ds-table__num">5,000,000</td></tr>
+                <tr><th scope="row" class="ds-table__name">scheduled_at</th><td>datetime</td><td><span class="ds-badge ds-badge--quiet">optional</span></td><td class="ds-table__num">30</td></tr>
+                <tr><th scope="row" class="ds-table__name">tags</th><td>object[]</td><td><span class="ds-badge ds-badge--warning">beta</span></td><td class="ds-table__num">10</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ds-table__foot"><span>Max is characters, entries, or days ahead for scheduled_at.</span></div>
+        </section>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Labels used in this reference</h2></div>
+          <div class="ds-panel__body">
+            <div class="ds-badgerow" data-component="badge">
+              <span class="ds-badge">v2</span>
+              <span class="ds-badge ds-badge--outline ds-badge--mono">GET</span>
+              <span class="ds-badge ds-badge--success ds-badge--mono">POST</span>
+              <span class="ds-badge ds-badge--warning">beta</span>
+              <span class="ds-badge ds-badge--danger">required</span>
+              <span class="ds-badge ds-badge--quiet">optional</span>
+            </div>
+            <p>A parameter marked beta may change its name or type without a new API version.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-code__name">Request</span><span class="ds-kbd">Copy</span></div>
+<pre class="ds-code__body"><span class="ds-code__k">POST</span> /v2/emails
+<span class="ds-code__n">Authorization</span>: Bearer ck_live_...
+
+{
+  <span class="ds-code__n">"from"</span>: <span class="ds-code__s">"hello@harbour.dev"</span>,
+  <span class="ds-code__n">"to"</span>: [<span class="ds-code__s">"ada@example.org"</span>],
+  <span class="ds-code__n">"subject"</span>: <span class="ds-code__s">"Your receipt"</span>,
+  <span class="ds-code__n">"html"</span>: <span class="ds-code__s">"&lt;p&gt;Thanks.&lt;/p&gt;"</span>
+}</pre>
+        </div>
+        <div class="ds-code">
+          <div class="ds-code__head"><span class="ds-dot ds-dot--success"></span><span class="ds-code__name">Response, 202</span><span>84 ms</span></div>
+<pre class="ds-code__body">{
+  <span class="ds-code__n">"id"</span>: <span class="ds-code__s">"em_41f9c2"</span>,
+  <span class="ds-code__n">"status"</span>: <span class="ds-code__s">"queued"</span>
+}</pre>
+        </div>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Responses</h2></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span><span class="ds-mono">202</span> Queued</span><span class="ds-panel__key">the id is returned</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span><span class="ds-mono">429</span> Too many requests</span><span class="ds-panel__key">retry after 1 s</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--danger"></span><span class="ds-mono">403</span> Domain not verified</span><span class="ds-panel__key">check DNS</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--danger"></span><span class="ds-mono">422</span> Invalid parameter</span><span class="ds-panel__key">see the message</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="console">
+  <div class="ds-content">
+    <header class="ds-page-header">
+      <div class="ds-page-header__copy">
+        <ol class="ds-breadcrumb">
+          <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#overview">Docs</a></li>
+          <li class="ds-breadcrumb__item ds-breadcrumb__current">API console</li>
+        </ol>
+        <h1 class="ds-page-header__title">API console</h1>
+        <p class="ds-page-header__text">Send a real request with a test key and read what comes back.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#reference">Read the reference</a>
+      </div>
+    </header>
+
+    <div class="ds-doc ds-doc--split">
+      <div class="ds-stack">
+        <div class="ds-noticerow">
+          <p class="ds-notice"><span class="ds-notice__title">Test keys never deliver.</span> Messages are accepted, logged and dropped.</p>
+        </div>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Request</h2><span class="ds-badge ds-badge--success ds-badge--mono">POST /v2/emails</span></div>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#console">
+              <label class="ds-form__field"><span class="ds-form__label">API key</span><input class="ds-form__input ds-form__input--mono is-error" type="text" value="ck_test_9d2"><span class="ds-form__error">A key is 32 characters after the prefix.</span></label>
+              <div class="ds-form__row">
+                <label class="ds-form__field"><span class="ds-form__label">From</span><input class="ds-form__input" type="text" value="hello@harbour.dev"></label>
+                <label class="ds-form__field"><span class="ds-form__label">To</span><input class="ds-form__input is-focus" type="text" placeholder="you@example.org"></label>
+              </div>
+              <label class="ds-form__field"><span class="ds-form__label">Send from region</span>
+                <select class="ds-form__select"><option>Nearest to the recipient</option><option>Frankfurt</option><option>Virginia</option></select>
+              </label>
+              <label class="ds-form__field"><span class="ds-form__label">HTML body</span><textarea class="ds-form__textarea ds-form__textarea--mono" rows="3" placeholder="&lt;p&gt;Hello from the console&lt;/p&gt;"></textarea><span class="ds-form__hint">Leave empty to send the plain text version only.</span></label>
+              <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Keep this request in the history</span></label>
+              <div class="ds-buttonrow" data-component="buttons">
+                <button class="ds-button" type="submit">Send request</button>
+                <a class="ds-button ds-button--secondary" href="#console">Copy as cURL</a>
+                <button class="ds-button" type="button" disabled>Schedule</button>
+                <a class="ds-button ds-button--danger" href="#console">Revoke key</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="ds-stack">
+        <section class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Response</h2><span class="ds-mono">waiting</span></div>
+          <div class="ds-panel__body">
+            <div class="ds-empty" data-component="empty">
+              <svg class="ds-empty__icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h22v16H5z M5 12h22"/><path d="M10 17l3 2-3 2 M16 21h6"/></svg>
+              <h2 class="ds-empty__title">No requests yet</h2>
+              <p class="ds-empty__text">Fill in the form and send. The status, headers and body appear here.</p>
+              <a class="ds-button ds-button--secondary ds-button--small" href="#guide">Follow the quickstart</a>
+            </div>
+          </div>
+        </section>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+            <div class="ds-dialog__head">
+              <h2 class="ds-dialog__title" id="dialog-title">Revoke this key?</h2>
+              <a class="ds-dialog__close" href="#console" aria-label="Close"></a>
+            </div>
+            <div class="ds-dialog__body">
+              <p>Requests signed with <span class="ds-kbd">ck_test_9d2</span> start failing with 401 at once. A new key has a new value.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#console">Keep the key</a>
+              <a class="ds-button ds-button--danger" href="#console">Revoke key</a>
+            </div>
+          </div>
+        </div>
+        <section class="ds-panel ds-panel--grow">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Your keys</h2><a class="ds-link ds-link--more" href="#console">New key</a></div>
+          <div class="ds-panel__body">
+            <ul class="ds-panel__rows">
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--success"></span><span class="ds-mono">ck_live_...a7c1</span></span><span class="ds-panel__key">used 2 minutes ago</span></li>
+              <li class="ds-panel__row"><span class="ds-table__state"><span class="ds-dot ds-dot--warning"></span><span class="ds-mono">ck_test_...9d2</span></span><span class="ds-panel__key">never used</span></li>
+            </ul>
+          </div>
+          <div class="ds-panel__body"><div class="ds-progress"><div class="ds-progress__head"><span>Free e-mails, March</span><span class="ds-progress__value">1,240 / 3,000</span></div><progress class="ds-progress__bar" value="41" max="100">41%</progress></div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span>&copy; 2025 chronoskin. The documentation is written in the open.</span>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#guide">Edit this page</a></li>
+    <li><a class="ds-footer__link" href="#reference">API status</a></li>
+    <li><a class="ds-footer__link" href="#overview">Changelog</a></li>
+    <li><a class="ds-footer__link" href="#console">Support</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

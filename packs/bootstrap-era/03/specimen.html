@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: framework default dashboard specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12,2.5 20.2,7.25 20.2,16.75 12,21.5 3.8,16.75 3.8,7.25"/><polyline points="12,7.5 12,12 15.5,14"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">Dashboard</a></li>
+      <li><a class="ds-nav__link" href="#bookings">Bookings</a></li>
+      <li><a class="ds-nav__link" href="#customers">Customers</a></li>
+      <li><a class="ds-nav__link" href="#settings">Settings</a></li>
+    </ul>
+    <div class="ds-nav__aside">
+      <div class="ds-menu ds-menu--end">
+        <a class="ds-nav__user ds-menu__toggle" href="#settings" aria-haspopup="true"><span class="ds-avatar ds-avatar--small">M</span><span class="ds-nav__text">Marta L.</span></a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#settings">Shop settings</a></li>
+          <li><a class="ds-menu__item" href="#customers">Waiting list</a></li>
+          <li class="ds-menu__divider"></li>
+          <li><a class="ds-menu__item" href="#home">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+    <details class="ds-menu ds-menu--nav">
+      <summary class="ds-menu__toggle" aria-label="Menu"><span class="ds-menu__bars"></span></summary>
+      <ul class="ds-menu__list">
+        <li><a class="ds-menu__item" href="#home">Dashboard</a></li>
+        <li><a class="ds-menu__item" href="#bookings">Bookings</a></li>
+        <li><a class="ds-menu__item" href="#customers">Customers</a></li>
+        <li><a class="ds-menu__item" href="#settings">Settings</a></li>
+        <li class="ds-menu__divider"></li>
+        <li><a class="ds-menu__item" href="#booking">New booking</a></li>
+      </ul>
+    </details>
+  </div>
+</header>
+
+<div class="ds-app">
+<div class="ds-app__side">
+  <aside class="ds-sidebar" data-component="sidebar">
+    <h2 class="ds-sidebar__title">Harbour shop</h2>
+    <ul class="ds-sidebar__list ds-sidebar__list--main">
+      <li><a class="ds-sidebar__link" href="#home">Dashboard</a></li>
+      <li><a class="ds-sidebar__link" href="#bookings">Bookings <span class="ds-badge ds-badge--quiet">23</span></a></li>
+      <li><a class="ds-sidebar__link" href="#customers">Customers <span class="ds-badge ds-badge--quiet">412</span></a></li>
+      <li><a class="ds-sidebar__link" href="#settings">Settings</a></li>
+    </ul>
+    <h2 class="ds-sidebar__title">Workshop</h2>
+    <ul class="ds-sidebar__list">
+      <li><a class="ds-sidebar__link" href="#bookings">Due back today <span class="ds-badge ds-badge--warning">6</span></a></li>
+      <li><a class="ds-sidebar__link" href="#bookings">In for repair <span class="ds-badge ds-badge--danger">2</span></a></li>
+      <li><a class="ds-sidebar__link" href="#customers">Waiting list</a></li>
+    </ul>
+    <p class="ds-sidebar__note">Open today from 8:00 to 18:30.</p>
+  </aside>
+</div>
+<main class="ds-app__main">
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero" data-component="hero">
+    <div class="ds-hero__copy">
+      <h1 class="ds-hero__title">Good morning, Marta</h1>
+      <p class="ds-hero__lead">Twelve bikes go out today and six come back. Two are still in the workshop.</p>
+    </div>
+    <div class="ds-hero__actions">
+      <a class="ds-button ds-button--large" href="#booking">New booking</a>
+    </div>
+  </div>
+
+  <ul class="ds-stat" data-component="stats">
+    <li class="ds-stat__item ds-panel ds-panel--primary">
+      <h2 class="ds-panel__title">Out today</h2>
+      <div class="ds-panel__body"><span class="ds-stat__figure">12</span><span class="ds-stat__label">pick-ups before noon: 9</span></div>
+    </li>
+    <li class="ds-stat__item ds-panel ds-panel--success">
+      <h2 class="ds-panel__title">Taken this week</h2>
+      <div class="ds-panel__body"><span class="ds-stat__figure">$3,480</span><span class="ds-stat__label"><span class="ds-tooltip ds-tooltip--end" tabindex="0">up 8% on last week<span class="ds-tooltip__tip" role="tooltip">Hire and late charges. Deposits are not counted.</span></span></span></div>
+    </li>
+    <li class="ds-stat__item ds-panel ds-panel--warning">
+      <h2 class="ds-panel__title">Due back</h2>
+      <div class="ds-panel__body"><span class="ds-stat__figure">6</span><span class="ds-stat__label">one of them is late</span></div>
+    </li>
+    <li class="ds-stat__item ds-panel ds-panel--danger">
+      <h2 class="ds-panel__title">In for repair</h2>
+      <div class="ds-panel__body"><span class="ds-stat__figure">2</span><span class="ds-stat__label">ready on Thursday</span></div>
+    </li>
+  </ul>
+
+  <div class="ds-row ds-row--level">
+    <div class="ds-col ds-col--stack">
+      <section class="ds-panel ds-grow" data-component="panel">
+        <h2 class="ds-panel__title">Pick-ups today</h2>
+        <form class="ds-toolbar" action="#bookings">
+          <label class="ds-toolbar__field"><input class="ds-form__input ds-form__input--small" type="text" placeholder="Find a name or a bike" aria-label="Find a name or a bike"></label>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#bookings">Search</a>
+          <span class="ds-toolbar__text">4 of 12 shown</span>
+        </form>
+        <div class="ds-table__wrap ds-panel__table">
+          <table class="ds-table">
+            <thead>
+              <tr><th scope="col">Time</th><th scope="col">Customer</th><th scope="col">Bike</th><th scope="col">Status</th><th scope="col" class="ds-table__num">Days</th><th scope="col" class="ds-table__actions">Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>8:30</td><th scope="row"><a class="ds-link" href="#booking">Anouk Visser</a></th><td>City 7, blue</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">3</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--success ds-button--small" href="#booking">Hand over</a></span></td></tr>
+              <tr><td>9:00</td><th scope="row"><a class="ds-link" href="#booking">Rui Pacheco</a></th><td>Cargo 2</td><td><span class="ds-badge ds-badge--warning">Deposit due</span></td><td class="ds-table__num">1</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--success ds-button--small" href="#booking">Hand over</a></span></td></tr>
+              <tr><td>10:15</td><th scope="row"><a class="ds-link" href="#booking">Greta Holm</a></th><td>Electric 4</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">7</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--success ds-button--small" href="#booking">Hand over</a></span></td></tr>
+              <tr><td>11:45</td><th scope="row"><a class="ds-link" href="#booking">Tomas Okafor</a></th><td>Child 12</td><td><span class="ds-badge ds-badge--danger">Card failed</span></td><td class="ds-table__num">2</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--warning ds-button--small" href="#booking">Take payment</a></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-panel__foot"><a class="ds-link" href="#bookings">See all 23 bookings</a></div>
+      </section>
+    </div>
+    <div class="ds-col ds-col--side ds-col--stack">
+      <p class="ds-notice"><span class="ds-notice__title">Rain after 15:00.</span> Put the covers on the cargo bikes.</p>
+      <section class="ds-panel ds-grow">
+        <h2 class="ds-panel__title">Just now</h2>
+        <div class="ds-panel__body">
+          <ul class="ds-list">
+            <li class="ds-list__item"><a class="ds-list__title" href="#booking">City 3 came back early</a><span class="ds-list__meta">8:02, checked in by Jonas</span></li>
+            <li class="ds-list__item"><a class="ds-list__title" href="#booking">New booking for Saturday</a><span class="ds-list__meta">7:48, made on the website</span></li>
+            <li class="ds-list__item"><a class="ds-list__title" href="#customers">Greta Holm joined</a><span class="ds-list__meta">7:31, first booking</span></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <h2 class="ds-title ds-title--small">The fleet <small class="ds-title__small">what is in the shop right now</small></h2>
+  <div class="ds-grid" data-component="grid">
+    <div class="ds-grid__cell">
+      <div class="ds-grid__tile"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="10" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="30" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M10 26l7-13h9l4 13 M17 13l5 13 M14 13h6 M26 9h4" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+      <div class="ds-grid__caption">
+        <h3 class="ds-grid__title">City bikes</h3>
+        <p class="ds-grid__text">14 of 22 in the shop</p>
+        <div class="ds-progress ds-progress--small" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div class="ds-progress__bar ds-progress__bar--60"></div></div>
+        <a class="ds-link" href="#bookings">Book one</a>
+      </div>
+    </div>
+    <div class="ds-grid__cell">
+      <div class="ds-grid__tile ds-grid__tile--2"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 12h18v12H6z M24 16h6l4 5v3h-10 M11 28a3 3 0 1 0 0.1 0 M28 28a3 3 0 1 0 0.1 0" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+      <div class="ds-grid__caption">
+        <h3 class="ds-grid__title">Cargo bikes</h3>
+        <p class="ds-grid__text">3 of 5 in the shop</p>
+        <div class="ds-progress ds-progress--small" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div class="ds-progress__bar ds-progress__bar--60"></div></div>
+        <a class="ds-link" href="#bookings">Book one</a>
+      </div>
+    </div>
+    <div class="ds-grid__cell">
+      <div class="ds-grid__tile ds-grid__tile--3"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M23 4L10 22h9l-3 14 14-19h-9z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+      <div class="ds-grid__caption">
+        <h3 class="ds-grid__title">Electric</h3>
+        <p class="ds-grid__text">2 of 8 in the shop</p>
+        <div class="ds-progress ds-progress--small" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><div class="ds-progress__bar ds-progress__bar--20 ds-progress__bar--warning"></div></div>
+        <a class="ds-link" href="#bookings">Book one</a>
+      </div>
+    </div>
+    <div class="ds-grid__cell">
+      <div class="ds-grid__tile ds-grid__tile--4"><svg class="ds-grid__icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M8 35a12 12 0 0 1 24 0" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div>
+      <div class="ds-grid__caption">
+        <h3 class="ds-grid__title">Children</h3>
+        <p class="ds-grid__text">9 of 12 in the shop</p>
+        <div class="ds-progress ds-progress--small" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><div class="ds-progress__bar ds-progress__bar--80 ds-progress__bar--success"></div></div>
+        <a class="ds-link" href="#bookings">Book one</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="bookings">
+  <ol class="ds-breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Dashboard</a></li>
+    <li class="ds-breadcrumb__item ds-breadcrumb__current">Bookings</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__copy">
+      <h1 class="ds-page-header__title">Bookings</h1>
+      <p class="ds-page-header__text">Every hire from the Harbour shop, newest first.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#settings">Export</a>
+      <a class="ds-button" href="#booking">New booking</a>
+    </div>
+  </header>
+
+  <ul class="ds-tabs" data-component="tabs">
+    <li><a class="ds-tabs__tab is-current" href="#bookings">All <span class="ds-badge ds-badge--quiet">23</span></a></li>
+    <li><a class="ds-tabs__tab" href="#bookings">Out now <span class="ds-badge ds-badge--quiet">9</span></a></li>
+    <li><a class="ds-tabs__tab" href="#bookings">Late <span class="ds-badge ds-badge--danger">1</span></a></li>
+    <li><a class="ds-tabs__tab" href="#bookings">Cancelled</a></li>
+  </ul>
+
+  <form class="ds-toolbar ds-toolbar--boxed" action="#bookings">
+    <label class="ds-toolbar__field"><input class="ds-form__input ds-form__input--small" type="text" placeholder="Find a name or a bike" aria-label="Find a name or a bike"></label>
+    <a class="ds-button ds-button--secondary ds-button--small" href="#bookings">Search</a>
+    <span class="ds-toolbar__text">Showing 1 to 6 of 23</span>
+  </form>
+
+  <div class="ds-table__wrap">
+    <table class="ds-table" data-component="table">
+      <caption class="ds-table__caption">Totals include the deposit. Times are shop time.</caption>
+      <thead>
+        <tr><th scope="col">No.</th><th scope="col">Customer</th><th scope="col">Bike</th><th scope="col">Out</th><th scope="col">Back</th><th scope="col">Status</th><th scope="col" class="ds-table__num">Total</th><th scope="col" class="ds-table__actions">Actions</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2041</td><th scope="row"><a class="ds-link" href="#booking">Anouk Visser</a></th><td>City 7, blue</td><td>12 May</td><td>15 May</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">$84.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+        <tr><td>2040</td><th scope="row"><a class="ds-link" href="#booking">Rui Pacheco</a></th><td>Cargo 2</td><td>12 May</td><td>13 May</td><td><span class="ds-badge ds-badge--warning">Deposit due</span></td><td class="ds-table__num">$45.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+        <tr><td>2039</td><th scope="row"><a class="ds-link" href="#booking">Greta Holm</a></th><td>Electric 4</td><td>12 May</td><td>19 May</td><td><span class="ds-badge ds-badge--success">Paid</span></td><td class="ds-table__num">$266.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+        <tr><td>2038</td><th scope="row"><a class="ds-link" href="#booking">Tomas Okafor</a></th><td>Child 12</td><td>12 May</td><td>14 May</td><td><span class="ds-badge ds-badge--danger">Card failed</span></td><td class="ds-table__num">$22.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+        <tr><td>2037</td><th scope="row"><a class="ds-link" href="#booking">Ilse Brandt</a></th><td>City 3, green</td><td>9 May</td><td>12 May</td><td><span class="ds-badge ds-badge--info">Out now</span></td><td class="ds-table__num">$84.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+        <tr><td>2036</td><th scope="row"><a class="ds-link" href="#booking">Pavel Novak</a></th><td>City 11, red</td><td>8 May</td><td>11 May</td><td><span class="ds-badge ds-badge--danger">Late</span></td><td class="ds-table__num">$96.00</td><td class="ds-table__actions"><span class="ds-buttongroup"><a class="ds-button ds-button--secondary ds-button--small" href="#booking">View</a><a class="ds-button ds-button--secondary ds-button--small" href="#booking">Edit</a><a class="ds-button ds-button--danger ds-button--small" href="#booking">Cancel</a></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ds-table__foot">
+    <ul class="ds-pagination" data-component="pagination">
+      <li><a class="ds-pagination__link is-disabled" href="#bookings">&laquo; Previous</a></li>
+      <li><a class="ds-pagination__link is-current" href="#bookings">1</a></li>
+      <li><a class="ds-pagination__link" href="#bookings">2</a></li>
+      <li><a class="ds-pagination__link" href="#bookings">3</a></li>
+      <li><a class="ds-pagination__link" href="#bookings">4</a></li>
+      <li><a class="ds-pagination__link" href="#bookings">Next &raquo;</a></li>
+    </ul>
+    <div class="ds-badgerow" data-component="badge">
+      <span class="ds-muted">Status:</span>
+      <span class="ds-badge">Booked</span>
+      <span class="ds-badge ds-badge--info">Out now</span>
+      <span class="ds-badge ds-badge--success">Paid</span>
+      <span class="ds-badge ds-badge--warning">Deposit due</span>
+      <span class="ds-badge ds-badge--danger">Late</span>
+      <span class="ds-badge ds-badge--quiet">23</span>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="booking">
+  <ol class="ds-breadcrumb" data-component="breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Dashboard</a></li>
+    <li class="ds-breadcrumb__item"><a class="ds-link" href="#bookings">Bookings</a></li>
+    <li class="ds-breadcrumb__item ds-breadcrumb__current">2041</li>
+  </ol>
+  <header class="ds-page-header" data-component="page-header">
+    <div class="ds-page-header__copy">
+      <h1 class="ds-page-header__title">Booking 2041 <span class="ds-badge ds-badge--success">Paid</span></h1>
+      <p class="ds-page-header__text">Anouk Visser, City 7 in blue, 12 to 15 May.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#bookings">Back to the list</a>
+    </div>
+  </header>
+
+  <div class="ds-row ds-row--level ds-row--flush">
+    <div class="ds-col ds-col--stack">
+      <div class="ds-buttonrow" data-component="buttons">
+        <a class="ds-button" href="#booking">Hand over the bike</a>
+        <a class="ds-button ds-button--secondary" href="#booking">Print the agreement</a>
+        <a class="ds-button ds-button--danger" href="#booking">Cancel the booking</a>
+        <span class="ds-tooltip ds-tooltip--end ds-tooltip--plain" tabindex="0"><button class="ds-button" type="button" disabled>Refund the deposit</button><span class="ds-tooltip__tip" role="tooltip">The deposit goes back when the bike does.</span></span>
+      </div>
+      <div class="ds-well">
+        <article class="ds-prose" data-component="typography">
+          <h1>Hire agreement</h1>
+          <p>Three days from Monday 12 May at 8:30. The bike is due back on <strong>Thursday 15 May before 18:00</strong>; a late return is charged by the day.</p>
+          <h2>What goes with the bike</h2>
+          <ul>
+            <li>A lock with two keys</li>
+            <li>Front and rear lights</li>
+            <li>A helmet, size M</li>
+          </ul>
+          <h3>Note from the customer</h3>
+          <p>Asked for the saddle to be set high. The reference on the tag is <code>B-2041</code>.</p>
+        </article>
+      </div>
+      <div class="ds-dialog ds-grow" data-component="dialog">
+        <div class="ds-dialog__box" role="dialog" aria-labelledby="dialog-title">
+          <div class="ds-dialog__head">
+            <h2 class="ds-dialog__title" id="dialog-title">Cancel this booking?</h2>
+            <a class="ds-dialog__close" href="#booking" aria-label="Close"></a>
+          </div>
+          <div class="ds-dialog__body">
+            <p>City 7 goes back on the shelf for 12 to 15 May and $84.00 is refunded to the card.</p>
+          </div>
+          <div class="ds-dialog__actions">
+            <a class="ds-button ds-button--secondary" href="#booking">Keep it</a>
+            <a class="ds-button ds-button--danger" href="#bookings">Cancel the booking</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ds-col ds-col--side ds-col--stack">
+      <section class="ds-panel ds-panel--success">
+        <h2 class="ds-panel__title">Payment</h2>
+        <div class="ds-panel__body">
+          <span class="ds-panel__figure">$84.00</span>
+          <dl class="ds-facts">
+            <div class="ds-facts__row"><dt class="ds-facts__label">Hire, 3 days</dt><dd class="ds-facts__value">$54.00</dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Deposit</dt><dd class="ds-facts__value">$30.00</dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Paid by</dt><dd class="ds-facts__value">Card, 10 May</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Customer</h2>
+        <div class="ds-panel__body">
+          <dl class="ds-facts">
+            <div class="ds-facts__row"><dt class="ds-facts__label">Name</dt><dd class="ds-facts__value"><a class="ds-link" href="#customers">Anouk Visser</a></dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Phone</dt><dd class="ds-facts__value">555 0142</dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Hires so far</dt><dd class="ds-facts__value">4</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="ds-panel ds-grow">
+        <h2 class="ds-panel__title">History</h2>
+        <div class="ds-panel__body">
+          <ul class="ds-list">
+            <li class="ds-list__item"><span class="ds-list__text">Booked on the website</span><span class="ds-list__meta">9 May, 21:14</span></li>
+            <li class="ds-list__item"><span class="ds-list__text">Paid in full by card</span><span class="ds-list__meta">10 May, 8:02</span></li>
+            <li class="ds-list__item"><span class="ds-list__text">Saddle note added</span><span class="ds-list__meta">11 May, 16:40, by Jonas</span></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="customers">
+  <ol class="ds-breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Dashboard</a></li>
+    <li class="ds-breadcrumb__item ds-breadcrumb__current">Customers</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__copy">
+      <h1 class="ds-page-header__title">Customers</h1>
+      <p class="ds-page-header__text">412 people have hired from the Harbour shop.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button" href="#settings">Add a customer</a>
+    </div>
+  </header>
+
+  <div class="ds-row ds-row--level ds-row--flush">
+    <div class="ds-col ds-col--stack">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Hired this month</h2>
+        <div class="ds-panel__body">
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item ds-person">
+              <span class="ds-avatar">A</span>
+              <div class="ds-person__body">
+                <a class="ds-list__title" href="#booking">Anouk Visser</a>
+                <p class="ds-list__text">City 7 in blue, out until Thursday.</p>
+                <span class="ds-list__meta">4 hires, customer since March 2012, 555 0142</span>
+              </div>
+            </li>
+            <li class="ds-list__item ds-person">
+              <span class="ds-avatar ds-avatar--2">G</span>
+              <div class="ds-person__body">
+                <a class="ds-list__title" href="#booking">Greta Holm</a>
+                <p class="ds-list__text">Electric 4 for a week, first booking.</p>
+                <span class="ds-list__meta">1 hire, customer since May 2014, 555 0187</span>
+              </div>
+            </li>
+            <li class="ds-list__item ds-person">
+              <span class="ds-avatar ds-avatar--3">P</span>
+              <div class="ds-person__body">
+                <a class="ds-list__title" href="#booking">Pavel Novak</a>
+                <p class="ds-list__text">City 11 in red, one day late.</p>
+                <span class="ds-list__meta">9 hires, customer since June 2011, 555 0110</span>
+              </div>
+            </li>
+            <li class="ds-list__item ds-person">
+              <span class="ds-avatar ds-avatar--4">R</span>
+              <div class="ds-person__body">
+                <a class="ds-list__title" href="#booking">Rui Pacheco</a>
+                <p class="ds-list__text">Cargo 2 for the day, deposit still to pay.</p>
+                <span class="ds-list__meta">2 hires, customer since April 2014, 555 0163</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ds-panel__foot">Showing 4 of 37 this month.</div>
+      </section>
+      <p class="ds-linkrow" data-component="links">
+        <strong>More lists:</strong>
+        <a class="ds-link" href="#customers">Everyone, A to Z</a>
+        <a class="ds-link is-visited" href="#customers">Regulars</a>
+        <a class="ds-link is-hover" href="#customers">Owing a deposit</a>
+        <a class="ds-link is-active" href="#bookings">Out now</a>
+        <a class="ds-link ds-link--quiet" href="#settings">Export as a file</a>
+      </p>
+    </div>
+    <div class="ds-col ds-col--side ds-col--stack">
+      <div class="ds-empty ds-grow" data-component="empty">
+        <svg class="ds-empty__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 8h24v26H8z M14 15h12 M14 21h12 M14 27h7" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        <h2 class="ds-empty__title">Nobody is waiting</h2>
+        <p class="ds-empty__text">When every bike of a kind is out, people who ask for one are listed here.</p>
+        <a class="ds-button ds-button--secondary" href="#bookings">Add a name</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <ol class="ds-breadcrumb">
+    <li class="ds-breadcrumb__item"><a class="ds-link" href="#home">Dashboard</a></li>
+    <li class="ds-breadcrumb__item ds-breadcrumb__current">Settings</li>
+  </ol>
+  <header class="ds-page-header">
+    <div class="ds-page-header__copy">
+      <h1 class="ds-page-header__title">Settings</h1>
+      <p class="ds-page-header__text">Shop details that are printed on every agreement.</p>
+    </div>
+    <div class="ds-page-header__actions">
+      <a class="ds-button ds-button--secondary" href="#home">Back to the dashboard</a>
+    </div>
+  </header>
+
+  <ul class="ds-tabs">
+    <li><a class="ds-tabs__tab is-current" href="#settings">Shop</a></li>
+    <li><a class="ds-tabs__tab" href="#settings">Prices</a></li>
+    <li><a class="ds-tabs__tab" href="#settings">Staff</a></li>
+  </ul>
+
+  <div class="ds-row ds-row--level ds-row--flush">
+    <div class="ds-col">
+      <div class="ds-noticerow" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">Note.</span> Agreements already printed keep the details they were printed with.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not saved.</span> Check the field marked below and save again.</p>
+      </div>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Shop details</h2>
+        <form class="ds-form ds-form--flush" data-component="form" action="#settings">
+          <div class="ds-panel__body ds-form">
+            <div class="ds-form__row">
+              <label class="ds-form__field"><span class="ds-form__label">Shop name</span><input class="ds-form__input" type="text" value="Harbour shop"></label>
+              <label class="ds-form__field"><span class="ds-form__label">Phone</span><input class="ds-form__input is-focus" type="text" placeholder="Shown on the agreement"></label>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__field is-error"><span class="ds-form__label">Closing time</span><input class="ds-form__input is-error" type="text" value="half six"><span class="ds-form__error">Write the time as 18:30.</span></label>
+              <label class="ds-form__field"><span class="ds-form__label">Late return is charged</span>
+                <select class="ds-form__select"><option>By the day</option><option>By the hour</option><option>Not at all</option></select>
+              </label>
+            </div>
+            <label class="ds-form__field"><span class="ds-form__label">Line at the foot of the agreement</span><textarea class="ds-form__textarea" rows="3" placeholder="Ride safely and lock it twice"></textarea><span class="ds-form__hint">Optional. One or two lines.</span></label>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> <span>Send a reminder the evening before a bike is due back. <a class="ds-link" href="#settings">Edit the reminder</a></span></label>
+          </div>
+          <div class="ds-form__actions">
+            <button class="ds-button" type="submit">Save the details</button>
+            <a class="ds-button ds-button--secondary" href="#home">Cancel</a>
+          </div>
+        </form>
+      </section>
+      <h2 class="ds-title ds-title--small ds-title--gap">Messages to customers</h2>
+      <div class="ds-accordion">
+        <details class="ds-accordion__item" name="messages" open>
+          <summary class="ds-accordion__head">The evening before a bike is due back</summary>
+          <div class="ds-accordion__body"><p>A text with the closing time and the address of the shop. Sent at 18:00.</p></div>
+        </details>
+        <details class="ds-accordion__item" name="messages">
+          <summary class="ds-accordion__head">When a bike is late</summary>
+          <div class="ds-accordion__body"><p>A text at opening time on the next day, with the daily charge.</p></div>
+        </details>
+        <details class="ds-accordion__item" name="messages">
+          <summary class="ds-accordion__head">After the return</summary>
+          <div class="ds-accordion__body"><p>An email with the receipt and the deposit that went back to the card.</p></div>
+        </details>
+      </div>
+    </div>
+    <div class="ds-col ds-col--side ds-col--stack">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Online booking</h2>
+        <div class="ds-panel__body">
+          <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track" aria-hidden="true"></span><span class="ds-switch__label">Take bookings on the website</span></label>
+        </div>
+      </section>
+      <section class="ds-panel ds-panel--info">
+        <h2 class="ds-panel__title">Opening hours</h2>
+        <div class="ds-panel__body">
+          <dl class="ds-facts">
+            <div class="ds-facts__row"><dt class="ds-facts__label">Monday to Friday</dt><dd class="ds-facts__value">8:00 to 18:30</dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Saturday</dt><dd class="ds-facts__value">9:00 to 17:00</dd></div>
+            <div class="ds-facts__row"><dt class="ds-facts__label">Sunday</dt><dd class="ds-facts__value">Closed</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">Last changes</h2>
+        <div class="ds-panel__body">
+          <ul class="ds-list">
+            <li class="ds-list__item"><span class="ds-list__text">Closing time</span><span class="ds-list__meta">2 May, by Marta</span></li>
+            <li class="ds-list__item"><span class="ds-list__text">Late return charge</span><span class="ds-list__meta">18 April, by Marta</span></li>
+            <li class="ds-list__item"><span class="ds-list__text">Shop phone</span><span class="ds-list__meta">6 January, by Jonas</span></li>
+          </ul>
+        </div>
+      </section>
+      <div class="ds-well ds-grow">
+        <h2 class="ds-title ds-title--small">A second shop?</h2>
+        <p class="ds-col__text">Each shop has its own fleet, hours and staff, under one sign-in.</p>
+        <a class="ds-button ds-button--info" href="#settings">Add a shop</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__text">chronoskin for bike hire, Harbour shop. Version 3.2, 2014.</p>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#bookings">Bookings</a></li>
+    <li><a class="ds-footer__link" href="#customers">Customers</a></li>
+    <li><a class="ds-footer__link" href="#settings">Settings</a></li>
+    <li><a class="ds-footer__link" href="#home">Back to top</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

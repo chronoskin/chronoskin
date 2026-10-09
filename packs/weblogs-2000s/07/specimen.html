@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin, weblog service specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+<div class="ds-page__frame">
+
+  <header class="ds-nav" data-component="nav">
+    <p class="ds-nav__strip">
+      <span>Free weblogs since 2002. 312 were updated in the last hour.</span>
+      <span>Already writing here? <a class="ds-nav__strip-link" href="#signup">Sign in</a></span>
+    </p>
+    <div class="ds-nav__head">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.2-5.2L16 4l4 4L9.2 18.8z"/><line x1="13.4" y1="6.6" x2="17.4" y2="10.6"/><polygon points="4,20 5.2,14.8 9.2,18.8" fill="currentColor"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <ul class="ds-nav__menu">
+        <li><a class="ds-nav__link" href="#home">Home</a></li>
+        <li><a class="ds-nav__link" href="#tour">Tour</a></li>
+        <li><a class="ds-nav__link" href="#weblogs">Weblogs</a></li>
+        <li><a class="ds-nav__link" href="#signup">Sign up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- View 1, the front door: the pitch, the steps, the counters and three lists. -->
+  <section class="ds-view ds-view--home" id="home">
+    <div class="ds-page__body">
+
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__pitch">
+          <h1 class="ds-hero__title">Your own weblog, five minutes from now</h1>
+          <p class="ds-hero__lead">Write in your browser, press one button, and it is on the web under your own address.</p>
+          <ul class="ds-hero__points">
+            <li class="ds-hero__point">Nothing to install and nothing to pay.</li>
+            <li class="ds-hero__point">Comments, archives and a feed are built in.</li>
+            <li class="ds-hero__point">Twelve templates, or bring your own stylesheet.</li>
+          </ul>
+          <div class="ds-hero__actions">
+            <a class="ds-button ds-button--large" href="#signup">Start your weblog</a>
+            <a class="ds-link" href="#tour">or take the tour first &raquo;</a>
+          </div>
+        </div>
+        <form class="ds-hero__box" action="#">
+          <h2 class="ds-hero__box-title">Is your name free?</h2>
+          <label class="ds-hero__box-label" for="h-name">Pick an address</label>
+          <input class="ds-form__input ds-form__input--wide" id="h-name" type="text" value="lowtide">
+          <p class="ds-hero__box-note">lowtide.chronoskin.example <span class="ds-badge ds-badge--success">free</span></p>
+          <div class="ds-buttons">
+            <a class="ds-button" href="#signup">Take it</a>
+            <button class="ds-button ds-button--secondary" type="button">Check another</button>
+          </div>
+          <p class="ds-hero__box-note">Letters and digits, three to twenty of them.</p>
+        </form>
+      </section>
+
+      <section class="ds-page__section" data-component="grid">
+        <h2 class="ds-page__label">How it works</h2>
+        <div class="ds-grid">
+          <div class="ds-grid__cell">
+            <span class="ds-grid__num">1</span>
+            <h3 class="ds-grid__title">Name it</h3>
+            <p class="ds-grid__text">Choose an address and a title. Both can change later.</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <span class="ds-grid__num">2</span>
+            <h3 class="ds-grid__title">Dress it</h3>
+            <p class="ds-grid__text">Pick one of twelve templates and set its colours.</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <span class="ds-grid__num">3</span>
+            <h3 class="ds-grid__title">Write</h3>
+            <p class="ds-grid__text">Type an entry, add a link or two, press Publish.</p>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <span class="ds-grid__num">4</span>
+            <h3 class="ds-grid__title">Be read</h3>
+            <p class="ds-grid__text">Your feed and your place in the directory are automatic.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ds-page__section">
+        <ul class="ds-stats" data-component="stats">
+          <li class="ds-stat"><span class="ds-stat__value">41,208</span> <span class="ds-stat__label">weblogs kept here</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">1,264,900</span> <span class="ds-stat__label">entries published</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">2,730</span> <span class="ds-stat__label">updated today</span></li>
+          <li class="ds-stat"><span class="ds-stat__value">96</span> <span class="ds-stat__label">started today</span></li>
+        </ul>
+      </section>
+
+      <div class="ds-page__thirds">
+        <section data-component="list">
+          <h2 class="ds-page__label">Just updated <a class="ds-link ds-page__more" href="#weblogs">all &raquo;</a></h2>
+          <ul class="ds-list">
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Notes from the allotment</a>
+              <p class="ds-list__excerpt">The broad beans are up, and so are the slugs.</p>
+              <p class="ds-list__meta">2 minutes ago, by Hanne</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">A year of night buses</a>
+              <p class="ds-list__excerpt">Route 14, the driver who sings, and a lost glove.</p>
+              <p class="ds-list__meta">6 minutes ago, by Tobias</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Second-hand cookbooks</a>
+              <p class="ds-list__excerpt">A 1962 chapter on aspic that nobody asked for.</p>
+              <p class="ds-list__meta">11 minutes ago, by Odile</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Learning the cello at forty</a>
+              <p class="ds-list__meta">14 minutes ago, by Ruben</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="ds-page__label">Most read this week</h2>
+          <ol class="ds-list ds-list--ranked">
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">The lighthouse keeper's log</a>
+              <p class="ds-list__meta">18,400 readers <span class="ds-badge ds-badge--alt">up 3</span></p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Things my students said</a>
+              <p class="ds-list__meta">15,120 readers</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Notes from the allotment</a>
+              <p class="ds-list__meta">9,870 readers <span class="ds-badge ds-badge--alt">new</span></p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Small repairs</a>
+              <p class="ds-list__meta">7,340 readers</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">A year of night buses</a>
+              <p class="ds-list__meta">6,905 readers</p>
+            </li>
+            <li class="ds-list__item">
+              <a class="ds-list__title" href="#weblogs">Second-hand cookbooks</a>
+              <p class="ds-list__meta">5,210 readers</p>
+            </li>
+          </ol>
+        </section>
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">News from the service <span class="ds-badge">2</span></h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text"><span class="ds-panel__date">14 March 2005</span> <a class="ds-link ds-link--strong" href="#tour">Three new templates</a>, two of them with a column at each side.</p>
+            <p class="ds-panel__text"><span class="ds-panel__date">9 March 2005</span> <a class="ds-link ds-link--strong" href="#tour">Posting by e-mail</a> now works for every weblog, free or not.</p>
+            <p class="ds-panel__text"><span class="ds-panel__date">2 March 2005</span> Comment feeds, one for each entry. Nothing to switch on.</p>
+            <p class="ds-panel__text"><a class="ds-button ds-button--secondary" href="#tour">Take the tour</a></p>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- View 2, the tour: what a weblog here can do, and what the paid plan adds. -->
+  <section class="ds-view" id="tour">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li><a class="ds-breadcrumb__link" href="#tour">Tour</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li class="ds-breadcrumb__current">Writing and publishing</li>
+    </ol>
+    <div class="ds-page__body">
+      <div class="ds-page__columns">
+        <div class="ds-page__main">
+
+          <div class="ds-page-header" data-component="page-header">
+            <div class="ds-page-header__main">
+              <h1 class="ds-page-header__title">Writing and publishing</h1>
+              <p class="ds-page-header__text">Part two of five. What happens between a blank box and a page on the web.</p>
+            </div>
+            <div class="ds-page-header__action"><a class="ds-button" href="#signup">Start your weblog</a></div>
+          </div>
+
+          <section class="ds-page__section" data-component="typography">
+            <div class="ds-prose">
+              <h1>One box, one button</h1>
+              <p>An entry is a title and some text. You type it into a plain box in your browser, and when you press <strong>Publish</strong> the front page, the entry's own page, the month's archive and the feed are all rebuilt for you.</p>
+              <p>Nothing is lost if you close the window: drafts are kept every minute, and a published entry can be edited for as long as the weblog exists.</p>
+              <h2>What every weblog has</h2>
+              <ul>
+                <li>A permanent address for each entry, so others can link to it.</li>
+                <li>Archives by month and by category.</li>
+                <li>Comments, which you may hold for approval or switch off.</li>
+                <li>A feed that readers and other sites can follow.</li>
+              </ul>
+              <h3>For those who like to tinker</h3>
+              <p>Every template is one HTML file and one stylesheet, and both are yours to edit. Put <code>{entry.title}</code> where the title should go and <code>{entry.body}</code> where the text should; the manual lists the other forty tags.</p>
+            </div>
+          </section>
+
+          <section class="ds-page__section">
+            <h2 class="ds-page__label">Free and paid, side by side</h2>
+            <table class="ds-table">
+              <thead>
+                <tr><th>What you get</th><th class="ds-table__num">Free</th><th class="ds-table__num">Paid</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Weblogs on one account</td><td class="ds-table__num">1</td><td class="ds-table__num">5</td></tr>
+                <tr class="ds-table__row--alt"><td>Space for pictures, in megabytes</td><td class="ds-table__num">20</td><td class="ds-table__num">500</td></tr>
+                <tr><td>Templates to choose from</td><td class="ds-table__num">12</td><td class="ds-table__num">12</td></tr>
+                <tr class="ds-table__row--alt"><td>Writers on one weblog</td><td class="ds-table__num">1</td><td class="ds-table__num">10</td></tr>
+                <tr><td>Price for a year</td><td class="ds-table__num">0.00</td><td class="ds-table__num">24.00</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="ds-page__section ds-page__section--last" data-component="links">
+            <h2 class="ds-page__label">Read on</h2>
+            <ul class="ds-links">
+              <li><a class="ds-link" href="#tour">Part three: templates</a></li>
+              <li><a class="ds-link is-visited" href="#tour">Part one: your address</a></li>
+              <li><a class="ds-link is-hover" href="#weblogs">See what others have made</a></li>
+              <li><a class="ds-link is-active" href="#signup">Sign up now</a></li>
+              <li><a class="ds-link ds-link--quiet" href="#tour">The manual</a></li>
+              <li><a class="ds-link ds-link--strong" href="#signup">Ask a question</a></li>
+            </ul>
+          </section>
+
+        </div>
+
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">The tour</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-visited" href="#tour">1. Your address</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-current" href="#tour">2. Writing and publishing</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">3. Templates</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">4. Comments and feeds</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">5. The paid plan</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Templates</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Plain column</a> <span class="ds-sidebar__count">(9,410)</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Column and sidebar</a> <span class="ds-sidebar__count">(14,220)</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Three columns</a> <span class="ds-sidebar__count">(3,180)</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-hover" href="#tour">Dotted notebook</a> <span class="ds-sidebar__count">(6,075)</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Dark room</a> <span class="ds-sidebar__count">(2,960)</span></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">All twelve</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Good to know</h2>
+            <p class="ds-sidebar__text">What you write stays yours. You can take every entry away with you as one file, at any time, free or paid.</p>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Made with these</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">Notes from the allotment</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">The lighthouse keeper's log</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-visited" href="#weblogs">Small repairs</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">A year of night buses</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">Things my students said</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">Browse the directory</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Help</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">The manual</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Template tags</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">The service's own weblog</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- View 3, the directory: every weblog kept here, by subject. -->
+  <section class="ds-view" id="weblogs">
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li><a class="ds-breadcrumb__link" href="#weblogs">Weblogs</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li class="ds-breadcrumb__current">Home and garden</li>
+    </ol>
+    <div class="ds-page__body">
+
+      <div class="ds-page-header">
+        <div class="ds-page-header__main">
+          <h1 class="ds-page-header__title">Weblogs about home and garden</h1>
+          <p class="ds-page-header__text">1,946 weblogs under this subject. The list is rebuilt every ten minutes.</p>
+        </div>
+        <div class="ds-page-header__action"><a class="ds-button" href="#signup">Add yours</a></div>
+      </div>
+
+      <section class="ds-page__section" data-component="tabs">
+        <ul class="ds-tabs">
+          <li><a class="ds-tabs__tab is-current" href="#weblogs">Just updated</a></li>
+          <li><a class="ds-tabs__tab" href="#weblogs">Newest</a></li>
+          <li><a class="ds-tabs__tab" href="#weblogs">Most read</a></li>
+          <li><a class="ds-tabs__tab" href="#weblogs">A to Z</a></li>
+        </ul>
+        <div class="ds-tabs__body">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th>Weblog</th><th>Kept by</th><th>Last entry</th><th>State</th><th class="ds-table__num">Entries</th></tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__group"><td colspan="5">Updated in the last hour</td></tr>
+              <tr><td><a class="ds-table__title" href="#weblogs">Notes from the allotment</a></td><td>Hanne</td><td>2 minutes ago</td><td><span class="ds-badge ds-badge--success">active</span></td><td class="ds-table__num">412</td></tr>
+              <tr class="ds-table__row--alt"><td><a class="ds-table__title" href="#weblogs">Second-hand cookbooks</a></td><td>Odile</td><td>11 minutes ago</td><td><span class="ds-badge ds-badge--success">active</span></td><td class="ds-table__num">1,038</td></tr>
+              <tr><td><a class="ds-table__title" href="#weblogs">Small repairs</a></td><td>Anselm</td><td>38 minutes ago</td><td><span class="ds-badge ds-badge--success">active</span></td><td class="ds-table__num">267</td></tr>
+              <tr class="ds-table__group"><td colspan="5">Earlier today</td></tr>
+              <tr><td><a class="ds-table__title" href="#weblogs">A shed of one's own</a></td><td>Greta</td><td>3 hours ago</td><td><span class="ds-badge ds-badge--warning">quiet</span></td><td class="ds-table__num">58</td></tr>
+              <tr class="ds-table__row--alt"><td><a class="ds-table__title" href="#weblogs">Forty tomato plants</a></td><td>Milan</td><td>5 hours ago</td><td><span class="ds-badge ds-badge--success">active</span></td><td class="ds-table__num">173</td></tr>
+              <tr><td><a class="ds-table__title" href="#weblogs">The damp corner</a></td><td>Ingrid</td><td>9 hours ago</td><td><span class="ds-badge ds-badge--danger">closed</span></td><td class="ds-table__num">24</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="ds-page__section" data-component="pagination">
+        <ul class="ds-pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#weblogs">&laquo; Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#weblogs">1</a></li>
+          <li><a class="ds-pagination__link" href="#weblogs">2</a></li>
+          <li><a class="ds-pagination__link" href="#weblogs">3</a></li>
+          <li><a class="ds-pagination__link" href="#weblogs">4</a></li>
+          <li><a class="ds-pagination__link" href="#weblogs">Next &raquo;</a></li>
+        </ul>
+      </section>
+
+      <div class="ds-page__thirds">
+        <section>
+          <h2 class="ds-page__label">Other subjects</h2>
+          <ul class="ds-links" data-component="badge">
+            <li><a class="ds-link" href="#weblogs">Books</a> <span class="ds-badge">3,402</span></li>
+            <li><a class="ds-link" href="#weblogs">Food</a> <span class="ds-badge">2,877</span></li>
+            <li><a class="ds-link" href="#weblogs">Travel</a> <span class="ds-badge ds-badge--tag">2,150</span></li>
+            <li><a class="ds-link" href="#weblogs">Music</a> <span class="ds-badge ds-badge--tag">1,764</span></li>
+            <li><a class="ds-link" href="#weblogs">Work</a> <span class="ds-badge ds-badge--tag">980</span></li>
+            <li><a class="ds-link" href="#weblogs">Beekeeping</a> <span class="ds-badge ds-badge--alt">new</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="ds-page__label">What the states mean</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item"><span class="ds-badge ds-badge--success">active</span> <span class="ds-list__meta">an entry in the last month</span></li>
+            <li class="ds-list__item"><span class="ds-badge ds-badge--warning">quiet</span> <span class="ds-list__meta">nothing for three months</span></li>
+            <li class="ds-list__item"><span class="ds-badge ds-badge--danger">closed</span> <span class="ds-list__meta">closed by its keeper</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="ds-page__label">Newest subject</h2>
+          <div class="ds-empty" data-component="empty">
+            <p class="ds-empty__text">No weblog is filed under &ldquo;Beekeeping&rdquo; yet.</p>
+            <a class="ds-button ds-button--secondary" href="#signup">Start the first</a>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- View 4, sign up: the one form that makes a weblog. -->
+  <section class="ds-view" id="signup">
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li><a class="ds-breadcrumb__link" href="#signup">Sign up</a></li>
+      <li class="ds-breadcrumb__sep" aria-hidden="true">&rsaquo;</li>
+      <li class="ds-breadcrumb__current">Step 1 of 2</li>
+    </ol>
+    <div class="ds-page__body">
+      <div class="ds-page__columns">
+        <div class="ds-page__main">
+
+          <div class="ds-page-header">
+            <div class="ds-page-header__main">
+              <h1 class="ds-page-header__title">Start your weblog</h1>
+              <p class="ds-page-header__text">One short form. The template comes next, and then you can write.</p>
+            </div>
+            <div class="ds-page-header__action"><a class="ds-link" href="#tour">Take the tour first</a></div>
+          </div>
+
+          <section class="ds-page__section" data-component="notice">
+            <div class="ds-notices">
+              <p class="ds-notice"><span class="ds-notice__title">Held for you.</span> The address lowtide is kept free for the next twenty minutes.</p>
+              <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Not yet.</span> One field below needs another look.</p>
+            </div>
+          </section>
+
+          <section class="ds-page__section" data-component="form">
+            <form class="ds-form" action="#">
+              <h2 class="ds-form__title">About the weblog</h2>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-addr">Address</label>
+                <div class="ds-form__field">
+                  <div class="ds-form__affix"><input class="ds-form__input ds-form__input--auto" id="s-addr" type="text" size="12" value="lowtide"> .chronoskin.example</div>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-title">Title</label>
+                <div class="ds-form__field"><input class="ds-form__input" id="s-title" type="text" value="Low tide"></div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-mail">Your e-mail</label>
+                <div class="ds-form__field">
+                  <input class="ds-form__input is-invalid" id="s-mail" type="text" value="mirela at example">
+                  <p class="ds-form__error">That does not look like an e-mail address.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-subject">Subject</label>
+                <div class="ds-form__field">
+                  <select class="ds-form__input ds-form__input--auto" id="s-subject">
+                    <option>Home and garden</option>
+                    <option>Books</option>
+                    <option>Food</option>
+                    <option>Something else</option>
+                  </select>
+                  <p class="ds-form__hint">Where the directory will list you. One subject only.</p>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <label class="ds-form__label" for="s-about">In a sentence</label>
+                <div class="ds-form__field">
+                  <textarea class="ds-form__input ds-form__input--wide" id="s-about" rows="3">What the sea leaves on one beach, written down most mornings.</textarea>
+                </div>
+              </div>
+              <div class="ds-form__row">
+                <span class="ds-form__label"></span>
+                <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> List this weblog in the directory</label>
+              </div>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Create weblog</button>
+                <button class="ds-button ds-button--secondary" type="button">Check address</button>
+                <a class="ds-button ds-button--danger" href="#signup">Start over</a>
+                <button class="ds-button is-disabled" type="button" disabled>Next step</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="ds-page__section ds-page__section--last" data-component="dialog">
+            <div class="ds-dialog__backdrop">
+              <div class="ds-dialog" role="dialog" aria-labelledby="dlg-title">
+                <h3 class="ds-dialog__title" id="dlg-title">Start over?</h3>
+                <div class="ds-dialog__body">
+                  <p class="ds-dialog__text">Everything typed into this form will be cleared, and the address lowtide goes back to being free for anyone.</p>
+                  <div class="ds-dialog__actions">
+                    <button class="ds-button ds-button--danger" type="button">Clear the form</button>
+                    <a class="ds-button ds-button--secondary" href="#signup">Keep writing</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Two steps</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link is-current" href="#signup">1. About the weblog</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">2. Choose a template</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">What you get</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item">One weblog at your own address</li>
+              <li class="ds-sidebar__item">20 megabytes for pictures<progress class="ds-progress" value="6" max="20">6 of 20 megabytes</progress></li>
+              <li class="ds-sidebar__item">Comments, archives and a feed</li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Compare with the paid plan</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Your e-mail</h2>
+            <p class="ds-sidebar__text">It is used to send your password and nothing else. It is never shown on your weblog.</p>
+          </div>
+          <div class="ds-sidebar__block">
+            <details class="ds-accordion" open>
+<summary class="ds-accordion__summary"><span class="ds-sidebar__title">Stuck?</span></summary>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">How addresses work</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">Moving a weblog here</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#tour">The manual</a></li>
+            </ul>
+          </details></div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Started today</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">The damp corner</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">Forty tomato plants</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">Learning the cello at forty</a></li>
+              <li class="ds-sidebar__item"><a class="ds-sidebar__link" href="#weblogs">All 96</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ds-footer" data-component="footer">
+    <div class="ds-footer__row">
+      <span>&copy; 2002 to 2005 chronoskin. Each weblog belongs to the person who writes it.</span>
+      <ul class="ds-footer__links">
+        <li><a class="ds-footer__link" href="#tour">Tour</a></li>
+        <li><a class="ds-footer__link" href="#weblogs">Weblogs</a></li>
+        <li><a class="ds-footer__link" href="#signup">Sign up</a></li>
+        <li><a class="ds-footer__link" href="#tour">Terms</a></li>
+      </ul>
+    </div>
+    <p class="ds-footer__note">Pages are rebuilt every ten minutes. All times are local to the weblog.</p>
+  </footer>
+
+</div>
+</body>
+</html>

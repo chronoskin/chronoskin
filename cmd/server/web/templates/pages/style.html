@@ -1,0 +1,79 @@
+{{/* One style: the install bar, the specimen in a window, and the side panel
+     with the form that regenerates it. Data: the style page view (ID, Style,
+     EraName, About, Heart, Parts, the selects and the links to other eras). */}}
+{{define "main"}}
+<main class="app">
+  {{template "install" .}}
+
+  {{template "window" .}}
+
+  <aside class="side">
+    <div>
+      <div class="crumbs"><a href="/">Eras</a> / <a href="/eras/{{.Style.Era.Slug}}">{{.Years}}</a></div>
+      <div class="title tipped">
+        <div class="asks">
+          <h1>{{.EraName}}</h1>
+          <button class="help" type="button" aria-label="About this era" aria-describedby="about-era">?</button>
+        </div>
+        <span class="tip" role="tooltip" id="about-era">{{.About}}</span>
+        {{template "heart" .Heart}}
+      </div>
+      <div class="sub" title="{{.LayoutName}}">{{.LayoutName}}</div>
+      <div class="chips">
+        <span class="chip">{{.Style.Archetype}}</span>
+        <span class="chip" title="The width this layout was designed for">{{.Style.Viewport.Width}}px wide</span>
+      </div>
+    </div>
+
+    <form class="regen" action="/api/generate" method="get" x-data="pool" x-on:select-done="apply">
+      <input type="hidden" name="from" value="{{.ID}}">
+      <input type="hidden" name="seed" value="{{.NextSeed}}">
+      <input type="hidden" name="among" value="eras">
+      {{template "select" .EraSelect}}
+      {{template "select" .TypeSelect}}
+
+      <div class="box">
+        <div class="head tipped">
+          <div class="asks">
+            <h2>This style</h2>
+            <button class="help" type="button" aria-label="How Regenerate works" aria-describedby="about-regenerate">?</button>
+          </div>
+          <span class="tip" role="tooltip" id="about-regenerate">Regenerate changes every part that is not kept. It picks among the eras and page types chosen above, or among all of them when none is chosen. Keeping a part keeps the era.</span>
+        </div>
+        {{template "parts" .Parts}}
+
+        <div class="actions">
+          <button
+            class="btn primary big"
+            type="submit"
+            title="New parts; kept parts stay (R)"
+            data-key="r"
+            data-goatcounter-click="regenerate"
+          >
+            Regenerate
+          </button>
+          <a
+            class="btn big"
+            href="/api/generate?mode=mix&amp;not={{.Style.Era.Slug}}&amp;pool={{.Pool}}{{if .Within}}&amp;archetype={{.Within}}{{end}}"
+            title="A style from any other era, picked at random{{if .Within}}; the page types stay{{end}}"
+            data-key="a"
+            data-goatcounter-click="any-era"
+          >
+            Any era
+          </a>
+        </div>
+        <p class="hint keys">
+          <kbd>R</kbd> regenerate
+          <kbd>{{template "chevron-left"}}</kbd> <kbd>{{template "chevron-right"}}</kbd> era
+          <kbd>A</kbd> any era
+        </p>
+        {{/* The arrow keys go to the era before and after this one. */}}
+        <a class="sr-only" href="{{.PrevEra}}" data-key="ArrowLeft" data-goatcounter-click="step-era" tabindex="-1">Previous era</a>
+        <a class="sr-only" href="{{.NextEra}}" data-key="ArrowRight" data-goatcounter-click="step-era" tabindex="-1">Next era</a>
+      </div>
+    </form>
+
+    {{template "colours" .}}
+  </aside>
+</main>
+{{end}}

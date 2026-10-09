@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: mail</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-app">
+
+  <nav class="ds-nav" data-component="nav" aria-label="Sections">
+    <a class="ds-brand ds-brand--stacked" data-component="brand" href="#">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#inbox"><svg class="ds-nav__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 8l9 6 9-6"/></svg>Mail</a></li>
+      <li><a class="ds-nav__link" href="#compose"><svg class="ds-nav__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg>Write</a></li>
+      <li><a class="ds-nav__link" href="#bin"><svg class="ds-nav__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/></svg>Bin</a></li>
+    </ul>
+    <div class="ds-nav__foot">
+      <a class="ds-nav__link" href="#rules"><svg class="ds-nav__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Rules</a>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu"><span class="ds-avatar"><span class="ds-avatar__pic">MK</span></span></summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#rules">Rules</a></li>
+          <li><a class="ds-menu__link" href="#bin">Storage</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#inbox">Sign out</a></li>
+        </ul>
+      </details>
+    </div>
+  </nav>
+
+  <div class="ds-app__views">
+
+    <section class="ds-view ds-view--home" id="inbox">
+    <div class="ds-app__frame">
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <a class="ds-button ds-button--large ds-button--block" href="#compose">New message</a>
+      <div>
+        <h2 class="ds-sidebar__heading">Folders</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link is-current" href="#inbox">Inbox <span class="ds-badge" data-component="badge">12</span></a></li>
+          <li><a class="ds-sidebar__link" href="#compose">Drafts <span class="ds-badge ds-badge--quiet">2</span></a></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Sent</a></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Waiting <span class="ds-badge ds-badge--quiet">4</span></a></li>
+          <li><a class="ds-sidebar__link" href="#inbox">Archive</a></li>
+          <li><a class="ds-sidebar__link" href="#bin">Bin</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-sidebar__heading">Labels</h2>
+        <ul class="ds-sidebar__list">
+          <li><a class="ds-sidebar__link" href="#rules"><span class="ds-sidebar__dot ds-sidebar__dot--1"></span>Print shop</a></li>
+          <li><a class="ds-sidebar__link" href="#rules"><span class="ds-sidebar__dot ds-sidebar__dot--2"></span>Suppliers</a></li>
+          <li><a class="ds-sidebar__link" href="#rules"><span class="ds-sidebar__dot ds-sidebar__dot--3"></span>Invoices</a></li>
+          <li><a class="ds-sidebar__link" href="#rules"><span class="ds-sidebar__dot ds-sidebar__dot--4"></span>Family</a></li>
+        </ul>
+      </div>
+      <div class="ds-sidebar__foot">
+        <h2 class="ds-sidebar__heading">Storage</h2>
+        <div class="ds-progress"><div class="ds-progress__bar"></div></div>
+        <p class="ds-sidebar__note">6.1 of 15 GB used</p>
+      </div>
+    </aside>
+
+
+    <section class="ds-pane" aria-label="Inbox">
+      <header class="ds-pane__head">
+        <h2 class="ds-pane__title">Inbox</h2>
+        <span class="ds-tooltip ds-tooltip--below ds-tooltip--end"><span class="ds-badge ds-badge--quiet" tabindex="0">12 unread</span><span class="ds-tooltip__tip" role="tooltip">Five since yesterday</span></span>
+      </header>
+      <div class="ds-pane__tools">
+        <input class="ds-form__input" type="text" placeholder="Search mail" aria-label="Search mail">
+        <ul class="ds-tabs">
+          <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" href="#inbox" aria-current="true">All</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#inbox">Unread</a></li>
+          <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#inbox">Flagged</a></li>
+        </ul>
+      </div>
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item is-current">
+          <span class="ds-list__avatar">IB</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Ines Baptista</a><span class="ds-list__time">09:42</span></div>
+            <span class="ds-list__meta">Proofs for the spring catalogue</span>
+            <span class="ds-list__meta">The second proof is attached. Two pages changed.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">TO</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Tobias Okafor</a><span class="ds-list__time">09:10</span></div>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span>Paper stock for April</span>
+            <span class="ds-list__meta">We can hold the 120 gram until Friday.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">HL</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Hanne Lindqvist</a><span class="ds-list__time">08:31</span></div>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span>Invoice 2041 is ready</span>
+            <span class="ds-list__meta">Thirty days from today, same account as before.</span>
+          </div>
+        </li>
+        <li class="ds-list__item is-hover">
+          <span class="ds-list__avatar">RM</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Rafael Moreau</a><span class="ds-list__time">Tue</span></div>
+            <span class="ds-list__meta">Re: binding samples</span>
+            <span class="ds-list__meta">The sewn one, without question.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">CP</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Courier pickups</a><span class="ds-list__time">Tue</span></div>
+            <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span>Collection missed</span>
+            <span class="ds-list__meta">Nobody answered at the side door at 16:05.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">AS</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Agnes Sato</a><span class="ds-list__time">Mon</span></div>
+            <span class="ds-list__meta">Sunday lunch</span>
+            <span class="ds-list__meta">Bring the folding chairs if they fit in the car.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">TO</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Tobias Okafor</a><span class="ds-list__time">Mon</span></div>
+            <span class="ds-list__meta">Delivery note 778</span>
+            <span class="ds-list__meta">Four pallets, signed for by the morning shift.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">GW</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Guild of Printers</a><span class="ds-list__time">3 Mar</span></div>
+            <span class="ds-list__meta">Spring meeting, agenda</span>
+            <span class="ds-list__meta">Three items and the election of a treasurer.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">HL</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Hanne Lindqvist</a><span class="ds-list__time">3 Mar</span></div>
+            <span class="ds-list__meta">Statement for February</span>
+            <span class="ds-list__meta">Nothing is overdue on your account.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">NB</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Noor Bakker</a><span class="ds-list__time">2 Mar</span></div>
+            <span class="ds-list__meta">Type samples</span>
+            <span class="ds-list__meta">The narrow cut reads better at nine point.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">RM</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Rafael Moreau</a><span class="ds-list__time">2 Mar</span></div>
+            <span class="ds-list__meta">Workshop keys</span>
+            <span class="ds-list__meta">I left the spare set in the top drawer.</span>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">IB</span>
+          <div class="ds-list__body">
+            <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Ines Baptista</a><span class="ds-list__time">28 Feb</span></div>
+            <span class="ds-list__meta">First proof</span>
+            <span class="ds-list__meta">Eleven corrections, most of them on page 14.</span>
+          </div>
+        </li>
+      </ul>
+      <footer class="ds-pane__foot">
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#inbox">Previous</a></li>
+          <li><a class="ds-pagination__link is-current" href="#inbox" aria-current="page">1</a></li>
+          <li><a class="ds-pagination__link" href="#inbox">2</a></li>
+          <li><a class="ds-pagination__link" href="#inbox">3</a></li>
+          <li><a class="ds-pagination__link" href="#inbox">Next</a></li>
+        </ul>
+      </footer>
+    </section>
+
+
+    <main class="ds-app__main">
+
+      <section class="ds-hero" data-component="hero">
+        <span class="ds-hero__date">Wednesday, 11 March</span>
+        <h1 class="ds-hero__title">Good morning, Marta</h1>
+        <p class="ds-hero__lead">Twelve unread messages, and three people are waiting for an answer from you today.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#compose">Answer the oldest</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#inbox">Mark all read</a>
+        </div>
+      </section>
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Unread</dt>
+          <dd class="ds-stat__value">12 <span class="ds-stat__meta">5 since yesterday</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Waiting on you</dt>
+          <dd class="ds-stat__value">3 <span class="ds-stat__meta">oldest from Monday</span></dd>
+        </div>
+        <div class="ds-stat__item">
+          <dt class="ds-stat__label">Answered</dt>
+          <dd class="ds-stat__value">27 <span class="ds-stat__meta">this week</span></dd>
+        </div>
+      </dl>
+
+      <div class="ds-notice__stack" data-component="notice">
+        <div class="ds-notice" role="status">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+          <div><span class="ds-notice__title">This thread is snoozed until noon.</span> It returns to the top of the inbox then.</div>
+        </div>
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">Your reply of 08:55 was not sent.</span> The attachment is larger than 25 MB.</div>
+        </div>
+      </div>
+
+      <section class="ds-panel" data-component="panel">
+        <h2 class="ds-panel__title">Proofs for the spring catalogue <span class="ds-badge ds-badge--warning">Reply today</span></h2>
+        <div class="ds-panel__from">
+          <span class="ds-list__avatar">IB</span>
+          <span class="ds-panel__who">Ines Baptista <span class="ds-panel__meta">to Marta Keane, 09:42</span></span>
+          <span class="ds-badge ds-badge--quiet">2 files</span>
+        </div>
+        <div class="ds-panel__body">
+          <article class="ds-prose" data-component="typography">
+            <h1>Second proof</h1>
+            <p class="ds-prose__lead">Two pages changed since Friday and both are marked in the margin.</p>
+            <p>Page 14 now carries the corrected price list, and the cover uses the <strong>warmer grey</strong> you asked for. The file names follow the usual pattern, for example <code>cat-spring-p14.pdf</code>.</p>
+            <h2>What I need from you</h2>
+            <p>A yes or no on the cover by this afternoon, so that the plates can be made tomorrow.</p>
+            <h3>Still open</h3>
+            <ul>
+              <li>The back cover address, which the shop has not confirmed.</li>
+              <li>Whether the insert is stapled or loose.</li>
+              <li>The number of copies for the fair.</li>
+            </ul>
+            <p class="ds-link__sample" data-component="links">
+              <a class="ds-link" href="#compose">Answer Ines</a>
+              <a class="ds-link is-visited" href="#inbox">First proof</a>
+              <a class="ds-link is-hover" href="#rules">Print shop rule</a>
+              <a class="ds-link is-active" href="#bin">Deleted proofs</a>
+              <a class="ds-link ds-link--quiet" href="#inbox">Back to the inbox</a>
+            </p>
+          </article>
+        </div>
+        <div class="ds-panel__foot">
+          <a class="ds-button" href="#compose">Reply</a>
+          <a class="ds-button ds-button--secondary" href="#compose">Forward</a>
+          <a class="ds-button ds-button--secondary" href="#bin">Delete</a>
+        </div>
+      </section>
+
+      <section class="ds-grid" data-component="grid">
+        <div class="ds-grid__cell ds-grid__cell--1">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">cat-spring-p14.pdf</span>
+          <span class="ds-grid__meta">Price list, 1.8 MB</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--2">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">cat-spring-cover.pdf</span>
+          <span class="ds-grid__meta">Cover, 4.2 MB</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--3">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Print shop</span>
+          <span class="ds-grid__meta">Label, 31 threads</span>
+        </div>
+        <div class="ds-grid__cell ds-grid__cell--4">
+          <span class="ds-grid__chip"></span>
+          <span class="ds-grid__label">Plates on Thursday</span>
+          <span class="ds-grid__meta">Diary, 08:00</span>
+        </div>
+      </section>
+
+    </main>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="compose">
+    <div class="ds-app__frame ds-app__frame--inner">
+
+      <div class="ds-app__main">
+
+        <div>
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">chronoskin</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Inbox</a></li>
+            <li class="ds-breadcrumb__item" aria-current="page">New message</li>
+          </ol>
+          <header class="ds-page-header">
+            <div class="ds-page-header__text">
+              <h1 class="ds-page-header__title">New message</h1>
+              <p class="ds-page-header__lead">An answer to Ines Baptista, kept as a draft while you write.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button ds-button--secondary" href="#inbox">Back to the inbox</a>
+            </div>
+          </header>
+        </div>
+
+        <div class="ds-notice ds-notice--error" role="alert">
+          <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+          <div><span class="ds-notice__title">The cover file is 31 MB.</span> Attachments over 25 MB cannot be sent. Share it from Files in its place.</div>
+        </div>
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Re: Proofs for the spring catalogue <span class="ds-badge ds-badge--quiet">Draft, saved 09:58</span></h2>
+          <div class="ds-panel__body">
+            <div class="ds-form">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="c-to">To</label>
+                <input class="ds-form__input" id="c-to" type="text" value="Ines Baptista">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="c-subject">Subject</label>
+                <input class="ds-form__input" id="c-subject" type="text" value="Re: Proofs for the spring catalogue">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="c-body">Message</label>
+                <textarea class="ds-form__textarea ds-form__textarea--tall" id="c-body">Yes to the cover, the warmer grey is right. Page 14 is fine as it stands. I will confirm the back cover address before noon.</textarea>
+              </div>
+              <label class="ds-form__check">
+                <input class="ds-switch" type="checkbox" checked>
+                Remind me if there is no answer by Friday
+              </label>
+            </div>
+          </div>
+          <div class="ds-panel__foot">
+            <a class="ds-button" href="#inbox">Send</a>
+            <a class="ds-button ds-button--secondary" href="#inbox">Save draft</a>
+            <a class="ds-button ds-button--danger" href="#bin">Discard</a>
+          </div>
+        </section>
+
+      </div>
+
+      <section class="ds-pane" aria-label="Drafts">
+        <header class="ds-pane__head">
+          <h2 class="ds-pane__title">Drafts</h2>
+          <span class="ds-badge ds-badge--quiet">2</span>
+        </header>
+        <ul class="ds-list">
+          <li class="ds-list__item is-current">
+            <span class="ds-list__avatar">IB</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#compose">Ines Baptista</a><span class="ds-list__time">09:58</span></div>
+              <span class="ds-list__meta">Re: Proofs for the spring catalogue</span>
+              <span class="ds-list__meta">Yes to the cover, the warmer grey is right.</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">TO</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#compose">Tobias Okafor</a><span class="ds-list__time">Tue</span></div>
+              <span class="ds-list__meta">Re: Paper stock for April</span>
+              <span class="ds-list__meta">Please hold forty reams of the 120 gram.</span>
+            </div>
+          </li>
+        </ul>
+        <header class="ds-pane__head">
+          <h2 class="ds-pane__title">In this thread</h2>
+          <span class="ds-badge ds-badge--quiet">4</span>
+        </header>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">IB</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Ines Baptista</a><span class="ds-list__time">09:42</span></div>
+              <span class="ds-list__meta">Second proof</span>
+              <span class="ds-list__meta">Two pages changed since Friday.</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">MK</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Marta Keane</a><span class="ds-list__time">Fri</span></div>
+              <span class="ds-list__meta">Re: First proof</span>
+              <span class="ds-list__meta">The grey on the cover is too cold.</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">IB</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Ines Baptista</a><span class="ds-list__time">28 Feb</span></div>
+              <span class="ds-list__meta">First proof</span>
+              <span class="ds-list__meta">Eleven corrections, most of them on page 14.</span>
+            </div>
+          </li>
+        </ul>
+        <footer class="ds-pane__foot">
+          <a class="ds-button ds-button--secondary" href="#inbox">Open the thread</a>
+        </footer>
+      </section>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="bin">
+    <div class="ds-app__frame ds-app__frame--inner">
+
+      <div class="ds-app__main">
+
+        <div>
+          <ol class="ds-breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">chronoskin</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">Mail</a></li>
+            <li class="ds-breadcrumb__item" aria-current="page">Bin</li>
+          </ol>
+          <header class="ds-page-header">
+            <div class="ds-page-header__text">
+              <h1 class="ds-page-header__title">Bin</h1>
+              <p class="ds-page-header__lead">Deleted threads stay here for thirty days and are then removed for good.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button ds-button--secondary" href="#inbox">Back to the inbox</a>
+            </div>
+          </header>
+        </div>
+
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th scope="col">Thread</th>
+              <th scope="col" class="ds-table__opt">From</th>
+              <th scope="col">Removed in</th>
+              <th scope="col" class="ds-table__num">Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#bin">Proofs, first round</a></td>
+              <td class="ds-table__meta ds-table__opt">Ines Baptista</td>
+              <td><span class="ds-badge ds-badge--danger">2 days</span></td>
+              <td class="ds-table__num">6.0 MB</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#bin">Collection booked for Monday</a></td>
+              <td class="ds-table__meta ds-table__opt">Courier pickups</td>
+              <td><span class="ds-badge ds-badge--warning">9 days</span></td>
+              <td class="ds-table__num">0.1 MB</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#bin">Winter meeting, minutes</a></td>
+              <td class="ds-table__meta ds-table__opt">Guild of Printers</td>
+              <td><span class="ds-badge ds-badge--quiet">14 days</span></td>
+              <td class="ds-table__num">0.4 MB</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#bin">Type samples, old set</a></td>
+              <td class="ds-table__meta ds-table__opt">Noor Bakker</td>
+              <td><span class="ds-badge ds-badge--quiet">21 days</span></td>
+              <td class="ds-table__num">11.2 MB</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#bin">Statement for January</a></td>
+              <td class="ds-table__meta ds-table__opt">Hanne Lindqvist</td>
+              <td><span class="ds-badge ds-badge--quiet">27 days</span></td>
+              <td class="ds-table__num">0.2 MB</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="ds-app__row">
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+            <h2 class="ds-dialog__title" id="d-title">Delete this thread?</h2>
+            <div class="ds-dialog__body">Four messages and two files go to the bin and are removed for good after thirty days.</div>
+            <div class="ds-dialog__actions">
+              <button class="ds-button ds-button--secondary" type="button">Keep</button>
+              <button class="ds-button ds-button--danger" type="button">Delete</button>
+            </div>
+          </div>
+        </section>
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Before it is gone</h2>
+            <div class="ds-panel__body">
+              A thread can be put back in its folder until its last day. Files that other threads still use are kept, and rules never touch the bin.
+            </div>
+            <div class="ds-panel__foot">
+              <a class="ds-button ds-button--secondary" href="#inbox">Put back</a>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+      <section class="ds-pane" aria-label="Storage">
+        <header class="ds-pane__head">
+          <h2 class="ds-pane__title">Storage</h2>
+          <span class="ds-badge ds-badge--quiet">6.1 of 15 GB</span>
+        </header>
+        <div class="ds-pane__tools">
+          <div class="ds-progress ds-progress--flush"><div class="ds-progress__bar"></div></div>
+          <span class="ds-form__hint">The bin holds 17.9 MB in five threads.</span>
+        </div>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">IN</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Inbox</a><span class="ds-list__time">2.4 GB</span></div>
+              <span class="ds-list__meta">1,912 threads</span>
+              <span class="ds-list__meta">Largest: spring catalogue proofs</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">PS</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Print shop</a><span class="ds-list__time">1.9 GB</span></div>
+              <span class="ds-list__meta">31 threads</span>
+              <span class="ds-list__meta">Mostly proofs and plates</span>
+            </div>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__avatar">AR</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#inbox">Archive</a><span class="ds-list__time">1.6 GB</span></div>
+              <span class="ds-list__meta">4,020 threads</span>
+              <span class="ds-list__meta">Nothing newer than January</span>
+            </div>
+          </li>
+          <li class="ds-list__item is-current">
+            <span class="ds-list__avatar">BN</span>
+            <div class="ds-list__body">
+              <div class="ds-list__line"><a class="ds-list__title" href="#bin">Bin</a><span class="ds-list__time">17.9 MB</span></div>
+              <span class="ds-list__meta">5 threads</span>
+              <span class="ds-list__meta">Emptied a little every day</span>
+            </div>
+          </li>
+        </ul>
+        <footer class="ds-pane__foot">
+          <a class="ds-button ds-button--danger" href="#bin">Empty the bin</a>
+        </footer>
+      </section>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="rules">
+    <div class="ds-app__frame ds-app__frame--inner">
+
+      <div class="ds-app__main">
+
+        <div>
+          <ol class="ds-breadcrumb" data-component="breadcrumb">
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#inbox">chronoskin</a></li>
+            <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#rules">Settings</a></li>
+            <li class="ds-breadcrumb__item" aria-current="page">Rules</li>
+          </ol>
+          <header class="ds-page-header" data-component="page-header">
+            <div class="ds-page-header__text">
+              <h1 class="ds-page-header__title">Rules</h1>
+              <p class="ds-page-header__lead">Five rules sort incoming mail before it reaches the inbox.</p>
+            </div>
+            <div class="ds-page-header__actions">
+              <a class="ds-button ds-button--secondary" href="#inbox">Back to mail</a>
+              <a class="ds-button" href="#rules">New rule</a>
+            </div>
+          </header>
+          <ul class="ds-tabs ds-tabs--inline" data-component="tabs">
+            <li class="ds-tabs__item"><a class="ds-tabs__tab is-current" href="#rules" aria-current="true">All rules</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#rules">Active</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#rules">Paused</a></li>
+            <li class="ds-tabs__item"><a class="ds-tabs__tab" href="#rules">Failed</a></li>
+          </ul>
+        </div>
+
+
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr>
+              <th scope="col">Rule</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="ds-table__opt">Moves mail to</th>
+              <th scope="col" class="ds-table__num">Matched</th>
+              <th scope="col" class="ds-table__num ds-table__opt">This week</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#rules">Invoices from suppliers</a></td>
+              <td><span class="ds-badge ds-badge--success">Active</span></td>
+              <td class="ds-table__meta ds-table__opt">Invoices</td>
+              <td class="ds-table__num">412</td>
+              <td class="ds-table__num ds-table__opt">9</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#rules">Courier notices</a></td>
+              <td><span class="ds-badge ds-badge--success">Active</span></td>
+              <td class="ds-table__meta ds-table__opt">Archive</td>
+              <td class="ds-table__num">1,238</td>
+              <td class="ds-table__num ds-table__opt">31</td>
+            </tr>
+            <tr class="is-hover">
+              <td><a class="ds-link ds-link--quiet" href="#rules">Print shop threads</a></td>
+              <td><span class="ds-badge ds-badge--success">Active</span></td>
+              <td class="ds-table__meta ds-table__opt">Print shop</td>
+              <td class="ds-table__num">96</td>
+              <td class="ds-table__num ds-table__opt">14</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#rules">Newsletters</a></td>
+              <td><span class="ds-badge ds-badge--warning">Paused</span></td>
+              <td class="ds-table__meta ds-table__opt">Waiting</td>
+              <td class="ds-table__num">57</td>
+              <td class="ds-table__num ds-table__opt">0</td>
+            </tr>
+            <tr>
+              <td><a class="ds-link ds-link--quiet" href="#rules">Old guild list</a></td>
+              <td><span class="ds-badge ds-badge--danger">Failed</span></td>
+              <td class="ds-table__meta ds-table__opt">Folder was deleted</td>
+              <td class="ds-table__num">8</td>
+              <td class="ds-table__num ds-table__opt">0</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div class="ds-app__row">
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h6l2 2h8v10H4z"/></svg>
+          <h2 class="ds-empty__title">No rules for the Family label</h2>
+          <p class="ds-empty__text">Mail with this label is sorted by hand until you add a rule for it.</p>
+          <a class="ds-button" href="#rules">Add a rule</a>
+        </section>
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">When rules run <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">Each new message is checked against the rules from the top of the list down, and the first one that matches moves it.</div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">When a rule fails <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">A failed rule is skipped until its folder exists again. Its mail stays in the inbox meanwhile.</div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Rules and the bin <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">Rules never touch the bin, and a deleted thread is not sorted again when it is put back.</div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <section class="ds-pane">
+        <header class="ds-pane__head">
+          <h2 class="ds-pane__title">New rule</h2>
+          <span class="ds-badge ds-badge--quiet">Draft</span>
+        </header>
+        <div class="ds-pane__tools">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-name">Name</label>
+              <input class="ds-form__input" id="f-name" type="text" value="Proofs from the print shop">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-folder">Move to</label>
+              <span class="ds-form__select-wrap">
+                <select class="ds-form__select" id="f-folder">
+                  <option>Print shop</option>
+                  <option>Invoices</option>
+                  <option>Archive</option>
+                </select>
+                <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+              </span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-from">Sender contains</label>
+              <input class="ds-form__input is-error" id="f-from" type="text" value="@" aria-invalid="true" aria-describedby="f-from-error">
+              <span class="ds-form__error" id="f-from-error">Enter at least three characters.</span>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-size">Only above <span>5 MB</span></label>
+              <input class="ds-form__range" id="f-size" type="range" min="0" max="100" value="20">
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="f-note">Note</label>
+              <textarea class="ds-form__textarea" id="f-note" placeholder="Why this rule exists"></textarea>
+              <span class="ds-form__hint">Only you can see this.</span>
+            </div>
+            <label class="ds-form__check">
+              <input class="ds-form__checkbox" type="checkbox" checked>
+              Mark as read
+            </label>
+            <label class="ds-form__check">
+              <input class="ds-switch" type="checkbox" checked>
+              Apply to mail already in the inbox
+            </label>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="button">Save</button>
+              <button class="ds-button ds-button--secondary" type="button">Cancel</button>
+              <button class="ds-button ds-button--danger" type="button">Delete</button>
+              <button class="ds-button" type="button" disabled>Test</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+    </section>
+
+  </div>
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin, mail and tasks for the Keane print workshop</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#rules">Rules</a></li>
+      <li><a class="ds-footer__link" href="#compose">Write</a></li>
+      <li><a class="ds-footer__link" href="#bin">Bin</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

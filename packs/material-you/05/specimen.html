@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: tonal calendar app specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#month">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g opacity=".42"><circle cx="7.6" cy="7.6" r="5.1"/><circle cx="16.4" cy="7.6" r="5.1"/><circle cx="7.6" cy="16.4" r="5.1"/><circle cx="16.4" cy="16.4" r="5.1"/></g><circle cx="12" cy="12" r="3.6"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <a class="ds-button ds-button--fab" href="#new" aria-label="New event"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>New event</a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#month"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v14H5z M5 10h14 M9 3v4 M15 3v4"/></svg></span>Month</a></li>
+      <li><a class="ds-nav__link" href="#agenda"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l2 2 3-4 M4 16l2 2 3-4 M13 7h7 M13 16h7"/></svg></span>Agenda<span class="ds-nav__count">11</span></a></li>
+      <li><a class="ds-nav__link" href="#new"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg></span>Drafts<span class="ds-nav__count">1</span></a></li>
+      <li><a class="ds-nav__link" href="#settings"><span class="ds-nav__pill"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6 M12 3v3 M12 18v3 M3 12h3 M18 12h3 M5.6 5.6l2.1 2.1 M16.3 16.3l2.1 2.1 M5.6 18.4l2.1-2.1 M16.3 7.7l2.1-2.1"/></svg></span>Settings</a></li>
+    </ul>
+    <div class="ds-mini" aria-hidden="true">
+      <div class="ds-mini__head"><span>October 2026</span><span>Week 41</span></div>
+      <div class="ds-mini__grid"><span class="ds-mini__day ds-mini__day--label">M</span><span class="ds-mini__day ds-mini__day--label">T</span><span class="ds-mini__day ds-mini__day--label">W</span><span class="ds-mini__day ds-mini__day--label">T</span><span class="ds-mini__day ds-mini__day--label">F</span><span class="ds-mini__day ds-mini__day--label">S</span><span class="ds-mini__day ds-mini__day--label">S</span><span class="ds-mini__day is-out">28</span><span class="ds-mini__day is-out">29</span><span class="ds-mini__day is-out">30</span><span class="ds-mini__day">1</span><span class="ds-mini__day">2</span><span class="ds-mini__day">3</span><span class="ds-mini__day">4</span><span class="ds-mini__day">5</span><span class="ds-mini__day">6</span><span class="ds-mini__day is-today">7</span><span class="ds-mini__day">8</span><span class="ds-mini__day is-busy">9</span><span class="ds-mini__day is-busy">10</span><span class="ds-mini__day is-busy">11</span><span class="ds-mini__day">12</span><span class="ds-mini__day">13</span><span class="ds-mini__day">14</span><span class="ds-mini__day">15</span><span class="ds-mini__day">16</span><span class="ds-mini__day">17</span><span class="ds-mini__day">18</span><span class="ds-mini__day">19</span><span class="ds-mini__day">20</span><span class="ds-mini__day">21</span><span class="ds-mini__day">22</span><span class="ds-mini__day">23</span><span class="ds-mini__day">24</span><span class="ds-mini__day">25</span><span class="ds-mini__day">26</span><span class="ds-mini__day">27</span><span class="ds-mini__day">28</span><span class="ds-mini__day">29</span><span class="ds-mini__day">30</span><span class="ds-mini__day">31</span><span class="ds-mini__day is-out">1</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="month">
+  <div class="ds-main">
+    <div class="ds-top">
+      <div class="ds-hero" data-component="hero">
+        <div class="ds-hero__copy">
+          <p class="ds-hero__kicker">Wednesday, week 41</p>
+          <h1 class="ds-hero__title">Three things today</h1>
+          <p class="ds-hero__lead">Stand-up at 09:30, lunch with Tomas at 13:00 and choir at 19:00. The afternoon is free.</p>
+          <div class="ds-buttons">
+            <a class="ds-button" href="#new"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>New event</a>
+            <a class="ds-button ds-button--outlined" href="#agenda">Open the agenda</a>
+          </div>
+        </div>
+        <div class="ds-date" aria-hidden="true"><span>October</span><span class="ds-date__day">7</span><span>Wednesday</span></div>
+      </div>
+      <article class="ds-panel" data-component="panel">
+        <div class="ds-panel__head"><h2 class="ds-panel__title">Next up</h2><span class="ds-badge ds-badge--new">In 25 min</span></div>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--1"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7 M2.5 20a6.5 6.5 0 0 1 13 0 M16 5.5a3 3 0 0 1 0 6 M18 14.5a6 6 0 0 1 3.5 5.5"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#event">Stand-up</a><p class="ds-list__text">Work, the usual room</p></div><span class="ds-list__meta">09:30</span></li>
+          <li class="ds-list__item"><span class="ds-list__icon"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z M12 8.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#event">Lunch with Tomas</a><p class="ds-list__text">Home, the place by the tram stop</p></div><span class="ds-list__meta">13:00</span></li>
+          <li class="ds-list__item"><span class="ds-list__icon ds-list__icon--3"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3 M6 11a6 6 0 0 0 12 0 M12 17v4"/></svg></span><div class="ds-list__body"><a class="ds-list__title" href="#event">Choir rehearsal</a><p class="ds-list__text">Choir, parish hall</p></div><span class="ds-list__meta">19:00</span></li>
+        </ul>
+        <div class="ds-panel__actions">
+          <a class="ds-button ds-button--secondary" href="#agenda">The whole day</a>
+          <a class="ds-button ds-button--text" href="#new">Add a task</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="ds-stats" data-component="stats">
+      <div class="ds-stat"><p class="ds-stat__value">3</p><p class="ds-stat__label">Events today</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">11</p><p class="ds-stat__label">Events this week</p></div>
+      <div class="ds-stat"><p class="ds-stat__value">4</p><p class="ds-stat__label">Invitations to answer</p></div>
+    </div>
+
+    <div class="ds-toolbar">
+      <h2 class="ds-section__title">October 2026</h2>
+      <span class="ds-toolbar__steps">
+        <span class="ds-tooltip"><a class="ds-button ds-button--icon" href="#month" aria-label="Previous month"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></a><span class="ds-tooltip__text" role="tooltip">September</span></span>
+        <span class="ds-tooltip"><a class="ds-button ds-button--icon" href="#month" aria-label="Next month"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a><span class="ds-tooltip__text" role="tooltip">November</span></span>
+      </span>
+      <ul class="ds-chips">
+        <li><a class="ds-chip is-current" href="#month"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Month</a></li>
+        <li><a class="ds-chip" href="#agenda">Week</a></li>
+        <li><a class="ds-chip" href="#agenda">Day</a></li>
+      </ul>
+      <a class="ds-search" href="#agenda"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14a7 7 0 0 0 0-14 M16 16l4 4"/></svg><span class="ds-search__text">Search events</span></a>
+    </div>
+    <div class="ds-month">
+        <span class="ds-month__head">Mon</span>
+        <span class="ds-month__head">Tue</span>
+        <span class="ds-month__head">Wed</span>
+        <span class="ds-month__head">Thu</span>
+        <span class="ds-month__head">Fri</span>
+        <span class="ds-month__head">Sat</span>
+        <span class="ds-month__head">Sun</span>
+        <a class="ds-month__day is-out" href="#new"><span class="ds-month__num">28</span></a>
+        <a class="ds-month__day is-out" href="#new"><span class="ds-month__num">29</span></a>
+        <a class="ds-month__day is-out" href="#new"><span class="ds-month__num">30</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">1</span><span class="ds-event ds-event--4">Rent due</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">2</span><span class="ds-event ds-event--3">Dentist, 08:15</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">3</span><span class="ds-event ds-event--2">Market</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">4</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">5</span><span class="ds-event">Stand-up</span><span class="ds-event ds-event--4">Boiler service</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">6</span><span class="ds-event">Stand-up</span></a>
+        <a class="ds-month__day is-today" href="#event"><span class="ds-month__num">7</span><span class="ds-event">Stand-up</span><span class="ds-event ds-event--2">Lunch, Tomas</span><span class="ds-event ds-event--3">Choir</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">8</span><span class="ds-event">Review, 14:00</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">9</span><span class="ds-event">Stand-up</span><span class="ds-event ds-event--solid">Train to Porto</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">10</span><span class="ds-event ds-event--solid">Porto</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">11</span><span class="ds-event ds-event--solid">Porto</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">12</span><span class="ds-event">Stand-up</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">13</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">14</span><span class="ds-event ds-event--3">Choir</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">15</span><span class="ds-event">Planning day</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">16</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">17</span><span class="ds-event ds-event--2">Allotment</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">18</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">19</span><span class="ds-event">Stand-up</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">20</span><span class="ds-event ds-event--2">Ines, birthday</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">21</span><span class="ds-event ds-event--3">Choir</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">22</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">23</span><span class="ds-event">Release</span><span class="ds-event ds-event--2">Dinner, 20:00</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">24</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">25</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">26</span><span class="ds-event">Stand-up</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">27</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">28</span><span class="ds-event ds-event--3">Choir</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">29</span><span class="ds-event ds-event--4">Car inspection</span></a>
+        <a class="ds-month__day" href="#new"><span class="ds-month__num">30</span></a>
+        <a class="ds-month__day" href="#event"><span class="ds-month__num">31</span><span class="ds-event ds-event--4">Clocks go back</span></a>
+        <a class="ds-month__day is-out" href="#new"><span class="ds-month__num">1</span></a>
+      </div>
+
+    <div class="ds-section">
+      <div class="ds-section__head"><h2 class="ds-section__title">Calendars</h2><a class="ds-link ds-link--more" href="#settings">Manage <svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></div>
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell" href="#agenda"><span class="ds-grid__head"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14v10H5z M3 19h18"/></svg><span class="ds-badge ds-badge--count">6</span></span><span><h3 class="ds-grid__title">Work</h3><p class="ds-grid__text">Shared with the team</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#agenda"><span class="ds-grid__head"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6h-6v6H4z"/></svg></span><span><h3 class="ds-grid__title">Home</h3><p class="ds-grid__text">You and Tomas Reyl</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#agenda"><span class="ds-grid__head"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3 M6 11a6 6 0 0 0 12 0 M12 17v4"/></svg></span><span><h3 class="ds-grid__title">Choir</h3><p class="ds-grid__text">Wednesdays, 14 singers</p></span></a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#settings"><span class="ds-grid__head"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg></span><span><h3 class="ds-grid__title">Add a calendar</h3><p class="ds-grid__text">New, or by address</p></span></a>
+      </div>
+    </div>
+
+    <div class="ds-snackbar"><span>Review moved to Thursday at 14:00</span><a class="ds-snackbar__action" href="#month">Undo</a></div>
+  </div>
+</section>
+
+<section class="ds-view" id="event">
+  <div class="ds-main">
+    <div class="ds-sheet">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#month">Month</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#month">October 2026</a></li>
+        <li class="ds-breadcrumb__item is-current">Planning day</li>
+      </ol>
+      <div class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">Planning day</h1>
+          <p class="ds-page-header__text">Thursday 15 October, 09:00 to 16:30, in Work</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#new"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1-5L16 4l4 4L9 19z"/></svg>Edit</a>
+          <a class="ds-button" href="#month"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Going</a>
+        </div>
+      </div>
+      <div class="ds-columns">
+        <article class="ds-prose" data-component="typography">
+          <h1>What the day is for</h1>
+          <p class="ds-prose__lead">One room, no laptops before lunch, and a plan for the winter by half past four.</p>
+          <p>Bring the list from the last review. The shared notes are in <code>planning-q4</code>, and the <a href="#agenda">agenda of the last planning day</a> shows how long each part took.</p>
+          <h2>Order of the day</h2>
+          <ul>
+            <li>09:00, what went well since July</li>
+            <li>11:00, the three things we will <strong>not</strong> do</li>
+            <li>14:00, who takes what</li>
+          </ul>
+          <h3>Getting there</h3>
+          <p>Tram 28 to the last stop, then the gate on the left. Lunch is ordered.</p>
+        </article>
+        <div class="ds-stack">
+          <div class="ds-overlay">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-label="Choir rehearsal">
+              <span class="ds-events"><span class="ds-event ds-event--3">Choir</span><span class="ds-event ds-event--4">Clashes with this</span></span>
+              <h2 class="ds-dialog__title">Choir rehearsal moved</h2>
+              <ul class="ds-meta">
+                <li class="ds-meta__item"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 7v5l3 3"/></svg>Thursday 15 October, 16:00 to 18:00</li>
+                <li class="ds-meta__item"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z M12 8.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3"/></svg>Parish hall, side door</li>
+                <li class="ds-meta__item"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7 M2.5 20a6.5 6.5 0 0 1 13 0 M16 5.5a3 3 0 0 1 0 6 M18 14.5a6 6 0 0 1 3.5 5.5"/></svg>14 invited, 9 going</li>
+              </ul>
+              <div class="ds-progress-group"><div><p class="ds-progress__label"><strong>9 of 14 have answered</strong><span class="ds-avatars"><span class="ds-avatar">IV</span><span class="ds-avatar">TR</span><span class="ds-avatar">MO</span></span></p><div class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="9" aria-valuemin="0" aria-valuemax="14"><span class="ds-progress__bar"></span><span class="ds-progress__rest"></span></div></div></div>
+              <p class="ds-dialog__body">It overlaps the last half hour of the planning day.</p>
+              <div class="ds-dialog__actions">
+                <a class="ds-button ds-button--text ds-button--danger" href="#event">Decline</a>
+                <a class="ds-button ds-button--text" href="#month">Accept anyway</a>
+              </div>
+            </div>
+          </div>
+          <div class="ds-panel ds-panel--outlined">
+            <h2 class="ds-panel__title">Attached</h2>
+            <ul class="ds-links" data-component="links">
+              <li><a class="ds-link" href="#event">Winter plan, draft</a></li>
+              <li><a class="ds-link is-visited" href="#event">Notes from July</a></li>
+              <li><a class="ds-link is-hover" href="#event">Room booking</a></li>
+              <li><a class="ds-link is-active" href="#event">Lunch order</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="agenda">
+  <div class="ds-main">
+    <div class="ds-sheet">
+      <div class="ds-page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">Agenda</h1>
+          <p class="ds-page-header__text">Everything from today to the end of next week, across three calendars.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <details class="ds-menu ds-menu--end-wide"><summary class="ds-menu__button"><span class="ds-menu__label">All calendars</span><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><ul class="ds-menu__list"><li><a class="ds-menu__item is-current" href="#agenda">All calendars</a></li><li><a class="ds-menu__item" href="#agenda">Work</a></li><li><a class="ds-menu__item" href="#agenda">Home</a></li><li><a class="ds-menu__item" href="#agenda">Choir</a></li></ul></details>
+          <a class="ds-button" href="#new"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>New event</a>
+        </div>
+      </div>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#agenda"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v14H5z M5 10h14 M9 3v4 M15 3v4"/></svg>Upcoming</a></li>
+        <li><a class="ds-tabs__tab" href="#agenda"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z M4 7l8 6 8-6"/></svg>Invitations</a></li>
+        <li><a class="ds-tabs__tab" href="#agenda"><svg class="ds-icon ds-icon--small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4H4z M6 9v10h12V9 M10 13h4"/></svg>Past</a></li>
+      </ul>
+      <div class="ds-badges" data-component="badge">
+        <span class="ds-badge">11 events</span>
+        <span class="ds-badge ds-badge--new">New</span>
+        <span class="ds-badge ds-badge--success">Going</span>
+        <span class="ds-badge ds-badge--warning">Maybe</span>
+        <span class="ds-badge ds-badge--danger">Clash</span>
+      </div>
+      <div class="ds-table-wrap">
+        <table class="ds-table" data-component="table">
+          <thead><tr><th>Event</th><th class="ds-table__extra">Calendar</th><th>When</th><th>Answer</th><th class="ds-table__num ds-table__extra">Guests</th></tr></thead>
+          <tbody>
+            <tr class="is-current"><td><a href="#event">Stand-up</a></td><td class="ds-table__extra"><span class="ds-event">Work</span></td><td>Today, 09:30</td><td><span class="ds-badge ds-badge--success">Going</span></td><td class="ds-table__num ds-table__extra">6</td></tr>
+            <tr><td><a href="#event">Lunch with Tomas</a></td><td class="ds-table__extra"><span class="ds-event ds-event--2">Home</span></td><td>Today, 13:00</td><td><span class="ds-badge ds-badge--success">Going</span></td><td class="ds-table__num ds-table__extra">2</td></tr>
+            <tr><td><a href="#event">Review</a></td><td class="ds-table__extra"><span class="ds-event">Work</span></td><td>Thu, 14:00</td><td><span class="ds-badge ds-badge--warning">Maybe</span></td><td class="ds-table__num ds-table__extra">4</td></tr>
+            <tr><td><a href="#event">Train to Porto</a></td><td class="ds-table__extra"><span class="ds-event ds-event--2">Home</span></td><td>Fri, 17:40</td><td><span class="ds-badge ds-badge--success">Going</span></td><td class="ds-table__num ds-table__extra">2</td></tr>
+            <tr><td><a href="#event">Planning day</a></td><td class="ds-table__extra"><span class="ds-event">Work</span></td><td>15 Oct, 09:00</td><td><span class="ds-badge ds-badge--danger">Clash</span></td><td class="ds-table__num ds-table__extra">12</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link is-disabled" href="#agenda" aria-label="Previous"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></a></li>
+        <li><a class="ds-pagination__link is-current" href="#agenda">1</a></li>
+        <li><a class="ds-pagination__link" href="#agenda">2</a></li>
+        <li><a class="ds-pagination__link" href="#agenda">3</a></li>
+        <li><a class="ds-pagination__link" href="#agenda" aria-label="Next"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="ds-columns ds-columns--even">
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-empty__mark"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l2 2 3-4 M4 16l2 2 3-4 M13 7h7 M13 16h7"/></svg></span>
+        <h2 class="ds-empty__title">No tasks due this week</h2>
+        <p class="ds-empty__text">Tasks with a date show up here, beside the events of the same day.</p>
+        <a class="ds-button ds-button--secondary" href="#new">Add a task</a>
+      </div>
+      <div class="ds-panel ds-panel--tonal">
+        <h2 class="ds-panel__title">Free this week</h2>
+        <p class="ds-panel__body">Wednesday afternoon and all of Saturday have nothing in them. Thursday is full from nine to six.</p>
+        <span class="ds-events"><span class="ds-event ds-event--solid">Wed, 14:00 to 18:00</span><span class="ds-event ds-event--solid">Saturday</span></span>
+        <div class="ds-panel__actions">
+          <a class="ds-button ds-button--secondary" href="#new">Block some time</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="new">
+  <div class="ds-main">
+    <div class="ds-sheet">
+      <div class="ds-page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">New event</h1>
+          <p class="ds-page-header__text">A draft is kept while you type. Guests hear nothing until you save.</p>
+        </div>
+      </div>
+      <div class="ds-layout">
+        <form class="ds-form" data-component="form" action="#new">
+          <label class="ds-form__field"><span class="ds-form__label">Title</span><input class="ds-form__control" type="text" value="Allotment, autumn dig"></label>
+          <div class="ds-form__row">
+            <label class="ds-form__field"><span class="ds-form__label">Starts</span><input class="ds-form__control" type="text" value="Sat 17 October, 10:00"></label>
+            <label class="ds-form__field is-invalid"><span class="ds-form__label">Ends</span><input class="ds-form__control" type="text" value="Sat 17 October, 09:00"><span class="ds-form__error">The end is before the start.</span></label>
+          </div>
+          <div class="ds-form__row">
+            <label class="ds-form__field"><span class="ds-form__label">Calendar</span><span class="ds-form__select"><select class="ds-form__control"><option>Home</option><option>Work</option><option>Choir</option></select></span></label>
+            <label class="ds-form__field"><span class="ds-form__label">Repeats</span><span class="ds-form__select"><select class="ds-form__control"><option>Does not repeat</option><option>Every week</option><option>Every month</option></select></span><span class="ds-form__hint">You can change one occurrence later.</span></label>
+          </div>
+          <label class="ds-form__field"><span class="ds-form__label">Notes for the guests</span><textarea class="ds-form__control ds-form__control--area">Bring gloves. The fork is in the shed.</textarea></label>
+          <div>
+            <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Remind me<small>Thirty minutes before it starts</small></span><input class="ds-switch" type="checkbox" checked></label>
+            <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Guests can invite others<small>Off for private events</small></span><input class="ds-switch" type="checkbox"></label>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Show me as busy</label>
+          </div>
+          <div class="ds-form__actions" data-component="buttons">
+            <button class="ds-button" type="button">Save event</button>
+            <button class="ds-button ds-button--secondary" type="button">Keep as draft</button>
+            <button class="ds-button ds-button--danger" type="button">Discard</button>
+            <button class="ds-button is-disabled" type="button" disabled>Send invitations</button>
+          </div>
+        </form>
+        <div class="ds-stack">
+          <div class="ds-notices" data-component="notice">
+            <div class="ds-notice"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Times are in Lisbon time</strong>Guests see them in their own.</p></div>
+            <div class="ds-notice ds-notice--error"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z M12 10v4 M12 17v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Check the end time</strong>An event cannot end before it starts.</p></div>
+          </div>
+          <div class="ds-panel">
+            <h2 class="ds-panel__title">That morning</h2>
+            <p class="ds-panel__body">Saturday 17 October is free until the market at noon.</p>
+            <span class="ds-events"><span class="ds-event ds-event--2">Market, 12:00</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="settings">
+  <div class="ds-main">
+    <div class="ds-sheet">
+      <div class="ds-page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">Settings</h1>
+          <p class="ds-page-header__text">How the calendar looks, what it tells you and who can see it.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--outlined" href="#month">Back to the month</a>
+        </div>
+      </div>
+      <div class="ds-layout ds-layout--nav">
+        <nav class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Sections</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14v14H5z M5 10h14 M9 3v4 M15 3v4"/></svg>View</a></li>
+            <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 17V11a6 6 0 0 1 12 0v6l2 2H4z M10 21h4"/></svg>Reminders</a></li>
+            <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7 M2.5 20a6.5 6.5 0 0 1 13 0 M16 5.5a3 3 0 0 1 0 6 M18 14.5a6 6 0 0 1 3.5 5.5"/></svg>Sharing</a></li>
+            <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-.5-2 1-2h2a4 4 0 0 0 4-4c0-5-4-9-9-9z M8 11v.5 M12 8v.5 M16 11v.5"/></svg>Colours</a></li>
+            <li><a class="ds-sidebar__link" href="#settings"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12a7 7 0 0 1 12-5l2 2 M19 12a7 7 0 0 1-12 5l-2-2 M19 5v4h-4 M5 19v-4h4"/></svg>Sync</a></li>
+          </ul>
+        </nav>
+        <div class="ds-stack">
+          <div class="ds-panel ds-panel--outlined">
+            <h2 class="ds-panel__title">View</h2>
+            <div>
+              <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Week starts on Monday<small>Sunday in some regions</small></span><input class="ds-switch" type="checkbox" checked></label>
+              <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Show week numbers<small>In the month and in the rail</small></span><input class="ds-switch" type="checkbox" checked></label>
+              <label class="ds-form__check ds-form__check--between"><span class="ds-form__check-text">Show declined events<small>Struck through, in grey</small></span><input class="ds-switch" type="checkbox"></label>
+            </div>
+            <div class="ds-panel__actions">
+              <a class="ds-button ds-button--secondary" href="#month">Done</a>
+              <a class="ds-button ds-button--text" href="#settings">Reset this section</a>
+            </div>
+          </div>
+          <div class="ds-accordion"><details class="ds-accordion__item" open><summary class="ds-accordion__summary"><span>Reminders<span class="ds-accordion__hint">Thirty minutes before, by default</span></span></summary><div class="ds-accordion__body"><p>Each calendar can have its own lead time.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>Sharing<span class="ds-accordion__hint">Tomas Reyl sees Home</span></span></summary><div class="ds-accordion__body"><p>People you share with see titles and times, not notes.</p></div></details><details class="ds-accordion__item"><summary class="ds-accordion__summary"><span>Sync<span class="ds-accordion__hint">Every five minutes</span></span></summary><div class="ds-accordion__body"><p>Changes made offline are sent when the connection returns.</p></div></details></div>
+          <div class="ds-notice"><svg class="ds-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18 M12 11v6 M12 7.5v.5"/></svg><p class="ds-notice__body"><strong class="ds-notice__title">Colours follow the calendar</strong>Each calendar takes one of the four tones; events inherit it.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__legal">chronoskin calendar, synced a minute ago</p>
+  <ul class="ds-footer__links">
+    <li><a class="ds-footer__link" href="#settings">Help</a></li>
+    <li><a class="ds-footer__link" href="#settings">Privacy</a></li>
+    <li><a class="ds-footer__link" href="#settings">Keyboard shortcuts</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

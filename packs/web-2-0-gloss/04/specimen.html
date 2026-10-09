@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>chronoskin: Web 2.0 gloss member dashboard specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__bar">
+    <div class="ds-nav__inner">
+      <div class="ds-nav__top">
+        <a class="ds-brand" data-component="brand" href="#"><span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 10.5V8a5 5 0 0 1 5-5h9a5 5 0 0 1 5 5v2.5z" opacity=".55"/><path d="M2.5 10.5h19V13a5 5 0 0 1-5 5H12l-4.5 3.8V18a5 5 0 0 1-5-5z"/></svg></span><span class="ds-brand__name">chronoskin</span></a>
+        <span class="ds-nav__claim">photo albums you keep with friends</span>
+        <div class="ds-nav__tools">
+          <span class="ds-nav__who">Hello, maren_holt</span>
+          <a class="ds-nav__tool" href="#settings">Album settings</a>
+          <a class="ds-nav__tool" href="#settings">Sign out</a>
+          <form class="ds-nav__search" action="#">
+            <input class="ds-nav__input" type="text" placeholder="Find photos or people" aria-label="Search">
+            <button class="ds-button ds-button--secondary" type="button">Go</button>
+          </form>
+        </div>
+      </div>
+      <ul class="ds-nav__tabs">
+        <li><a class="ds-nav__tab" href="#home">Home</a></li>
+        <li class="ds-menu" data-component="menu"><a class="ds-nav__tab" href="#album">Your photos <span class="ds-menu__caret"></span></a>
+          <ul class="ds-menu__list">
+            <li class="ds-menu__item"><a class="ds-menu__link" href="#album">Harbour weekend</a></li>
+            <li class="ds-menu__item"><a class="ds-menu__link" href="#album">Allotment in October</a></li>
+            <li class="ds-menu__item"><a class="ds-menu__link" href="#album">Favourites</a></li>
+            <li class="ds-menu__item is-ruled"><a class="ds-menu__link" href="#upload">Upload photos</a></li>
+          </ul>
+        </li>
+        <li><a class="ds-nav__tab" href="#comments">Comments</a></li>
+        <li class="ds-nav__tabs-end"><a class="ds-nav__tab ds-nav__tab--action" href="#upload">Upload photos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ds-nav__sub">
+    <ul class="ds-nav__topics">
+      <li class="ds-nav__topic-item is-first"><a class="ds-nav__topic" href="#home">Overview</a></li>
+      <li class="ds-nav__topic-item"><a class="ds-nav__topic" href="#album">Harbour weekend</a></li>
+      <li class="ds-nav__topic-item"><a class="ds-nav__topic" href="#comments">Comments on it</a></li>
+      <li class="ds-nav__topic-item"><a class="ds-nav__topic" href="#settings">Album settings</a></li>
+      <li class="ds-nav__topic-item"><a class="ds-nav__topic" href="#upload">Add photos</a></li>
+    </ul>
+    <p class="ds-nav__status">You have used 38 of 200 uploads this month.</p>
+  </div>
+</header>
+
+<div class="ds-page__wrap">
+
+  <section class="ds-view ds-view--home" id="home">
+
+    <div class="ds-hero" data-component="hero">
+      <div class="ds-hero__top">
+        <div class="ds-hero__main">
+          <h1 class="ds-hero__title">Welcome back, Maren. Two steps left.</h1>
+          <p class="ds-hero__lead">Your first album is up. Invite the people who were there and they can add their own pictures.</p>
+        </div>
+        <div class="ds-hero__action">
+          <a class="ds-button ds-button--large" href="#settings">Invite your friends</a>
+          <p class="ds-hero__note">or <a class="ds-link" href="#home">hide this box</a></p>
+        </div>
+      </div>
+      <ol class="ds-hero__steps">
+        <li class="ds-hero__step is-done">
+          <span class="ds-hero__number">1</span>
+          <div class="ds-hero__step-body">
+            <h2 class="ds-hero__step-title">Upload some photos</h2>
+            <p class="ds-hero__step-text">Done: 38 pictures in the album Harbour weekend.</p>
+          </div>
+        </li>
+        <li class="ds-hero__step">
+          <span class="ds-hero__number">2</span>
+          <div class="ds-hero__step-body">
+            <h2 class="ds-hero__step-title">Invite your friends</h2>
+            <p class="ds-hero__step-text">Send a link by mail. They need no account to look.</p>
+          </div>
+        </li>
+        <li class="ds-hero__step">
+          <span class="ds-hero__number">3</span>
+          <div class="ds-hero__step-body">
+            <h2 class="ds-hero__step-title">Label what you see</h2>
+            <p class="ds-hero__step-text">A few words on each picture and you will find it again.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="ds-page__columns">
+
+      <div class="ds-page__side">
+        <div class="ds-me">
+          <span class="ds-me__face">M</span>
+          <div class="ds-me__body">
+            <p class="ds-me__name">maren_holt</p>
+            <p class="ds-me__text">member since May</p>
+          </div>
+        </div>
+
+        <section class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Your things</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><span class="ds-sidebar__here">Everything</span><span class="ds-sidebar__count">214</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#album">Albums</a><span class="ds-sidebar__count">6</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">Favourites</a><span class="ds-sidebar__count">41</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#comments">Comments</a><span class="ds-sidebar__count">87</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">Contacts</a><span class="ds-sidebar__count">23</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">Groups</a><span class="ds-sidebar__count">4</span></li>
+          </ul>
+        </section>
+
+        <section class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Your labels <span class="ds-tooltip" data-component="tooltip"><a class="ds-tooltip__trigger" href="#settings" aria-describedby="tip-labels">?</a><span class="ds-tooltip__tip" id="tip-labels" role="tooltip">The more photos carry a label, the larger it is written.</span></span></h2>
+          <p class="ds-cloud">
+            <a class="ds-cloud__tag ds-cloud__tag--2" href="#album">allotment</a>
+            <a class="ds-cloud__tag" href="#album">autumn</a>
+            <a class="ds-cloud__tag ds-cloud__tag--4" href="#album">boats</a>
+            <a class="ds-cloud__tag" href="#album">bridges</a>
+            <a class="ds-cloud__tag ds-cloud__tag--3" href="#album">coast</a>
+            <a class="ds-cloud__tag" href="#album">dogs</a>
+            <a class="ds-cloud__tag ds-cloud__tag--2" href="#album">evening</a>
+            <a class="ds-cloud__tag" href="#album">ferry</a>
+            <a class="ds-cloud__tag ds-cloud__tag--3" href="#album">fog</a>
+            <a class="ds-cloud__tag ds-cloud__tag--4" href="#album">harbour</a>
+            <a class="ds-cloud__tag" href="#album">kites</a>
+            <a class="ds-cloud__tag ds-cloud__tag--2" href="#album">market</a>
+            <a class="ds-cloud__tag" href="#album">night</a>
+            <a class="ds-cloud__tag ds-cloud__tag--3" href="#album">picnic</a>
+            <a class="ds-cloud__tag" href="#album">rain</a>
+            <a class="ds-cloud__tag ds-cloud__tag--2" href="#album">rooftops</a>
+            <a class="ds-cloud__tag ds-cloud__tag--4" href="#album">sea</a>
+            <a class="ds-cloud__tag" href="#album">signs</a>
+            <a class="ds-cloud__tag ds-cloud__tag--2" href="#album">snow</a>
+            <a class="ds-cloud__tag ds-cloud__tag--3" href="#album">trains</a>
+            <a class="ds-cloud__tag" href="#album">windows</a>
+          </p>
+          <p class="ds-sidebar__more"><a class="ds-link" href="#album">All 64 labels</a></p>
+        </section>
+
+        <section class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Online now</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">oskar.lind</a><span class="ds-sidebar__count">2 new</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">quietharbour</a></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">ines_v</a><span class="ds-sidebar__count">5 new</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <main class="ds-page__main">
+
+        <div class="ds-head">
+          <h2 class="ds-head__title">What your contacts have been doing</h2>
+          <p class="ds-head__more"><a class="ds-link" href="#home">feed</a></p>
+        </div>
+
+        <ul class="ds-tabs" data-component="tabs">
+          <li><a class="ds-tabs__tab is-current" href="#home">Everyone</a></li>
+          <li><a class="ds-tabs__tab" href="#home">Contacts <span class="ds-tabs__count">(23)</span></a></li>
+          <li><a class="ds-tabs__tab" href="#home">Groups</a></li>
+          <li><a class="ds-tabs__tab" href="#home">Just you</a></li>
+        </ul>
+        <div class="ds-box">
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item is-first">
+              <span class="ds-avatar" data-component="avatar">O</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">oskar.lind</a> added 14 photos to <a class="ds-link" href="#album">Low tide at the north quay</a> <span class="ds-badge ds-badge--new">NEW</span></p>
+                <p class="ds-list__meta"><span>12 minutes ago</span> <a class="ds-link" href="#comments">3 comments</a> <span class="ds-list__tags"><a class="ds-badge ds-badge--tag" href="#album">coast</a><a class="ds-badge ds-badge--tag" href="#album">boats</a></span></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--2">I</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">ines_v</a> commented on your photo <a class="ds-link" href="#album">Ferry in the fog</a></p>
+                <p class="ds-list__text">The gull on the rail makes it. Which lens was this?</p>
+                <p class="ds-list__meta"><span>40 minutes ago</span> <a class="ds-link" href="#comments">reply</a></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--3">Q</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">quietharbour</a> marked <a class="ds-link is-visited" href="#album">Rooftops after rain</a> as a favourite</p>
+                <p class="ds-list__meta"><span>2 hours ago</span> <a class="ds-link" href="#album">11 favourites</a> <span class="ds-list__tags"><a class="ds-badge ds-badge--tag" href="#album">rooftops</a><a class="ds-badge ds-badge--tag" href="#album">rain</a></span></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--4">T</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">tobias_r</a> joined the group <a class="ds-link" href="#home">Small boats</a></p>
+                <p class="ds-list__meta"><span>yesterday</span> <a class="ds-link" href="#home">212 members</a></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar">A</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">annika.dorn</a> started the album <a class="ds-link" href="#album">Allotment in October</a></p>
+                <p class="ds-list__text">Last of the beans, first of the frost.</p>
+                <p class="ds-list__meta"><span>yesterday</span> <a class="ds-link" href="#album">22 photos</a> <span class="ds-list__tags"><a class="ds-badge ds-badge--tag" href="#album">allotment</a><a class="ds-badge ds-badge--tag" href="#album">autumn</a></span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <section class="ds-section">
+          <div class="ds-head">
+            <h2 class="ds-head__title">Your groups</h2>
+            <p class="ds-head__more"><a class="ds-link" href="#home">find more groups</a></p>
+          </div>
+          <div class="ds-grid" data-component="grid">
+            <div class="ds-grid__cell">
+              <div class="ds-grid__head"><h3 class="ds-grid__title">Small boats</h3><span class="ds-grid__count">212 members</span></div>
+              <div class="ds-grid__body">
+                <p class="ds-grid__text">Dinghies, skiffs and anything that fits on a trailer. 9 new photos today.</p>
+                <p class="ds-grid__more"><a class="ds-link" href="#home">Open the pool</a></p>
+              </div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--2">
+              <div class="ds-grid__head"><h3 class="ds-grid__title">Fog and mist</h3><span class="ds-grid__count">1,480 members</span></div>
+              <div class="ds-grid__body">
+                <p class="ds-grid__text">Mornings when the far bank is missing. 31 new photos today.</p>
+                <p class="ds-grid__more"><a class="ds-link" href="#home">Open the pool</a></p>
+              </div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--3">
+              <div class="ds-grid__head"><h3 class="ds-grid__title">Allotment diaries</h3><span class="ds-grid__count">96 members</span></div>
+              <div class="ds-grid__body">
+                <p class="ds-grid__text">A year on one plot, a picture a week. 2 new photos today.</p>
+                <p class="ds-grid__more"><a class="ds-link" href="#home">Open the pool</a></p>
+              </div>
+            </div>
+            <div class="ds-grid__cell ds-grid__cell--4">
+              <div class="ds-grid__head"><h3 class="ds-grid__title">Painted signs</h3><span class="ds-grid__count">540 members</span></div>
+              <div class="ds-grid__body">
+                <p class="ds-grid__text">Shop fronts, market stalls and chalk boards. 14 new photos today.</p>
+                <p class="ds-grid__more"><a class="ds-link" href="#home">Open the pool</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <div class="ds-page__rail">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Bring a friend</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">Albums are better with the other half of the pictures. Type an address and we send the link.</p>
+            <p class="ds-panel__field"><input class="ds-form__input" type="text" value="friend@example.org" aria-label="Address"></p>
+            <div class="ds-panel__actions">
+              <a class="ds-button" href="#home">Send invite</a>
+              <a class="ds-link ds-panel__more" href="#settings">How it works</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-sidebar">
+          <h2 class="ds-sidebar__title">Most looked at this week</h2>
+          <ol class="ds-rank">
+            <li class="ds-rank__item is-first"><span class="ds-rank__number">1</span><span class="ds-rank__body"><a class="ds-link ds-link--title" href="#album">Ferry in the fog</a><span class="ds-rank__meta">by you, 1,874 views</span></span></li>
+            <li class="ds-rank__item"><span class="ds-rank__number">2</span><span class="ds-rank__body"><a class="ds-link ds-link--title" href="#album">The empty fairground</a><span class="ds-rank__meta">by oskar.lind, 1,622 views</span></span></li>
+            <li class="ds-rank__item"><span class="ds-rank__number">3</span><span class="ds-rank__body"><a class="ds-link ds-link--title" href="#album">Kites over the estuary</a><span class="ds-rank__meta">by ines_v, 1,151 views</span></span></li>
+            <li class="ds-rank__item"><span class="ds-rank__number">4</span><span class="ds-rank__body"><a class="ds-link ds-link--title" href="#album">Rail yard at dawn</a><span class="ds-rank__meta">by tobias_r, 1,047 views</span></span></li>
+          </ol>
+        </section>
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Room for more</h2>
+          <div class="ds-panel__body">
+            <div class="ds-progress" data-component="progress">
+              <p class="ds-progress__label"><span class="ds-progress__name">38 of 200 uploads</span><span>this month</span></p>
+              <progress class="ds-progress__bar" value="38" max="200">38 of 200</progress>
+            </div>
+            <p class="ds-panel__text">A paid account has no monthly limit and keeps the full-size files.</p>
+            <div class="ds-panel__actions">
+              <a class="ds-button ds-button--secondary" href="#upload">See the plans</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="album">
+
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li><a class="ds-link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li><a class="ds-link" href="#album">Your photos</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li class="ds-breadcrumb__current">Harbour weekend</li>
+    </ol>
+
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Harbour weekend</h1>
+        <p class="ds-page-header__text">An album of 38 photos shared with 6 people, started on 4 October.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#settings">Share album</a>
+        <a class="ds-button" href="#upload">Add photos</a>
+      </div>
+    </div>
+
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__number">38</span><span class="ds-stat__label">photos</span><span class="ds-stat__note">12 added today</span></li>
+      <li class="ds-stat"><span class="ds-stat__number">2,410</span><span class="ds-stat__label">views</span><span class="ds-stat__note">up 310 this week</span></li>
+      <li class="ds-stat"><span class="ds-stat__number">0</span><span class="ds-stat__label">comments</span><span class="ds-stat__note">nobody has written yet</span></li>
+      <li class="ds-stat"><span class="ds-stat__number">19</span><span class="ds-stat__label">favourites</span><span class="ds-stat__note">from 11 people</span></li>
+    </ul>
+
+    <div class="ds-section">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab is-current" href="#album">Photos <span class="ds-tabs__count">(38)</span></a></li>
+        <li><a class="ds-tabs__tab" href="#comments">Comments <span class="ds-tabs__count">(0)</span></a></li>
+        <li><a class="ds-tabs__tab" href="#settings">Settings</a></li>
+      </ul>
+      <div class="ds-box">
+        <div class="ds-buttons ds-buttons--bar" data-component="buttons">
+          <a class="ds-button" href="#upload">Add photos</a>
+          <button class="ds-button ds-button--secondary" type="button">Label the ticked ones</button>
+          <button class="ds-button is-disabled" type="button" disabled>Move to another album</button>
+          <button class="ds-button ds-button--danger" type="button">Delete the ticked ones</button>
+        </div>
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr>
+              <th class="ds-table__head">Photo</th>
+              <th class="ds-table__head">Labels</th>
+              <th class="ds-table__head">Added by</th>
+              <th class="ds-table__head">Seen by</th>
+              <th class="ds-table__head is-numeric">Comments</th>
+              <th class="ds-table__head is-numeric">Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#settings">Ferry in the fog</a> <span class="ds-badge ds-badge--new">NEW</span></td>
+              <td class="ds-table__cell">ferry, fog, sea</td>
+              <td class="ds-table__cell">maren_holt</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Everyone</span></td>
+              <td class="ds-table__cell is-numeric">0</td>
+              <td class="ds-table__cell is-numeric">1,874</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#settings">Rooftops after rain</a></td>
+              <td class="ds-table__cell">rooftops, rain</td>
+              <td class="ds-table__cell">maren_holt</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Everyone</span></td>
+              <td class="ds-table__cell is-numeric">0</td>
+              <td class="ds-table__cell is-numeric">312</td>
+            </tr>
+            <tr class="ds-table__row">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#settings">Net menders on the slip</a></td>
+              <td class="ds-table__cell">harbour, boats</td>
+              <td class="ds-table__cell">oskar.lind</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Contacts only</span></td>
+              <td class="ds-table__cell is-numeric">0</td>
+              <td class="ds-table__cell is-numeric">141</td>
+            </tr>
+            <tr class="ds-table__row is-alt">
+              <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#settings">Harbour office, closed</a></td>
+              <td class="ds-table__cell">signs, windows</td>
+              <td class="ds-table__cell">ines_v</td>
+              <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Hidden</span></td>
+              <td class="ds-table__cell is-numeric">0</td>
+              <td class="ds-table__cell is-numeric">83</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ds-table__foot">
+          <p class="ds-table__summary">Showing 1 to 4 of 38 photos</p>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><span class="ds-pagination__link is-disabled">&laquo; Previous</span></li>
+            <li><span class="ds-pagination__link is-current">1</span></li>
+            <li><a class="ds-pagination__link" href="#album">2</a></li>
+            <li><a class="ds-pagination__link" href="#album">3</a></li>
+            <li class="ds-pagination__gap">&hellip;</li>
+            <li><a class="ds-pagination__link" href="#album">10</a></li>
+            <li><a class="ds-pagination__link" href="#album">Next &raquo;</a></li>
+          </ul>
+        </div>
+        <p class="ds-badges ds-badges--key" data-component="badge">
+          <span><span class="ds-badge ds-badge--success">Everyone</span> open to all</span>
+          <span><span class="ds-badge ds-badge--warning">Contacts only</span> your 23 contacts</span>
+          <span><span class="ds-badge ds-badge--danger">Hidden</span> just you</span>
+          <span><span class="ds-badge ds-badge--new">NEW</span> added today</span>
+          <span><span class="ds-badge ds-badge--count">38</span> in the album</span>
+          <span><span class="ds-badge">Pro member</span></span>
+          <span><a class="ds-badge ds-badge--tag" href="#album">harbour</a> <a class="ds-badge ds-badge--tag" href="#album">fog</a> labels</span>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="comments">
+
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li><a class="ds-link" href="#album">Harbour weekend</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li class="ds-breadcrumb__current">Comments</li>
+    </ol>
+
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Harbour weekend</h1>
+        <p class="ds-page-header__text">What the people in this album have written under its photos.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#album">Back to the photos</a>
+      </div>
+    </div>
+
+    <div class="ds-section ds-section--tight">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab" href="#album">Photos <span class="ds-tabs__count">(38)</span></a></li>
+        <li><a class="ds-tabs__tab is-current" href="#comments">Comments <span class="ds-tabs__count">(0)</span></a></li>
+        <li><a class="ds-tabs__tab" href="#settings">Settings</a></li>
+      </ul>
+      <div class="ds-box">
+          <div class="ds-empty ds-empty--inset" data-component="empty">
+            <h2 class="ds-empty__title">No comments yet</h2>
+            <p class="ds-empty__text">Nobody has written under this album. Invite the people who were there.</p>
+            <a class="ds-button" href="#settings">Invite someone</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="ds-page__split">
+      <div class="ds-page__half">
+        <div class="ds-box ds-box--flush">
+          <h2 class="ds-box__title">Comments on your other albums</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item is-first">
+              <span class="ds-avatar ds-avatar--2">I</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">ines_v</a> on <a class="ds-link" href="#album">Ferry in the fog, first try</a></p>
+                <p class="ds-list__text">The gull on the rail makes it. Which lens was this?</p>
+                <p class="ds-list__meta"><span>40 minutes ago</span> <a class="ds-link" href="#comments">reply</a></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar">O</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">oskar.lind</a> on <a class="ds-link" href="#album">Allotment in October</a></p>
+                <p class="ds-list__text">Those beans have seen better days. Lovely light though.</p>
+                <p class="ds-list__meta"><span>yesterday</span> <a class="ds-link" href="#comments">reply</a></p>
+              </div>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-avatar ds-avatar--3">Q</span>
+              <div class="ds-list__body">
+                <p class="ds-list__title"><a class="ds-link ds-link--title" href="#home">quietharbour</a> on <a class="ds-link" href="#album">Rooftops after rain</a></p>
+                <p class="ds-list__text">You can see our chimney, third from the left.</p>
+                <p class="ds-list__meta"><span>3 days ago</span> <a class="ds-link" href="#comments">reply</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-page__half">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Ask for the first one</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">People write more when they are asked. Send the album to someone who was there.</p>
+            <p class="ds-panel__field"><input class="ds-form__input" type="text" value="friend@example.org" aria-label="Address"></p>
+            <div class="ds-panel__actions">
+              <a class="ds-button" href="#comments">Send the album</a>
+              <a class="ds-link ds-panel__more" href="#settings">Who can comment?</a>
+            </div>
+          </div>
+        </section>
+        <section class="ds-sidebar">
+          <h2 class="ds-sidebar__title">People in this album</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">oskar.lind</a><span class="ds-sidebar__count">14 photos</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">ines_v</a><span class="ds-sidebar__count">9 photos</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">quietharbour</a><span class="ds-sidebar__count">looking only</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">tobias_r</a><span class="ds-sidebar__count">looking only</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="settings">
+
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li><a class="ds-link" href="#album">Harbour weekend</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li class="ds-breadcrumb__current">Settings</li>
+    </ol>
+
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Harbour weekend</h1>
+        <p class="ds-page-header__text">The name, the date and who may see and add to this album.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#album">Back to the photos</a>
+      </div>
+    </div>
+
+    <div class="ds-section ds-section--tight">
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab" href="#album">Photos <span class="ds-tabs__count">(38)</span></a></li>
+        <li><a class="ds-tabs__tab" href="#comments">Comments <span class="ds-tabs__count">(0)</span></a></li>
+        <li><a class="ds-tabs__tab is-current" href="#settings">Settings</a></li>
+      </ul>
+      <div class="ds-box">
+        <div class="ds-page__split ds-page__split--inside">
+          <div class="ds-page__half">
+          <h2 class="ds-box__title">Album details</h2>
+          <form class="ds-form" data-component="form" action="#">
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-name">Album name</label>
+              <input class="ds-form__input" id="f-name" type="text" value="Harbour weekend">
+            </div>
+            <div class="ds-form__row ds-form__pair">
+              <div>
+                <label class="ds-form__label" for="f-date">Taken on</label>
+                <input class="ds-form__input is-error" id="f-date" type="text" value="4th Octber">
+                <p class="ds-form__error">Write the date as 4 Oct 2007.</p>
+              </div>
+              <div>
+                <label class="ds-form__label" for="f-who">Who can see it</label>
+                <select class="ds-form__select" id="f-who">
+                  <option>Contacts only</option>
+                  <option>Everyone</option>
+                  <option>Just you</option>
+                </select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="f-text">A few words</label>
+              <textarea class="ds-form__textarea" id="f-text">Two days on the north quay with borrowed cameras and one working umbrella.</textarea>
+              <p class="ds-form__hint">Shown under the album name. Plain text only.</p>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Let the people in the album add photos</label>
+            </div>
+            <div class="ds-form__actions">
+              <button class="ds-button" type="button">Save changes</button>
+              <span class="ds-form__or">or</span>
+              <a class="ds-link" href="#album">cancel</a>
+            </div>
+          </form>
+          </div>
+          <div class="ds-page__half">
+        <div class="ds-prose" data-component="typography">
+          <h1>Sharing an album</h1>
+          <p>Every album has one address. Anyone you send it to can look without signing up, and <mark>only people you invite can add to it</mark>. You can change this at any time on the <a href="#album">photos tab</a>.</p>
+          <h2>Who sees what</h2>
+          <p>A photo is as open as its album unless you say otherwise. <strong>Hidden photos stay in the count</strong> but show to nobody else.</p>
+          <h3>Three things to know</h3>
+          <ul>
+            <li>Labels are shared: a word you add is a word everybody can search.</li>
+            <li>Full-size files are kept for thirty days on a free account.</li>
+            <li>An album feed lives at the album address with <code>/feed</code> on the end.</li>
+          </ul>
+        </div>
+            <p class="ds-links" data-component="links">
+              <a class="ds-link" href="#album">The photos</a>
+              <a class="ds-link is-visited" href="#comments">The comments</a>
+              <a class="ds-link is-hover" href="#upload">Add photos</a>
+              <a class="ds-link is-active" href="#home">Your home page</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-page__split">
+      <div class="ds-page__half">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Delete this album</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__text">Deleting removes the album, its 38 photos and everything written under them. It cannot be taken back, so we ask once more before it happens.</p>
+            <div class="ds-panel__actions">
+              <button class="ds-button ds-button--danger" type="button">Delete album</button>
+              <a class="ds-link ds-panel__more" href="#album">Hide photos instead</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="ds-page__half">
+        <div class="ds-dialog__backdrop">
+          <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+            <h2 class="ds-dialog__title" id="dlg-title">Delete this album? <a class="ds-dialog__close" href="#settings">close</a></h2>
+            <div class="ds-dialog__body">
+              <p class="ds-dialog__text">All 38 photos and their comments go with it. Pictures your friends added stay in their own accounts.</p>
+            </div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#settings">Keep it</a>
+              <button class="ds-button ds-button--danger" type="button">Delete album</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ds-view" id="upload">
+
+    <ol class="ds-breadcrumb">
+      <li><a class="ds-link" href="#home">Home</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li><a class="ds-link" href="#album">Your photos</a></li>
+      <li class="ds-breadcrumb__sep">&rarr;</li>
+      <li class="ds-breadcrumb__current">Upload photos</li>
+    </ol>
+
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Upload photos</h1>
+        <p class="ds-page-header__text">Pick the files, say where they go, and they are in the album a minute later.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#album">Back to the album</a>
+      </div>
+    </div>
+
+    <div data-component="notice">
+      <p class="ds-notice"><span class="ds-notice__title">Uploaded.</span> 12 photos were added to Harbour weekend and your contacts can see them now.</p>
+      <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Two files were skipped.</span> They are larger than the 10 MB limit of a free account.</p>
+    </div>
+
+    <div class="ds-page__split">
+      <div class="ds-page__half">
+        <div class="ds-box ds-box--flush">
+          <h2 class="ds-box__title">The last batch</h2>
+          <table class="ds-table ds-table--first">
+            <thead>
+              <tr>
+                <th class="ds-table__head">File</th>
+                <th class="ds-table__head">Result</th>
+                <th class="ds-table__head is-numeric">Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#album">quay-morning-01.jpg</a></td>
+                <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Added</span></td>
+                <td class="ds-table__cell is-numeric">2.4 MB</td>
+              </tr>
+              <tr class="ds-table__row is-alt">
+                <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#album">quay-morning-02.jpg</a></td>
+                <td class="ds-table__cell"><span class="ds-badge ds-badge--success">Added</span></td>
+                <td class="ds-table__cell is-numeric">3.1 MB</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell"><a class="ds-link ds-link--title" href="#album">net-menders.jpg</a></td>
+                <td class="ds-table__cell"><span class="ds-badge ds-badge--warning">Needs a label</span></td>
+                <td class="ds-table__cell is-numeric">1.8 MB</td>
+              </tr>
+              <tr class="ds-table__row is-alt">
+                <td class="ds-table__cell">harbour-panorama.tif</td>
+                <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Too large</span></td>
+                <td class="ds-table__cell is-numeric">41.0 MB</td>
+              </tr>
+              <tr class="ds-table__row">
+                <td class="ds-table__cell">ferry-full-size.tif</td>
+                <td class="ds-table__cell"><span class="ds-badge ds-badge--danger">Too large</span></td>
+                <td class="ds-table__cell is-numeric">28.6 MB</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="ds-table__foot">
+            <p class="ds-table__summary">Showing 5 of 14 files, 12 added and 2 skipped</p>
+            <a class="ds-link" href="#album">See them in the album</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-page__half">
+        <div class="ds-box ds-box--flush">
+          <h2 class="ds-box__title">Send some more</h2>
+          <form class="ds-form" action="#">
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="u-files">Files on your computer</label>
+              <input class="ds-form__input" id="u-files" type="text" value="slipway-01.jpg, slipway-02.jpg, gulls.jpg">
+              <p class="ds-form__hint">Up to 10 MB each. You have used 38 of 200 uploads this month.</p>
+            </div>
+            <div class="ds-form__row ds-form__pair">
+              <div>
+                <label class="ds-form__label" for="u-album">Album</label>
+                <select class="ds-form__select" id="u-album">
+                  <option>Harbour weekend</option>
+                  <option>Allotment in October</option>
+                  <option>A new album</option>
+                </select>
+              </div>
+              <div>
+                <label class="ds-form__label" for="u-who">Who can see them</label>
+                <select class="ds-form__select" id="u-who">
+                  <option>Same as the album</option>
+                  <option>Everyone</option>
+                  <option>Just you</option>
+                </select>
+              </div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="u-labels">Labels for all of them</label>
+              <input class="ds-form__input" id="u-labels" type="text" value="harbour, boats">
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Tell my contacts when they are up</label>
+            </div>
+            <div class="ds-form__actions">
+              <a class="ds-button" href="#album">Upload 3 photos</a>
+              <span class="ds-form__or">or</span>
+              <a class="ds-link" href="#album">cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <div class="ds-footer__cols">
+      <div>
+        <h2 class="ds-footer__title">chronoskin</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">About us</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">The notebook</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Jobs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Your account</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#settings">Settings</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#upload">Plans and prices</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#comments">Invite a friend</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Tools</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#upload">Desktop uploader</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#album">Feeds</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">For developers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="ds-footer__title">Help</h2>
+        <ul class="ds-footer__list">
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Questions and answers</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">House rules</a></li>
+          <li class="ds-footer__item"><a class="ds-footer__link" href="#home">Write to us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ds-footer__legal">Photos belong to the people who took them. Terms of use and privacy apply to everything on this page.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: how-to wiki specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<svg class="ds-sprite" width="0" height="0" aria-hidden="true">
+  <symbol id="i-wheel" viewBox="0 0 40 30">
+    <circle cx="20" cy="15" r="11" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="20" cy="15" r="2" fill="currentColor"/>
+    <path d="M20 4v22M9 15h22M12 7l16 16M28 7L12 23" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+</svg>
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__bar">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 4.5 6.5 4 3 4.5V19c3.5-.5 7 0 9 2c2-2 5.5-2.5 9-2V4.5c-3.5-.5-7 0-9 2z"/><line x1="12" y1="6.5" x2="12" y2="21"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__menu">
+      <li><a class="ds-nav__link" href="#home">Home</a></li>
+      <li><a class="ds-nav__link" href="#guide">Featured guide</a></li>
+      <li><a class="ds-nav__link" href="#changes">Recent changes</a></li>
+      <li><a class="ds-nav__link" href="#search">Search</a></li>
+      <li><a class="ds-nav__link" href="#write">Write a guide</a></li>
+    </ul>
+    <form class="ds-nav__search" action="#search">
+      <input class="ds-form__input ds-nav__field" type="text" aria-label="Search the manual" value="true a wheel">
+      <button class="ds-button ds-button--secondary" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="ds-nav__sub">
+    <span class="ds-nav__tagline">The bicycle repair manual that anyone can edit</span>
+    <ul class="ds-nav__tools">
+      <li><a class="ds-nav__sublink" href="#write">Signed in as Petra</a></li>
+      <li><a class="ds-nav__sublink" href="#changes">My watchlist</a></li>
+      <li><a class="ds-nav__sublink" href="#guide">Random guide</a></li>
+      <li><a class="ds-nav__sublink" href="#search">Help</a></li>
+      <li><a class="ds-nav__sublink" href="#home">Log out</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="ds-page__frame">
+
+  <!-- ============ home ============ -->
+  <section class="ds-view ds-view--home" id="home">
+    <div class="ds-view__body">
+
+      <section class="ds-hero" data-component="hero">
+        <div>
+          <h1 class="ds-hero__title">Welcome to chronoskin</h1>
+          <p class="ds-hero__lead">A shared workshop manual for keeping bicycles on the road. Every guide is written step by step by riders and mechanics, and every one of them can be improved by you.</p>
+          <p class="ds-hero__action"><a class="ds-button ds-button--large" href="#write">Write a guide</a> <a class="ds-button ds-button--secondary ds-button--large" href="#guide">Read a random guide</a></p>
+        </div>
+        <dl class="ds-stat" data-component="stats">
+          <div class="ds-stat__item"><dd class="ds-stat__value">3,142</dd><dt class="ds-stat__label">guides</dt></div>
+          <div class="ds-stat__item"><dd class="ds-stat__value">871</dd><dt class="ds-stat__label">authors</dt></div>
+          <div class="ds-stat__item"><dd class="ds-stat__value">64</dd><dt class="ds-stat__label">edits today</dt></div>
+        </dl>
+      </section>
+
+      <div class="ds-layout">
+        <div class="ds-layout__main">
+
+          <div class="ds-extras"><label class="ds-meter">Guides checked by an editor <progress class="ds-progress" value="68" max="100">68%</progress> 68%</label></div>
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Spotlight guide</h2>
+            <div class="ds-panel__body">
+              <span class="ds-panel__thumb"><svg viewBox="0 0 40 30" aria-hidden="true"><use href="#i-wheel"/></svg></span>
+              <div>
+                <a class="ds-panel__name" href="#guide">How to patch an inner tube</a>
+                <p class="ds-panel__line">A flat tyre ends more rides than anything else, and fixing one takes ten minutes once you have done it twice. This guide walks through finding the hole, roughing the rubber, and seating the tyre again without pinching the tube.</p>
+                <p class="ds-panel__line"><a class="ds-link ds-link--strong" href="#guide">Read on...</a> &nbsp; <span class="ds-badge" data-component="badge">5 steps</span> <span class="ds-badge ds-badge--success">Checked by 4 editors</span></p>
+              </div>
+            </div>
+          </section>
+
+          <h2 class="ds-section">Categories</h2>
+          <ul class="ds-grid" data-component="grid">
+            <li class="ds-grid__cell"><a class="ds-grid__name" href="#search">Wheels and tyres</a><span class="ds-grid__meta">412 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--2"><a class="ds-grid__name" href="#search">Brakes</a><span class="ds-grid__meta">268 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--3"><a class="ds-grid__name" href="#search">Gears and chain</a><span class="ds-grid__meta">391 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--4"><a class="ds-grid__name" href="#search">Frame and fork</a><span class="ds-grid__meta">144 guides</span></li>
+            <li class="ds-grid__cell"><a class="ds-grid__name" href="#search">Lights and electrics</a><span class="ds-grid__meta">97 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--2"><a class="ds-grid__name" href="#search">Roadside repairs</a><span class="ds-grid__meta">203 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--3"><a class="ds-grid__name" href="#search">Tools and workshop</a><span class="ds-grid__meta">176 guides</span></li>
+            <li class="ds-grid__cell ds-grid__cell--4"><a class="ds-grid__name" href="#search">Fitting and comfort</a><span class="ds-grid__meta">88 guides</span></li>
+            <li class="ds-grid__cell"><a class="ds-grid__name" href="#search">Everything else</a><span class="ds-grid__meta">1,363 guides</span></li>
+          </ul>
+
+          <h2 class="ds-section">Newest guides</h2>
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item"><span class="ds-list__time">14:02</span><span><a class="ds-list__title" href="#guide">How to replace a brake cable</a><span class="ds-list__meta">Brakes &middot; started by Petra &middot; 7 steps</span></span><span class="ds-list__aside"><span class="ds-badge ds-badge--warning">Needs photos</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__time">11:37</span><span><a class="ds-list__title" href="#guide">How to true a wheel with zip ties</a><span class="ds-list__meta">Wheels and tyres &middot; started by Joss &middot; 6 steps</span></span><span class="ds-list__aside"><span class="ds-badge ds-badge--success">Checked</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__time">09:15</span><span><a class="ds-list__title" href="#guide">How to quiet a creaking seat post</a><span class="ds-list__meta">Fitting and comfort &middot; started by Anneke &middot; 4 steps</span></span><span class="ds-list__aside"><span class="ds-badge ds-badge--success">Checked</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__time">08:50</span><span><a class="ds-list__title" href="#guide">How to rejoin a snapped chain</a><span class="ds-list__meta">Roadside repairs &middot; started by Lorcan &middot; 8 steps</span></span><span class="ds-list__aside"><span class="ds-badge ds-badge--danger">Disputed</span></span></li>
+          </ul>
+        </div>
+
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Featured guides</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Patch an inner tube</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Adjust a rear derailleur</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Clean and oil a chain</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Set your saddle height</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Replace brake blocks</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Wrap handlebar tape</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Fit mudguards</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--strong" href="#search">...read other popular guides</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Getting started</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#write">Take the tour</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#write">Writer's guide</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#changes">Recent changes</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--new" href="#write">Suggested topics</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#search">Community forum</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Editing tools</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#write">Upload a photo</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changes">Related changes</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#search">Special pages</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ guide ============ -->
+  <section class="ds-view" id="guide">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#search">Wheels and tyres</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li class="ds-breadcrumb__current">Patch an inner tube</li>
+      </ol>
+
+      <div class="ds-layout">
+        <div class="ds-layout__main">
+          <div class="ds-view__body">
+            <ul class="ds-tabs" data-component="tabs">
+              <li><a class="ds-tabs__tab is-current" href="#guide">Guide</a></li>
+              <li><a class="ds-tabs__tab" href="#guide">Discuss (6)</a></li>
+              <li><a class="ds-tabs__tab" href="#write">Edit</a></li>
+              <li><a class="ds-tabs__tab" href="#changes">History</a></li>
+            </ul>
+            <article class="ds-sheet ds-sheet--tabbed">
+              <header class="ds-page-header" data-component="page-header">
+                <div>
+                  <h1 class="ds-page-header__title">How to patch an inner tube</h1>
+                  <p class="ds-page-header__desc">5 steps &middot; about 15 minutes &middot; <span class="ds-badge ds-badge--success">Easy</span> &middot; last edited today by Joss</p>
+          <div class="ds-extras"><details class="ds-accordion"><summary class="ds-accordion__summary">Tools you need [show]</summary><div class="ds-accordion__body"><p>Tyre levers, a patch kit, a pump and chalk. A bowl of water helps to find the hole.</p></div></details>See also <span class="ds-tooltip"><a class="ds-link" href="#guide" aria-describedby="t3">bead seat</a><span class="ds-tooltip__tip" id="t3" role="tooltip">The ledge of the rim where the tyre bead sits when it is inflated.</span></span></div>
+                </div>
+                <p class="ds-page-header__action"><a class="ds-button" href="#write">Edit this guide</a></p>
+              </header>
+
+              <div class="ds-prose" data-component="typography">
+                <p>A puncture is the most common roadside failure and the cheapest to mend. With a patch kit and two <strong>tyre levers</strong> you can be riding again in a quarter of an hour. These steps are for a tube with a small hole; a split longer than <code>5 mm</code> or a cut at the valve means a new tube.</p>
+                <h2>Things you will need</h2>
+              </div>
+
+              <table class="ds-table" data-component="table">
+                <thead>
+                  <tr><th scope="col">Item</th><th scope="col">Notes</th><th scope="col">Quantity</th><th scope="col">Cost</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Tyre levers</td><td>Plastic, not metal</td><td class="ds-table__num">2</td><td class="ds-table__num">3.00</td></tr>
+                  <tr><td>Patch kit</td><td>Patches, glue, sandpaper</td><td class="ds-table__num">1</td><td class="ds-table__num">2.50</td></tr>
+                  <tr><td>Pump</td><td>With the right valve head</td><td class="ds-table__num">1</td><td class="ds-table__num">12.00</td></tr>
+                  <tr><td>Chalk or a pen</td><td>To mark the hole</td><td class="ds-table__num">1</td><td class="ds-table__num">0.20</td></tr>
+                  <tr class="ds-table__foot"><td colspan="2">Total</td><td class="ds-table__num">5</td><td class="ds-table__num">17.70</td></tr>
+                </tbody>
+              </table>
+
+              <h2 class="ds-section">Steps</h2>
+              <ol class="ds-steps">
+                <li class="ds-steps__item"><span class="ds-steps__num">1</span><div><span class="ds-steps__title">Take the wheel off and let out the remaining air.</span><p class="ds-steps__text">Open the brake release first so the tyre clears the blocks. Press the valve core until the tube is fully soft.</p></div></li>
+                <li class="ds-steps__item"><span class="ds-steps__num">2</span><div><span class="ds-steps__title">Lever one side of the tyre over the rim.</span><p class="ds-steps__text">Start opposite the valve. Hook the first lever under the bead and onto a spoke, then run the second lever around the rim.</p></div></li>
+                <li class="ds-steps__item"><span class="ds-steps__num">3</span><div><span class="ds-steps__title">Pull the tube out and find the hole.</span><p class="ds-steps__text">Pump the tube up and listen, or pass it close to your lips to feel the air. Mark the spot with chalk.</p></div></li>
+                <li class="ds-steps__item"><span class="ds-steps__num">4</span><div><span class="ds-steps__title">Roughen, glue, wait, then press the patch on.</span><p class="ds-steps__text">Sand an area a little larger than the patch. Spread a thin film of glue and let it go dull, about three minutes, before the patch touches it.</p></div></li>
+                <li class="ds-steps__item"><span class="ds-steps__num">5</span><div><span class="ds-steps__title">Check the inside of the tyre, refit and inflate.</span><p class="ds-steps__text">Run your fingers around the casing for the thorn or glass that did the damage. Seat the bead by hand and pump to the pressure printed on the side wall.</p></div></li>
+              </ol>
+
+              <div class="ds-view__body" data-component="notice">
+                <p class="ds-notice"><span class="ds-notice__title">Tip:</span> Line up the tyre label with the valve when you refit. Next time, the position of the hole in the tube tells you where to look in the tyre. <a class="ds-notice__link" href="#guide">More tips</a>.</p>
+                <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Warning:</span> Never use a screwdriver as a tyre lever. It will pinch the new tube and can dent an alloy rim.</p>
+              </div>
+
+              <div class="ds-prose">
+                <h3>Related guides</h3>
+                <ul data-component="links">
+                  <li><a class="ds-link" href="#guide">How to replace a tube</a>, a guide you have not opened</li>
+                  <li><a class="ds-link is-visited" href="#guide">How to remove a rear wheel</a>, one you have already read</li>
+                  <li><a class="ds-link is-hover" href="#guide">How to choose tyre pressure</a>, under the pointer</li>
+                  <li><a class="ds-link is-active" href="#guide">How to fit a rim tape</a>, while pressed</li>
+                  <li><a class="ds-link ds-link--new" href="#write">How to mend a tubeless tyre</a>, a guide nobody has written yet</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">In this category</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Replace a tube</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">True a wheel</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Replace a spoke</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Fit a new tyre</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Service a hub</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Authors</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changes">Joss</a>, 14 edits</li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changes">Petra</a>, 9 edits</li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changes">Anneke</a>, 3 edits</li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#changes">11 others</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">This page</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Printable version</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Send to a friend</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#changes">Watch for changes</a></li>
+              <li class="ds-sidebar__item">Read 18,406 times</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ recent changes ============ -->
+  <section class="ds-view" id="changes">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#search">Special pages</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li class="ds-breadcrumb__current">Recent changes</li>
+      </ol>
+      <div class="ds-sheet">
+        <header class="ds-page-header">
+          <div>
+            <h1 class="ds-page-header__title">Recent changes</h1>
+            <p class="ds-page-header__desc">The last 50 changes in the last 7 days. <span class="ds-badge">N</span> marks a new guide, <span class="ds-badge">m</span> a minor edit.</p>
+          <div class="ds-extras"><details class="ds-menu"><summary class="ds-menu__summary">Filter changes</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#changes">Hide minor edits</a></li><li><a class="ds-menu__item" href="#changes">Only my watchlist</a></li><li><a class="ds-menu__item" href="#changes">Show new guides</a></li></ul></details></div>
+          </div>
+          <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#changes">Hide minor edits</a> <a class="ds-button ds-button--secondary" href="#changes">Only my watchlist</a></p>
+        </header>
+
+        <ul class="ds-list">
+          <li class="ds-list__day">Tuesday, 19 February 2008</li>
+          <li class="ds-list__item"><span class="ds-list__time">14:02</span><span><a class="ds-list__title" href="#guide">How to replace a brake cable</a> <span class="ds-badge">N</span><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Petra</a>: first draft, seven steps, no photos yet</span></span><span class="ds-list__aside"><span class="ds-list__plus">+2,914</span> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">13:48</span><span><a class="ds-list__title" href="#guide">How to patch an inner tube</a><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Joss</a>: step 4, say how long the glue needs</span></span><span class="ds-list__aside"><span class="ds-list__plus">+86</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">11:37</span><span><a class="ds-list__title" href="#guide">How to true a wheel with zip ties</a> <span class="ds-badge">N</span><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Joss</a>: moved from my draft page</span></span><span class="ds-list__aside"><span class="ds-list__plus">+3,402</span> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">10:20</span><span><a class="ds-list__title" href="#guide">How to rejoin a snapped chain</a><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Lorcan</a>: removed the advice to reuse the old pin <span class="ds-badge ds-badge--danger">Reverted</span></span></span><span class="ds-list__aside"><span class="ds-list__minus">-512</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__day">Monday, 18 February 2008</li>
+          <li class="ds-list__item"><span class="ds-list__time">22:11</span><span><a class="ds-list__title" href="#guide">How to clean and oil a chain</a> <span class="ds-badge">m</span><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Anneke</a>: spelling</span></span><span class="ds-list__aside"><span class="ds-list__plus">+4</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">19:05</span><span><a class="ds-list__title" href="#guide">How to set your saddle height</a><span class="ds-list__meta"><a class="ds-link ds-link--new" href="#write">Tobias_R</a>: added the heel method <span class="ds-badge ds-badge--warning">Needs review</span></span></span><span class="ds-list__aside"><span class="ds-list__plus">+640</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">16:44</span><span><a class="ds-list__title" href="#guide">How to adjust a rear derailleur</a><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Petra</a>: new photo for the limit screws <span class="ds-badge ds-badge--success">Patrolled</span></span></span><span class="ds-list__aside"><span class="ds-list__plus">+58</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+          <li class="ds-list__item"><span class="ds-list__time">09:30</span><span><a class="ds-list__title" href="#guide">How to wrap handlebar tape</a> <span class="ds-badge">m</span><span class="ds-list__meta"><a class="ds-link ds-link--quiet" href="#changes">Joss</a>: tidy the tips list</span></span><span class="ds-list__aside"><span class="ds-list__minus">-31</span> &middot; <a class="ds-link" href="#changes">diff</a> &middot; <a class="ds-link" href="#changes">hist</a></span></li>
+        </ul>
+
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link" href="#changes">&laquo; Newer</a></li>
+          <li><a class="ds-pagination__link is-current" href="#changes">1</a></li>
+          <li><a class="ds-pagination__link" href="#changes">2</a></li>
+          <li><a class="ds-pagination__link" href="#changes">3</a></li>
+          <li><a class="ds-pagination__link" href="#changes">4</a></li>
+          <li><a class="ds-pagination__link" href="#changes">Older &raquo;</a></li>
+          <li class="ds-pagination__label">Showing 1 to 8 of 50 changes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ search ============ -->
+  <section class="ds-view" id="search">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#search">Special pages</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li class="ds-breadcrumb__current">Search</li>
+      </ol>
+      <div class="ds-sheet">
+        <header class="ds-page-header">
+          <div>
+            <h1 class="ds-page-header__title">Search results</h1>
+            <p class="ds-page-header__desc">You searched for "true a wheel". 23 guides mention it; the best 4 are shown.</p>
+          </div>
+          <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#home">Browse categories</a></p>
+        </header>
+
+        <form class="ds-searchbar" action="#search">
+          <input class="ds-form__input ds-searchbar__field" type="text" aria-label="Search for" value="true a wheel">
+          <select class="ds-form__input ds-form__input--auto" aria-label="Search in"><option>Guides</option><option>Discussions</option><option>Everything</option></select>
+          <button class="ds-button" type="submit">Search</button>
+        </form>
+
+        <div class="ds-empty" data-component="empty">
+          <p class="ds-empty__title">There is no guide called "True a wheel"</p>
+          <p class="ds-empty__text">Nobody has written a guide with exactly this title yet. You can start it now, or look through the guides below that mention the same words.</p>
+          <a class="ds-button" href="#write">Write this guide</a>
+        </div>
+
+        <h2 class="ds-section">Guides that mention it</h2>
+        <ol class="ds-results">
+          <li><a class="ds-results__title" href="#guide">How to true a wheel with zip ties</a>
+            <p class="ds-results__text">...fix two zip ties to the fork so that their tails just touch the rim. Spin the wheel and <span class="ds-results__match">true</span> it a quarter turn at a time where the <span class="ds-results__match">wheel</span> rubs...</p>
+            <span class="ds-results__meta">Wheels and tyres &middot; 3.4 kB &middot; edited today</span></li>
+          <li><a class="ds-results__title" href="#guide">How to replace a spoke</a>
+            <p class="ds-results__text">...thread the new spoke the same way as its neighbours, then <span class="ds-results__match">true</span> the <span class="ds-results__match">wheel</span> before you refit the tyre...</p>
+            <span class="ds-results__meta">Wheels and tyres &middot; 5.1 kB &middot; edited 3 days ago</span></li>
+          <li><a class="ds-results__title" href="#guide">How to check a second-hand bicycle</a>
+            <p class="ds-results__text">...lift each end and spin the <span class="ds-results__match">wheel</span>. If the rim wanders more than a few millimetres it will need to be made <span class="ds-results__match">true</span> or rebuilt...</p>
+            <span class="ds-results__meta">Everything else &middot; 7.8 kB &middot; edited last week</span></li>
+          <li><a class="ds-results__title" href="#guide">How to fit rim brakes</a>
+            <p class="ds-results__text">...the blocks cannot be set evenly unless the <span class="ds-results__match">wheel</span> runs <span class="ds-results__match">true</span>, so check that first...</p>
+            <span class="ds-results__meta">Brakes &middot; 4.2 kB &middot; edited 12 February 2008</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ write ============ -->
+  <section class="ds-view" id="write">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Home</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li><a class="ds-breadcrumb__link" href="#search">Wheels and tyres</a></li>
+        <li class="ds-breadcrumb__sep">&gt;</li>
+        <li class="ds-breadcrumb__current">New guide</li>
+      </ol>
+      <div class="ds-layout">
+        <div class="ds-sheet">
+          <header class="ds-page-header">
+            <div>
+              <h1 class="ds-page-header__title">Write a guide</h1>
+              <p class="ds-page-header__desc">Start with the title and the steps. Photos, tips and warnings can be added later, by you or by anyone else.</p>
+          <div class="ds-extras"><details class="ds-accordion"><summary class="ds-accordion__summary">Writing tips [show]</summary><div class="ds-accordion__body"><p>Start each step with a verb. One action per step. Say what the reader should see when it is done.</p></div></details></div>
+            </div>
+            <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#guide">See an example</a></p>
+          </header>
+
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The guide was not saved.</span> A guide needs at least two steps. Add another step below and save again.</p>
+
+          <form class="ds-form" data-component="form" action="#guide">
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="w-title">How to</label>
+              <div><input class="ds-form__input ds-form__input--wide" id="w-title" type="text" value="true a wheel">
+                <span class="ds-form__hint">Finish the sentence. Begin with a verb and leave out the full stop.</span></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="w-cat">Category</label>
+              <div><select class="ds-form__input ds-form__input--auto" id="w-cat"><option>Wheels and tyres</option><option>Brakes</option><option>Gears and chain</option><option>Roadside repairs</option></select></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="w-intro">Introduction</label>
+              <div><textarea class="ds-form__input ds-form__input--wide" id="w-intro" rows="3">A wheel that rubs the brake once a turn is out of true. You can straighten it at home with a spoke key and some patience.</textarea></div>
+            </div>
+            <div class="ds-form__row">
+              <label class="ds-form__label" for="w-steps">Steps</label>
+              <div><textarea class="ds-form__input ds-form__input--wide is-invalid" id="w-steps" rows="4"># Find the spot where the rim rubs and mark it with chalk.</textarea>
+                <span class="ds-form__error">Only one step so far. Start each step on a new line with a # sign.</span></div>
+            </div>
+            <div class="ds-form__row">
+              <span class="ds-form__label">Options</span>
+              <div><label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Tell me when someone edits this guide</label></div>
+            </div>
+            <div class="ds-form__actions" data-component="buttons">
+              <button class="ds-button" type="submit">Save guide</button>
+              <a class="ds-button ds-button--secondary" href="#write">Preview</a>
+              <button class="ds-button is-disabled" type="button" disabled>Add photos</button>
+              <a class="ds-button ds-button--danger" href="#write">Discard draft</a>
+            </div>
+          </form>
+
+          <div class="ds-dialog__backdrop">
+            <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+              <h2 class="ds-dialog__title" id="dlg-title">Discard this draft?</h2>
+              <p class="ds-dialog__text">Your introduction and one step have not been saved. If you discard the draft they cannot be brought back.</p>
+              <div class="ds-dialog__actions">
+                <a class="ds-button ds-button--secondary" href="#write">Keep writing</a>
+                <a class="ds-button ds-button--danger" href="#home">Discard draft</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ds-sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Before you start</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#search">Check it is not written already</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#guide">Read a featured guide</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#write">Writer's guide</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Markup</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"># starts a step</li>
+              <li class="ds-sidebar__item">* starts a tip</li>
+              <li class="ds-sidebar__item">! starts a warning</li>
+              <li class="ds-sidebar__item">[[Title]] links a guide</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="ds-footer" data-component="footer">
+  <p class="ds-footer__text">All text of chronoskin is shared under an open attribution licence. Guides have been read 4,715,733 times.</p>
+  <ul class="ds-footer__row">
+    <li><a class="ds-footer__link" href="#home">Home</a></li>
+    <li><a class="ds-footer__link" href="#search">About chronoskin</a></li>
+    <li><a class="ds-footer__link" href="#search">Terms of use</a></li>
+    <li><a class="ds-footer__link" href="#changes">Recent changes</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

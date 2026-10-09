@@ -1,0 +1,80 @@
+{{/* The home page: every era as a card to choose, and one bar that narrows
+     them by page type and by years and generates a style. Data: Eras,
+     Mosaic, PageType, First, Last. */}}
+{{define "main"}}
+<main class="page">
+  <form action="/api/generate" method="get" data-first="{{.First}}" data-last="{{.Last}}" x-data="years" x-on:formdata="fill">
+    <input type="hidden" name="mode" value="mix">
+
+    <div class="hero">
+      <h1>Build UI in the look of a chosen era</h1>
+      <p>Pick an era, generate a style, and install it as a <code>.design/</code> folder that your coding agent follows for every screen it builds.</p>
+    </div>
+
+    <div class="toolbar">
+      {{template "select" .PageType}}
+      {{template "range" .}}
+      <div class="go">
+        <span class="count" x-cloak="keep" x-text="count">{{len .Eras}} eras</span>
+        <button class="btn primary big" type="submit" data-goatcounter-click="generate">Generate style</button>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Choose an era</h2>
+    </div>
+
+    <ul class="cards picks">
+      {{/* "Any era" resets the form, which unchecks every era. */}}
+      <li class="card pick any">
+        <button type="reset" title="Clear the chosen eras" x-on:click.prevent="clear">
+          <span class="wall">
+            {{range .Mosaic}}
+            <span><img src="{{.}}&amp;w=270" alt="" width="270" height="180" loading="lazy"></span>
+            {{end}}
+          </span>
+          <span class="name">Any era</span>
+          <span class="tick" aria-hidden="true">✓</span>
+        </button>
+      </li>
+
+      {{range $i, $era := .Eras}}
+      <li class="card pick" data-from="{{$era.From}}" data-to="{{$era.To}}">
+        {{/* Only the first pictures of the page load at once. */}}
+        <label>
+          <input type="checkbox" name="era" value="{{$era.Slug}}">
+          <span class="trio">
+            {{range $j, $layout := $era.LayoutViews}}
+            {{if lt $j 4}}
+            <span>
+              {{if and $layout.Preview (eq $j 0)}}
+              <img
+                src="{{$layout.Preview}}"
+                srcset="{{$layout.Preview}}&amp;w=270 270w, {{$layout.Preview}}&amp;w=540 540w, {{$layout.Preview}} 1080w"
+                sizes="(max-width: 720px) 66vw, 270px"
+                alt=""
+                width="640"
+                height="400"
+                {{if ge $i 2}}loading="lazy"{{else if eq $i 0}}fetchpriority="high"{{end}}
+              >
+              {{else if $layout.Preview}}
+              <img src="{{$layout.Preview}}&amp;w=270" alt="" width="270" height="180" loading="lazy">
+              {{end}}
+            </span>
+            {{end}}
+            {{end}}
+          </span>
+          <span class="body">
+            <span class="tick" aria-hidden="true">✓</span>
+            <span class="name">{{$era.Name}}</span>
+            <span class="meta">{{$era.Years}}</span>
+            <span class="text">{{$era.Description}}</span>
+          </span>
+        </label>
+        <a class="btn small open" href="/eras/{{$era.Slug}}" aria-label="Open the {{$era.Name}} era" data-goatcounter-click="eras-open">Open</a>
+      </li>
+      {{end}}
+    </ul>
+  </form>
+</main>
+{{end}}

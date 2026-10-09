@@ -1,0 +1,51 @@
+{{/* The install bar: four ways to take a style, behind tabs, and a download.
+     Data: ID, Base, Query. The tabs are radio buttons; CSS shows one pane. */}}
+{{define "install"}}
+<div class="install">
+  <h2>Install</h2>
+  <span class="segmented" role="radiogroup" aria-label="Install with">
+    <label><input type="radio" name="install" id="t-plugin" checked>Plugin</label>
+    <label><input type="radio" name="install" id="t-curl">curl</label>
+    <label><input type="radio" name="install" id="t-id">ID</label>
+    <label><input type="radio" name="install" id="t-link">Link</label>
+  </span>
+  <div class="pane plugin">
+    <div class="line" x-data="copy">
+      <code>/chronoskin:design-apply {{.ID}}</code>
+      <span class="note">in Claude Code, with the chronoskin plugin</span>
+      <button type="button" data-goatcounter-click="copy-plugin" x-on:click="copy" x-text="label">Copy</button>
+    </div>
+  </div>
+  <div class="pane curl">
+    <div class="line" x-data="copy">
+      <code>curl -s {{.Base}}/s/{{.ID}}.tar.gz | tar xz</code>
+      <span class="note">unpacks <code>.design/</code> here, for any agent</span>
+      <button type="button" data-goatcounter-click="copy-curl" x-on:click="copy" x-text="label">Copy</button>
+    </div>
+  </div>
+  <div class="pane id">
+    <div class="line" x-data="copy">
+      <code>{{.ID}}</code>
+      <span class="note">same ID, same files. Also as <a href="/s/{{.ID}}.json">JSON</a> or <a href="/s/{{.ID}}.tar.gz">tar.gz</a></span>
+      <button type="button" data-goatcounter-click="copy-id" x-on:click="copy" x-text="label">Copy</button>
+    </div>
+  </div>
+  <div class="pane link">
+    <div class="line" x-data="copy">
+      <code>{{.Base}}/s/{{.ID}}{{.Query}}</code>
+      <span class="note">this page, with the eras and page types chosen</span>
+      <button type="button" data-goatcounter-click="copy-link" x-on:click="copy" x-text="label">Copy</button>
+    </div>
+  </div>
+  <a
+    class="btn get"
+    href="/s/{{.ID}}.tar.gz"
+    download
+    title="The .design/ folder as a tar.gz archive"
+    data-goatcounter-click="download"
+  >
+    {{template "download"}}
+    <span>Download</span>
+  </a>
+</div>
+{{end}}

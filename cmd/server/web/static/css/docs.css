@@ -1,0 +1,206 @@
+/* The documentation page: its two columns and the text in the second. */
+.docs {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 820px);
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .docs {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+.doc section {
+  margin-top: 44px;
+  scroll-margin-top: calc(var(--top) + 20px);
+}
+
+.doc h1 {
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}
+
+.doc h2 {
+  font-size: 20px;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.doc h3 {
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+
+.doc p, .doc dd {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.doc .lead {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.doc code {
+  font-size: 0.9em;
+  padding: 1px 5px;
+  border-radius: var(--radius-small);
+  background: var(--sunken);
+}
+
+.doc pre {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  overflow-x: auto;
+}
+
+.doc pre code {
+  padding: 0;
+  background: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  padding: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.steps li:last-child {
+  padding-bottom: 0;
+}
+
+.defs {
+  margin: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.defs div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.defs dt {
+  font-weight: 600;
+}
+
+.defs dt code {
+  font-size: 13px;
+  background: none;
+  padding: 0;
+}
+
+.defs dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ways {
+  display: grid;
+  gap: 14px;
+}
+
+.way {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  min-width: 0;
+}
+
+.way p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.way p:last-child {
+  margin-bottom: 0;
+}
+
+.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 14px;
+  font-size: 14px;
+}
+
+.doc th, .doc td {
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.doc th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.doc td:first-child {
+  white-space: nowrap;
+}
+
+/* On a phone each table row is a block: the address, then what it returns. */
+@media (max-width: 720px) {
+  .doc section {
+    margin-top: 36px;
+  }
+  .doc h1 {
+    font-size: 26px;
+  }
+  .doc code {
+    overflow-wrap: anywhere;
+  }
+  .defs div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .doc table, .doc tbody, .doc tr, .doc td {
+    display: block;
+  }
+  .doc thead {
+    display: none;
+  }
+  .doc table {
+    border-top: 1px solid var(--line);
+  }
+  .doc tr {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .doc td {
+    padding: 0;
+    border: 0;
+  }
+  .doc td:first-child {
+    margin-bottom: 4px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .doc td:last-child {
+    color: var(--muted);
+  }
+}

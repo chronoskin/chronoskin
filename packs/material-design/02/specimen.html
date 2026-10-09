@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin handbook</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <details class="ds-menu ds-menu--start" data-component="menu">
+    <summary class="ds-nav__menu ds-menu__button ds-tooltip ds-tooltip--right" aria-label="Contents"><svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" fill="none"/></svg><span class="ds-tooltip__text" role="tooltip">Contents</span></summary>
+    <ul class="ds-menu__list">
+      <li><a class="ds-menu__link" href="#handbook">Handbook</a></li>
+      <li><a class="ds-menu__link" href="#chapter">Your first feed</a></li>
+      <li><a class="ds-menu__link" href="#api">Webhooks</a></li>
+      <li><a class="ds-menu__link" href="#webhook">hook.opened</a></li>
+      <li><a class="ds-menu__link" href="#starred">Starred chapters</a></li>
+    </ul>
+  </details>
+  <a class="ds-brand" data-component="brand" href="#">
+    <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h8.5v8.5H21V21H4z"/><path d="M14.5 3l6.5 6.5h-6.5z" fill-opacity="0.55"/></svg></span>
+    <span class="ds-brand__name">chronoskin</span>
+  </a>
+  <ul class="ds-nav__links">
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#handbook">Handbook</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#api">API</a></li>
+    <li class="ds-nav__item"><a class="ds-nav__link" href="#starred">Starred</a></li>
+  </ul>
+</header>
+
+<section class="ds-view ds-view--home" id="handbook">
+  <div class="ds-band">
+    <div class="ds-hero" data-component="hero">
+      <h1 class="ds-hero__title">Publishing handbook</h1>
+      <p class="ds-hero__lead">Set up a feed, schedule issues and send them to readers on any screen.</p>
+      <a class="ds-button ds-button--secondary" href="#chapter">Start a feed</a>
+    </div>
+    <ul class="ds-tabs ds-tabs--band">
+      <li><a class="ds-tabs__tab is-current" href="#handbook">Basics</a></li>
+      <li><a class="ds-tabs__tab" href="#chapter">Feeds</a></li>
+      <li><a class="ds-tabs__tab" href="#chapter">Issues</a></li>
+      <li><a class="ds-tabs__tab" href="#api">Webhooks</a></li>
+      <li><a class="ds-tabs__tab" href="#starred">Starred</a></li>
+    </ul>
+  </div>
+
+  <div class="ds-main">
+
+    <h2 class="ds-subhead">Chapters</h2>
+    <div class="ds-grid" data-component="grid">
+      <article class="ds-grid__cell">
+        <div class="ds-grid__media">01</div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Your first feed</h3>
+          <p class="ds-grid__text">Name a feed, give it an address and push a draft.</p>
+          <div class="ds-grid__actions"><a class="ds-button ds-button--flat" href="#chapter">Open</a></div>
+        </div>
+      </article>
+      <article class="ds-grid__cell ds-grid__cell--2">
+        <div class="ds-grid__media">02</div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Scheduling</h3>
+          <p class="ds-grid__text">Send at a set hour in each reader's own time zone.</p>
+          <div class="ds-grid__actions"><a class="ds-button ds-button--flat" href="#chapter">Open</a></div>
+        </div>
+      </article>
+      <article class="ds-grid__cell ds-grid__cell--3">
+        <div class="ds-grid__media">03</div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Webhooks</h3>
+          <p class="ds-grid__text">Have your own service called when an issue is sent or opened.</p>
+          <div class="ds-grid__actions"><a class="ds-button ds-button--flat" href="#api">Open</a></div>
+        </div>
+      </article>
+      <article class="ds-grid__cell ds-grid__cell--4">
+        <div class="ds-grid__media">04</div>
+        <div class="ds-grid__body">
+          <h3 class="ds-grid__title">Archive</h3>
+          <p class="ds-grid__text">Keep past issues searchable or take them offline.</p>
+          <div class="ds-grid__actions"><a class="ds-button ds-button--flat" href="#chapter">Open</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="ds-panel" data-component="panel">
+      <h3 class="ds-panel__title">Sample feed</h3>
+      <div class="ds-panel__body">
+        <p>A small weekly feed with three issues, two editors and a template, ready to copy into your account.</p>
+        <div class="ds-accordion" data-component="accordion">
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What is in it?</summary>
+            <p class="ds-accordion__body">Three issues, one template and a weekly schedule.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Who can edit it?</summary>
+            <p class="ds-accordion__body">You and anyone you add as an editor after copying it.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Does it send anything?</summary>
+            <p class="ds-accordion__body">No. A copied feed stays a draft until you schedule an issue.</p>
+          </details>
+        </div>
+      </div>
+      <div class="ds-panel__actions">
+        <a class="ds-button ds-button--flat" href="#chapter">Read how it is built</a>
+        <a class="ds-button ds-button--flat" href="#starred">Star it</a>
+      </div>
+    </div>
+
+    <h2 class="ds-subhead">Recently edited</h2>
+    <div class="ds-panel">
+      <ul class="ds-list" data-component="list">
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">S</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#chapter">Scheduling across time zones</a>
+            <span class="ds-list__text">Added the table of sending windows.</span>
+          </span>
+          <span class="ds-list__meta">4 Jun</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar ds-list__avatar--alt">W</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#api">Webhook retries</a>
+            <span class="ds-list__text">Failed calls are now retried for a day.</span>
+          </span>
+          <span class="ds-list__meta">21 May</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar ds-list__avatar--accent">R</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#chapter">Reader imports</a>
+            <span class="ds-list__text">Bring a list from a spreadsheet in one step.</span>
+          </span>
+          <span class="ds-list__meta">2 May</span>
+        </li>
+      </ul>
+      <div class="ds-panel__actions ds-panel__actions--end">
+        <ul class="ds-pagination" data-component="pagination">
+          <li><a class="ds-pagination__link is-disabled" href="#handbook" aria-label="Previous">
+            <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" fill="none"/></svg>
+          </a></li>
+          <li><a class="ds-pagination__link is-current" href="#handbook">1</a></li>
+          <li><a class="ds-pagination__link" href="#handbook">2</a></li>
+          <li><a class="ds-pagination__link" href="#handbook">3</a></li>
+          <li><a class="ds-pagination__link" href="#handbook" aria-label="Next">
+            <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" fill="none"/></svg>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="chapter">
+  <div class="ds-band ds-band--inner"></div>
+  <div class="ds-main ds-main--overlap">
+
+    <div class="ds-panel ds-panel--article">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#handbook">Handbook</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#handbook">Basics</a></li>
+        <li class="ds-breadcrumb__item is-current">Your first feed</li>
+      </ol>
+      <div class="ds-article">
+        <article class="ds-prose" data-component="typography">
+          <h1>Your first feed</h1>
+          <p class="ds-prose__lead">A feed is a named stream of issues. Readers follow the feed, not the single issue.</p>
+          <h2>Naming and address</h2>
+          <p>Every feed gets a short address made from its name. Change it later with <code>feed.rename</code>; old addresses keep working for ninety days. The <a href="#api">webhook reference</a> lists the events a feed can send.</p>
+          <ul>
+            <li>Names are up to forty characters.</li>
+            <li>One feed can have several editors.</li>
+            <li>Drafts are private until an issue is scheduled.</li>
+          </ul>
+          <h3>From the command line</h3>
+          <p>Create the feed, then push a first draft.</p>
+          <pre><code>chronoskin feed new "Night desk"
+chronoskin push draft.md --feed night-desk</code></pre>
+        </article>
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">On this page</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#chapter">Naming and address</a></li>
+            <li><a class="ds-sidebar__link" href="#chapter">Command line</a></li>
+            <li><a class="ds-sidebar__link" href="#chapter">Editors</a></li>
+            <li><a class="ds-sidebar__link" href="#chapter">Scheduling <span class="ds-badge ds-badge--new">3</span></a></li>
+            <li><a class="ds-sidebar__link" href="#chapter">Archiving</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="ds-notices" data-component="notice">
+      <div class="ds-notice">
+        <strong class="ds-notice__title">Heads up</strong>
+        Scheduled issues go out in the reader's time zone, not yours.
+      </div>
+      <div class="ds-notice ds-notice--error">
+        <strong class="ds-notice__title">Push rejected</strong>
+        The draft has no title. Add one and push again.
+      </div>
+    </div>
+
+    <div class="ds-panel ds-panel--pad">
+      <div class="ds-panel__head">
+        <h3 class="ds-panel__title">Read next</h3>
+        <a class="ds-button ds-button--flat" href="#starred">Star this chapter</a>
+      </div>
+      <div class="ds-panel__body">
+        <div class="ds-links" data-component="links">
+          <a class="ds-link" href="#chapter">Scheduling</a>
+          <a class="ds-link is-visited" href="#handbook">Handbook contents</a>
+          <a class="ds-link is-hover" href="#api">Webhooks</a>
+          <a class="ds-link is-active" href="#chapter">Templates</a>
+          <a class="ds-link ds-link--quiet" href="#starred">Starred chapters</a>
+        </div>
+        <p>You have read one chapter of four.</p>
+        <span class="ds-progress" data-component="progress" role="progressbar" aria-label="Handbook read"><span class="ds-progress__bar ds-progress__bar--low"></span></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="api">
+  <div class="ds-band ds-band--inner"></div>
+  <div class="ds-main ds-main--overlap">
+
+    <div class="ds-panel">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#api">API</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#api">Resources</a></li>
+        <li class="ds-breadcrumb__item is-current">Webhooks</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">Webhooks</h1>
+          <p class="ds-page-header__text">Addresses that chronoskin calls when an issue is sent, opened or bounced.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#webhook">Add webhook</a>
+        </div>
+      </header>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#api">Endpoints</a></li>
+        <li><a class="ds-tabs__tab" href="#api">Events</a></li>
+        <li><a class="ds-tabs__tab" href="#api">Deliveries</a></li>
+        <li><a class="ds-tabs__tab" href="#api">Secrets</a></li>
+      </ul>
+    </div>
+
+    <ul class="ds-stats" data-component="stats">
+      <li class="ds-stat"><span class="ds-stat__value">4</span><span class="ds-stat__label">Endpoints</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">18,204</span><span class="ds-stat__label">Calls this week</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">99.2%</span><span class="ds-stat__label">Delivered</span></li>
+      <li class="ds-stat"><span class="ds-stat__value">143</span><span class="ds-stat__label">Retries</span></li>
+    </ul>
+
+    <div class="ds-panel">
+      <div class="ds-panel__head">
+        <h3 class="ds-panel__title">Endpoints</h3>
+        <a class="ds-button ds-button--flat" href="#webhook">Edit hook.opened</a>
+      </div>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th>Name</th><th class="ds-table__extra">Event</th><th>Status</th><th class="ds-table__num">Calls</th><th class="ds-table__num">Failed</th><th class="ds-table__num ds-table__extra">Median ms</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ds-table__name"><a class="ds-link ds-link--quiet" href="#webhook">hook.sent</a></td><td class="ds-table__extra">Issue sent</td><td><span class="ds-badge ds-badge--success">Live</span></td><td class="ds-table__num">9,120</td><td class="ds-table__num">12</td><td class="ds-table__num ds-table__extra">84</td></tr>
+          <tr class="is-current"><td class="ds-table__name"><a class="ds-link ds-link--quiet" href="#webhook">hook.opened</a></td><td class="ds-table__extra">Issue opened</td><td><span class="ds-badge ds-badge--success">Live</span></td><td class="ds-table__num">7,645</td><td class="ds-table__num">31</td><td class="ds-table__num ds-table__extra">91</td></tr>
+          <tr><td class="ds-table__name"><a class="ds-link ds-link--quiet" href="#webhook">hook.joined</a></td><td class="ds-table__extra">Reader joined</td><td><span class="ds-badge ds-badge--warning">Paused</span></td><td class="ds-table__num">1,302</td><td class="ds-table__num">0</td><td class="ds-table__num ds-table__extra">77</td></tr>
+          <tr><td class="ds-table__name"><a class="ds-link ds-link--quiet" href="#webhook">hook.bounced</a></td><td class="ds-table__extra">Mail bounced</td><td><span class="ds-badge ds-badge--danger">Failing</span></td><td class="ds-table__num">137</td><td class="ds-table__num">100</td><td class="ds-table__num ds-table__extra">2,410</td></tr>
+        </tbody>
+      </table>
+      <div class="ds-panel__actions">
+        <div class="ds-badges" data-component="badge">
+          <span class="ds-badge">4</span>
+          <span class="ds-badge ds-badge--success">Live</span>
+          <span class="ds-badge ds-badge--warning">Paused</span>
+          <span class="ds-badge ds-badge--danger">Failing</span>
+          <span class="ds-badge ds-badge--new">New</span>
+          <span class="ds-badge ds-badge--chip">Weekly feed</span>
+          <span class="ds-badge ds-badge--chip">Editors only</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="webhook">
+  <div class="ds-band ds-band--inner"></div>
+  <div class="ds-main ds-main--overlap">
+
+    <div class="ds-panel">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#api">API</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#api">Webhooks</a></li>
+        <li class="ds-breadcrumb__item is-current">hook.opened</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">hook.opened</h1>
+          <p class="ds-page-header__text">Called each time a reader opens an issue of the night desk feed.</p>
+        </div>
+        <div class="ds-page-header__actions ds-buttons" data-component="buttons">
+          <button class="ds-button ds-button--danger" type="button">Delete</button>
+          <button class="ds-button ds-button--secondary" type="button">Send test</button>
+          <button class="ds-button is-disabled" type="button" disabled>Replay</button>
+          <a class="ds-button" href="#api">Save</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="ds-panel ds-panel--form">
+      <div class="ds-panel__head"><h3 class="ds-panel__title">Settings</h3></div>
+      <div class="ds-panel__body">
+        <form class="ds-form" data-component="form">
+          <label class="ds-form__field">
+            <span class="ds-form__label">Label</span>
+            <input class="ds-form__control" type="text" value="Opens to the stats board">
+          </label>
+          <label class="ds-form__field is-invalid">
+            <span class="ds-form__label">Address</span>
+            <input class="ds-form__control" type="text" value="stats.example/hooks">
+            <span class="ds-form__error">Start the address with https.</span>
+          </label>
+          <label class="ds-form__field">
+            <span class="ds-form__label">Event</span>
+            <span class="ds-form__select">
+              <select class="ds-form__control">
+                <option>Issue opened</option>
+                <option>Issue sent</option>
+                <option>Mail bounced</option>
+              </select>
+            </span>
+          </label>
+          <label class="ds-form__field">
+            <span class="ds-form__label">Notes</span>
+            <textarea class="ds-form__control ds-form__control--area">Feeds the weekly opens chart for the night desk.</textarea>
+            <span class="ds-form__hint">Only editors see this.</span>
+          </label>
+          <label class="ds-form__check">
+            <input class="ds-form__checkbox" type="checkbox" checked>
+            <span>Retry failed calls for a day</span>
+          </label>
+          <label class="ds-form__check"><span class="ds-switch" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span></span><span>Send a test call after saving</span></label>
+        </form>
+      </div>
+      <div class="ds-panel__actions ds-panel__actions--end">
+        <a class="ds-button ds-button--flat" href="#api">Cancel</a>
+        <a class="ds-button" href="#api">Save</a>
+      </div>
+    </div>
+
+    <div class="ds-overlay">
+      <div class="ds-dialog" role="dialog" aria-labelledby="dialog-title" data-component="dialog">
+        <h3 class="ds-dialog__title" id="dialog-title">Delete hook.opened?</h3>
+        <div class="ds-dialog__body">
+          <p>The stats board stops receiving opens at once. Past deliveries stay in the log.</p>
+        </div>
+        <div class="ds-dialog__actions">
+          <a class="ds-button ds-button--flat" href="#webhook">Keep it</a>
+          <a class="ds-button ds-button--flat ds-button--danger" href="#api">Delete</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ds-view" id="starred">
+  <div class="ds-band ds-band--inner"></div>
+  <div class="ds-main ds-main--overlap">
+
+    <div class="ds-panel">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#handbook">Handbook</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#starred">Your shelf</a></li>
+        <li class="ds-breadcrumb__item is-current">Starred</li>
+      </ol>
+      <header class="ds-page-header">
+        <div class="ds-page-header__body">
+          <h1 class="ds-page-header__title">Starred chapters</h1>
+          <p class="ds-page-header__text">Chapters you marked to come back to, newest first.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#handbook">Browse the handbook</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="ds-panel">
+      <div class="ds-empty" data-component="empty">
+        <span class="ds-empty__mark">
+          <svg class="ds-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" stroke="currentColor" fill="none"/></svg>
+        </span>
+        <h3 class="ds-empty__title">No stars yet</h3>
+        <p class="ds-empty__text">Chapters you star are kept here.</p>
+        <a class="ds-button ds-button--flat" href="#handbook">Browse the handbook</a>
+      </div>
+    </div>
+
+    <h2 class="ds-subhead">Readers star these most</h2>
+    <div class="ds-panel">
+      <ul class="ds-list">
+        <li class="ds-list__item">
+          <span class="ds-list__avatar ds-list__avatar--alt">01</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#chapter">Your first feed</a>
+            <span class="ds-list__text">Name a feed, give it an address and push a draft.</span>
+          </span>
+          <span class="ds-list__meta">412 stars</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar ds-list__avatar--accent">02</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#chapter">Scheduling</a>
+            <span class="ds-list__text">Send at a set hour in each reader's own time zone.</span>
+          </span>
+          <span class="ds-list__meta">268 stars</span>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__avatar">03</span>
+          <span class="ds-list__body">
+            <a class="ds-list__title" href="#api">Webhooks</a>
+            <span class="ds-list__text">Have your own service called when an issue is sent or opened.</span>
+          </span>
+          <span class="ds-list__meta">197 stars</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-footer__brand">chronoskin</span>
+  <ul class="ds-footer__list">
+    <li><a class="ds-footer__link" href="#handbook">Handbook</a></li>
+    <li><a class="ds-footer__link" href="#chapter">First feed</a></li>
+    <li><a class="ds-footer__link" href="#api">API</a></li>
+    <li><a class="ds-footer__link" href="#starred">Starred</a></li>
+  </ul>
+  <p class="ds-footer__legal">chronoskin is a sample project. Text free to reuse.</p>
+</footer>
+
+</body>
+</html>

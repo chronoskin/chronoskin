@@ -1,0 +1,120 @@
+/* @part palette */
+:root {
+  --color-page: rgb(7 8 10);
+  --color-canvas: rgb(7 8 10);
+  --color-surface: rgb(255 255 255 / 0.05);
+  --color-surface-alt: rgb(255 255 255 / 0.09);
+  --color-surface-strong: rgb(255 255 255 / 0.16);
+  --color-bar: rgb(0 0 0 / 0.6);
+  --color-bar-text: rgb(255 255 255);
+  --color-bar-alt: rgb(17 18 20 / 0.7);
+  --color-bar-alt-text: rgb(230 230 230);
+  --color-inverse: rgb(230 230 230);
+  --color-inverse-text: rgb(7 8 10);
+  --color-text: rgb(255 255 255);
+  --color-text-muted: rgb(156 156 157);
+  --color-heading: rgb(255 255 255);
+  --color-heading-alt: rgb(230 230 230);
+  --color-link: rgb(86 194 255);
+  --color-link-quiet: rgb(255 255 255);
+  --color-link-visited: rgb(147 130 255);
+  --color-link-hover: rgb(255 255 255);
+  --color-link-active: rgb(255 99 99);
+  --color-border: rgb(255 255 255 / 0.12);
+  --color-border-strong: rgb(255 255 255 / 0.4);
+  --color-border-muted: rgb(255 255 255 / 0.06);
+  --color-accent: rgb(86 194 255);
+  --color-accent-text: rgb(7 8 10);
+  --color-accent-alt: rgb(80 70 228);
+  --color-fill-1: rgb(150 28 36);
+  --color-fill-2: rgb(67 67 69);
+  --color-fill-3: rgb(62 43 104);
+  --color-fill-4: rgb(80 70 228);
+  --color-button: rgb(230 230 230);
+  --color-button-text: rgb(7 8 10);
+  --color-button-hover-text: rgb(0 0 0);
+  --color-button-secondary: rgb(255 255 255 / 0.06);
+  --color-button-secondary-text: rgb(255 255 255);
+  --color-input: rgb(17 18 20 / 0.8);
+  --color-input-text: rgb(255 255 255);
+  --color-input-border: rgb(255 255 255 / 0.12);
+  --color-disabled: rgb(31 32 37);
+  --color-disabled-text: rgb(106 107 108);
+  --color-danger: rgb(255 99 99);
+  --color-danger-surface: rgb(255 99 99 / 0.1);
+  --color-success: rgb(89 212 153);
+  --color-warning: rgb(255 197 49);
+  --color-notice: rgb(86 194 255 / 0.1);
+  --color-notice-text: rgb(230 230 230);
+  --color-focus: rgb(86 194 255);
+  --color-shadow: rgb(0 0 0 / 0.6);
+  --color-overlay: rgb(0 0 0 / 0.6);
+}
+
+/* @part type */
+:root {
+  --font-body: Inter, "SF Pro Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: Inter, "SF Pro Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, monospace;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, monospace;
+  --text-base: 16px;
+  --text-small: 13px;
+  --text-ui: 13px;
+  --text-large: 18px;
+  --text-display: 56px;
+  --text-h1: 36px;
+  --text-h2: 24px;
+  --text-h3: 18px;
+  --line-body: 1.6;
+  --line-heading: 1.33;
+  --line-display: 1.14;
+  --weight-body: 400;
+  --weight-bold: 600;
+  --weight-heading: 500;
+  --weight-display: 500;
+  --weight-ui: 500;
+  --heading-transform: none;
+  --heading-tracking: 0;
+  --display-tracking: 0;
+  --figure-shift: 0em;
+  --ui-transform: none;
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-quiet: none;
+}
+
+/* @part surface */
+:root {
+  --border-width: 2px;
+  --border-width-strong: 2px;
+  --border-style: solid;
+  --radius-control: 3px;
+  --radius-panel: 6px;
+  --radius-pill: 30px;
+  --radius-page: 10px;
+  --shadow-panel: none;
+  --shadow-control: none;
+  --shadow-control-hover: 0 0 0 2px var(--color-border-strong);
+  --shadow-control-pressed: none;
+  --shadow-dialog: 0 24px 48px 0 var(--color-shadow);
+  --shadow-text: none;
+  --fill-page:
+    radial-gradient(circle, color-mix(in srgb, var(--color-text) 16%, transparent) 1px, transparent 1px) 0 0 / 24px 24px,
+    radial-gradient(ellipse 760px 420px at 50% 0, var(--color-fill-1), transparent),
+    radial-gradient(ellipse 620px 480px at 100% 1500px, var(--color-fill-1), transparent),
+    radial-gradient(ellipse 620px 480px at 0 2700px, var(--color-fill-1), transparent),
+    radial-gradient(ellipse 620px 480px at 100% 3900px, var(--color-fill-1), transparent),
+    var(--color-page);
+  --fill-bar: var(--color-bar);
+  --fill-bar-alt: var(--color-bar-alt);
+  --fill-inverse: var(--color-inverse);
+  --fill-accent: var(--color-accent);
+  --fill-panel: color-mix(in srgb, var(--color-surface), black 35%);
+  --fill-button: var(--color-button);
+  --fill-button-hover: color-mix(in srgb, var(--color-button), white 60%);
+  --fill-button-secondary: var(--color-button-secondary);
+  --fill-input: var(--color-input);
+  --focus-ring: 2px dashed var(--color-focus);
+  --transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  --backdrop-blur: 3px;
+}

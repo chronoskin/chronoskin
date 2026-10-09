@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: cinematic documentary player specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <progress class="ds-progress__bar ds-nav__scrub" value="58" max="100">58%</progress>
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home">The film</a></li>
+      <li><a class="ds-nav__link" href="#chapters">Chapters</a></li>
+      <li><a class="ds-nav__link" href="#chapter">Now playing</a></li>
+      <li><a class="ds-nav__link" href="#watch">Watch</a></li>
+    </ul>
+    <div class="ds-nav__player">
+      <a class="ds-nav__play" href="#chapter" aria-label="Play"></a>
+      <span class="ds-nav__now"><span class="ds-label">01 The mast</span><span class="ds-label ds-label--mono">12:14 / 21:05</span></span>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle">Chapters</summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__item" href="#chapter">01 The mast <span>21 min</span></a></li>
+          <li><a class="ds-menu__item" href="#chapter">02 The hut <span>17 min</span></a></li>
+          <li><a class="ds-menu__item" href="#chapter">03 The ice <span>Friday</span></a></li>
+          <li><a class="ds-menu__item" href="#chapters">All six chapters</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</header>
+
+<section class="ds-view ds-view--home" id="home">
+  <div class="ds-hero ds-scene ds-scene--aurora" data-component="hero">
+    <span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span><span class="ds-scene__shade" aria-hidden="true"></span>
+    <p class="ds-hero__head ds-label"><span>A film in six chapters</span><span class="ds-label--mono">94 minutes</span><span class="ds-label--mono">70.98 N 25.97 E</span></p>
+    <h1 class="ds-hero__title"><span>Past the</span><span>last lamp</span></h1>
+    <ol class="ds-hero__rail" aria-label="Chapters">
+      <li><a class="ds-hero__tick is-current" href="#chapter">01</a></li>
+      <li><a class="ds-hero__tick" href="#chapter">02</a></li>
+      <li><a class="ds-hero__tick" href="#chapters">03</a></li>
+      <li><a class="ds-hero__tick" href="#chapters">04</a></li>
+      <li><a class="ds-hero__tick" href="#chapters">05</a></li>
+      <li><a class="ds-hero__tick" href="#chapters">06</a></li>
+    </ol>
+    <div class="ds-hero__foot">
+      <p class="ds-hero__lead">One winter at a weather station where the road, the power line and the daylight all stop. Told by the four people who keep it running.</p>
+      <div class="ds-hero__actions">
+        <a class="ds-button ds-button--onscene" href="#chapter">Play chapter one</a>
+        <a class="ds-button ds-button--ghost" href="#watch">Ways to watch</a>
+        <span class="ds-badge">Chapter 03 on Friday</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-section">
+    <div class="ds-wrap">
+      <div class="ds-section__head">
+        <p class="ds-label ds-section__kicker">The chapters</p>
+        <h2 class="ds-section__title">Six parts, one winter</h2>
+        <p class="ds-section__text">A new chapter every Friday until the sun is back. Each stands alone; together they run for ninety-four minutes.</p>
+      </div>
+      <ol class="ds-list" data-component="list">
+        <li class="ds-list__item is-hover">
+          <span class="ds-list__node">01</span>
+          <a class="ds-list__picture ds-scene ds-scene--frame ds-scene--mast" href="#chapter" aria-label="Play The mast"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span><span class="ds-scene__play"></span></a>
+          <div class="ds-list__copy">
+            <p class="ds-list__meta ds-label"><span class="ds-badge ds-badge--success">Out now</span><span class="ds-label--mono">21 min</span></p>
+            <a class="ds-list__title" href="#chapter">The mast</a>
+            <p class="ds-list__text">Sixty metres of steel and one lamp. Every third day somebody climbs it to knock the ice off.</p>
+            <a class="ds-link ds-link--arrow" href="#chapter">Play chapter</a>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__node">02</span>
+          <a class="ds-list__picture ds-scene ds-scene--frame ds-scene--hut" href="#chapter" aria-label="Play The hut"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span><span class="ds-scene__play"></span></a>
+          <div class="ds-list__copy">
+            <p class="ds-list__meta ds-label"><span class="ds-badge ds-badge--success">Out now</span><span class="ds-label--mono">17 min</span></p>
+            <a class="ds-list__title" href="#chapter">The hut</a>
+            <p class="ds-list__text">Four bunks, one stove, a window that is kept lit so the hut can be found.</p>
+            <a class="ds-link ds-link--arrow" href="#chapter">Play chapter</a>
+          </div>
+        </li>
+        <li class="ds-list__item">
+          <span class="ds-list__node">03</span>
+          <a class="ds-list__picture ds-scene ds-scene--frame ds-scene--ice" href="#chapters" aria-label="The ice"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span></a>
+          <div class="ds-list__copy">
+            <p class="ds-list__meta ds-label"><span class="ds-badge ds-badge--warning">This Friday</span><span class="ds-label--mono">14 min</span></p>
+            <a class="ds-list__title" href="#chapters">The ice</a>
+            <p class="ds-list__text">A line of stakes runs two kilometres out to the instruments. At noon the sun almost rises.</p>
+            <a class="ds-link ds-link--arrow" href="#watch">Remind me</a>
+          </div>
+        </li>
+        <li class="ds-list__item ds-list__item--short">
+          <span class="ds-list__node">04</span>
+          <div class="ds-list__copy"><a class="ds-list__title" href="#chapters">The supply flight</a><span class="ds-label ds-label--mono ds-label--muted">12 December</span></div>
+        </li>
+        <li class="ds-list__item ds-list__item--short">
+          <span class="ds-list__node">05</span>
+          <div class="ds-list__copy"><a class="ds-list__title" href="#chapters">The long night</a><span class="ds-label ds-label--mono ds-label--muted">19 December</span></div>
+        </li>
+        <li class="ds-list__item ds-list__item--short">
+          <span class="ds-list__node">06</span>
+          <div class="ds-list__copy"><a class="ds-list__title" href="#chapters">First light</a><span class="ds-label ds-label--mono ds-label--muted">26 December</span></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="ds-wrap">
+    <div class="ds-stat" data-component="stats">
+      <div class="ds-stat__item"><p class="ds-stat__figure">6</p><p class="ds-label ds-stat__label">Chapters</p></div>
+      <div class="ds-stat__item"><p class="ds-stat__figure">94</p><p class="ds-label ds-stat__label">Minutes</p></div>
+      <div class="ds-stat__item"><p class="ds-stat__figure">58</p><p class="ds-label ds-stat__label">Days without sun</p></div>
+      <div class="ds-stat__item"><p class="ds-stat__figure">-41</p><p class="ds-label ds-stat__label">Coldest night, Celsius</p></div>
+    </div>
+  </div>
+
+  <div class="ds-section ds-section--tight">
+    <div class="ds-wrap">
+      <div class="ds-carousel">
+        <ul class="ds-carousel__track">
+          <li class="ds-carousel__slide">
+            <p class="ds-carousel__quote">&ldquo;You do not notice the dark. You notice the day the lamp on the mast is out.&rdquo;</p>
+            <div class="ds-person"><span class="ds-avatar" aria-hidden="true"></span><span><span class="ds-person__name">The technician</span><span class="ds-person__role">Chapter 01</span></span></div>
+          </li>
+          <li class="ds-carousel__slide">
+            <p class="ds-carousel__quote">&ldquo;The window is not for us. It is for whoever is walking back.&rdquo;</p>
+            <div class="ds-person"><span class="ds-avatar ds-avatar--2" aria-hidden="true"></span><span><span class="ds-person__name">The cook</span><span class="ds-person__role">Chapter 02</span></span></div>
+          </li>
+        </ul>
+        <div class="ds-carousel__nav">
+          <a class="ds-carousel__arrow is-disabled" href="#home" aria-label="Previous voice"></a>
+          <span class="ds-carousel__dots"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></span>
+          <a class="ds-carousel__arrow" href="#home" aria-label="Next voice"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-section ds-section--alt">
+    <div class="ds-wrap">
+      <div class="ds-section__head">
+        <p class="ds-label ds-section__kicker">Ways to watch</p>
+        <h2 class="ds-section__title">Wherever it is dark enough</h2>
+      </div>
+      <ul class="ds-grid" data-component="grid">
+        <li><a class="ds-grid__cell" href="#chapter"><span class="ds-label ds-label--mono ds-grid__number">A</span><span class="ds-grid__title">Here</span><span class="ds-grid__text">Every chapter on this site, free, from the Friday it comes out.</span><span class="ds-grid__more" aria-hidden="true">&gt;</span></a></li>
+        <li><a class="ds-grid__cell" href="#watch"><span class="ds-label ds-label--mono ds-grid__number">B</span><span class="ds-grid__title">In a cinema</span><span class="ds-grid__text">All six in one sitting, from January, with the sound it was mixed for.</span><span class="ds-grid__more" aria-hidden="true">&gt;</span></a></li>
+        <li><a class="ds-grid__cell" href="#watch"><span class="ds-label ds-label--mono ds-grid__number">C</span><span class="ds-grid__title">At school</span><span class="ds-grid__text">A classroom cut of forty minutes with notes for teachers.</span><span class="ds-grid__more" aria-hidden="true">&gt;</span></a></li>
+        <li><a class="ds-grid__cell" href="#watch"><span class="ds-label ds-label--mono ds-grid__number">D</span><span class="ds-grid__title">Your own room</span><span class="ds-grid__text">A hall, a library, a ship. Ask and we send the file and a poster.</span><span class="ds-grid__more" aria-hidden="true">&gt;</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ds-band">
+    <div class="ds-wrap ds-band__inner">
+      <span class="ds-label ds-label--mono">Friday, 20:00</span>
+      <h2 class="ds-band__title">Chapter three: the ice</h2>
+      <a class="ds-button ds-button--inverse" href="#watch">Remind me on Friday</a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="chapters">
+  <div class="ds-wrap">
+    <div class="ds-top">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a href="#home">The film</a></li>
+        <li class="ds-breadcrumb__item"><a href="#chapters">Chapters</a></li>
+        <li class="ds-breadcrumb__current">All six</li>
+      </ol>
+      <span class="ds-label ds-label--mono">02 / 04</span>
+    </div>
+    <div class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Chapters</h1>
+        <p class="ds-page-header__text">Six chapters, one each Friday. Two are out, one comes this week.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#chapter">Carry on watching</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap ds-cols">
+      <div class="ds-stack">
+        <div class="ds-toolbar">
+          <ul class="ds-tabs" data-component="tabs">
+            <li><a class="ds-tabs__tab is-current" href="#chapters">All <span class="ds-badge ds-badge--quiet">06</span></a></li>
+            <li><a class="ds-tabs__tab" href="#chapters">Out now</a></li>
+            <li><a class="ds-tabs__tab" href="#chapters">Still to come</a></li>
+          </ul>
+          <label class="ds-switch is-on"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Subtitles</span></label>
+        </div>
+        <div class="ds-noticerow" data-component="notice">
+          <p class="ds-notice"><span class="ds-notice__title">Sound</span>The film is quiet for long stretches. That is the film, not your speakers.</p>
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Delayed</span>Chapter 04 moves from 5 to 12 December. The supply flight was late too.</p>
+        </div>
+        <div class="ds-table__wrap">
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr><th>No.</th><th>Chapter</th><th>Told by</th><th class="ds-table__num">Minutes</th><th class="ds-table__num">Watched</th><th>State</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-hover"><td class="ds-label ds-label--mono">01</td><td><a class="ds-table__title" href="#chapter">The mast</a></td><td>The technician</td><td class="ds-table__num">21</td><td class="ds-table__num">58%</td><td><span class="ds-badge" data-component="badge">Playing</span></td></tr>
+              <tr><td class="ds-label ds-label--mono">02</td><td><a class="ds-table__title" href="#chapter">The hut</a></td><td>The cook</td><td class="ds-table__num">17</td><td class="ds-table__num">0%</td><td><span class="ds-badge ds-badge--success">Out now</span></td></tr>
+              <tr><td class="ds-label ds-label--mono">03</td><td><a class="ds-table__title" href="#chapters">The ice</a></td><td>The observer</td><td class="ds-table__num">14</td><td class="ds-table__num">0%</td><td><span class="ds-badge ds-badge--warning">This Friday</span></td></tr>
+              <tr><td class="ds-label ds-label--mono">04</td><td><a class="ds-table__title" href="#chapters">The supply flight</a></td><td>The pilot</td><td class="ds-table__num">16</td><td class="ds-table__num">0%</td><td><span class="ds-badge ds-badge--danger">Delayed</span></td></tr>
+              <tr><td class="ds-label ds-label--mono">05</td><td><a class="ds-table__title" href="#chapters">The long night</a></td><td>All four</td><td class="ds-table__num">15</td><td class="ds-table__num">0%</td><td><span class="ds-badge ds-badge--quiet">19 December</span></td></tr>
+              <tr><td class="ds-label ds-label--mono">06</td><td><a class="ds-table__title" href="#chapters">First light</a></td><td>The observer</td><td class="ds-table__num">11</td><td class="ds-table__num">0%</td><td><span class="ds-tooltip ds-tooltip--end ds-label ds-label--muted" tabindex="0">When the sun is back<span class="ds-tooltip__tip">Planned for 26 December. If the sky is clouded on the day, it waits for the next clear noon.</span></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-table__foot">
+          <span class="ds-label">Chapters 1 to 6 of 6</span>
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link is-disabled" href="#chapters">Prev</a></li>
+            <li><a class="ds-pagination__link is-current" href="#chapters">01</a></li>
+            <li><a class="ds-pagination__link" href="#chapters">02</a></li>
+            <li><a class="ds-pagination__link" href="#chapters">Next</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-sidebar" data-component="sidebar">
+          <p class="ds-label ds-sidebar__title">Also here</p>
+          <div class="ds-sidebar__list">
+            <a class="ds-sidebar__item is-current" href="#chapters">The chapters <span class="ds-sidebar__count">06</span></a>
+            <a class="ds-sidebar__item" href="#chapters">Extras <span class="ds-sidebar__count">03</span></a>
+            <a class="ds-sidebar__item" href="#chapters">Field recordings <span class="ds-sidebar__count">11</span></a>
+            <a class="ds-sidebar__item" href="#watch">Screenings <span class="ds-sidebar__count">24</span></a>
+          </div>
+        </div>
+        <div class="ds-stack ds-stack--tight">
+          <div class="ds-progress">
+            <p class="ds-progress__head"><span>You have watched</span><span class="ds-progress__value">12 of 94 min</span></p>
+            <progress class="ds-progress__bar" value="13" max="100">13%</progress>
+          </div>
+          <div class="ds-progress">
+            <p class="ds-progress__head"><span>Released so far</span><span class="ds-progress__value">2 of 6</span></p>
+            <progress class="ds-progress__bar" value="33" max="100">33%</progress>
+          </div>
+        </div>
+        <div class="ds-empty" data-component="empty">
+          <span class="ds-empty__icon" aria-hidden="true"></span>
+          <p class="ds-empty__title">Nothing saved yet</p>
+          <p class="ds-empty__text">Chapters you keep for a place without a connection are listed here.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#watch">How saving works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="chapter">
+  <div class="ds-wrap">
+    <div class="ds-top">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a href="#home">The film</a></li>
+        <li class="ds-breadcrumb__item"><a href="#chapters">Chapters</a></li>
+        <li class="ds-breadcrumb__current">01 The mast</li>
+      </ol>
+      <span class="ds-label ds-label--mono">03 / 04</span>
+    </div>
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">The mast</h1>
+        <p class="ds-page-header__text">Chapter one. Sixty metres of steel, one lamp, and the person who climbs it.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#chapter">Play from 12:14</a>
+        <a class="ds-button ds-button--secondary" href="#chapter">From the start</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap">
+      <div class="ds-player">
+        <div class="ds-scene ds-scene--frame ds-scene--mast"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span><span class="ds-scene__shade" aria-hidden="true"></span><span class="ds-scene__play"></span></div>
+        <div class="ds-player__bar">
+          <div class="ds-progress">
+            <p class="ds-progress__head"><span>Paused</span><span class="ds-progress__value">12:14 / 21:05</span></p>
+            <progress class="ds-progress__bar" value="58" max="100">58%</progress>
+          </div>
+          <span class="ds-label ds-label--mono">Subtitles on</span>
+        </div>
+      </div>
+    </div>
+    <div class="ds-wrap ds-cols ds-cols--wide">
+      <div class="ds-stack">
+        <div class="ds-prose" data-component="typography">
+          <h1>What the mast is for</h1>
+          <p class="ds-prose__lead">It carries four instruments, one aerial and the only lamp for ninety kilometres.</p>
+          <p>Ice grows on the stays at about a centimetre a day. Left alone, it would bring the mast down in a month, so <strong>every third day</strong> somebody goes up with a wooden mallet and a line.</p>
+          <h2>How this chapter was filmed</h2>
+          <p>One camera stayed on the ground and one went up in a chest harness. The climb is shown at full length; the log entry for the day reads <code>M3 cleared 11:40</code>.</p>
+          <h3>In this chapter</h3>
+          <ul>
+            <li>The climb, in one take of nine minutes</li>
+            <li>The halo round the lamp in ice fog</li>
+            <li>The first radio call of the winter</li>
+          </ul>
+        </div>
+        <ul class="ds-linkrow" data-component="links">
+          <li><a class="ds-link" href="#chapter">Read the transcript</a></li>
+          <li><a class="ds-link is-visited" href="#chapter">The trailer (seen)</a></li>
+          <li><a class="ds-link is-hover" href="#chapters">All chapters</a></li>
+          <li><a class="ds-link is-active" href="#watch">Show it in a room</a></li>
+          <li><a class="ds-link ds-link--quiet" href="#chapter">Credits</a></li>
+        </ul>
+        <div class="ds-accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">Subtitles and languages</summary>
+            <p class="ds-accordion__body">Spoken in two languages, with subtitles in seven. Choose them under Watch.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Audio description</summary>
+            <p class="ds-accordion__body">A described version of every chapter comes out on the same Friday.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Credits for this chapter</summary>
+            <p class="ds-accordion__body">Filmed by a crew of three over eleven days in November.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="ds-stack">
+        <div class="ds-panel" data-component="panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">Chapter sheet</h2><span class="ds-badge ds-badge--quiet">01 / 06</span></div>
+          <div class="ds-panel__body">
+            <dl class="ds-facts">
+              <dt>Length</dt><dd>21 min 5 s</dd>
+              <dt>Out since</dt><dd>21 November</dd>
+              <dt>Filmed</dt><dd>Eleven days, no daylight</dd>
+              <dt>Sound</dt><dd>Stereo and 5.1</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="ds-people">
+          <div class="ds-person"><span class="ds-avatar ds-avatar--large" aria-hidden="true"></span><span><span class="ds-person__name">The technician</span><span class="ds-person__role">Climbs the mast</span></span></div>
+          <div class="ds-person"><span class="ds-avatar ds-avatar--3 ds-avatar--large" aria-hidden="true"></span><span><span class="ds-person__name">The observer</span><span class="ds-person__role">Holds the line</span></span></div>
+        </div>
+        <div class="ds-stack ds-stack--tight">
+          <p class="ds-label ds-label--accent">Up next</p>
+          <ul class="ds-queue">
+            <li><a class="ds-queue__item" href="#chapter"><span class="ds-scene ds-scene--frame ds-scene--hut" aria-hidden="true"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span></span><span><span class="ds-queue__title">02 The hut</span><span class="ds-label ds-label--mono">17 min</span></span></a></li>
+            <li><a class="ds-queue__item" href="#chapters"><span class="ds-scene ds-scene--frame ds-scene--ice" aria-hidden="true"><span class="ds-scene__sky" aria-hidden="true"></span><span class="ds-scene__far" aria-hidden="true"></span><span class="ds-scene__near" aria-hidden="true"></span></span><span><span class="ds-queue__title">03 The ice</span><span class="ds-label ds-label--mono">Friday</span></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-view" id="watch">
+  <div class="ds-wrap">
+    <div class="ds-top">
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a href="#home">The film</a></li>
+        <li class="ds-breadcrumb__item"><a href="#watch">Watch</a></li>
+        <li class="ds-breadcrumb__current">Ask for a screening</li>
+      </ol>
+      <span class="ds-label ds-label--mono">04 / 04</span>
+    </div>
+    <div class="ds-page-header">
+      <div class="ds-page-header__main">
+        <h1 class="ds-page-header__title">Show it in a room</h1>
+        <p class="ds-page-header__text">Any room that can be made dark. We send the film, a poster and a page of notes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-main">
+    <div class="ds-wrap ds-cols ds-cols--even">
+      <form class="ds-form" data-component="form" action="#watch">
+        <div class="ds-noticerow">
+          <p class="ds-notice ds-notice--error"><span class="ds-notice__title">Check</span>One field needs another look before this can be sent.</p>
+        </div>
+        <div class="ds-form__row">
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="room-name">Name</label>
+            <input class="ds-form__input" id="room-name" type="text" value="A. Visitor">
+          </div>
+          <div class="ds-form__field">
+            <label class="ds-form__label" for="room-kind">Kind of room</label>
+            <select class="ds-form__select" id="room-kind">
+              <option>A cinema</option>
+              <option>A school</option>
+              <option>A library or hall</option>
+              <option>Somewhere else</option>
+            </select>
+          </div>
+        </div>
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="room-mail">E-mail address</label>
+          <input class="ds-form__input is-error" id="room-mail" type="email" value="visitor@example">
+          <p class="ds-form__error">This address is missing its ending, for example .org.</p>
+        </div>
+        <div class="ds-form__field">
+          <label class="ds-form__label" for="room-note">The room and the evening</label>
+          <textarea class="ds-form__textarea" id="room-note" placeholder="How many seats, which date, what the screen is"></textarea>
+          <p class="ds-form__hint">Screenings are free for schools and for rooms of fewer than fifty seats.</p>
+        </div>
+        <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Nobody will be charged to get in.</label>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="submit">Ask for the film</button>
+          <a class="ds-button ds-button--secondary" href="#chapters">Watch it first</a>
+          <button class="ds-button ds-button--danger" type="button">Cancel a screening</button>
+          <button class="ds-button is-disabled" type="button" disabled>Sent</button>
+        </div>
+      </form>
+
+      <div class="ds-stack">
+        <div class="ds-panel">
+          <div class="ds-panel__head"><h2 class="ds-panel__title">On this device</h2></div>
+          <div class="ds-panel__body">
+            <label class="ds-switch is-on"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Subtitles<small>In the language of this page</small></span></label>
+            <label class="ds-switch is-on"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Play the next chapter<small>After ten seconds of dark</small></span></label>
+            <label class="ds-switch"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Remind me on Fridays<small>One message when a chapter is out</small></span></label>
+          </div>
+        </div>
+        <div class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-labelledby="cancel-title">
+            <div class="ds-dialog__head"><h2 class="ds-dialog__title" id="cancel-title">Cancel the screening?</h2><a class="ds-dialog__close" href="#watch" aria-label="Close"></a></div>
+            <div class="ds-dialog__body"><p>The link to the film stops working and the forty seats you announced are released.</p></div>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--danger" href="#home">Cancel it</a>
+              <a class="ds-button ds-button--secondary" href="#watch">Keep it</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-wrap ds-footer__inner">
+    <a class="ds-brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <p class="ds-footer__about">chronoskin is a film in six chapters, made over one winter and given away one Friday at a time.</p>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#home">The film</a></li>
+      <li><a class="ds-footer__link" href="#chapters">Chapters</a></li>
+      <li><a class="ds-footer__link" href="#chapter">Now playing</a></li>
+      <li><a class="ds-footer__link" href="#watch">Screenings</a></li>
+      <li><a class="ds-footer__link" href="#watch">Press</a></li>
+      <li><a class="ds-footer__link" href="#home">Privacy</a></li>
+    </ul>
+  </div>
+  <div class="ds-wrap">
+    <div class="ds-footer__legal ds-label">
+      <span>2026 chronoskin. Free to watch, not to resell.</span>
+      <span>70.98 N 25.97 E</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{{/* A span of years: two sliders on one track, between the years they
+     stand at. Hidden, but keeping its room, until the script runs. It sits
+     inside the "years" component. Data: First, Last. */}}
+{{define "range"}}
+<div class="range" x-cloak="keep">
+  <output x-text="from">{{.First}}</output>
+  <span class="track">
+    <span class="fill" x-ref="fill"></span>
+    <input type="range" min="{{.First}}" max="{{.Last}}" value="{{.First}}" step="1" aria-label="From year" x-ref="from" x-on:input="move">
+    <input type="range" min="{{.First}}" max="{{.Last}}" value="{{.Last}}" step="1" aria-label="To year" x-ref="to" x-on:input="move">
+  </span>
+  <output x-text="to">{{.Last}}</output>
+</div>
+{{end}}

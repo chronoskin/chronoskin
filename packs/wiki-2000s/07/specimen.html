@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: software project wiki specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-page__sheet">
+
+  <header class="ds-nav" data-component="nav">
+    <div class="ds-nav__top">
+      <a class="ds-brand" data-component="brand" href="#home">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 4.5 6.5 4 3 4.5V19c3.5-.5 7 0 9 2c2-2 5.5-2.5 9-2V4.5c-3.5-.5-7 0-9 2z"/><line x1="12" y1="6.5" x2="12" y2="21"/></svg></span>
+        <span class="ds-brand__text">
+          <span class="ds-brand__name">chronoskin</span>
+          <span class="ds-brand__tag">The project wiki: manual, downloads and development notes</span>
+        </span>
+      </a>
+      <div class="ds-nav__tools">
+        <ul class="ds-nav__account">
+          <li>Signed in as <a class="ds-link ds-link--quiet" href="#report">Merrin</a></li>
+          <li><a class="ds-link ds-link--quiet" href="#releases">My watchlist</a></li>
+          <li><a class="ds-link ds-link--quiet" href="#report">Preferences</a></li>
+          <li><a class="ds-link ds-link--quiet" href="#home">Log out</a></li>
+        </ul>
+        <form class="ds-nav__search" action="#manual">
+          <input class="ds-form__input ds-nav__field" type="text" aria-label="Search the wiki">
+          <button class="ds-button ds-button--small" type="submit">Search</button>
+          <button class="ds-button ds-button--secondary ds-button--small" type="submit">Titles</button>
+        </form>
+      </div>
+    </div>
+    <ul class="ds-nav__menu">
+      <li><a class="ds-nav__link" href="#home">Start</a></li>
+      <li><a class="ds-nav__link" href="#manual">Manual</a></li>
+      <li><a class="ds-nav__link" href="#releases">Releases</a></li>
+      <li><a class="ds-nav__link" href="#report">Report a problem</a></li>
+      <li class="ds-nav__spacer"></li>
+      <li><a class="ds-nav__tool" href="#releases">Recent changes</a></li>
+      <li><a class="ds-nav__tool" href="#manual">Page index</a></li>
+      <li><a class="ds-nav__tool" href="#manual">Random page</a></li>
+    </ul>
+  </header>
+
+  <ol class="ds-trace">
+    <li class="ds-trace__label">Trace:</li>
+    <li><a class="ds-trace__link" href="#home">Start</a></li>
+    <li>&raquo;</li>
+    <li><a class="ds-trace__link" href="#manual">Installing</a></li>
+    <li>&raquo;</li>
+    <li><a class="ds-trace__link" href="#releases">Releases</a></li>
+    <li>&raquo;</li>
+    <li><a class="ds-trace__link" href="#report">Report a problem</a></li>
+    <li class="ds-trace__note">412 pages, 3 changed today</li>
+  </ol>
+
+  <!-- ============ start page ============ -->
+  <section class="ds-view ds-view--home" id="home">
+    <div class="ds-view__body">
+
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__text">
+          <h1 class="ds-hero__title">Welcome to the chronoskin wiki</h1>
+          <p class="ds-hero__lead">chronoskin is a free time server for small networks: one quiet program that keeps every clock in the building in step.</p>
+          <p class="ds-hero__line">This wiki is its manual and its workshop. Everything here is written by the people who run the program, and <a class="ds-link" href="#report">anyone with an account can improve a page</a>. Pages that nobody has written yet show in <a class="ds-link ds-link--new" href="#report">red</a>.</p>
+          <p class="ds-hero__action">
+            <a class="ds-button ds-button--large" href="#releases">Download version 2.4.1</a>
+            <a class="ds-button ds-button--secondary" href="#manual">Read the manual</a>
+            <span class="ds-badge" data-component="badge">new</span> <a class="ds-link" href="#releases">what changed in 2.4</a>
+          </p>
+          <p class="ds-hero__jump"><a class="ds-link" href="#manual">About the project</a><span class="ds-hero__sep">|</span><a class="ds-link" href="#manual">Installing</a><span class="ds-hero__sep">|</span><a class="ds-link" href="#releases">Download</a><span class="ds-hero__sep">|</span><a class="ds-link" href="#report">Help and support</a></p>
+        </div>
+        <aside class="ds-download">
+          <h2 class="ds-download__title">Current versions</h2>
+          <table class="ds-table ds-table--plain">
+            <thead>
+              <tr><th scope="col">Branch</th><th scope="col">Version</th><th scope="col">Released</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Stable</td><td><a class="ds-link ds-table__version" href="#releases">2.4.1</a></td><td class="ds-table__nowrap">2007-03-02</td></tr>
+              <tr class="ds-table__row--alt"><td>Previous</td><td><a class="ds-link ds-table__version" href="#releases">2.3.6</a></td><td class="ds-table__nowrap">2007-01-18</td></tr>
+              <tr><td>Legacy</td><td><a class="ds-link ds-table__version" href="#releases">1.9.12</a></td><td class="ds-table__nowrap">2006-08-30</td></tr>
+            </tbody>
+          </table>
+          <div class="ds-download__body">
+            <p class="ds-download__note">Source archive, 1.8 MB. Packages for the common systems are listed on the <a class="ds-link" href="#releases">releases page</a>.</p>
+            <a class="ds-button" href="#releases">Get the source</a>
+          </div>
+        </aside>
+      </section>
+
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item"><dd class="ds-stat__value">412</dd><dt class="ds-stat__label">Manual pages</dt></div>
+        <div class="ds-stat__item"><dd class="ds-stat__value">58,300</dd><dt class="ds-stat__label">Downloads of 2.4</dt></div>
+        <div class="ds-stat__item"><dd class="ds-stat__value">37</dd><dt class="ds-stat__label">Open tickets</dt></div>
+        <div class="ds-stat__item"><dd class="ds-stat__value">19</dd><dt class="ds-stat__label">Languages</dt></div>
+      </dl>
+
+      <ul class="ds-grid" data-component="grid">
+        <li class="ds-grid__cell">
+          <div class="ds-grid__head">
+            <span class="ds-grid__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5" r="3" fill="currentColor"/><path d="M2 15c0-4 2.5-6 6-6s6 2 6 6z" fill="currentColor"/></svg></span>
+            <div><h2 class="ds-grid__name">Users</h2><span class="ds-grid__meta">Setting your own clock</span></div>
+          </div>
+          <ul class="ds-grid__links">
+            <li><a class="ds-link" href="#manual">What is a time server?</a></li>
+            <li><a class="ds-link" href="#manual">Pointing a desktop at it</a></li>
+            <li><a class="ds-link" href="#manual">Questions asked often</a></li>
+            <li><a class="ds-link ds-link--strong" href="#manual">More...</a></li>
+          </ul>
+        </li>
+        <li class="ds-grid__cell ds-grid__cell--2">
+          <div class="ds-grid__head">
+            <span class="ds-grid__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3h12v4H2zM2 9h12v4H2z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 5h2M4 11h2" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <div><h2 class="ds-grid__name">Administrators</h2><span class="ds-grid__meta">Running the server</span></div>
+          </div>
+          <ul class="ds-grid__links">
+            <li><a class="ds-link" href="#manual">Installing</a> and <a class="ds-link" href="#manual">upgrading</a></li>
+            <li><a class="ds-link" href="#manual">The configuration file</a></li>
+            <li><a class="ds-link ds-link--new" href="#report">Running behind a firewall</a></li>
+            <li><a class="ds-link ds-link--strong" href="#manual">More...</a></li>
+          </ul>
+        </li>
+        <li class="ds-grid__cell ds-grid__cell--3">
+          <div class="ds-grid__head">
+            <span class="ds-grid__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3L1.5 8 6 13M10 3l4.5 5-4.5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><h2 class="ds-grid__name">Developers</h2><span class="ds-grid__meta">Working on the code</span></div>
+          </div>
+          <ul class="ds-grid__links">
+            <li><a class="ds-link" href="#manual">Building from source</a></li>
+            <li><a class="ds-link" href="#report">Sending a patch</a></li>
+            <li><a class="ds-link" href="#manual">Coding conventions</a></li>
+            <li><a class="ds-link ds-link--strong" href="#manual">More...</a></li>
+          </ul>
+        </li>
+        <li class="ds-grid__cell ds-grid__cell--4">
+          <div class="ds-grid__head">
+            <span class="ds-grid__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2 8h12M8 2c-3 3-3 9 0 12M8 2c3 3 3 9 0 12" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span>
+            <div><h2 class="ds-grid__name">Translators</h2><span class="ds-grid__meta">The manual in your language</span></div>
+          </div>
+          <ul class="ds-grid__links">
+            <li><a class="ds-link" href="#manual">How pages are translated</a></li>
+            <li><a class="ds-link" href="#releases">Pages that fell behind</a></li>
+            <li><a class="ds-link ds-link--new" href="#report">Word list</a></li>
+            <li><a class="ds-link ds-link--strong" href="#manual">More...</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="ds-columns">
+        <div class="ds-columns__main">
+          <h2 class="ds-section">News</h2>
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item"><span class="ds-list__date">2007-03-02</span><span><a class="ds-link ds-list__title" href="#releases">2.4.1 fixes the leap second handling</a> <span class="ds-badge ds-badge--danger">security</span><span class="ds-list__meta">Everyone on 2.4.0 should upgrade. Posted by Merrin, 14 comments</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__date">2007-02-11</span><span><a class="ds-link ds-list__title" href="#releases">2.4.0 is the new stable branch</a> <span class="ds-badge ds-badge--success">release</span><span class="ds-list__meta">See the <a class="ds-link" href="#manual">upgrade notes</a> before you switch. Posted by Odalys, 31 comments</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__date">2007-01-18</span><span><a class="ds-link ds-list__title" href="#releases">2.3.6 and 1.9.12 maintenance updates</a><span class="ds-list__meta">Two small fixes for drift on virtual machines. Posted by Merrin, 3 comments</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__date">2006-12-04</span><span><a class="ds-link ds-list__title" href="#manual">The manual has a new chapter on monitoring</a><span class="ds-list__meta">Written at the winter meeting. Posted by Teodor, 6 comments</span></span></li>
+            <li class="ds-list__item"><span class="ds-list__date">2006-11-20</span><span><a class="ds-link ds-list__title" href="#releases">First release candidate of 2.4</a> <span class="ds-badge ds-badge--warning">testing</span><span class="ds-list__meta">Please try it on a spare machine and report what you find. Posted by Odalys</span></span></li>
+          </ul>
+          <p class="ds-legend"><a class="ds-link ds-link--strong" href="#releases">Older news...</a></p>
+        </div>
+        <aside class="ds-sidebar" data-component="sidebar">
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Support</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#manual">User help</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#manual">Technical manual</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#report">Support desk</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">Mailing lists</a></li>
+            </ul>
+          </div>
+          <div class="ds-sidebar__block">
+            <h2 class="ds-sidebar__title">Development</h2>
+            <ul class="ds-sidebar__list">
+              <li class="ds-sidebar__item"><a class="ds-link" href="#report">Bug tracker</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#home">Browse the source</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link" href="#releases">Nightly builds</a></li>
+              <li class="ds-sidebar__item"><a class="ds-link ds-link--new" href="#report">Roadmap for 2.5</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ manual page ============ -->
+  <section class="ds-view" id="manual">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Start</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#manual">Manual</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li class="ds-breadcrumb__current">Installing</li>
+      </ol>
+      <header class="ds-page-header" data-component="page-header">
+        <div>
+          <h1 class="ds-page-header__title">Installing chronoskin</h1>
+          <p class="ds-page-header__desc">Manual, chapter 2 of 9. Applies to version 2.4; last changed 2 March 2007 by Merrin</p>
+          <div class="ds-extras"><details class="ds-accordion"><summary class="ds-accordion__summary">Chapters of the manual [show]</summary><div class="ds-accordion__body"><p>1 Overview, 2 Installing, 3 Configuration, 4 Monitoring, 5 Upgrading, 6 Security, 7 Packaging, 8 Support, 9 Glossary.</p></div></details>See <span class="ds-tooltip"><a class="ds-link" href="#manual" aria-describedby="t7">--prefix</a><span class="ds-tooltip__tip" id="t7" role="tooltip">Sets the install directory. The default is /usr/local.</span></span></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#report">Edit this page</a></p>
+      </header>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#manual">Page</a></li>
+        <li><a class="ds-tabs__tab" href="#manual">Discussion (4)</a></li>
+        <li><a class="ds-tabs__tab" href="#manual">Old revisions</a></li>
+        <li><a class="ds-tabs__tab is-missing" href="#report">Translation</a></li>
+      </ul>
+
+      <div class="ds-flow">
+        <div class="ds-aside">
+          <div class="ds-toc">
+            <p class="ds-toc__title">Table of contents</p>
+            <ul class="ds-toc__list">
+              <li><a class="ds-link" href="#manual">Before you start</a></li>
+              <li><a class="ds-link" href="#manual">Unpacking and building</a>
+                <ul class="ds-toc__list">
+                  <li><a class="ds-link" href="#manual">From a package</a></li>
+                  <li><a class="ds-link" href="#manual">From source</a></li>
+                </ul>
+              </li>
+              <li><a class="ds-link" href="#manual">First run</a></li>
+              <li><a class="ds-link" href="#manual">See also</a></li>
+            </ul>
+          </div>
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Requirements</h2>
+            <div class="ds-panel__body">
+              <table class="ds-panel__rows">
+                <tr><th scope="row">System</th><td>Any Unix-like system, or a recent desktop</td></tr>
+                <tr><th scope="row">Memory</th><td>4 MB</td></tr>
+                <tr><th scope="row">Disk</th><td>6 MB with the manual</td></tr>
+                <tr><th scope="row">Network</th><td>One free port, 123 by default</td></tr>
+                <tr><th scope="row">Rights</th><td>Administrator, to set the clock</td></tr>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="ds-prose" data-component="typography">
+          <h2><span class="ds-edit">[<a class="ds-link" href="#report">edit</a>]</span>Before you start</h2>
+          <p>You need a machine that stays switched on and a <strong>reference clock</strong> to follow: a public time server, a radio receiver or simply the most trusted machine you have. Check that no other time service is running, because two programs that both set the clock will fight over it.</p>
+          <p class="ds-notice"><span class="ds-notice__title">Upgrading from 1.9?</span> The configuration file changed its name. Read the <a class="ds-notice__link" href="#releases">upgrade notes</a> first; the steps below are for a fresh machine.</p>
+
+          <h2><span class="ds-edit">[<a class="ds-link" href="#report">edit</a>]</span>Unpacking and building</h2>
+          <h3>From a package</h3>
+          <p>Most systems carry a package. Install it with your usual tool and skip to the first run. Packages lag a few weeks behind the <a class="ds-link" href="#releases">release list</a>.</p>
+          <h3>From source</h3>
+          <p>Fetch the archive, unpack it and build. The default prefix is <code>/usr/local</code>; pass <code>--prefix</code> to change it.</p>
+          <div class="ds-code">tar xzf chronoskin-2.4.1.tar.gz
+cd chronoskin-2.4.1
+./configure --prefix=/opt/chronoskin
+make &amp;&amp; make install</div>
+          <p>The build needs only a C compiler and <code>make</code>. If <code>configure</code> stops, it says which header it could not find:</p>
+          <ol>
+            <li>install the missing development package;</li>
+            <li>remove <code>config.cache</code>;</li>
+            <li>run <code>configure</code> again.</li>
+          </ol>
+
+          <h2><span class="ds-edit">[<a class="ds-link" href="#report">edit</a>]</span>First run</h2>
+          <p>Start the server once in the foreground, so that you see what it does. It should name its reference within a minute and report an offset that shrinks.</p>
+          <ul>
+            <li>An offset under 50 ms after ten minutes is healthy.</li>
+            <li>An offset that grows means the reference cannot be reached.</li>
+          </ul>
+
+          <h2><span class="ds-edit">[<a class="ds-link" href="#report">edit</a>]</span>See also</h2>
+          <ul data-component="links">
+            <li><a class="ds-link" href="#manual">The configuration file</a> (a page of the manual)</li>
+            <li><a class="ds-link is-visited" href="#manual">Upgrading</a> (a page you have already read)</li>
+            <li><a class="ds-link is-hover" href="#manual">Monitoring the offset</a> (under the pointer)</li>
+            <li><a class="ds-link is-active" href="#manual">Starting at boot</a> (while pressed)</li>
+            <li><a class="ds-link ds-link--new" href="#report">Running behind a firewall</a> (not written yet)</li>
+            <li><a class="ds-link ds-link--quiet" href="#manual">List of public time servers</a> (an outside link)</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link" href="#manual">&laquo; 1. Overview</a></li>
+        <li class="ds-pagination__label">Chapter</li>
+        <li><a class="ds-pagination__link" href="#manual">1</a></li>
+        <li><a class="ds-pagination__link is-current" href="#manual">2</a></li>
+        <li><a class="ds-pagination__link" href="#manual">3</a></li>
+        <li><a class="ds-pagination__link" href="#manual">4</a></li>
+        <li><a class="ds-pagination__link" href="#manual">5</a></li>
+        <li class="ds-pagination__label">of 9</li>
+        <li><a class="ds-pagination__link" href="#manual">3. Configuration &raquo;</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ releases ============ -->
+  <section class="ds-view" id="releases">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Start</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#releases">Download</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li class="ds-breadcrumb__current">Releases</li>
+      </ol>
+      <header class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Releases</h1>
+          <p class="ds-page-header__desc">Every version since 1.9, newest first. Sizes are for the source archive</p>
+          <div class="ds-extras"><details class="ds-menu"><summary class="ds-menu__summary">Download</summary><ul class="ds-menu__list"><li><a class="ds-menu__item" href="#releases">Source archive</a></li><li><a class="ds-menu__item" href="#releases">Package</a></li><li><a class="ds-menu__item" href="#releases">Change log</a></li></ul></details></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button" href="#releases">Download 2.4.1</a></p>
+      </header>
+      <ul class="ds-tabs">
+        <li><a class="ds-tabs__tab is-current" href="#releases">All releases</a></li>
+        <li><a class="ds-tabs__tab" href="#releases">Stable only</a></li>
+        <li><a class="ds-tabs__tab" href="#releases">Packages</a></li>
+        <li><a class="ds-tabs__tab" href="#releases">Change log</a></li>
+      </ul>
+
+      <p class="ds-legend">Status: <span class="ds-badge ds-badge--success">stable</span> recommended for everyone, <span class="ds-badge ds-badge--warning">testing</span> for a spare machine, <span class="ds-badge ds-badge--danger">withdrawn</span> do not install, <span class="ds-badge">new</span> released this month.</p>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th scope="col">Version</th><th scope="col">Released</th><th scope="col">Status</th><th scope="col">Size (KB)</th><th scope="col">Downloads</th><th scope="col">Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a class="ds-link ds-table__version" href="#releases">2.5.0-rc1</a></td><td class="ds-table__nowrap">2007-03-09</td><td><span class="ds-badge ds-badge--warning">testing</span></td><td class="ds-table__num">1,902</td><td class="ds-table__num">1,140</td><td>First candidate of the next branch. <a class="ds-link ds-link--new" href="#report">Roadmap for 2.5</a></td></tr>
+          <tr class="ds-table__row--alt"><td><a class="ds-link ds-table__version" href="#releases">2.4.1</a></td><td class="ds-table__nowrap">2007-03-02</td><td><span class="ds-badge ds-badge--success">stable</span> <span class="ds-badge">new</span></td><td class="ds-table__num">1,846</td><td class="ds-table__num">21,774</td><td>Fixes the leap second handling. <a class="ds-link" href="#manual">Upgrade notes</a></td></tr>
+          <tr><td><a class="ds-link ds-table__version" href="#releases">2.4.0</a></td><td class="ds-table__nowrap">2007-02-11</td><td><span class="ds-badge ds-badge--danger">withdrawn</span></td><td class="ds-table__num">1,843</td><td class="ds-table__num">36,526</td><td>Replaced by 2.4.1 after three weeks.</td></tr>
+          <tr class="ds-table__row--alt"><td><a class="ds-link ds-table__version" href="#releases">2.3.6</a></td><td class="ds-table__nowrap">2007-01-18</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">1,710</td><td class="ds-table__num">9,208</td><td>Drift fix for virtual machines.</td></tr>
+          <tr><td><a class="ds-link ds-table__version" href="#releases">2.3.5</a></td><td class="ds-table__nowrap">2006-10-27</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">1,706</td><td class="ds-table__num">44,015</td><td>Translations updated, no code changes.</td></tr>
+          <tr class="ds-table__row--alt"><td><a class="ds-link ds-table__version" href="#releases">1.9.12</a></td><td class="ds-table__nowrap">2006-08-30</td><td><span class="ds-badge ds-badge--success">stable</span></td><td class="ds-table__num">1,204</td><td class="ds-table__num">3,377</td><td>Last planned release of the legacy branch.</td></tr>
+        </tbody>
+      </table>
+      <ul class="ds-pagination">
+        <li><a class="ds-pagination__link is-disabled" href="#releases">&laquo; newer</a></li>
+        <li><a class="ds-pagination__link is-current" href="#releases">1</a></li>
+        <li><a class="ds-pagination__link" href="#releases">2</a></li>
+        <li><a class="ds-pagination__link" href="#releases">3</a></li>
+        <li><a class="ds-pagination__link" href="#releases">older &raquo;</a></li>
+        <li class="ds-pagination__label">6 of 17 releases</li>
+      </ul>
+
+      <h2 class="ds-section">Nightly builds</h2>
+      <div class="ds-empty" data-component="empty">
+        <p class="ds-empty__title">No nightly build today</p>
+        <p class="ds-empty__text">Last night's build did not pass its tests, so nothing was published. The log says which test failed.</p>
+        <a class="ds-button ds-button--secondary" href="#report">Read the build log</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ report a problem ============ -->
+  <section class="ds-view" id="report">
+    <div class="ds-view__body">
+      <ol class="ds-breadcrumb">
+        <li><a class="ds-breadcrumb__link" href="#home">Start</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li><a class="ds-breadcrumb__link" href="#report">Support desk</a></li>
+        <li class="ds-breadcrumb__sep">&raquo;</li>
+        <li class="ds-breadcrumb__current">Report a problem</li>
+      </ol>
+      <header class="ds-page-header">
+        <div>
+          <h1 class="ds-page-header__title">Report a problem</h1>
+          <p class="ds-page-header__desc">A report becomes a ticket that everyone can read. Leave out passwords and addresses</p>
+          <div class="ds-extras"><label class="ds-meter">Report filled in <progress class="ds-progress" value="50" max="100">50%</progress> 50%</label></div>
+        </div>
+        <p class="ds-page-header__action"><a class="ds-button ds-button--secondary" href="#manual">How to write a good report</a></p>
+      </header>
+
+      <div class="ds-notices" data-component="notice">
+        <p class="ds-notice"><span class="ds-notice__title">Look before you write.</span> Thirty-seven tickets are open. <a class="ds-notice__link" href="#releases">Search them</a> first: adding a line to an existing ticket helps more than a second one.</p>
+        <p class="ds-notice ds-notice--error"><span class="ds-notice__title">The report was not sent.</span> It needs a version number, so that we know which code to read.</p>
+      </div>
+
+      <form class="ds-form" data-component="form" action="#releases">
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="r-title">Summary:</label>
+          <div class="ds-form__field"><input class="ds-form__input ds-form__input--wide" id="r-title" type="text" value="Offset grows after the machine wakes from sleep"></div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="r-version">Version:</label>
+          <div class="ds-form__field">
+            <input class="ds-form__input is-invalid" id="r-version" type="text" value="">
+            <span class="ds-form__hint">As printed when the server starts</span>
+            <span class="ds-form__error">Please give the version you are running.</span>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="r-part">Part:</label>
+          <div class="ds-form__field">
+            <select class="ds-form__input ds-form__input--auto" id="r-part"><option>Server</option><option>Client tools</option><option>Manual</option><option>This wiki</option></select>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Send me changes to this ticket</label>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox"> I can test a fix</label>
+          </div>
+        </div>
+        <div class="ds-form__row">
+          <label class="ds-form__label" for="r-text">What happens:</label>
+          <div class="ds-form__field">
+            <textarea class="ds-form__input ds-form__input--text" id="r-text">After the laptop wakes, the offset jumps to about 40 s and is corrected only slowly.
+Expected: one step back to the right time, as on a fresh start.</textarea>
+            <span class="ds-form__hint">Wiki markup works here. Paste log lines between two lines of three braces.</span>
+          </div>
+        </div>
+        <div class="ds-form__actions" data-component="buttons">
+          <button class="ds-button" type="submit">Send report</button>
+          <a class="ds-button ds-button--secondary" href="#report">Preview</a>
+          <button class="ds-button is-disabled" type="button" disabled>Attach a file</button>
+          <a class="ds-link" href="#home">Cancel</a>
+          <span class="ds-form__spacer"></span>
+          <a class="ds-button ds-button--danger" href="#report">Discard draft</a>
+        </div>
+      </form>
+
+      <div class="ds-dialog__backdrop">
+        <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+          <h2 class="ds-dialog__title" id="dlg-title">Discard this draft?</h2>
+          <div class="ds-dialog__body">
+            <p class="ds-dialog__text">The summary and the description you typed will be thrown away. Nothing has been sent yet, so there is no ticket to return to.</p>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#report">Keep writing</a>
+              <a class="ds-button ds-button--danger" href="#home">Discard draft</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ul class="ds-pagetools">
+    <li><a class="ds-nav__tool" href="#report">Edit this page</a></li>
+    <li><a class="ds-nav__tool" href="#manual">Old revisions</a></li>
+    <li><a class="ds-nav__tool" href="#manual">What links here</a></li>
+    <li><a class="ds-nav__tool" href="#releases">Subscribe to changes</a></li>
+    <li class="ds-pagetools__note">Last modified 2007-03-02 09:14 by Merrin</li>
+  </ul>
+
+  <footer class="ds-footer" data-component="footer">
+    <div>
+      <p class="ds-footer__text">The text of the chronoskin wiki may be copied and changed under an open documentation licence. The program itself is free software.</p>
+      <ul class="ds-footer__row">
+        <li><a class="ds-footer__link" href="#home">About this wiki</a></li>
+        <li><a class="ds-footer__link" href="#manual">Editing help</a></li>
+        <li><a class="ds-footer__link" href="#releases">Recent changes</a></li>
+        <li><a class="ds-footer__link" href="#report">Contact</a></li>
+      </ul>
+    </div>
+    <ul class="ds-footer__badges">
+      <li class="ds-footer__badge"><span class="ds-footer__key">wiki</span><span class="ds-footer__value">chronoskin 2.4</span></li>
+      <li class="ds-footer__badge"><span class="ds-footer__key">text</span><span class="ds-footer__value">open licence</span></li>
+    </ul>
+  </footer>
+
+</div>
+
+</body>
+</html>

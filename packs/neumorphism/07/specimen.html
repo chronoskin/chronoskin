@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: listen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<div class="ds-app">
+
+  <div class="ds-app__side">
+
+    <header class="ds-nav" data-component="nav">
+      <a class="ds-brand" data-component="brand" href="#">
+        <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="5.5" fill="currentColor" stroke="none"/><path d="M3 12a9 9 0 0 1 9-9" opacity="0.45"/><path d="M21 12a9 9 0 0 1-9 9"/></svg></span>
+        <span class="ds-brand__name">chronoskin</span>
+      </a>
+      <details class="ds-menu">
+        <summary class="ds-menu__toggle" aria-label="Account menu">
+          <span class="ds-avatar ds-avatar--accent"><span class="ds-avatar__pic">MO</span><span class="ds-avatar__text"><span class="ds-avatar__name">Mira Okafor</span><span class="ds-avatar__meta">Family plan</span></span></span>
+          <svg class="ds-page__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </summary>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#settings">Profile</a></li>
+          <li><a class="ds-menu__link is-hover" href="#settings">Switch listener</a></li>
+          <li><a class="ds-menu__link" href="#help">Keyboard shortcuts</a></li>
+          <li><a class="ds-menu__link ds-menu__link--danger" href="#settings">Sign out</a></li>
+        </ul>
+      </details>
+      <ul class="ds-nav__list">
+        <li><a class="ds-nav__link" href="#listen"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>Listen</a></li>
+        <li><a class="ds-nav__link" href="#library"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4v16M10 4v16M14.5 5l4 14.5"/></svg>Library <span class="ds-nav__count">128</span></a></li>
+        <li><a class="ds-nav__link" href="#playlist"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h11M4 11h11M4 16h6"/><circle cx="16" cy="18" r="2"/><path d="M18 18v-8l3 1"/></svg>Playlist</a></li>
+        <li><a class="ds-nav__link" href="#settings"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>Settings</a></li>
+        <li><a class="ds-nav__link" href="#help"><svg class="ds-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17v.5"/></svg>Help</a></li>
+      </ul>
+    </header>
+
+    <aside class="ds-sidebar" data-component="sidebar">
+      <h2 class="ds-sidebar__heading">Playlists</h2>
+      <ul class="ds-sidebar__list">
+        <li><a class="ds-sidebar__link is-current" href="#playlist">Night shift <span class="ds-sidebar__count">24</span></a></li>
+        <li><a class="ds-sidebar__link" href="#playlist">Slow mornings <span class="ds-sidebar__count">41</span></a></li>
+        <li><a class="ds-sidebar__link is-hover" href="#playlist">Run, 170 bpm <span class="ds-sidebar__count">18</span></a></li>
+        <li><a class="ds-sidebar__link" href="#playlist">Kitchen radio <span class="ds-sidebar__count">63</span></a></li>
+        <li><a class="ds-sidebar__link" href="#playlist">Strings only <span class="ds-sidebar__count">12</span></a></li>
+      </ul>
+      <div class="ds-sidebar__foot">
+        <div class="ds-progress__legend"><span>Downloads</span> <span>4.8 of 8 GB</span></div>
+        <div class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Download space used"><span class="ds-progress__bar"></span></div>
+      </div>
+    </aside>
+
+  </div>
+
+  <div class="ds-app__main">
+
+    <section class="ds-view ds-view--home" id="listen">
+    <div class="ds-page__stack">
+
+      <section class="ds-hero" data-component="hero">
+        <div class="ds-hero__art">
+          <div class="ds-hero__well">
+            <div class="ds-hero__label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></div>
+          </div>
+        </div>
+        <div class="ds-hero__text">
+          <div class="ds-hero__eyebrow"><span class="ds-badge" data-component="badge">Now playing</span> <span>from Night shift, track 7 of 24</span></div>
+          <h1 class="ds-hero__title">Harbour lights at four</h1>
+          <p class="ds-hero__lead">Odile Marsh and the Tin Quartet, on the album Low Tide Sessions.</p>
+          <div class="ds-progress__legend"><span>2:31</span> <span>4:12</span></div>
+          <div class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Position in the track"><span class="ds-progress__bar"></span></div>
+          <div class="ds-hero__actions">
+            <ul class="ds-keys">
+              <li><span class="ds-tooltip"><button class="ds-keys__key is-on" type="button" aria-label="Shuffle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h3c5 0 7 10 12 10h3M3 17h3c1.6 0 3-1 4.2-2.5M21 7h-3c-1.6 0-3 1-4.2 2.5M18 4l3 3-3 3M18 14l3 3-3 3"/></svg></button><span class="ds-tooltip__tip" role="tooltip">Shuffle is on</span></span></li>
+              <li><span class="ds-tooltip"><button class="ds-keys__key" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 9 12l9 6zM6 6v12"/></svg></button><span class="ds-tooltip__tip" role="tooltip">Previous</span></span></li>
+              <li><span class="ds-tooltip"><button class="ds-keys__key ds-keys__key--primary" type="button" aria-label="Pause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></button><span class="ds-tooltip__tip" role="tooltip">Pause</span></span></li>
+              <li><span class="ds-tooltip"><button class="ds-keys__key is-hover" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 9 6-9 6zM18 6v12"/></svg></button><span class="ds-tooltip__tip" role="tooltip">Next</span></span></li>
+              <li><span class="ds-tooltip"><button class="ds-keys__key" type="button" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button><span class="ds-tooltip__tip" role="tooltip">Add to liked</span></span></li>
+            </ul>
+            <a class="ds-button" href="#playlist">Open the playlist</a>
+          </div>
+        </div>
+      </section>
+
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__item">
+          <span class="ds-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><span class="ds-stat__value">14 h 20 min</span><span class="ds-stat__label">listened this week</span></span>
+        </li>
+        <li class="ds-stat__item">
+          <span class="ds-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span>
+          <span><span class="ds-stat__value">212</span><span class="ds-stat__label">tracks played</span></span>
+        </li>
+        <li class="ds-stat__item">
+          <span class="ds-stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 5-5 8-5s6.5 1 8 5"/></svg></span>
+          <span><span class="ds-stat__value">9</span><span class="ds-stat__label">artists new to you</span></span>
+        </li>
+      </ul>
+
+      <div class="ds-page__row">
+
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__head">Up next
+            <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Autoplay</span></label>
+          </li>
+          <li class="ds-list__item is-current">
+            <span class="ds-list__cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#playlist">Harbour lights at four</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Odile Marsh · playing</span>
+            </div>
+            <span class="ds-list__time">4:12</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">08</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#playlist">Paper boats</a>
+              <span class="ds-list__meta">Tessel and Reed · Low Tide Sessions</span>
+            </div>
+            <span class="ds-list__time">3:48</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">09</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#playlist">The last tram home</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Ivo Brandt · added today</span>
+            </div>
+            <span class="ds-list__time">5:02</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">10</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#playlist">Salt on the window</a>
+              <span class="ds-list__meta">Odile Marsh · Low Tide Sessions</span>
+            </div>
+            <span class="ds-list__time">3:27</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">11</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#library">Understudy</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--off"></span> Northern Choir · not downloaded</span>
+            </div>
+            <span class="ds-list__time">6:40</span>
+          </li>
+        </ul>
+
+        <div class="ds-page__stack">
+
+          <div class="ds-carousel" aria-roledescription="carousel" aria-label="Made for you">
+            <div class="ds-carousel__track">
+              <div class="ds-carousel__slide">
+                <span class="ds-carousel__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 14v-4M8 17V7M12 20V4M16 16V8M20 13v-2"/></svg></span>
+                <div class="ds-carousel__body">
+                  <span class="ds-carousel__title">Your Friday mix</span>
+                  <span class="ds-carousel__text">Thirty tracks from what you played late this week.</span>
+                  <a class="ds-link" href="#playlist">Play the mix</a>
+                </div>
+              </div>
+              <div class="ds-carousel__slide">
+                <span class="ds-carousel__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg></span>
+                <div class="ds-carousel__body">
+                  <span class="ds-carousel__title">New from artists you follow</span>
+                  <span class="ds-carousel__text">Four albums and a live set since Monday.</span>
+                  <a class="ds-link" href="#library">See the releases</a>
+                </div>
+              </div>
+              <div class="ds-carousel__slide">
+                <span class="ds-carousel__art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+                <div class="ds-carousel__body">
+                  <span class="ds-carousel__title">A year ago today</span>
+                  <span class="ds-carousel__text">What you kept on repeat last autumn.</span>
+                  <a class="ds-link" href="#playlist">Listen back</a>
+                </div>
+              </div>
+            </div>
+            <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+          </div>
+
+          <section class="ds-panel" data-component="panel">
+            <h2 class="ds-panel__title">Listening with you <span class="ds-badge ds-badge--quiet">3</span></h2>
+            <div class="ds-panel__body">
+              <ul class="ds-panel__rows">
+                <li class="ds-panel__row"><span class="ds-avatar"><span class="ds-avatar__pic">TK</span><span class="ds-avatar__text"><span class="ds-avatar__name">Tomas Keller</span><span class="ds-avatar__meta">Paper boats</span></span></span> <span class="ds-panel__note">now</span></li>
+                <li class="ds-panel__row"><span class="ds-avatar"><span class="ds-avatar__pic">JA</span><span class="ds-avatar__text"><span class="ds-avatar__name">Jun Aoki</span><span class="ds-avatar__meta">Strings only</span></span></span> <span class="ds-panel__note">12 min ago</span></li>
+                <li class="ds-panel__row"><span class="ds-avatar"><span class="ds-avatar__pic">RS</span><span class="ds-avatar__text"><span class="ds-avatar__name">Rosa Silva</span><span class="ds-avatar__meta">Kitchen radio</span></span></span> <span class="ds-panel__note">1 h ago</span></li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+      <h2 class="ds-page__title">Stations for tonight <a class="ds-link" href="#library">All stations</a></h2>
+
+      <div class="ds-grid" data-component="grid">
+        <a class="ds-grid__cell ds-grid__cell--1" href="#playlist">
+          <span class="ds-grid__art"><span class="ds-grid__chip"></span></span>
+          <span class="ds-grid__title">After hours</span>
+          <span class="ds-grid__text">Slow soul and late jazz</span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--2" href="#playlist">
+          <span class="ds-grid__art"><span class="ds-grid__chip"></span></span>
+          <span class="ds-grid__title">Deep focus</span>
+          <span class="ds-grid__text">Piano, no words</span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--3" href="#playlist">
+          <span class="ds-grid__art"><span class="ds-grid__chip"></span></span>
+          <span class="ds-grid__title">Sunday kitchen</span>
+          <span class="ds-grid__text">Warm folk and bossa</span>
+        </a>
+        <a class="ds-grid__cell ds-grid__cell--4" href="#playlist">
+          <span class="ds-grid__art"><span class="ds-grid__chip"></span></span>
+          <span class="ds-grid__title">Night drive</span>
+          <span class="ds-grid__text">Synths at 100 bpm</span>
+        </a>
+      </div>
+
+    </div>
+    </section>
+
+    <section class="ds-view" id="library">
+
+      <ol class="ds-breadcrumb" data-component="breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#library">Library</a></li>
+        <li class="ds-breadcrumb__item">Albums</li>
+      </ol>
+
+      <header class="ds-page-header" data-component="page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Library</h1>
+          <p class="ds-page-header__lead">128 albums, 41 of them kept on this device.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#settings">Import files</a>
+        </div>
+      </header>
+
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#library" aria-current="true">Albums</a></li>
+        <li><a class="ds-tabs__tab" href="#library">Artists</a></li>
+        <li><a class="ds-tabs__tab" href="#library">Downloads</a></li>
+        <li><a class="ds-tabs__tab" href="#library">Podcasts</a></li>
+      </ul>
+
+      <div class="ds-page__row ds-page__row--aside">
+
+        <div class="ds-page__stack">
+
+          <div class="ds-notice__stack" data-component="notice">
+            <div class="ds-notice" role="status">
+              <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6v.5"/></svg>
+              <div><span class="ds-notice__title">Two albums are syncing.</span> They play from the network until the download ends.</div>
+            </div>
+            <div class="ds-notice ds-notice--error" role="alert">
+              <svg class="ds-notice__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 2.5 18 17H2z"/><path d="M10 8v4M10 14v.5"/></svg>
+              <div><span class="ds-notice__title">One download failed.</span> Understudy needs 310 MB and the device has 120 MB left.</div>
+            </div>
+          </div>
+
+          <table class="ds-table" data-component="table">
+            <thead>
+              <tr>
+                <th scope="col" class="ds-table__wide">Album</th>
+                <th scope="col" class="ds-table__opt">Artist</th>
+                <th scope="col" class="ds-table__num ds-table__opt">Tracks</th>
+                <th scope="col" class="ds-table__num">Length</th>
+                <th scope="col">On device</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Low Tide Sessions</a></td>
+                <td class="ds-table__meta ds-table__opt">Odile Marsh</td>
+                <td class="ds-table__num ds-table__opt">11</td>
+                <td class="ds-table__num">46:20</td>
+                <td><span class="ds-badge ds-badge--success">Saved</span></td>
+              </tr>
+              <tr class="is-hover">
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Tram Songs</a></td>
+                <td class="ds-table__meta ds-table__opt">Ivo Brandt</td>
+                <td class="ds-table__num ds-table__opt">9</td>
+                <td class="ds-table__num">38:05</td>
+                <td><span class="ds-badge ds-badge--warning">Syncing</span></td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Understudy</a></td>
+                <td class="ds-table__meta ds-table__opt">Northern Choir</td>
+                <td class="ds-table__num ds-table__opt">14</td>
+                <td class="ds-table__num">61:48</td>
+                <td><span class="ds-badge ds-badge--danger">Failed</span></td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Glasshouse</a></td>
+                <td class="ds-table__meta ds-table__opt">Tessel and Reed</td>
+                <td class="ds-table__num ds-table__opt">10</td>
+                <td class="ds-table__num">42:31</td>
+                <td><span class="ds-badge ds-badge--success">Saved</span></td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Small Hours, Vol. 2</a></td>
+                <td class="ds-table__meta ds-table__opt">Various artists</td>
+                <td class="ds-table__num ds-table__opt">22</td>
+                <td class="ds-table__num">88:12</td>
+                <td><span class="ds-badge ds-badge--quiet">Online</span></td>
+              </tr>
+              <tr>
+                <td><a class="ds-link ds-link--quiet" href="#playlist">Field Notes</a></td>
+                <td class="ds-table__meta ds-table__opt">Jun Aoki Trio</td>
+                <td class="ds-table__num ds-table__opt">8</td>
+                <td class="ds-table__num">35:44</td>
+                <td><span class="ds-badge ds-badge--warning">Syncing</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ul class="ds-pagination" data-component="pagination">
+            <li><a class="ds-pagination__link" href="#library" aria-label="Previous page">Prev</a></li>
+            <li><a class="ds-pagination__link" href="#library">1</a></li>
+            <li><a class="ds-pagination__link is-current" href="#library" aria-current="page">2</a></li>
+            <li><a class="ds-pagination__link is-hover" href="#library">3</a></li>
+            <li><a class="ds-pagination__link" href="#library">4</a></li>
+            <li><a class="ds-pagination__link" href="#library" aria-label="Next page">Next</a></li>
+          </ul>
+
+        </div>
+
+        <div class="ds-page__stack">
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">On this device</h2>
+            <div class="ds-panel__body">
+              <div class="ds-panel__row">
+                <div class="ds-progress ds-progress--ring ds-progress--60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Download space used"><span class="ds-progress__face"><span class="ds-progress__figure">60%</span><span class="ds-progress__caption">used</span></span></div>
+                <dl class="ds-panel__facts">
+                  <dt>Albums</dt><dd>41</dd>
+                  <dt>Space</dt><dd>4.8 GB</dd>
+                  <dt>Free</dt><dd>3.2 GB</dd>
+                </dl>
+              </div>
+            </div>
+          </section>
+
+          <section class="ds-empty" data-component="empty">
+            <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 20h14"/></svg>
+            <h2 class="ds-empty__title">No podcasts yet</h2>
+            <p class="ds-empty__text">Shows you follow appear here, newest episode first.</p>
+            <a class="ds-button" href="#listen">Find a show</a>
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ds-view" id="playlist">
+
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#library">Playlists</a></li>
+        <li class="ds-breadcrumb__item">Night shift</li>
+      </ol>
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Night shift</h1>
+          <p class="ds-page-header__lead">24 tracks, 1 h 38 min. Made by you, edited yesterday.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#settings">Share</a>
+          <a class="ds-button" href="#listen">Play</a>
+        </div>
+      </header>
+
+      <div class="ds-page__row">
+
+        <ul class="ds-list">
+          <li class="ds-list__head">Tracks <span class="ds-badge ds-badge--quiet">24</span></li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">05</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">Blue hour</a>
+              <span class="ds-list__meta">Jun Aoki Trio · Field Notes</span>
+            </div>
+            <span class="ds-list__time">4:55</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">06</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">Ferry, last crossing</a>
+              <span class="ds-list__meta">Tessel and Reed · Glasshouse</span>
+            </div>
+            <span class="ds-list__time">3:33</span>
+          </li>
+          <li class="ds-list__item is-current">
+            <span class="ds-list__cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg></span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">Harbour lights at four</a>
+              <span class="ds-list__meta"><span class="ds-list__dot"></span> Odile Marsh · playing</span>
+            </div>
+            <span class="ds-list__time">4:12</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">08</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">Paper boats</a>
+              <span class="ds-list__meta">Tessel and Reed · Low Tide Sessions</span>
+            </div>
+            <span class="ds-list__time">3:48</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">09</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">The last tram home</a>
+              <span class="ds-list__meta"><span class="ds-list__dot ds-list__dot--new"></span> Ivo Brandt · added today</span>
+            </div>
+            <span class="ds-list__time">5:02</span>
+          </li>
+          <li class="ds-list__item">
+            <span class="ds-list__cover">10</span>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#listen">Salt on the window</a>
+              <span class="ds-list__meta">Odile Marsh · Low Tide Sessions</span>
+            </div>
+            <span class="ds-list__time">3:27</span>
+          </li>
+        </ul>
+
+        <div class="ds-page__stack">
+
+          <section class="ds-dialog" data-component="dialog">
+            <div class="ds-dialog__box" role="dialog" aria-labelledby="d-title">
+              <h2 class="ds-dialog__title" id="d-title">Delete Night shift?</h2>
+              <div class="ds-dialog__body">The playlist goes for everyone it is shared with. The tracks stay in your library.</div>
+              <div class="ds-dialog__actions">
+                <button class="ds-button ds-button--secondary" type="button">Keep it</button>
+                <button class="ds-button ds-button--danger" type="button">Delete</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Shared with</h2>
+            <div class="ds-panel__body">
+              <ul class="ds-panel__rows">
+                <li class="ds-panel__row"><span class="ds-avatar ds-avatar--accent"><span class="ds-avatar__pic">MO</span><span class="ds-avatar__text"><span class="ds-avatar__name">Mira Okafor</span><span class="ds-avatar__meta">Owner</span></span></span> <span class="ds-panel__note">14 tracks</span></li>
+                <li class="ds-panel__row"><span class="ds-avatar"><span class="ds-avatar__pic">TK</span><span class="ds-avatar__text"><span class="ds-avatar__name">Tomas Keller</span><span class="ds-avatar__meta">Can add</span></span></span> <span class="ds-panel__note">10 tracks</span></li>
+                <li><label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Let friends add tracks</span></label></li>
+                <li><label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Show on your profile</span></label></li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ds-view" id="settings">
+
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#settings">Settings</a></li>
+        <li class="ds-breadcrumb__item">Profile and playback</li>
+      </ol>
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Settings</h1>
+          <p class="ds-page-header__lead">Who you are here, and how chronoskin plays.</p>
+        </div>
+      </header>
+
+      <div class="ds-page__row ds-page__row--even">
+
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Profile</h2>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form" action="#settings">
+              <div class="ds-form__row">
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="f-name">Display name</label>
+                  <input class="ds-form__input" id="f-name" type="text" value="Mira Okafor">
+                </div>
+                <div class="ds-form__field">
+                  <label class="ds-form__label" for="f-mail">Email</label>
+                  <input class="ds-form__input is-error" id="f-mail" type="email" value="mira@example" aria-invalid="true" aria-describedby="f-mail-error">
+                  <span class="ds-form__error" id="f-mail-error">Enter a full address, such as mira@example.org.</span>
+                </div>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-quality">Streaming quality</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="f-quality">
+                    <option>High, 320 kbit/s</option>
+                    <option>Normal, 160 kbit/s</option>
+                    <option>Data saver, 96 kbit/s</option>
+                  </select>
+                  <svg class="ds-form__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-fade">Crossfade <span>4 seconds</span></label>
+                <input class="ds-form__range" id="f-fade" type="range" min="0" max="12" value="4">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="f-about">About you</label>
+                <textarea class="ds-form__textarea" id="f-about" placeholder="A line for your profile"></textarea>
+                <span class="ds-form__hint">Shown to people you share playlists with.</span>
+              </div>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Send me the weekly listening summary</label>
+              <div class="ds-form__actions">
+                <button class="ds-button" type="submit">Save profile</button>
+                <a class="ds-button ds-button--secondary" href="#listen">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <div class="ds-page__stack">
+
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">Playback <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Autoplay similar tracks <span class="ds-switch__hint">When a playlist or album ends</span></span></label>
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Level the volume <span class="ds-switch__hint">Same loudness for every track</span></span></label>
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Gapless albums <span class="ds-switch__hint">No pause between tracks of one album</span></span></label>
+              </div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Downloads <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span><span class="ds-switch__label">Download over mobile data</span></label>
+              </div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Privacy <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body">
+                <label class="ds-switch ds-switch--end"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Show what I am playing to friends</span></label>
+              </div>
+            </details>
+          </div>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Account <span class="ds-badge ds-badge--success">Family plan</span></h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__text">Four of six places are taken. The plan renews on the 3rd.</p>
+              <div class="ds-button__row" data-component="buttons">
+                <button class="ds-button" type="button">Invite a listener</button>
+                <button class="ds-button ds-button--secondary" type="button">Sign out</button>
+                <button class="ds-button ds-button--danger" type="button">Close account</button>
+                <button class="ds-button" type="button" disabled>Restore purchases</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ds-view" id="help">
+
+      <ol class="ds-breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#listen">Listen</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#help">Help</a></li>
+        <li class="ds-breadcrumb__item">Getting around</li>
+      </ol>
+
+      <header class="ds-page-header">
+        <div class="ds-page-header__text">
+          <h1 class="ds-page-header__title">Help</h1>
+          <p class="ds-page-header__lead">The keys, the queue and what happens offline.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#settings">Open settings</a>
+        </div>
+      </header>
+
+      <div class="ds-page__row">
+
+        <section class="ds-panel">
+          <div class="ds-panel__body">
+            <div class="ds-prose" data-component="typography">
+              <h1>Getting around the player</h1>
+              <p class="ds-prose__lead">Everything that plays goes through one queue. The disc on the first page always shows its head.</p>
+              <h2>The queue</h2>
+              <p>Starting an album or a playlist replaces the queue; adding a single track puts it <strong>after the one that plays</strong>. With autoplay on, similar tracks follow when the queue runs out.</p>
+              <ul>
+                <li>Press <code>Space</code> to pause and to go on.</li>
+                <li>Press <code>Shift</code> and an arrow to skip a track.</li>
+                <li>Press <code>L</code> to add the playing track to your liked list.</li>
+              </ul>
+              <h3>Offline</h3>
+              <p>Saved albums play without a network. A track that is not on the device is skipped and marked in the list, and the download starts again on the next connection.</p>
+              <h2>More to read</h2>
+              <p class="ds-link__sample" data-component="links">
+                <a class="ds-link" href="#settings">Playback settings</a>
+                <a class="ds-link is-visited" href="#library">Managing downloads</a>
+                <a class="ds-link is-hover" href="#playlist">Sharing a playlist</a>
+                <a class="ds-link is-active" href="#help">All shortcuts</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="ds-page__stack">
+
+          <div class="ds-accordion">
+            <details class="ds-accordion__item" open>
+              <summary class="ds-accordion__head">Why did a track skip? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body"><p>It was not on the device and there was no network. It is marked with a red dot in the queue.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Can two people listen at once? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body"><p>On the family plan, yes: each listener has a queue of their own.</p></div>
+            </details>
+            <details class="ds-accordion__item">
+              <summary class="ds-accordion__head">Where do imported files go? <span class="ds-accordion__chevron"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></span></summary>
+              <div class="ds-accordion__body"><p>Into the library, under Albums, with the tags the files carry.</p></div>
+            </details>
+          </div>
+
+          <section class="ds-panel">
+            <h2 class="ds-panel__title">Still stuck?</h2>
+            <div class="ds-panel__body">
+              <p class="ds-panel__text">Write to the people who make chronoskin. Answers come within a working day.</p>
+              <a class="ds-button ds-button--secondary" href="#settings">Write to support</a>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="ds-footer" data-component="footer">
+      <div class="ds-footer__inner">
+        <span>chronoskin, a player for one queue at a time.</span>
+        <ul class="ds-footer__links">
+          <li><a class="ds-footer__link" href="#help">Help</a></li>
+          <li><a class="ds-footer__link is-hover" href="#settings">Privacy</a></li>
+          <li><a class="ds-footer__link" href="#help">Terms</a></li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+</div>
+
+</body>
+</html>

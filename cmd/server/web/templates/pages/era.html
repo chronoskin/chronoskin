@@ -1,0 +1,48 @@
+{{/* One era: what it is and every layout it has. Data: Era, Lead and
+     Traits (its description in two parts), Figures. */}}
+{{define "main"}}
+<main class="page era-page">
+  <div class="crumbs"><a href="/">Eras</a> / {{.Era.Years}}</div>
+  <div class="era-head">
+    <div>
+      <h1>{{.Era.Name}}</h1>
+      <p class="lead">{{.Lead}}</p>
+      {{if .Traits}}<p class="traits">{{.Traits}}</p>{{end}}
+    </div>
+    <a class="btn primary big" href="/api/generate?era={{.Era.Slug}}&amp;mode=mix" data-goatcounter-click="eras-generate">Generate a style</a>
+  </div>
+
+  <ul class="figures">
+    {{range .Figures}}
+    <li><b>{{.N}}</b> {{.Label}}</li>
+    {{end}}
+  </ul>
+
+  <div class="section-head">
+    <h2>Layouts</h2>
+  </div>
+  <ul class="cards">
+    {{range $i, $layout := .Era.LayoutViews}}
+    <li class="card">
+      <a class="shot" href="{{$layout.Link}}">
+        {{if $layout.Preview}}
+        <img
+          src="{{$layout.Preview}}"
+          srcset="{{$layout.Preview}}&amp;w=540 540w, {{$layout.Preview}} 1080w"
+          sizes="(max-width: 720px) 92vw, 440px"
+          alt="{{$layout.Name}}"
+          width="640"
+          height="400"
+          {{if ge $i 3}}loading="lazy"{{else if eq $i 0}}fetchpriority="high"{{end}}
+        >
+        {{end}}
+      </a>
+      <div class="body">
+        <h3 class="name"><a href="{{$layout.Link}}">{{$layout.Name}}</a></h3>
+        <div class="meta">{{$layout.Archetype}}</div>
+      </div>
+    </li>
+    {{end}}
+  </ul>
+</main>
+{{end}}

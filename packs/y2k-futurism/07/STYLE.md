@@ -1,0 +1,91 @@
+# Y2K futurism studio window, 1999 to 2003
+
+## Summary
+
+The small fixed window that design studios, record labels and film weeks used as their site around the turn of the millennium: a 700px pod centred on a dark hatched screen, with a stage on top, a filmstrip of numbered work under it, and the mark and the navigation docked at the foot as a control deck. It is set in small lowercase type on one loud sheet colour, with black keys, white strips, hairlines and corner ticks, and every section carries a two-digit number. Such windows were drawn as images or built as plug-in movies at the time and are rebuilt here with borders, two-tone fills and inline SVG; the look gave way to wide scrolling pages from about 2004.
+
+## Layout
+
+- The page is not fluid. `--size-page` is 700px; `.ds-page__frame` is one window of that width centred horizontally (`margin: 0 auto`), outlined by `--border-width-strong` and rounded by `--radius-page`, with `--fill-page` showing around it. All text sits in the window; nothing is written on the page background.
+- The navigation is at the foot, not at the top. `.ds-nav` is written first in the document and shown last: the frame is a flex column and the deck has `order: 2`, after the views and after `.ds-footer` (`order: 1`). The deck is `position: sticky; bottom: 0`, so on a view taller than the screen it stays docked at the foot of the screen, the way a frame or a movie console did. Never move the navigation to the top and never add a second one.
+- Every view opens with one thin strip in `--fill-bar-alt`: `.ds-topline` on the home view (tagline at the left, one note at the right) and `.ds-breadcrumb` on inner views. It is the window's title line.
+- The home view is a splash and has no columns at its top: `.ds-topline`, then `.ds-hero` (the stage) from edge to edge, then `.ds-grid` (the filmstrip of four numbered frames that touch) from edge to edge, then one `.ds-page__body` holding a `.ds-page__split`: the journal `.ds-list` at the left and `--size-side` 204px of small `.ds-panel` modules at the right.
+- Inner pages (every view below the home view) have no stage and no filmstrip. Under the `.ds-breadcrumb` strip comes one `.ds-page__body`, padded `--space-6` and stacking its blocks `--space-5` apart in a single column: `.ds-page-header` with the section's number in place of the hero, then an optional `.ds-stat` strip and `.ds-notices`, then the working block (`.ds-tabs` touching the `.ds-table` it switches, with `.ds-pagination` or `.ds-buttons` under it), and last a `.ds-page__row` of three equal modules (or `.ds-page__row--two` of two) for the sidebar block, panels, the dialog and the empty state. A page that needs a note column beside its work (an article, a form) uses `.ds-page__split` instead of the row: the work at the left, 204px of modules at the right. There is no permanent side column.
+- Spacing scale: `--space-1` 1px and `--space-2` 2px are the vertical padding of keys, inputs and small strips; `--space-3` 4px is the padding of table cells, tabs and the top line and the gap between notices; `--space-4` 6px is the gap between buttons and the padding of list rows; `--space-5` 10px is the gap between blocks, the side padding of panels and keys and the gap between paragraphs; `--space-6` 16px is the padding of a view's body and the gutter of a split; `--space-7` 24px is the padding of the stage and the space above the window. There is no step above 24px.
+- Fixed sizes: `--size-stage` 200px is the least height of the stage; `--size-figure` 190px its line drawing; `--size-thumb` 44px the drawing in a filmstrip frame; `--size-mark` 28px the tile of the brand mark; `--size-tick` 9px a corner tick; `--size-date` 52px the date margin of the journal; `--size-search` 110px a short input; `--size-label` 104px the label column of a form; `--size-field` 210px a text input; `--size-area` 64px a textarea; `--size-dialog` 300px a dialog; `--size-led` 6px a lamp or bullet square.
+- Views. The specimen is one example site, a design studio, in five views. `home` is the splash: top line, stage, filmstrip of four recent projects, the journal and two small panels. `work` is the index: page header, a tabbed table of projects with pagination, then a row with the disciplines, the work in hand and a call to brief. `project` is a case study: the prose beside a sheet of particulars, then a row of further links. `clients` is the client room: page header, stats, notices, the tabbed table of proofs with status badges and the button row, then the withdraw dialog beside the empty state of invoices. `brief` is the form page, with the next steps and the studio's block at the right.
+
+## Typography and colour roles
+
+- `--font-body` and `--font-ui` are Trebuchet MS; `--font-heading` is Century Gothic, the stand-in for the geometric and extended commercial faces the references drew as images; `--font-mono` is Lucida Console, used for numbers, dates, the read-outs of the deck and the stage, and numeric table columns.
+- `--text-base` 11px is body text. `--text-small` 10px is meta lines, the top line, the read-outs, table heads, badges and pagination. `--text-ui` 10px bold lowercase (`--ui-transform`) is keys, tabs and the navigation. `--text-large` 13px is lead paragraphs. `--text-h3` 11px, `--text-h2` 13px, `--text-h1` 15px; `--text-display` 18px, tracked -1px, is the wordmark, the stage title, page titles and stat figures and is the largest text.
+- Headings are bold and lowercase (`--heading-transform`); nothing is uppercased. `--line-body` is 1.35.
+- `--color-page` #303000 is outside the window. `--color-canvas` and `--color-surface` #d0d030 are the sheet and the panels on it; `--color-surface-alt` #c0c020 fills forms, the stat strip, the sidebar block, alternate table rows and the empty state; `--color-surface-strong` #ffffff is the title strip of the sidebar block.
+- `--color-bar` #303030 with `--color-bar-text` white, filled by the two-tone `--fill-bar`, is the navigation keys, the read-out strip of the stage, panel and dialog titles, table heads and the current tab. `--color-bar-alt` #ffffff with black text is the top line and breadcrumb strip, inactive tabs and `.ds-panel--alt` titles. `--color-inverse` #482018 with white text is the one `.ds-panel--inverse` of a view and the footer band; links inside take the inverse text colour and are underlined.
+- `--color-text` #181800, `--color-text-muted` #505020 for dates, labels and captions, `--color-heading` black, `--color-heading-alt` #482018 for h3 in prose.
+- `--color-link` #000098, not underlined (`--link-decoration` none) and underlined on hover; `--color-link-quiet` is the text colour, for table tools, sidebar entries and pagination. Hover #800000, active #704090, visited #482018. Links on a bar take that bar's text colour.
+- `--color-accent` #98d0d0 with black text is the current navigation key, the badge, the stage kicker, the section bullet and the current page number. `--color-accent-alt` #704090 is a lamp colour only.
+- `--color-fill-1` to `--color-fill-4` (#ffffff, #98d0d0, #e8e8e8, #d0d098) are the stage (fill 1) and the four filmstrip frames. Text on them is `--color-text` and `--color-heading`; titles in a frame keep the heading colour because a fill may be close to the link colour.
+- The primary button is `--color-button` #303030 with white text; the secondary is white with black text. Inputs are white with a `--color-input-border` line.
+- Each text colour is used only on its own fill. `--color-danger` #a00000 is text only on `--color-danger-surface` (error notice, field error chip) and otherwise a rim or lamp colour; `--color-success` and `--color-warning` are lamp and rim colours and never carry text.
+- Surface: keys and badges are nearly square (`--radius-control` and `--radius-pill` 2px) inside round pods (`--radius-panel` 12px, `--radius-page` 20px). Bars and buttons are split in two flat tones at half height, with no soft gradient. Buttons cast a hard 2px offset shadow, the dialog a 4px one; panels cast none. `--fill-page` is a diagonal hatch.
+- One-off values built in `components.css` without a token: `dotted` on the empty-state outline, `underline` for links on the inverse fill, `opacity` 0.6 and 0.7 on separators and key numbers, and `color-mix()` of the bar text with `transparent` for the hairlines between navigation keys.
+- Visited, hover, active and focus colours cannot be measured on a static capture; they are colours measured elsewhere in the references assigned to those roles.
+
+## Components
+
+- `.ds-page` on `<body>`: page fill and base type. Wrap everything in `.ds-page__frame`. `.ds-page__body` is the padded column of a view; `.ds-page__split` puts a `.ds-page__main` or other block beside a `.ds-page__side` stack; `.ds-page__row` is three equal modules, `.ds-page__row--two` two. `.ds-block` groups a tab row or section head with the block it heads. `.ds-view` wraps one screen; `.ds-view--home` marks the first.
+- `.ds-nav`: the control deck at the foot. `.ds-nav__deck` holds the `.ds-brand` at the left and `.ds-nav__status`, a monospace read-out, at the right. `.ds-nav__links` is a row of equal keys: `.ds-nav__item` holding a `.ds-nav__link` that starts with its `.ds-nav__num` ("01"). `is-current` fills the key with the accent. One rule per view lights the key whose `href` names the view that is showing; in a real multi-page site set `is-current` instead.
+- `.ds-brand`: the site's mark and name, at the left of the deck, linking home. `.ds-brand__mark` is a 28px tile dressed like the primary button (`--fill-button`, `--color-button-text`, 1px `--color-border-strong` rim, `--radius-control`, `--shadow-control`) holding the mark as inline SVG; `.ds-brand__name` is the 18px wordmark. The name `chronoskin` and its mark are placeholders: replace them with the installing project's own name and logo, keeping the tile.
+- `.ds-topline`: the home view's opening strip, two `.ds-topline__text` lines.
+- `.ds-breadcrumb`: the opening strip of an inner view: `.ds-breadcrumb__link` entries, `.ds-breadcrumb__sep` (`/`), ending in bold `.ds-breadcrumb__current`.
+- `.ds-hero`: the stage, home view only, one per site. `.ds-hero__body` is two columns: the text (`.ds-hero__kicker` accent chip, `.ds-hero__title` 18px, `.ds-hero__text` 13px, `.ds-hero__actions` with one primary button, one secondary and one link) and `.ds-hero__figure`, an inline SVG line drawing. `.ds-hero__tick--tl` and `.ds-hero__tick--tr` (with `.ds-hero__tick`) are the corner ticks; `.ds-hero__caption` is the read-out strip along its foot. No photograph.
+- `.ds-grid`: the filmstrip: four `.ds-grid__cell` frames that touch, tinted with `--1`, `--2`, `--3` or the base fill. Each has a `.ds-grid__num` ("01 / web"), a `.ds-grid__figure` line drawing, a 13px `.ds-grid__title` link and a `.ds-grid__text` line. Always four across.
+- `.ds-section`: the head of a block: `.ds-section__title` opened by an accent square, on a hairline, with an optional `.ds-section__more` link at the right.
+- `.ds-page-header`: head of an inner view, first thing in the body: `.ds-page-header__num` (the section's number), `.ds-page-header__title` (18px, the view's only h1), one line of `.ds-page-header__text`, and `.ds-page-header__action` at the right with one `.ds-button`; a 2px rule closes it.
+- `.ds-stat`: the read-out strip under the page header. `.ds-stat` is the strip; each figure is a `.ds-stat__item` cell holding an 18px `.ds-stat__value` over a 10px `.ds-stat__label`. Three to five cells, no icons.
+- `.ds-prose`: article text: h1, h2, h3, p, ul, ol, `code`, strong; `.ds-prose__byline` is the monospace line above the title and `.ds-prose__lead` the 13px first paragraph.
+- `.ds-link`: link with `is-visited`, `is-hover`, `is-active`, `is-focus`. `.ds-link--quiet` is the text-coloured link for tools and navigation inside content. `.ds-link--go` draws a small arrow before a link that leads onward. `.ds-links` lays a row of links out.
+- `.ds-button`: the dark key. `.ds-button--secondary` is the white key. `.ds-button--danger` is the secondary key with a rim and a square lamp in `--color-danger`; the label keeps the secondary text colour. `disabled` or `is-disabled` flattens it to `--color-disabled`; `is-hover` lightens it. Group with `.ds-buttons`.
+- `.ds-form`: a pod of `.ds-form__row` pairs divided by hairlines: bold `.ds-form__label` (optional `.ds-form__hint`) and a control. Controls take `.ds-form__input` (`--small`, `--auto` for selects, `--area` for textareas); `is-invalid` plus a `.ds-form__error` chip marks a bad field. `.ds-form__check` with `.ds-form__checkbox` for checkboxes; `.ds-form__actions` is the button row under the controls.
+- `.ds-table`: data table: two-tone `th` in 10px lowercase, rows on alternating surfaces divided by faint hairlines, `.ds-table__num` right-aligned in the monospace. `.ds-table__caption` is a small line under it.
+- `.ds-tabs`: a row of `.ds-tabs__tab` keys standing on a 2px rule; `is-current` takes the bar fill. Use it directly above the table it switches.
+- `.ds-list`: the journal. Each `.ds-list__item` has a `.ds-list__date` in the 52px margin and, beside it, a bold `.ds-list__title`, a `.ds-list__text` line and a small `.ds-list__meta` line. `.ds-list--compact` is the one-line variant without the margin, for panels.
+- `.ds-panel`: a pod module: outlined, `.ds-panel__title` bar over `.ds-panel__body`. Body helpers: `.ds-panel__text`, `.ds-panel__list`, `.ds-panel__small`, `.ds-panel__field` (input with button), `.ds-panel__actions`, and `.ds-panel__spec` rows (`.ds-panel__spec-label` and a value) for a sheet of particulars. `.ds-panel--alt` has the white title; `.ds-panel--inverse` is the dark block, at most one per view.
+- `.ds-sidebar`: a block of section links in a module row or a side stack: `.ds-sidebar__title` strip over a `.ds-sidebar__list` of `.ds-sidebar__item` rows, each a `.ds-link--quiet` with an optional `.ds-badge--count` at the right.
+- `.ds-badge`: small accent chip ("new"). `.ds-badge--count` is a bare monospace count. Status labels are a plain outlined chip with a square lamp: `.ds-badge--success`, `.ds-badge--warning`, `.ds-badge--danger`, and `.ds-badge--alt` for a neutral marker; lamp and rim take the status colour, the word stays in `--color-text`.
+- `.ds-notice`: one-line message in a box with a 2px left edge, starting with a `.ds-notice__title`. `.ds-notice--error` uses the danger colour for text and rim on the danger surface. Stack several in `.ds-notices`.
+- `.ds-pagination`: right-aligned row of small boxes in the monospace: `.ds-pagination__link` on quiet links, the current page as accent-filled `.ds-pagination__current`.
+- `.ds-dialog`: a small window in the page flow: 300px, 2px outline, bar `.ds-dialog__title`, `.ds-dialog__body` with `.ds-dialog__text` and right-aligned `.ds-dialog__actions`. `.ds-dialog__backdrop` is the flat pod it sits on. No blur, no floating.
+- `.ds-empty`: dotted-outline pod with a centred muted `.ds-empty__text` and one button.
+- `.ds-footer`: closes the views, above the deck: `.ds-footer__band`, the inverse band with `.ds-footer__text` (the copyright line) and `.ds-footer__links` of `.ds-footer__link` entries.
+- `.ds-menu` (`.ds-menu__list`, `.ds-menu__link`): a nav item with a drop-down list on hover or focus.
+- `.ds-meter` (`.ds-meter__label`) with `.ds-progress` (`--30`, `--50`, `--70`, `--90`, `.ds-progress__bar`): a segmented loading or signal bar with its label.
+- `.ds-accordion` (`__summary`, `__body`): a `<details>` panel for specifications.
+- `.ds-tooltip` (`__tip`): a small label shown on hover or focus of a word.
+- `.ds-carousel` (`__track`, `__slide`, `__title`, `__text`, `__bar`, `__arrow`): a scroll-snap featured viewer with a counter such as 01/03.
+- `.ds-avatar`: initials in a round badge beside a name.
+
+## Never
+
+- `border-radius <= 20px`: keys are 2px, pods 12px, the window 20px.
+- `border-width <= 2px`: hairlines, and 2px for the window, the deck, the dialog and the rules under tabs and page titles.
+- `box-shadow-blur <= 0px`: shadows are hard offsets, never soft.
+- `text-shadow = none`: text is flat.
+- `gradient-fills <= 20%`: only bars and keys are two-tone; sheets, pods and frames are flat.
+- `font-size <= 18px`: the wordmark, stage title, page titles and stat figures are the largest text.
+- `font-size >= 10px`: small text is 10px and nothing is smaller.
+- `font-weight <= 700`: regular and bold only.
+- `font-families <= 3`: Trebuchet MS, Century Gothic for headings, a monospace for numbers.
+- `letter-spacing <= 1px`: only display text is tracked, by 1px inward.
+- `uppercase-text <= 0%`: nothing is uppercased; interface text is lowercase.
+- `row-gap <= 2px`: rows of lists and tables touch.
+- `block-gap <= 16px`: neighbouring blocks sit 10px apart.
+- `content-width <= 700px`: text stays inside the window.
+- `palette-colours <= 20`: one sheet colour and its shade, white, charcoal, brown, teal, navy links and three lamps.
+- `transition = none`: states change instantly.
+- `animation = none`: nothing moves.
+
+## Extending
+
+Derive a new component from the nearest one in the specimen: a new module copies `.ds-panel` (pod outline in `--color-border-strong`, bar title, body padded `--space-5`) and goes into a `.ds-page__row` or the side of a `.ds-page__split`; a new block in the body starts with a `.ds-section` head and puts flat content under it; a new inner view copies one of the specimen's (breadcrumb strip, numbered `.ds-page-header`, working block, module row) and gets the next two-digit number and a key in the deck; a new control copies `.ds-button` or `.ds-form__input`; a new status mark copies the lamp chip of `.ds-badge--success`. Use only the tokens in `tokens.css` and the `--size-*` and `--space-*` tokens in `components.css`, and take the nearest spacing step instead of a new number. Pair every text token with its own fill and with no other, and never use a status colour as a text colour. Keep the navigation in the deck at the foot, keep text between 10px and 13px apart from 15px article titles and 18px display text, number what can be numbered, and separate things with a hairline, a strip or a pod outline, never with soft shadows or large empty areas.

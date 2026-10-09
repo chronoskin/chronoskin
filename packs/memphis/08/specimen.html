@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: memphis habit board specimen</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <nav class="ds-nav__inner" aria-label="Main">
+    <a class="ds-brand" data-component="brand" href="#home">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 18q2.3-5.6 4.6 0t4.6 0t4.6 0t4.6 0" stroke-width="2.4"/><circle cx="6.5" cy="7" r="3.4" fill="currentColor" stroke="none"/><polygon points="16.8,3.6 21.2,10.6 12.4,10.6"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__links">
+      <li><a class="ds-nav__link" href="#home"><span class="ds-nav__icon" aria-hidden="true"></span>Today</a></li>
+      <li><a class="ds-nav__link" href="#habits"><span class="ds-nav__icon" aria-hidden="true"></span>Habits</a></li>
+      <li><a class="ds-nav__link" href="#new"><span class="ds-nav__icon" aria-hidden="true"></span>New</a></li>
+      <li>
+        <details class="ds-menu" data-component="menu">
+          <summary class="ds-nav__link ds-menu__toggle"><span class="ds-nav__icon" aria-hidden="true"></span>More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg></summary>
+          <ul class="ds-menu__list">
+            <li><a class="ds-menu__link" href="#habit">Longest streak <span class="ds-menu__note">19 days</span></a></li>
+            <li><a class="ds-menu__link" href="#habits">Paused habits <span class="ds-menu__note">0</span></a></li>
+            <li><a class="ds-menu__link" href="#new">Reminders</a></li>
+            <li><a class="ds-menu__link" href="#habit">How counting works</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+    <div class="ds-nav__actions">
+      <span class="ds-badge ds-badge--plain">Week 41</span>
+      <a class="ds-avatar ds-avatar--2" href="#habits" aria-label="Aino Berg, your habits"><span class="ds-avatar__pic">AB</span></a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="ds-view ds-view--home" id="home">
+  <section class="ds-hero" data-component="hero">
+    <span class="ds-cover ds-cover--3 ds-cover--rings ds-cover--ground ds-hero__ground" aria-hidden="true"></span>
+    <div class="ds-hero__inner">
+      <div class="ds-hero__body">
+        <span class="ds-badge ds-badge--alt ds-badge--tilt">Thursday, day 19 in a row</span>
+        <h1 class="ds-hero__title">Four of six. <span class="ds-hero__mark">Two to go.</span></h1>
+        <p class="ds-hero__lead">chronoskin counts the small things you meant to do today. Reading and the evening walk are still open, and both fit before ten.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#habit">Check in reading</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#habits">All six habits</a>
+        </div>
+      </div>
+      <div class="ds-hero__art">
+        <span class="ds-shape ds-shape--quarter ds-shape--xl ds-shape--c5 ds-shape--side" aria-hidden="true"></span>
+        <span class="ds-shape ds-shape--line ds-shape--ink ds-shape--tilt" aria-hidden="true"><svg viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 18 4l15 16L48 4l15 16L78 4l15 16 15-16 9 10"/></svg></span>
+        <span class="ds-shape ds-shape--tri ds-shape--c2 ds-shape--turn" aria-hidden="true"></span>
+        <span class="ds-shape ds-shape--dots ds-shape--l ds-shape--ink" aria-hidden="true"></span>
+        <div class="ds-dial ds-dial--66" role="img" aria-label="Four of six habits done today">
+          <span class="ds-dial__ring"></span>
+          <span class="ds-dial__hub"><strong class="ds-dial__value">4/6</strong><span class="ds-dial__label">done today</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band ds-band--alt ds-band--lift">
+    <div class="ds-band__inner ds-stack ds-stack--wide">
+      <ul class="ds-stat" data-component="stats">
+        <li class="ds-stat__cell"><strong class="ds-stat__value">19</strong><span class="ds-stat__label">days in a row</span></li>
+        <li class="ds-stat__cell"><strong class="ds-stat__value">86%</strong><span class="ds-stat__label">this week</span></li>
+        <li class="ds-stat__cell"><strong class="ds-stat__value">212</strong><span class="ds-stat__label">check-ins since June</span></li>
+        <li class="ds-stat__cell"><strong class="ds-stat__value">6</strong><span class="ds-stat__label">habits</span></li>
+      </ul>
+      <div class="ds-split">
+        <section class="ds-chart" aria-label="This week">
+          <div class="ds-chart__head">
+            <h2 class="ds-chart__title">This week</h2>
+            <a class="ds-link" href="#habits">Habit by habit</a>
+          </div>
+          <ol class="ds-chart__bars">
+            <li class="ds-chart__bar ds-chart__bar--5"><span class="ds-chart__value">5</span><span class="ds-cover ds-cover--1 ds-cover--dots"></span></li>
+            <li class="ds-chart__bar ds-chart__bar--6"><span class="ds-chart__value">6</span><span class="ds-cover ds-cover--2 ds-cover--stripes"></span></li>
+            <li class="ds-chart__bar ds-chart__bar--3"><span class="ds-chart__value">3</span><span class="ds-cover ds-cover--3 ds-cover--zig"></span></li>
+            <li class="ds-chart__bar ds-chart__bar--4 is-current"><span class="ds-chart__value">4</span><span class="ds-cover ds-cover--4 ds-cover--rings"></span></li>
+            <li class="ds-chart__bar ds-chart__bar--none"></li>
+            <li class="ds-chart__bar ds-chart__bar--none"></li>
+            <li class="ds-chart__bar ds-chart__bar--none"></li>
+          </ol>
+          <span class="ds-chart__ground" aria-hidden="true"></span>
+          <ol class="ds-chart__days" aria-hidden="true">
+            <li class="ds-chart__day">Mon</li>
+            <li class="ds-chart__day">Tue</li>
+            <li class="ds-chart__day">Wed</li>
+            <li class="ds-chart__day is-current">Thu</li>
+            <li class="ds-chart__day">Fri</li>
+            <li class="ds-chart__day">Sat</li>
+            <li class="ds-chart__day">Sun</li>
+          </ol>
+        </section>
+        <div>
+          <h2 class="ds-band__label">Today's six</h2>
+          <ul class="ds-list" data-component="list">
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Water before coffee</a></h3><p class="ds-list__text">One glass, first thing</p></div>
+              <span class="ds-list__meta">day 19</span>
+            </li>
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Stretch for five minutes</a></h3><p class="ds-list__text">Before the desk</p></div>
+              <span class="ds-list__meta">day 12</span>
+            </li>
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Draw one thing</a></h3><p class="ds-list__text">Any size, any pen</p></div>
+              <span class="ds-list__meta">day 7</span>
+            </li>
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Write to someone</a></h3><p class="ds-list__text">A line is enough</p></div>
+              <span class="ds-list__meta">day 3</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__check" aria-label="open"></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Read twenty pages</a></h3><p class="ds-list__text">Evenings, phone in the hall</p></div>
+              <span class="ds-list__meta">open</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__check" aria-label="open"></span>
+              <div class="ds-list__main"><h3 class="ds-list__title"><a class="ds-link ds-link--quiet" href="#habit">Walk round the block</a></h3><p class="ds-list__text">After dinner</p></div>
+              <span class="ds-list__meta">open</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band">
+    <span class="ds-cover ds-cover--4 ds-cover--confetti ds-cover--ground ds-band__slab" aria-hidden="true"></span>
+    <span class="ds-shape ds-shape--ring ds-shape--l ds-shape--c2 ds-shape--edge-l" aria-hidden="true"></span>
+    <span class="ds-shape ds-shape--draw ds-shape--s ds-shape--c4 ds-shape--tl ds-shape--tilt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></span>
+    <div class="ds-band__inner ds-split ds-split--flip">
+      <div class="ds-stack">
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Nudges</h2>
+          <div class="ds-panel__body">
+            <p>One quiet reminder for each habit that is still open, and nothing after ten.</p>
+            <label class="ds-switch ds-switch--end" data-component="switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Evening nudge<span class="ds-switch__hint">At eight, for what is still open</span></span></label>
+            <div class="ds-progress__legend"><span>Thirty days of reading</span><span>19 of 30</span></div>
+            <span class="ds-progress ds-progress--60" data-component="progress" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" aria-label="Thirty days of reading"><span class="ds-progress__bar"></span></span>
+            <a class="ds-link" href="#new">Change the times</a>
+          </div>
+        </section>
+        <div class="ds-carousel" data-component="carousel" aria-roledescription="carousel" aria-label="From people keeping pace with you">
+          <div class="ds-carousel__track">
+            <figure class="ds-carousel__slide">
+              <blockquote class="ds-carousel__quote">I stopped counting pages and started counting evenings. That one stuck.</blockquote>
+              <figcaption class="ds-avatar ds-avatar--3" data-component="avatar"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><path d="M7.5 14.5c2.6 2.8 6.4 2.8 9 0"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Rosa Kiviniemi</span><span class="ds-avatar__meta">reads with you, day 44</span></span></figcaption>
+            </figure>
+            <figure class="ds-carousel__slide">
+              <blockquote class="ds-carousel__quote">A missed day is a hoop, not a hole.</blockquote>
+              <figcaption class="ds-avatar ds-avatar--1"><span class="ds-avatar__pic">MD</span><span class="ds-avatar__text"><span class="ds-avatar__name">Milan Dvorak</span><span class="ds-avatar__meta">walks with you, day 8</span></span></figcaption>
+            </figure>
+          </div>
+          <div class="ds-carousel__foot">
+            <div class="ds-carousel__dots" aria-hidden="true"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+            <button class="ds-carousel__arrow" type="button" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+            <button class="ds-carousel__arrow" type="button" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <section class="ds-month" aria-label="October, day by day">
+        <div class="ds-chart__head">
+          <h2 class="ds-chart__title">October in discs</h2>
+          <div class="ds-badges"><span class="ds-badge ds-badge--success">6 full days</span><span class="ds-badge ds-badge--plain">1 missed</span></div>
+        </div>
+        <ol class="ds-grid" data-component="grid">
+          <li class="ds-grid__head">Mon</li><li class="ds-grid__head">Tue</li><li class="ds-grid__head">Wed</li><li class="ds-grid__head">Thu</li><li class="ds-grid__head">Fri</li><li class="ds-grid__head">Sat</li><li class="ds-grid__head">Sun</li>
+          <li class="ds-grid__cell is-done">1</li><li class="ds-grid__cell is-done">2</li><li class="ds-grid__cell is-done">3</li><li class="ds-grid__cell is-missed">4</li><li class="ds-grid__cell is-done">5</li><li class="ds-grid__cell is-done">6</li><li class="ds-grid__cell is-done">7</li>
+          <li class="ds-grid__cell is-current">8</li><li class="ds-grid__cell">9</li><li class="ds-grid__cell">10</li><li class="ds-grid__cell">11</li><li class="ds-grid__cell">12</li><li class="ds-grid__cell">13</li><li class="ds-grid__cell">14</li>
+          <li class="ds-grid__cell">15</li><li class="ds-grid__cell">16</li><li class="ds-grid__cell">17</li><li class="ds-grid__cell">18</li><li class="ds-grid__cell">19</li><li class="ds-grid__cell">20</li><li class="ds-grid__cell">21</li>
+          <li class="ds-grid__cell">22</li><li class="ds-grid__cell">23</li><li class="ds-grid__cell">24</li><li class="ds-grid__cell">25</li><li class="ds-grid__cell">26</li><li class="ds-grid__cell">27</li><li class="ds-grid__cell">28</li>
+        </ol>
+        <p>A full day is a disc, a missed one a hoop. <a class="ds-link" href="#habit">How counting works</a></p>
+      </section>
+    </div>
+  </section>
+</section>
+
+<section class="ds-view" id="habits">
+  <section class="ds-page-header">
+    <span class="ds-cover ds-cover--2 ds-cover--dots ds-cover--ground ds-page-header__disc" aria-hidden="true"></span>
+    <div class="ds-page-header__inner">
+      <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Today</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#habits">Habits</a></li>
+        <li class="ds-breadcrumb__item is-current" aria-current="page">Active</li>
+      </ol>
+      <div class="ds-page-header__row">
+        <div>
+          <h1 class="ds-page-header__title">Habits</h1>
+          <p class="ds-page-header__lead">Six running, three finished, none paused.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button" href="#new">New habit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band">
+    <span class="ds-shape ds-shape--half ds-shape--l ds-shape--c3 ds-shape--edge-r ds-shape--side" aria-hidden="true"></span>
+    <div class="ds-band__inner ds-split ds-split--side">
+      <div class="ds-stack">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__title">Areas</h2>
+          <ul class="ds-sidebar__list">
+            <li class="ds-sidebar__item is-current"><a class="ds-link ds-link--quiet" href="#habits">Everything</a><span class="ds-badge">6</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#habits">Body</a><span class="ds-badge ds-badge--plain">3</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#habits">Head</a><span class="ds-badge ds-badge--plain">2</span></li>
+            <li class="ds-sidebar__item"><a class="ds-link ds-link--quiet" href="#habits">People</a><span class="ds-badge ds-badge--plain">1</span></li>
+          </ul>
+          <div class="ds-cover ds-cover--1 ds-cover--zig" aria-hidden="true"><span class="ds-shape ds-shape--disc ds-shape--s ds-shape--paper"></span><span class="ds-shape ds-shape--tri ds-shape--s ds-shape--c3"></span></div>
+        </aside>
+        <div class="ds-empty" data-component="empty">
+          <div class="ds-empty__art" aria-hidden="true"><span class="ds-shape ds-shape--hoop ds-shape--s ds-shape--c2"></span><span class="ds-shape ds-shape--hoop ds-shape--s ds-shape--c4"></span><span class="ds-shape ds-shape--disc ds-shape--s ds-shape--c3"></span></div>
+          <h3 class="ds-empty__title">Nothing is paused</h3>
+          <p class="ds-empty__text">A paused habit keeps its streak for two weeks.</p>
+          <a class="ds-button ds-button--secondary ds-button--small" href="#habit">How counting works</a>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <ul class="ds-tabs" data-component="tabs" role="tablist">
+          <li><a class="ds-tabs__tab is-current" href="#habits" role="tab" aria-selected="true">Active <span class="ds-badge ds-badge--plain">6</span></a></li>
+          <li><a class="ds-tabs__tab" href="#habits" role="tab">Paused</a></li>
+          <li><a class="ds-tabs__tab" href="#habits" role="tab">Finished</a></li>
+        </ul>
+        <div class="ds-stack" data-component="notice">
+          <div class="ds-notice" role="status">
+            <strong class="ds-notice__title">Moved</strong>
+            <p class="ds-notice__text">Reading now counts in the evening, from six until midnight.</p>
+          </div>
+          <div class="ds-notice ds-notice--error" role="alert">
+            <strong class="ds-notice__title">Not saved</strong>
+            <p class="ds-notice__text">Two check-ins from this morning are waiting for a connection.</p>
+          </div>
+        </div>
+        <table class="ds-table" data-component="table">
+          <thead>
+            <tr><th>Habit</th><th class="ds-table__extra">Area</th><th>Today</th><th class="ds-table__num">Streak</th><th class="ds-table__extra ds-table__num">This month</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="ds-table__name"><a class="ds-link ds-link--quiet" href="#habit">Water before coffee</a></span></td><td class="ds-table__extra">Body</td><td><span class="ds-badge ds-badge--success">Done</span></td><td class="ds-table__num">19</td><td class="ds-table__extra ds-table__num">100%</td></tr>
+            <tr><td><span class="ds-table__name"><a class="ds-link ds-link--quiet" href="#habit">Stretch for five minutes</a></span></td><td class="ds-table__extra">Body</td><td><span class="ds-badge ds-badge--success">Done</span></td><td class="ds-table__num">12</td><td class="ds-table__extra ds-table__num">88%</td></tr>
+            <tr class="is-current"><td><span class="ds-table__name"><span class="ds-tooltip" data-component="tooltip"><a class="ds-link ds-link--quiet" href="#habit">Read twenty pages</a><span class="ds-tooltip__tip" role="tooltip">counts from six in the evening</span></span></span></td><td class="ds-table__extra">Head</td><td><span class="ds-badge ds-badge--warning">Open</span></td><td class="ds-table__num">18</td><td class="ds-table__extra ds-table__num">86%</td></tr>
+            <tr><td><span class="ds-table__name"><a class="ds-link ds-link--quiet" href="#habit">Draw one thing</a></span></td><td class="ds-table__extra">Head</td><td><span class="ds-badge ds-badge--success">Done</span></td><td class="ds-table__num">7</td><td class="ds-table__extra ds-table__num">71%</td></tr>
+            <tr><td><span class="ds-table__name"><a class="ds-link ds-link--quiet" href="#habit">Write to someone</a></span></td><td class="ds-table__extra">People</td><td><span class="ds-badge ds-badge--success">Done</span></td><td class="ds-table__num">3</td><td class="ds-table__extra ds-table__num">57%</td></tr>
+            <tr><td><span class="ds-table__name"><a class="ds-link ds-link--quiet" href="#habit">Walk round the block</a></span></td><td class="ds-table__extra">Body</td><td><span class="ds-badge ds-badge--danger">Missed twice</span></td><td class="ds-table__num">0</td><td class="ds-table__extra ds-table__num">43%</td></tr>
+          </tbody>
+        </table>
+        <div class="ds-row">
+          <div class="ds-badges" data-component="badge">
+            <span class="ds-badge">Body</span>
+            <span class="ds-badge ds-badge--alt">New</span>
+            <span class="ds-badge ds-badge--plain">Head</span>
+            <span class="ds-badge ds-badge--success">Done</span>
+            <span class="ds-badge ds-badge--warning">Open</span>
+            <span class="ds-badge ds-badge--danger">Missed</span>
+          </div>
+          <ul class="ds-pagination" data-component="pagination" aria-label="Pages">
+            <li><a class="ds-pagination__link is-disabled" href="#habits" aria-disabled="true">Previous</a></li>
+            <li><a class="ds-pagination__link is-current" href="#habits" aria-current="page">1</a></li>
+            <li><a class="ds-pagination__link" href="#habits">2</a></li>
+            <li><a class="ds-pagination__link" href="#habits">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="ds-view" id="habit">
+  <section class="ds-page-header" data-component="page-header">
+    <span class="ds-cover ds-cover--4 ds-cover--stripes ds-cover--ground ds-page-header__disc" aria-hidden="true"></span>
+    <div class="ds-page-header__inner">
+      <ol class="ds-breadcrumb" data-component="breadcrumb" aria-label="Breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Today</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#habits">Habits</a></li>
+        <li class="ds-breadcrumb__item is-current" aria-current="page">Read twenty pages</li>
+      </ol>
+      <div class="ds-page-header__row">
+        <div>
+          <h1 class="ds-page-header__title">Read twenty pages</h1>
+          <p class="ds-page-header__lead">Every evening since 20 September. Open today.</p>
+        </div>
+        <div class="ds-page-header__actions">
+          <a class="ds-button ds-button--secondary" href="#new">Change</a>
+          <a class="ds-button" href="#home">Check in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band">
+    <span class="ds-shape ds-shape--quarter ds-shape--xl ds-shape--c1 ds-shape--bl ds-shape--flip" aria-hidden="true"></span>
+    <div class="ds-band__inner ds-split">
+      <div class="ds-stack">
+        <section class="ds-month" aria-label="The last two weeks">
+          <div class="ds-chart__head">
+            <h2 class="ds-chart__title">Two weeks</h2>
+            <span class="ds-badge ds-badge--warning">Open today</span>
+          </div>
+          <ol class="ds-grid ds-grid--strip">
+            <li class="ds-grid__cell is-done">25</li><li class="ds-grid__cell is-done">26</li><li class="ds-grid__cell is-done">27</li><li class="ds-grid__cell is-done">28</li><li class="ds-grid__cell is-done">29</li><li class="ds-grid__cell is-done">30</li><li class="ds-grid__cell is-done">1</li>
+            <li class="ds-grid__cell is-done">2</li><li class="ds-grid__cell is-done">3</li><li class="ds-grid__cell is-missed">4</li><li class="ds-grid__cell is-done">5</li><li class="ds-grid__cell is-done">6</li><li class="ds-grid__cell is-done">7</li><li class="ds-grid__cell is-current">8</li>
+          </ol>
+          <div>
+            <div class="ds-progress__legend"><span>Thirty evenings</span><span>19 of 30</span></div>
+            <span class="ds-progress ds-progress--60" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" aria-label="Thirty evenings"><span class="ds-progress__bar"></span></span>
+          </div>
+        </section>
+        <div class="ds-sheet">
+          <article class="ds-prose" data-component="typography">
+            <h1>How counting works</h1>
+            <p class="ds-prose__lead">A habit counts once a day, inside the hours you gave it. Reading counts from six in the evening until midnight.</p>
+            <h2>Streaks</h2>
+            <p>A streak is the number of days in a row with a check-in. One missed day <strong>breaks the row but not the month</strong>: the calendar keeps the hoop and carries on.</p>
+            <ul>
+              <li>A check-in after midnight belongs to the new day</li>
+              <li>A paused habit keeps its streak for two weeks</li>
+              <li>Two misses in a row turn the label red</li>
+            </ul>
+            <h3>Your own rule</h3>
+            <p>Each habit has one line that says when it fits. For this one it is <code>after dinner, phone in the hall</code>, and you can change it at any time.</p>
+          </article>
+          <ul class="ds-links" data-component="links">
+            <li><a class="ds-link" href="#new">Change the rule</a></li>
+            <li><a class="ds-link is-visited" href="#habits">All six habits</a></li>
+            <li><a class="ds-link is-hover" href="#home">Back to today</a></li>
+            <li><a class="ds-link is-active" href="#new">Pause this habit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-stack">
+        <section class="ds-panel ds-panel--pick">
+          <h2 class="ds-panel__title">This habit</h2>
+          <div class="ds-panel__body">
+            <div class="ds-row">
+              <div class="ds-dial ds-dial--small ds-dial--75" role="img" aria-label="86 percent of evenings this month">
+                <span class="ds-dial__ring"></span>
+                <span class="ds-dial__hub"><strong class="ds-dial__value">86%</strong></span>
+              </div>
+              <p>Six of seven evenings this month, and the longest row so far.</p>
+            </div>
+            <a class="ds-button ds-button--small" href="#home">Check in for today</a>
+          </div>
+        </section>
+        <div>
+          <h2 class="ds-band__label">Last check-ins</h2>
+          <ul class="ds-list">
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title">Wednesday</h3><p class="ds-list__text">24 pages, on the sofa</p></div>
+              <span class="ds-list__meta">21:40</span>
+            </li>
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title">Tuesday</h3><p class="ds-list__text">20 pages</p></div>
+              <span class="ds-list__meta">22:05</span>
+            </li>
+            <li class="ds-list__item is-done">
+              <span class="ds-list__check" aria-label="done"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8.5 3.5 3.5L13 4.5"/></svg></span>
+              <div class="ds-list__main"><h3 class="ds-list__title">Monday</h3><p class="ds-list__text">31 pages, could not stop</p></div>
+              <span class="ds-list__meta">20:15</span>
+            </li>
+            <li class="ds-list__item">
+              <span class="ds-list__check" aria-label="missed"></span>
+              <div class="ds-list__main"><h3 class="ds-list__title">Sunday</h3><p class="ds-list__text">Missed, out late</p></div>
+              <span class="ds-list__meta">no entry</span>
+            </li>
+          </ul>
+        </div>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Reading with you</h2>
+          <div class="ds-panel__body">
+            <a class="ds-avatar ds-avatar--3" href="#habits"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9.5" r="1.3" fill="currentColor" stroke="none"/><path d="M7.5 14.5c2.6 2.8 6.4 2.8 9 0"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Rosa Kiviniemi</span><span class="ds-avatar__meta">day 44</span></span></a>
+            <a class="ds-avatar ds-avatar--4" href="#habits"><span class="ds-avatar__pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 9.5h3M14 9.5h3"/><circle cx="12" cy="15.5" r="2"/></svg></span><span class="ds-avatar__text"><span class="ds-avatar__name">Sami Oyelaran</span><span class="ds-avatar__meta">day 19, same as you</span></span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="ds-view" id="new">
+  <section class="ds-page-header">
+    <span class="ds-cover ds-cover--1 ds-cover--terrazzo ds-cover--ground ds-page-header__disc" aria-hidden="true"></span>
+    <div class="ds-page-header__inner">
+      <ol class="ds-breadcrumb" aria-label="Breadcrumb">
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#home">Today</a></li>
+        <li class="ds-breadcrumb__item"><a class="ds-link ds-link--quiet" href="#habits">Habits</a></li>
+        <li class="ds-breadcrumb__item is-current" aria-current="page">New</li>
+      </ol>
+      <div class="ds-page-header__row">
+        <div>
+          <h1 class="ds-page-header__title">New habit</h1>
+          <p class="ds-page-header__lead">Make it small enough to do on a bad day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band">
+    <span class="ds-cover ds-cover--2 ds-cover--dash ds-cover--ground ds-band__slab" aria-hidden="true"></span>
+    <div class="ds-band__inner ds-split">
+      <section class="ds-panel">
+        <h2 class="ds-panel__title">The habit</h2>
+        <div class="ds-panel__body">
+          <form class="ds-form" data-component="form">
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="h-name">What will you do</label>
+              <input class="ds-form__control" id="h-name" type="text" value="Play the piano for ten minutes">
+            </div>
+            <div class="ds-form__row">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="h-area">Area</label>
+                <select class="ds-form__control" id="h-area">
+                  <option>Head</option>
+                  <option>Body</option>
+                  <option>People</option>
+                </select>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="h-days">Days a week</label>
+                <input class="ds-form__control is-invalid" id="h-days" type="text" value="9" aria-invalid="true" aria-describedby="h-days-err">
+                <p class="ds-form__error" id="h-days-err">A week has seven days. Choose one to seven.</p>
+              </div>
+            </div>
+            <div class="ds-form__field">
+              <label class="ds-form__label" for="h-rule">Your own rule</label>
+              <textarea class="ds-form__control ds-form__control--area" id="h-rule">Right after the dishes, before sitting down.</textarea>
+              <p class="ds-form__hint">One line that says when it fits into the day.</p>
+            </div>
+            <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Weekends count too</label>
+            <label class="ds-switch"><input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span><span class="ds-switch__label">Nudge me at eight<span class="ds-switch__hint">Only if it is still open</span></span></label>
+            <div class="ds-buttons" data-component="buttons">
+              <button class="ds-button" type="button">Start today</button>
+              <button class="ds-button ds-button--secondary" type="button">Save as paused</button>
+              <button class="ds-button ds-button--danger" type="button">Delete</button>
+              <button class="ds-button" type="button" disabled>Share with a friend</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="ds-stack">
+        <section class="ds-panel ds-panel--pick">
+          <h2 class="ds-panel__title">It will look like this</h2>
+          <div class="ds-panel__body">
+            <ul class="ds-list">
+              <li class="ds-list__item">
+                <span class="ds-list__check" aria-label="open"></span>
+                <div class="ds-list__main"><h3 class="ds-list__title">Play the piano for ten minutes</h3><p class="ds-list__text">Right after the dishes</p></div>
+                <span class="ds-list__meta">day 1</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <div class="ds-accordion" data-component="accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__head">How small is small enough? <span class="ds-accordion__sign"></span></summary>
+            <div class="ds-accordion__body"><p>If you could do it with a cold, it is small enough. Ten minutes beats an hour you skip.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">What happens when I miss a day? <span class="ds-accordion__sign"></span></summary>
+            <div class="ds-accordion__body"><p>The streak starts again and the month keeps a hoop for that day.</p></div>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__head">Can a habit end? <span class="ds-accordion__sign"></span></summary>
+            <div class="ds-accordion__body"><p>Yes. Give it a number of days and it moves to Finished when it gets there.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-band ds-band--overlay">
+    <div class="ds-dialog" data-component="dialog" role="dialog" aria-labelledby="dlg-title">
+      <div class="ds-dialog__bar">
+        <h2 class="ds-dialog__title" id="dlg-title">Delete this habit?</h2>
+        <a class="ds-dialog__close" href="#new" aria-label="Close">&times;</a>
+      </div>
+      <div class="ds-dialog__body">
+        <p>Its check-ins go with it. To keep them and stop the nudges, save it as paused instead.</p>
+      </div>
+      <div class="ds-dialog__actions">
+        <a class="ds-button ds-button--secondary" href="#new">Keep it</a>
+        <button class="ds-button ds-button--danger" type="button">Delete</button>
+      </div>
+    </div>
+  </section>
+</section>
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <span class="ds-shape ds-shape--disc ds-shape--c2 ds-shape--edge-r" aria-hidden="true"></span>
+  <div class="ds-footer__inner">
+    <p class="ds-footer__brand">chronoskin</p>
+    <ul class="ds-footer__list">
+      <li><a class="ds-footer__link" href="#home">Today</a></li>
+      <li><a class="ds-footer__link" href="#habits">Habits</a></li>
+      <li><a class="ds-footer__link" href="#new">New habit</a></li>
+      <li><a class="ds-footer__link" href="#habit">How counting works</a></li>
+    </ul>
+    <p class="ds-footer__legal">Specimen page. All names, habits and figures are placeholders.</p>
+  </div>
+</footer>
+
+</body>
+</html>

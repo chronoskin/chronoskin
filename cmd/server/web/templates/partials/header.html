@@ -1,0 +1,32 @@
+{{/* The top bar: brand, navigation, theme switch and source link. Data: Nav, Repo. */}}
+{{define "header"}}
+<header class="top">
+  <div class="in">
+    <a class="brand" href="/" aria-label="chronoskin, home">
+      {{template "mark"}}
+      <span><b>chrono</b>skin</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="/"{{if eq .Nav "home"}} aria-current="page"{{end}}>Eras</a>
+      <a href="/saved"{{if eq .Nav "saved"}} aria-current="page"{{end}}>Saved</a>
+      <a href="/docs"{{if eq .Nav "docs"}} aria-current="page"{{end}}>Docs</a>
+    </nav>
+    <span class="tools">
+      <button
+        type="button"
+        aria-label="Switch between light and dark"
+        title="Switch between light and dark"
+        data-goatcounter-click="theme"
+        x-cloak
+        x-data="theme"
+        x-on:click="toggle"
+      >
+        {{template "theme"}}
+      </button>
+      <a href="{{.Repo}}" target="_blank" rel="noopener" aria-label="Source on GitHub" title="Source on GitHub">
+        {{template "github"}}
+      </a>
+    </span>
+  </div>
+</header>
+{{end}}

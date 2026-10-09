@@ -1,0 +1,33 @@
+{{/* The document every page shares. A page defines "main". */}}
+{{define "layout"}}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.PageTitle}}</title>
+<meta name="description" content="{{.Description}}">
+{{if .Status}}<meta name="robots" content="noindex">
+{{else}}<link rel="canonical" href="{{.Canonical}}">
+{{end}}<meta property="og:site_name" content="chronoskin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{.PageTitle}}">
+<meta property="og:description" content="{{.Description}}">
+<meta property="og:url" content="{{.Canonical}}">
+<meta property="og:image" content="{{.Image}}">
+<meta name="twitter:card" content="summary_large_image">
+{{if .Home}}<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"chronoskin","url":"{{.Canonical}}","description":"{{.Description}}"}</script>
+{{end}}<meta name="theme-color" content="#f4f4f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131312" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script src="{{asset "theme.js"}}"></script>
+<link rel="stylesheet" href="{{asset "app.css"}}">
+<script defer src="{{asset "app.js"}}"></script>
+<script defer src="{{asset "vendor/alpine-csp.min.js"}}"></script>
+{{if .Analytics}}<script data-goatcounter="{{.Analytics}}/count" async src="{{.Analytics}}/count.js"></script>
+{{end}}</head>
+<body>
+{{template "header" .}}
+{{template "main" .}}
+{{template "footer" .}}
+</body>
+</html>{{end}}

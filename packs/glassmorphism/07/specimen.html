@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chronoskin: weather for Harbour Point</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body class="ds-page" data-component="shell">
+
+<header class="ds-nav" data-component="nav">
+  <div class="ds-nav__inner">
+    <a class="ds-brand" data-component="brand" href="#today">
+      <span class="ds-brand__mark"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="2.5" width="13" height="13" rx="4" fill="currentColor" opacity=".5"/><rect x="8.5" y="8.5" width="12.5" height="12.5" rx="4" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <span class="ds-brand__name">chronoskin</span>
+    </a>
+    <ul class="ds-nav__list">
+      <li><a class="ds-nav__link" href="#today">Today</a></li>
+      <li><a class="ds-nav__link" href="#forecast">Forecast</a></li>
+      <li class="ds-menu" data-component="menu">
+        <a class="ds-nav__link ds-menu__trigger" href="#places">Places <span class="ds-menu__caret"></span></a>
+        <ul class="ds-menu__list">
+          <li><a class="ds-menu__link" href="#today">Harbour Point <span class="ds-menu__meta">14°</span></a></li>
+          <li><a class="ds-menu__link" href="#forecast">Port Aldous <span class="ds-menu__meta">11°</span></a></li>
+          <li><a class="ds-menu__link" href="#forecast">Wren Hill <span class="ds-menu__meta">9°</span></a></li>
+          <li><a class="ds-menu__link" href="#places">Manage places</a></li>
+        </ul>
+      </li>
+      <li><a class="ds-nav__link" href="#guide">Guide</a></li>
+    </ul>
+    <div class="ds-nav__tools">
+      <label class="ds-nav__search">
+        <svg class="ds-nav__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
+        <input class="ds-form__input" type="search" placeholder="Find a place" aria-label="Find a place">
+      </label>
+      <a class="ds-avatar" href="#places" aria-label="Account of Mara Ellison">ME</a>
+    </div>
+  </div>
+</header>
+
+<main class="ds-page__inner">
+
+  <section class="ds-view ds-view--home" id="today">
+    <section class="ds-hero" data-component="hero">
+      <div class="ds-hero__now">
+        <div class="ds-hero__place">Harbour Point <span class="ds-badge">Now</span></div>
+        <div class="ds-hero__reading">
+          <span class="ds-hero__figure">14°</span>
+          <svg class="ds-hero__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </div>
+        <span class="ds-hero__caption">Clear sky. Feels like 12°.</span>
+        <dl class="ds-hero__facts">
+          <div><dt class="ds-hero__fact-label">High</dt><dd class="ds-hero__fact">17°</dd></div>
+          <div><dt class="ds-hero__fact-label">Low</dt><dd class="ds-hero__fact">8°</dd></div>
+          <div><dt class="ds-hero__fact-label">Rain</dt><dd class="ds-hero__fact">3.1 mm</dd></div>
+        </dl>
+      </div>
+      <div class="ds-hero__text">
+        <h1 class="ds-hero__title">Clear until four, rain by six</h1>
+        <p class="ds-hero__lead">Thursday 7 October in Harbour Point. A dry, bright day with a west wind at 18 km/h; showers arrive in the early evening and last past midnight.</p>
+        <div class="ds-hero__actions">
+          <a class="ds-button ds-button--large" href="#forecast">See the week</a>
+          <a class="ds-button ds-button--secondary ds-button--large" href="#places">Change place</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-carousel" data-component="carousel" aria-label="Hour by hour">
+      <div class="ds-carousel__head">
+        <span>Hour by hour</span>
+        <span class="ds-carousel__arrows">
+          <button class="ds-carousel__arrow is-disabled" type="button" aria-label="Earlier"><svg class="ds-page__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6l-6 6 6 6"/></svg></button>
+          <button class="ds-carousel__arrow" type="button" aria-label="Later"><svg class="ds-page__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l6 6-6 6"/></svg></button>
+        </span>
+      </div>
+      <ul class="ds-carousel__track">
+        <li class="ds-carousel__slide">
+            <ol class="ds-carousel__hours">
+              <li class="ds-carousel__hour is-current"><span class="ds-carousel__time">Now</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="ds-carousel__temp">14°</span><span class="ds-carousel__rain">5%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">11:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="ds-carousel__temp">15°</span><span class="ds-carousel__rain">5%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">12:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="ds-carousel__temp">16°</span><span class="ds-carousel__rain">0%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">13:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="ds-carousel__temp">17°</span><span class="ds-carousel__rain">0%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">14:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg><span class="ds-carousel__temp">17°</span><span class="ds-carousel__rain">10%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">15:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg><span class="ds-carousel__temp">16°</span><span class="ds-carousel__rain">20%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">16:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg><span class="ds-carousel__temp">15°</span><span class="ds-carousel__rain">35%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">17:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 8.1 3.5 3.5 0 0 0 7 15z"/><path d="M8 18v3M12 18v3M16 18v3"/></svg><span class="ds-carousel__temp">13°</span><span class="ds-carousel__rain">60%</span></li>
+            </ol>
+        </li>
+        <li class="ds-carousel__slide">
+            <ol class="ds-carousel__hours">
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">18:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 8.1 3.5 3.5 0 0 0 7 15z"/><path d="M8 18v3M12 18v3M16 18v3"/></svg><span class="ds-carousel__temp">12°</span><span class="ds-carousel__rain">80%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">19:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 8.1 3.5 3.5 0 0 0 7 15z"/><path d="M8 18v3M12 18v3M16 18v3"/></svg><span class="ds-carousel__temp">11°</span><span class="ds-carousel__rain">85%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">20:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 8.1 3.5 3.5 0 0 0 7 15z"/><path d="M8 18v3M12 18v3M16 18v3"/></svg><span class="ds-carousel__temp">11°</span><span class="ds-carousel__rain">70%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">21:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg><span class="ds-carousel__temp">10°</span><span class="ds-carousel__rain">40%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">22:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg><span class="ds-carousel__temp">9°</span><span class="ds-carousel__rain">25%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">23:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="ds-carousel__temp">9°</span><span class="ds-carousel__rain">10%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">00:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="ds-carousel__temp">8°</span><span class="ds-carousel__rain">5%</span></li>
+              <li class="ds-carousel__hour"><span class="ds-carousel__time">01:00</span><svg class="ds-carousel__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="ds-carousel__temp">8°</span><span class="ds-carousel__rain">5%</span></li>
+            </ol>
+        </li>
+      </ul>
+      <div class="ds-carousel__dots"><span class="ds-carousel__dot is-current"></span><span class="ds-carousel__dot"></span><span class="ds-carousel__dot"></span></div>
+    </section>
+
+    <div class="ds-page__layout">
+      <div class="ds-page__main">
+        <section class="ds-grid" data-component="grid">
+          <div class="ds-grid__cell ds-grid__cell--1">
+            <span class="ds-grid__label">Wind</span>
+            <span class="ds-grid__value">18 km/h</span>
+            <span class="ds-grid__meta">West, gusts to 31</span>
+            <span class="ds-progress" data-component="progress"><span class="ds-progress__bar ds-progress__bar--25"></span></span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--2">
+            <span class="ds-grid__label">Humidity</span>
+            <span class="ds-grid__value">64%</span>
+            <span class="ds-grid__meta">Dew point 7°</span>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--65"></span></span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--3">
+            <span class="ds-grid__label">UV index <span class="ds-tooltip" data-component="tooltip" tabindex="0">?<span class="ds-tooltip__tip" role="tooltip">From 0 to 11. Above 3, cover up around midday.</span></span></span>
+            <span class="ds-grid__value">3 of 11</span>
+            <span class="ds-grid__meta">Moderate at noon</span>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--25"></span></span>
+          </div>
+          <div class="ds-grid__cell ds-grid__cell--4">
+            <span class="ds-grid__label">Pressure</span>
+            <span class="ds-grid__value">1016 hPa</span>
+            <span class="ds-grid__meta">Falling slowly</span>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--75"></span></span>
+          </div>
+        </section>
+        <h2 class="ds-page__heading">The next four days <a class="ds-link" href="#forecast">Full forecast</a></h2>
+        <ul class="ds-list" data-component="list">
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 15h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 8.1 3.5 3.5 0 0 0 7 15z"/><path d="M8 18v3M12 18v3M16 18v3"/></svg>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#forecast">Friday: showers, heavier before noon</a>
+              <span class="ds-list__meta">9.4 mm of rain, wind W 24 km/h</span>
+            </div>
+            <span class="ds-list__value">13° <span class="ds-list__value-low">8°</span></span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.2 11.1 3.5 3.5 0 0 0 7 18z"/></svg>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#forecast">Saturday: grey and still</a>
+              <span class="ds-list__meta">1.2 mm of rain, wind SW 9 km/h</span>
+            </div>
+            <span class="ds-list__value">12° <span class="ds-list__value-low">7°</span></span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#forecast">Sunday: bright spells</a>
+              <span class="ds-list__meta">0.0 mm of rain, wind S 11 km/h</span>
+            </div>
+            <span class="ds-list__value">15° <span class="ds-list__value-low">6°</span></span>
+          </li>
+          <li class="ds-list__item">
+            <svg class="ds-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <div class="ds-list__body">
+              <a class="ds-list__title" href="#forecast">Monday: clear from dawn</a>
+              <span class="ds-list__meta">0.0 mm of rain, wind SE 8 km/h</span>
+            </div>
+            <span class="ds-list__value">17° <span class="ds-list__value-low">7°</span></span>
+          </li>
+        </ul>
+      </div>
+      <div class="ds-page__side">
+        <aside class="ds-sidebar" data-component="sidebar">
+          <h2 class="ds-sidebar__heading">Saved places</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#today">Harbour Point <span class="ds-sidebar__value">14°</span></a></li>
+            <li><a class="ds-sidebar__link" href="#forecast">Port Aldous <span class="ds-sidebar__value">11°</span></a></li>
+            <li><a class="ds-sidebar__link" href="#forecast">Wren Hill <span class="ds-sidebar__value">9°</span></a></li>
+            <li><a class="ds-sidebar__link" href="#forecast">Saltmarsh Row <span class="ds-badge ds-badge--alt">New</span></a></li>
+            <li><a class="ds-sidebar__link" href="#places">Manage places</a></li>
+          </ul>
+        </aside>
+        <section class="ds-panel ds-panel--inverse">
+          <h2 class="ds-panel__title">Daylight</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__pair"><span>Sunrise</span> <span class="ds-panel__pair-value">07:02</span></p>
+            <p class="ds-panel__pair"><span>Sunset</span> <span class="ds-panel__pair-value">18:14</span></p>
+            <span class="ds-progress"><span class="ds-progress__bar ds-progress__bar--40"></span></span>
+            <p class="ds-panel__text">11 h 12 min of daylight, 3 minutes less than yesterday.</p>
+          </div>
+        </section>
+        <div class="ds-notice">
+          <svg class="ds-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <div><span class="ds-notice__title">Rain after 18:00.</span> About 3 mm before midnight. <a class="ds-link ds-link--quiet" href="#forecast">See the hours</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="forecast">
+    <ol class="ds-breadcrumb" data-component="breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">Today</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#places">Harbour Point</a></li>
+      <li class="ds-breadcrumb__item">Seven days</li>
+    </ol>
+    <header class="ds-page-header" data-component="page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Seven days in Harbour Point</h1>
+        <p class="ds-page-header__lead">Updated at 10:40 from the harbour mast and two models.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#places">Change place</a>
+        <a class="ds-button" href="#places">Set an alert</a>
+      </div>
+    </header>
+    <div class="ds-page__main">
+      <dl class="ds-stat" data-component="stats">
+        <div class="ds-stat__item"><dt class="ds-stat__label">Warmest day</dt><dd class="ds-stat__value">17° <span class="ds-stat__meta">Monday</span></dd></div>
+        <div class="ds-stat__item"><dt class="ds-stat__label">Coldest night</dt><dd class="ds-stat__value">6° <span class="ds-stat__meta">Sunday</span></dd></div>
+        <div class="ds-stat__item"><dt class="ds-stat__label">Rain in total</dt><dd class="ds-stat__value">23.2 <span class="ds-stat__meta">mm over 5 days</span></dd></div>
+        <div class="ds-stat__item"><dt class="ds-stat__label">Strongest gust</dt><dd class="ds-stat__value">61 <span class="ds-stat__meta">km/h on Tuesday</span></dd></div>
+      </dl>
+      <ul class="ds-tabs" data-component="tabs">
+        <li><a class="ds-tabs__tab is-current" href="#forecast">Overview</a></li>
+        <li><a class="ds-tabs__tab" href="#forecast">Rain</a></li>
+        <li><a class="ds-tabs__tab" href="#forecast">Wind</a></li>
+        <li><a class="ds-tabs__tab" href="#forecast">Sun and UV</a></li>
+      </ul>
+      <table class="ds-table" data-component="table">
+        <thead>
+          <tr><th>Day</th><th class="ds-table__opt">Sky</th><th>Outlook</th><th class="ds-table__num">High</th><th class="ds-table__num">Low</th><th class="ds-table__num">Rain, mm</th><th class="ds-table__num ds-table__opt">Wind, km/h</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Thu 7</a></td><td class="ds-table__opt">Clear, rain late</td><td><span class="ds-badge ds-badge--success">Fine</span></td><td class="ds-table__num">16°</td><td class="ds-table__num">9°</td><td class="ds-table__num">3.1</td><td class="ds-table__num ds-table__opt">W 18</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Fri 8</a></td><td class="ds-table__opt">Showers</td><td><span class="ds-badge ds-badge--warning">Wet</span></td><td class="ds-table__num">13°</td><td class="ds-table__num">8°</td><td class="ds-table__num">9.4</td><td class="ds-table__num ds-table__opt">W 24</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Sat 9</a></td><td class="ds-table__opt">Overcast</td><td><span class="ds-badge ds-badge--glass">Dull</span></td><td class="ds-table__num">12°</td><td class="ds-table__num">7°</td><td class="ds-table__num">1.2</td><td class="ds-table__num ds-table__opt">SW 9</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Sun 10</a></td><td class="ds-table__opt">Bright spells</td><td><span class="ds-badge ds-badge--success">Fine</span></td><td class="ds-table__num">15°</td><td class="ds-table__num">6°</td><td class="ds-table__num">0.0</td><td class="ds-table__num ds-table__opt">S 11</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Mon 11</a></td><td class="ds-table__opt">Clear</td><td><span class="ds-badge ds-badge--success">Fine</span></td><td class="ds-table__num">17°</td><td class="ds-table__num">7°</td><td class="ds-table__num">0.0</td><td class="ds-table__num ds-table__opt">SE 8</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Tue 12</a></td><td class="ds-table__opt">Gale from the west</td><td><span class="ds-badge ds-badge--danger">Storm</span></td><td class="ds-table__num">14°</td><td class="ds-table__num">10°</td><td class="ds-table__num">8.6</td><td class="ds-table__num ds-table__opt">W 61</td></tr>
+          <tr><td><a class="ds-link ds-link--quiet" href="#today">Wed 13</a></td><td class="ds-table__opt">Clearing</td><td><span class="ds-badge ds-badge--glass">Dull</span></td><td class="ds-table__num">13°</td><td class="ds-table__num">8°</td><td class="ds-table__num">0.9</td><td class="ds-table__num ds-table__opt">NW 22</td></tr>
+        </tbody>
+      </table>
+      <ul class="ds-pagination" data-component="pagination">
+        <li><a class="ds-pagination__link is-disabled" href="#forecast">Previous</a></li>
+        <li><a class="ds-pagination__link is-current" href="#forecast">1</a></li>
+        <li><a class="ds-pagination__link" href="#forecast">2</a></li>
+        <li><a class="ds-pagination__link" href="#forecast">3</a></li>
+        <li><a class="ds-pagination__link" href="#forecast">Next</a></li>
+      </ul>
+      <p class="ds-page__note">Week 1 of 3. Beyond ten days the forecast is a range, not a figure; the <a class="ds-link" href="#guide">guide</a> explains why.</p>
+    </div>
+  </section>
+
+  <section class="ds-view" id="places">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">Today</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#places">Account</a></li>
+      <li class="ds-breadcrumb__item">Places and alerts</li>
+    </ol>
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Places and alerts</h1>
+        <p class="ds-page-header__lead">Four saved places, one of them out of reach.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button" href="#places">Add a place</a>
+      </div>
+    </header>
+    <div class="ds-page__layout ds-page__layout--even">
+      <div class="ds-page__main">
+        <div class="ds-notice__stack" data-component="notice">
+          <div class="ds-notice">
+            <svg class="ds-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+            <div><span class="ds-notice__title">Readings refresh every ten minutes.</span> Alerts are sent as soon as a threshold is crossed.</div>
+          </div>
+          <div class="ds-notice ds-notice--error">
+            <svg class="ds-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 15H3z"/><path d="M12 10v4M12 17h.01"/></svg>
+            <div><span class="ds-notice__title">Wren Hill has not reported since 06:20.</span> Its figures are from the model only.</div>
+          </div>
+        </div>
+        <h2 class="ds-page__heading">Saved <span class="ds-badge" data-component="badge">4</span></h2>
+        <ul class="ds-list">
+          <li class="ds-list__item">
+            <div class="ds-list__body"><a class="ds-list__title" href="#today">Harbour Point</a><span class="ds-list__meta">Mast at 12 m, read at 10:40</span></div>
+            <span class="ds-badge ds-badge--success">Live</span>
+            <span class="ds-list__value">14°</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body"><a class="ds-list__title" href="#forecast">Port Aldous</a><span class="ds-list__meta">Gale expected on Tuesday</span></div>
+            <span class="ds-badge ds-badge--warning">Watch</span>
+            <span class="ds-list__value">11°</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body"><a class="ds-list__title" href="#forecast">Wren Hill</a><span class="ds-list__meta">No signal for 4 h 20 min</span></div>
+            <span class="ds-badge ds-badge--danger">Silent</span>
+            <span class="ds-list__value">9°</span>
+          </li>
+          <li class="ds-list__item">
+            <div class="ds-list__body"><a class="ds-list__title" href="#forecast">Saltmarsh Row</a><span class="ds-list__meta">Added yesterday by Tobias Renn</span></div>
+            <span class="ds-badge ds-badge--alt">New</span>
+            <span class="ds-list__value">13°</span>
+          </li>
+        </ul>
+        <section class="ds-dialog" data-component="dialog">
+          <div class="ds-dialog__box" role="dialog" aria-label="Remove place">
+            <h2 class="ds-dialog__title">Remove Wren Hill?</h2>
+            <p class="ds-dialog__body">Its two alerts and 30 days of readings go with it. Tobias Renn will lose it as well.</p>
+            <div class="ds-dialog__actions">
+              <a class="ds-button ds-button--secondary" href="#places">Keep it</a>
+              <a class="ds-button ds-button--danger" href="#places">Remove</a>
+            </div>
+          </div>
+        </section>
+        <section class="ds-empty" data-component="empty">
+          <svg class="ds-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/></svg>
+          <h2 class="ds-empty__title">No alerts sent this week</h2>
+          <p class="ds-empty__text">Nothing has crossed a threshold since Sunday. Alerts you receive are listed here for 30 days.</p>
+          <a class="ds-button ds-button--secondary" href="#forecast">Check Tuesday's gale</a>
+        </section>
+      </div>
+      <div class="ds-page__main">
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Add a place</h2>
+          <div class="ds-panel__body">
+            <form class="ds-form" data-component="form">
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="p-name">Name</label>
+                <input class="ds-form__input" id="p-name" type="text" value="Kestrel Sands">
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="p-coord">Coordinates</label>
+                <input class="ds-form__input is-error" id="p-coord" type="text" value="54.41, 181.20">
+                <span class="ds-form__error">Longitude must lie between -180 and 180.</span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="p-units">Units</label>
+                <span class="ds-form__select-wrap">
+                  <select class="ds-form__select" id="p-units"><option>Celsius, km/h, mm</option><option>Fahrenheit, mph, inches</option></select>
+                  <svg class="ds-form__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </span>
+              </div>
+              <div class="ds-form__field">
+                <label class="ds-form__label" for="p-note">Note</label>
+                <textarea class="ds-form__textarea" id="p-note">Beach hut, exposed to the north-east.</textarea>
+                <span class="ds-form__hint">Shown under the place name.</span>
+              </div>
+              <label class="ds-form__check"><input class="ds-form__checkbox" type="checkbox" checked> Share this place with my household</label>
+              <div class="ds-form__actions" data-component="buttons">
+                <button class="ds-button" type="button">Save place</button>
+                <a class="ds-button ds-button--secondary" href="#places">Cancel</a>
+                <button class="ds-button is-disabled" type="button" disabled>Import</button>
+                <a class="ds-button ds-button--danger" href="#places">Remove place</a>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Alerts for Harbour Point</h2>
+          <div class="ds-panel__body">
+            <label class="ds-switch" data-component="switch">
+              <span class="ds-switch__text">Rain within the hour<span class="ds-switch__hint">When more than 1 mm is due</span></span>
+              <input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+            </label>
+            <label class="ds-switch">
+              <span class="ds-switch__text">Gusts above 50 km/h<span class="ds-switch__hint">From the mast, not the model</span></span>
+              <input class="ds-switch__input" type="checkbox" checked><span class="ds-switch__track"></span>
+            </label>
+            <label class="ds-switch">
+              <span class="ds-switch__text">Frost overnight<span class="ds-switch__hint">Sent at 18:00 the evening before</span></span>
+              <input class="ds-switch__input" type="checkbox"><span class="ds-switch__track"></span>
+            </label>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="ds-view" id="guide">
+    <ol class="ds-breadcrumb">
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#today">Today</a></li>
+      <li class="ds-breadcrumb__item"><a class="ds-breadcrumb__link" href="#guide">Guide</a></li>
+      <li class="ds-breadcrumb__item">Reading the forecast</li>
+    </ol>
+    <header class="ds-page-header">
+      <div class="ds-page-header__text">
+        <h1 class="ds-page-header__title">Reading the forecast</h1>
+        <p class="ds-page-header__lead">What the figures mean and how far ahead to trust them.</p>
+      </div>
+      <div class="ds-page-header__actions">
+        <a class="ds-button ds-button--secondary" href="#today">Back to today</a>
+      </div>
+    </header>
+    <div class="ds-page__layout ds-page__layout--flush">
+      <div class="ds-page__main">
+        <section class="ds-panel">
+          <div class="ds-panel__body">
+            <article class="ds-prose" data-component="typography">
+              <h1>Figures, ranges and chances</h1>
+              <p class="ds-prose__lead">A forecast is a set of likely outcomes. chronoskin shows the middle of that set and tells you how wide it is.</p>
+              <h2>Chance of rain</h2>
+              <p>The percentage under each hour is the share of model runs in which at least <strong>0.2 mm</strong> fell at your place during that hour. It says nothing about how hard it rains; the amount is shown in the week table.</p>
+              <h3>What the temperatures are</h3>
+              <ul>
+                <li>The large figure is the air temperature at 2 m, in the shade.</li>
+                <li>Feels like adds wind and humidity to that figure.</li>
+                <li>High and low run from 06:00 to 06:00, not from midnight.</li>
+              </ul>
+              <h3>Sharing a reading</h3>
+              <p>Every hour has an address of its own. Add <code>?at=17:00</code> to a place to open it at that hour.</p>
+              <p class="ds-link__sample" data-component="links">
+                <a class="ds-link" href="#forecast">The week table</a>
+                <a class="ds-link is-visited" href="#places">Visited: places</a>
+                <a class="ds-link is-hover" href="#guide">Hovered link</a>
+                <a class="ds-link is-active" href="#guide">Active link</a>
+              </p>
+            </article>
+          </div>
+        </section>
+        <div class="ds-accordion" data-component="accordion">
+          <details class="ds-accordion__item" open>
+            <summary class="ds-accordion__summary">Why did the forecast change since this morning?</summary>
+            <p class="ds-accordion__body">New model runs arrive four times a day. The evening rain moved two hours earlier in the 09:00 run.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__summary">How far ahead is a figure reliable?</summary>
+            <p class="ds-accordion__body">Three days for temperature, about two for rain. After that, read the range.</p>
+          </details>
+          <details class="ds-accordion__item">
+            <summary class="ds-accordion__summary">Where do the readings come from?</summary>
+            <p class="ds-accordion__body">From the nearest station to each place. If it falls silent, the model fills in.</p>
+          </details>
+        </div>
+      </div>
+      <div class="ds-page__side">
+        <aside class="ds-sidebar">
+          <h2 class="ds-sidebar__heading">In this guide</h2>
+          <ul class="ds-sidebar__list">
+            <li><a class="ds-sidebar__link is-current" href="#guide">Figures, ranges and chances</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Alerts and thresholds</a></li>
+            <li><a class="ds-sidebar__link" href="#guide">Stations and models</a></li>
+            <li><a class="ds-sidebar__link" href="#places">Managing places</a></li>
+          </ul>
+        </aside>
+        <section class="ds-panel">
+          <h2 class="ds-panel__title">Written by</h2>
+          <div class="ds-panel__body">
+            <div class="ds-avatar__row" data-component="avatar">
+              <span class="ds-avatar ds-avatar--2">IV</span>
+              <span><span class="ds-avatar__name">Ines Varga</span><span class="ds-avatar__meta">Forecaster, updated 2 October</span></span>
+            </div>
+            <p class="ds-panel__text">Something unclear? <a class="ds-link" href="#places">Tell us which place</a> and we will look at its station.</p>
+          </div>
+        </section>
+        <section class="ds-panel" data-component="panel">
+          <h2 class="ds-panel__title">Units</h2>
+          <div class="ds-panel__body">
+            <p class="ds-panel__pair"><span>Temperature</span> <span class="ds-panel__pair-value">°C</span></p>
+            <p class="ds-panel__pair"><span>Wind</span> <span class="ds-panel__pair-value">km/h</span></p>
+            <p class="ds-panel__pair"><span>Rain</span> <span class="ds-panel__pair-value">mm</span></p>
+            <p class="ds-panel__pair"><span>Pressure</span> <span class="ds-panel__pair-value">hPa</span></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ds-footer" data-component="footer">
+  <div class="ds-footer__inner">
+    <span>chronoskin weather. Readings from public stations, refreshed every ten minutes.</span>
+    <ul class="ds-footer__links">
+      <li><a class="ds-footer__link" href="#guide">Guide</a></li>
+      <li><a class="ds-footer__link" href="#places">Places</a></li>
+      <li><a class="ds-footer__link" href="#forecast">Forecast</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
