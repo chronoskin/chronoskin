@@ -14,9 +14,10 @@ func shot(args []string) error {
 	fs := flag.NewFlagSet("shot", flag.ExitOnError)
 	width := fs.Int("width", defaultWidth, "window width")
 	height := fs.Int("height", defaultShotHeight, "window height")
+	scale := fs.Float64("scale", 1, "pixels per CSS pixel; 2 gives a picture twice as sharp")
 	fs.Parse(args)
 	if fs.NArg() != 2 {
-		return fmt.Errorf("usage: pack shot [-width N] [-height N] <page-or-url> <out.png>")
+		return fmt.Errorf("usage: pack shot [-width N] [-height N] [-scale N] <page-or-url> <out.png>")
 	}
 	page, out := fs.Arg(0), fs.Arg(1)
 	if !strings.Contains(page, "://") {
@@ -37,6 +38,7 @@ func shot(args []string) error {
 		MaxHeight:   *height,
 		LoadTimeout: loadTimeout,
 		Settle:      shotSettle,
+		Scale:       *scale,
 	})
 	if err != nil {
 		return err

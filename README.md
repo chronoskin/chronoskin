@@ -21,8 +21,10 @@ In Claude Code, with the plugin:
 With any agent, from a shell:
 
 ```
-curl -s https://chrono.skin/s/v1-yk-3333.tar.gz | tar xz
+curl -s https://chrono.skin/s/v1-yk-3333.tar.gz | tar xzv
 ```
+
+It lists the five files as it writes them into `.design/`. The folder begins with a dot, so a plain `ls` does not show it; `ls -a` does.
 
 Then tell the agent to read `.design/STYLE.md` and `.design/specimen.html` before it writes any interface.
 

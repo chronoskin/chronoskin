@@ -60,7 +60,7 @@ func (s *server) llms(w http.ResponseWriter, r *http.Request) {
 	b.WriteString("## For agents and tools\n\n")
 	b.WriteString("- `GET " + base + "/api/generate?format=json`: a new style as JSON. Parameters: `era`, `archetype`, `mode` (`mix` or `pure`), `seed`, `from` and `lock` to regenerate, `density`, and one parameter per palette colour to set by hand\n")
 	b.WriteString("- `GET " + base + "/s/<id>.json`: the five files of a style as JSON\n")
-	b.WriteString("- `GET " + base + "/s/<id>.tar.gz`: the `.design/` folder as an archive (`curl -s " + base + "/s/<id>.tar.gz | tar xz`)\n")
+	b.WriteString("- `GET " + base + "/s/<id>.tar.gz`: the `.design/` folder as an archive (`curl -s " + base + "/s/<id>.tar.gz | tar xzv`)\n")
 	b.WriteString("- `GET " + base + "/s/<id>/specimen.html`: the example site on its own\n")
 	b.WriteString("- `POST " + base + "/mcp`: an MCP server with the tools `list_eras`, `generate_style`, `get_style` and `lint_css`\n\n")
 	b.WriteString("## Eras\n\n")

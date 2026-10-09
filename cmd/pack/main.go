@@ -9,7 +9,7 @@
 //	                                   measure built pages against a pack
 //	pack views [-phone] [-closed] [-leftovers] <pack-dir>...
 //	                                   click through each specimen's views in a browser
-//	pack shot [-width N] [-height N] <page-or-url> <out.png>
+//	pack shot [-width N] [-height N] [-scale N] <page-or-url> <out.png>
 //	                                   a picture of a page in a window of that size
 //	pack capture [-width N] [-height N] [-max-height N] [-timeout S] <url> <out-prefix>
 //	                                   write <out-prefix>.png and .features.json

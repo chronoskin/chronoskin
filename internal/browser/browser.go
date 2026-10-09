@@ -297,6 +297,7 @@ type CaptureOptions struct {
 	MaxHeight     int           // screenshot height cap
 	LoadTimeout   time.Duration // give up waiting for the load event after this
 	Settle        time.Duration // extra wait after load
+	Scale         float64       // pixels per CSS pixel in the screenshot; 0 means 1
 }
 
 func (b *Browser) Capture(url string, o CaptureOptions) (*Capture, error) {
@@ -335,7 +336,7 @@ func (b *Browser) Capture(url string, o CaptureOptions) (*Capture, error) {
 	if err := b.call(s, "Page.captureScreenshot", obj{
 		"format":                "png",
 		"captureBeyondViewport": true,
-		"clip":                  obj{"x": 0, "y": 0, "width": o.Width, "height": height, "scale": 1},
+		"clip":                  obj{"x": 0, "y": 0, "width": o.Width, "height": height, "scale": max(o.Scale, 1)},
 	}, &shot); err != nil {
 		return nil, err
 	}
